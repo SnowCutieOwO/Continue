@@ -1,13 +1,9 @@
 # 主配置  
 配置文本（`config.yml`）的相关教程
 
-* * *
-
 这是本插件的配置文件详解，它（`config.yml`）位于你服务器中的 `plugins/AureliumSkills`。  
 本配置文件最后更新对照版本: Beta 1.2.6  
 ## 全局设置
-
-* * *
 
 ### MySQL 数据库设置 
 `mysql:`
