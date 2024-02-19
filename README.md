@@ -3,6 +3,7 @@
 ## 介绍 Introduction
 
 > 前言：因为 MCBBS 爆炸了，所以有些东西得放到这里来。
+> 
 > 大部分文件都是 BBCODE 格式的，晚些时间会换成 markdown 格式的。
 
 > *我在做梦，一个长达十年的梦里有我长达六年的梦。*
@@ -14,7 +15,8 @@ Personal translated files (and other stuffs) database.
 
 ## 目录 Catalogue
 
-标斜体的维基条目为正在搬运的内容.
+标斜体的维基条目为正在搬运的内容。
+
 Names in Italian are the contents carrying to here.
 
 ### 已翻译的维基 Translated Wikis
@@ -122,4 +124,3 @@ Names in Italian are the contents carrying to here.
 - Shopkeeper (Initial)
 - ZMusic
 - ItemFliter (Initial)
-- 
