@@ -1,0 +1,2893 @@
+[size=5][b]EconomyShopGUI - 概览[/b][/size]
+这里是 EconomyShopGUI 的维基页面。了解、安装并学习如何配置和使用本插件！
+
+[size=4][b]什么是 EconomyShopGUI（ESGUI），它可以做什么？[/b][/size]
+这是一个完全可自定义的 GUI 商店插件，玩家可在这里向服务器购买或出售物品。插件特色丰富且配置详细：例如等级事件、加入信息、玩家交易记录以及更多。[配置文本在这里浏览]最好的部分是你可以完全自定义商店中的每一个物品[商店配置在这里浏览]在玩家不同等级的价格！
+
+[size=3][b]核心功能：[/b][/size]
+
+[list]
+[*]高度自定义性；
+[*]通过游戏内命令添加/编辑/删除商店内的物品；
+[*]按你需要添加商店内的物品分类。例如：方块、红石、药水、食物、掉落物等；
+[*]支持设置商店分类选择界面；
+[*]向商店添加无限多的物品；[i]*1[/i]
+[*]通过权限向商店添加折扣和/或出售翻倍；
+[*]按物品或商店设置季度价格；
+[*]通过子区经济来设置单次购买使用的多种货币；
+[*]支持通过 Discord SRV 将玩家交易记录发送至 Discord 聊天群组；
+[*]添加不同的山羊号角、附魔、药水效果、刷怪笼种类、知识之书、玩家头颅、烟花火箭和 RGB 皮革盔甲；
+[*]通过 Geyser 支持基岩版；
+[*]支持 SilkSpawners、WildSacker、UltimateStacker、RoseStacker、MineableSpawners 和 EpicSpawners 等第三方刷怪笼插件兼容；
+[*]通过选项物品/商店界面或填充物品来修改商店的外观；
+[*]多语言支持；
+[*]设置禁用商店的游戏模式；
+[*]支持 NPC 商店；
+[*]多经济支持；
+[*]用于追踪服务器经济流向的交易记录日志文件；
+[*]在玩家购买或出售物品的时候执行特定的命令；[i][color=Orange]*仅付费版[/color][/i]
+[*]将带有自定义 NBT 数据的物品添加至商店；[i][color=Orange]*仅付费版[/color][/i]
+[*]基于物品的经济，可通过物品形式的货币与商店交易；[i][color=Orange]*仅付费版[/color][/i]
+[*]允许设置物品不同的出售/收购价格，以及出售/收购物品的不同方式；[i][color=Orange]*仅付费版[/color][/i]
+[*]按玩家全局限购物品；[i][color=Orange]*仅付费版[/color][/i]
+[*]动态定价允许物品保持正常供需关系；[i][color=Orange]*仅付费版[/color][/i]
+[*]在物品自定义名称/描述、商店物品和界面中的 PlaceholderAPI 完全支持；[i][color=Orange]*仅付费版[/color][/i]
+[*]直接支持 EcoEnchants、AdvancedEnchantments、ExcellentEnchants 注册的插件附魔；[i][color=Orange]*仅付费版[/color][/i]
+[*]通过 MySQL 在服务器之间同步限购或动态定价。[i][color=Orange]*仅付费版[/color][/i]
+[/list]
+
+[size=4][b]商店示例：[/b][/size]
+
+[img]https://2522957397-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-M6QXvrDDroId1RhlXgl%2F-MXwZ58BwTdom3uGj_83%2F-MXx-X8mi6dLha8lw5vs%2FMain%20Menu%20(Premium).png?alt=media&token=9702c73b-1c62-463a-9d0a-8d1f37b89193[/img]
+[size=2][color=Gray]默认的商店主菜单（sections.yml）（*顶行物品是付费版自定义选区界面示例功能）[/color][/size]
+
+[img]https://2522957397-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-M6QXvrDDroId1RhlXgl%2F-MXwZ58BwTdom3uGj_83%2F-MXx0pm1Lr6k1NVfuMD4%2FBlocks.png?alt=media&token=ff2dcd6a-e8d1-4478-af45-45d94b0f6a88[/img]
+[color=Gray][size=2]默认方块列表第一页（shops.yml）（*Shift点击物品编辑是付费版功能）[/size][/color]
+
+[img]https://2522957397-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-M6QXvrDDroId1RhlXgl%2F-MXwZ58BwTdom3uGj_83%2F-MXx-qGlyRVQyvGSGzip%2FOres.png?alt=media&token=c3ed89ac-cfbc-48b7-8375-13bfd42e759b[/img]
+
+[img]https://2522957397-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-M6QXvrDDroId1RhlXgl%2F-MXwZ58BwTdom3uGj_83%2F-MXx-xT84kAP2V7eFg_B%2FOthers.png?alt=media&token=19a50f1d-8701-45ce-905d-7b717c999d48[/img]
+
+[img]https://2522957397-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-M6QXvrDDroId1RhlXgl%2F-MXwZ58BwTdom3uGj_83%2F-MXx00jS-FQZPd5sPd8r%2FPotions%20and%20Tipped%20Arrows.png?alt=media&token=a979fea6-217c-4d56-a891-740282575590[/img]
+
+[size=3][b]游戏内编辑器展示 - *付费版功能[/b][/size]
+
+[img]https://2522957397-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-M6QXvrDDroId1RhlXgl%2F-MXwZ58BwTdom3uGj_83%2F-MXx0VS4XlNGInlWNymN%2FItemEditor-Main.PNG?alt=media&token=1da92169-1825-4874-91cd-5306cd215c47[/img]
+[size=2][color=Gray]物品编辑器主菜单[/color][/size]
+
+[img]https://2522957397-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-M6QXvrDDroId1RhlXgl%2F-MjZq82V_aqVRHEs8D_L%2F-Mj_BdSUT9sCbeeR_-YJ%2FSchermafbeelding%202021-09-14%20183819.png?alt=media&token=67d71c95-b6a4-44f4-a43b-bc62efd66126[/img]
+[size=2][color=Gray]物品编辑器选项界面[/color][/size]
+
+[img]https://2522957397-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-M6QXvrDDroId1RhlXgl%2F-MXwZ58BwTdom3uGj_83%2F-MXx0fSOtNuxrsuU60uv%2FCommands%20(Premium).png?alt=media&token=b88c36f3-07e1-458d-b08d-1a2308d92ffe[/img]
+[size=2][color=Gray]添加购买命令的物品界面[/color][/size]
+
+[img]https://2522957397-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-M6QXvrDDroId1RhlXgl%2F-MXwZ58BwTdom3uGj_83%2F-MXx0jJ0ioOvt9pEc5HC%2FNBT%20Items%20(Premium).png?alt=media&token=0bce9047-4f29-408e-aa54-abb8bbdfe0a6[/img]
+[size=2][color=Gray]自定义 NBT 物品[/color][/size]
+
+[size=4][b]获取途径：[/b][/size]
+
+[b]免费版：[/b]
+
+[list]
+[*][url=https://www.spigotmc.org/resources/economyshopgui.69927/]SpigotMC[/url]
+[*][url=https://dev.bukkit.org/projects/economyshopgui]BukkitDev[/url]（在版本更新上与其他站点有 24 小时延迟）
+[*][url=https://polymart.org/resource/456]PolyMart[/url]
+[/list]
+[b]付费版：[/b]
+
+[list]
+[*][url=https://www.spigotmc.org/resources/economyshopgui-premium.104414/]SpigotMC[/url]
+[*][url=https://polymart.org/resource/economyshopgui-premium.908]Polymart[/url]
+[*][url=https://songoda.com/marketplace/product/economyshopgui-premium-esgui-prem.595]Craftaro（原 Songoda）[/url]
+[/list]
+
+[size=4][b]介绍视频：[/b][/size]
+
+[list]
+[*]由 SoulStriker 制作的英语版：https://www.youtube.com/watch?v=zhDAtuROTfk
+[*]由 BelgiumGames 制作的荷兰语版：https://www.youtube.com/watch?v=G6CBSwxBJGE
+[*]由 Produktecheck 制作的德语版（已过时）：https://www.youtube.com/watch?v=a-Y_-bJ58Kg
+[*]由 Ajneb97 制作的西班牙语版：https://www.youtube.com/watch?v=U7-raDmZXj4
+[/list]
+若你想要制作一个介绍如何使用本插件的视频并将其添加至此，请先在 [url=https://discord.com/invite/nPyuB4F]Discord 聊天群组[/url]上向我们发送一条信息！
+[page]
+[size=5][b]常见问题 & 用前必读 - 从这里开始！[/b][/size]
+
+[size=4][b]开始使用 ESGUI：[/b][/size]
+
+ESGUI 由 4 个可完全配置的文件构成，这些文件存储着插件的一切东西，包括商店中的物品。除非你只使用命令来配置商店，否则你应该打开配置文件并学习它们是如何在服务器中运行的。[i]本插件中的命令也与配置文件的结构有一定关联。[/i]
+
+[list=1]
+[*]config.yml - 这里你可以配置 ESGUI [i]如何[/i]运作。任何对配置文件的改动都需要你重启服务器来生效；
+[list=0]
+[*]该文件的更多信息可以在这里查询！
+[/list][*]sections.yml - 输入 [font=Consolas]/shop[/font] 命令第一次打开的界面，即主菜单配置所在区域。
+[list]
+[*]该文件的更多信息可以在这里查询！
+[/list][*][font=Consolas]LanguageFiles[/font] 文件夹下的语言文件。
+[list]
+[*]（使用的语言）取决于你在配置文件 config.yml 中让 ESGUI 使用的语言，此处可修改 ESGUI 界面中的消息文本和其他提醒；
+[*]该文件的更多信息可以在这里查询！
+[/list][*]你需要安装前置插件，并为玩家设置相应的权限。
+[/list]
+[size=3][b]依赖插件：[/b][/size]
+
+[list=1]
+[*][b]经济插件[/b] - 你需要安装一个受支持的经济插件。目前本插件支持这些经济插件：
+[list]
+[*][url=https://www.spigotmc.org/resources/vault.34315/][b]Vault[/b][/url] - 在使用 Vault API 的情况下你仍然需要安装其他插件，例如 [url=https://www.spigotmc.org/resources/essentialsx.9089/]EssentialsX[/url] 或 CMI（使用注入插件）。
+（译者注：Vault 不是经济插件，只是一个提供相关操作的经济接口）
+[*][url=https://www.spigotmc.org/resources/gemseconomy.19655/][b]GemsEconomy[/b][/url] - 提供多经济支持。
+[*][url=https://www.spigotmc.org/resources/playerpoints.80745/][b]PlayerPoints[/b][/url] - 这个经济插件支持 MySQL。
+[*][url=https://www.spigotmc.org/resources/ultra-economy.83374/][b]UltraEconomy[/b][/url] - 这个插件同样支持多经济，且支持使用 MySQL 进行数据存储。
+[/list][*][b]权限插件[/b] - 若你需要给予非 OP 玩家打开商店的权限，那么你就需要安装一个权限插件，见使用权限插件的教程章节。
+[/list]
+[size=4][b]FAQ（常见问题）：[/b][/size]
+
+[size=3][b]常见的“损坏”问题：[/b][/size]
+[list=1]
+[*]__（某些东西）__ 没有正常工作！
+[list]
+[*]请查看问题排除章节来寻找常见问题与它们的解决方法！
+[/list][*]只有 OP 玩家才可以使用商店：
+[list]
+[*]设置权限，并且确保你只安装了一个权限插件。
+[/list][*]为什么我的所有刷怪笼都是猪刷怪笼？
+[list]
+[*]你的服务器存在冲突插件或配置不正确，见“问题排查”章节的第 16 条。
+[/list][*]为什么我的商店里都是屏障方块？
+[list]
+[*]商店中存在无效或配置错误的文件，见“问题排查”章节的第 15 条。
+[/list][*]插件被禁用或显示“出现内部错误”：
+[list]
+[*]检查前置是否缺少，插件是否报错！
+[/list][*]铁砧中的物品不保留附魔：
+[list]
+[*]非原版附魔（不安全附魔）在铁砧中使用会自动被服务器移除。我们无法解决。
+[/list][/list]
+[size=3][b]全局问题：[/b][/size]
+[list=1]
+[*]我要怎么/在哪找到 ESGUI 的文件？（config.yml、shops.yml、sections.yml 和语言文件）
+[list]
+[*]在全局操作教程中提及！
+[/list][*]我如何升级至付费版？
+[list]
+[*]在全局操作教程中提及！
+[/list][*]我如何修改精准采集刷怪笼所要使用的工具？
+[list]
+[*]在 config.yml 的此处修改！
+[/list][*]我如何添加商店？
+[list]
+[*]向 sections.yml（菜单物品）[b]和[/b] shops.yml（商品列表）添加物品；
+[*]目前你必须在文件中修改这些，将会在未来添加命令。
+[/list][*]我如何修改插件语言？
+[list]
+[*]在 config.yml 的语言设置处修改。
+[/list][*]我如何修改经济单位的符号？
+[list]
+[*]可以在你正在使用的语言文件中找到并修改。
+[/list][*]我如何设置折扣？
+[list]
+[*]在 config.yml 下设置。
+[/list][/list]
+[size=3][b]商店/物品问题：[/b][/size]
+[list=1]
+[*]我如何__（修改物品）__？
+[list]
+[*]修改物品的[b]材料[/b]？- 通过命令 | 编辑 YML 文件
+[*]修改物品的[b]买[/b]或[b]卖[/b]价？- 通过命令 | 编辑 YML 文件
+[*]修改/添加/删除物品的[b]显示名称[/b]？- 通过命令 | 编辑 YML 文件
+[*]修改/添加/删除物品的[b]名称[/b]？- 通过命令 | 编辑 YML 文件
+[*]添加/删除物品的[b]附魔[/b]？- 通过命令 | 编辑 YML 文件
+[*]添加/删除物品的[b]药水效果[/b]？- 通过命令 | 编辑 YML 文件
+[*]添加/删除物品的[b]描述[/b]？- 通过命令 | 编辑 YML 文件
+[*]设置[b]刷怪笼的生物[/b]？- 通过命令 | 编辑 YML 文件
+[*]设置[b]知识之书解锁的配方[/b]？- 通过命令 | 编辑 YML 文件
+[*]设置[b]玩家头颅的材质[/b]？- 通过命令 | 编辑 YML 文件
+[*]添加/删除[b]自定义物品（NBT 数据）[/b]？- 通过命令 | 编辑 YML 文件 [i]*仅付费版[/i]
+[*]添加/删除购买物品的[b]命令[/b]- 通过命令 | 编辑 YML 文件 [i]*仅付费版[/i]
+[/list][*]我如何向商店添加或删除物品？
+[list]
+[*]编辑 shop.yml 文件（在保存之前验证 YML 是否符合语法！）；
+[*]或者：使用 editshop 命令。
+[/list][*]我如何将一个物品设置为不可购买/出售？
+[list]
+[*]将物品的买或卖价设置为负数。例如：[font=Consolas]sell:-1[/font]
+[/list][*]我如何通过本插件制作一个购买券物品/物品形式的货币？
+[list]
+[*]在操作教程中提及。
+[/list][/list]
+[size=3][b]选择界面/主菜单问题：[/b][/size]
+[list=1]
+[*]我如何删除或添加一个选区（主菜单物品/商店）？
+[list]
+[*]目前你必须编辑 sections.yml 来添加/删除或启用/禁用一个选区。
+[/list][*]我如何禁用或删除一个商店选区？
+[list]
+[*]在 sections.yml 处禁用，或将它从 sections.yml 和 shops.yml 中删除。
+[/list][*]我如何修改主菜单/选区的 __（某些东西）__？
+[list]
+[*]编辑 sections.yml，验证其有效性，之后输入命令 [font=Consolas]/sreload[/font]
+[*][i]通过命令编辑 sections.yml/主菜单的功能即将推出！[/i]
+[/list][*]我如何创建一个隐藏的商店？
+[list]
+[*]在操作教程中提及。
+[/list][*]我如何禁用返回按钮？
+[list]
+[*]在配置文件 config.yml 中。
+[/list][/list]
+[b][size=3]兼容性问题：[/size][/b]
+[list=1]
+[*]哪些插件和 ESGUI 兼容？- [i]使用前必须在 config.yml 下启用！[/i]
+[list=1]
+[*]兼容的精准刷怪笼插件：- [i]使用前必须在 config.yml 下启用！[/i]
+[list]
+[*][url=https://www.spigotmc.org/resources/silkspawners.7811/]Silkspawners[/url]
+[*][url=https://bg-software.com/wildstacker/]WildStacker[/url]
+[*][url=https://www.spigotmc.org/resources/mineablespawners-1-8-1-16-silkspawners-alternative.59921/]MineableSpawners[/url]（需要禁用 ESGUI 中的刷怪笼破坏和放置事件来正常运作！）
+[list]
+[*][i]注意：不需要修改 MineableSpawners 的配置！[/i]
+[/list][/list][*]兼容的物品超量堆叠插件：- [i]使用前必须在 config.yml 下启用！[/i]
+[list]
+[*][url=https://bg-software.com/wildstacker/]WildStacker[/url]
+[/list]
+[/list][*]我如何修改可用于挖掘刷怪笼的物品？
+[list]
+[*]在 config.yml 中修改
+[/list][*]我如何启用第三方的刷怪笼插件？
+[list]
+[*]在 config.yml 中启用
+[/list][*]我如何启用第三方的物品堆叠插件？
+[list]
+[*]在 config.yml 中启用（[i]尚未完全支持！[/i]）
+[/list][*]我是否可以将 ESGUI 与除了 EssentialsX 外的经济插件搭配？
+[list]
+[*]是！但它[b]必须支持 Vault[/b]
+[/list][*]我是否可以在商店使用基于物品的经济（以物易物）？
+[list]
+[*]暂时不行。但这可能会在未来添加。
+[/list][/list]
+[b]高级管理问题：[/b]
+[list=1]
+[*]这个插件有 API 吗？- 没有。
+[*]这个插件未来会有 API 吗？- 也许。
+（译者注：本插件似乎已经推出了 API，就在维基的末尾。）
+[*]是否开放源码？- 不会。
+[*]未来是否开放源码？- 不会。
+[*]我是否可以反编译、修改或对插件本体做出修改？
+[list]
+[*][b]不可以。[/b]
+[*]“EconomyShopGUI”，或称“ESGUI”，是 GP Plugins 的知识产权，不可修改。
+[*]你只能分享插件的免费版本。付费版本不得通过使用协议之外的方式传播或使用。
+[*]你只能在你拥有的服务器上使用你购买的付费版。
+[/list][/list]
+[size=4][b]从免费升级至付费版[/b][/size]
+
+将你的插件从免费版升级至付费版是非常简单的，这里有两种方法：手动复制所有改动至付费版插件文件夹（不推荐），或使用导入命令（推荐）。
+（译者注：“操作教程”章节中讲到了如何导入免费版的数据。）
+[page]
+[size=5][b]命令列表：[/b][/size]
+ESGUI 的命令列表及其使用方法！
+
+[b]图例：[/b]
+[list]
+[*]诸如 [font=Consolas][b]<值>[/b][/font]（尖括号）的参数为[b]必填[/b]项
+[*]诸如 [font=Consolas][b][值][/b][/font]（方括号）的参数为[b]选填[/b]项，在不需要填入的情况下可省略。
+[/list]
+[size=4][b]命令：[/b][/size]
+[list]
+[*][font=Consolas][b]/shop [玩家名称][/b][/font] = 打开商店
+[list]
+[*]注意：可选参数 [font=Consolas][玩家名称][/font] 只需在控制台中指定。
+[/list][*][font=Consolas][b]/shop <子选区> [玩家名称][/b][/font] = 直接打开对应选区的商店，而不是输入命令 /shop 然后在界面中选择商店分类
+[list]
+[*]注意：可选参数 [font=Consolas][玩家名称][/font] 只需在控制台中指定。
+[/list][*][font=Consolas][b]/sellall[/b][/font] = 出售背包内所有物品
+[*][font=Consolas][b]/sellall <材料名称>[/b][/font] = 出售背包内为指定材料的所有物品
+[*][font=Consolas][b]/sellall hand[/b][/font] = 出售手上的所有物品
+[*][font=Consolas][b]/reload[/b][/font] = 重载插件和商店（sections.yml 和 shop.yml）。*部分在 config.yml 下的设置需要重启服务器才可生效！
+[*][font=Consolas][b]/shopgive <选区> <序号> [玩家名称][/b][/font] = 允许管理员直接从商店中获取某个物品并给予自己或其他玩家用于测试
+[*][font=Consolas][b]/editshop additem <选区> <材料> <购买价格> <出售价格> [显示名称][/b][/font] = 通过该命令向商店添加一个物品
+[*][font=Consolas][b]/editshop edititem <选区> <序号> <操作> <键> <值>[/b][/font] = 允许编辑商店内的已有物品
+[*][font=Consolas][b]/editshop deleteitem <选区> <序号>[/b][/font] = 该命令允许你从商店中删除一个物品
+[*][font=Consolas][b]/editshop import Essentials worth.yml[/b][/font] = 从 Essentials 导入所有物品的出售价格
+[*][font=Consolas][b]/editshop addhanditem <选区> <购买价格> <出售价格>[/b][/font] = 在该命令的帮助下你可以将手上的物品添加至商店。（对包含隐藏/特殊 NBT 数据的物品很有用！）
+[*][font=Consolas][b]/sellgui [玩家名称][/b][/font] = 该命令将会打开一个空白界面，你可以将物品放入其中以出售，关闭界面将会开始出售操作，给予玩家所得的同时返还不能出售的物品
+[*][font=Consolas][b]/editshop addsection <选区> <图标材料名称> <显示名称> <位置>[/b][/font] = 允许你添加新的商店选区。
+[*][font=Consolas][b]/editshop editsection <选区> <操作> <键> <值>[/b][/font] = 允许你编辑已存在的商店选区设置。
+[*][font=Consolas][b]/editshop deletesection <选区>[/b][/font] = 从 sections.yml 配置中将指定的选区删除
+[/list]
+[color=Orange][b]*付费版独有命令：[/b][/color]
+
+[list]
+[*][font=Consolas][b]/shop search[/b][/font] - 打开搜索栏，用于搜索材料名对应的商店物品
+[*][font=Consolas][b]/editshop update[/b][/font] - 从游戏内下载新版本的命令
+[*][font=Consolas][b]/editshop import EconomyShopGUI <config.yml|sections.yml|shops.yml>[/b][/font] - 允许从免费版本升级数据，点击这里查看如何使用此命令
+[list]
+[*]从免费升级至付费版只需要使用[b]一次[/b]该命令。
+[/list][*][font=Consolas][b]/editshop globalstock set/add <选区> <序号> <数量>[/b][/font] - 设置指定物品的全局库存量
+[*][font=Consolas][b]/editshop playerstock set/add <玩家> <选区> <序号> <数量>[/b][/font] - 设置指定物品的玩家商店库存量
+[*][font=Consolas][b]/editshop globalsell set/add <选区> <序号> <数量>[/b][/font] - 设置指定物品的全局出售限制量
+[*][font=Consolas][b]/editshop playersell set/add <玩家> <选区> <序号> <数量>[/b][/font] - 设置物品的玩家出售限制量
+[*][font=Consolas][b]/editshop dynamicpricing reset <all(全部)/选区> [序号][/b][/font] - 允许你重置指定或全部物品的动态定价
+[/list]
+[size=4][b]使用编辑商店命令：[/b][/size]
+商店编辑命令是一种在游戏内快速更改商店的方法。
+
+[list]
+[*]在 3.0 以上的版本，你只能添加/编辑/删除商店中的物品，[i]它不能添加/编辑/删除任何的商店选区[/i]，你需要修改 sections.yml 才可以这么做。
+[*]商店编辑命令给予 shops.yml 的格式，推荐你自行阅读该文件的解读，以便更快熟悉插件功能！
+[/list]
+[size=3][b]添加物品：[/b][/size]
+将物品添加至商店只需输入命令 [font=Consolas][b]/editshop additem <选区> <材料> <购买价格> <出售价格> [显示名称][/b][/font]。
+
+[list]
+[*]在添加物品后你可能需要输入 [font=Consolas][b]/sreload[/b][/font] 才能让新添加的物品出现在商店中。
+[/list]
+[b]命令分解[/b]
+[list]
+[*][font=Consolas][b]/editshop additem <选区> <材料> <购买价格> <出售价格> [显示名称][/b][/font]
+[*][font=Consolas][b]<选区>[/b][/font] = 所要添加物品的选区
+[*][font=Consolas][b]<材料>[/b][/font] = 物品的材料名称
+[*][font=Consolas][b]<购买价格>[/b][/font] = 物品的购买价格
+[*][font=Consolas][b]<出售价格>[/b][/font] = 物品的出售价格
+[*][font=Consolas][b][显示名称][/b][/font] = [i][可选参数][/i]物品的显示名称。可以包含空格、“&”彩色字符以及特殊字符。
+[*]* 物品的[i][b]序号[/b][/i]在成功添加时会自动分配。
+[*]* 额外设置（大多可选，少数必须设置）可能需要通过 [font=Consolas]edititem[/font] 命令设置（例如：[font=Consolas]Spawnertype[/font] 在 ESGUI 为刷怪笼处理插件时需要指定）
+[/list]
+
+[size=3][b]编辑物品：[/b][/size]
+编辑物品与添加物品一样简单，只需要输入命令 [font=Consolas][b]/editshop edititem <选区> <序号> <键> <值>[/b][/font] 即可。
+
+[list]
+[*]你可能需要输入 [font=Consolas][b]/sreload[/b][/font] 才能让修改后的物品在商店中刷新。
+[/list]
+[b]命令分解：[/b]
+[list]
+[*][font=Consolas][b]/editshop edititem <选区> <序号> <操作> <键> <值>[/b][/font]
+[*][font=Consolas][b]<选区>[/b][/font] = 所要编辑物品的选区
+[*][font=Consolas][b]<序号>[/b][/font] = 所要编辑物品的序号。（正常情况下应当是商店 shops.yml 中的数字）
+[*][font=Consolas][b]<操作>[/b][/font] = 键的操作。有效值为 [font=Consolas][b]add, set, remove[/b][/font]
+[*][font=Consolas][b]<键>[/b][/font] = 你想要编辑的物品值，例如键“potiontypes”，“enchantments”，“spawnertype” 等...在此处可浏览所有的可用键名。
+[*][font=Consolas][b]<值>[/b][/font] = 键的值，例如若你选择了“potiontypes”，你就需要在这个参数的位置输入一个有效的药水效果名称。
+[/list]
+[code]#命令格式在 yml 文件中的分解
+#没有缩进
+<商店/选区名称>: #在 config.yml 文件的商店或选区名称
+  #2 个空格的缩进
+  <index>: 商店中物品的序号
+    #4 个空格的缩进
+    <key>: "<value>" #应用至物品的键与值[/code]   
+[size=3][b]删除物品：[/b][/size]
+你应该也能猜到它有多简单，只需输入命令 [font=Consolas][b]/editshop deleteitem <选区> <序号>[/b][/font] 即可将指定物品从商店中删除。
+
+[list]
+[*]你可能需要输入 [font=Consolas][b]/sreload[/b][/font] 才能让删除的物品在商店中消失。
+[/list]
+[b]命令分解：[/b]
+[list]
+[*][font=Consolas][b]/editshop deleteitem <选区> <序号>[/b][/font]
+[*][b]<选区>[/b] = 所要删除物品的选区
+[*][b]<序号>[/b] = 所要删除物品的序号（正常情况下应当是商店 shops.yml 中的数字）
+[/list]
+[size=3][b]添加手持物品：[/b][/size]
+也许你不想要手动添加物品然后辛苦编辑，所以你可以使用命令 [font=Consolas][b]/editshop addhanditem <选区> <购买价格> <出售价格>[/b][/font] 来添加已有物品至商店。
+
+[list]
+[*]在添加物品后你可能需要输入 [font=Consolas][b]/sreload[/b][/font] 才能让新添加的物品出现在商店中。
+[/list]
+[b]命令分解：[/b]
+[list]
+[*][font=Consolas][b]/editshop addhanditem <选区> <购买价格> <出售价格>[/b][/font]
+[*][font=Consolas][b]<选区>[/b][/font] = 所要添加物品的选区
+[*][font=Consolas][b]<购买价格>[/b][/font] = 设置玩家购买物品所需要花费的金钱
+[*][font=Consolas][b]<出售价格>[/b][/font] = 设置玩家将物品出售至服务器可获得的金钱
+[*]* 物品的[i][b]序号[/b][/i]在成功添加时会自动分配。
+[*]* 命令会自动检查物品的内容，并在 shops.yml 下生成该物品的配置。
+[/list]
+[quote][color=Blue][b]！[/b][/color] 1.13+ 的 TAB 键补全对大部分命令的参数都很有用。[/quote]
+
+[size=4][b]使用导入命令[/b][/size]
+
+担心数据丢失？导入命令将会允许你导入下列内容：
+
+[size=3][b]ShopGUI+：[i][color=Orange]*仅付费版[/color][/i][/b][/size]
+本插件的付费版内置了一个从 ShopGUI+ 导入物品数据的命令。
+[list]
+[*]命令 [font=Consolas][b]/editshop import shopguiplus[/b][/font] 将会创建一个可被导入、快速且简单的物品/选区/设置摘要，这些内容不会直接导入到你当前的配置文件中。
+[list]
+[*]当摘要的结果符合你的要求是，你可以输入命令 [font=Consolas][b]/editshop import shopguiplus confirm[/b][/font] 来完成导入。
+[/list][/list]
+[size=3][b]EconomyShopGUI（免费版）：[i][color=Orange]*仅付费版[/color][/i][/b][/size]
+若你刚开始使用本插件的付费版，且尚未改动过任何文件/商店；你可以使用导入命令将免费版的数据导入付费版的插件文件夹。
+
+[list]
+[*][font=Consolas][b]/editshop import EconomyShopGUI config.yml[/b][/font] 将会从免费版插件的文件夹导入 config.yml -+- 若你修改了配置文件中的任何设置，推荐你将它们一并导入付费版，以获得更流畅的体验。导入之后，请重启你的服务器，一些设置才可以生效。
+[*][font=Consolas][b]/editshop import EconomyShopGUI shops.yml[/b][/font] 将会从免费版插件的文件夹导入 shops.yml -+- 非常推荐你将这个命令后于导入 sections.yml 的命令执行，以确保所有的商店正确载入。之后即可输入命令 [font=Consolas]/sreload[/font] 来应用改动。
+[*][font=Consolas][b]/editshop import EconomyShopGUI sections.yml[/b][/font] 将会从免费版插件的文件夹导入 sections.yml -+-非常图鉴你将这个命令先于导入 shops.yml 的命令执行，以确保所有的商店正确载入。之后即可输入命令 [font=Consolas]/sreload[/font] 来应用改动。
+[/list]
+[size=3][b]Essentials 插件的 worth.yml[/b][/size]
+
+[list]
+[*][font=Consolas][b]/editshop import essentials worth.yml[/b][/font] 这将会将物品的售价从 EssentialsX 的 worth.yml 导入 EconomyShopGUI。需要注意的是在 shops.yml 中已有的物品售价会替换 worth.yml 中的售价。
+[/list]
+[quote][color=Blue][b]！[/b][/color] 当前的配置会复制至备份文件夹，用来在导入或升级插件时出现问题的情况下排除问题。[/quote]
+[size=4][b]如何使用编辑商店命令来设置物品限购：[/b][/size]
+物品限购为付费版独有功能，可在服务器上通过商店限购达到特殊物品的限量功能。
+
+[list]
+[*][font=Consolas][b]/editshop globalstock set <选区> <序号> <数量>[/b][/font] 该命令将会限制所有玩家在整个服务器中指定物品的购买数量为特定数值。
+[*][font=Consolas][b]/editshop playerstock set <玩家> <选区> <序号> <数量>[/b][/font] 该命令将会限制指定玩家在整个服务器中指定物品的购买数量为特定数值。
+[/list]
+
+[quote][b][color=Red]！[/color][/b] 需要注意的是，没有在 shops.yml 中进行限购设置的物品不会让其成为限购物品，为设置物品限购，你需要先了解 shopss.yml 基础设置。[/quote]
+
+[size=4][b]如何使用命令添加/修改物品：[/b][/size]
+[quote][color=Blue][b]！[/b][/color] 若你想要添加一个键不在 additem 命令中的物品（例如：刷怪笼），你[i]必须[/i]编辑该物品并为其加上所需的键，否则物品将不会正常显示。
++ shops.yml 的完整键列表请见此处
++ 购买执行命令的物品示例在这里查看[/quote]
+
+[size=3][b]添加新的物品：[/b][/size]
+[list]
+[*]命令格式：
+[list]
+[*][font=Consolas][b]/editshop additem <选区> <材料> <购买价格> <出售价格> [显示名称][/b][/font]
+[*]参数 [font=Consolas][显示名称][/font] 是可选的
+[/list][*]示例：
+[list]
+[*][font=Consolas][b]/editshop additem blocks iton_block 20 2[/b][/font]
+[/list][*]在 shops.yml 中添加物品：
+[/list][code]blocks:
+  '23': #序号自动生成，并会自动添加在商店选区的物品上
+    material: iron_block
+    buy: 20
+    sell: 2[/code]   
+[size=3][b]向物品添加键：[/b][/size]
+[list]
+[*]示例：
+[list]
+[*][font=Consolas][b]/editshop edititem tools 12 add enchantments efficiency:3[/b][/font]
+[/list][*]对 shops.yml 中序号为 12 的物品添加附魔：
+[/list][code]tools:
+  '12':
+    material: iron_pickaxe
+    buy: 300
+    sell: 30
+    enchantments:
+    - efficiency:3[/code]
+[size=3][b]修改物品的键：[/b][/size]
+若要修改指定物品上的键，你会需要用到在 3.7/1.9 版本加入的 set 操作。
+[list]
+[*]示例：
+[list]
+[*][font=Consolas][b]/editshop edititem blocks 23 set buy 123.45[/b][/font]
+[/list][*]下列配置会设置 shops.yml 下序号为 23 的物品的价格。[/list][code]  '23':
+    material: iron_block
+    buy: 123.45
+    sell: 15[/code]
+[list]
+[*]示例：
+[list]
+[*][font=Consolas][b]/editshop edititem tools 12 set enchantments efficiency:3[/b][/font]
+[*][font=Consolas][b]/editshop edititem tools 12 add enchantments fortune:2[/b][/font]
+[*][font=Consolas][b]/editshop edititem tools 12 add enchantments unbreaking:5[/b][/font]
+[/list][*]第一个命令将会把所有的附魔清空，然后设置一个效率 III的附魔。
+[*]下面的两个命令效果相同，会将 shops.yml 下 tools 选区内序号为 12 的物品添加时运 II 和耐久 V 的附魔，配置如下：[/list][code]tools:
+  '12':
+    material: iron_pickaxe
+    buy: 300
+    sell: 30
+    enchantments:
+    - efficiency:3
+    - fortune:2
+    - unbreaking:5[/code]
+[size=3][b]从物品移除指定键：[/b][/size]
+[list]
+[*]示例：
+[list]
+[*][b][font=Consolas]/editshop edititem tools 12 remove enchantments efficiency:2[/font][/b]
+[/list]
+[*]移除 shops.yml 中 tools 分类下序号为 12 的物品：
+[/list][code]tools:
+  '12':
+    material: iron_pickaxe
+    buy: 300
+    sell: 30
+    enchantments:
+    - fortune:2
+    - unbreaking:5[/code]
+[page]
+[size=5][b]权限列表：[/b][/size]
+在这里了解 EconomyShopGUI 所使用的权限和它们的含义。
+
+[size=4][b]权限节点：[/b][/size]
+
+[size=3][b]物品权限[/b][/size]
+
+这些权限决定了玩家是否可以在指定的商店购买/出售物品，是 EconomyShopGUI 的核心权限。
+[quote][color=Blue][b]！[/b][/color][b][font=Consolas]<选区>[/font][/b] 参数应当替换为 shops.yml 中的实际名称[/quote]
+[table=98%,White]
+[tr][td]权限节点[/td][td]默认值[/td][td]描述[/td][/tr]
+[tr][td]EconomyShopGUI.shop.<选区>[/td][td][font=Consolas]TRUE[/font][/td][td]允许在[b]指定[/b]选区的商店中购买/出售物品。[/td][/tr]
+[tr][td]EconomyShopGUI.shop.all[/td][td][font=Consolas]TRUE[/font][/td][td]允许在[b]所有[/b]选区的商店中购买/出售物品。[/td][/tr]
+[tr][td]EconomyShopGUI.sellall.<选区>[/td][td][font=Consolas]TRUE[/font][/td][td]允许在[b]指定[/b]选区的商店中使用 [font=Consolas]/sellall inventory[/font] 命令。[/td][/tr]
+[tr][td]EconomyShopGUI.sellall.all[/td][td][font=Consolas]TRUE[/font][/td][td]允许在[b]所有[/b]选区的商店中使用 [font=Consolas]/sellall inventory[/font] 命令。[/td][/tr]
+[tr][td]EconomyShopGUI.sellallitem.<选区>[/td][td][font=Consolas]TRUE[/font][/td]允许玩家在[b]指定[/b]商店中使用命令 [font=Consolas]/sellall <物品>[/font] 出售物品。[td][/td][/tr]
+[tr][td]EconomyShopGUI.sellallitem.all[/td][td][font=Consolas]TRUE[/font][/td][td]允许玩家在[b]所有[/b]商店中使用命令 [font=Consolas]/sellall <物品>[/font] 出售物品。[/td][/tr]
+[tr][td]EconomyShopGUI.sellallhand.<选区>[/td][td][font=Consolas]TRUE[/font][/td][td]允许玩家在[b]指定[/b]商店中使用命令 [font=Consolas]/sellall hand[/font] 出售物品。[/td][/tr]
+[tr][td]EconomyShopGUI.sellallhand.all[/td][td][font=Consolas]TRUE[/font][/td][td]允许玩家在[b]所有[/b]商店中使用命令 [font=Consolas]/sellall hand[/font] 出售物品。[/td][/tr]
+[tr][td]EconomyShopGUI.sellgui.<选区>[/td][td][font=Consolas]TRUE[/font][/td][td]允许玩家在[b]指定[/b]商店中使用命令 [font=Consolas]/sellgui[/font] 出售物品。[/td][/tr]
+[tr][td]EconomyShopGUI.sellgui.all[/td][td][font=Consolas]TRUE[/font][/td][td]允许玩家在[b]所有[/b]商店中使用命令 [font=Consolas]/sellgui[/font] 出售物品。[/td][/tr]
+[/table]
+
+[color=Orange][i][b]*付费版独有权限[/b][/i][/color]
+
+[table=98%,White]
+[tr][td]权限节点[/td][td]默认值[/td][td]描述[/td][/tr]
+[tr][td]EconomyShopGUI.shop.<选区>.item.<权限>[/td][td][font=Consolas]FALSE[/font][/td][td]购买指定物品的权限[/td][/tr]
+[/table]
+[size=3][b]其他权限[/b][/size]
+[table=98%,White]
+[tr][td]权限节点[/td][td]默认值[/td][td]描述[/td][/tr]
+[tr][td]EconomyShopGUI.sell-multipliers.<组>[/td][td][font=Consolas]FALSE[/font][/td]允许拥有该权限的玩家获得在配置文件 config.yml 中设置的出售倍率。[td][/td][/tr]
+[tr][td]EconomyShopGUI.discounts.<组>[/td][td][font=Consolas]FALSE[/font][/td][td]允许拥有该权限的玩家获得在配置文件 config.yml 中设置的折扣比率。[/td][/tr]
+[tr][td]EconomyShopGUI.itemindexes[/td][td][font=Consolas]OP[/font][/td][td]允许在商店图标上预览商店内的物品位置[/td][/tr]
+[/table]
+GUI 编辑器[b][i][color=Orange]*仅付费版[/color][/i][/b]
+[table=98%,White]
+[tr][td]权限节点[/td][td]默认值[/td][td]描述[/td][/tr]
+[tr][td]EconomyShopGUI.eshop.editor[/td][td]OP[/td][td]允许打开商店 GUI 编辑器（Shift+左键点击商店物品打开的 GUI 界面）[/td][/tr]
+[/table]
+[size=3][b]命令权限[/b][/size]
+
+这些权限节点允许玩家使用 EconomyShopGUI 的不同权限，默认所有玩家都有除了使用 /editshop 命令外的所有权限。
+[table=98%,White]
+[tr][td]权限节点[/td][td]默认值[/td][td]描述[/td][/tr]
+[tr][td]EconomyShopGUI.shop[/td][td][font=Consolas]TRUE[/font][/td][td]允许使用 [font=Consolas]/shop[/font] 命令[/td][/tr]
+[tr][td]EconomyShopGUI.sellall[/td][td][font=Consolas]TRUE[/font][/td][td]允许使用 [font=Consolas]/sellall[/font] 命令[/td][/tr]
+[tr][td]EconomyShopGUI.sellallitem[/td][td][font=Consolas]TRUE[/font][/td][td]允许使用 [font=Consolas]/sellall <物品>[/font] 命令[/td][/tr]
+[tr][td]EconomyShopGUI.sellallhand[/td][td][font=Consolas]TRUE[/font][/td][td]允许使用 [font=Consolas]/sellall hand[/font] 命令[/td][/tr]
+[tr][td]EconomyShopGUI.sellgui[/td][td][font=Consolas]TRUE[/font][/td][td]允许使用 [font=Consolas]/sellgui[/font] 命令[/td][/tr]
+[tr][td]EconomyShopGUI.reload[/td][td][font=Consolas]OP[/font][/td][td]允许使用 [font=Consolas]/sreload[/font] 命令[/td][/tr]
+[tr][td]EconomyShopGUI.shopgive[/td][td][font=Consolas]OP[/font][/td][td]允许通过命令 [font=Consolas]/shopgive[/font] 命令对玩家或自己给予物品[/td][/tr]
+[tr][td]EconomyShopGUI.eshop.*[/td][td][font=Consolas]OP[/font][/td][td]允许玩家使用 [font=Consolas]/editshop ...[/font] 的所有子命令[/td][/tr]
+[tr][td]EconomyShopGUI.eshop.additem[/td][td][font=Consolas]OP[/font][/td][td]允许玩家使用商店编辑命令的 [font=Consolas]additem[/font] 子命令[/td][/tr]
+[tr][td]EconomyShopGUI.eshop.edititem[/td][td][font=Consolas]OP[/font][/td][td]允许玩家使用商店编辑命令的 [font=Consolas]edititem[/font] 子命令[/td][/tr]
+[tr][td]EconomyShopGUI.eshop.deleteitem[/td][td][font=Consolas]OP[/font][/td][td]允许玩家使用商店编辑命令的 [font=Consolas]deleteitem[/font] 子命令[/td][/tr]
+[tr][td]EconomyShopGUI.eshop.addhanditem[/td][td][font=Consolas]OP[/font][/td][td]允许玩家使用商店编辑命令的 [font=Consolas]addhanditem[/font] 子命令[/td][/tr]
+[tr][td]EconomyShopGUI.eshop.import[/td][td][font=Consolas]OP[/font][/td][td]允许玩家使用商店编辑命令的 [font=Consolas]import[/font] 子命令[/td][/tr]
+[tr][td]EconomyShopGUI.eshop.addsection[/td][td][font=Consolas]OP[/font][/td][td]允许玩家使用商店编辑命令的 [font=Consolas]addsection[/font] 子命令[/td][/tr]
+[tr][td]EconomyShopGUI.eshop.editsection[/td][td][font=Consolas]OP[/font][/td][td]允许玩家使用商店编辑命令的 [font=Consolas]editsection[/font] 子命令[/td][/tr]
+[tr][td]EconomyShopGUI.eshop.deletesection[/td][td][font=Consolas]OP[/font][/td][td]允许玩家使用商店编辑命令的 [font=Consolas]deletesection[/font] 子命令[/td][/tr]
+[/table]
+[color=Orange][b]付费版独有权限：[/b][/color]
+[table=98%,White]
+[tr][td]权限节点[/td][td]默认值[/td][td]描述[/td][/tr]
+[tr][td]EconomyShopGUI.shop.search[/td][td][font=Consolas]TRUE[/font][/td][td]允许使用 [b]/shop search[/b] 的功能[/td][/tr]
+[tr][td]EconomyShopGUI.eshop.update[/td][td][font=Consolas]OP[/font][/td][td]允许玩家通过命令 [b]/editshop update[/b] 更新插件[/td][/tr]
+[tr][td]EconomyShopGUI.eshop.globalstock.*[/td][td][font=Consolas]OP[/font][/td][td]允许玩家使用 [font=Consolas]/editshop globalstock[/font] 的所有子命令[/td][/tr]
+[tr][td]EconomyShopGUI.eshop.globalstock.add[/td][td][font=Consolas]OP[/font][/td][td]允许添加指定物品的总库存[/td][/tr]
+[tr][td]EconomyShopGUI.eshop.globalstock.set[/td][td][font=Consolas]OP[/font][/td][td]允许修改指定物品的出售量[/td][/tr]
+[tr][td]EconomyShopGUI.eshop.playerstock.*[/td][td][font=Consolas]OP[/font][/td][td]允许玩家使用 [font=Consolas]/editshop playerstock[/font] 的所有子命令[/td][/tr]
+[tr][td]EconomyShopGUI.eshop.playerstock.add[/td][td][font=Consolas]OP[/font][/td][td]允许增加指定物品的玩家库存[/td][/tr]
+[tr][td]EconomyShopGUI.eshop.playerstock.set[/td][td][font=Consolas]OP[/font][/td][td]允许设置玩家商店中指定或所有物品的出售量[/td][/tr]
+[tr][td]EconomyShopGUI.eshop.playersell.*[/td][td][font=Consolas]OP[/font][/td][td]允许玩家使用 [font=Consolas]/editshop playersell[/font] 的所有子命令[/td][/tr]
+[tr][td]EconomyShopGUI.eshop.playersell.set[/td][td][font=Consolas]OP[/font][/td][td]允许设置指定或所有物品的出售限制[/td][/tr]
+[tr][td]EconomyShopGUI.eshop.globalsell.*[/td][td][font=Consolas]OP[/font][/td][td]允许玩家使用 [font=Consolas]/editshop globalsell[/font] 的所有子命令[/td][/tr]
+[tr][td]EconomyShopGUI.eshop.globalsell.set[/td][td][font=Consolas]OP[/font][/td][td]允许设置指定或所有物品的全局出售限制[/td][/tr]
+[tr][td]EconomyShopGUI.eshop.dynamicpricing.*[/td][td][font=Consolas]OP[/font][/td][td]允许玩家使用 [font=Consolas]/editshop dynamicpricing[/font] 的所有子命令[/td][/tr]
+[tr][td]EconomyShopGUI.eshop.dynamicpricing.reset[/td][td][font=Consolas]OP[/font][/td][td]允许重置指定或所有物品的动态定价[/td][/tr]
+[/table]
+[size=4][b]使用 EconomyShopGUI 需要分配的基础权限：[/b][/size]
+[quote][b][color=Red]！[/color][/b]自本插件 4.0.0 或 5.0.0 版本依赖，所有需要的权限都会默认给予，因此你不需要手动分配这些权限。[/quote]
+这些是你需要通过权限插件分配给指定权限组或玩家的基础权限。
+
+1a. [font=Consolas]EconomyShopGUI.shop.all[/font] 允许打开 shops.yml 文件中定义的[i][b]所有[/b]商店[/i]
+1b. [font=Consolas]EconomyShopGUI.shop.<选区>[/font] 允许打开 shops.yml 文件中定义的[i]指定商店（将 [font=Consolas]<选区>[/font] 替换为商店中选区的名称！）[/i]
+
+[size=4][b]如何创建和分配权限：[/b][/size]
+[quote][color=Blue][b]！[/b][/color]注意：一些权限插件区分大小写！请确保上方权限表中的大小写一致！[/quote]
+[size=3][b]安装权限插件：[/b][/size]
+安装权限插件非常简单，只需要下载后将 jar 文件放入服务器的 plugins 文件夹下即可。
+
+[list=1]
+[*]首先你需要找到你想要使用的权限插件。[url=https://www.spigotmc.org/resources/luckperms.28140/]我们推荐使用 LuckPerms[/url]，LP的 [font=Consolas]/lp editor[/font] 打开的网页编辑面板非常易于使用；
+[*][b]熟悉你所使用的插件的基本操作步骤[/b]，确保它与你当前的版本[b]兼容且是最新版本[/b]；[[url=https://www.youtube.com/watch?v=Hfp5Sz3m5p4]简单的 LuckPerms 教程在这里可以查看[/url]]
+[*]下载插件；
+[*]将插件放入服务器的插件文件夹；
+[*]重启服务器。
+[/list][quote][color=Red][b]！[/b][/color]不要安装多个权限管理插件。它们之间的相互冲突会引起不必要的麻烦。:/[/quote]
+[size=3][b]配置：[/b][/size]
+我们不会为所有人详细解释如何设置权限。但是你只要在 Youtube 上搜索并[url=https://www.youtube.com/watch?v=Hfp5Sz3m5p4]观看过其他人关于这些的视频[/url]，你可以快速地按自己需求设置相应的权限！
+
+在安装/配置好你的权限管理插件后，可在上方浏览 ESGUI 的完整权限列表。
+
+[size=4][b]权限更新：[/b][/size]
+
+[quote][b][color=Red]！[/color]更新插件会导致玩家无法使用 /sellall 和 /sellgui 命令出售物品，所以请阅读这一段文字！[/b][/quote]
+在 4.4 版本后的 EconomyShopGUI 和 2.5 版本后的 EconomyShopGUI Premium，我们更新了全新系统，让服务器能更好控制玩家在商店中使用 /sellgui 和 /sellall 出售物品的行为。
+
+玩家之前需要权限节点 [font=Consolas][b]EconomyShopGUI.shop.<选区>[/b][/font] 或 [font=Consolas][b]EconomyShopGUI.shop.all[/b][/font] 来通过 [font=Consolas][b]/sellall[/b][/font] 和[font=Consolas][b]/sellgui[/b][/font] 但这些在现在的版本按照命令分成了多个权限节点。
+
+[size=3][b]怎么做？[/b][/size]
+
+你基本上不需要担心玩家可以把什么物品卖到商店中，所以你只需要给予玩家下列权限即可：
+[font=Consolas][b]➖ EconomyShopGUI.sellall.all[/b][/font]
+[font=Consolas][b]➖ EconomyShopGUI.sellallitem.all[/b][/font]
+[font=Consolas][b]➖ EconomyShopGUI.sellallhand.all[/b][/font]
+[font=Consolas][b]➖ EconomyShopGUI.sellgui.all[/b][/font]
+若你正在使用 LuckPerms（推荐）作为你的权限管理插件，你可以通过下列命令为你的权限组添加你所需要的上述权限：
+[font=Consolas][b]➖ /lp group default permission set EconomyShopGUI.sellall.all true[/b][/font]
+[font=Consolas][b]➖ /lp group default permission set EconomyShopGUI.sellallitem.all true[/b][/font]
+[font=Consolas][b]➖ /lp group default permission set EconomyShopGUI.sellallhand.all true[/b][/font]
+[font=Consolas][b]➖ /lp group default permission set EconomyShopGUI.sellgui.all true[/b][/font]
+在另一方面，如果你有只能由特定玩家打开的商店在服务器中，你需要为他们单独添加打开这些商店的权限节点。
+
+[size=3][b]此次更新添加的权限节点：[/b][/size]
+[table=98%,White]
+[tr][td][b]权限节点：[/b][/td][td][b]权限描述：[/b][/td][/tr]
+[tr][td]EconomyShopGUI.sellall.<选区>[/td][td]允许在[b]指定[/b]的商店页面使用 [font=Consolas]/sellall[/font] 命令[/td][/tr]
+[tr][td]EconomyShopGUI.sellall.all[/td][td]允许在[b]所有[/b]的商店页面使用 [font=Consolas]/sellall[/font] 命令[/td][/tr]
+[tr][td]EconomyShopGUI.sellallitem.<选区>[/td][td]允许在[b]指定[/b]的商店页面使用 [font=Consolas]/sellall item[/font] 命令[/td][/tr]
+[tr][td]EconomyShopGUI.sellallitem.all[/td][td]允许在[b]所有[/b]的商店页面使用 [font=Consolas]/sellall item[/font] 命令[/td][/tr]
+[tr][td]EconomyShopGUI.sellallhand.<选区>[/td][td]允许在[b]指定[/b]的商店页面使用 [font=Consolas]/sellall hand[/font] 命令[/td][/tr]
+[tr][td]EconomyShopGUI.sellallhand.all[/td][td]允许在[b]所有[/b]的商店页面使用 [font=Consolas]/sellall hand[/font] 命令[/td][/tr]
+[tr][td]EconomyShopGUI.sellgui.<选区>[/td][td]允许在[b]指定[/b]的商店页面使用 [font=Consolas]/sellgui[/font] 命令[/td][/tr]
+[tr][td]EconomyShopGUI.sellgui.all[/td][td]允许在[b]所有[/b]的商店页面使用 [font=Consolas]/sellgui[/font] 命令[/td][/tr]
+[/table]
+[page]
+[size=5][b]排除问题：[/b][/size]
+学会如何自行解决阻止插件启动的烦人配置和插件问题。
+
+[size=4][b]01. 检查 [font=Consolas]latest.log[/font] 并寻找问题：[/b][/size]
+插件将会记录问题、警告和服务器启动时的信息。先从这里看起！
+
+[list]
+[*]你的控制台日志有显示日志行数的限制，并不会在服务器启动完成后仍可浏览启动时的输出信息。它将会快速地在屏幕上划过然后消失；
+[*]你可以在 <根文件夹>/[b]logs/[/b] 文件夹中找到 [font=Consolas]latest.log[/font]（以及被压缩打包的历史日志）；
+[*]你应当能直接通过服务器提供商给予的“文件浏览器”功能访问服务器上的文件夹，或是通过 FTP、SFTP 等方式连接（若你找不到这些，你应当联系服务器提供商的客服）；
+[*]如果你不能浏览服务器的文件，排查问题将会因为无法获取到日志文件而非常困难；
+[*]你可以在 Discord 群组聊天上传或分享文件，具体方式如下：
+[list]
+[*][b]甲.[/b] 将文件后缀改为 Discord 服务器允许上传的扩展名（如 .txt 文件就能上传至服务器）
+[*][b]乙.[/b] 复制日志文件的内容至诸如 https://hasteb.in/ 或 https://ghostbin.co/ 等的在线剪贴板网站（这些文件几周后将会自动删除），保存并复制这些文本的链接，并将这段网址粘贴在聊天栏中（也可以使用 https://pastebin.com/，但可能要求你设置过期时间）；
+（译者注：推荐国内网友使用 https://paste.fastmirror.net/ 或 https://bytebin.lucko.me/ 等剪贴板网站。）
+[/list][/list]
+
+[size=3][b]02. 检查你是否使用了插件的最新版本：[/b][/size]
+
+[list]
+[*]在控制台或以管理员身份在游戏中输入命令 [font=Consolas][b]/version <插件名称>[/b][/font] - 这将会告诉你指定插件的版本，并显示是否有新版本可用。
+[/list]
+[size=3][b]03. 检查你的服务器是否是最新版本（Bukkit/Spigot/Paper）：[/b][/size]
+[list]
+[*]这些问题一般只会在[b]最新版本的 Minecraft[/b] 上出现。[i]旧版本的 MC 一般会有一个不再更新的最终构建放出[/i]；
+[*]执行 [font=Consolas][b]/version[/b][/font] 命令将会显示服务器的版本，并显示你的构建版本落后最新版多少个版本；
+[*]推荐在你使用需要 Minecraft 核心功能的时候将服务器更新到最新版本，有些情况下插件会使用当前构建版本并不存在的内容，并且我们也建议养成一个月更新一次服务端核心的习惯。
+[*]注意：若你正在使用 Minecraft 最最新的版本（新到连 Mojang 都只是刚刚发布了正式版的那种）。你可以想象到会有许多的兼容性问题，这会持续几个月，除非开发者们更新了他们在最新版本的 Minecraft 的代码。总之请耐心。
+[/list]
+[size=3][b]04. 如何更新/安装插件（请参阅教程章节）[/b][/size]
+
+[size=3][b]05. 请使用 /restart 命令，而不是 /reload 命令[/b][/size]
+
+当插件还在运行的时候输入 /reload 命令来重载是非常不明智的：
+[list]
+[*]它不会正确更新你新安装的任何插件；
+[*]它会破坏一些在开服初期需要初始化的插件，导致其重载后无法工作；
+[*]即使 ESGUI 能够正常运转，其他插件很有可能在使用 /reload 命令之后损坏，因此强烈建议在添加/删除/更新插件后重启服务器。
+[/list]
+
+[size=3][b]06. 有关 YAML 的操作内容（见操作教程章节）[/b][/size]
+[size=3][b]07. 输入命令 [font=Consolas]/plugins[/font]（或[font=Consolas]/pl[/font]）来检查禁用的插件：[/b][/size]
+[list]
+[*]这是一种检查插件是否被禁用的方式（在游戏内可见被禁用插件名称为红色），插件在启动时出现错误，因而会被禁用，这时候你就需要找到 [b]latest.log[/b] 来具体排查其中的原因。
+[/list]
+[size=3][b]08. 如何修改玩家经济（见操作教程章节）[/b][/size]
+[size=3][b]09. 基本权限列表（见权限章节）[/b][/size]
+[size=3][b]10. 识别冲突的插件和命令：[/b][/size]
+[b]A. 插件列表：[/b]
+[list]
+[*]在服务器上[b]你只能拥有一个权限插件[/b]。如果安装多于一个的权限管理插件可能会造成奇怪的权限问题；
+[*]你选择的大部分权限插件都可以正常运转，但请只使用一个，并确保它会和你的服务器版本兼容；
+[*]通用的权限插件：[url=https://www.spigotmc.org/resources/luckperms.28140/]LuckPerms[/url]（强烈推荐！）、PowerRanks、GroupManager、PermissionX（即 PEX。已经停更，慎用）、MyPermissions、bPermissions、zPermissions、PowerfulPerms、PermissionsBukkit、BungeePerms 等...
+[*]Bukkit 的 permissions.yml 不受本插件支持/不会正常工作。请尽量使用权限插件。
+[/list]
+[b]B. 命令：[/b]
+[list]
+[*]请先阅读你所有插件的页面介绍/维基、命令列表、权限列表和更新日志。了解插件功能会让你在配置插件时更有余地，学会配置是作为一个优秀的服主/管理员/维护者所必需的；
+[*]如果两个插件注册了同一个命令，例如 [font=Consolas]/shop[/font]，你可以：
+[list]
+[*][b]A. [/b]移除不需要却注册了相同命令的插件；
+[*][b]B. [/b]使用 commands.yml（在服务器的根目录）来覆盖或重设命令优先处理的插件。
+[/list][/list]
+
+[b]上述情况：[/b]
+[list]
+[*]如果你存在着冲突命令、插件、权限或其他内容，你可以逐个找出造成问题的插件，并将其禁用或卸载，一些简单的规则可用找到问题插件：
+[list=1]
+[*]出现问题时你是否添加/修改/删除了什么？
+[*]找到可能存在问题的插件，将其删除；
+[*]重启服务器；
+[*]测试/复现问题。
+[list]
+[*]若问题存在，则按照第一步重新开始；
+[*]若问题解决，那么最近一次禁用或删除的插件可能是问题的根源 - 试着浏览插件文档来解决问题！
+[/list][/list][/list]
+[quote][b]若你有一个测试服务器或一个插件管理插件（例如 Plugman）：[/b]你可以不用重启而使用插件的管理或卸载功能来复现或解决插件的问题。在游戏内载入/卸载插件很有可能不受支持，并有可能在正确重启之前不能正常工作。[/quote]
+
+[b]Bukkit 的 [font=Consolas]Commands.yml[/font] 文件示例（也可见操作教程的 YAML 格式）：[/b]
+[code]aliases:
+  promote:
+  - lp user $1 promote ranktrack
+  # 上述命令会创建一个别名命令，在玩家执行的时候将执行下方的命令，并将参数位置替换为玩家的名称
+  demote:
+  - lp user $1 demote ranktrack
+  # 与上述相同，但是是降级命令
+  superpickaxe: []
+  # 上述设置将禁用 superpickaxe 命令
+  dsrv:
+  - discord $1-
+  # 上述设置为 discordSRV 插件创建了一个别名命令 (命令的等价用法)，该命令将会将其之后的所有参数都传递至此处
+  shop:
+  - EconomyShopGUI:shop $1-
+  # 上述设置将会使 /shop 命令由 ESGUI 处理 (并接受任意数量的参数等内容)
+  shop2:
+  - 其他插件:shop $1-
+  # 上述命令将会打开在执行 /shop2 命令时交由“其他插件”处理 (并接受任意数量的参数等内容)[/code]
+
+[size=3][b]11. 如何重置插件内容[/b][/size]
+我们已经试过了很多东西，我们还是需要重新开始...
+
+[list=1]
+[*]Jar 文件可能是损坏的（可见操作教程 04 - 如何升级/安装插件）
+[list]
+[*]从插件的资源页下载插件（如：[url=https://www.spigotmc.org/resources/economyshopgui.69927/]Spigot[/url]）；
+[*]从服务器目录 [font=Consolas]plugins/[/font] 下[i]删除[/i]原有的插件 [i]jar[/i] 文件（建议先重启服务器）；
+[*]将你刚才下载的文件放入服务器下的 [font=Consolas]plugins/[/font] 目录；
+[*]重启服务器。
+[/list]
+[*]若有需要，重置插件的配置文件：
+[list]
+[*]按需备份已有的插件配置；
+[*]删除所有 [font=Consolas]plugins/EconomyShopGUI[/font] 文件夹下的内容，或将它们重命名
+[list]
+[*]这是因为插件只会检查 [font=Consolas]sections.yml[/font]、[font=Consolas]shops.yml[/font]、[font=Consolas]config.yml[/font] 文件和 [font=Consolas]LanguageFiles[/font] 文件夹，而忽略其他文件的存在。
+[/list][/list][/list]
+这应该能解决大部分的插件问题。
+
+[size=3][b]12. 某些命令不能正确工作：[/b][/size]
+[list=1]
+[*]它是否在 ESGUI 的配置文件中被禁用了？（命令本身，或是指定世界？）
+[*]你是否为玩家分配了执行命令所需的权限（删除其他插件，或使用 commands.yml）（见上方命令冲突章节）？
+[/list]
+[size=3][b]13. 背包标题在超过 32 个字符时出现错误[/b][/size]
+[list]
+[*]修复 [font=Consolas]lang-<你的语言>.yml[/font] 下 [font=Consolas]inventory-<任意>-title:[/font]，使其不超过 32 个字符，彩色代码字符也计入在内。这些地方的彩色代码可不少！
+[*]这是一个存在于 1.12 或更低版本的问题。
+[/list]
+[size=3][b]14. 插件被禁用/闪红或 [font=Consolas]/shop[/font] 弹出内部错误：[/b][/size]
+
+这些问题非常常见，原因大多很集中：
+[list=1]
+[*]你没有安装经济插件（见上依赖插件章节）；
+[*]你没有安装 Vault（见上依赖插件章节）；
+[*]你手动修改了插件的 YML 文件，并且其中存在错误。（见 YAML 格式章节）验证你的 YML 语法，若此时有其他错误，插件会将它们发送在服务器后台上；
+[*]你没有使用 Minecraft 的最新版本，ESGUI 的默认设置仅适用于最新版本（见下一个问题）；
+[*]如果遇到其他问题：检查你的服务器最新日志！
+[/list]
+[size=3][b]15. 商店内出现屏障方块：[/b][/size]
+
+默认的 ESGUI 配置是[i]只为最新版的 MC[/i]设计的。若你正在使用旧版本，你可能需要执行下面之一的操作。
+
+[b]A. [/b] 使用 Discord 聊天群组 #shop-file-sharing 频道中对应你的 Minecraft 版本的文件：
+- 注意：旧版本文件可能需要转化（频道内可见相关提醒）
+
+[b]B. [/b] 通过 [font=Consolas]/editshop[/font] 命令手动移除商店内的无效物品：
+- 注意：无效物品会记录在服务器的后台上，所以你可以快速找到这些物品。
+
+[b]C. [/b] 通过编辑配置文件手动移除无效的物品：
+- 注意：无效物品会记录在服务器的后台上，所以你可以快速找到这些物品。另见 YAML 格式章节。
+
+[size=3][b]16. 放置的所有刷怪笼均为猪刷怪笼：[/b][/size]
+所有我购买的刷怪笼在放置后都变成了猪刷怪笼：
+
+[list]
+[*]这通常是因为 ESGUI 和其他插件（同时尝试修改某个事件）导致的兼容性问题；
+[*]或者是有第三方插件正在阻止此类行为。请转到第 10 个问题来排查冲突插件，它可能需要设置配置来允许刷怪笼的放置/破坏事件才可正常工作（例如：CMI 默认会阻止此类行为）
+[/list]
+如何修复：
+
+[list]
+[*]插件目前只和 config.yml 中列出的插件兼容（请先检查该文件，维基可能更新不及时）；
+[*]禁止玩家在商店中购买刷怪笼，或将该选区在 sectoins.yml 下禁用；
+[*]购买支持自定义 NBT 数据的 ESGUI 付费版插件，并将这些 NBT 物品添加至商店。
+[/list]
+[size=3][b]17. 刷怪笼中的实体不会正常生成：[/b][/size]
+
+此问题通常与 ESGUI 无关。
+
+[list]
+[*]ESGUI 不会尝试修改任何和怪物生成有关的内容。
+[list]
+[*]例如：史莱姆刷怪笼的生成条件与原版刷怪行为相同：处于史莱姆区块或沼泽生物群系（见 Minecraft 官方维基）；
+[*]例如：被动生物只能在草方块上生成（见 Minecraft 官方维基）。
+[/list]
+[*]第三方插件正在阻止怪物生成。
+[list]
+[*]诸如 WorldGuard 一类的插件能够阻止怪物生成（默认该标志不会启用）；
+（译者注：mob-spawing 标志会阻止区域内的怪物生成，默认情况下任何区域或世界都不会启用该标志）
+[*]若为其他插件，请转到第 10 条来排查相关内容。
+[/list][/list]
+[size=3][b]18. 玩家不能放置/破坏方块：[/b][/size]
+
+此问题通常与 ESGUI 无关。
+
+ESGUI 不会阻止任何的方块放置或是破坏时间。下列（或其他的）插件可能会影响这些行为：
+[list]
+[*]（非插件）出生点保护。内置于 bukkit.yml；
+（译者注：此处有误，出生点的半径保护应当在 server.properties 下。）
+[*]Essentials 的 Protect 附属模块会阻止玩家在保护区域放置或破坏方块；（修改配置文件或建议删除）
+（译者注：默认情况下 Essentials 的 Protect 模块通过权限阻止玩家破坏方块，只需给予 essentials.build.* 权限即可解决该问题，并将世界保护交由诸如 WorldGuard 等的插件处理。）
+[*]WorldGuard 能阻止玩家在无权限区域内的方块放置/破坏行为；
+[*]其他插件，排除方法见第 10 条。
+[/list]
+[size=3][b]19. 玩家使用 [font=Consolas]/sell[/font] 命令时的价格不同：[/b][/size]
+
+命令 [font=Consolas]/sell[/font] 不是由 ESGUI 注册的。它通常属于 Essentials(X)。
+
+[list]
+[*]ESGUI 的出售命令是 [font=Consolas]/sellall[/font]
+[/list]
+若要解决此问题，你可以选择下列方法之一：
+
+[list]
+[*]A. 删除 Essentials 下 worth.yml 的内容并输入命令 [font=Consolas]/ess reload[/font]；
+[*]B. 通过 commands.yml 将命令 [font=Consolas]/sell[/font] 交由其他插件处理或禁用；
+[*]C. 通过权限阻止玩家执行该命令（需要通过你的权限插件设置）。
+[/list]
+ESGUI 可能会在将来退出同步这些内容的方法。敬请期待。
+[page]
+[size=5][b]操作教程：[/b][/size]
+学习如何在不改动已有设置的情况下更新 EconomyShopGUI。
+
+[size=4][b]更新/安装插件[/b][/size]
+
+当插件有更新可下载时，在插件出现重大更新等需要改动或升级配置文件的情况时，浏览更新日志很重要（这些内容通常会出现在插件资源页面）。
+
+[list]
+[*]更新前记得备份！我们越不希望文件丢失或被覆盖，这种意外就越有可能发生。
+[/list]
+
+当你阅读了更新日志之后，是时候更新插件的 jar 文件了，它很简单。你只需要替换服务器根目录的 plugins 文件夹中旧的 jar 文件即可。
+
+[list]
+[*]最好[b]删除原有的 jar 文件[/b]，然后手动[b]上传新的文件[/b]来避免文件损坏的隐患。
+[/list]
+[quote][b][color=Blue]！[/color][/b]大多数的插件名称后会带有版本号。例如：[font=Consolas]EconomyShopGUI 3.0.8[/font][/quote]
+
+[size=4][b]如何找到你的插件文件[/b][/size]
+
+[quote][b][color=Red]！[/color][/b]编辑文件前请先了解有关 YAML 的语法知识！该格式的配置不容忍任何错误！请在保存前[url=https://jsonformatter.org/yaml-validator]验证语法有效性[/url]！[/quote]
+
+[list]
+[*]首先你需要找到服务器的 [font=Consolas]plugins[/font] 文件夹（[b]请联系你的服务器提供商获取打开服务器文件夹的方法[/b]）
+[*]在 [font=Consolas]plugins[/font] 文件夹中，找到 [font=Consolas]EconomyShopGUI[/font] 文件夹并打开（若你购买了付费版，则你需要找到 [font=Consolas]EconomyShopGUI-Premium[/font] 文件夹）
+[*]在这里你会找到就的 [font=Consolas]config.yml[/font]、[font=Consolas]Example Items.txt[/font]、[font=Consolas]shops.yml[/font] 和 [font=Consolas]sections.yml[/font]（部分设备中的后缀名称可能是隐藏的）
+[*]用服务器的面板管理系统或 [url=https://notepad-plus-plus.org/downloads/]Notepad++[/url] 打开文件。（这些是最简单的办法，你也可以使用 FTP/文件同步系统，虽然会略微复杂一些。请联系服务器提供商以获取更多信息）
+[*]现在可以开始编辑你的配置文件/商店/选区！请见 config.yml、sections.yml、shops.yml 和 语言文件章节来获取更多细节。
+[*]需要注意的是，YAML 不能包含任何语法错误。所以在联系获取帮助之前请[url=https://jsonformatter.org/yaml-validator]确保你的文件没有基础的语法错误[/url]。
+[/list]
+
+[size=4][b]我如何升级至付费版？[/b][/size]
+[list]
+[*]在 [url=https://songoda.com/marketplace/product/economyshopgui-premium-esgui-prem.595]Songoda[/url]（现已改名Craftaro）或 [url=https://polymart.org/resource/economyshopgui-premium.908]Polymart[/url] 上购买本插件的付费版；
+[*]从服务器中删除免费版（只需要删除 jar 文件！），并将付费版安装/上传至服务器文件夹；
+[*]然后使用导入命令将你的免费版插件配置导入付费版。非常简单！
+[list]
+[*][i]导入之后[/i]通常即可移除免费版的插件文件夹。
+[/list][/list]
+
+[size=4][b]升级商店和选区配置而不丢失任何已有改动（备份文件）[/b][/size]
+
+若要更新这些配置，你先要找到插件的 plugins 文件夹。
+
+若要确保你没有丢失在商店和选区内的任何数据/改动，你可以：[b]备份文件并将其转移到其他地方保存，同时删除原本的文件。或是将文件从 [font=Consolas]shops.yml[/font] 重命名为 [font=Consolas]shops-old.yml[/font]，从[font=Consolas]sections.yml[/font] 重命名为 [font=Consolas]sections-old.yml[/font][/b]。（任何名称均可，但绝不能是原本的名称，因为这会被插件识别并导致覆盖。）
+
+若插件找不到商店、选区、语言或配置文件，它会在服务器重启或你输入 [font=Consolas]/sreload[/font] 尝试重新生成一份默认配置（选项、值、价格、显示名称等等...）
+
+现在你有两个商店和选区的配置（新版和旧版）。如果你的操作正确，当前的配置文本名称应当为 [font=Consolas]shops.yml[/font] 和 [font=Consolas]sections.yml[/font]，并且均位于 EconomyShopGUI 文件夹下。
+
+最重要的异步，你需要复制旧配置文本中所有的数据/改动到新文件中，但注意要保留新出现的选项不被修改（例如选项名称、功能...），不然的话就可能会让插件无法使用。
+
+[list]
+[*]在 ESGUI 更新后，一些键和其他设置的格式会产生变化，选项 [font=Consolas]config-version: #[/font] 的数字也会产生变化。
+[*]若你找到了一些不能正确工作的内容，请先检查文件中的键/设置是否与该维基的最新版本和最近的更新日志相同！
+[/list]
+如果你操作正确，重启/重载服务器或插件之后，游戏内的商店将会使用你之前所做的修改配置来显示内容。
+
+若你在后台找到了有关的报错（[url=https://pastebin.com/DNF5frGr]例如这个[/url]）或插件被禁用。很有可能是因为新的配置文件中出现了错误。浏览排除问题章节来获取有关解决方法。
+
+[size=3][b]更新商店和选区的配置[/b][/size]
+
+若你不需要保留任何的改动，更新只需删除旧的 shops.yml 和 sections.yml 并重启/重载服务器或重载插件。
+
+[size=4][b]如何更新/安装插件：[/b][/size]
+[list=1]
+[*]当更新插件时，[b]先阅读[/b]插件的[b]更新日志[/b]，这些内容一般会发布在插件的资源页面。根据插件更新的情况，你可能需要做出一些额外的改动，否则就只是简单地将插件的 jar 文件替换；
+[*]从 [url=https://www.spigotmc.org/resources/economyshopgui.69927/]spigot[/url]/[url=https://dev.bukkit.org/projects/economyshopgui]bukkit[/url]/[url=https://polymart.org/resource/456]polymart[/url] 等下载插件。- 不要使用服务器提供商给予的下载途径，这些内容一般是过时/不可信的！
+[*]重启服务器（插件应当会正常工作！）
+[*]可选操作/按需使用：检查插件中的配置文本（一般位于 [font=Consolas]plugins/<插件名称>/[/font] 文件夹下）并按个人喜好配置插件，以及修改默认的配置文件（请先阅读维基/文档/插件评论！）（修改插件设置可能需要使用插件的重载命令，或是重启服务器）
+[/list]
+
+[size=4][b]如何修改玩家经济（作为管理员身份）：[/b][/size]
+
+[list]
+[*]请检查[b]你兼容 Vault 的经济插件的命令列表[/b]（例如 Essentials 的命令列表[url=https://essinfo.xeya.me/commands.html]见此[/url]）
+[*]Vault 只是一个 API（用于提供经济相关的操作，并不会注册任何对修改经济有帮助的命令）
+（译者注：Vault 不是完全没有命令，只是这些命令用于显示服务器使用的权限插件、聊天插件、经济插件等核心信息，对本章节所提修改经济的内容完全不沾边。）
+[*]ESGUI 不会存储或修改玩家经济。这些应当由你的经济插件处理，然后 Vault 负责在插件之间传递它们。
+[*]若你正在使用 [url=https://essinfo.xeya.me/commands.html]Essentials(X)[/url]，修改玩家经济的命令就是 [font=Consolas][url=https://essinfo.xeya.me/commands.html]/eco[/url][/font]。[url=https://essentialsx.netlify.app/wiki/Home.html]详细信息请阅读 Essentials 的维基页面！！[/url]
+[/list]
+
+[size=4][b]如何制作隐藏商店：（替代方法）[/b][/size]
+
+在未来更新中添加该功能前，你可以通过该替代方法制作一个“隐藏商店”：
+
+[list]
+[*]配置 shops.yml 的物品；
+[*]配置 sections.yml 下的选区/商店物品名称为玻璃板，且名称与装饰物品相同（例如（与填充物品相同的 [font=Consolas]""[/font]），[b]并[/b]在 sections.yml 下启用填充物品选项，这样就没有人会怀疑）
+[*]设置权限，让所有人都可以进入普通/其他商店（需要在你的权限管理插件中定义每个权限节点，不要使用 [font=Consolas]EconomyShopGUI.shop.all[/font]）
+[*]若有需要，可进行如下操作：将一个绑定了以控制台身份执行命令 [font=Consolas]/shop <选区> <玩家>[/font] 的 NPC，或是将隐藏商店的访问权限分配给 VIP 用户组的玩家，这样这些玩家就可以通过命令打开商店（或是点击 GUI 界面里面“虚假”的填充物）。
+（译者注：不知道为什么，个人会觉得这样的方法很好玩，很滑稽。）
+[/list]
+[size=4][b]如何存储/分享物品形式的经济单位：[/b][/size]
+
+（将经济存储在你的 Vault/经济插件 或 [font=Consolas]/pay[/font] 命令的替代方法）
+
+设置一个物品的附魔，或其他方法使其在生存中不可获取，并将其的买价和卖价设置为相同（使用隐藏的 NBT 标签会更为方便，但这是付费版功能）。示例：[code]  `1000`:
+    material: PAPER
+    name: "&a$5000 兑换券"
+    buy: 5000
+    sell: 5000
+    lore:
+    - "&a$5000 兑换券"
+    - "可在商店处兑换并存入账户"
+    NBTData: {ESGUI:{Voucher:5000}} #付费版独有功能[/code]
+注意：该功能与现实中从银行存取钱是相同的。若你不小心遗失，那么这部分钱将永远不能找回。取出/存入的钱在任何支持“银行/基于 Vault 的经济插件”中都可使用（不只是 ESGUI）。
+
+[size=4][b]如何创建基于物品的经济：[color=Orange]*付费版独有功能[/font][/b][/size]
+
+物品经济已经是本插件的独特功能，但它在你的游戏能创建自定义物品货币时能更加有用。
+
+[size=3][b]操作步骤：[/b][/size]
+
+EconomyShopGUI 如果没有简单的步骤来实现这个功能，那么它就不会有着操作简单的卖点。
+
+若要为一个物品设置自定义货币，你需要输入下列命令：
+
+[list]
+[*][b]选区[/b]
+[list]
+[*][b]命令：[/b][font=Consolas]/editshop editsection <选区> set economy handItem[/font]
+[/list][*][b]商店物品[/b]
+[list]
+[*][b]命令：[/b][font=Consolas]/editshop edititem <选区> <物品> set economy handItem[/font]
+[/list][/list]
+
+这些命令将会将你手上的物品设置为可被识别的物品货币，并将其应用到指定的选区/物品。免去你自己设定格式的繁琐步骤！
+
+额外地，你可以从配置文本中复制配置的格式，放入默认的经济提供插件中。
+
+[size=3][b]格式：[/b][/size]
+
+[b]示例：[/b]
+[list]
+[*]以玩家头颅实现的自定义物品经济：
+[list]
+[*][b]格式：[/b][font=Consolas]economy: ITEM:material:PLAYER_HEAD name:&6&lCustom coin skullowner:Notch id:Creator[/font]
+[/list][*]以带有自定义名称和描述及自定义模型数据（Custom Model Data）实现的自定义物品经济：
+[list]
+[*][b]格式：[/b][font=Consolas]economy: ITEM:material:ARROW name:&6&l狙击枪弹药 lore:&c该子弹可用于下列枪械的装填:\n&a巴雷特\n&aP90 CustomModelData:1003 id:Bullets[/font]
+[/list][*]以带有自定义附魔和 NBT 数据实现的自定义物品经济：
+[list]
+[*][b]格式：[/b][font=Consolas]ITEM:material:Diamond name:&9Real money enchantments:SHARPNESS:5,EFFICIENCY:3,MENDING,UNBREAKING:2 NBTData:{Damage:5}[/font]
+[/list][/list]
+
+[size=3][b]自定义货币显示名称：[/b][/size]
+
+使用货币的 ID，你可以设置物品的显示名称，这是用于展示在商店物品上的货币名称。
+
+你要做的第一步就是通过“id”标签给予物品一个 ID，见上述内容可了解它要如何完成。
+
+之后你就可以在 config.yml 下通过 ID 设置自定义显示名称，在这里可以了解如何制作自定义物品的货币经济。
+
+[b]允许的物品选项：[/b]
+[list]
+[*][b]id[/b]
+[list]
+[*][b]描述：[/b][i]用于作为经济物品的 ID，这一般用于货币的单数和复数显示名称。[/i]
+[*][b]示例：[/b][font=Consolas]id:Bullets[/font]
+[/list][*][b]material[/b] - 物品的材质（种类）
+[list]
+[*][b]描述：[/b][i]物品的种类。[/i]
+[*][b]示例：[/b][font=Consolas]material:ARROW[/font]
+[/list][*][b]name[/b] - 物品的显示名称，支持 16 进制彩色。
+[list]
+[*][b]描述：[/b][i]物品的名称。支持 16 进制彩色。[/i]
+[*][b]示例：[/b][font=Consolas]name:&9&l自定义硬币[/font]
+[/list][*][b]lore[/b]
+[list]
+[*][b]描述：[/b][i]物品的描述。支持 16 进制彩色。使用“\n”换行。[/i]
+[*][b]示例：[/b][font=Consolas]lore:这是一个自定义描述\n&c你还可以在这里使用 &4&l自定义 &c颜色![/font]
+[/list][*][b]skullowner[/b]
+[list]
+[*][b]描述：[/b][i]头颅对应的玩家[/i]
+[*][b]示例：[/b][font=Consolas]skullowner:Notch[/font]
+[/list][*][b]skull-texture[/b]
+[list]
+[*][b]描述：[/b][i]物品的头颅材质，有效值可从[url=https://minecraft-heads.com/custom-heads/]这里[/url]获取[/i]
+[*][b]示例：[/b][font=Consolas]skull-texture:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA
+6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2ZkYWI0MDQzNGVkNWQwMWY1OGM0NWNhMGM5ZmFkYTQ2NjJlMTc3MmZmNDNlMjk3NDk3OTQ0MGE1Y2ZlMTVjOSJ9fX0=[/font]
+[/list][*][b]enchantments[/b]
+[list]
+[*][b]描述：[/b][i]物品的附魔。使用英文逗号“,”将多个附魔分隔。[/i]
+[*][b]示例：[/b][font=Consolas]enchantments:SHARPNESS:5,EFFICIENCY:5,MENDING,ecoenchants:BLAST_MINING:3,advancedenchants:STRIKE:2,excelentenchants:BLAST_MINING:3[/font]
+[/list][*][b]potiontypes[/b]
+[list]
+[*][b]描述：[/b][i]物品的药水效果。使用英文逗号“,”将多个效果分隔。[/i]
+[*][b]示例：[/b][font=Consolas]potiontypes:FIRE_RESISTANCE,STRONG_HARMING,LONG_INVISIBILITY[/font]
+[/list][*][b]stew-effect[/b]
+[list]
+[*][b]描述：[/b][i]当物品为迷之炖菜时所包含的效果。使用英文逗号“,”将多个效果分隔。[/i]
+[*][b]示例：[/b][font=Consolas]stew-effect:WITHER,POISON[/font]
+[/list][*][b]instrument[/b]
+[list]
+[*][b]描述：[/b][i]山羊角所对应的演奏声音[/i]
+[*][b]示例：[/b][font=Consolas]instrument:ADMIRE[/font]
+[/list][*][b]CustomModelData[/b]
+[list]
+[*][b]描述：[/b][i]物品的自定义模型数据。[/i]
+[*][b]示例：[/b][font=Consolas]CustomModelData:1003[/font]
+[/list][*][b]NBTData[/b]
+[list]
+[*][b]描述：[/b][i]物品的 NBT 源数据。[/i]
+[*][b]示例：[/b][font=Consolas]NBTData:{Damage:50,HideFlags:127}[/font]
+[/list][/list]
+
+[size=4][b]如何制作自定义 NPC 商店：[/b][/size]
+
+[quote][color=Green][b]√[/b][/color] 在本教程中我们使用 [url=https://ci.citizensnpcs.co/job/Citizens2/]Citizens[/url]，其他的插件也会正常工作，只要它支持点击执行命令。[/quote]
+
+[b]1. 使用命令 [font=Consolas]/npc create Test[/font] 创建一个 NPC，见[url=https://wiki.citizensnpcs.co/Commands]这个维基[/url]来获取命令的更多用法。[/b]
+[img]https://2522957397-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-M6QXvrDDroId1RhlXgl%2F-MZmdrb_zzELOT205C0e%2F-MZmo9fypFRLtpcNAnGG%2F2021-05-03_17.19.04.png?alt=media&token=3f60fc00-3b6a-4496-8c8c-01e7f8f0128d[/img]
+
+[b]2. 将开启商店的命令 [font=Consolas]/npc command add shop <选区> <玩家名称>[/font] 绑定在该 NPC 上，来为点击这个 NPC 的玩家打开商店。[/b]
+
+[quote][b][color=Blue]！[/color][/b]你也可以将命令 [font=Consolas]/npc command add shop <玩家名称>[/font] 绑定至 NPC 来打开商店主页面，而不是直接打开某个商店页面。[/quote]
+
+[img]https://2522957397-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-M6QXvrDDroId1RhlXgl%2F-MZmdrb_zzELOT205C0e%2F-MZmvrTDSf1HScW2BwVJ%2F2021-05-03_17.52.59.png?alt=media&token=4d92ba75-c3d9-4f6b-b4ad-c26c00eadcc9[/img]
+
+[quote][b][color=Blue]！[/color][/b]注意，这个命令将会在后台执行，所以玩家不需要权限也可以打开这个商店页面。使用 -p 参数才可以在玩家点击 NPC 后以玩家身份执行命令。见[url=https://wiki.citizensnpcs.co/NPC_Commands]这个维基[/url]来获取点击执行命令的相关信息。[/quote]
+
+[b]3. [i]可选[/i][/b]：在 config.yml 中禁用返回按钮，这样玩家就不能通过按钮返回主菜单并打开其他菜单了。（这样做可以让你的服务器拥有只能通过 NPC 打开的商店）
+
+[img]https://2522957397-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-M6QXvrDDroId1RhlXgl%2F-MZmdrb_zzELOT205C0e%2F-MZmyd-_HND9CSt9JMzI%2F2021-05-03_18.05.20.png?alt=media&token=d2edf1d9-8e3f-4a5c-9f76-3a00f1fa7eac[/img]
+
+[b]4. [i]可选[/i][/b]：为防止玩家通过命令/GUI 界面打开商店，你需要用你的权限管理插件做这些事：将下列权限对所有你不想要通过 /shop 命令打开商店的用户组设置为拒绝（通常为 default 默认用户组）：
+
+[b]4a. [/b]禁用/取消/给予负权限 EconomyShopGUI.shop（/shop 命令本身）
+
+[b]4b. [/b]允许/开放权限 EconomyShopGUI.shop.all（[i]或指定选区[/i]，这样该权限就能允许玩家进入某个指定的商店）
+
+如果设置了一个指定/单独的 NPC 商店：不要给予权限 EconomyShopGUI.shop.all。你需要为[b]每一个[/b]玩家可以访问的商店选区逐个给予访问权限（例如 EconomyShopGUI.shop.redstone 等...）。不要设置/允许玩家只能通过 NPC 访问的商店的权限。玩家只能通过绑定了以控制台身份执行命令 /shop <选区> <NPC 插件的玩家变量> 的 NPC 访问商店。
+
+[size=4][b]如何设置 DiscordSRV 联动：[/b][/size]
+
+DiscordSRV 联动允许插件记录通过 GUI 界面和命令产生的交易记录，并将其发送在 Discord 的指定频道中。见下文来为你的服务器设置这样的交易同步操作。
+
+[list=1]
+[*]安装并配置 DiscordSRV 插件，确保其正常运行。你可以在他们的网站上找到[url=https://docs.discordsrv.com/Installation/]相关教程[/url]；
+[*]当 DiscordSRV 启用后，你需要先在该插件的 config.yml 下建立一个用于发送日志的频道。见[url=https://docs.discordsrv.com/installation/initial-setup/#set-up-a-basic-channel-relay]此[/url]获取建立频道的有关信息；
+[*]在创建并启用 DiscordSRV 的频道后，使用命令 [font=Consolas]/discordsrv reload[/font] 来重载插件，并在 EconomyShopGUI 的 config.yml 下，设置 [font=Consolas]enable-discordsrv-hook: true[/font]；
+[*]将频道[b]名称（不是 ID）[/b]添加至 DiscordSRV 联动设置下；
+[*]按喜好配置将要发送至 Discord 聊天群组的聊天信息，默认情况下它会使用嵌入样式的消息，但你也可以通过添加 [font=Consolas]raw: ""[/font] 改为发送原始消息；
+[*]最终你需要通过命令 [font=Consolas]/srelaod[/font] 重载 EconomyShopGUI，当正确配置上述内容时，你将会见到 Discord 聊天群组中的交易信息开始出现！
+[page]
+[size=5][b]限制物品[/b][/size]
+本页面介绍了付费版的 EconomyShopGUI 限制物品功能
+
+[quote][b][color=Green]√[/color][/b]你可以对同一个物品使用出售限制和库存限制。[/quote]
+
+[size=4][b]限制库存[/b][/size]
+
+限制库存功能在你想要限制某些特殊物品时很有用，这能让它只能在小范围内流通。
+
+这个功能有两种限制模式：
+
+[list=1]
+[*][b]全局购买限制[/b] = 限制全服（每个玩家）只能购买一定数量的指定物品。
+[*][b]玩家购买限制[/b] = 按玩家限制物品的购买量。
+[/list]
+
+你也可以指定一个补货时间，在物品售罄时会开始倒计时，在结束后为玩家或全服补货。
+
+该功能的相关数据会存储在一个 SQLite 数据库中，使得服务器重启之后的补货倒计时能够继续正常工作。
+
+[quote][b][color=Green]√[/color][/b]当使用物品选项“refill-stock”，物品的玩家或全局补货数量会在物品重新卖给商店时增加。[/quote]
+
+[b]全局库存：[/b]
+
+对物品使用设置 [b][font=Consolas]stock-limit-global[/font][/b] 可指定物品的库存数量。
+
+所有玩家共享剩余可购买的物品数量，若某个玩家购买了 5 个物品，那么其他玩家能够购买的数量也会相应地减少 5 个。
+
+当其他玩家购买了一定数量的物品，使其的库存下降到 0，也就是没有足够的库存可供出售时，其他尝试交易的玩家将收到一条提醒。告知他们商品已被售罄。
+
+对物品使用设置 [b][font=Consolas]auto-restock-global[/font][/b] 将会在倒计时为 0 时自动重置库存。所用时间长度由指定时间单位和具体数量构成。例如将该项设置为 [font=Consolas][b]auto-restock-global: 14d 12h 10m[/b][/font] 则会在售罄 14天12时10分 后补货。
+
+[size=3][b]玩家库存：[/b][/size]
+
+对物品使用设置 [b][font=Consolas]stock-limit-player[/font][/b] 可分玩家指定物品的库存数量。
+
+玩家一开始都可购买一定数量（预先设置）的物品，与上述设置不同的是，限制购买的数量按玩家分别计算。
+
+所以例如你将这个设置的值调整为 5，每个玩家都可以购买最多 5 个这样的物品。这也对命令商品有效。
+
+对物品使用设置 [b][font=Consolas]auto-restock-player[/font][/b] 可以让玩家在物品被买空的时候补货。不同玩家之间不会互相影响，例如玩家 A 的补货不会将玩家 B 的库存一并补满。这条设置的倒计时格式与上述全局补货是相同的。
+
+[size=4][b]出售限制[/b][/size]
+
+使用出售限制的物品，就像你想的那样，只能出售固定的数量。这个功能可以和限量出售搭配使用。
+
+限制出售的方式可以按玩家，也可以按全体：
+
+[list=1]
+[*][b]全局出售限制[/b] = 整个服务器的玩家只能向商店出售一定数量的物品。
+[*][b]玩家出售限制[/b] = 服务器中的每个玩家都能向服务器出售一定数量的物品。
+[/list]
+这允许你指定物品可再（由商店）收购的清空库存时间。
+
+[size=3][b]全局出售限制：[/b][/size]
+
+使用全局出售限制将能设置卖给商店的物品数量上限。
+
+全局出售限制能是的玩家只能在服务器中向商店出售一定数量的物品。例如，玩家向商店出售了 10 个物品，且全局出售限制数量被设定为了 10，那么其他玩家就不能再向商店出售同样的物品。
+
+对物品使用设置 [b][font=Consolas]auto-restock-global-sell[/font][/b]，则商店可在一段时间后清空该物品的库存，使玩家可以再次向商店出售物品。与补货相似，这个设置使用的时间格式是相同的，例如 [font=Consolas][b]30m 45s[/b][/font] 表示售满之后等待 30 分钟又 45 秒 即可重新向商店出售。
+
+[size=3][b]玩家出售限制：[/b][/size]
+
+对物品使用选项 [b][font=Consolas]sell-limit-player[/font][/b] 可以指定按玩家的出售限制。
+
+例如将该设置的值设置为 64，那么每个玩家都可以向商店出售 64 个这样的物品，且剩余可出售的数量不会相互影响。
+
+对物品使用选项 [b][font=Consolas]auto-restock-player-sell[/font][/b] 则会在商店剩余空间不足时的一段时间后清空库存，使得玩家可以再次向商店出售这些物品。
+
+[size=4][b]补货数量/限制：[/b][/size]
+
+目前，在商店售罄时有两个补货选项：
+
+[size=3][b]定时补货：[/b][/size]
+
+物品能够在一段时间后自补货/重置限制。
+
+需要记住的是，补货或库存清空只会在玩家完全售空/售满时触发倒计时。
+
+所以，一个例子是：
+如果有一个限购 50 个的物品，且该物品设置了 [font=Consolas][b]auto-restock-global/player: 10m[/b][/font]，那么玩家在售空/售满商店后等待 10 分钟才可再次进行购买或出售操作。
+
+[size=3][b]固定频率：[/b][/size]
+[quote][b][color=Blue]！[/color][/b]这部分的内容尚在制作且不可用，敬请期待！[/quote]
+使用固定时间将会允许你在指定时间补货，例如每个小时的第 25 分钟或星期天的上午七点。
+
+和补货时间设置不相同的是，这个频率会强制执行补货操作，[b]即使[/b]玩家在这些时间点并未售空/售满商店的物品。
+
+与其他 cron 表达式的不同的是，我们使用了流行的 java Quartz Cron Scheduler，这会和普通的 cron 表达式有略微的差别。下列文本是 cron 的有效表达格式：[font=Consolas][b]auto-restock-player-frequency: 0 0 0 ? * *[/b][/font]。
+
+有效的定时执行格式有 6 或 7 个值，它们分别对应：秒、分、时、月份中的日期序号、月、星期的天数和可选的年份。
+见下表来获取更多信息。
+[img]https://2522957397-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-M6QXvrDDroId1RhlXgl%2Fuploads%2FoRAd1o3j2e3fkKrG3qvf%2Fimage.png?alt=media&token=5ca29350-739f-4bed-9d0d-5a191d3ee300[/img]
+
+通过选项 [font=Consolas][b]auto-restock-player-frequency:[/b][/font] 设置的 cron 表达式示例见下：
+
+[table=98%,White]
+[tr][td]值[/td][td]描述[/td][/tr]
+[tr][td]auto-restock-player-frequency: 0 0 0 ? * *[/td][td]每天的 0:00 进行玩家补货[/td][/tr]
+[tr][td]auto-restock-global-frequency: 0 0 12 * * ?[/td][td]每天的中午 12:00 进行全局补货[/td][/tr]
+[tr][td]auto-restock-global-frequency: 0 30 11 ? * MON-FRI[/td][td]每周一至周五的上午 11:30 进行全局补货[/td][/tr]
+[tr][td]auto-restock-player-sell-frequency: 0 30 16 ? * FRI[/td][td]每周五下午 4:30 重置玩家出售限制[/td][/tr]
+[tr][td]auto-restock-player-global-frequency: 59 29 * ? * *[/td][td]每小时的第 29 分钟 59 秒重置全局出售限制[/td][/tr]
+[tr][td]auto-restock-global-frequency: 0 0 12 * * ? 2023-2025[/td][td]在 2023-2025 年之间每天的中午 12 点补充全局库存[/td][/tr]
+[/table]
+
+更多示例可在 Quartz 的官方文档查看：http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html
+[page]
+[size=5][b]有关 YAML（YML 文件）[/b][/size]
+你弄坏了它，就要修好它。
+
+[quote][b][color=Blue]！[/color][/b]YAML 有着非常具体的语法，且不能出现任何不符合格式的缩进/符号！[url=https://jsonformatter.org/yaml-validator]使用之前请验证你的文件是否符合格式！[/url][/quote]
+
+在编辑你的 YML 文件时，请先确定在非英文双引号包括的区域外[b]严格遵守[/b] YAML 的语法。
+
+[size=4][b]YAML 格式：[/b][/size]
+
+[list]
+[*]英文冒号 [font=Consolas]:[/font] 和值之间必须有一个空格；
+[*]每个文件中的“缩进”均为两个空格（不可以使用 TAB 制表符）；
+[*]以英文井号 [font=Consolas]#[/font] 开头的为注释，这之后的文本会被插件无视；
+[*]若在修改文件后遇到错误，或者你尚未熟悉编辑这些文件的方法。[url=https://jsonformatter.org/yaml-validator]请善用在线 YAML 格式检查器[/url]。它会帮你找出文件中任何[b]你需要[/b]在实际使用前[b]修复[/b]的格式错误。
+[/list]
+
+[b]常见错误：[/b]
+
+[list]
+[*]缩进不正确（不符合缩进空格数）；
+[*]缺少空格）：英文冒号和值之间的空格缺失；
+[list]
+[*]例如（displayname:"<在英文冒号和英文双引号之间的空格缺失"）
+[/list][*]缺少“内容结束/起始符”：你忘记了在某些地方补上英文双引号；
+[*]绝对不要加入任何 TAB 制表符。
+（译者注：部分编辑器可自动将制表符转化为空格。）
+[/list]
+[size=4][b]配置阐释：[/b][/size]
+
+[size=3][b]Shops.yml：[/b][/size]
+
+[b]shops.yml 的缩进：[/b]
+
+[list]
+[*]商店选区标题缩进为 0（零）个空格；
+[*]物品数字/序号缩进为 2（二）个空格；
+[*]物品的特定设置/值缩进为 4（四）个空格；
+[*]浏览 Shops.yml 章节来获得更多信息。
+[/list]
+[code]Armor: #商店选区名称前没有空格缩进, 末尾必须有英文冒号“:”. 名称必须与 sections.yml 下设置的相同。
+  '1': #在 <序号/物品数字> 下有两个空格缩进, 末尾必须有英文冒号“:”.
+    material: GRASS_BLOCK #这些设置需要四个空格缩进, 末尾必须有英文冒号“:”和一个空格, 然后是你要设置的值
+    buy: 20
+    sell: -1
+  '2': #加入另一个物品后，缩进重新变回两个
+    material: IRON_INGOT
+    buy: 10
+    sell: 2
+  'item3_milk_bucket': #序号不一定为数字. 数字值建议在 1.12 或更低版本使用! 自定义序号名在 1.13+ 的 TAB 补全中更有用！
+    material: milk_bucket
+    buy: 20
+    sell: 2
+#可照此更改或添加配置...[/code]
+
+[b][size=3]Sections.yml[/size][/b]
+
+[b]sections.yml 的缩进：[/b]
+
+[list]
+[*]选区的“名称”缩进为 2（两）个空格；
+[*]物品的特定设置/值缩进为 4（四）个空格；
+[*]浏览 Sections.yml 章节来获得更多信息。
+[/list]
+[code]ShopSections: #此行不可修改
+  Blocks: #此行需要两个空格的缩进
+    enable: true #下面的所有值都需要四个空格缩进
+    material: "GRASS_BLOCK"
+    displayname: "&2&l方块"
+    place: 19[/code]
+    
+[size=3][b]Config.yml[/b][/size]
+
+[b]config.yml 的缩进：[/b]
+
+[list]
+[*]大部分设置都没有缩进；
+[*]部分子设置与其他 YML 文件一样，都需要两个空格的缩进；
+[*]浏览 Config.yml 章节来获得更多信息。
+[/list]
+
+[size=4][b]“完整”技术阐释：（既复杂，又简单）[/b][/size]
+[code]#商店文件示例:
+# YAML 文件中的第一级内容不应包含缩进空格
+####选区名称不可以包括任何的空格，但可以包含下划线“_”
+####选区名称应当与你在 sections.yml 为其设置的名称完全匹配.
+Armor: #英文冒号“:”后不应有任何内容. 它是下文详细设置的开头。
+  #第二级应当包含两个缩进. 这些是上方定义值 (Armor) 的详细信息
+  ####(仅 shops.yml) 注意: ESGUI 不要求下列内容为数字. 你可以使用词语或大部分字符. 
+  ####这是会在 /shopedit 命令中使用的 <序号/物品数字>.
+  ####1.12 以下的版本建议使用数字序号, 
+  ####1.13+ 拥有 TAB 补全功能，可帮助玩家在输入参数时更快选择，为物品添加一个详细的命名对命令补全过程更有帮助。
+
+  '1': #再次，英文冒号“:”后不应有任何内容，因为它是下文详细设置的开头...
+  #
+    #在序号/物品下的是更高一级的缩进, 并且需要两个额外的空格缩进. 
+    #也就是说这几行需要四个空格缩进.
+    material: GRASS_BLOCK 
+      #英文冒号“:”后必须有相应的值，值和冒号之间必须有一个空格.
+      #在给定值包含特殊符号的时候才需要将其用英文双引号包括
+    #仍需要四个空格缩进，因为这些也是 '1' 下的设置的之一      
+    buy: 20
+    #### 将对应选项修改为负数即可禁用操作 '物品不能购买/出售'
+    sell: -1
+    lore: #下面几行又是一个更高级的缩进, 但这个列表中的每一行都需要以“-”开头
+    #在这种情况下我们需要的是文本, 所以我们应当将“-”后的内容以 英文双引号“""”括起
+    #若你需要在你的文本中使用英文双引号，你需要将它输入两次来“转义”. (必须以英文双引号开头和结尾)
+    ####Minecraft 的聊天颜色字符也同样支持
+    - "示例描述"
+    - "&c描述的 ""第二"" 行"
+    enchantments:
+    #另一种列表格式为数字. 在 ESGUI 中一般用于定义附魔及其等级. 
+    #它的格式为附魔名称开头，以英文冒号“:”连缀，其后紧跟附魔等级
+    - EFFICIENCY:5 
+    - FORTUNE:3[/code]
+[page]
+[size=5][b]Sections.yml[/b][/size]
+你将会逐步学习选区配置的每个选项，并了解如何正确配置它们。
+
+[b][size=4]选区配置的总体信息[/size][/b]
+
+这个配置文件存储着所有用于创建商店选区的自定义数据，会在你输入 [font=Consolas]/shop[/font] 命令后出现在主菜单。
+你可以在这里指定物品的显示名称、设置物品的样式、添加或插入物品描述并设置商店选区的图标在主商店中的展示位置。
+[quote][b][color=Red]！[/color][/b]编辑文件前请先了解有关 YAML 的语法知识！该格式的配置不容忍任何错误！请在保存前[url=https://jsonformatter.org/yaml-validator]验证语法有效性[/url]！[/quote]
+
+[b]配置文件结构：[/b]
+[code]###### 配置格式参考: ######
+ShopSections:
+  <section>:
+    <option>: <value> #单值
+    <option>: #列表格式必须支持多个值. (描述, 附魔等..)
+    - <value1>
+    - <value2>
+###### 示例: ######
+ShopSections:
+  Blocks: #这个名称必须与 shops.yml 中的名称完全匹配! 不可以有任何空格!
+
+    enable: true
+    material: "GRASS_BLOCK"
+    displayname: "方块"
+    slot: 19
+    lore:
+    - "Basic building blocks"[/code]
+    
+[size=4][b]你可使用的所有选项及其释义[/b][/size]
+
+[size=3][b]物品选项列表：[/b][/size]
+
+[list]
+[*]这些设置的功能与 shops.yml 中的相同，但是会有一些 sections.yml 中的设置存在着细微的差距：
+
+[*][b]enable:[/b] - 完全启用或禁用图标的[b]可见性和[/b]进入商店的[b]功能[/b]
+[*][b]material:[/b][i][必需][/i] - 商店选区图标在主商店中的样式
+[*][b]displayname:[/b] - 商店选区的显示名称，会在选区未指定标题时使用这条内容。（可使用彩色字符）
+[*][b]slot:[/b][i][必需][/i] - 指定商店选区图标在主商店页面的位置（必须为 0 - 44 的数字，额外页数尚不支持，不能和其他物品重复）
+[*][b]title:[/b] - 商店内的标题。请不要将它与显示名称搞混。
+[*][b]lore:[/b] - 商店内物品末尾的统一描述（主商店中选区物品的描述，支持彩色字符）
+[*][b]potion-glow:[/b] - 指定药水的药水颜色。（仅在物品材料为药水、喷溅型药水、滞留型药水、药箭时有效）
+[*][b]enchantment-glint:[/b] - 指定物品是否有附魔光效。
+[*][b]skullowner:[/b] - 为头颅赋予自定义的拥有者（仅在该物品为玩家头颅时有效）
+[*][b]armorcolor:[/b] - 指定皮革盔甲的 hex 颜色值（仅在该物品为任意种类的皮革盔甲时有效）
+[*][b]hidden:[/b] - 该商店选区是否在主菜单上可见并可通过主菜单选择进入
+[*][b]subScetion:[/b] - 是否将该选区设置为子选区
+[*][b]full-item:[/b] - 将物品设置为仅供展示用的物品。
+[*][b]economy:[/b] - 设置该选区使用的默认经济种类。
+[*][b]NBTData:[/b] - 指定物品的 NBT 数据 [i][b][color=Orange]*仅付费版[/color][/b][/i]
+[*][b]skull-texture:[/b] - 赋予头颅指定皮肤 [i][b][color=Orange]*仅付费版[/color][/b][/i]
+[*][b]dynamic-pricing:[/b] - 是否启用动态定价功能 [i][b][color=Orange]*仅付费版[/color][/b][/i]
+[*][b]click-commands:[/b] - 进入/点击商店选区后执行的命令列表 [i][b][color=Orange]*仅付费版[/color][/b][/i]
+[/list]
+
+[size=4][b]物品示例：[/b][/size]
+
+文件中的第一条内容（当然要除去注释的那几行）必须是 [font=Consolas]ShopSettings:[/font]，且这个设置也只需要在配置文件中出现一次。
+商店选区的第一行必须在开头有 [b]2 [两][/b]个空格。
+菜单物品的设置/选项必须在开头有 [b]4 [四][/b]个空格。
+
+[size=3][b]普通商店：[/b][/size]
+[code]ShopSections:
+  Spawners:
+    enable: false
+    material: "SPAWNER"
+    displayname: "&8&l刷怪笼"
+    title: "------ * &8&l刷怪笼&r * -----"
+    slot: 27
+    lore:
+    - "&l&c示例描述,"
+    - "&l&c描述信息无行数限制"[/code]
+    
+[b][size=3]药水商店：[/size][/b]
+[code]ShopSections:  
+  Potions:
+    material: "potion"
+    displayname: "&d&l药水"
+    potion-glow: true
+    slot: 38[/code]
+    
+[b][size=3]附魔效果：[/size][/b]
+[code]ShopSections:  
+  Tools:
+    material: "netherite_sword"
+    displayname: "&1&l工具"
+    enchantment-glint: true
+    slot: 19[/code]
+    
+[b][size=3]自定义玩家头颅：[/size][/b]
+[code]ShopSections:  
+  PlayerHeads:
+    material: "PLAYER_HEAD"
+    skullowner: "Notch"
+    skull-texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjUzMGQ5YjAwZDA3NjEyNWRmOWE1YjE3ZjQzN
+    jcwOTg0NDQyY2U1NzM5ZGViZGJkM2M1MzA0MDkyNjA1MmNhNiJ9fX0= # 仅付费版
+    displayname: "&b&l玩家头颅"
+    slot: 18[/code]
+    
+[b][size=3]染色皮革装备：[/size][/b]
+[code]ShopSections:  
+  Armor:
+    material: "LEATHER_CHESTPLATE"
+    armorcolor: "#0022FF"
+    displayname: "&7&l装备"
+    slot: 22[/code]
+    
+[b][size=3]隐藏商店：[/size][/b]
+[code]ShopSections:  
+  Hidden:
+    material: "BEDROCK"
+    displayname: "&1&l恐怖物品"
+    hidden: true[/code]
+    
+[b][size=3]子商店：[/size][/b]
+[code]ShopSections:  
+  Stones:
+    material: STONE
+    subSection: true # 该商店不会出现在主商店界面或 /shop 命令中
+  Woods:
+    material: OAK_LOG
+    subSection: true # 该商店会出现在主商店界面或 /shop 命令中[/code]
+    
+[b][size=3]填充物品：[/size][/b]
+[code]ShopSections:  
+  Fill1:
+    material: YELLOW_STAINED_GLASS_PANE
+    name: " "
+    fill-item: true
+    enchantments-glint: true
+    slot: 40
+    
+  Fill2:
+    material: YELLOW_STAINED_GLASS_PANE
+    displayname: " "
+    fill-item: true
+    slot: 41[/code]
+    
+[size=3][b]指定货币：[/b][/size]
+
+[code]ShopSections:  
+  Specials:
+    material: GOLDEN_APPLE
+    name: "&a&l特殊物品"
+    economy: ULTRA_ECONOMY:Gems[/code]
+
+[quote][b][color=Blue]！[/color][/b]设置 [font=Consolas][b]economy[/b][/font] 会指定选区内使用的经济单位，这意味着这个选区内的物品在没有单独指定交易货币类型的情况下都会使用这种货币。[i][b][color=Orange]*仅付费版[/color][/b][/i][/quote]
+
+[size=3][b]NBT 数据：[/b][/size]
+
+[code]ShopSections:  
+  Specials:
+    material: GOLDEN_APPLE
+    name: "&a&l特殊物品"
+    economy: ITEM:Gold_nuggets
+    NBTData: "{CustomModelData:40}"[/code]
+
+[size=3][b]动态定价：[/b][/size]
+
+[code]ShopSections:  
+  Specials:
+    material: GOLD_INGOT
+    name: "&3&l自定义商店"
+    dynamic-pricing: false[/code]
+
+[quote][b][color=Blue][font=Consolas]i[/font][/color][/b] 需要注意的是，这个选项允许禁用选区的动态定价，但不允许启用选区的动态定价。若要禁用该功能，你需要前往 config.yml 设置全局动态定价为启用。[/quote]
+
+[size=3][b]点击命令：[/b][/size]
+
+[code]ShopSections:  
+  Ikea:
+    material: GOLD_INGOT
+    name: "&9&l宜家商店, 进入即可获得免费物品!"
+    click-commands:
+    - "minecraft:give %player% gold_nugget 3"
+    - "minecraft:give %player% blue_wool 6"
+    - "minecraft:give %player% yellow_wool 6"[/code]
+    
+[quote][b][color=Green]√[/color][/b] 你可以使用变量 [b]%player%[/b] 指代玩家名称。[/quote]
+    
+[size=4][b]额外配置设定：[/b][/size]
+
+[size=3][b]主商店界面填充物品：[/b][/size]
+
+主商店填充物品用于填充主商店的空白格子。
+修改该物品的选项位于 sections.yml 配置的最下方。
+
+[font=Consolas]material[/font] 为物品的材料。例如，将 [font=Consolas]"GRAY_STAINED_GLASS_PANE"[/font] 替换为 [font=Consolas]"RED_CARPET"[/font]，可使菜单中的填充物替换为红地毯。
+
+若要启用显示名称选项，你需要将 [font=Consolas]displayname[/font] 项前的注释符号去除，名称可按你需求随意设置，且支持[url=https://www.digminecraft.com/lists/color_list_pc.php]彩色字符[/url]。
+
+[code]#主商店中填充空白格子所用的内容
+Fill-item:
+
+  material: "GRAY_STAINED_GLASS_PANE"
+# displayname: "&8此地无银三百两"
+  # 将该值设置为 false 来取消该选项
+  enable: true[/code]
+  
+[b]填充物品示例：[/b]
+
+[img]https://2522957397-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-M6QXvrDDroId1RhlXgl%2F-MXxh47zmVsE4q43kItO%2F-MXxib2kPgmL0eJJHgAA%2FFill-Item-Panes.PNG?alt=media&token=729f059e-e3d9-4823-b942-daa18ba4c36e[/img]
+
+[img]https://2522957397-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-M6QXvrDDroId1RhlXgl%2F-MXxh47zmVsE4q43kItO%2F-MXxidvq9WFfRcfUx6Gb%2FFill-Item-Lime.PNG?alt=media&token=be1b1e96-470d-43e9-913d-07b1ebaf01cb[/img]
+[page]
+[size=5][b]Shop.yml[/b][/size]
+你将会逐步学习商店配置文件中每一项设定的含义及其用法。
+
+[b][size=4]商店配置的全局信息[/size][/b]
+
+这份配置文件存储着所有商店中的物品，且按选区各自存放。
+可按你喜好任意编辑物品！
+你可以添加任意数量的物品至商店，插件会自动计算容纳商品所需的页数！
+
+[list]
+[*]来自其他插件的自定义物品仅付费版 ESGUI 支持（除非它们是免费版的配置文件制作而成的物品）
+[/list]
+[quote][color=Blue][b][font=Consolas]i[/font][/b][/color]我们推荐你将本插件中售卖的物品按服务器经济状况适当更改。服务器种类有许多，如空岛、生存、派系、PVP等，大多数服务器需要按服务器状况修改商店的内容，并重新设置商店中物品的价格，若你要原封不动地使用本插件提供的默认配置，也不是不可以。你也可以浏览我们在 Discord 聊天群组的频道 #Shop-Files-Sharing 来寻找适合你的商店配置。[/quote]
+[quote][b][color=Red]！[/color][/b]编辑文件前请先了解有关 YAML 的语法知识！该格式的配置不容忍任何错误！请在保存前[url=https://jsonformatter.org/yaml-validator]验证语法有效性[/url]！[/quote]
+
+[list]
+[*]提示：使用右侧的导航栏快速找到你需要的内容！
+[/list]
+
+[b]文件结构：[/b]
+[code]###### 代码格式参考: ######
+<选区>:
+  <序号>:
+    <键>: <值> #单值
+    <键>: #支持插入多个值的列表. (物品描述, 附魔等..)
+    - <值1>
+    - <值2>
+###### 示例: ######
+Blocks: #这个名称必须与 sections.yml 中设置的任一名称匹配! 禁止使用空格!
+  1:
+    material: PAPER
+    name: "埃及莎草纸"
+    buy: 6
+    sell: 2
+    lore:
+    - "古埃及秘法制作的莎草纸"[/code]
+    
+[size=4][b]物品设置/键：[/b][/size]
+
+键列表：
+[list]
+[*][b]material:[/b] - 物品种类（Mojang 规定的[url=https://www.digminecraft.com/lists/item_id_list_pc.php]方块 ID 或物品名称[/url]）
+[*][b]buy:[/b] - 物品购买价格
+[*][b]sell:[/b] - 物品出售价格
+[*][b]name:[/b] - 物品名称
+[*][b]displayname:[/b] - 仅在商店内显示的物品名称，不会影响购买所获的物品（支持[url=https://www.digminecraft.com/lists/color_list_pc.php]颜色代码[/url]）
+[*][b]lore:[/b] - 物品的描述文本
+[*][b]displaylore:[/b] - 商店内展示的物品描述
+[*][b]hidePricingLore:[/b] - 隐藏默认的物品价格显示
+[*][b]slot:[/b] - 物品所处的位置
+[*][b]stack-size:[/b] - 物品的堆叠数量
+[*][b]enchantment-glint:[/b] - 允许在物品上添加附魔光效
+[*][b]enchanments:[/b] - 物品拥有的附魔及其等级
+[*][b]potiontypes:[/b] - 物品所拥有的药水效果种类
+[*][b]spawnertype:[/b] - [当物品设置为刷怪笼[font=Consolas]spawner[/font]时有效] 通过 ESGUI 设置刷怪笼容纳的生物种类
+[*][b]recipes:[/b] - 知识之书 [font=Consolas]knowledge_book[/font] 所能解锁的配方
+[*][b]skullowner:[/b] - 设置头颅的显示皮肤，仅在物品为玩家头颅 [font=Consolas]player_head[/font]
+[*][b]armorcolor:[/b] - 皮革盔甲的 RGB 颜色
+[*][b]duration:, colors:, fade-colors:, flicker:, trail:, shape:[/b] - 用于设置烟花的选项
+[*][b]instrument:[/b] - 山羊角所演奏的音乐类型
+[*][b]section:[/b] - 用于将物品连接至对应的商店选区
+[*][b]stew-effect:[/b] - 对迷之炖菜添加的药水效果
+[*][b]hidden:[/b] - 将物品从 GUI 中隐藏，但仍可收购物品
+[*][b]max-buy:[/b] - 设置单次交易最大购买量
+[*][b]max-sell:[/b] - 设置单次交易最大出售量
+[*][b]prior-lore:[/b] - 是否优先展示默认的价格描述
+[*][b]close-menu:[/b] - 是否在交易完成后关闭 GUI 界面
+[*][b]transcationMessage:[/b] - 是否在交易结束后给玩家发送消息
+[/list]
+
+[size=3][b]付费版独有设置：[/b][/size]
+
+[list]
+[*][b]nbtdata:[/b] - 施加给物品的 NBT 数据
+[*][b]sell-commands:[/b] - 出售物品后执行的一系列命令
+[*][b]requireitem:[/b] - 在执行出售命令前需要持有的物品
+[*][b]buy-commands:[/b] - 购买物品后执行的一系列命令
+[*][b]giveitem:[/b] - 执行购买命令后给予玩家的物品
+[*][b]stock-limit-global:[/b] - 全服限购数量
+[*][b]refill-stock:[/b] - 售出物品后允许恢复货物数量
+[*][b]auto-restock-global:[/b] - 补货间隔
+[*][b]stock-limit-player:[/b] - 按玩家区分的存货限制
+[*][b]auto-restock-player:[/b] - 重新补货玩家物品的时间
+[*][b]sell-limit-global:[/b] - 指定物品的全服出售限制
+[*][b]auto-restock-global-sell:[/b] - 清空仓库以便再次开放限量收购的时间间隔
+[*][b]level-requirement:[/b] - 为商店物品添加等级限制
+[*][b]skull-texture:[/b] - 为玩家头颅添加自定义头颅材质
+[*][b]economy:[/b] - 物品所使用的经济单位
+[*][b]permission:[/b] - 设置物品购买/出售所需的权限
+[*][b]hideUtilLore:[/b] - 隐藏限购/限售描述
+[*][b]dynamic-pricing:[/b] - 用于分物品设置动态定价模式的开关
+[*][b]buy-prices:[/b] - 用于为单个物品添加其他支付方式
+[*][b]sell-prices:[/b] - 用于为单个物品添加多种出售价格
+[*][b]ignored-tags:[/b] - 用于无视指定出售物品的 NBT 标签
+[/list]
+
+[quote][b][color=Green]√[/color][/b] 若 [font=Consolas][b]displayname[/b][/font] 或 [font=Consolas][b]name[/b][/font] 不指定或未设置，物品将会显示它的原版名称。[/quote]
+[quote][b][color=Green]√[/color][/b] 若 [font=Consolas][b]name[/b][/font] 指定，但 [font=Consolas][b]name[/b][/font] 不指定或未设置，物品将会使用它在商店中的名称。[/quote]
+[quote][b][color=Green]√[/color][/b] 若 [font=Consolas][b]sell/buy[/b][/font] 设置为了任意负数，物品就不可进行对应的操作（直接移除对应的选项效果相同）。[/quote]
+[quote][b][color=Green]√[/color][/b] 创建一个没有任何价格的物品会使其变为[i]填充[/i]物品，可用于装饰商店。[/quote]
+
+[size=4][b]物品设置详细讲解：[/b][/size]
+
+[list]
+[*]简单的购买/出售只需指定三个设置：[font=Consolas][b]material[/b][/font]、[font=Consolas][b]buy[/b][/font] 和 [font=Consolas][b]sell[/b][/font] 价格。其他设置均为可选。
+[/list]
+[code]#示例简单物品:
+Other_item_shop:
+  1:
+    material: milk_bucket
+    buy: 20
+    sell: 2[/code]
+[quote][color=Blue][b][font=Consolas]i[/font][/b][/color]将购买/出售选项留空可禁用物品的购买/出售功能。[/quote]
+
+[size=3][b]物品材料（Material）[/b][/size]
+
+[list]
+[*]此为商店中列出/待售的物品或方块的 ID。
+[*]它必须为符合你的版本的[url=https://www.digminecraft.com/lists/item_id_list_pc.php]有效物品名称[/url]！
+[*]材料需为有效的物品 ID。你可以从下面的链接得到相关的内容：
+[list]
+[*][url=https://www.digminecraft.com/lists/item_id_list_pc.php]1.16 或更低的版本[/url]
+[*][url=https://minecraftitemids.com/]1.18 的物品[/url]
+[*][url=https://docs.google.com/spreadsheets/d/1-Jf8VpmG-V2ytZ0ppAEDtVSaVYEjQ-CYAZMt-eQMNxQ/edit#gid=984941200]1.19 的物品，由 CommandLeo 制作[/url]
+[/list][*]ID 的“命名空间”为代码赋予物品的名称
+[*]如：[font=Consolas]experience_bottle[/font]
+[*]此 ID 不会对大小写敏感。
+[/list]
+
+[quote][b][font=Consolas][color=Blue]i[/color][/font][/b]出于兼容性原因：在 1.13 “扁平化”更新后的物品名称在 1.8-1.12 的版本仍然可用。[/quote]
+[quote][b][color=Green]√[/color][/b] 你可以通过将材料编辑为 AIR 创建一个虚拟占位物品。[/quote]
+
+[b][size=3]购买价格（Buy）：[/size][/b]
+
+[list]
+[*]此为玩家购买物品所需支付的价格
+[*]可以为任何数
+[*]这里设置的数字是交易后从玩家账户中扣除的数量（存储在你兼容 Vault 的经济插件中）
+[*]这个值只会在商店中显示，不会在任何购得的物品上显示
+[/list]
+[quote][color=Blue][b][font=Consolas]i[/font][/b][/color]将该选项的值设置为负数可使得物品不能购买。[/quote]
+
+[size=3][b]出售价格（Sell）：[/b][/size]
+
+[list]
+[*]此为出售给服务器时物品的价值。
+[*]可以为任何数
+[*]此为玩家出售物品给服务器时可获得的金钱数量（所获金额直接汇入玩家账户）
+[*]这个值只会在商店中显示，不会在任何购得的物品上显示
+[/list]
+[quote][color=Blue][b][font=Consolas]i[/font][/b][/color]将该选项的值设置为负数可使得物品不能出售给服务器。[/quote]
+
+[size=3][b]物品名称（Name）：[/b][/size]
+
+[list]
+[*]这会为物品指定一个名称，会显示在玩家购买后收到的物品上。在 [font=Consolas]displayname[/font] 项未设置的时候也会在商店中显示。
+[*]可以包含[url=https://www.digminecraft.com/lists/color_list_pc.php]彩色字符[/url][url=https://www.digminecraft.com/lists/color_list_pc.php]（颜色/格式字符）[/url]。
+[/list]
+[code]#示例物品,包含仅在商店内显示的名称,和仅在购买所得物品上显示的名称.
+Special_Named_item_shop:
+  1:
+    material: milk_bucket
+    buy: 20
+    sell: 2
+    displayname: "&f&l获得牛奶?" #这是在商店界面中显示的名称.
+    name: "&b我们得到了 &f&l牛奶!" #这是购买后的物品上的名称.[/code]
+[quote][b][color=Green]√[/color][/b] 只有选项 [font=Consolas][b]name[/b][/font] 才能让商店中显示和购买物品的名称显示相同。[/quote]
+
+[size=3][b]Displayname:[/b][/size]
+
+[list]
+[*]请不要将它和上一条的 [font=Consolas]name[/font] 弄混，该参数只会设置物品在商店中的显示名称（鼠标悬浮在物品上显示的内容）
+[*]该名称不会应用到购买的物品上。
+[*]它可以包含[url=https://www.digminecraft.com/lists/color_list_pc.php]彩色字符[/url][url=https://www.digminecraft.com/lists/color_list_pc.php]（颜色/格式字符）[/url]。
+[/list]
+[code]#示例物品, 设置了仅在商店中显示的物品名称, 实际购买所得物品不会显示任何自定义名称
+Other_item_shop:
+  1:
+    material: milk_bucket
+    buy: 20
+    sell: 2
+    displayname: "获得牛奶?"[/code]
+    
+[size=3][b]描述（Lore）：[/b][/size]
+
+[list]
+[*]自定义物品上的信息和其他文本！
+[*]它可以包含[url=https://www.digminecraft.com/lists/color_list_pc.php]彩色字符[/url][url=https://www.digminecraft.com/lists/color_list_pc.php]（颜色/格式字符）[/url]。
+[*]可使用内建变量 [font=Consolas]%buyPrice%/%sellPrice%[/font] 表示购买/出售价格。
+[/list]
+[code]#示例物品, 包含仅在商店内显示的名称, 和购买所得物品的自定义名称.
+Lore_item_shop:
+  1:
+    material: netherite_shovel
+    buy: 2000000
+    sell: 5000
+    displayname: "&c&l恶魔之手"
+    name: "&c&l恶魔之手"
+    lore:
+    - "&5这是恶魔仅存的一只断手"
+    - "&5谁也无法确定其中是否还残存着邪恶能量..."[/code]
+[quote][b][color=Green]√[/color][/b] 选项 [font=Consolas][b]lore/displaylore[/b][/font] 与 [font=Consolas][b]name/displayname[/b][/font] 工作逻辑相同。这意味着如果你只指定了 [font=Consolas][b]lore[/b][/font]，商店内显示的物品描述也会与购买所得物品的描述相同。[/quote]
+
+[size=3][b]展示描述（Displaylore）：[/b][/size]
+
+[list]
+[*]请不要将它与选项 [font=Consolas]lore[/font] 弄混，因为这个选项只会影响商店展示物品的描述（鼠标悬浮在物品上显示的内容）
+[*]为物品添加自定义的描述！
+[*]它可以包含[url=https://www.digminecraft.com/lists/color_list_pc.php]彩色字符[/url][url=https://www.digminecraft.com/lists/color_list_pc.php]（颜色/格式字符）[/url]。
+[*][*]可使用内建变量 [font=Consolas]%buyPrice%/%sellPrice%[/font] 表示购买/出售价格。
+[/list]
+[code]Displaylore_item_shop:
+  1:
+    material: AMETHYST_SHARD
+    buy: 10
+    sell: 5
+    lore: # 从商店内购得物品的实际描述
+    - '&cNotch'
+    displaylore: # 商店中显示的物品描述
+    - '&1Gypopo'[/code]
+
+[size=3][b]隐藏价格描述（HidePricingLore）：[/b][/size]
+
+[list]
+[*]选项 [font=Consolas][b]hidePricingLore[/b][/font] 顾名思义，会隐藏默认的定价描述，以便你添加自己的价格描述。
+[*]这也会在物品能购买的情况下隐藏价格描述
+[*]在制作[i]装饰性/占位[/i]物品时很有用
+[/list]
+[code]HiddenPricingLore_item_shop:
+
+  1:
+    material: LAVA_BUCKET
+    buy: 200
+    sell: 75
+    hidePricingLore: true # 这会对玩家隐藏价格
+  
+  2:
+    material: WATER_BUCKET
+    buy: -1
+    sell: -1
+    hidePricingLore: true # 这会隐藏默认的 '物品不可交易' 描述[/code]
+[quote][b][color=Green]√[/color][/b] 该选项可禁用单个物品的价格显示，但你也可以清空语言文件中这些物品的文本，这样每个物品都不会包含价格描述。[/quote]
+
+[size=3][b]物品槽位（Slot）：[/b][/size]
+
+[list]
+[*]选项 [font=Consolas][b]slot[/b][/font] 可决定物品在商店中的位置
+[*]例如，设置 [font=Consolas][b]slot: 14[/b][/font] 表示它在商店的第一页的第 14 格
+[*]也可为“slot: 55”，这样物品就会在第二页的第 10 格出现。
+[/list]
+[code]
+Slot_item_shop:
+
+  1:
+    material: chainmail_chestplate
+    buy: 25
+    sell: 10
+    name: "&d&l骑士装备"
+    slot: 11
+
+  2:
+    material: iron_chestplate
+    buy: 35
+    sell: 15
+    name: "&d&l骑士装备"
+    slot: 13
+
+  3:
+    material: diamond_chestplate
+    buy: 50
+    name: "&d&l骑士装备"
+    slot: 15
+    
+  4:
+    material: netherite_chestplate
+    buy: 100
+    name: "&d&l骑士装备"
+    slot: 17[/code]
+
+[quote][b][color=Green]√[/color][/b] 物品的格子位置决定了物品在整个商店选区中的位置，不只是商店页数！例如 slot: 445 会将格子移动到商店选区的第 10 页的第五格。[/quote]
+[quote][color=Blue][b][font=Consolas]i[/font][/b][/color]物品的 slot 值可以通过 商店页数*45+页面内物品格子序号 快速得出。
+例如，我想要我的物品位于第三页的第25格，slot 的值即为 3*45+25=160。[/quote]
+
+[size=3][b]堆叠数量（Stack size）：[/b][/size]
+
+[list]
+[*]选项 [font=Consolas][b]stack-size[/b][/font] 设置该物品的数量
+[*]例如将堆叠数量设置为 5，玩家购买两份物品则会得到 10 个。
+[/list]
+[code]FoodShop:
+  1:
+    material: APPLE
+    name: "&c20 个苹果"
+    buy: 200
+    sell: 50
+    stack-size: 20[/code]
+    
+[quote][b][color=Red]！[/color][/b]注意：在设置物品的堆叠数量时，所设置的价格为一整叠物品的价格。这意味着在上述示例中的 10 个苹果向商店购买的价格为 $100，而向商店出售的价格为 $25。[/quote]
+
+[size=3][b]附魔光效（Enchantment glint）：[/b][/size]
+
+[list]
+[*]这个选项允许你为物品添加附魔光效。
+[/list]
+[quote][b][color=Red]！[/color][/b][b]注意[/b]：这会添加一个“虚拟”的海之眷顾 I 附魔，默认情况下这条附魔会被隐藏。[/quote]
+[code]DummyTools:  
+  1:
+    material: BLAZE_ROD
+    name: "&c闪亮鱼竿"
+    buy: 50.0
+    sell: 10.0
+    enchantment-glint: true[/code]
+    
+[size=3][b]附魔（Enchantments）：[/b][/size]
+
+[list]
+[*]可根据你的喜好自由添加附魔！
+[*][font=Consolas]enchantments[/font] 为一个 YML 列表类型的[url=https://www.digminecraft.com/lists/enchantment_list_pc.php]有效附魔[/url]，在玩家购买后出现在所获物品上。
+[*]附魔必须按该格式填写：[font=Consolas]<附魔名称>:<附魔等级>[/font]（去掉英文尖角括号“<>”），若未指定等级，默认为 1 级。
+[*]附魔名称[url=https://www.digminecraft.com/lists/enchantment_list_pc.php]必须在你的 MC 版本中有效[/url]。
+[*]若要允许大于原版的附魔等级，你必须将 config.yml 中的 [font=Consolas]allow-unsafe-enchants:[/font] 设置为 [font=Consolas]true[/font]。
+[*]其他插件例如 EcoEnchants、AdvancedEnchantments、ExcellentEnchants 的自定义附魔是支持的，通过 [font=Consolas]<插件名称>:<附魔名称>:<附魔等级>[/font] 添加。[i][color=Orange]*仅付费[/color][/i]
+[*]你可以在这里找到[url=https://www.digminecraft.com/lists/enchantment_list_pc.php]适合你服务器版本的 MC 附魔[/url]！
+[/list]
+[code]#示例附魔物品:
+Enchanted_item_shop:
+  '1':
+     material: diamond_pickaxe
+     buy: 2000000
+     sell: 5000
+     displayname: "&4精准镐"
+     name: "&4精准镐"
+     lore:
+     - "&5精准采集!"
+     enchantments:
+     - "silk_touch:1"
+     - "efficiency:5"
+     - "ecoenchants:blast_mining:3" # EcoEnchants 的自定义附魔[/code]
+
+[size=3][b]药水种类（Potion Types）：[/b][/size]
+
+[list]
+[*]向药水/药箭添加任意数量的药水效果！
+[*][font=Consolas]potiontypes[/font] 为一个 YML 列表类型的[url=https://wiki.gpplugins.com/economyshopgui/file-configuration/shops.yml#potion-types-table]有效药水效果[/url]，在玩家购买后出现在所获物品上。
+[*]附魔名称[url=https://wiki.gpplugins.com/economyshopgui/file-configuration/shops.yml#potion-types-table]必须在你的 Minecraft 版本中有效[/url]。
+[*]可添加药水效果的有效[url=https://www.digminecraft.com/lists/item_id_list_pc.php]材料名称[/url]为 普通药水（[font=Consolas]potion[/font]）、喷溅型药水（[font=Consolas]splash_potion[/font]）、滞留型药水（[font=Consolas]lingering_potion[/font]）和药箭（[font=Consolas]tipped_arrow[/font]）
+[/list]
+
+[b]普通药水种类：[/b]
+
+[table=98%,White]
+[tr][td]药水命名空间（请使用这个）[/td][td]常见名称：[/td][td]原版效果和等级[/td][/tr]
+[tr][td][font=Consolas]fire_resistance[/font][/td][td]抗火[/td][td]180 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]harming[/font][/td][td]瞬间伤害[/td][td]0 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]healing[/font][/td][td]瞬间治疗[/td][td]0 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]invisibility[/font][/td][td]隐身[/td][td]180 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]leaping[/font][/td][td]跳跃提升[/td][td]180 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]night_vision[/font][/td][td]夜视[/td][td]180 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]poison[/font][/td][td]中毒[/td][td]45 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]regeneration[/font][/td][td]再生[/td][td]45 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]slow_falling[/font][/td][td]缓降[/td][td]90 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]slowness[/font][/td][td]迟缓[/td][td]90 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]strength[/font][/td][td]力量[/td][td]180 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]swiftness[/font][/td][td]迅捷[/td][td]180 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]turtle_master[/font][/td][td]铁壁[/td][td]20 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]water_breathing[/font][/td][td]水肺[/td][td]180 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]weakness[/font][/td][td]虚弱[/td][td]90 秒 | 1[/td][/tr]
+[/table]
+
+[b]延长药水种类：[/b]
+
+[table=98%,White]
+[tr][td]药水命名空间（请使用这个）[/td][td]常见名称：[/td][td]原版效果和等级[/td][/tr]
+[tr][td][font=Consolas]long_fire_resistance[/font][/td][td]抗火[/td][td]480 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]long_invisibility[/font][/td][td]隐身[/td][td]480 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]long_leaping[/font][/td][td]跳跃提升[/td][td][/td][/tr]
+[tr][td][font=Consolas]long_night_vision[/font][/td][td]夜视[/td][td]480 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]long_poison[/font][/td][td]中毒[/td][td]120 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]long_regeneration[/font][/td][td]再生[/td][td]120 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]long_slow_falling[/font][/td][td]缓降[/td][td]240 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]long_slowness[/font][/td][td]迟缓[/td][td]240 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]long_strength[/font][/td][td]力量[/td][td]480 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]long_swiftness[/font][/td][td]迅捷[/td][td]480 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]long_turtle_master[/font][/td][td]神龟[/td][td]40 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]long_water_breathing[/font][/td][td]水肺[/td][td]480 秒 | 1[/td][/tr]
+[tr][td][font=Consolas]long_weakness[/font][/td][td]虚弱[/td][td]240 秒 | 1[/td][/tr]
+[/table]
+
+[b]强化药水种类：[/b]
+
+[table=98%,White]
+[tr][td]药水命名空间（请使用这个）[/td][td]常见名称：[/td][td]原版效果和等级[/td][/tr]
+[tr][td][font=Consolas]strong_harming[/font][/td][td]瞬间伤害 II[/td][td]0 秒 | 2[/td][/tr]
+[tr][td][font=Consolas]strong_healing[/font][/td][td]瞬间治疗 II[/td][td]0 秒 | 2[/td][/tr]
+[tr][td][font=Consolas]strong_leaping[/font][/td][td]跳跃提升 II[/td][td]90 秒 | 2[/td][/tr]
+[tr][td][font=Consolas]strong_poison[/font][/td][td]中毒 II[/td][td]22/60 秒 | 2[/td][/tr]
+[tr][td][font=Consolas]strong_regeneration[/font][/td][td]再生 II[/td][td]22/60 秒 | 2[/td][/tr]
+[tr][td][font=Consolas]strong_strength[/font][/td][td]力量 II[/td][td]90/240 秒 | 2[/td][/tr]
+[tr][td][font=Consolas]strong_swiftness[/font][/td][td]迅捷 II[/td][td]90/240 秒 | 2[/td][/tr]
+[tr][td][font=Consolas]strong_turtle_master[/font][/td][td]铁壁 II[/td][td]20 秒 | 2[/td][/tr]
+[/table]
+
+[b]可用但不可合成的药水：[/b]
+
+[table=98%,White]
+[tr][td]药水命名空间（请使用这个）[/td][td]常见名称：[/td][td]原版效果和等级[/td][/tr]
+[tr][td][font=Consolas]luck[/font][/td][td]幸运[/td][td]300 秒 | 1[/td][/tr]
+[/table]
+
+[list]
+[*]幸运效果仅可通过获得村庄英雄效果后的制箭师出售的药箭得到。
+[/list]
+[b]无效果药水：[/b]
+
+[table=98%,White]
+[tr][td]药水命名空间（请使用这个）[/td][td]常见名称：[/td][/tr]
+[tr][td][font=Consolas]awkward[/font][/td][td]尴尬[/td][/tr]
+[tr][td][font=Consolas]empty[/font][/td][td]空白[/td][/tr]
+[tr][td][font=Consolas]mundane[/font][/td][td]粗制[/td][/tr]
+[tr][td][font=Consolas]thick[/font][/td][td]平凡[/td][/tr]
+[tr][td][font=Consolas]water[/font][/td][td]水瓶[/td][/tr]
+[/table]
+
+[quote][b][color=Blue][font=Consolas]i[/font][/color][/b]注意：上述只是标准药水效果，不是药水箭或滞留型药水可使用的[/quote]
+
+[list]
+[*][url=https://minecraft.fandom.com/wiki/Potion#Data_values]可使用的药水值与详细信息在这里查看。[/url]
+[/list]
+
+[b]药水示例：[/b]
+[code]Potion_item_shop:
+  '1':
+    #a common craftable vanilla potion:
+    material: POTION
+    displayname: "Potion of Fire Resistance"
+    buy: 11.9
+    sell: 2.98
+    potiontypes:
+    - fire_resistance
+  '2': 
+    #自定义药水效果示例: 整个列表中的药水效果不适合大部分生存服!!
+    material: POTION
+    displayname: "&b超人药水"
+    name: "&b超人药水"
+    buy: 5000
+    sell: 50
+    potiontypes:
+    - long_fire_resistance
+    - long_night_vision
+    - long_leaping
+    - long_regeneration
+    - long_strength
+    - long_swiftness
+    - long_water_breathing[/code]
+[size=3][b]刷怪笼种类（Spawner Type）：[/b][/size]
+
+[list]
+[*][font=Consolas]spawnertype[/font] 需为在你版本的 Minecraft [url=https://www.digminecraft.com/mobs/index.php]有效的生物名称[/url]。
+[*][url=https://www.digminecraft.com/mobs/index.php]所有可用在刷怪笼上的实体名称可在这里找到[/url]。
+[*][b]所有 [font=Consolas]spawner[/font] 材料的物品都需要该参数[/b]才可在放置时正常显示（*在第三方插件帮助下更改物品上的 NBT 数据后）[i]*仅付费版[/i]
+[*]注意：这个设置只会在 config.yml 中的 spawner-break 和 spawner-place 启用时有效。
+[/list]
+[quote][b]提示：[/b]在物品的 [b][font=Consolas]name[/font][/b] 被指定时，刷怪笼在被玩家挖掘时也会显示该自定义名称！:)[/quote]
+[code]#示例刷怪笼物品
+Spawner_item_shop:
+  '1':
+    material: SPAWNER
+    #你必须指定刷怪笼种类, 否则它会变成猪（默认选项）刷怪笼
+    spawnertype: BLAZE
+    #选项 'name' 也会在刷怪笼被挖掘时掉落的物品上应用，前提是 ESGUI 中指定了该刷怪笼的种类 (也需要配置文本启用 spawner-break 选项)
+    #name 选项是可选的, 但不指定的话玩家就无从知道刷怪笼种类 (只会对所有人显示它是 '刷怪笼')
+    name: '&6&l烈焰人 &f刷怪笼'
+    buy: 125000[/code]
+[size=3][b]解锁配方（Recipes）：[/b][/size]
+
+[list]
+[*]一个会添加至该物品所能解锁配方的列表。
+[*]知识之书将会在玩家激活（右键点击）它时将其中包含的合成配方为玩家解锁。
+[/list]
+
+我们不会在这里深入讲述合成配方。[url=https://minecraft.fandom.com/wiki/Recipe_book]若有兴趣可在此查阅知识之书的文档[/url]。
+
+[size=3][b]头颅拥有者（Skull Owner）：[/b][/size]
+
+[list]
+[*][font=Consolas]skullowner[/font] 必须为有效的正版玩家名称。
+[*]若玩家名称无效/不存在，则会使用默认的皮肤。
+[/list]
+[code]#示例玩家头颅物品:
+Playerhead_item_shop:
+  '1':
+    material: player_head
+    skullowner: notch
+    buy: 500
+    sell: 50[/code]
+
+[size=3][b]盔甲颜色（Armor Color）：[/b][/size]
+
+[list]
+[*][font=Consolas]armorcolor[/font] 必须为有效的 16 进制颜色格式。[b][i]例如：“0x00FF00”、“#00FF00”或“00FF00”[/i][/b]
+[*]可在此处获得你想要的颜色：https://www.colorspire.com/rgb-color-wheel/
+[/list]
+[code]#示例盔甲颜色物品:
+ArmorColor_item_shop:
+  '1':
+    material: player_head
+    armorcolor: "0x00FF00"
+    buy: 500
+    sell: 50[/code]
+
+[size=3][b]烟花选项：[/b][/size]
+
+[list]
+[*][font=Consolas][b]duration:[/b][/font] 为烟花的飞行时间
+[list]
+[*]可用值：[font=Consolas][b]1[/b][/font]、[font=Consolas][b]2[/b][/font]、[font=Consolas][b]3[/b][/font]（每个值代表使用火药的数量）
+[/list][*][font=Consolas][b]colors:[/b][/font] 为烟花中使用的颜色
+[list]
+[*]可用值：[font=Consolas][b]White[/b][/font]、[font=Consolas][b]Orange[/b][/font]、[font=Consolas][b]Magenta[/b][/font]、[font=Consolas][b]Light_Blue[/b][/font]、[font=Consolas][b]Yellow[/b][/font]、[font=Consolas][b]Lime[/b][/font]、[font=Consolas][b]Pink[/b][/font]、[font=Consolas][b]Gray[/b][/font]、[font=Consolas][b]Light_Gray[/b][/font]、[font=Consolas][b]Cyan[/b][/font]、[font=Consolas][b]Purple[/b][/font]、[font=Consolas][b]Blue[/b][/font]、[font=Consolas][b]Brown[/b][/font]、[font=Consolas][b]Green[/b][/font]、[font=Consolas][b]Red[/b][/font]、[font=Consolas][b]Black[/b][/font]
+[/list][*][font=Consolas][b]fade-colors:[/b][/font] 为烟花消失后使用的颜色
+[list]
+[*]可用值：[font=Consolas][b]White[/b][/font]、[font=Consolas][b]Orange[/b][/font]、[font=Consolas][b]Magenta[/b][/font]、[font=Consolas][b]Light_Blue[/b][/font]、[font=Consolas][b]Yellow[/b][/font]、[font=Consolas][b]Lime[/b][/font]、[font=Consolas][b]Pink[/b][/font]、[font=Consolas][b]Gray[/b][/font]、[font=Consolas][b]Light_Gray[/b][/font]、[font=Consolas][b]Cyan[/b][/font]、[font=Consolas][b]Purple[/b][/font]、[font=Consolas][b]Blue[/b][/font]、[font=Consolas][b]Brown[/b][/font]、[font=Consolas][b]Green[/b][/font]、[font=Consolas][b]Red[/b][/font]、[font=Consolas][b]Black[/b][/font]
+[/list][*][font=Consolas][b]flicker: true/false[/b][/font] 设置该烟花是否拥有闪烁效果，等价于合成时加入的萤石粉
+[*][font=Consolas][b]trail: true/false[/b][/font] 设置该烟花是否拥有轨迹效果，等价于合成时加入的钻石
+[*][font=Consolas][b]shape[/b][/font] 烟花的爆炸形状
+[list]
+[*]可用值：[font=Consolas][b]ball[/b][/font]、[font=Consolas][b]ball_large[/b][/font]、[font=Consolas][b]star[/b][/font]、[font=Consolas][b]burst[/b][/font]、[font=Consolas][b]creeper[/b][/font]
+[/list][/list]
+[quote][b][color=Green]√[/color][/b] 若你需要添加 fade-colors、flicker、trail 或 shape 中的一个的话，你就需要添加至少一种颜色。[/quote]
+[code]Fireworks:
+  1:
+    material: FIREWORK
+    buy: 38.50
+    sell: 20
+    duration: 2
+    colors:
+      - "cyan"
+      - "purple"
+    fade-colors:
+      - "black"
+      - "gray"
+    flicker: true
+    trail: true
+    shape: BURST[/code]
+    
+[size=3][b]乐器（Instrument）：[/b][/size]
+
+[list]
+[*]这个设置可修改山羊角的音色
+[list]
+[*]可用音色：[font=Consolas][b]PONDER[/b][/font]、[font=Consolas][b]SING[/b][/font]、[font=Consolas][b]SEEK[/b][/font]、[font=Consolas][b]FEEL[/b][/font]、[font=Consolas][b]ADMIRE[/b][/font]、[font=Consolas][b]CALL[/b][/font]、[font=Consolas][b]YEARN[/b][/font]、[font=Consolas][b]DREAM[/b][/font]
+[/list][*]该设置需要物品材料为山羊角才可正常工作
+[/list]
+[code]GoatHorns:
+  19:  
+    material: GOAT_HORN
+    buy: 100  
+    sell: 25  
+    instrument: "dream"[/code]
+
+[size=3][b]子选区（Sub sections）：[/b][/size]
+
+[list]
+[*]该选项将会让物品链接至一个子选区
+[list]
+[*]点击后会为玩家打开子选区的页面
+[/list][/list]
+[code]Blocks:  
+  29:
+    material: "COBBLESTONE"
+    section: Cobblestones
+    lore:
+    - "&6&l点击进入 圆石 选区"[/code]
+    
+[size=3][b]迷之炖菜效果（Stew effect）：[/b][/size]
+
+[list]
+[*]允许你指定迷之炖菜上的药水效果
+[/list]
+[code]Stews:  
+  Stew_1:
+    material: SUSPICIOUS_STEW
+    buy: 5
+    sell: 2
+    stew-effect: REGENERATION[/code]
+    
+[table=98%,White]
+[tr][td]药水效果[/td][td]ID[/td][td]持续时间[/td][/tr]
+[tr][td][font=Consolas][b]NIGHT_VISION[/b][/font][/td][td][font=Consolas][b]0[/b][/font][/td][td][font=Consolas][b]5s[/b][/font][/td][/tr]
+[tr][td][font=Consolas][b]JUMP_BOOST[/b][/font][/td][td][font=Consolas][b]1[/b][/font][/td][td][font=Consolas][b]6s[/b][/font][/td][/tr]
+[tr][td][font=Consolas][b]WEAKNESS[/b][/font][/td][td][font=Consolas][b]2[/b][/font][/td][td][font=Consolas][b]9s[/b][/font][/td][/tr]
+[tr][td][font=Consolas][b]BLINDNESS[/b][/font][/td][td][font=Consolas][b]3[/b][/font][/td][td][font=Consolas][b]8s[/b][/font][/td][/tr]
+[tr][td][font=Consolas][b]POISON[/b][/font][/td][td][font=Consolas][b]4[/b][/font][/td][td][font=Consolas][b]12s[/b][/font][/td][/tr]
+[tr][td][font=Consolas][b]SATURATION[/b][/font][/td][td][font=Consolas][b]6[/b][/font][/td][td][font=Consolas][b]0.35s[/b][/font][/td][/tr]
+[tr][td][font=Consolas][b]FIRE_RESISTANCE[/b][/font][/td][td][font=Consolas][b]7[/b][/font][/td][td][font=Consolas][b]4s[/b][/font][/td][/tr]
+[tr][td][font=Consolas][b]REGENERATION[/b][/font][/td][td][font=Consolas][b][/b]8[/font][/td][td][font=Consolas][b]8s[/b][/font][/td][/tr]
+[tr][td][font=Consolas][b]WITHER[/b][/font][/td][td][font=Consolas][b]9[/b][/font][/td][td][font=Consolas][b]8s[/b][/font][/td][/tr]
+[/table]
+
+[size=3][b]隐藏（Hidden）：[/b][/size]
+
+[list]
+[*]该选项可决定是否将物品从商店中隐藏。
+[/list]
+[quote][b][font=Consolas][color=Blue]i[/color][/font][/b]隐藏物品仍然可以通过 /sellgui 或 /sellall 命令出售[/quote]
+[code]Food:
+  Hidden1:
+    material: "ENCHANTED_GOLDEN_APPLE"
+    hidden: true # 物品不会在选区内显示[/code]
+    
+[size=3][b]最大购买量（Max buy）：[/b][/size]
+
+[list]
+[*]当设置为 [b]1[/b] 的时候，点击购买将直接跳过数量选择界面。
+[*]设置单次交易可购买的最大物品数量。
+[/list]
+[quote][b][color=Red]！[/color][/b]在 EconomyShopGUI 6.0.0 和付费版 5.0.0 之后的版本，若要使用立即交易，可能需要将这一项设置为 -1 而不是 1。[/quote]
+[code]Blocks:
+  Item5:
+    material: STONE
+    stack-size: 32 # 不会进入购买界面，一次直接购买半组
+    max-buy: 1 # W当设置为 1 时，玩家将不会进入数量选择界面
+    buy: 5
+    sell: 2.5[/code]
+    
+[size=3][b]最大出售量（Max sell）：[/b][/size]
+
+[list]
+[*]当设置为 [b]1[/b] 的时候，点击出售将直接跳过数量选择界面。
+[*]设置单次交易可出售的最大物品数量。
+[/list]
+
+[quote][b][color=Red]！[/color][/b]在 EconomyShopGUI 6.0.0 和付费版 5.0.0 之后的版本，若要使用立即交易，可能需要将这一项设置为 -1 而不是 1。[/quote]
+[code]Workstations:
+  Item6:
+    material: STONE_CUTTER
+    max-sell: 5 # 只允许你一次出售五个物品
+    buy: 5
+    sell: 2.5[/code]
+    
+[size=3][b]前置描述（Prior lore）：[/b][/size]
+
+[list]
+[*]设置是否要将默认的定价描述前置
+[*]设置为启用时，优先显示物品的描述或显示描述
+[*]设置为禁用时，定价描述会显示在物品描述的顶部
+[*]此项默认为 [i]false[/i]
+[/list]
+[code]Spawners:
+  Mob5:
+    material: SPAWNER
+    spawner-type: SKELETON
+    buy: 8000
+    displaylore:
+    - "&c--------------"
+    - "&2产生骷髅的神奇方块"
+    - "&c--------------"
+    prior-lore: true # 显示描述将会优先于定价描述显示[/code]
+    
+[size=3][b]关闭菜单（Close menu）：[/b][/size]
+
+[list]
+[*]物品交易完毕后会关闭商店界面
+[/list]
+[code]TestItems:
+  Test1:
+    material: STONE
+    buy: 40
+    stack-size: 128
+    max-buy: 1 # 启用快速购买
+    close-menu: true # 购买后关闭菜单[/code]
+    
+[size=3][b]交易信息（Transcation Message）：[/b][/size]
+
+[list]
+[*]决定是否在交易后向[b]玩家[/b]和 [b]DiscordSRV[/b]（如果启用的话）发送相关信息。
+[*]若此项禁用，交易信息将不会发送给玩家和 DiscordSRV，[b]但[/b]还是会显示在后台并记录至 transcation-log.txt 文件中
+[*]默认值为 [font=Consolas]true[/font]。
+[/list]
+[code]TestItems:
+  Test2:
+    material: MOSSY_COBBLESTONE
+    buy: 15
+    transactionMessage: false[/code]
+
+[size=4][b]付费版专属设置：[/b][/size]
+
+[size=3][b]等级条件（Level requirement）：[/b][/size]
+
+[list]
+[*]指定购买/出售商店物品所需的等级。
+[/list]
+[code]AdvencedShop:
+  1:
+    material: "NETHERITE_CHESTPLATE"
+    buy: 4500
+    name: "&c三 &9&l阶盔甲"
+    enchantments:
+    - "excellentenchants:fire_shield:3"
+    - "protection:5"
+    - "fire_protection:5"
+    - "mending"
+    level-requirement: 10
+    display-lore:
+    - "&a&l达到 10 级后即可解锁该物品"
+    - "&a&l你的等级为 %player_level%"[/code]
+    
+[size=3][b]头颅材质（Skull texture）：[/b][/size]
+
+[list]
+[*]与 [font=Consolas]skull-owner[/font] 不同的是，这个选项会将 base64 中的头颅材质添加支至此。
+[*]可在这里找到你想要的自定义头颅材质：https://minecraft-heads.com/custom-heads
+[/list]
+[code]CustomHeads:  
+  1:
+    material: PLAYER_HEAD
+    skull-texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTU3YTU4NTdiZGFhYTBjNDZmYTMyN2RjNWVhYmZiYWRlNjVkMGJjMWZkYTg0NWZhMDE0ODZjYjBlYTZjNDczMCJ9fX0=
+    buy: 1.0
+    name: "§c§l沼泽怪物 §a§l先生"[/code]
+[quote][b][font=Consolas][color=Blue]i[/color][/font][/b] 使用本设置时，物品材质必须为玩家头颅[/quote]
+
+[size=3][b]NBT 数据（NBT Data）：[/b][/size]
+
+[list]
+[*][font=Consolas][b]NBTData[/b][/font] 是一个用于自定义物品数据的[b]单行[/b]内容
+[*]在设置该内容时请参阅 Minecraft 官方维基及其他相关内容来正确配置你的 NBT 数据。
+[/list]
+[quote][b][color=Red]！[/color][/b]NBTData 设置中若出现英文双引号（"），则最外围需要用英文单引号，例如：'{Enchantments:[{id:"knockback",lvl:50},{id:"sharpness",lvl:50}]}'。
+但在包含单引号的 NBTData 中，你需要在每一个单引号处重复输入一个单引号，例如：[font=Consolas]...''{display:{Name:''{"text":"...[/font]][/quote]
+[code]#示例 NBT 物品:
+NBT_item_shop:
+  '1':
+    material: potion
+    displayname: '&d&l来自 &6金苹果 &d&l的汁液'
+    name: '&d&lGod potion'
+    buy: 25000
+    sell: 2000
+    NBTData: '{CustomPotionEffects:[{Id:10,Amplifier:2,Duration:400},{Id:22,Amplifier:4,Duration:2400},{Id:11,Amplifier:1,Duration:6000},{Id:12,Amplifier:1,Duration:6000}]}'
+    #若你在 NBT 标签中使用了英文单引号, 你必须输入两个单引号将它 '转义', 这样在代码上它还是会算作一个单引号.
+    #例如: 'tags:{customtags:[{''tag'':''thing''}]}'[/code]
+[quote][b][color=Red]！[/color][/b]Minecraft 有 255 字符的命令限制，若你输入长于这个限制的命令，超出的部分将会被除去。如果你需要设置长于这个数字的 NBT，请直接打开 YML 文档编辑它。[/quote]
+
+[size=3][b]命令（Commands）：[/b][/size]
+[font=Consolas][b][/b][/font]
+[list]
+[*][font=Consolas][b]buy-commands[/b][/font] 和 [font=Consolas][b]sell-commands[/b][/font] 是玩家在购买或出售后执行的命令列表
+[*]对带购买命令的物品使用选项 [font=Consolas][b]giveItem: true[/b][/font] 会在执行命令后得到物品本身
+[*]对待出售命令的物品使用选项 [font=Consolas][b]requireItem: true[/b][/font] 将会要求玩家在执行命令前拥有指定的物品
+[*]你可以在命令中使用 [font=Consolas][b]%player%[/b][/font]、[font=Consolas][b]%quantity%[/b][/font]、[font=Consolas][b]%buyPrice%[/b][/font]、[font=Consolas][b]%sellPrice%[/b][/font] 等变量来获取交易相关的数据。
+[*]以 [font=Consolas][b]p:[/b][/font] 开头的命令为玩家身份执行
+[*]以 [font=Consolas][b]o:[/b][/font] 开头的命令为临时管理员身份执行
+[/list]
+[quote][b][color=Red]！[/color][/b]注意 o: 会给予玩家临时管理员权限，这可能会被恶意利用。强烈图鉴使用例如 LuckPerms 一类的插件给予玩家[b]临时权限[/b]！[/quote]
+[code]#示例命令物品:
+Buy_commands_item_shop:
+  1:
+    material: "GOLD_INGOT"
+    displayname: "&8&l变得富有或不幸."
+    buy: 1000000
+    sell: 250000
+    giveItem: true
+    buy-commands:
+    - "/minecraft:give %player% diamond 2"
+    - "p: repair hand" # 该命令将会以玩家身份执行
+    - "o: i netherite_ingot 5" # 该命令将会以临时管理员身份执行
+    requireItem: true
+    sell-commands:
+    - "eco reset %player%" # 该命令将会以控制台身份执行
+    - "effect give %player% minecraft:nausea 255 255"[/code]
+[list]
+[*][font=Consolas][b]sell-commands[/b][/font] 是玩家向商店出售物品后会执行的命令
+[/list]
+[size=3][b]全局库存（Global stock）：[/b][/size]
+
+[list]
+[*][font=Consolas]stock-limit-global:[/font] 指定了物品对全服限售的数量
+[*][font=Consolas]auto-restock-global:[/font] 指定当物品售罄时补货的时间长度
+[*]点击此处来获取全局补货功能的更多内容
+[*][font=Consolas]refill-stock:[/font] 每次补货的物品数量
+[/list]
+[code]OP_Items:
+  1:
+    material: NETHERITE_PICKAXE
+    name: '&6&l超级下界合金镐'
+    displaylore:
+    - '&a这把镐子有效率 15.'
+    buy: 1850000
+    sell: 999000
+    enchantments:
+    - 'EFFICIENCY:15'
+    NBTData: '{Unbreakable:1b}'
+    stock-limit-global: 2 # 该物品只能在服务器上出售两个
+    auto-restock-global: '2d' # 这会让该物品每隔两天在服务器中补货
+    refill-stock: true[/code]
+    
+[quote][color=Blue][b][font=Consolas]i[/font][/b][/color] 你可以不设置 [font=Consolas]auto-restock-global:[/font] 项，这样这个限售物品就会成为限量版[/quote]
+
+[size=3][b]玩家库存（Player stock）：[/b][/size]
+
+[list]
+[*][font=Consolas]stock-limit-player:[/font] 指定每个玩家可以购买的最大数量
+[*][font=Consolas]auto-restock-player:[/font] 分玩家设置售罄后的物品补货时间
+[*]点击这里来获取更多有关的玩家库存信息。
+[*][font=Consolas]refill-stock:[/font] 为售罄后的物品补充间隔时间
+[/list]
+[code]OP_Items:  
+  2:
+    material: EXPERIENCE_BOTTLE
+    displayname: '&e&l在 Minecraft 中获得 50 级.'
+    buy: 25000
+    displaylore:
+    - '&c你想要 50 级吗?'
+    commands:
+    - 'minecraft:experience add %player% 50 levels'
+    stock-limit-player: 1 # 每个服务器上的玩家都可购买一次该物品
+    auto-restock-player: '7d 12h' # 玩家买空物品后的 7 天 12 小时后会补货
+    refill-stock: true[/code]
+
+[quote][color=Blue][b][font=Consolas]i[/font][/b][/color] 你可以不设置 [font=Consolas]auto-restock-player:[/font] 项，这样这个限售物品就会成为限量版[/quote]
+
+[size=3][b]全局出售限制（Global sell limit）：[/b][/size]
+
+[list]
+[*][font=Consolas]sell-limit-global:[/font] 指定物品在服务器的限制收购量
+[*][font=Consolas]auto-restock-global-sell:[/font] 当服务器商店收购满时清空库存以便再次收购的时间间隔。
+[/list]
+[code]Special_Items:  
+  Special1:
+    material: BOOKSHELF
+    buy: 116.81
+    sell: 29.21
+    sell-limit-global: 5
+    auto-restock-global-sell: 30s[/code]
+
+[size=3][b]玩家出售限制（Player sel limits）：[/b][/size]
+
+[list]
+[*][font=Consolas]sell-limit-player:[/font] 按玩家指定物品在服务器的限制收购量
+[*][font=Consolas]auto-restock-player-sell:[/font] 当服务器商店按玩家收购满时清空库存以便再次收购的时间间隔。
+[/list]
+[code]Special_Items:  
+  Special2:
+    material: BOW
+    sell: 700
+    enchantments:
+    - 'POWER:5'
+    sell-limit-player: 10
+    auto-restock-player-sell: 10m[/code]
+    
+[size=3][b]货币（Economy）：[/b][/size]
+
+[list]
+[*][font=Consolas]economy:[/font]指定购买物品时所使用的货币种类
+[/list]
+[quote][b][color=Green]√[/color][/b] 当该选项未指定或指定的经济插件未能载入，该物品会使用商店选区所指定的货币，而商店选区未指定货币或指定的经济插件未能载入，则会使用配置指定的默认经济。[/quote]
+
+[code]Special_Items:  
+  Special3:
+    material: ENCHANTED_GOLDEN_APPLE
+    buy: 10 # 购买物品消耗 10 个宝石
+    sell: 5 # 出售物品获得 5 个宝石
+    economy: ULTRA_ECONOMY:Gems[/code]
+    
+[size=3][b]权限（Permission）：[/b][/size]
+
+[list]
+[*][font=Consolas]permission:[/font]允许你为物品设置权限
+[*]没有对应权限的玩家将不能购买或向商店出售该物品
+[/list]
+
+[quote][b][color=Red]！[/color][/b]这里所设置的权限仅为完整权限的一部分，默认情况下玩家所需的权限应当是 [font=Consolas][b]EconomyShopGUI.shop.<选区>.item.<权限>[/b][/font][/quote]
+[code]Special_Items:  
+  Special4:
+    material: NETHERITE_SWORD
+    buy: 25 # 购买该物品需要消耗 25 个绿宝石
+    sell: 7 # 出售该物品只能获得 7 个绿宝石
+    economy: ITEM:Emerald
+    enchantments:
+    - "SHARPNESS:3"
+    - "UNBREAKING:3"
+    - "MENDING"
+    name: "&d&l神之赠礼"
+    lore:
+    - "&a精妙之剑"
+    - "&a只有神才能驾驭."
+    permission: gods-gift # 所需权限即为:
+                          # 'EconomyShopGUI.shop.Special_Items.item.gods-gift'[/code]
+
+[size=3][b]隐藏特殊描述（Hide util lore）：[/b][/size]
+
+[list]
+[*]决定是否在物品上隐藏限制出售/收购的描述文本。
+[/list]
+
+[code]Special_Items:  
+  Special4:
+    material: NETHERITE_SWORD
+    buy: 25 # 购买该物品需要消耗 25 个绿宝石
+    sell: 7 # 出售该物品只能获得 7 个绿宝石
+    economy: ITEM:Emerald
+    enchantments:
+    - "SHARPNESS:3"
+    - "UNBREAKING:3"
+    - "MENDING"
+    name: "&d&l神之赠礼"
+    lore:
+    - "&a精妙之剑"
+    - "&a只有神才能驾驭."
+    stock-limit-player: 1 # 玩家这辈子只能购买一个物品
+    hideUtilLore: true # 设置该选项后玩家将无法知晓该物品只能购买一次[/code]
+    
+[size=3][b]动态定价（Dynamic pricing）：[/b][/size]
+
+[code]DynamicPricing_Shop:
+  Item14:
+    material: GOLD_NUGGET
+    name: '&6&l称号币'
+    lore:
+    - '&c用于购买游戏内称号'
+    buy: 40
+    sell: 20
+    dynamic-pricing: false[/code]
+[quote][b][color=Blue][font=Consolas]i[/font][/color][/b] 需要注意的是，这个选项允许禁用选区的动态定价，但不允许启用选区的动态定价。若要禁用该功能，你需要前往 config.yml 设置全局动态定价为启用。[/quote]
+    
+[size=3][b]购买价格（Buy prices）：[/b][/size]
+
+[list]
+[*]用于添加单个物品的多种货币要求
+[*]经济种类和其实际价格使用两个冒号分隔（[font=Consolas][b]::[/b][/font]）
+[list]
+[*]示例：[font=Consolas]item:material:gold_nugget::80[/font] 表示需要 80 个金粒
+[/list][*]在列表中的第一条内容表示物品的默认支付方式，这意味着玩家在购买物品时插件会默认收取这种类型的物品或货币。
+[*]使用设置 [font=Consolas]require-all: true[/font] 来表示购买物品同时需要的多种货币
+[list]
+[*]当该项为 [font=Consolas]false[/font]（或未指定）时，插件会在玩家进行该物品的交易时允许玩家选择支付方式。
+[/list][/list]
+[code]Multiple_item_prices_shop:  
+  11:
+    material: MAGMA_CREAM
+    buy-prices:
+      require-all: true
+      prices:
+        - "Vault::40"
+        - "item:material:diamond id:CRYSTAL::2"
+        - "item:material:emerald id:Gems::30"
+        - "item:material:gold_nugget id:Gold::5"
+    sell: 30[/code]
+[list]
+[*]上述示例物品的价格描述中显示：玩家需要 $40、5 个金粒、2 颗钻石[b]和[/b] 30 颗绿宝石才能购买这个物品。
+[/list]
+[img]https://2522957397-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-M6QXvrDDroId1RhlXgl%2Fuploads%2FhkXzoBxTpaRQinqjl3OK%2Fimage.png?alt=media&token=29cf3c80-3282-4653-816c-a50f764800a3[/img]
+[code]Multiple_item_prices_shop:  
+  12:
+    material: GHAST_TEAR
+    buy-prices:
+      prices:
+        - "ULTRA_ECONOMY:Gems::15"
+        - "VAULT::40"
+        - "item:material:emerald id:CRYSTAL::5"
+    sell: -1[/code]
+[list]
+[*]上述示例物品的价格描述中显示：玩家需要 UltraEconomy 的 15 个宝石、$40 [b]或[/b] 5 颗绿宝石（又称水晶）才可购买物品
+[list]
+[*]玩家可以通过右键点击购买界面带有 CONFIRM_TRANSCATION 标签的按钮来切换支付方式。
+[/list][/list]
+
+[img]https://2522957397-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-M6QXvrDDroId1RhlXgl%2Fuploads%2FZqIxmjo6Rgk0nvtshKgk%2Fimage.png?alt=media&token=ac13e0fd-f446-4d23-a950-62bf1dbce074[/img]
+
+[size=3][b]出售价格（Sell prices）[/b][/size]
+
+[list]
+[*]用于对指定物品添加多个（向商店）出售的价格
+[*]经济种类和其实际价格使用两个冒号分隔（[font=Consolas][b]::[/b][/font]）
+[list]
+[*]示例：[font=Consolas]ULTRA_ECONOMY:Gems::15[/font] 中，[font=Consolas]15[/font] 即为 UltraEconomy 中的“宝石”货币数量
+[/list][*]在列表中的第一条内容表示物品的默认支付方式，这意味着玩家在购买物品时插件会默认收取这种类型的物品或货币。
+[*]使用设置 [font=Consolas]give-all: true[/font] 来表示出售物品[b]同时[/b]获得的多种货币
+[list]
+[*]当该项为 [font=Consolas]false[/font]（或未指定）时，玩家所获得的货币为此处设置的第一种。
+[list]
+[*]当通过命令 [font=Consolas]/sellall[/font] 或 [font=Consolas]/sellgui[/font] 且该设置为 false 时，列表中设置的第一个经济单位即为向玩家给予出售所得的支付方式
+[*]当通过 [font=Consolas]/shop[/font] 出售物品且该选项为 false 时，玩家可通过右键带有 CONFIRM_TRANSCATION[/font] 的物品切换获得的货币类型
+[/list][/list][/list]
+
+[code]Multiple_item_prices_shop: 
+  13:
+    material: LEATHER
+    buy: 50.0
+    sell-prices:
+      give-all: true
+      prices:
+        - "Vault::40"
+        - "item:material:diamond id:CRYSTAL::2"
+        - "item:material:emerald id:Gems::30"[/code]
+        
+[list]
+[*]上述示例物品的价格描述中显示：玩家出售物品后将会获得 $40、2 颗钻石[b]和[/b]30 颗绿宝石
+[/list]
+
+[img]https://2522957397-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-M6QXvrDDroId1RhlXgl%2Fuploads%2FK69uGu3YVjyOWaRxVaa3%2Fimage.png?alt=media&token=dc63542c-92d3-4793-99a2-f7e563ff1a9a[/img]
+
+[code]Multiple_item_prices_shop: 
+  14:
+    material: RABBIT_HIDE
+    buy: 50.0
+    sell-prices:
+      prices:
+        - "Vault::40"
+        - "item:material:redstone::50"[/code]
+        
+[list]
+[*]上述示例物品的价格描述中显示：玩家出售物品后会获得 $40 或 50 个红石
+[list]
+[*]若物品是通过 [font=Consolas]/sellgui[/font] 或 [font=Consolas]/sellall[/font] 出售的，玩家获得的货币种类为此处设置中的第一项。
+[/list][/list]
+[img]https://2522957397-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-M6QXvrDDroId1RhlXgl%2Fuploads%2F5F0TUA5x0afIxiEYiBjl%2Fimage.png?alt=media&token=4c6a0b90-8ed8-4ba4-bcea-bbeee107e9e6[/img]
+
+[size=3][b]无视标签（Ignored tags）：[/b][/size]
+
+这个设置对出售一些特殊物品的情况很有用。
+
+例如在设置中加入 [font=Consolas][b]Enchantment[/b][/font]，则出售的物品无论拥有什么附魔，只要其他条件符合，即可被出售。
+如果只添加了这一个标签，物品的标签、名称、描述和其他物品的数据仍然需要与商店中所给的物品完全匹配，才可成功出售。
+
+[quote][b][font=Consolas][color=Blue]i[/color][/font][/b] 这条设置与全局影响 NBT 无视标签设置的功能相同，但只会将作用效果限制在单个物品上。[/quote]
+
+[code]Recycle_Shop:
+  1:
+    material: LEAHTER_HELMET
+    sell: 1.5
+    ignored-tags:
+    - "Enchantments"
+    - "Damage"
+  2:
+    material: LEAHTER_CHESTPLATE
+    sell: 2.5
+    ignored-tags:
+    - "Enchantments"
+    - "Damage"
+  3:
+    material: LEAHTER_LEGGINGS
+    sell: 2
+    ignored-tags:
+    - "Enchantments"
+    - "Damage"
+  4:
+    material: LEAHTER_BOOTS
+    sell: 1
+    ignored-tags:
+    - "Enchantments"
+    - "Damage"[/code]
+[page]
+[size=5][b]语言[/b][/size]
+本章节教程将指导你更换和/或更新、创建语言的步骤
+
+[size=4][b]如何修改语言：[/b][/size]
+
+[list]
+[*]在 config.yml 的此处将语言设置为你想要的语言，前提是它存在于你的语言文件中
+[*]你也可以在这里按 BCP-47 修改经济单位的显示样式！
+[*]你可以按你喜好自由修改所有的信息/商店标题等！
+[*]你也可以将文本翻译为你自己国家的语言（或者来帮我们改进现有语言文件）。你也可以将你自己的翻译文件分享在 Crowdin（教程如下）上，我们会将这些翻译添加至新版本的插件！
+[*]你可以在文本中使用 [font=Consolas]\n[/font] 来表示换行符
+[*]所有信息都可以包含正常[url=https://www.digminecraft.com/lists/color_list_pc.php]格式[/url]的彩色字符例如 [b][font=Consolas]&5[/font][/b]，或是 RGB 格式的彩色字符 [b][font=Consolas]#9000FF[/font][/b]。
+[*]所有消息文本均可包含渐变彩色，格式为 [font=Consolas][b]<gradient:#16进制色码>消息文本</gradient:#16进制色码>[/b][/font]。
+示例：[font=Consolas]&l<gradient:#F700FF>上一页</gradient:#FFFFFF>[/font]。使用[url=https://www.colorspire.com/rgb-color-wheel/]这个网站[/url]来获取 16 进制的色码。
+[/list]
+
+[quote][b][font=Consolas][color=Blue]i[/color][/font][/b] 自 3.1.0 版本的 EconomyShopGUI 开始，插件会自动补全旧版语言文件中缺少的内容。[/quote]
+
+[size=3][b]目前支持的语言：[/b][/size]
+
+文件名及其贡献者
+[table=98%,White]
+[tr][td][b]语言：[/b][/td][td][b]文件名称：[/b][/td][td][b]贡献者：[/b][/td][/tr]
+[tr][td]捷克语[/td][td]lang_cz.yml[/td][td][url=https://crowdin.com/profile/skidde]Skidde[/url][/td][/tr]
+[tr][td]荷兰语[/td][td]lang_nl.yml[/td][td][url=https://crowdin.com/profile/Gypopo]Gypopo[/url]、[url=https://crowdin.com/profile/rombin]RoMbin[/url]、[url=https://crowdin.com/profile/flurbudurbur]Flurbudurbur[/url][/td][/tr]
+[tr][td]英文（美国）[/td][td]lang-en.yml[/td][td][url=https://crowdin.com/profile/Gypopo]Gypopo[/url]、Leasoncre[/td][/tr]
+[tr][td]法语[/td][td]lang-fr.yml[/td][td][url=https://crowdin.com/profile/Gypopo]Gypopo[/url][/td][/tr]
+[tr][td]德语[/td][td]lang-de.yml[/td][td][url=https://crowdin.com/profile/skyslycer]Maxnomise[/url]、[url=https://crowdin.com/profile/weiiswurstdev][/url]Weiiswurst[/td][/tr]
+[tr][td]葡萄牙语[/td][td]lang-pt.yml[/td][td][url=https://crowdin.com/profile/alephsystem]Emundus[/url]、[url=https://crowdin.com/profile/bruno-marley]Bruno Marley[/url][/td][/tr]
+[tr][td]西班牙语[/td][td]lang-es.yml[/td][td][url=https://crowdin.com/profile/Gypopo]Gypopo[/url]、[url=https://crowdin.com/profile/briamsay]briamsay[/url][/td][/tr]
+[tr][td]土耳其语[/td][td]lang-tr.yml[/td][td][url=https://crowdin.com/profile/canpolat08]Canploat[/url][/td][/tr]
+[tr][td]波兰语[/td][td]lang-pl.yml[/td][td][url=https://crowdin.com/profile/plkaratuspl]PLKaratusPL[/url]、[url=https://crowdin.com/profile/mrxlimitowany]MrXLimitowany[/url]、[url=https://crowdin.com/profile/devinkoder8]Devin Koder[/url]、[url=https://crowdin.com/profile/panmisiok]Kapix[/url]、[url=https://crowdin.com/profile/sharkywithoutaimbot]Sharky[/url][/td][/tr]
+[tr][td]日语[/td][td]lang-jp.yml[/td][td][url=https://crowdin.com/profile/kim_jong-un]Incho[/url][/td][/tr]
+[tr][td]斯洛伐克语[/td][td]lang-sk.yml[/td][td][url=https://crowdin.com/profile/d.stefanakova]kosoft[/url][/td][/tr]
+[tr][td]简体中文[/td][td]lang-zh.yml[/td][td][url=https://crowdin.com/profile/xfirst_playerx]Xfirst_playerX[/url]、[url=https://crowdin.com/profile/minisentry]MiniSentry[/url]、[url=https://crowdin.com/profile/huhd3jf]huhd3jf[/url][/td][/tr]
+[tr][td]韩语[/td][td]lang-ko.yml[/td][td][url=https://crowdin.com/profile/leedagyeom0131]MadBee[/url]、[url=https://crowdin.com/profile/hoehoetvhs]hoehoetvhs[/url][/td][/tr]
+[tr][td]意大利语[/td][td]lang-it.yml[/td][td][url=https://crowdin.com/profile/realonlyventu]RealOnlyVentu[/url]、[url=https://crowdin.com/profile/vladislay]Daniele[/url]、[url=https://crowdin.com/profile/bazzoni.edoardo]Edoardo Bazzoni[/url][/td][/tr]
+[tr][td]俄语[/td][td]lang-ru.yml[/td][td][url=https://crowdin.com/profile/mrudd]Denis[/url][/td][/tr]
+[/table]
+若你的名字不在列表上，而你贡献了翻译，请立即在 Discord 的频道上联系我们。
+
+[size=4][b]如何修改或改进已有的翻译：[/b][/size]
+
+EconomyShopGUI 的语言文件是开源的，你可以在我们的 Crowdin 上修改它们。
+创建一个 Crowdin 账号，点击你想要翻译的语言，选择文件并开始翻译，很简单！
+
+[quote][b][font=Consolas][color=Blue]i[/color][/font][/b] 若你是 Crowdin 上的翻译参与者，请先加入我们的 Discord 聊天群组并寻求翻译者用户组，这样在有新的可翻译内容时你就可以在翻译频道中接收并快速更新！[/quote]
+
+[img]https://2522957397-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-M6QXvrDDroId1RhlXgl%2F-MZmz5g4sbzmigDJfVra%2F-MZnNGMGUqTLCnwHZGqX%2FSchermafbeelding%202021-05-03%20195623.png?alt=media&token=b5f8878f-65f2-47ee-9c70-8940110e6ac0[/img]
+[size=2][color=Gray]Crowdin 上的翻译[/color][/size]
+
+[size=4][b]英语语言文件示例：（[font=Consolas]lang-en.yml[/font]）[/b][/size]
+
+[list]
+[*]各项设置均可通过注释理解
+（译者注：翻译后的语言文件现可自动下载，此处不重复翻译）
+[/list][code]#This is the english language file, set "language-file" in the config.yml to "lang-en.yml" to use this file!
+
+#You can see this site for all color codes ----> https://minecraft.tools/en/color-code.php
+
+#All variables you can use;
+#!!Please note that all variables only work in the current line they are located!!
+
+# %shopsection%       = the shopsection that has to be called
+# %amounttopay%       = the amount that the item will cost
+# %playername%        = the player's name
+# %amount%            = the amount of an item
+# %material%          = the material from a item
+# %amounttogive%      = the amount of money that a player received from another player
+# %minimumamount%     = the minimum amount of money you need to pay someone if you use the command
+# %amountofmoney%     = the amount of money that you have on you
+# %location%          = the location of the current item that is called inside shops.yml/sections.yml configuration file
+# %languagefile%      = the current languagefile that's being called
+# %version%           = the version of minecraft that the plugin uses
+# %spawner-type%      = the spawner type that the spawner item has
+# %bought/sold%       = if the item is sold or bought
+# %buy/sell-method%   = the way a player bought/sold an item Ex: Buy-screen or sellall command
+# %fileName%          = the name of the file that's being called
+# %key%               = the name of the key
+# %keys%              = all available keys, do not confuse with %key%
+# %itemLoc%           = the location of the item in a section inside the shops config
+# %price%             = amount of money
+# %action%            = the name of the action
+# %actions%           = the available actions
+# %balance%           = the balance of the player
+# %permsGroup%        = the permissions group
+# %maxInvSize%        = the max size of a inventory screen
+
+#StartUp/Reload
+shops,yml-not-found: Shops.yml is not found, creating one...
+shops,yml-created: Shops.yml successful created!
+shops,yml-found: Shops.yml has been found!
+sections,yml-not-found: Sections.yml is not found, creating one...
+sections,yml-created: Sections.yml successful created!
+sections,yml-found: Sections.yml has been found!
+updating-shop-settings: Updating Shop settings...
+adding-new-shop-shops,yml: Adding a new shop called %shopsection% to shops.yml.
+adding-new-shop-sections,yml: Adding a new shop called %shopsection% to sections.yml.
+disabled-due-no-vault: Disabled due to no Vault dependency found, please install Vault.
+disabled-due-no-economy: Disabled due to no economy plugin was found, please install a plugin such as EssentialsX.
+update-available: There is an update available!
+done: Done!
+updating-sections-config: Updating sections config...
+debug-mode-enabled: Debug mode is enabled.
+economy-provider-null: EconomyProvider is null.
+successfully-hooked-into-vault: Successfully hooked up into Vault.
+language-file-using: Using %languagefile% as language file.
+cannot-find-language-file: Can not find language file!
+minecraft-version-using: Using minecraft version %version%...
+checking-each-item: Checking each item for wrong/missing value's...
+loading-items: Loading all items...
+could-not-find-valid-version: Could not find a valid implementation for this server version. This will cause the  plugin  to  not have a version to use and result in lots of items/methods not working.  Please  use  a supported minecraft version.
+updating-configs: Updating the configurations because a newer version has been found...
+creating-backup: Creating a backup from the old %fileName%, the file can be found in the backups folder  inside  the  EconomyShopGUI plugin's folder.
+discounts-feature-unavailable: Discounts feature cannot be enabled because no permissions plugin was found.
+
+#Main Shop Inventory
+inventory-main-shop-title: '&8&lServer Shop'
+profile: '&aProfile'
+name: '&6Name'
+money: '&6Money'
+level: '&6Level'
+
+#Buystacks Inventory title
+inventory-buystacks-title: '&8Choose amount of item &lstacks'
+
+#HowMuchSell/HowMuchBuy Inventory
+inventory-howmuchsell-title: '&8Choose item amount to &lsell'
+inventory-howmuchbuy-title: '&8Choose item amount to &lbuy'
+plus-one: '&b+1'
+min-one: '&5-1'
+plus-sixteen: '&b+16'
+min-sixteen: '&5-16'
+plus-thirty-two: '&b+32'
+min-thirty-two: '&5-32'
+sell: '&aSell?'
+sell-all: '&cWant to sell all?'
+buy: '&aBuy?'
+buy-stacks: '&cBuy stacks?'
+
+#All Inventory's
+back: '&4Back'
+cancel: '&4Cancel'
+
+#Previous/Next/Current page
+previous-page: '&dPrevious Page'
+next-page: '&bNext Page'
+current-page: '&7Page:'
+
+#Buy/Sell Controls
+left-click-buy: '&aLeft Click: Buy: &c%amounttopay%'
+right-click-sell: '&6Right Click: Sell: &c%amounttopay%'
+
+#Buy/Sell Messages
+pay-confirmation: '&aYou have successfully bought &1%amount% x &b%material% &afor &c%amounttopay%'
+sell-confirmation: '&aYou have successfully sold &1%amount% x &b%material% &afor &c%amounttopay%'
+sell-confirmation-multiple-items: '&aYou have successfully sold &1%amount% &aitems for &c%amounttopay%'
+no-item-to-be-sold: '&cYou do not have any of this item inside your inventory.'
+item-cannot-be-bought: '&cItem cannot be bought.'
+item-cannot-be-sold: '&cItem cannot be sold.'
+player-made-transaction: '%playername% %bought/sold% %amount% x %material% for %amountofmoney% with the %buy/sell-method%.'
+buy-screen: buy screen
+sell-screen: sell screen
+buystacks-screen: buy stacks screen
+sellall-screen: sell all screen
+sellall-command: sell all command
+bought: bought
+sold: sold
+
+#CurrencySymbol
+currencysymbol: $%price%
+
+#All commands
+command-disabled-in-world: '&cThis command is disabled inside this world.'
+
+#Edit-shop subcommand descriptions
+editshop-add-item-subcommand-desc: '&aAdd a item to the shop.'
+editshop-edit-item-subcommand-desc: '&aEdit an existing item in the shop.'
+editshop-remove-item-subcommand-desc: '&aDelete a item from the shop.'
+editshop-add-hand-item-subcommand-desc: '&aAdd a item from you hand to the shop.'
+
+#Edit-shop subcommand syntaxes
+editshop-add-item-subcommand-syntax: '&a/editshop additem <section> <material> <buy price> <sell price> <displayname>'
+editshop-edit-item-subcommand-syntax: '&a/editshop edititem <section> <item> <action> <key> <value>'
+editshop-remove-item-subcommand-syntax: '&a/editshop deleteitem <section> <item>'
+editshop-add-hand-item-subcommand-syntax: '&a/editshop addhanditem <section> <buy price> <sell price>'
+
+#Edit-shop command messages
+editshop-adding-item: '&aAdding the new item to the shop...'
+editshop-add-item-successful: '&aSuccessfully added the item to the shop under section ''%shopsection%''.'
+editshop-editing-item: '&aUpdating the item...'
+editshop-edit-item-successful: '&aSuccessfully updated the item.'
+editshop-removing-item: '&aRemoving the item from the shop...'
+editshop-remove-item-successful: '&aSuccessfully removed the item from the shop.'
+editshop-reload-shop-to-see-changes: '&aUse command /sreload to load the changes inside the shop.'
+
+#Edit-shop command errors
+section-does-not-contain-item: '&cSection ''%shopsection%'' does not contain the item ''%itemLoc%''.'
+no-valid-action: '&cNot a valid action ''%action%''. \nAvailable actions: %actions%.'
+no-valid-key: '&cNot a valid key ''%key%''. \nAvailable keys: %keys%.'
+action-not-valid-on-key: '&cCannot %action% the ''%key%'' key.'
+edit-item-material-invalid: '&cThe material from the item you are trying to edit is invalid. ''%material%'''
+key-already-defined: '&cThe ''%key%'' key is already defined on the item, you cannot add this twice.'
+key-is-not-found: '&cThe ''%key%'' key cannot be removed from the item because it is not found.'
+
+#Reload Command
+configs-reloaded: '&aAll configs reloaded.'
+
+#Balance Command
+check-balance: '&bYou currently have &c%amountofmoney%&b.'
+check-balance-other-player: '&b%playername% &acurrently has &c%amountofmoney%&a.'
+
+#Givemoney Command
+givemoneycommand-example: '&9/givemoney <player> <amount>'
+givemoney-complete: '&aGivemoney complete.'
+
+#Pay Command
+minimum-amount: '&cThe minimum amount to pay a player is %minimumamount%.'
+payment-complete: '&aPayment complete.'
+player-received-money: '&aYou received &c%amounttogive% &afrom &2%playername%&a!'
+need-player-and-amount: '&9You need to give a player and a amount of money.'
+need-amount: '&9You need to give a amount of money.'
+paycommand-example: '&9/pay <player> <amount>'
+
+#Player breaks spawner
+default-spawner-name: '&9&l%spawner-type% &rSpawner'
+spawner-broke-and-applied-to-inventory: '&aYou successfully mined a &9%spawner-type%, &athe item is applied to your inventory.'
+need-silk-touch: '&cYou need to use a silk touch pickaxe to mine this!'
+
+#JoinMessage
+join-message: '&2Welcome, your balance is &c%balance%!'
+
+#Level event
+level-event-message: '&2[Levels] &5Here you go, &c%amount% &5has been added to your balance!'
+
+#Item error's
+displayname-null: Could not get displayname.
+item-name-null: Could not get the name of the item.
+need-item-material: Can not create item with a blank material value.
+item-material-null: Could not get the item material. If you think this is a bug, please report it to our  discord  support  server which you can find at the plugin page. %material%
+item-enchantment-null: Could not get the enchantment of the item.
+need-item-enchantment: Can not create enchantment with a blank value.
+item-enchantment-not-supported: This enchantment is not supported in this minecraft version.
+enchantment-cannot-apply-to-item: To apply an enchantment to the item, the material needs to be enchanted book or a  tool  that  fits the enchantment.
+item-spawnertype-null: Could not get the spawner type of the item.
+need-item-spawnertype: Can not create spawner with a empty spawner-type.
+material-needs-to-be-spawner: To apply a Spawner-Type(Entity-Type) to the item, the material of the item needs to  be  a  spawner.
+item-potiontype-null: Could not get the potion type of the item.
+need-item-potiontype: Can not create a potiontype with a blank value.
+potiontype-not-supported: This potion type is not supported in this minecraft version.
+material-needs-to-be-potion: To apply an potion effect, the material needs to be a kind of a potion or a tipped  arrow.
+cant-bind-multiple-applyments: Can not create an item with multiple applyments like enchantments/spawner-types or  potion  effect  types.
+item-error: '&cItem Error, look in the console.'
+material-not-supported: This item material is not supported in this minecraft version.
+item-needs-buy-and-sell-value: Every item in the shop needs to have a buy/sell value.
+sell-value-wrong: The sell value needs to be a decimal or a number.
+buy-value-wrong: The buy value needs to be a decimal or a number.
+option-type-changed: Please change option 'type' to option 'spawnertype' to create a spawner in the shop.  The  name  of the option has changed in version 2.2 for clarity.
+option-meta-changed: Please change option 'meta' to option 'displayname' to create a item with a displayname  in  the  shop. The name of the option has changed in version 2.2 for clarity.
+cannot-display-shopsection: Cannot create shop section '%shopsection%' because the place of the item needs to  be  in  a range from 0 - 45.
+need-recipe-material: Cannot create the recipe material with a blank value.
+cannot-get-recipe-material: Cannot create the recipe material, please check the material name for any spelling  mistakes  and  if it exists.
+recipe-material-not-supported: The given recipe material is not supported in this minecraft version.
+material-needs-to-be-book: To apply an recipe to the item, the material of the item needs to be a KnowLedge book.
+need-skullowner: Cannot create the PlayerHead without a specified player (Skull Owner).
+material-needs-to-be-skull: To apply an skull texture (Skull Owner) to the item, the material of the item needs  to  be  a Player Head.
+material-needs-to-be-leather-armor: To apply an color to a armor piece, the material needs to be leather armor.
+
+#Item path
+items-path-in-shops-config: 'Item path in shops.yml config: %location%'
+items-path-in-sections-config: 'Item path in sections.yml config: %location%'
+
+#Compatibility
+wildstacker-compatibility-enabled: Spawner provider set to WildStacker in config
+wildstacker-not-found: WildStacker was not found
+wildstacker-found: WildStacker found, integrating...
+could-not-integrate-with-wildstacker: Could not integrate with WildStacker
+using-wildstacker-spawners: Using WildStacker as spawner provider.
+silkspawners-compatibility-enabled: SilkSpawners compatibility has been enabled in config.
+silkspawners-not-found: SilkSpawners not found, using EconomyShopGUI spawners...
+silkspawners-found: SilkSpawners found, integrating...
+could-not-integrate-with-silkspawners: Could not integrate with SilkSpawners.
+using-silkspawners-spawners: Using SilkSpawners spawners...
+using-default-spawners: Using plugin default spawners...
+
+#Error's
+cannot-find-discounted-section: Cannot add discounts for section '%section%', either the shop section is disabled  or  not found.
+cannot-find-discounted-group: Cannot add discounts for permission group '%permsGroup%', please check the spelling  and  if it exists in your permissions plugin.
+disabling-plugin: Disabling the plugin...
+not-spawn-able: This entity type is not spawn able. '%spawnertype%'
+real-player: You need to be a real player to use that command.
+player-not-online: '&cThat player does not exist or is not online.'
+cannot-sell-air: '&cYou cannot sell air...'
+no-permissions: '&cYou do not have permissions for that!'
+no-permissions-to-open-shop: '&cYou do not have the required permission to open this shop section.'
+cannot-do-that: '&4You can not do that!!'
+more-space-needed: '&cPlease make more space inside your inventory and then try again.'
+could-not-store-all-items: '&c%amount% item(s) couldn''t be added to your inventory because it is full.'
+not-enough-space-inside-inventory: '&4You do not have enough space in your inventory, dropping the remaining items on  ground.'
+insufficient-money: '&cYou do not have enough money.'
+canceling-transaction-no-space: '&4You do not have enough space in your inventory, canceling transaction. \nPlease  make  more  room inside your inventory and try again.'
+no-items-in-section: Can not open shop section %shopsection% because there are no items found!
+no-item-found: '&cNo item(s) found.'
+item-null: '&cThe item does not exist.'
+item-cannot-be-sold-to-server: '&cThe item (%material%) cannot be sold to the server because the item has a error  inside  the  shop. Please report this issue to server admins or the owner.'
+could-not-save-shops,yml: '&4Could not save shops.yml config.'
+could-not-save-sections,yml: '&4Could not save the sections.yml config.'
+could-not-save-config: Could not save %fileName% config.
+rgb-color-formatted-wrong: 'RGB colors must be formatted as: ''0x000000'', ''#000000'' or ''000000'' at %path%.'
+no-shop-found: '&cCan not find a shop section called by that name!'
+no-valid-amount: '&cThis is not a valid amount.'
+restart-plugin: Can not open the shop section, try restarting the plugin or join the discord server  for  support.
+could-not-check-for-updates: '&cCould not check for updates.'
+cannot-update-config: '&cCannot update the config.yml configuration file.'
+cannot-read-config: Cannot read %fileName% config because it is mis-configured, use a online Yaml parser  with  the  error underneath here to find out the cause of the problem and to solve  it.  If  you cannot find the cause yourself, join our discord support server that  can  be  found at a plugin page of EconomyShopGUI.
+error-occured-while-reloading: '&4A error has occurred while reloading the plugin, please look inside the console  for  any  error message.'[/code]
+[page]
