@@ -56,12 +56,12 @@ levels:
 示例：  
 
 ```
-\- type: stat
+- type: stat
   stat: strength
   value: 1
 ```
 
-> **！****是否想要移除默认的属性奖励？**你可以将固定奖励部分设置为诸如 `patterns: \[\]` 的格式来禁用默认的奖励内容。但在这种情况下你可能需要编辑消息文件里的文本，使得在没有属性奖励的情况下不出现多余的空格。
+> **！****是否想要移除默认的属性奖励？**你可以将固定奖励部分设置为诸如 `patterns: []` 的格式来禁用默认的奖励内容。但在这种情况下你可能需要编辑消息文件里的文本，使得在没有属性奖励的情况下不出现多余的空格。
 
 ### 命令奖励（`command`） 
 命令奖励允许你以控制台或玩家的身份执行命令。  
@@ -75,17 +75,17 @@ levels:
         *   所有 PlaceholderAPI 变量（需安装 PlaceholderAPI 插件）均支持解析。内建变量先于 PlaceholderAPI 解析，因此你可以将二者结合使用。
     *   使用 “&” 符号的颜色代码是允许的，但不要使用带转义符的颜色代码符“\\&”。
 *   `executor` - 决定命令的执行方，可以为控制台（`console`）或玩家（`player`）。若使用玩家身份执行命令则不能绕过权限检查。默认为控制台身份。（可选）
-*   `revert\_command` - 反转命令允许玩家因管理员而失去技能等级时触发相关的命令，可使用的变量与上方相同。（可选）
-*   `revert\_executor` - 反转命令的执行方。（可选）
+*   `revert_command` - 反转命令允许玩家因管理员而失去技能等级时触发相关的命令，可使用的变量与上方相同。（可选）
+*   `revert_executor` - 反转命令的执行方。（可选）
 
 示例：  
 
 ```
-\- type: command
+- type: command
   executor: console
   command: say leveled up!
-  revert\_executor: console
-  revert\_command: say removed level up
+  revert_executor: console
+  revert_command: say removed level up
 ```
 
   
@@ -102,23 +102,23 @@ levels:
 示例：  
 
 ```
-\- type: permission
+- type: permission
   permission: some.permission.node
   value: true
 ```
 
 ### 物品奖励（`item`）  
-物品奖励将特定物品发放给玩家，通过键值与注册内容系统而支持大部分的物品。奖励物品必须在游戏内手持该物品，并使用命令 `/skills item register \[命名\]` 来注册。物品也可使用命令 `/skills item unregister \[命名\]` 来解除注册。当玩家背包满时，插件将会提醒玩家，并将未领取的物品发放至玩家的临时库存。他们随后可使用 `/skills claimitems` 命令来领取这些物品。服务器重启后这些临时物品不会丢失。  
+物品奖励将特定物品发放给玩家，通过键值与注册内容系统而支持大部分的物品。奖励物品必须在游戏内手持该物品，并使用命令 `/skills item register [命名]` 来注册。物品也可使用命令 `/skills item unregister [命名]` 来解除注册。当玩家背包满时，插件将会提醒玩家，并将未领取的物品发放至玩家的临时库存。他们随后可使用 `/skills claimitems` 命令来领取这些物品。服务器重启后这些临时物品不会丢失。  
 键名：  
 
-*   `key` - 使用命令 `/skills item register \[命名\]` 注册的物品命名（必需）
+*   `key` - 使用命令 `/skills item register [命名]` 注册的物品命名（必需）
 *   `amount` - 给予该物品的数量，可超过最大堆叠值。若超过，多余的物品会按组堆叠发放给玩家，当玩家背包满时，物品将会发送至玩家的临时库存，给予物品的默认值为注册该物品时手持的物品数量。（可选）
 
 示例： 
 
 ```
-\- type: item
-  key: some\_item\_key
+- type: item
+  key: some_item_key
   amount: 24
 ```
   
@@ -132,49 +132,53 @@ levels:
 示例：  
 
 ```
-\- type: money
+- type: money
   amount: 1000
 ```
 
 若你不使用 Vault 或有其他的经济（译者注：例如点券），你可以使用命令奖励来正常给予货币奖励。你也可以使用 PlaceholderAPI 的 Math 变量拓展，通过计算按等级的应发放货币量来给予玩家对应数量的货币。下面是一个例子：  
 
 ```
-\- type: command
+- type: command
   executor: console
-  command: eco give {player} %math\_{level}\*2+100%
+  command: eco give {player} %math_{level}*2+100%
 ```
   
 ## 消息文本
-命令、权限以及物品奖励均支持在菜单或聊天栏中插入自定义提示文本。`menu\_message` 键即是在升级进度菜单中显示的文本内容（可通过点击任意技能或输入命令 /skills menu 打开）。这将会在 “奖励：” 一栏下的奖励之后出现。`chat\_message` 键即是在玩家升级后聊天栏中出现的提示文本。若要求二者输出的内容相同，可将这两个值合并为 `message` 项并填入内容。  
+命令、权限以及物品奖励均支持在菜单或聊天栏中插入自定义提示文本。`menu_message` 键即是在升级进度菜单中显示的文本内容（可通过点击任意技能或输入命令 /skills menu 打开）。这将会在 “奖励：” 一栏下的奖励之后出现。`chat_message` 键即是在玩家升级后聊天栏中出现的提示文本。若要求二者输出的内容相同，可将这两个值合并为 `message` 项并填入内容。  
   
 消息文本的值可以是一条字符串（也就是你输入的内容），也可以是在消息配置中的一条消息文本。插件将优先解析字符串是否匹配了消息配置中的内容，若没有匹配到对应的文本，则将其按原样输出。消息文本同样支持彩色代码 “&”。  
   
-注意：消息文本默认不带换行符，若要每个奖励单独一行显示，你必须在这些文本的开头加上换行符 “\\n”。  
+注意：消息文本默认不带换行符，若要每个奖励单独一行显示，你必须在这些文本的开头加上换行符 “
+  ”。  
 设置了菜单和聊天栏消息的示例:  
 
 ```
-\- type: permission
+- type: permission
   permission: some.permission.node
   value: true 
-  menu\_message: \\n  Some message in the menu
-  chat\_message: \\n  Some message in chat
+  menu_message: 
+    Some message in the menu
+  chat_message: 
+    Some message in chat
 ```
 
-在 menu\_message 和 chat\_message 相同的情况下使用 message 参数简写的示例：  
+在 menu_message 和 chat_message 相同的情况下使用 message 参数简写的示例：  
 
 ```
-\- type: command
+- type: command
   executor: console
   command: say leveled up!
-  message: \\n  Both a menu and chat message
+  message: 
+    Both a menu and chat message
 ```
 
 ### 默认和自动处理的奖励消息  
 物品奖励按消息配置中 rewards.item 下的物品名显示物品的名称。若物品没有展示名称，则默认不显示消息。  
   
-属性奖励的相关消息通常由插件自动处理，因为它总是在菜单中使用消息配置的 `menus.level\_progression\_menu.rewards\_entry` 项，而在聊天栏中使用消息配置的 `leveler.stat\_level` 项。若要修改属性奖励的信息，则你应修改这两条消息配置中的文本。  
+属性奖励的相关消息通常由插件自动处理，因为它总是在菜单中使用消息配置的 `menus.level_progression_menu.rewards_entry` 项，而在聊天栏中使用消息配置的 `leveler.stat_level` 项。若要修改属性奖励的信息，则你应修改这两条消息配置中的文本。  
   
-货币奖励也通常由插件处理，它总是在菜单中使用消息配置 `menus.level\_progression\_menu.money\_reward` 项，在聊天栏中使用消息配置的 `leveler.money\_reward` 项。所有特定等级的特定数量货币奖励将会叠加为单条信息，包括配置文本下的旧版设置 `skill-money-rewards` 项所设置的货币奖励。  
+货币奖励也通常由插件处理，它总是在菜单中使用消息配置 `menus.level_progression_menu.money_reward` 项，在聊天栏中使用消息配置的 `leveler.money_reward` 项。所有特定等级的特定数量货币奖励将会叠加为单条信息，包括配置文本下的旧版设置 `skill-money-rewards` 项所设置的货币奖励。  
   
 ## 更多内容  
 仍然困惑或格式不起作用？试着浏览一下[本插件的示例奖励配置文件](https://github.com/Archy-X/AureliumSkills/blob/master/bukkit/src/main/resources/rewards/example_rewards.yml)吧。
