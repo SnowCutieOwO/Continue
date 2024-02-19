@@ -1,15 +1,15 @@
-**主配置**  
+# 主配置  
 配置文本（`config.yml`）的相关教程
 
 * * *
 
 这是本插件的配置文件详解，它（`config.yml`）位于你服务器中的 `plugins/AureliumSkills`。  
 本配置文件最后更新对照版本: Beta 1.2.6  
-**全局设置**
+## 全局设置
 
 * * *
 
-**MySQL 数据库设置**  
+### MySQL 数据库设置 
 `mysql:`
 
 *   `enabled` - 是否启用该模块以使用数据库同步数据（需要重启服务器）
@@ -22,13 +22,13 @@
 *   `always-load-on-join` - 若设置为 true， 玩家加入时总是加载数据库的内容， 无论其此前是否已被载入服务器缓存中
 *   `ssl` - 是否启用 SSL 加密
 
-**消息配置**  
+### 消息配置
 `default-language` - 玩家使用的默认语言; 必须有对应的消息文件（例如：此项为 en 时需要有名为 messages\_en.yml 的文件存在）
 
 *   `try-detect-client-language` - 若设置为 `true`，插件会尝试使用客户端使用的语言，前提是此语言有效且存在对应的文件. 此选项仅适用于没有使用指令选择语言的玩家，或者在服务器突然重启后丢失已选择语言设置的玩家。若客户端使用了Aurelium Skills没有的语言文件，则默认使用 `default-language` 项设置的语言。 若设置为 `false`，所有未设置语言的玩家都将使用 `default-language` 项设置的语言作为自己的默认语言。
 *   `languages` - 可供玩家使用指令 `/skills lang <语言>` 切换的语言文件列表； 须有对应的语言文档与之对应，可以在此处设置自定义语言。
 
-**Action Bar**  
+### Action Bar 
 `action-bar`:
 
 *   `enabled` - 是否启用/禁用此功能（若要显示 ActionBar 内容则必须启用此模块; 设置为 false 会禁用任意的 ActionBar 消息显示）
@@ -41,7 +41,7 @@
 *   `round-xp` - 若启用，当前经验值将会被四舍五入为整数.
 *   `placeholder-api` - 是否在 ActionBar 内启用 PlaceholderAPI 从而允许使用变量，若要启用你需要先安装 PlaceholderAPI。
 
-**Boss Bar**  
+### Boss Bar
 `boss-bar:`
 
 *   `enabled` - 是否启用 BossBar 用于显示经验收集进度
@@ -58,7 +58,7 @@
     `base-mana` - 玩家尚未收集智慧经验时初始魔法值上限  
     `enable-roman-numerals` - 显示等级时使用罗马数字而非阿拉伯数字
 
-**伤害显示**  
+### 伤害显示  
 `damage-holograms` - 是否启用本模块（需安装 HolographicDisplays）
 
 *   `damage-holograms-scaling` - 是否根据 health.hp-indicator-scaling 选项修改显示的攻击力数值
@@ -80,16 +80,16 @@
 *   `z-min` - 最小 Z 轴偏移量
 *   `z-max` - 最大 Z 轴偏移量
 
-**排行榜**
+### 排行榜
 
 *   `update-period` - 排行榜刷新时间，单位为刻
 *   `update-delay` - 在服务器开启多少时间后排行榜会被立刻刷新，单位为刻（不包括开启初的排行榜内容刷新）
 
-**游戏体验**  
+### 游戏体验
 `enable-skill-commands` - 技能名称是否被用于做成命令以打开各自的子菜单，例如 /farming 或 /mining （重启后有效）  
 `check-block-replace` - 被玩家重复放置的方块是否可以再次获得经验；。默认应当保持为 true，除非你在使用过程中出现了兼容性问题。  
   
-**世界与区域**  
+### 世界与区域  
 `blocked-check-block-replace-worlds` - 在该列表中的世界不会被插件检测重复放置，这意味着玩家可以在这些世界中重复放置并破坏方块来获得对应的技能经验。  
 `blocked-check-block-replace-regions` - 在该列表中的 WorldGuard 区域中不会被插件检测重复放置 （该功能需要 1.13+ 版本）  
 `blocked-worlds` - 在该列表世界中的玩家将不能通过正常方式获取技能经验。  
@@ -97,21 +97,21 @@
 `disabled-worlds` - 插件的大部分功能在该列表中的世界将会被禁用，包括但不限于属性/技能/收集经验/ActionBar信息显示（菜单和其他命令仍然可用）  
 `disable-in-creative-mode` - 是否禁用玩家在创造模式下的经验获取  
   
-**自动保存**  
+### 自动保存
 `auto-save:`
 
 *   `enabled` - 是否定时保存，或只是在玩家退出的时候保存他们的数据？当你正在遭受因服务器崩溃而导致的经验与技能数据丢失问题时这个选项很有效。
 *   `interval-ticks` - 自动保存间隔（单位为刻）
 
   
-**经济**  
+### 经济 
 `skill-money-rewards:`
 
 *   `enabled` - 玩家在升级时是否可以获得金币奖励 （需要安装 Vault）
 *   `base` - 在第二级时玩家获得的金币基数
 *   `multiplier` - 倍率 （获得的金币数 = 基数 + 倍数 \* 等级的平方）
 
-**升级提醒**  
+### 升级提醒 
 `leveler:`
 
 *   `title:`  
@@ -128,7 +128,7 @@
     *   `double-check-delay` - 对于一次收集到大量经验而升级的检查延迟，单位为刻 （数值越小代表越快）
 
   
-**倍率**  
+### 倍率 
 `modifier:`
 
 *   `armor:`  
@@ -139,7 +139,7 @@
 *   `auto-convert-from-legacy` - 旧的属性 NBT 格式是否要在新版本环境下被自动转换。当你的所有物品已被转换并可以正确工作或服务器出现性能问题时，你可以将该项禁用。
 
   
-**条件限制**  
+### 条件限制 
 `requirement:`
 
 *   `enabled` - 决定装备的条件限制模块是否启用。若你没有用到这一块功能，关闭该模块将会提升服务器性能。
@@ -153,27 +153,27 @@
     *   `global` - 决定盔甲限制是否同时应用到该种类的所有物品树上。格式为：`'\[材料名称\] \[技能名称\]:\[技能等级\] \[技能名称\]:\[技能等级\] …'`
 
   
-**暴击**  
+### 暴击  
 `critical:`
 
 *   `base-multiplier` - 基础的暴击伤害倍率
 *   `enabled` - 在此列表中的物品允许产生暴击伤害。（空手表示为“empty fist”，“other” 项为持有不在列表的物品）
 
   
-**菜单**  
+### 菜单 
 `menus:`
 
 *   `placeholder-api` - 是否在菜单中允许使用 PlaceholderAPI 的变量
 
   
-**杂项**  
+### 杂项  
 `check-for=updates` - 是否允许插件在服务器启动后检查更新，并提醒拥有权限 `aureliumskills.checkupdates` 的玩家？  
 `automatic-backups:`
 
 *   `enabled` - 是否在服务器关闭时启用自动保存
 *   `minimum-interval-hours` - 单次保存的最小间隔，单位为小时。在距离上一次保存一定时间以后，才会创建一个新备份，前提是时间超过这里设定的值。
 
-**技能设定**  
+### 技能设定 
 **通用技能选项**
 
 *   `enabled` - 该技能是否启用。被禁用的技能在菜单中不可见，也无法升级。技能的对应能力和魔法能力在禁用时也不可用。
@@ -207,7 +207,7 @@
 
 *   `blocked-grindstone-enchants` - 一些与磨石交互时不会获得经验的附魔。在阻止通过诅咒附魔刷取经验时非常有效。
 
-**属性设置**  
+### 属性设置  
 **生命值**  
 `health:`
 
