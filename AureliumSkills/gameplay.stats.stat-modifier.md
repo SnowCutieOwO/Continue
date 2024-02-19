@@ -49,18 +49,18 @@
 
 下列分别是物品和装备的 NBT 词条标签结构。它可以用在给予命令中，用以给予玩家已经自带属性的物品。  
 
-{AureliumSkills: {Modifiers: {[词条名称]: {[属性种类]: [属性值]}}}}
+```{AureliumSkills: {Modifiers: {[词条名称]: {[属性种类]: [属性值]}}}}```
 
 将 [词条名称] 替换为对应的物品词条或装备词条。将 [属性种类] 替换为开头大写的属性英文名（例如：生命值属性在此处为 Health）。将 [属性值] 替换为对应的值（数字）。  
   
 带有增加 100 点生命属性的物品词条完整示例：  
 
-{AureliumSkills: {Modifiers: {Item: {Health: 100}}}}
+```{AureliumSkills: {Modifiers: {Item: {Health: 100}}}}```
 
 多个词条也可用在此处：  
 
-{AureliumSkills: {Modifiers: {Item: {Health: 100, Luck: 50}}}}
+```{AureliumSkills: {Modifiers: {Item: {Health: 100, Luck: 50}}}}```
 
 物品词条和装备词条可同时处于一个 NBT 中：  
 
-{AureliumSkills: {Modifiers: {Item: {Health: 100}, Armor: {Wisdom: 10}}}}
+```{AureliumSkills: {Modifiers: {Item: {Health: 100}, Armor: {Wisdom: 10}}}}```
