@@ -48,13 +48,12 @@ Names in Italian are the contents carrying to here.
 - DecentHolograms (Initial)
 - ExcellentShop (Initial)
 - ExcellentCrates (Initial)
-- OpeNLogin
+- OpeNLogin (Initial)
 - Vulcan
 - InteractiveBoard
 - DynamicShop 3
 - AureliumSkills (Initial)
 - Economobs (Initial)
-- ItemsTags
 - MoneyHunter
 - PlayerAuctions (Initial)
 - PlayerWarps (Initial)
