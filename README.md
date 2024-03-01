@@ -21,6 +21,7 @@ Names in Italian are the contents carrying to here.
 
 ### 已翻译的维基 Translated Wikis
 
+- AureliumSkills
 - *UltimateShop 简体中文维基重汉化*
 - *WorldEdit*
 - *WorldGuard*
@@ -28,7 +29,6 @@ Names in Italian are the contents carrying to here.
 - *RedShop*
 - *Spark*
 - *PlayerPoints*
-- *AureliumSkills*
 - *CommandTimer*
 - *Codex*
 - *DecentHolograms*
