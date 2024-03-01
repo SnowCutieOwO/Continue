@@ -1,7 +1,7 @@
 # 战利品配置
 指导配置战利品的教程。
 
-**该教程为 Beta 1.2.0 或更高版本设计，若你正在使用旧版本，请参考本插件的[url=https://github.com/Archy-X/AureliumSkills/wiki/Loot-Tables]旧版本维基[/url]。**
+**该教程为 Beta 1.2.0 或更高版本设计，若你正在使用旧版本，请参考本插件的[旧版本维基](https://github.com/Archy-X/AureliumSkills/wiki/Loot-Tables)。**
 
 ## 文件结构
 掉落表在文件夹中被按技能名称分为多个文件。掉落表文件的名称对应了它们所属的技能。默认区块下，loot 文件夹下应当有采集和钓鱼的掉落表文件。你可以自行添加诸如挖矿或锻造技能的掉落表，格式也可参考示例配置中的内容。
