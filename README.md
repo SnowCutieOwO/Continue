@@ -21,7 +21,8 @@ Names in Italian are the contents carrying to here.
 
 ### 已翻译的维基 Translated Wikis
 
-- AureliumSkills
+- [AureliumSkills](https://snowcutieowo.github.io/AureliumSkills/#!welcome.md)
+  * 感谢万恶的 MDWiki（擦汗）
 - *UltimateShop 简体中文维基重汉化*
 - *WorldEdit*
 - *WorldGuard*
