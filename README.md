@@ -23,14 +23,14 @@ Names in Italian are the contents carrying to here.
 
 - [AureliumSkills](https://snowcutieowo.github.io/AureliumSkills/#!welcome.md)
   * 感谢万恶的 MDWiki（擦汗）
+- [CommandTimer](https://snowcutieowo.github.io/CommandTimer/#!index.md)
+- [PlayerPoints](https://snowcutieowo.github.io/PlayerPoints/#!index.md)
 - *UltimateShop 简体中文维基重汉化*
 - *WorldEdit*
 - *WorldGuard*
 - *HelpChat*
 - *RedShop*
 - *Spark*
-- *PlayerPoints*
-- *CommandTimer*
 - *Codex*
 - *DecentHolograms*
 - *HuskHomes*
