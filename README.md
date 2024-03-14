@@ -19,7 +19,7 @@ Personal translated files (and other stuffs) database.
 
 Names in Italian are the contents carrying to here.
 
-> **注：** 如果你在阅读中发现字体显示不正确，请尝试安装 [`JetBrains Mono`](https://www.jetbrains.com/lp/mono/) 和 [`HarmonyOS Sans`](https://developer.harmonyos.com/cn/design/resource) 字体。
+> **注：** 如果你在阅读中发现字体显示不正确，请尝试安装 [`JetBrains Mono`](https://www.jetbrains.com/lp/mono/) 和 [`HarmonyOS Sans`](https://developer.harmonyos.com/cn/design/resource) 字体。    
 > 本维基使用了这两种字体用于美化界面。
 
 ### 已翻译的维基 Translated Wikis
