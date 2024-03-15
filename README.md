@@ -58,15 +58,15 @@ Names in Italian are the contents carrying to here.
 - Vulcan
 - InteractiveBoard
 - DynamicShop 3
-- AureliumSkills (Initial)
+- [AureliumSkills](https://crowdin.com/project/aureliumskills/zh-CN) (Initial)
 - Economobs (Initial)
 - MoneyHunter
-- PlayerAuctions (Initial)
-- PlayerWarps (Initial)
+- [PlayerAuctions](https://www.pixelbbs.cn/forum.php?mod=viewthread&action=printable&tid=2462)
+- [PlayerWarps](https://www.pixelbbs.cn/t-2511-1-1.html)
 - Towny
 - StackMobs
-- SuperiorSkyBlock 2 (Initial)
-- The Gold Economy (Initial)
+- [SuperiorSkyBlock 2](https://github.com/BG-Software-LLC/SuperiorSkyblock2/blob/master/src/main/resources/lang/zh-CN.yml) (Initial)
+- [The Gold Economy](https://github.com/ConfusedAlex/GoldEconomy/blob/master/src/main/resources/messages_zh_CN.properties) (Initial)
 - UpgradableHoppers
 - UltimateStacker
 - WildStacker
@@ -79,7 +79,7 @@ Names in Italian are the contents carrying to here.
 - Seasons (Initial)
 - Waypoints (Initial)
 - Wuufu's Waypoints
-- BlockLocker (Initial)
+- [BlockLocker](https://www.pixelbbs.cn/forum.php?mod=viewthread&action=printable&tid=2576) (Initial)
 - CataMines (Initial)
 - AuctionMaster
 - VillagerMarket (Initial)
