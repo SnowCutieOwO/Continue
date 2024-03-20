@@ -32,6 +32,7 @@ Names in Italian are the contents carrying to here.
   * 感谢万恶的 Docsify ~~和 Vercel.app 网站托管~~（擦汗）
 - [UltimateShop 简体中文维基重汉化](https://blog.imc.re/wiki/usznv3/1/1.1)
   * 完整版 Wiki 已由原作者 pqguanfang 自行迁移并修改格式转载至其网站，后续更新由对方团队负责。
+- [Fallback Server](https://snowcutieowo.github.io/FallbackServer)
 - *WorldEdit*
 - *WorldGuard*
 - *HelpChat*
