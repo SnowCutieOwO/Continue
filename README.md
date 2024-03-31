@@ -126,7 +126,7 @@ Names in Italian are the contents carrying to here.
 - GadgetsMenu
 - Kizuki Anticheat
 - GK Anticheat
-- CCTV Camera (Initial)
+- [CCTV Camera](https://github.com/Tanguygab/CCTV/blob/master/src/main/resources/languages/zh_CN.yml) (Initial)
 - Shopkeeper (Initial)
 - ZMusic
 - ItemFliter (Initial)
