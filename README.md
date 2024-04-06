@@ -35,12 +35,12 @@ Names in Italian are the contents carrying to here.
 - [Fallback Server](https://snowcutieowo.github.io/FallbackServer)
 - [WorldEdit](https://snowcutieowo.github.io/WorldEdit)
 - [WorldGuard](https://snowcutieowo.github.io/WorldGuard)
+- [HuskSync](https://snowcutieowo.github.io/HuskSync)
 - *HelpChat*
 - *RedShop*
 - *Codex*
 - *DecentHolograms*
 - *HuskHomes*
-- *HuskSync*
 - *EconomyShopGUI*
 
 ### 参与翻译的插件 Translated Plugins
