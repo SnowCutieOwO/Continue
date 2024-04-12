@@ -36,11 +36,11 @@ Names in Italian are the contents carrying to here.
 - [WorldEdit](https://snowcutieowo.github.io/WorldEdit)
 - [WorldGuard](https://snowcutieowo.github.io/WorldGuard)
 - [HuskSync](https://snowcutieowo.github.io/HuskSync)
+- [HuskHomes](https://snowcutieowo.github.io/HuskHomes)
 - *HelpChat*
 - *RedShop*
 - *Codex*
 - *DecentHolograms*
-- *HuskHomes*
 - *EconomyShopGUI*
 
 ### 参与翻译的插件 Translated Plugins
