@@ -92,7 +92,7 @@ Names in Italian are the contents carrying to here.
 - SuperLobbyDeluxe
 - PlayerOptions
 - DragonSlayer
-- LuckyBlock NTD (Intial)
+- LuckyBlock NTD (Initial)
 - AdvancedTeleport (Initial)
 - ProRPGItems (Initial)
 - CharacterDialogue
