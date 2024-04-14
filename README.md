@@ -37,6 +37,7 @@ Names in Italian are the contents carrying to here.
 - [WorldGuard](https://snowcutieowo.github.io/WorldGuard)
 - [HuskSync](https://snowcutieowo.github.io/HuskSync)
 - [HuskHomes](https://snowcutieowo.github.io/HuskHomes)
+- [ExcellentCrates](https://snowcutieowo.github.io/ExcellentCrates)
 - *HelpChat*
 - *RedShop*
 - *Codex*
@@ -55,7 +56,7 @@ Names in Italian are the contents carrying to here.
 - EconomyShopGUI
 - DecentHolograms (Initial)
 - ExcellentShop (Initial)
-- ExcellentCrates (Initial)
+- [ExcellentCrates](https://github.com/nulli0n/ExcellentCrates-spigot/blob/master/src/main/resources/lang/messages_zhcn.yml) (Initial)
 - OpeNLogin (Initial)
 - Vulcan
 - InteractiveBoard
