@@ -38,6 +38,7 @@ Names in Italian are the contents carrying to here.
 - [HuskSync](https://snowcutieowo.github.io/HuskSync)
 - [HuskHomes](https://snowcutieowo.github.io/HuskHomes)
 - [ExcellentCrates](https://snowcutieowo.github.io/ExcellentCrates)
+- [ExcellentEnchants](https:snowcutieowo.github.io/ExcellentEnchants)
 - [Codex](https://snowcutieowo.github.io/Codex)
 - *HelpChat*
 - *RedShop*
