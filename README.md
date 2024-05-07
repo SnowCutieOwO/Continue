@@ -35,6 +35,7 @@ Names in Italian are the contents carrying to here.
 - [Fallback Server](https://snowcutieowo.github.io/FallbackServer)
 - [WorldEdit](https://snowcutieowo.github.io/WorldEdit)
 - [WorldGuard](https://snowcutieowo.github.io/WorldGuard)
+- [LuckPerms](https://snowcutieowo.github.io/LuckPerms)
 - [HuskSync](https://snowcutieowo.github.io/HuskSync)
 - [HuskHomes](https://snowcutieowo.github.io/HuskHomes)
 - [ExcellentCrates](https://snowcutieowo.github.io/ExcellentCrates)
