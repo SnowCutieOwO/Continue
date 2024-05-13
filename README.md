@@ -41,9 +41,9 @@ Names in Italian are the contents carrying to here.
 - [ExcellentCrates](https://snowcutieowo.github.io/ExcellentCrates)
 - [ExcellentEnchants](https:snowcutieowo.github.io/ExcellentEnchants)
 - [Codex](https://snowcutieowo.github.io/Codex)
+- [DecentHolograms](https://snowcutieowo.github.io/DecentHolograms)
 - *HelpChat*
 - *RedShop*
-- *DecentHolograms*
 - *EconomyShopGUI*
 
 ### 参与翻译的插件 Translated Plugins
