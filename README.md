@@ -25,6 +25,7 @@ Names in Italian are the contents carrying to here.
 ### 已翻译的维基 Translated Wikis
 
 ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-225509-84f5bb)
+（最后更新：2024/5/13）
 
 - [AureliumSkills](https://snowcutieowo.github.io/AureliumSkills)
   * 感谢万恶的 ~~MDWiki~~ Docsify（擦汗）
