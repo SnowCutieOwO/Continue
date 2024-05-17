@@ -66,12 +66,12 @@ Names in Italian are the contents carrying to here.
 - Vulcan
 - InteractiveBoard
 - DynamicShop 3
-- [AureliumSkills](https://crowdin.com/project/aureliumskills/zh-CN) (Initial)
+- [AureliumSkills (AuraSkills)](https://crowdin.com/project/aureliumskills/zh-CN) (Initial)
 - Economobs (Initial)
 - MoneyHunter
 - [PlayerAuctions](https://www.pixelbbs.cn/forum.php?mod=viewthread&action=printable&tid=2462)
 - [PlayerWarps](https://www.pixelbbs.cn/t-2511-1-1.html)
-- Towny
+- Towny Advanced
 - StackMobs
 - [SuperiorSkyBlock 2](https://github.com/BG-Software-LLC/SuperiorSkyblock2/blob/master/src/main/resources/lang/zh-CN.yml) (Initial)
 - [The Gold Economy](https://github.com/ConfusedAlex/GoldEconomy/blob/master/src/main/resources/messages_zh_CN.properties) (Initial)
@@ -136,3 +136,5 @@ Names in Italian are the contents carrying to here.
 - Shopkeeper (Initial)
 - ZMusic
 - ItemFliter (Initial)
+- CustomCrafting
+- EpicCraftingsPlus
