@@ -1,5 +1,6 @@
 <!-- resoource:info_spigot -->
 ---
+resource-id: '117005'
 native-version: ['1.20']
 tested-version: ['1.20']
 source-code: 'https://github.com/cloudnode-pro/EnchantBookPlus'
