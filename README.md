@@ -133,7 +133,7 @@ Names in Italian are the contents carrying to here.
 - Kizuki Anticheat
 - GK Anticheat
 - [CCTV Camera](https://github.com/Tanguygab/CCTV/blob/master/src/main/resources/languages/zh_CN.yml) (Initial)
-- Shopkeeper (Initial)
+- [Shopkeeper](https://github.com/Shopkeepers/Language-Files/blob/v2.19.0/lang/language-zh_CN.yml) (Initial)
 - ZMusic
 - ItemFliter (Initial)
 - CustomCrafting
