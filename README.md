@@ -138,3 +138,4 @@ Names in Italian are the contents carrying to here.
 - ItemFliter (Initial)
 - CustomCrafting
 - EpicCraftingsPlus
+- [StarGate](https://crowdin.com/project/stargate-bukkit/zh-CN) (Initial)
