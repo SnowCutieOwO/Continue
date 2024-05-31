@@ -6,6 +6,8 @@ tested-version: ['1.20']
 source-code: 'https://github.com/BlurOne-GIT/Boundless-Forging'
 ---
 
+<!-- resource:description -->
+
 ## 运作原理
 
 这个插件尽可能还原原版的铁砧使用方式，所以只需照常使用铁砧即可。所有显示为“过于昂贵！”（安装本插件后就看不到了）的物品最终都会强制修改成只耗费 39 级经验。

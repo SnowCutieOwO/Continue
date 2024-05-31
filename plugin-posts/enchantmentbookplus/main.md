@@ -10,7 +10,7 @@ source-code: 'https://github.com/cloudnode-pro/EnchantBookPlus'
 project-id: 'dMOPYb3s'
 ---
 
-<!-- resource: description -->
+<!-- resource:description -->
 # EnchantmentBookPlus
 
 [![img](https://github.com/cloudnode-pro/EnchantBookPlus/actions/workflows/codeql.yml/badge.svg)](https://github.com/cloudnode-pro/EnchantBookPlus/actions/workflows/codeql.yml) [![img](https://img.shields.io/badge/Modrinth-%2326292f?logo=modrinth)](https://modrinth.com/plugin/dMOPYb3s/) [![img](https://img.shields.io/modrinth/game-versions/dMOPYb3s)](https://modrinth.com/plugin/dMOPYb3s/) [![img](https://img.shields.io/modrinth/dt/dMOPYb3s)](https://modrinth.com/plugin/dMOPYb3s/)
@@ -23,7 +23,7 @@ project-id: 'dMOPYb3s'
 
 你可以在配置文件中设置哪些附魔可以突破。你可以为每个附魔设置最大等级，以及配置每级额外增加的经验耗费。
 
-> **注意!** 如果需要将 40 级以上的“过于昂贵！”消息去除，你需要安装 [AnvilUnlocker](https://github.com/Jikoo/AnvilUnlocker/releases/latest) 插件。
+> **注意！** 如果需要将 40 级以上的“过于昂贵！”消息去除，你需要安装 [AnvilUnlocker](https://github.com/Jikoo/AnvilUnlocker/releases/latest) 插件。
 
 ![img](images/image1.gif)
 

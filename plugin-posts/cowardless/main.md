@@ -6,7 +6,7 @@ tested-version: ['1.20']
 source-code: 'https://github.com/BlurOne-GIT/Cowardless'
 ---
 
-<!-- resource: description -->
+<!-- resource:description -->
 ## 总会碰到这样的事...
 
 在 PVP 的过程中，玩家突然发动下线遁来避免击杀。很烦对吧？定点蹲人的时候发现人早就开溜了，结果陷阱派不上用场，架也打得憋屈。
