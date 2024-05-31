@@ -14,9 +14,9 @@ donation-link：'https://www.paypal.com/paypalme/PhapPurple'
 *想要提交漏洞，提交建议或者讨论新点子吗？*
 *请点击图片加入我们的 Discord 聊天群组！*
 
-</center>
-
 [![img](images/image1.png)](https://discord.gg/eVhprxqC7G)
+
+</center>
 
 ![img](images/image2.png)
 
