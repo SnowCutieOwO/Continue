@@ -51,7 +51,11 @@ Names in Italian are the contents carrying to here.
 
 ### 参与翻译的插件 Translated Plugins
 
-标“内置(Initial)”的插件名称表明简体中文已内置在这些插件的语言文件中。
+> 标“内置(Initial)”的插件名称表明简体中文已内置在这些插件的语言文件中。
+
+> 部分无法提交为简体中文的配置文件存储在本仓库的 `unofficial-translations` 文件夹下，有需要可自行存取。
+
+![img](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-100245-ebfd93)（最后更新：2024/6/6）
 
 - [LiteFish](https://github.com/Azlagor322/LiteFish/blob/main/lang/zh_CN.json) (Initial)
 - Authme
