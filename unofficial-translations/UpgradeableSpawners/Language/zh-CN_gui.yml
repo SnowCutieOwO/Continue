@@ -1,0 +1,283 @@
+# 在这里可以编辑所有菜单界面.
+#
+# 若遇到任何问题可加 Discord 聊天群组:
+# https://discord.gg/B4MAJVk
+#
+# 插件 Wiki: https://github.com/Angeschossen/General/wiki/GUI-Menus
+
+general:
+  role:
+    owner: '&4拥有者'
+    visitor: '&7访客'
+  previous: '&8前一页'
+  max: '&a已是最大'
+  wYes: '&a是'
+  wNo: '&c否'
+  disabled: '&c禁用'
+  none: '&c无'
+  enabled: '&a启用'
+common:
+  items:
+    default:
+      child_failure_page_previous:
+        name: '&4&l已是首页'
+      child_failure_page_下一等级:
+        name: '&4&l已是尾页'
+      refresh_page_previous:
+        lore:
+        - '&8✖ &7当前页码: {current} / {pages}'
+        name: '&c&l上一页'
+        material: ARROW
+        slots: 39
+      back:
+        lore:
+        - '&8✖ &7返回至'
+        - '   &7{back}.'
+        name: '&c&l返回'
+        material: RED_STAINED_GLASS_PANE
+        slots: 37
+      refresh_page_下一等级:
+        lore:
+        - '&8✖ &7当前页码: {current} / {pages}'
+        name: '&a&l下一页'
+        material: ARROW
+        slots: 44
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        slots: 1-45
+  size: 45
+  entries:
+  - 10-36
+gui:
+  list_entities:
+    title: '&8实体'
+    items:
+      default:
+        child_failure_价格:
+          lore:
+          - '&7你需要花费&c {cost} &7.'
+          name: '&4&l硬币不足'
+        child_failure_locked:
+          lore:
+          - '&7你没有购买该种类实体的权限.'
+          name: '&4&l实体已锁定'
+        entry_entity:
+          lore:
+          - '&8✖ &7设置为刷怪笼实体.'
+          - '   &8• &7价格:&c {cost}'
+          - '   &8• &7是否解锁: {unlocked}'
+          name: '&e&l{entity}'
+          material: INHERIT
+        entry_entity_purchased:
+          lore:
+          - '&8✖ &7设置为刷怪笼实体.'
+          - '   &8• &7你已购买该实体.'
+          - '   &8• &7是否解锁: {unlocked}'
+          name: '&e&l{entity} &8&l(&a&lPurchased&8&l)'
+          material: INHERIT
+  main:
+    title: '&8刷怪笼菜单'
+    items:
+      default:
+        entity-type:
+          lore:
+          - '&8✖ &7修改刷怪笼实体种类.'
+          name: '&6&l实体种类: {type}'
+          material: INHERIT
+          slots: 29
+        upgrade_nearby_entities:
+          lore:
+          - '&8✖ &7升级邻近实体的最大生成数量.'
+          - '    &8• &7当前: {current}'
+          - '    &8• &7下一等级:&a {next}'
+          - '      &7价格:&c {cost}'
+          name: '&6&l邻近实体'
+          material: skin:cc596a41daea51be2e9fec7de2d89068e2fa61c9d57a8bdde44b55937b6037
+          slots: 13
+        upgrade_player_range:
+          lore:
+          - '&8✖ &7升级刷怪笼的激活范围.'
+          - '    &8• &7当前:{current}'
+          - '    &8• &7下一等级:&a {next}'
+          - '      &7价格:&c {cost}'
+          name: '&6&l激活距离'
+          material: PLAYER_HEAD
+          slots: 15
+        upgrade_spawn_amount:
+          lore:
+          - '&8✖ &7升级每次生成的实体数量.'
+          - '    &8• &7当前:{current}'
+          - '    &8• &7下一等级:&a {next}'
+          - '      &7价格:&c {cost}'
+          name: '&6&l生成数量'
+          material: skin:b85d4fda56bfeb85124460ff72b251dca8d1deb6578070d612b2d3adbf5a8
+          slots: 14
+        upgrade_spawn_interval:
+          lore:
+          - '&8✖ &7升级生成间隔.'
+          - '   &7间隔越短, 刷怪笼生成实体越频繁.'
+          - '    &8• &7当前:{current}'
+          - '    &8• &7下一等级:&a {next}'
+          - '      &7价格:&c {cost}'
+          name: '&6&l生成间隔'
+          material: CLOCK
+          slots: 11
+        upgrade_period_amount:
+          lore:
+          - '&8✖ &7升级每 {time}&7 内可生成的实体数量.'
+          - '    &8• &7当前:{current}'
+          - '    &8• &7下一等级:&a {next}'
+          - '      &7价格:&c {cost}'
+          - ''
+          - '   &8• &7当生成数量已满时,'
+          - '     &7刷怪笼会在当前时间段内停止生成.'
+          name: '&6&l生成时间段'
+          material: skin:a0a19e23d21f2db063cc55e99ae874dc8b23be779be34e52e7c7b9a25
+          slots: 12
+        status_paused_period_amount:
+          lore:
+          - '&7刷怪笼已在 &5{period} &7时间段内生成了&3 {period_max_entities}&7 个实体.'
+          - ' &8• &7该时间段将在&5 {period_end}&7 内结束.'
+          - ' &8• &7可在升级菜单升级该内容.'
+          name: '&4&l暂停: &c最大实体数量'
+          material: RED_WOOL
+          slots: 33
+        status_paused_nearby_entities:
+          lore:
+          - '&7刷怪笼附近实体过多.'
+          - ' &8• &7最大实体数量:&3 {spawner_max_entities}'
+          name: '&4&l暂停: &c邻近实体过多'
+          material: RED_WOOL
+          slots: 33
+        status_paused_redstone_signal:
+          lore:
+          - '&7刷怪笼因接收到红石信号而停止.'
+          name: '&4&l暂停: &c收到红石信号'
+          material: RED_WOOL
+          slots: 33
+        status_paused_manually:
+          lore:
+          - '&8✖ &7点击重启该刷怪笼.'
+          - '   &8• &7仅在所有限制如最大实体数量均达到时才可恢复.'
+          name: '&c&l暂停'
+          material: RED_WOOL
+          slots: 33
+        status_running:
+          lore:
+          - '&8✖ &7点击暂停该刷怪笼.'
+          name: '&a&l运行中'
+          material: GREEN_WOOL
+          slots: 33
+        status_paused_area_max_entities:
+          lore:
+          - '&7There are too many entities in'
+          - '&7the area of this spawner. This'
+          - '&7area might include nearby chunks.'
+          - ' &8• &7Max. entities:&3 {area_max_entities}'
+          name: '&4&l暂停: &cMax. Entities in Area'
+          material: RED_WOOL
+          slots: 33
+        butcher:
+          lore:
+          - '&8✖ &7Should entities be instantly killed?'
+          name: '&6&lButcher: {status}'
+          material: IRON_SWORD
+          slots: 30
+        tip_upgradeablehoppers_connected:
+          lore:
+          - '&7Loot from butcher mode will'
+          - '&7automatically be inserted into'
+          - '&7the upgradeable hopper,'
+          - '&7for further transportation.'
+          name: '&a&lHopper Connected'
+          material: HOPPER
+          slots: 45
+          enchanted: true
+        tip_upgradeablehoppers:
+          lore:
+          - '&7If you place an upgradeable hopper'
+          - '&7underneath this spawner, it will'
+          - '&7automatically insert items from the'
+          - '&7the butcher mode into the hopper,'
+          - '&7for further transportation.'
+          - ' &8• &7Get an hopper: &e/uhopper get'
+          name: '&6&lHopper Item Transport'
+          material: HOPPER
+          slots: 45
+        butcher_forced_entity:
+          lore:
+          - '&cButcher mode is forcefully enabled'
+          - '&cby the server for this entity type.'
+          - '&7You can''t toggle it currently.'
+          - ' &8• &7Entities are being killed instantly.'
+          name: '&6&lButcher is Forced'
+          material: IRON_SWORD
+          slots: 30
+        child_failure_价格:
+          lore:
+          - '&7你最少需要&c {cost} &7.'
+          name: '&4&l硬币不足'
+        child_failure_max:
+          lore:
+          - '&c该刷怪笼的此内容已到达最大生成等级.'
+          - ' &8• &7当前等级:&3 {current}'
+          name: '&4&l登记已满'
+        child_failure_perm:
+          lore:
+          - '&7你没有权限升级该内容.'
+          name: '&4&l升级已锁定'
+        child_failure_access:
+          lore:
+          - '&c你不能这么做.'
+          - ' &8• &7它属于玩家&3 {player}&7.'
+          name: '&4交互失败: &c无权限'
+  list_player_spawners:
+    title: '&8升级刷怪笼'
+    items:
+      default:
+        child_failure_unloaded:
+          lore:
+          - '&c你不能打开处于未加载区块中的刷怪笼菜单.'
+          name: '&4&l区块未加载'
+        child_failure_价格:
+          lore:
+          - '&7你最少需要&c {cost} &7.'
+          name: '&4&l硬币不足'
+        child_failure_permission:
+          lore:
+          - '&7你缺少这么做的权限.'
+          name: '&4&l缺少权限'
+        entry_object:
+          lore:
+          - '&8✖ &7打开刷怪笼界面.'
+          - '&8✖ &9右键点击'
+          - '   &7花费&c {cost}&7 传送至刷怪笼.'
+          - '&7&lStats'
+          - ' &8• &7间隔: {interval}'
+          - ' &8• &7单次生成量: {period}'
+          - ' &8• &7邻近最大数量: {nearby}'
+          - ' &8• &7激活范围: {range}'
+          - ' &8• &7生成数量: {amount}'
+          name: '&6&l{entity}:&7 {world}, {x}, {y}, {z}'
+          material: SPAWNER
+physical:
+  spawner:
+    lore:
+    - ' &8• &7拥有者:&3 {owner}'
+    - ' &8• &7实体:&3 {entity}'
+    - ' &8• &7间隔: {interval}'
+    - ' &8• &7单次生成量: {amount}'
+    - ' &8• &7激活范围: {range}'
+    - ' &8• &7邻近最大数量: {nearby}'
+    - ' &8• &7生成数量: {count}'
+    name: '&e&l升级刷怪笼: {entity}'
+    material: SPAWNER
+  currency:
+    name: ''
+    material: GOLD_INGOT
+common_sounds:
+  # 在菜单内设置物品时发出声音.
+  set:
+    # 以 [物品类型]_failure_<名称> 开头的物品都会发出该声音.
+    # 该设置仍可以无视对应配置部分下的 "sound_set".
+    failure: ENTITY_VILLAGER_NO

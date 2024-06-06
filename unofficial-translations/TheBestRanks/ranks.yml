@@ -1,0 +1,293 @@
+rookie:
+  prefix: '&7[&a玩家&7]'
+  display_name: '&a玩家'
+  commands:
+    - 'say 欢迎 %player%!'
+noobie:
+  prefix: "&7[&c菜鸟&7]"
+  display_name: '&e菜鸟'
+  requirements:
+    '%vault_eco_balance%':
+      type: INT
+      case: greater
+      value: 100
+      gui_message: '&7金币 &a%your%&7/&c100 &r%status%'
+      deny_message: '&7你需要 &c$100'
+    '%player_level%':
+      type: INT
+      case: equals or greater
+      value: 5
+      gui_message: '&7等级 &a%your%&7/&c5 &r%status%'
+      deny_message: '&7你需要升级到 &c5 级'
+  lore:
+    - ' '
+    - '&7你能升级到 %rank%&7?!'
+    - '&7如果你可以, 你就需要满足下面这些条件'
+    - ' '
+    - '&e所需条件:'
+    - ' '
+    - '&e- %requirement_0%'
+    - '&e- %requirement_1%'
+    - ' '
+    - '&e完成奖励'
+    - ' '
+    - '&e- &f$1000'
+    - ' '
+    - '&a点击这里升级!'
+  commands:
+    - 'eco give %player% 1000'
+experienced:
+  prefix: "&7[&e初入服务器&7]"
+  display_name: '&e初入服务器'
+  requirements:
+    '%vault_eco_balance%':
+      type: INT
+      case: equals or greater
+      value: 10000
+      gui_message: '&7金币 &a%your%&7/&c10000 &r%status%'
+      deny_message: '&7你需要 &c$1000'
+    '%player_food_level%':
+      type: INT
+      case: equals
+      value: 20
+      gui_message: '&7你必须吃饱! &r%status%'
+      deny_message: '&7你看起来有点饿?!'
+  lore:
+    - ' '
+    - '&7你能升级到 %rank%&7?!'
+    - '&7如果你可以, 你就需要满足下面这些条件'
+    - ' '
+    - '&e所需条件:'
+    - ' '
+    - '&e- %requirement_0%'
+    - '&e- %requirement_1%'
+    - ' '
+    - '&e完成奖励'
+    - ' '
+    - '&e- &f$1000'
+    - ' '
+    - '&a点击这里升级!'
+  commands:
+    - 'eco give %player% 1000'
+diamond_boy:
+  prefix: "&7[&b钻石玩家&7]"
+  display_name: '&b钻石玩家'
+  requirements:
+    '%vault_eco_balance%':
+      type: INT
+      case: equals or greater
+      value: 100000
+      gui_message: '&7金币 &a%your%&7/&c100000 &r%status%'
+      deny_message: '&7你需要 &c$100000'
+    '%player_item_in_hand%':
+      type: STRING
+      case: equals
+      value: DIAMOND_SWORD
+      gui_message: '&7手持一把 &b钻石剑&7! &r%status%'
+      deny_message: '&7你的手里没有拿着钻石剑!'
+  lore:
+    - ' '
+    - '&7你能升级到 %rank%&7?!'
+    - '&7如果你可以, 你就需要满足下面这些条件'
+    - ' '
+    - '&e所需条件:'
+    - ' '
+    - '&e- %requirement_0%'
+    - '&e- %requirement_1%'
+    - ' '
+    - '&e完成奖励'
+    - ' '
+    - '&e- &f$1000'
+    - ' '
+    - '&a点击这里升级!'
+  commands:
+    - 'eco give %player% 1000'
+poor_again:
+  prefix: "&7[&f一落千丈&7]"
+  display_name: '&f一落千丈'
+  requirements:
+    '%vault_eco_balance%':
+      type: INT
+      case: lesser
+      value: 100
+      gui_message: '&7金币少于 &c$100 &r%status%'
+      deny_message: '&7你的金币需要少于 &c$100'
+    '%player_biome%':
+      type: STRING
+      case: equals
+      value: PLAINS
+      gui_message: '&7身处 &a平原 &7生物群系! %status%'
+      deny_message: '&7你没有在指定的群系中!'
+  lore:
+    - ' '
+    - '&7你能升级到 %rank%&7?!'
+    - '&7如果你可以, 你就需要满足下面这些条件'
+    - ' '
+    - '&e所需条件:'
+    - ' '
+    - '&e- %requirement_0%'
+    - '&e- %requirement_1%'
+    - ' '
+    - '&e完成奖励'
+    - ' '
+    - '&e- &f$1000'
+    - ' '
+    - '&a点击这里升级!'
+  commands:
+    - 'eco give %player% 1000'
+survivor:
+  prefix: "&7[&2生存者&7]"
+  display_name: '&2生存者'
+  requirements:
+    '%player_minutes_lived%':
+      type: INT
+      case: equals or greater
+      value: 3000
+      gui_message: '&7连续存活 3000 分钟! &a%your%&7/&c3000 &r%status%'
+      deny_message: '&7你需要存活 3000 分钟!'
+  lore:
+    - ' '
+    - '&7你能升级到 %rank%&7?!'
+    - '&7如果你可以, 你就需要满足下面这些条件'
+    - ' '
+    - '&e所需条件:'
+    - ' '
+    - '&e- %requirement_0%'
+    - ' '
+    - '&e完成奖励'
+    - ' '
+    - '&e- &f$1000'
+    - ' '
+    - '&a点击这里升级!'
+  commands:
+    - 'eco give %player% 1000'
+drowned:
+  prefix: "&7[&d溺尸&7]"
+  display_name: '&d溺尸'
+  requirements:
+    '%player_remaining_air%':
+      type: INT
+      case: equals or lesser
+      value: 0
+      gui_message: '&7处于溺水状态! &r%status%'
+      deny_message: '&7你需要处于溺水状态!'
+  lore:
+    - ' '
+    - '&7你能升级到 %rank%&7?!'
+    - '&7如果你可以, 你就需要满足下面这些条件'
+    - ' '
+    - '&e所需条件:'
+    - ' '
+    - '&e- %requirement_0%'
+    - ' '
+    - '&e完成奖励'
+    - ' '
+    - '&e- &f$1000'
+    - ' '
+    - '&a点击这里升级!'
+  commands:
+    - 'eco give %player% 1000'
+traveller:
+  prefix: "&7[&e旅行者&7]"
+  display_name: '&e旅行者'
+  requirements:
+    '%player_world%':
+      type: STRING
+      case: equals
+      value: Wild
+      gui_message: '&7进入荒野世界! &r%status%'
+      deny_message: '&7你必须进入荒野世界!'
+  lore:
+    - ' '
+    - '&7你能升级到 %rank%&7?!'
+    - '&7如果你可以, 你就需要满足下面这些条件'
+    - ' '
+    - '&e所需条件:'
+    - ' '
+    - '&e- %requirement_0%'
+    - ' '
+    - '&e完成奖励'
+    - ' '
+    - '&e- &f$1000'
+    - ' '
+    - '&a点击这里升级!'
+  commands:
+    - 'eco give %player% 1000'
+outsider:
+  prefix: "&7[&c探索者&7]"
+  display_name: '&c探索者'
+  requirements:
+    '%player_world%':
+      type: STRING
+      case: not equals
+      value: world
+      gui_message: '&7离开主世界! &r%status%'
+      deny_message: '&7你居然还待在主世界!'
+  lore:
+    - ' '
+    - '&7你能升级到 %rank%&7?!'
+    - '&7如果你可以, 你就需要满足下面这些条件'
+    - ' '
+    - '&e所需条件:'
+    - ' '
+    - '&e- %requirement_0%'
+    - ' '
+    - '&e完成奖励'
+    - ' '
+    - '&e- &f$1000'
+    - ' '
+    - '&a点击这里升级!'
+  commands:
+    - 'eco give %player% 1000'
+darkin:
+  prefix: "&7[&4暗黑者&7]"
+  display_name: '&d暗黑者'
+  requirements:
+    '%player_world%':
+      type: INT
+      case: equals or lesser
+      value: 0
+      gui_message: '&7身处完全的黑暗! &r%status%'
+      deny_message: '&7你必须身处黑暗的地方!'
+  lore:
+    - ' '
+    - '&7你能升级到 %rank%&7?!'
+    - '&7如果你可以, 你就需要满足下面这些条件'
+    - ' '
+    - '&e所需条件:'
+    - ' '
+    - '&e- %requirement_0%'
+    - ' '
+    - '&e完成奖励'
+    - ' '
+    - '&e- &f$1000'
+    - ' '
+    - '&a点击这里升级!'
+  commands:
+    - 'eco give %player% 1000'
+donkey:
+  prefix: "&7[&3运载者&7]"
+  display_name: '&d运载者'
+  requirements:
+    '%player_has_empty_slot%':
+      type: STRING
+      case: equals
+      value: no
+      gui_message: '&7装满背包! &r%status%'
+      deny_message: '&7你的身上不应该有任何背包!'
+  lore:
+    - ' '
+    - '&7你能升级到 %rank%&7?!'
+    - '&7如果你可以, 你就需要满足下面这些条件'
+    - ' '
+    - '&e所需条件:'
+    - ' '
+    - '&e- %requirement_0%'
+    - ' '
+    - '&e完成奖励'
+    - ' '
+    - '&e- &f$1000'
+    - ' '
+    - '&a点击这里升级!'
+  commands:
+    - 'eco give %player% 1000'

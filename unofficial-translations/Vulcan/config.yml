@@ -1,0 +1,4124 @@
+##############################################
+#            Vulcan 反作弊配置文件            #
+##############################################
+
+# 消息前缀, 会使用在所有包含 %prefix% 的消息中.
+prefix: '&4&lVulcan &8»'
+
+alerts:
+  # 当玩家没能通过检查时弹出的消息格式.
+  # 有效的内建变量为 %player% (返回玩家名称), %max-vl% (最高触发), %check% (检查项目名称), %description% (检查项目描述),
+  # %version% (玩家客户端版本), %dev% (* 是否为实验性检查), %vl% (触发等级),
+  # %ping% (玩家延迟), %tps% (服务器 TPS), 和 %type% (检查所使用的字母类型, A, B, C, 等),
+  # %severity% 会根据触发情况改变颜色 (可在下方配置找到详细内容), %x% (玩家的 X 轴坐标),
+  # %y% (玩家的 Y 轴坐标), %z% (玩家的 Z 轴坐标), %world% (玩家所处的世界), %complex-type% 显示检查项目更详细的内容, 如 Speed (Ground) 而不是 Speed (Type B)
+  format: '%prefix% &f%player% &7未能通过项目 &f%check% %dev%&7(&f%type% 类&7)%dev% &f的检查 &7[&4%vl%&7/&4%max-vl%&7]'
+  # 在聊天栏中的消息悬浮提示框的内容
+  # 在上文中提及的内建变量在此处均有效.
+  hover-message:
+    - '&7延迟: &c%ping% &8| &7TPS: &c%tps% &8| &7版本: &c%version% &8| &7客户端: &c%client-brand%'
+    - ''
+    - '&7描述:'
+    - '&7%description%'
+    - ''
+    - '&7信息:'
+    - '&7%info%'
+    - ''
+    - '&7点击传送至玩家 &b%player%&7.'
+  # 点击警告消息时执行的命令. 但不幸的是我们将每条警告消息的执行命令限制在了一条, 所以我们用了一些方法能让我们自己的命令能执行一串命令.
+  click-commands:
+    - '/vulcan clickalert %player%'
+  # 在使用 /vulcan clickalert %player% (必须为玩家参数) 后执行的命令
+  click-alert-command-commands:
+    - 'tp %player%'
+  # 在开启警告时发送给执行者的消息提示. 有效的内建变量为 %prefix%.
+  toggled-on-message: '%prefix% &7Vulcan 警告已&a启用&7!'
+  # 在关闭警告时发送给执行者的消息提示. 有效的内建变量为 %prefix%
+  toggled-off-message: '%prefix% &7Vulcan 警告已&c禁用&7!'
+  # 是否将警告信息发送至控制台.
+  print-to-console: true
+  # 发送至控制台的警告消息格式
+  console-format: '[Vulcan] %player% 未能通过项目 %check% %dev%(%type% 类)%dev% &f的检查 (%vl%/%max-vl%)'
+  # 此为完全自定义的一系列命令, 在玩家触发某个检查项目后会执行, 该设置可使部分服主执行特殊操作而无需使用 API. 所有可用的内建变量与上文提及的相同.
+  custom-commands: []
+  # 你可以使用该部分配置为你的警告使用不同的颜色, 或根据触发等级使用不同的颜色
+  severity:
+    violations:
+      2: 4 # 小于该值的数字将会使用下文的 '1' 对应颜色. 不小于该值且大于 '3' 的数字将会使用下文的 2 对应颜色
+      3: 8 # 不小于该值且大于 '2' 的数字将会使用下文的 '3' 对应颜色
+      4: 12 # 不小于该值且大于 '3' 的数字将会使用下文的 '4' 对应颜色
+      5: 16 # 不小于该值且大于 '4' 的数字将会使用下文的 '5' 对应颜色
+      6: 16 # 不小于该值且大于 '5' 的数字将会使用下文的 '6' 对应颜色
+      7: 16 # 不小于该值且大于 '6' 的数字将会使用下文的 '7' 对应颜色
+      8: 16 # 不小于该值且大于 '7' 的数字将会使用下文的 '8' 对应颜色
+      9: 16 # 不小于该值且大于 '8' 的数字将会使用下文的 '9' 对应颜色
+      10: 16 # 不小于该值且大于 '9' 的数字将会使用下文的 '10' 对应颜色
+    colors: # 该项也支持使用十六进制彩色 (仅限 1.16+!)
+      1: '&a' # 小于 '2' 的值使用的颜色
+      2: '&e' # 小于 '3' 且大等于上述部分配置中 '2' 的值使用的颜色
+      3: '&6' # 小于 '4' 且大等于上述部分配置中 '3' 的值使用的颜色
+      4: '&c' # 小于 '5' 且大等于上述部分配置中 '4' 的值使用的颜色
+      5: '&4' # 小于 '6' 且大等于上述部分配置中 '5' 的值使用的颜色
+      6: '&4' # 小于 '7' 且大等于上述部分配置中 '6' 的值使用的颜色
+      7: '&4' # 小于 '8' 且大等于上述部分配置中 '7' 的值使用的颜色
+      8: '&4' # 小于 '9' 且大等于上述部分配置中 '8' 的值使用的颜色
+      9: '&4' # 小于 '10' 且大等于上述部分配置中 '9' 的值使用的颜色
+      10: '&4' # 小于 '11' 且大等于上述部分配置中 '10' 的值使用的颜色
+  # 对 %dev% 内建变量使用的字符, 用于表示此为实验性检测.
+  experimental-symbol: "*"
+
+verbose:
+  # 详细提醒会在玩家提升检查缓冲时被发送. 一般只有开发者会需要使用这段信息, 因为它在聊天栏里非常容易刷屏.
+  # 上述的所有信息都会集成在这里. 非常不推荐启用, 因为会在聊天栏中刷屏.
+  format: '%prefix% &f%player% &7疑似使用 &f%check% &7(&f%type%&7) %dev% &7[&4%percent%%&7]'
+  hover-message:
+    - '&7延迟: &c%ping% &8| &7TPS: &c%tps% &8| &7版本: &c%version%'
+    - ''
+    - '&7描述:'
+    - '&7%description%'
+    - ''
+    - '&7缓冲:'
+    - '&7%buffer%/%max-buffer%'
+    - ''
+    - '&7点击传送至玩家 &b%player%&7.'
+  click-commands:
+    - '/tp %player%'
+  toggled-on-message: '%prefix% &7Vulcan 详细判断已&a启用&7!'
+  toggled-off-message: '%prefix% &7Vulcan 详细判断已&c禁用&7!'
+
+# 该部分配置负责控制日志文件 (violations.txt)
+log-file:
+  # 是否启用日志记录功能
+  enabled: true
+  # 当玩家未通过检查时的消息.
+  # 有效的内建变量为 %player% (返回玩家名称), %max-vl% (最高触发), %check% (检查项目名称), %description% (检查项目描述),
+  # %version% (玩家客户端版本), %dev% (* 是否为实验性检查), %vl% (触发等级),
+  # %ping% (玩家延迟), %tps% (服务器 TPS), 和 %type% (检查所使用的字母类型, A, B, C, 等),
+  alert-message: "%player% 未能通过项目 %check% %dev%(%type% 类)%dev% 检查 [VL: %vl%] [延迟: %ping%] [TPS: %tps%] [版本: %version%] [客户端: %client-brand%]"
+  # 玩家因未能通过检查而受到惩罚的消息. 有效变量与上文所述内容相同.
+  # 更多有关惩罚的细节也会在功能启用的情况下被记录至 punishments.txt (见下文设置).
+  punishment-message: "%player% 因未能通过项目 %check% %dev%(%type% 类)%dev% 检查而受到惩罚 [VL: %vl%] [延迟: %ping%] [TPS: %tps%] [客户端: %client-brand%]"
+
+unloaded-chunks:
+  # 是否对踏入未加载区块的玩家实施拉回操作
+  setback-enabled: false
+  # 是否将该类玩家的行为通报至管理员处, 将该项设置为 '' 可禁用该消息
+  message: '%prefix% &c%player% &7尝试踏入未加载区块而被拉回!'
+  # 拉回前的时间间隔, 单位为刻
+  max-ticks: 40
+
+# 该部分配置管理 punishments.txt 文件
+punishment-file:
+  # 是否启用 punishments.txt 文件.
+  enabled: true
+
+# 该部分负责控制自动触发重置
+violation-reset:
+  # 被触发的项目是否在一段时间后自动重置
+  enabled: true
+  # 触发项目重置的时间间隔 (单位为分钟).
+  interval-in-minutes: 8
+  # 在检查项目重置时是否发送消息 (仅对通过命令 /alert 启用警告的管理员有效).
+  message-enabled: true
+  # 在检查项目重置时发送消息的内容 (仅对通过命令 /alert 启用警告的管理员有效)
+  message: '%prefix% &7所有在线玩家的项目触发检测已自动重置!'
+
+# 该部分负责控制玩家客户端种类的警告与屏蔽.
+client-brand-alerts:
+  # 是否允许 Vulcan 尝试解析玩家使用的客户端种类 - 禁用本项将完全不会注册通信频道.
+  resolve: true
+  # 是否启用客户端种类警告.
+  enabled: true
+  # 不会向管理员发送客户端种类警告的客户端类型. 无需完全匹配, 例如 lunar 可以匹配到 lunarclient 等.
+  ignore-alerts-list:
+    - 'vanilla'
+  # 在玩家加入服务器时发送的消息. 有效内建变量为 %player% (返回玩家名称), %prefix% (返回插件的消息前缀),
+  # %client-brand% (对应玩家使用的客户端种类), 和 %client-version% (对应玩家使用的客户端版本).
+  message: '%prefix% &c%player% &7使用 &f%client-brand%&7 客户端加入了服务器!'
+  # 禁止使用且在加入后被立即踢出的客户端种类. 该部分功能实用字符串比较, 因此名称不必完全精确, 例如 'forge' 会阻止 Forge 客户端, 'lunar' 会阻止 lunar 端等.
+  blocked-client-brands: []
+  unallowed-client-brand-kick-message: '&c你不能使用 %client-brand% 客户端加入服务器!'
+  # 是否在此类玩家加入时向控制台发出警报
+  console: false
+  # 发送至控制台的警告消息内容 (若上述选项设置为 true)
+  console-message: '[Vulcan] %player% joined using %client-brand%!'
+  # 是否对客户端种类使用白名单过滤机制. 任何使用不属于该列表的客户端加入的玩家均会被阻止.
+  whitelist-enabled: false
+  # 允许加入的客户端种类. 该部分功能实用字符串比较, 因此名称不必完全精确, 例如 'forge' 会允许 Forge 客户端, 'lunar' 会允许 lunar 端等.
+  whitelisted-client-brands: []
+
+connection:
+  desync:
+    kick-enabled: true
+    max-ticks: 300
+    kick-message: 'Internal Exception: io.netty.handler.timeout.ReadTimeoutException'
+    staff-alert-message: '%prefix% &c%player% &7因网络问题而与服务器断开连接! &7(&c%ticks% &7刻)'
+    console-message: '[Vulcan] &c%player% &7因网络问题而与服务器断开连接! &7(&c%ticks% &7刻)'
+  transaction:
+    kick-enabled: true
+    max-delay: 45000
+    kick-message: 'Internal Exception: io.netty.handler.timeout.ReadTimeoutException'
+    staff-alert-message: '%prefix% &c%player% &7因未响应交互数据包而与服务器断开连接! &7(&c%delay%ms&7)'
+    console-message: '[Vulcan] &c%player% &7因未响应交互数据包而与服务器断开连接! &7(&c%delay%ms&7)'
+  keepalive:
+    kick-enabled: true
+    max-delay: 45000
+    kick-message: 'Internal Exception: io.netty.handler.timeout.ReadTimeoutException'
+    staff-alert-message: '%prefix% &c%player% &7因未响应心跳数据包而与服务器断开连接! &7(&c%delay%ms&7)'
+    console-message: '[Vulcan] &c%player% &7因未响应心跳数据包而与服务器断开连接! &7(&c%delay%ms&7)'
+  max-ping:
+    kick-enabled: true
+    max-ping: 20000
+    max-ticks: 20
+    kick-message: 'Internal Exception: io.netty.handler.timeout.ReadTimeoutException'
+    staff-alert-message: '%prefix% &c%player% &7因延迟过高而与服务器断开连接! &7(&c%ping%ms&7)'
+    console-message: '[Vulcan] &c%player% &7因延迟过高而与服务器断开连接! &7(&c%ping%ms&7)'
+
+# 该部分配置控制惩罚相关设置
+punishments:
+  # 在玩家被惩罚时发送的消息 (仅对通过命令 /alert 启用警告的管理员有效)
+  message: '%prefix% &c%player% &7因 &f%check% &7(&f%type% 类&7) 而受到了惩罚 &7[&4x%vl%&7]'
+  # 在玩家被惩罚时发送给全服的公告
+  broadcast:
+    - "&7&m---»--*-------------------------------------*--«---"
+    - "&cVulcan &7检测到玩家 &c%player% &7正在作弊, 已将其踢出服务器."
+    - "&7&m---»--*-------------------------------------*--«---"
+
+#审判模式选项
+judgement-days:
+  # 在玩家执行 /jday start 后向全服发送的公告
+  started-broadcast:
+    - "&7&m---»--*-------------------------------------*--«---"
+    - "&cVulcan 审判模式 v1 已激活..."
+    - "&7&m---»--*-------------------------------------*--«---"
+  # 在审判模式结束后向全服发送的消息.
+  ended-broadcast:
+    - "&7&m---»--*-------------------------------------*--«---"
+    - "&c审判模式已结束... %amount% 名玩家受到了惩罚."
+    - "&7&m---»--*-------------------------------------*--«---"
+  # 受到惩罚的玩家执行的命令, %player% 返回参与审判模式的玩家名称 (通过命令 /jday add (玩家名称) 添加玩家至审判模式)
+  commands:
+    - "ban %player% &c[Vulcan] 审判模式 v1"
+  # 在审判模式下判定玩家作弊后发送的公告.
+  broadcast:
+    - '&7&m---»--*-------------------------------------*--«---'
+    - '&c%player% &7被 &c[Vulcan] 审判模式 v1&7 封禁.'
+    - '&7&m---»--*-------------------------------------*--«---'
+  # 参与审判模式的玩家时间间隔
+  cooldown: 1000
+  # 审判模式是否间隔一定时间自动执行 (在上述选项设置为 true 的情况下)
+  run-at-interval: false
+  # 若上述选项设置为 true, 则间隔执行的时间是多长 (单位为刻, 20 刻 = 1 秒. 默认值 36000 刻 = 30 分钟)
+  interval: 36000
+
+freeze:
+  # 在玩家被冻结时尝试登出执行的命令列表
+  logged-out-while-frozen-commands: []
+
+# 菜单界面选项
+gui:
+  # 在 /vulcan gui 主菜单界面中的标题. 不支持彩色代码. /vulcan reload 命令不会重新读取标题, 因为该部分内容仅在插件初始化时读取.
+  title: 'Vulcan 反作弊'
+
+# 是否启用幽灵方块修复. 踩在这类方块上的玩家会被强制回弹, 幽灵方块也会自动修复.
+ghost-blocks-fix:
+  # 是否启用幽灵方块修复.
+  enabled: true
+  # 是否允许 Vulcan 修复水类幽灵方块
+  ghost-water-fix: true
+  # 在 TPS 低于该值时插件将不会进行任何操作. 设置为 -1 表示禁用该功能
+  minimum-tps: 18.5
+  # 缓冲设定
+  buffer:
+    max: 3
+    decay: .1
+  # 是否启用幽灵方块回弹
+  setback: true
+  # 是否向玩家脚底的方块发送更新数据包
+  update-blocks: false
+  # 玩家卡在空气中多长时间会让插件将脚下方块判定为幽灵方块, 单位为刻 (默认值为 3)
+  ticks: 3
+  # 是否在玩家附近的幽灵方块被更新时发送消息
+  message-enabled: false
+  # 站在幽灵方块上的玩家收到的消息 (若上述功能设置为 true 的话)
+  message: '&c检测到附近存在幽灵方块. 已将其自动修复!'
+  # 是否在玩家因附近存在幽灵方块回弹时发送消息
+  staff-message-enabled: true
+  # 在玩家因幽灵方块触发回弹时发送给管理员的消息
+  staff-message: '%prefix% &c%player% &7踩到了幽灵方块而被自动回弹! (%world%, %x%, %y%, %z%) &7[%ticks%]'
+  # 是否将幽灵方块的相关信息发送至控制台
+  print-to-console: true
+  # 若上述选项设置为 true, 发送至控制台的消息的内容.
+  console-message: '%player% 踩到了幽灵方块而被自动回弹! (%world%, %x%, %y%, %z%) &7[%ticks%]'
+
+
+# 消息提示选项 - 大多数可以自行读懂.
+messages:
+  no-permission: '&c你没有权限执行该命令!'
+  cant-execute-from-console: '&c你不能在控制台执行该命令!'
+  ban-command-syntax: '%prefix% &7正确命令格式: &c/vulcan ban (玩家名称)&7.'
+  kb-command-syntax: '%prefix% &7正确命令格式: &c/vulcan knockback (玩家名称) &8| &c/vulcan kb (玩家名称)&7.'
+  profile-command-syntax: '%prefix% &7正确命令格式: &c/vulcan profile (玩家名称)&7.'
+  jday-command-syntax: '%prefix% &7正确命令格式: &c/jday add (玩家名称) &8| &c/jday execute &8| &c/jday list &8| &c/jday remove (玩家名称)&7.'
+  reload-success: '%prefix% &a成功重载 Vulcan!'
+  invalid-target: '%prefix% &c指定玩家未找到!'
+  kb-test-success: '%prefix% &a成功对玩家 %player% 执行了一次击退测试!'
+  jday-no-pending-bans: '%prefix% &c尚无正在进行的封禁!'
+  jday-added-to-list: '%prefix% &c%player% &7已被添加至列表!'
+  reset-command: '%prefix% &7在线所有玩家的触发等级已被重置!'
+  no-next-page: '%prefix% &c没有下一页了!'
+  no-previous-page: '%prefix% &c没有上一页了!'
+  enabled-all-checks: '%prefix% &a成功启用了所有检查!'
+  disabled-all-checks: '%prefix% &c成功禁用了所有检查!'
+  enabled-all-punishments: '%prefix% &a成功启用了所有惩罚!'
+  disabled-all-punishments: '%prefix% &c成功禁用了所有惩罚!'
+  disabled-check: '%prefix% &c禁用了检查 %check%!'
+  enabled-check: '%prefix% &a启用了检查 %check%!'
+  disabled-punishment: '%prefix% &c禁用了 %check% 检查的惩罚!'
+  enabled-punishment: '%prefix% &a启用了 %check% 检查的惩罚!'
+  disabled-hotbar-shuffle: '%prefix% &c检查 %check% 的快捷栏打乱已禁用!'
+  enabled-hotbar-shuffle: '%prefix% &a检查 %check% 的快捷栏打乱已启用!'
+  disabled-random-rotation: '%prefix% &c检查 %check% 的视角随机转动已禁用!'
+  enabled-random-rotation: '%prefix% &a检查 %check% 的视角随机转动已启用!'
+  disabled-broadcast-punishment: '%prefix% &c检查 %check% 的公示惩戒已禁用!'
+  enabled-broadcast-punishment: '%prefix% &a检查 %check% 的公式惩戒已启用!'
+  must-be-an-integer: '&c所输入内容必须为整数!'
+  must-be-positive: '&c所输入内容必须大于零!'
+  must-be-number: '&c所输入内容必须为数字!'
+  set-max-buffer: '%prefix% &a成功将检查 %check% 的最大缓冲值设置为了 %value%!'
+  set-hotbar-shuffle-minimum-violations: '%prefix% &a成功将检查 %check% 使用快捷栏打乱的最小触发值设置为了 %value%!'
+  set-hotbar-shuffle-interval: '%prefix% &a成功将检查 %check% 使用快捷栏打乱的间隔设置为了 %value%!'
+  set-random-rotation-minimum-violations: '%prefix% &a成功将检查 %check% 使用视角随机转动的最小触发值设置为了 %value%!'
+  set-random-rotation-interval: '%prefix% &a成功将检查 %check% 使用视角随机转动的间隔设置为了 %value%!'
+  set-alert-interval: '%prefix% &a成功将检查 %check% 的警告间隔设置为了 %value%!'
+  set-buffer-decay: '%prefix% &a成功将检查 %check% 的缓冲减少设置为了 %value%!'
+  set-buffer-multiple: '%prefix% &a成功将检查 %check% 的缓冲倍率设置为了 %value%!'
+  set-max-violations: '%prefix% &a成功将检查 %check% 的最大触发等级设置为了 %value%!'
+  set-minimum-violations-to-alert: '%prefix% &a成功将检查 %check% 的最小触发值设置为了 %value%!'
+  set-maximum-ping: '%prefix% &a成功将检查 %check% 的最大检查延迟设置为了 %value%!'
+  set-minimum-tps: '%prefix% &a成功将检查 %check% 的最小检查 TPS 设置为了 %value%!'
+  removed-punishment-command: '%prefix% &a成功将执行命令 %command% 从检查 %check% 中移除!'
+  invalid-index-number: '%prefix% &c无效序号!'
+  stopped-editing-punishment-commands: '%prefix% &c正在退出命令编辑模式!'
+  added-punishment-command: '%prefix% &a成功将命令 %command% 添加至检查 %check%!'
+  enter-punishment-command: '%prefix% &a输入你想要添加的命令! 输入 STOP 或 CANCEL 退出编辑模式!'
+  remove-punishment-command: '%prefix% &c输入想要删除的命令序号. 输入 STOP 或 CANCEL 退出编辑模式!'
+  disable-check-command-syntax: '%prefix% &c正确命令格式: /vulcan disablecheck (检查名称) - 大小写敏感.'
+  invalid-check: '%prefix% &c无效检查名称! 示例: AimA, BadPacketsF, AutoClickerJ.'
+  removed-check: '%prefix% &c禁用了检查 %check%!'
+  violations-command-syntax: '%prefix% &c正确命令格式: /vulcan violations (玩家名称)'
+  no-logs: '%prefix% &c该玩家没有可用日志!'
+  cps-command-syntax: '%prefix% &c正确命令格式: /vulcan cps (玩家名称)'
+  connection-command-syntax: '%prefix% &c正确命令格式: /vulcan connection (玩家名称)'
+  logs-command-syntax: '%prefix% &c正确命令格式: /logs (玩家名称) (page)'
+  no-logs-file: '%prefix% &c不存在有效的日志文件!'
+  logs-command-no-logs: '%prefix% &c未找到玩家 %player% 的日志!'
+  no-page: '%prefix% &c玩家 %player% 的日志中不存在第 %page% 页!'
+  update-available: '%prefix% &7插件 &cVulcan &7检测到新版本! (&cv%new-version%&7)'
+  latest-version: '%prefix% &a你正在使用最新版本的 Vulcan!'
+  injection-failure: '你加入得太快了. 请稍后再试!'
+  frozen: '&c你已被冻结! 请等待管理员的指示.'
+  logged-out-while-frozen: '%prefix% &c%player% 在冻结时登出!'
+  froze: '%prefix% &7你冻结了玩家 &a%player%&7!'
+  unfroze: '%prefix% &7你解冻了玩家 &c%player%!'
+  freeze-command-syntax: '%prefix% &c正确命令格式: /vulcan freeze (玩家名称)'
+  shuffle-command-syntax: '%prefix% &c正确命令格式: /vulcan shuffle (玩家名称)'
+  shuffled-hotbar: '%prefix% &a成功打乱了玩家 %player% 的快捷栏!'
+  rotate-command-syntax: '%prefix% &c正确命令格式: /vulcan rotate (玩家名称)'
+  randomly-rotated: '%prefix% &a成功旋转了玩家 %player% 的视角!'
+  reset-command-syntax: '%prefix% &c正确命令格式: /vulcan reset (玩家名称)'
+  violations-reset: '%prefix% &a成功重置了玩家 %player% 的检查触发等级!'
+  unknown-command: '%prefix% &c未知命令!'
+  unfroze-staff-broadcast: '%prefix% &c%player% &7被 &c%staff%&7 解冻了!'
+  froze-staff-broadcast: '%prefix% &c%player% &7被 &c%staff%&7 冻结了!'
+  removed-from-jday: '%prefix% &a成功将玩家 %player% 移出了审判模式列表!'
+  jday-remove-syntax: '%prefix% &c正确命令格式: /jday remove (玩家名称)'
+  punishlogs-syntax: '%prefix% &c正确命令格式: /punishlogs (玩家名称)'
+  sent-test-alert: '%prefix% &a成功发送测试警告!'
+
+# 命令配置选项
+commands:
+  # Vulcan 的帮助命令消息.
+  help:
+    - "&7&m---»--*-------------------------------------*--«---"
+    - "&cVulcan 反作弊检测 v%version% by &cfrep (.frap)"
+    - "&r"
+    - "&c/vulcan help &8- &7打开该帮助菜单"
+    - "&c/vulcan menu &8| &c/vulcan gui &8- &7打开 Vulcan 的菜单界面"
+    - "&c/vulcan profile &8 - &7浏览玩家的 Vulcan 档案."
+    - "&c/vulcan ban (玩家名称) &8- &7通过 Vulcan 封禁指定玩家."
+    - "&c/vulcan reload &8- &7重载所有文件."
+    - "&c/vulcan disablecheck (检查名称) &8- &7禁用特定检查 (大小写敏感)."
+    - "&c/vulcan violations (玩家名称) &8- &7显示指定玩家所有的触发信息."
+    - "&c/vulcan cps (玩家名称) &8- &7查询指定玩家的 CPS."
+    - "&c/vulcan kb (玩家名称) &8 | &c/vulcan knockback (玩家名称) &8- &7对玩家使用一次击退."
+    - "&c/vulcan checks &8- &7显示当前所有启用的检查."
+    - "&c/vulcan connection (玩家名称) &8- &7显示玩家的连接信息."
+    - "&c/vulcan freeze (玩家名称) &8- &7冻结/解冻指定玩家."
+    - "&c/vulcan rotate (玩家名称) &8- &7随机旋转指定玩家的视角."
+    - "&c/vulcan shuffle (玩家名称) &8- &7随机打乱指定玩家的快捷栏."
+    - "&c/vulcan top &8- &7显示服务器内各项检测触发次数最多的玩家."
+    - "&c/vulcan testalert &8- &7测试 Discord 网页挂钩/集成交互."
+    - "&r"
+    - "&c/jday add (玩家名称) &8- &7将玩家加入审判模式下."
+    - "&c/jday execute &8- &7开始启动审判模式."
+    - ""
+    - "&c/verbose &8- &7开启或关闭详细提醒."
+    - "&c/alerts &8- &7开启或关闭聊天警告."
+    - ""
+    - "&c/logs (玩家名称) (页码) &8- &7获取玩家触发记录."
+    - "&c/punishlogs (玩家名称) &8- &7检查玩家所受的惩罚"
+    - "&7&m---»--*-------------------------------------*--«---"
+  ban:
+    # 在 /vulcan ban (玩家) 命令执行后执行的命令
+    commands:
+      - 'ban %player% &c[Vulcan] 不公平优势'
+    # 在 /vulcan ban (玩家) 命令执行后发送的公告消息
+    broadcast:
+      - "&7&m---»--*-------------------------------------*--«---"
+      - "&cVulcan &7检测到了玩家 &c%player% &7可能有作弊行为并已将其踢出."
+      - "&7&m---»--*-------------------------------------*--«---"
+  # /vulcan profile (玩家) 命令的相关选项
+  profile:
+    - "&7&m---»--*-------------------------------------*--«---"
+    - "&c玩家 %player% 的 Vulcan 档案:"
+    - " &8» &7%uuid%"
+    - ""
+    - "&7客户端版本: &c%client-version%"
+    - "&7客户端类型: &c%client-brand%"
+    - "&7敏感度: &c%sensitivity%%"
+    - "&7最近 CPS: &c%cps% CPS"
+    - ""
+    - "&7总触发次数 (&c%total-violations%&7):"
+    - " &8» &7战斗类: &c%combat-violations%"
+    - " &8» &7移动类: &c%movement-violations%"
+    - " &8» &7玩家类: &c%player-violations%"
+    - ""
+    - "&7碰撞箱:"
+    - "&8» &7邻近方块: %nearby-blocks%"
+    - "&8» &7邻近实体: %nearby-entities%"
+    - ""
+    - "&7药水效果: %potion-effects%"
+    - "&7&m---»--*-------------------------------------*--«---"
+  cps: "%prefix% &7玩家 &c%player%&7 最近测得的 CPS 为: &c%cps%"
+  connection:
+    - "&7&m---»--*-------------------------------------*--«---"
+    - "&c玩家 %player% 的连接信息:"
+    - ""
+    - "&7交互延迟: &c%transaction-ping%ms"
+    - "&7心跳包延迟: &c%keepalive-ping%ms"
+    - ""
+    - "&7上一次交互应答: &c%last-replied-transaction%ms 前"
+    - "&7处理中的交互: &c%queued-transactions%"
+    - ""
+    - "&7飞行延迟: &c%flying-delay%ms"
+    - "&7&m---»--*-------------------------------------*--«---"
+  logs:
+    color: '&7'
+    header-footer: '&7&m---»--*--&r&7[ 玩家 &c%player% &7的记录 (&c%page%&8/&c%max-pages%&7) &7]&7&m--*--«---'
+  top:
+    - "&7&m---»--*-------------------------------------*--«---"
+    - "&c总触发排行榜:"
+    - " &8- &7%total-1-name% &7(&c%total-1-violations% VL&7)"
+    - " &8- &7%total-2-name% &7(&c%total-2-violations% VL&7)"
+    - " &8- &7%total-3-name% &7(&c%total-3-violations% VL&7)"
+    - " &8- &7%total-4-name% &7(&c%total-4-violations% VL&7)"
+    - " &8- &7%total-5-name% &7(&c%total-5-violations% VL&7)"
+    - ""
+    - "&c战斗触发排行榜:"
+    - " &8- &7%combat-1-name% &7(&c%combat-1-violations% VL&7)"
+    - " &8- &7%combat-2-name% &7(&c%combat-2-violations% VL&7)"
+    - " &8- &7%combat-3-name% &7(&c%combat-3-violations% VL&7)"
+    - " &8- &7%combat-4-name% &7(&c%combat-4-violations% VL&7)"
+    - " &8- &7%combat-5-name% &7(&c%combat-5-violations% VL&7)"
+    - ""
+    - "&c移动触发排行榜:"
+    - " &8- &7%movement-1-name% &7(&c%movement-1-violations% VL&7)"
+    - " &8- &7%movement-2-name% &7(&c%movement-2-violations% VL&7)"
+    - " &8- &7%movement-3-name% &7(&c%movement-3-violations% VL&7)"
+    - " &8- &7%movement-4-name% &7(&c%movement-4-violations% VL&7)"
+    - " &8- &7%movement-5-name% &7(&c%movement-5-violations% VL&7)"
+    - ""
+    - "&c玩家触发排行榜:"
+    - " &8- &7%player-1-name% &7(&c%player-1-violations% VL&7)"
+    - " &8- &7%player-2-name% &7(&c%player-2-violations% VL&7)"
+    - " &8- &7%player-3-name% &7(&c%player-3-violations% VL&7)"
+    - " &8- &7%player-4-name% &7(&c%player-4-violations% VL&7)"
+    - " &8- &7%player-5-name% &7(&c%player-5-violations% VL&7)"
+    - "&7&m---»--*-------------------------------------*--«---"
+  jday:
+    list-header-footer: "&7&m---»--*-------------------------------------*--«---"
+    list-format: " &8- &7%name%"
+  punishlogs:
+    header-footer: '&7&m---»--*--&r&7[ 玩家 &c%player% &7的惩罚记录 ]&7&m--*--«---'
+
+punishment-statistics-broadcast:
+  # Vulcan 是否向所有玩家公告惩罚作弊者的有关消息.
+  enabled: false
+  # 播送公告的时间间隔 (单位为刻) (默认值 = 18000, 即 15 分钟)
+  interval: 18000
+  # 播送公告的内容
+  broadcast:
+    - '&7&m---»--*-------------------------------------*--«---'
+    - '&7在过去 7 天中, &cVulcan &7共计惩罚了 &c%amount% &7名玩家.'
+    - '&7&m---»--*-------------------------------------*--«---'
+
+# 部分单独设置
+settings:
+  # Whether or not alerts will automatically be enabled on-join for players who have the permission "vulcan.alerts"
+  toggle-alerts-on-join: true
+  # Whether or not the severity placeholder should be based off of per-check violations or the total violations of the player
+  per-check-severities: true
+  # Whether or not cinematic mode will be checked for certain aim checks. This isn't really a big deal and can be
+  # left disabled as this will pretty much NEVER happen unless done intentionally. Enabling this will slow
+  # detection speeds for certain checks.
+  cinematic: false
+  # This is just here in case I forget to remove a debug message when I post an update. If I forget to remove a debug
+  # message and you see [Vulcan Debug] on your server, disable this (it won't effect you if this is enabled or disabled
+  # unless I forget to remove a debug message, but if you see [Vulcan Debug] in chat, then set this to false and reload).
+  debug: true
+  # Whether or not 'A new update is available!' message will be set on join for players with 'vulcan.admin' permission
+  check-for-updates: true
+  # A setting for PacketEvents, we may ask you to change this if you're having issues injecting. If everything is working
+  # fine, don't touch this.
+  inject-early: true
+  # This is the time (in ticks - 20 ticks per second - default value is 80 (4 seconds)) of how long players should be exempt from certain
+  # checks after velocity gets applied to them via another plugin or something (such as Launchpads, crate plugins, etc etc).
+  max-velocity-ticks: 50
+  # This is the max file size (in KB) before the violations.txt should be zipped and put into the logs folder
+  max-logs-file-size: 7500
+  # If you have a bungee network and want to have a specific server name for punishment/alert messages, etc
+  server-name: 'Default'
+  # Whether or not alert messages should be sent on the main thread or asynchronously. If your server is on bungee, it is recommended to keep this
+  # disabled as sending large chat component messages with so much info (hover, click commands, etc) like the alert commands can
+  # sometimes cause people to be kicked for 'The server you were on has went down' or something.
+  # TLDR:
+  # - Bungeecord Networks: leave this FALSE
+  # - Single servers: set this to TRUE to save some performance
+  async-alerts: false
+  # Whether or not the API should be enabled. If you want to hook into Vulcan and do anything fancy, then enable this, however
+  # the majority of people will never use this and disabling it allows for less runnables and more performance as the events dont
+  # need to be called at all (they are also forced to be called sync, so this is a win win performance gain)
+  enable-api: false
+  # Whether or not the update checker should be enabled
+  update-checker: true
+  # The delay in milliseconds (1000ms = 1 second)
+  punishment-delay: 10000
+  # Whether or not Vulcan should automatically ignore Bedrock players using Floodgate's API.
+  ignore-floodgate: true
+  # This is highly highly recommended to keep false as it can be spoofed by the client, however, if you're using Geyser and
+  # for whatever reason can't get Floodgate to work, then enable this. If you have floodgate-bukkit on your server
+  # and Geyser is working fine, then don't touch this.
+  ignore-flags-geyser-client-brand: false
+  # How long we should wait for everything to initialize before players start being checked (in milliseconds). Default
+  # value is 2500ms.
+  join-check-wait-time: 2500
+  # Whether or not players with UUID's starting with '000000' should be ignored and not flagged - used for exemptions of
+  # Geyser players if all else fails.
+  ignore-geyser-uuids: true
+  # Whether or not we should ignore flags for players whose usernames start with a certain character/string of characters
+  ignore-geyser-prefixes: true
+  # The string to be ignored - all players names who start with a * will not be flagged (case sensitive if not symbols)
+  ignore-geyser-prefix: "*"
+  # The max violation (violations above this won't be sent)
+  max-alert-violation: 250
+  # How long should people be exempt from checks when they were in /fly (default = 40 ticks, 2 seconds)
+  flight-cooldown: 40
+  # What the /vulcan top command should display if there aren't enough users for it to sort
+  top-command-unresolved: "Unresolved"
+  # Whether or not players who are in the judgement day queue should be able to be banned again.
+  ignore-if-in-judgement-day: false
+  # Whether or not players who join with Vivecraft should be ignored. Be careful with this as it can be spoofed.
+  ignore-vivecraft: false
+  # Scaffolding are really broken blocks, whether or not we should be more lenient for them for certain checks.
+  lenient-scaffolding: true
+  # Whether or not bStats should be loaded
+  bstats: true
+  # Whether or not Vulcan should account for entity collisions
+  entity-collision: true
+  # Whether or not Vulcan should hook into mcMMO if it is available.
+  hook-mcmmo: true
+  # Whether or not Vulcan should hook into MythicMobs if it is available.
+  hook-mythicmobs: true
+  # Whether or not Vulcan should hook into GSit if it is available
+  hook-gsit: true
+  # Whether or not Vulcan should hook with Brewery if available
+  hook-brewery: true
+  # Whether or not Vulcan should ignore alerts for violations which are greater than the max violations threshold
+  ignore-alerts-over-max-violations: false
+  # The amount greater than the max violations that should be ignored (example, 3 would mean that if the max violations
+  # was set to 10, alerts greater than VL 13 would be ignored)
+  ignore-alerts-over-max-violations-amount: 3
+  # Whether or not Vulcan should warn you if you may be using an incompatible spigot fork.
+  incompatability-manager: true
+  # Whether or not Vulcan should send plugin messages
+  plugin-messaging: true
+  # Whether or not Vulcan should setback players when they are lower than their last onGround position (this can lead to
+  # things such as anti-voids, so not particularly recommended if you have something like a SkyWars/BedWars server)
+  dont-setback-lower-positions: false
+  # Minimum ticks existed before a player is chcked, similar to join-check-wait-time above
+  min-ticks-existed: 3
+  # Whether or not we should calculate the distance between the player and WorldBorder to prevent false flags in the
+  # Velocity checks. Only needed on very specific servers.
+  velocity-world-border: false
+  # Whether or not Vulcan should account for having 10 kabillion entities in one place that launches you very fast and could
+  # 'false' some checks. Will not matter on 99% of servers
+  entity-cram-fix-enabled: false
+  # The amount of entities that should be accounted for
+  entity-cram-entities-amount: 10
+  # How long the checks should be exempted for if the above entities are encountered
+  entity-cram-exempt-ticks: 30
+  # Whether or not extra leniency is added to movement checking for players wearing elytras due to very high occurences of
+  # desync. Disable this at your own risk, defaulted to true and still highly experimental.
+  lenient-elytra-handling: true
+  # Still experimenting with this, don't touch unless instructed
+  handle-attributes: false
+
+  ######################################################################################################################
+  # Discord WEBHOOK Configuration                                                                                      #
+  ######################################################################################################################
+discord-webhook:
+  # The section for the Discord Webhook alerts
+  alerts:
+    # Whether or not Discord Webhook Alerts should be enabled
+    enabled: false
+    # Paste the URL to your webhook here. For how to create a webhook, please see https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks
+    url: 'insert-webhook-url-here'
+    # The avatar for the webhook
+    avatar: 'https://i.imgur.com/JPG1Kwk.png'
+    # Thumbnail for the webhook
+    thumbnail: 'http://cravatar.eu/avatar/%name%/64.png'
+    # Colors for the webhook (use a website like https://www.rapidtables.com/web/color/RGB_Color.html to pick colors)
+    color-r: 252
+    color-g: 140
+    color-b: 3
+    # Username of the webhook
+    username: 'Vulcan'
+    # Title of the webhook
+    title: 'Vulcan 警告'
+    # Description of the webhook
+    description: '**%player%** 未能通过项目 %check% %dev%(%type% 类)%dev% 的检查 [%vl%/%max-vl%]'
+    # Content will send text outside of the embed, so you can tag roles or people for example.
+    content: ''
+    information-field: false
+    client-version-field: true
+    client-brand-field: true
+    server-name-field: false
+    description-field: false
+    location-field: true
+    ping-tps-field: true
+  punishments:
+    # Same settings and explanations as above
+    enabled: false
+    url: 'insert-webhook-url-here'
+    avatar: 'https://i.imgur.com/JPG1Kwk.png'
+    thumbnail: 'http://cravatar.eu/avatar/%name%/64.png'
+    color-r: 255
+    color-g: 0
+    color-b: 0
+    username: 'Vulcan'
+    title: 'Vulcan 惩戒系统'
+    description: '**%player%** 因未能通过 %check% (%type% 类) 检查而被惩罚 [VL: %vl%]'
+    content: ''
+    description-field: false
+    server-name-field: false
+    client-brand-field: false
+    client-version-field: false
+    ping-tps-field: false
+    location-field: false
+
+########################################################################################################################
+# 抽象检查部分的配置文本. 大部分内容均可通过游戏内命令 /vulcan gui 打开的界面进行编辑
+# enabled: 是否启用该检查
+# punishable: 达到最大触发等级时是否执行惩罚
+# broadcast-punishment: 是否公示惩戒 (内容可在上文找到)
+# max-violations: 最大检查等级上限; 当到达该等级时, punishment-commands 中的命令将会被执行 (若上文 punishable 被设置为 true 的话)
+# alert-interval: How often alerts for this check will be sent, for example, 2 will only send alerts for VL 2, 4, 6, 8, 3 will send alerts
+#                 for violations 3, 6, 9, 12, etc. If you want to reduce the spam in the chat, then you can use this.
+# dont-alert-until: This will make it so that only alerts greater than this value are sent. For example, if you set this to 6,
+#                   then only alerts 6 and higher would be sent (anything less than that is still logged, but not sent to staff)
+# maximum-ping: 100000 is the default value and your ping can't go higher than this without being kicked for KeepAlive timeout.
+#               You won't really ever need to change this as ping doesn't really effect any checks and this can open the possibility
+#               of bypasses with ping spoof, however, the option is here nonetheless.
+# minimum-tps: If the TPS is lower than this value, the check won't fire.
+#
+# buffer:
+# max: Buffer is how many times the player needs to 'fail' the check in order to actually alert. This is basically how
+#         sensitive the check is. I recommend keeping these as default, but if you want the anticheat to be a little more
+#         sensitive or less sensitive you can play with them a little. Don't set them too low or too high or else there will be
+#         too many false flags or it just won't flag at all.
+# multiple: This is what the buffer gets multiplied by after an alert is sent. For example, if you set it to 1, then it wouldn't
+#           do anything since (1 * x) is just x. You can also change this if you want alerts to happen slower, for example
+#           setting it to 0 would make it so when a player reaches the max buffer of 5 for example, their buffer is set to 0
+#           instead of 2.5 (as it would be if the multiple was .5 and not 0.
+# decay: How much the buffer should decay if the player doesn't fail the check. Again, don't really touch this if you don't
+#        know what you're doing as you can cause checks to either not flag at all or false positive a lot. You need to have a
+#        balanced ratio of increasing buffers and decaying the buffer. What we mean by this is that having the decay as 1
+#        and increasing the buffer by 1 isn't really balanced as you can just cheat for a tick and then not do anything and
+#        you will bypass. On the other hand, a buffer decay of .1 against an increase of one is much more balanced as it ensures
+#        that people who constantly fail the checks will continue to alert and be punished yet any little errors will be
+#        filtered out and not alert.
+# hotbar-shuffle:
+# enabled: Whether or not this feature will be enabled. For me.frep.vulcan.spigot.check.impl.combat checks, if the player is failing the check, this will
+#          shuffle around the item in their hand. Funny to watch as they try to frantically figure out what's going on
+# minimum-vl-to-shuffle: The minimum violations that a player has to be at in order for this feature to function.
+# shuffle-every: Interval at which this feature will be executed.
+#
+# random-rotation:
+# enabled: Whether or not this feature will be enabled. When players fail me.frep.vulcan.spigot.check.impl.combat checks, their head will be thrown around
+#          to random locations. Again, pretty funny to watch.
+# minimum-vl-to-randomly-rotate: Minimum violations which the player needs to be at in order for this feature to work.
+# rotate-every: Interval at which this will be executed.
+# For any questions on configuration, please join our Discord or send me on a pm! https://discord.gg/SCNuwUG | frap#0002
+########################################################################################################################
+checks:
+  combat:
+    aim:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 1
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: -1
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .75
+          decay: .5
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      b:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 8
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: -1
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 6
+          multiple: .5
+          decay: .65
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      c:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: -1
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 5
+          multiple: .5
+          decay: .75
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      d:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 10
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: -1
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 8
+          multiple: .5
+          decay: .75
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      e:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 3
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: -1
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .75
+          decay: .25
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      f:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 10
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: -1
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 12
+          multiple: .5
+          decay: .45
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      g:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: -1
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .5
+          decay: .75
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      h:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 10
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: -1
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 7
+          multiple: .5
+          decay: .75
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      i:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 10
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: -1
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 7
+          multiple: .5
+          decay: .75
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      k:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: -1
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 6
+          multiple: .5
+          decay: .25
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      l:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: -1
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 10
+          multiple: .45
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      m:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 3
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: -1
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 2
+          multiple: .4
+          decay: .25
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      n:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 10
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: -1
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 5
+          multiple: .5
+          decay: .5
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      o:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 10
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: -1
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 5
+          multiple: .5
+          decay: .25
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      p:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: -1
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 2
+          multiple: .4
+          decay: .25
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      q:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: -1
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 6
+          multiple: .5
+          decay: .25
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      r:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: -1
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 20
+          multiple: .3
+          decay: .5
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      s:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: -1
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 20
+          multiple: .25
+          decay: .5
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      u:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 1
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: -1
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      w:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: -1
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 20
+          multiple: .25
+          decay: .125
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      x:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: -1
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 12
+          multiple: .25
+          decay: .125
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      y:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: -1
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+    autoblock:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 3
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      b:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 3
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      c:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 3
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 2
+          multiple: .5
+          decay: .5
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      d:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 3
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+    # AutoClicker 检查不推荐以封禁作为惩罚操作, 因为此类检测事实上并非完全准确, 若真的将其启用, 虽然不会导致严重误判但也有可能将玩家误封.
+    autoclicker:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        max-cps: 25
+      b:
+        enabled: true
+        punishable: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 25
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .5
+          decay: .5
+      c:
+        enabled: true
+        punishable: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 25
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .5
+          decay: 1
+      d:
+        enabled: true
+        punishable: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 25
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .5
+          decay: .5
+      e:
+        enabled: true
+        punishable: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 25
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .5
+          decay: .75
+      f:
+        enabled: true
+        punishable: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 25
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .5
+          decay: 1.25
+      g:
+        enabled: true
+        punishable: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 25
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 5
+          multiple: .25
+          decay: 1.25
+      h:
+        enabled: true
+        punishable: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 25
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .5
+          decay: 1
+      i:
+        enabled: true
+        punishable: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 25
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 5
+          multiple: .5
+          decay: 1.25
+      j:
+        enabled: true
+        punishable: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 25
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .5
+          decay: 1.25
+      k:
+        enabled: true
+        punishable: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 25
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .5
+          decay: .75
+      l:
+        enabled: true
+        punishable: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 25
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .25
+          decay: 1
+      m:
+        enabled: true
+        punishable: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 25
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .25
+          decay: .75
+      n:
+        enabled: true
+        punishable: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 25
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 25
+          multiple: .15
+          decay: .75
+      o:
+        enabled: true
+        punishable: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 25
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 5
+          multiple: .25
+          decay: 1.25
+      p:
+        enabled: true
+        punishable: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 25
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 2
+          multiple: .25
+      q:
+        enabled: true
+        punishable: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 25
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 35
+          multiple: .3
+          decay: 2.0
+      r:
+        enabled: true
+        punishable: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 25
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 50
+          multiple: .15
+          decay: 10
+      s:
+        enabled: true
+        punishable: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 25
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 30
+          multiple: .15
+          decay: .825
+      t:
+        enabled: true
+        punishable: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 25
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 25
+          multiple: .15
+          decay: .75
+        min-kurtosis: 13
+    reach:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 8
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .25
+          decay: .035
+        max-reach: 3.03
+      b:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 6
+          multiple: .25
+          decay: .225
+        max-reach: 3.15
+    fastbow:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .5
+          decay: .125
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+    criticals:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 10
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 1
+          multiple: .5
+          decay: .05
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      b:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 10
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 1
+          multiple: .5
+          decay: .05
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+    killaura:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 3
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .5
+          decay: .5
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      b:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 3
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 5
+          multiple: .6
+          decay: .5
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      c:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 2
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 2
+          multiple: .5
+          decay: .25
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+      d:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 1
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+      f:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 3
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 10
+          multiple: .25
+          decay: 2
+      h:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 1
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+      j:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 1
+          multiple: .5
+          decay: .5
+      k:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .5
+          decay: .75
+      l:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 5
+          multiple: .6
+          decay: .5
+        hotbar-shuffle:
+          enabled: false
+          minimum-vl-to-shuffle: 2
+          shuffle-every: 2
+        random-rotation:
+          enabled: false
+          minimum-vl-to-randomly-rotate: 2
+          rotate-every: 2
+    hitbox:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 10
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .25
+          decay: .125
+        max-angle: .36
+      b:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 6
+          multiple: .25
+          decay: .125
+        max-angle: 45
+    velocity:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .25
+          decay: .075
+      b:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .35
+          decay: .125
+      c:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 5
+          multiple: .25
+          decay: .175
+      d:
+        enabled: false
+        punishable: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .25
+          decay: .05
+  movement:
+    noslow:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .25
+          decay: .15
+      b:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 7
+          multiple: .25
+          decay: .075
+      c:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 7
+          multiple: .25
+          decay: .15
+      d:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 7
+          multiple: .25
+          decay: .15
+      e:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 7
+          multiple: .25
+          decay: .15
+    motion:
+      a:
+        enabled: true
+        punishable: true
+        setback: false
+        min-vl-to-setback: 1
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .25
+          decay: .25
+      b:
+        enabled: true
+        punishable: true
+        setback: false
+        min-vl-to-setback: 1
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .25
+          decay: .25
+      c:
+        enabled: true
+        punishable: true
+        setback: false
+        min-vl-to-setback: 1
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 1
+          multiple: .5
+          decay: .05
+      d:
+        enabled: true
+        punishable: true
+        setback: false
+        min-vl-to-setback: 1
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .25
+          decay: .05
+      e:
+        enabled: true
+        punishable: true
+        setback: false
+        min-vl-to-setback: 1
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 3
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 1
+          multiple: .5
+          decay: .05
+      g:
+        enabled: true
+        punishable: true
+        setback: false
+        min-vl-to-setback: 1
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 20
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 2
+          multiple: .25
+          decay: .15
+      h:
+        enabled: false
+        punishable: true
+        setback: false
+        min-vl-to-setback: 1
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 20
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .25
+          decay: .15
+    jump:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        setback: false
+        min-vl-to-setback: 1
+        broadcast-punishment: false
+        max-violations: 25
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 2
+          multiple: .25
+          decay: .15
+      b:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        setback: false
+        min-vl-to-setback: 1
+        broadcast-punishment: false
+        max-violations: 25
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 2
+          multiple: .25
+          decay: .15
+      c:
+        enabled: false
+        punishable: false
+        discord-alert-interval: 1
+        setback: false
+        min-vl-to-setback: 1
+        broadcast-punishment: false
+        max-violations: 25
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 2
+          multiple: .25
+          decay: .15
+    step:
+      a:
+        enabled: true
+        punishable: true
+        setback: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+      b:
+        enabled: true
+        punishable: true
+        setback: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 6
+          multiple: .25
+          decay: .35
+      c:
+        enabled: true
+        punishable: true
+        setback: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .25
+          decay: .1
+    boatfly:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .33
+          decay: .125
+        kick-out: false
+      b:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 5
+          multiple: .25
+          decay: .25
+        kick-out: false
+      c:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 5
+          multiple: .25
+          decay: .125
+        kick-out: false
+    entityflight:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 5
+          multiple: .5
+          decay: .25
+        kick-out: false
+      b:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 5
+          multiple: .5
+          decay: .25
+    antilevitation:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 8
+          multiple: .25
+          decay: .075
+    nosaddle:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 6
+          multiple: .5
+          decay: .125
+    entityspeed:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 5
+          multiple: .5
+          decay: .25
+        kick-out: false
+        min-difference: .01
+    elytra:
+      a:
+        enabled: true
+        punishable: true
+        setback: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 1
+          multiple: .5
+          decay: .25
+        max-speed: 4.25
+      b:
+        enabled: true
+        punishable: true
+        setback: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 8
+          multiple: .25
+          decay: .125
+      c:
+        enabled: true
+        punishable: true
+        setback: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 6
+          multiple: .5
+          decay: .125
+      f:
+        enabled: true
+        punishable: true
+        setback: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 10
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 6
+          multiple: .25
+          decay: .125
+      g:
+        enabled: true
+        punishable: false
+        setback: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 25
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .25
+          decay: .1
+      i:
+        enabled: true
+        punishable: true
+        setback: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .25
+          decay: .1
+      k:
+        enabled: true
+        punishable: true
+        setback: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .25
+          decay: .1
+      l:
+        enabled: true
+        punishable: true
+        setback: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .25
+          decay: .1
+      m:
+        enabled: true
+        punishable: true
+        setback: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .25
+          decay: .1
+      n:
+        enabled: false
+        punishable: false
+        discord-alert-interval: 1
+        setback: false
+        min-vl-to-setback: 1
+        broadcast-punishment: false
+        max-violations: 20
+        alert-interval: 1
+        dont-alert-until: 2
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .25
+          decay: .045
+    speed:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        setback: false
+        min-vl-to-setback: 1
+        broadcast-punishment: false
+        max-violations: 12
+        alert-interval: 1
+        dont-alert-until: 2
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 5
+          multiple: .35
+          decay: .125
+      b:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        setback: false
+        min-vl-to-setback: 1
+        broadcast-punishment: false
+        max-violations: 20
+        alert-interval: 1
+        dont-alert-until: 2
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .25
+          decay: .045
+        min-difference: .0025
+      c:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        setback: false
+        min-vl-to-setback: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 2
+        dont-alert-until: 2
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .25
+          decay: .045
+        min-difference: .001
+      d:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        setback: false
+        min-vl-to-setback: 1
+        broadcast-punishment: false
+        max-violations: 20
+        alert-interval: 1
+        dont-alert-until: 2
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .25
+          decay: .045
+        min-difference: .0025
+    fastclimb:
+      a:
+        enabled: true
+        punishable: true
+        setback: false
+        min-vl-to-setback: 1
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .5
+          decay: .125
+    wallclimb:
+      a:
+        enabled: true
+        punishable: true
+        setback: false
+        min-vl-to-setback: 1
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .35
+          decay: .225
+    jesus:
+      a:
+        enabled: true
+        punishable: true
+        setback: false
+        min-vl-to-setback: 1
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 2
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .5
+          decay: .025
+      b:
+        enabled: true
+        punishable: true
+        setback: false
+        min-vl-to-setback: 1
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 2
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .5
+          decay: .175
+      c:
+        enabled: true
+        punishable: true
+        setback: false
+        min-vl-to-setback: 1
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 2
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 10
+          multiple: .45
+          decay: .75
+      d:
+        enabled: true
+        punishable: true
+        setback: false
+        min-vl-to-setback: 1
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .45
+          decay: .175
+      e:
+        enabled: true
+        punishable: true
+        setback: false
+        min-vl-to-setback: 1
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 2
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 10
+          multiple: .25
+          decay: .175
+    flight:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 5
+        setback: false
+        min-vl-to-setback: 1
+        broadcast-punishment: false
+        max-violations: 30
+        alert-interval: 2
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .65
+          decay: .275
+        # 该检查是否对存疑的幽灵方块生效 - 启用该项会让这些检查更倾向于绕过某个通过站在幽灵方块上从而伪造 onGround 参数实现飞行的作弊模块, 若你启用该项
+        # 请确保在 ghost-blocks-fix 部分配置中启用了针对幽灵方块交互的回弹
+        ignore-ghost-blocks: true
+      b:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 5
+        setback: false
+        min-vl-to-setback: 1
+        broadcast-punishment: false
+        max-violations: 30
+        alert-interval: 2
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .5
+          decay: .275
+      c:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 5
+        setback: false
+        min-vl-to-setback: 1
+        broadcast-punishment: false
+        max-violations: 30
+        alert-interval: 2
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .75
+          decay: .225
+        # 该检查是否对存疑的幽灵方块生效 - 启用该项会让这些检查更倾向于绕过某个通过站在幽灵方块上从而伪造 onGround 参数实现飞行的作弊模块, 若你启用该项
+        # 请确保在 ghost-blocks-fix 部分配置中启用了针对幽灵方块交互的回弹
+        ignore-ghost-blocks: true
+      d:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 5
+        setback: false
+        min-vl-to-setback: 1
+        broadcast-punishment: false
+        max-violations: 30
+        alert-interval: 2
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .35
+          decay: .275
+        # 该检查是否对存疑的幽灵方块生效 - 启用该项会让这些检查更倾向于绕过某个通过站在幽灵方块上从而伪造 onGround 参数实现飞行的作弊模块, 若你启用该项
+        # 请确保在 ghost-blocks-fix 部分配置中启用了针对幽灵方块交互的回弹
+        ignore-ghost-blocks: true
+      e:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 5
+        setback: false
+        min-vl-to-setback: 1
+        broadcast-punishment: false
+        max-violations: 30
+        alert-interval: 2
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .4
+          decay: .5
+        # 该检查是否对存疑的幽灵方块生效 - 启用该项会让这些检查更倾向于绕过某个通过站在幽灵方块上从而伪造 onGround 参数实现飞行的作弊模块, 若你启用该项
+        # 请确保在 ghost-blocks-fix 部分配置中启用了针对幽灵方块交互的回弹
+        ignore-ghost-blocks: true
+    vclip:
+      a:
+        enabled: true
+        punishable: false
+        setback: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 20
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+    sprint:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 6
+          multiple: .25
+          decay: .4
+    strafe:
+      a:
+        enabled: true
+        punishable: true
+        setback: false
+        min-vl-to-setback: 1
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 2
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 2
+          multiple: .5
+          decay: .05
+      b:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .15
+          decay: .075
+  player:
+    fastuse:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+    fastplace:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        max-blocks: 15
+      b:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 1
+          multiple: .25
+          decay: .5
+        max-blocks: 4
+    fastbreak:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 2
+          multiple: .25
+          decay: .5
+        min-difference: -125
+    tower:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .5
+          decay: .75
+    scaffold:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 3
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+      b:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 10
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .25
+          decay: .25
+      c:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 2
+          multiple: .25
+          decay: .5
+      d:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 10
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .25
+          decay: .5
+      e:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 10
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .25
+          decay: .5
+      f:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 3
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .5
+          decay: .1
+      g:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 2
+          multiple: .25
+          decay: .25
+      h:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 8
+          multiple: .25
+          decay: .35
+      i:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 10
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+      j:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+      k:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 1
+          multiple: .5
+          decay: .35
+        max-blocks: 6
+      m:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 12
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 1
+          multiple: .5
+          decay: .25
+      n:
+        enabled: false
+        punishable: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 12
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .5
+          decay: .25
+      o:
+        enabled: false
+        punishable: false
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 12
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+    timer:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 2
+        dont-alert-until: 3
+        maximum-ping: 100000
+        minimum-tps: 19.8
+        punishment-commands:
+          - 'minecraft:kick %player% Internal Exception: io.netty.handler.timeout.ReadTimeoutException'
+        buffer:
+          max: 35
+          multiple: .425
+          decay: 1.85
+        max-speed: 1.05
+      d:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 35
+        alert-interval: 2
+        dont-alert-until: 8
+        maximum-ping: 100000
+        minimum-tps: 19.8
+        punishment-commands:
+          - 'minecraft:kick %player% Internal Exception: io.netty.handler.timeout.ReadTimeoutException'
+        buffer:
+          max: 3
+          multiple: .5
+          decay: .25
+        max-balance: 75
+    baritone:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 20
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 20
+          multiple: .5
+          decay: .25
+      b:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 20
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 2
+          multiple: .5
+          decay: .05
+    ghosthand:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 3
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        cancel: true
+    airplace:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 10
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+    badpackets:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 3
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 2
+          multiple: .5
+          decay: .25
+      b:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 1
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+      c:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 1
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+      d:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .25
+          decay: .01
+      e:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 1
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+      f:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 1
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+      g:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 3
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+      h:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 3
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+      i:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 3
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+      j:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 3
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+      k:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .5
+          decay: .4
+      m:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 5
+          multiple: .33
+          decay: .25
+      n:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 10
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 20
+          multiple: .25
+          decay: 2.5
+      o:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 1
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .5
+          decay: .15
+      p:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 10
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .5
+          decay: .15
+      q:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 1
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .5
+          decay: .15
+      r:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 10
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 6
+          multiple: .5
+          decay: .25
+      s:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+      t:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 1
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+      u:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 1
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+      v:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 8
+          multiple: .5
+          decay: .075
+        kick-out: false
+      w:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 10
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 8
+          multiple: .5
+          decay: .75
+      x:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 10
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 6
+          multiple: .5
+          decay: .35
+      y:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 1
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+      z:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 3
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+      1:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 12
+          multiple: .25
+          decay: .25
+      2:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 12
+          multiple: .25
+          decay: .25
+      4:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .25
+          decay: .025
+      5:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+      6:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .25
+          decay: .05
+      7:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 10
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 10
+          multiple: .25
+          decay: .05
+    inventory:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 2
+          multiple: .25
+          decay: .25
+      b:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 2
+          multiple: .25
+          decay: .25
+    invalid:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        setback: false
+        min-vl-to-setback: 1
+        broadcast-punishment: false
+        max-violations: 8
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 2
+          multiple: .25
+          decay: .05
+      c:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        setback: false
+        min-vl-to-setback: 1
+        broadcast-punishment: false
+        max-violations: 8
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .25
+          decay: .045
+      d:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 10
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 8
+          multiple: .25
+          decay: .5
+      e:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        setback: false
+        min-vl-to-setback: 1
+        broadcast-punishment: false
+        max-violations: 8
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 1
+          multiple: .5
+          decay: .01
+      f:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        setback: false
+        min-vl-to-setback: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 1
+          multiple: .5
+          decay: .01
+      g:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        setback: false
+        min-vl-to-setback: 1
+        broadcast-punishment: false
+        max-violations: 20
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 2
+          multiple: .5
+          decay: .025
+      h:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        setback: false
+        min-vl-to-setback: 1
+        broadcast-punishment: false
+        max-violations: 20
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .5
+          decay: .05
+      i:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        setback: false
+        min-vl-to-setback: 1
+        broadcast-punishment: false
+        max-violations: 20
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 3
+          multiple: .5
+          decay: .05
+      j:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        setback: false
+        min-vl-to-setback: 1
+        broadcast-punishment: false
+        max-violations: 20
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 1
+          multiple: .5
+          decay: .05
+    groundspoof:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .5
+          decay: .125
+      b:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 5
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .5
+          decay: .125
+      c:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 15
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 4
+          multiple: .5
+          decay: .125
+    improbable:
+      a:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 1
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        max-combat-violations: 25
+      b:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 1
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        max-movement-violations: 30
+      c:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 1
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        max-player-violations: 30
+      d:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 1
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        max-autoclicker-violations: 30
+      e:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 1
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        max-total-violations: 50
+      f:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 1
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        max-scaffold-violations: 25

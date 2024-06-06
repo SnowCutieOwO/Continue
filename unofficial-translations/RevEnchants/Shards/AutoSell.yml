@@ -1,0 +1,20 @@
+Settings:
+  Enabled: true
+  Name: '&c自动出售'
+  MaxLevel: 2
+  MaxStack: 10
+  Requirement:
+    Enabled: false
+    Number: 10
+    Placeholder: '%RevEnchants_Tool_Flag_Level%'
+  Description: '&7提升镐子的自动出售等级'
+  Shard:
+    Item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3700
+      type: LEGACY_PRISMARINE_SHARD
+    Glow: true
+    Name: '&c自动出售 + %Level%'
+    Lore:
+    - '&1独特碎片所需等级 %RequiredLevel%'
+    - '&7可将镐子的自动出售提升 %Level% 级'

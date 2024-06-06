@@ -1,0 +1,23 @@
+# 全局语言覆盖文件夹.
+# 在这里你可以添加自定义消息, 它们会覆盖对应语言原本的内容.
+# 若要添加来自指定语言的消息, 复制参考文件并将它们放置于此, 并修改信息文件.
+
+# 信息可以按如下格式提那家: (提示: 使用之前请先删除开头的 # 以此将其解除注释)
+#default_towny_prefix: '&6[Towny] &b'        # 在大多数消息前的插件前缀.
+#status_title_primary_colour: '&6'           # 标题栏主体部分使用的颜色.
+#status_title_secondary_colour: '&e'         # 标题栏文本部分使用的颜色.
+#status_format_list_1: '&2'                  # 统计信息列表使用的第一种颜色, 例如: /res 界面中, 好友列表的好友部分.
+#status_format_list_2: '&a'                  # 统计信息列表使用的第二种颜色, 例如: /res 界面中, 好友列表的 [1] 部分.
+#status_format_list_3: '&f'                  # 统计信息列表使用的第三种颜色, 例如: /res 界面中, 好友列表的好友名称部分.
+#status_format_key_value_key: '&2'           # 纯文本使用的颜色, 或键/值中使用的颜色.
+#status_format_key_value_value: '&a'         # 包含两部分元素中文本使用的颜色, 例如: 注册时间: 日期. (日期部分使用的颜色即为此项.)
+#status_format_bracket_element: '&b'         # 带括号的统计元素使用的颜色, 例如: [奖励: #].
+#status_format_hover_key: '&a'               # 可查看详细信息的统计界面元素使用的颜色, 例如: [等级列表]
+#status_format_hover_bracket_colour: '&7'    # 可查看详细信息的元素的括号所使用的颜色.
+#status_format_key_important: '&c'           # 对强调值使用的颜色, 例如: (银行破产), 毁坏镇区重占领的内容, 税收/维持费用.
+#status_splitter: ' &7| '                    # 用于统计界面的分隔符号.
+#status_home_element: ' &7[家: %s]'
+#help_menu_command: '<blue>'
+#help_menu_subcommand: '<aqua>'
+#help_menu_explanation: '<gray>'
+#help_menu_requirement: '<red>'

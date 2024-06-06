@@ -1,0 +1,55 @@
+# [Transfuse called before AutoSmelter]
+
+Settings:
+  Enabled: true
+  InGui: true
+  Name: 自动熔炼
+  Colour: '&7'
+  Slot: 42
+  MaxLevel: 10
+  Currency: RevToken
+  Cost: 1000
+  Increase-Cost-by: 1000
+  Chance: 10
+  Increase-Chance-by: 9
+  Requirement:
+    Enabled: false
+    Number: 5
+    Placeholder: '%RevEnchants_Tool_Flag_Level%'
+  Description: '&7自动熔炼你挖掘的矿物'
+  Book:
+    ==: org.bukkit.inventory.ItemStack
+    v: 3700
+    type: LEGACY_BOOK
+  Items:
+    '1':
+      From:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3700
+        type: LEGACY_COBBLESTONE
+      To:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3700
+        type: LEGACY_STONE
+    '2':
+      From:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3700
+        type: LEGACY_IRON_ORE
+      To:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3700
+        type: LEGACY_IRON_INGOT
+    '3':
+      From:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3700
+        type: LEGACY_GOLD_ORE
+      To:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3700
+        type: LEGACY_GOLD_INGOT
+  Message:
+    Enabled: false
+    Bar: true
+    Format: '&7自动熔炼'

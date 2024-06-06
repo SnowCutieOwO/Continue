@@ -1,0 +1,252 @@
+# 在这个文件中你可以编辑/添加默认职位.
+# 需要注意的是每段配置 (职位配置) 的名称和职位名称都必须是不相互重复的.
+# 编辑文件时需严格按照 YAML 语法. 若要验证格式是否正确, 你可以将需要验证的部分文本导入网站 https://yaml-online-parser.appspot.com
+# 默认职位的及其拥有标志的解释: https://github.com/Angeschossen/Lands/wiki/Roles-and-their-Flags
+# 需要注意的是修改本文件中的任意选项都需要重启服务器以应用更改.
+
+# 默认土地职位. 你也可以根据你自己的需要添加默认职位.
+# 这些职位的优先级是递减的(最高级职位 -> 最低级职位).
+land:
+  # 哪些标志应该在职位设置菜单中显示?
+  # 你仍然可以在下面设置默认值并将这些内容从列表中删除, 以隐藏这些标志.
+  # 列表的顺序也决定了菜单中的显示顺序.
+  display:
+    - BLOCK_PLACE
+    - BLOCK_BREAK
+    - BLOCK_IGNITE
+    - PLANT
+    - HARVEST
+    - TRAMPLE_FARMLAND
+    - SHEAR
+    - ITEM_PICKUP
+    - INTERACT_GENERAL
+    - INTERACT_CONTAINER
+    - INTERACT_DOOR
+    - INTERACT_TRAPDOOR
+    - INTERACT_MECHANISM
+    - INTERACT_VILLAGER
+    - VEHICLE_USE
+    - ATTACK_PLAYER
+    - ATTACK_ANIMAL
+    - ATTACK_MONSTER
+    - LAND_ENTER
+    - FLY
+    - ELYTRA
+    - SPAWN_TELEPORT
+    - ENDER_PEARL
+    - PLAYER_TRUST
+    - PLAYER_SETROLE
+    - PLAYER_UNTRUST
+    - PLAYER_BAN
+    - LAND_CLAIM
+    - LAND_CLAIM_BORDER
+    - SPAWN_SET
+    - BALANCE_WITHDRAW
+    - AREA_ASSIGN
+    - WAR_MANAGE
+    - SETTING_EDIT_LAND
+    - SETTING_EDIT_ROLE
+    - SETTING_EDIT_TAXES
+    - SETTING_EDIT_VARIOUS
+
+  # 在这里你可以添加自己的默认职位或编辑已有的职位. 玩家也可以在他们的土地菜单中创建新职位, 只要他们拥有合适的权限.
+  # 注意: 职位的顺序将会影响职位的等级. 这意味着在这个地方越靠前的职位地位越高, 反之越低.
+  ################################################################################################################################
+  # 当一个新标志被添加至土地, 在标志添加者指定的情况下, 所有现存的土地都会受到影响.                                                     #
+  # 但对未来创建的土地, 你还是要在这里编辑相关的标志. 土地总是会在有新标志可用的时候在控制台或对上线管理员发出提醒.                        #
+  # 你可以通过命令 /lands admin land <土地名称 | *(所有土地)>强制同步 / 重置标志 resetFlag <标志名称 | all(全部标志)>                  #
+  ################################################################################################################################
+  roles:
+    # 注意: 拥有者职位不可被删除.
+    owner:
+      name: '&4&l领主'
+      # 图标支持 Minecraft 的 URL 值 (示例: https://minecraft-heads.com/) 和正常的材料值.
+      icon: 'skin:83f642814fa2551e7763d04060c532adea51015cbfe030cbb78e82c92092a6fb'
+      # 默认的标志值. 需要注意的是这些内容只会对新创建的土地生效. 领主的标志仅能通过管理员切换.
+      # 可以使用 ALL 而不是一个列表, 这样这个职位的玩家就会拥有所有权限. 只对管理员土地有效的标志不会被包括在该变量中.
+      default: 'ALL'
+
+
+    # 这个职位不能被删除, 仅在被租借区域或管理员土地中可见.
+    tenant:
+      name: '&6&l租客'
+      # 图标支持 Minecraft 的 URL 值 (示例: https://minecraft-heads.com/) 和正常的材料值.
+      icon: 'skin:d831830a7bd3b1ab05beb98dc2f9fc5ea550b3cf649fd94d483da7cd39f7c063'
+      # 默认的标志值. 需要注意的是这些内容只会对新创建的土地生效. 领主的标志仅能通过管理员切换.
+      # 只有管理员土地可以在游戏内修改这些标志. 这阻止了土地通过滥用该功能, 同时能正常出售租客无权操作的区域.
+      default:
+        - BLOCK_PLACE
+        - BLOCK_BREAK
+        - PLANT
+        - HARVEST
+        - SHEAR
+        - INTERACT_GENERAL
+        - INTERACT_DOOR
+        - INTERACT_TRAPDOOR
+        - INTERACT_CONTAINER
+        - INTERACT_MECHANISM
+        - INTERACT_VILLAGER
+        - BLOCK_IGNITE
+        - ATTACK_PLAYER
+        - ATTACK_ANIMAL
+        - ATTACK_MONSTER
+        - FLY
+        - ELYTRA
+        - LAND_ENTER
+        - SPAWN_TELEPORT
+        - ENDER_PEARL
+        - VEHICLE_USE
+        - ITEM_PICKUP
+        - TRAMPLE_FARMLAND
+        - PLAYER_TRUST
+        - PLAYER_SETROLE
+        - PLAYER_UNTRUST
+        - PLAYER_BAN
+
+    # 该职位可根据需要保留或删除.
+    admin:
+      name: '&c&l高管'
+      # 图标支持 Minecraft 的 URL 值 (示例: https://minecraft-heads.com/) 和正常的材料值.
+      icon: 'skin:548e2397834b1a16b15b71a52175ed8ae6919366dfecd3882a85f8236ff5d1d4'
+      # 该职位的成员是否自动应用至新创建的子区域?
+      parent: true
+      # 默认标志值. 需要注意的是这些内容只会对新创建的土地生效. 玩家可以在他们自己的土地菜单中修改这些内容, 只要对应标志存在于 'display' 区域下.
+      default:
+        - BLOCK_PLACE
+        - BLOCK_BREAK
+        - PLANT
+        - HARVEST
+        - SHEAR
+        - INTERACT_GENERAL
+        - INTERACT_DOOR
+        - INTERACT_TRAPDOOR
+        - INTERACT_CONTAINER
+        - INTERACT_MECHANISM
+        - INTERACT_VILLAGER
+        - BLOCK_IGNITE
+        - ATTACK_PLAYER
+        - ATTACK_ANIMAL
+        - ATTACK_MONSTER
+        - FLY
+        - ELYTRA
+        - LAND_ENTER
+        - SPAWN_TELEPORT
+        - ENDER_PEARL
+        - VEHICLE_USE
+        - ITEM_PICKUP
+        - TRAMPLE_FARMLAND
+        - PLAYER_TRUST
+        - PLAYER_SETROLE
+        - PLAYER_UNTRUST
+        - PLAYER_BAN
+        - SETTING_EDIT_LAND
+        - SETTING_EDIT_ROLE
+
+    # 注意: 成员职位不可被删除.
+    member:
+      name: '&e&lMember'
+      # 图标支持 Minecraft 的 URL 值 (示例: https://minecraft-heads.com/) 和正常的材料值.
+      icon: 'skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3'
+      # 默认标志值. 需要注意的是这些内容只会对新创建的土地生效. 玩家可以在他们自己的土地菜单中修改这些内容, 只要对应标志存在于 'display' 区域下.
+      default:
+        - BLOCK_PLACE
+        - BLOCK_BREAK
+        - PLANT
+        - HARVEST
+        - SHEAR
+        - INTERACT_GENERAL
+        - INTERACT_DOOR
+        - INTERACT_TRAPDOOR
+        - INTERACT_CONTAINER
+        - INTERACT_MECHANISM
+        - INTERACT_VILLAGER
+        - BLOCK_IGNITE
+        - ATTACK_PLAYER
+        - ATTACK_ANIMAL
+        - ATTACK_MONSTER
+        - FLY
+        - ELYTRA
+        - LAND_ENTER
+        - SPAWN_TELEPORT
+        - ENDER_PEARL
+        - TRAMPLE_FARMLAND
+        - VEHICLE_USE
+        - ITEM_PICKUP
+
+    # 该职位可根据需要保留或删除.
+    nation:
+      name: '&9&l国家'
+      # 图标支持 Minecraft 的 URL 值 (示例: https://minecraft-heads.com/) 和正常的材料值.
+      icon: 'skin:45587da7fe7336e8ab9f791ea5e2cfc8a827ca959567eb9d53a647babf948d5'
+      # 默认标志值. 需要注意的是这些内容只会对新创建的土地生效. 玩家可以在他们自己的土地菜单中修改这些内容, 只要对应标志存在于 'display' 区域下.
+      default:
+        - INTERACT_GENERAL
+        - INTERACT_DOOR
+        - INTERACT_TRAPDOOR
+        - INTERACT_MECHANISM
+        - INTERACT_VILLAGER
+        - ATTACK_PLAYER
+        - ATTACK_ANIMAL
+        - ATTACK_MONSTER
+        - FLY
+        - ELYTRA
+        - SPAWN_TELEPORT
+        - ENDER_PEARL
+        - LAND_ENTER
+        - VEHICLE_USE
+        - ITEM_PICKUP
+        - LAND_CLAIM_BORDER
+
+      # 一个国家可以控制土地中的国家角色..
+      # 在这里你可以指定国家可以为对应土地的国家职位切换的标志.
+      # 国家职位可通过输入命令 -> /nations menu 在菜单中进行设置
+      toggleable-by-nation:
+        - INTERACT_GENERAL
+        - INTERACT_DOOR
+        - INTERACT_TRAPDOOR
+        - INTERACT_MECHANISM
+        - INTERACT_VILLAGER
+        - ATTACK_PLAYER
+        - ATTACK_ANIMAL
+        - ATTACK_MONSTER
+        - FLY
+        - SPAWN_TELEPORT
+        - ENDER_PEARL
+        - LAND_ENTER
+        - VEHICLE_USE
+        - ITEM_PICKUP
+        - LAND_CLAIM_BORDER
+
+    # 该职位可根据需要保留或删除.
+    ally:
+      name: '&a&lAlly'
+      # 图标支持 Minecraft 的 URL 值 (示例: https://minecraft-heads.com/) 和正常的材料值.
+      icon: 'skin:2567251d71b6f3a4dc03fa01e441de7edf9354794e74aec16c04f141ddf31c70'
+      # 默认标志值. 需要注意的是这些内容只会对新创建的土地生效. 玩家可以在他们自己的土地菜单中修改这些内容, 只要对应标志存在于 'display' 区域下.
+      default:
+        - INTERACT_GENERAL
+        - INTERACT_DOOR
+        - INTERACT_TRAPDOOR
+        - INTERACT_MECHANISM
+        - INTERACT_VILLAGER
+        - ATTACK_PLAYER
+        - ATTACK_ANIMAL
+        - ATTACK_MONSTER
+        - FLY
+        - SPAWN_TELEPORT
+        - ENDER_PEARL
+        - LAND_ENTER
+        - VEHICLE_USE
+        - ITEM_PICKUP
+        - LAND_CLAIM_BORDER
+
+    # 注意: 访客职位不可删除.
+    visitor:
+      name: '&8&lUntrusted'
+      # 图标支持 Minecraft 的 URL 值 (示例: https://minecraft-heads.com/) 和正常的材料值.
+      icon: 'skin:126ec1ca185b47aad39f931db8b0a8500ded86a127a204886ed4b3783ad1775c'
+      # 默认标志值. 需要注意的是这些内容只会对新创建的土地生效. 玩家可以在他们自己的土地菜单中修改这些内容, 只要对应标志存在于 'display' 区域下.
+      default:
+        - LAND_ENTER
+        - ITEM_PICKUP
+        - ATTACK_MONSTER

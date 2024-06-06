@@ -1,0 +1,41 @@
+# [
+#  , 
+#  PerformanceOverQuality, 
+#  it's just faster JackHammer for big servers, 
+#  the different is , 
+#  if PerformanceOverQuality is true  , 
+#  JackHammer will not loop the blocks to get drops will just   , 
+#  loop some of them and multiply them by the size of the mine ]
+
+Settings:
+  Enabled: true
+  InGui: true
+  Name: 凿岩
+  Colour: '&7'
+  Slot: 20
+  MaxLevel: 10
+  Currency: RevToken
+  Cost: 1000
+  Increase-Cost-by: 1000
+  Chance: 5
+  Increase-Chance-by: 0.1
+  Dont-Remove-Blocks: false
+  Requirement:
+    Enabled: false
+    Number: 5
+    Placeholder: '%RevEnchants_Tool_Flag_Level%'
+  Sound:
+    Enabled: true
+    ID: ENTITY_DRAGON_FIREBALL_EXPLODE
+    Volume: 1
+    Pitch: 1
+  Description: '&7挖掘时破坏一整层矿场的方块'
+  Book:
+    ==: org.bukkit.inventory.ItemStack
+    v: 3700
+    type: LEGACY_BOOK
+  PerformanceOverQuality: false
+  Message:
+    Enabled: true
+    Bar: true
+    Format: '&7凿岩破坏了 %Amount_FormattedA% 个方块'

@@ -1,0 +1,84 @@
+# [
+#  if you change the ID the Currency data will reset, 
+#  to create new Currency just copy Currency Option 1 or 2, 
+#  --------------------------------------------------, 
+#  I don't recommend this option, 
+#  to add Currency from Other plugin like TokenManager, 
+#  copy Currency Option 3 , 
+#  --------------------------------------------------, 
+#  Note : you can't  Shared commands or id  Between Currencies, 
+#  --------------------------------------------------, 
+#  Use the id of the Currency in other configuration , 
+#  like what Currency to purchase Enchant with, 
+#  to give Currency from mining setup in Config , 
+#  and other Enchants that gives Currency, 
+#  Permission  RevEnchants.Withdraw.CurrencyID, 
+#  --------------------------------------------------, 
+#  changes here  require restart server, 
+#  changes here  require restart server, 
+#  changes here  require restart server, 
+# Rev-Enchants-Core Made by Revils Team]
+
+LastTimeCurrencySeconds: 60
+Currency:
+  Vault:
+    Name: '&cdollar'
+    Symbol: '&c$'
+  '1':
+    ID: RevToken
+    Name: '&c代币'
+    Symbol: '&c❂'
+    Item:
+      Name: '&c%Amount% 枚代币'
+      type:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3700
+        type: LEGACY_MAGMA_CREAM
+      Lore:
+      - ' '
+      - '&7提示: 手持至少 %Amount% 个时右键点击'
+      Glow: true
+    Withdraw: true
+    Commands:
+    - tokens
+    - token
+    - tn
+  '2':
+    ID: RevGems
+    Name: '&c晶石'
+    Symbol: '&c✿'
+    Item:
+      Name: '&c%Amount% 枚晶石'
+      type:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3700
+        type: LEGACY_DOUBLE_PLANT
+      Lore:
+      - ' '
+      - '&7提示: 手持至少 %Amount% 个时右键点击'
+      Glow: true
+    Withdraw: true
+    Commands:
+    - coin
+    - cn
+  '3':
+    ID: TokenManager
+    Placeholder: '%tm_tokens%'
+    SetCommand: TokenManager set %Player% %Amount%
+    Name: '&cToken'
+    Symbol: '&cTM'
+    Item:
+      Name: '&cTokenManager %Amount%'
+      type:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3700
+        type: LEGACY_STONE
+      Lore:
+      - '&6由 &f%Player% &6取出'
+      - ' '
+      - '&7提示: 手持至少 %Amount% 个时右键点击'
+      Glow: true
+    Withdraw: true
+    Commands:
+    - ttoken
+    - ttm

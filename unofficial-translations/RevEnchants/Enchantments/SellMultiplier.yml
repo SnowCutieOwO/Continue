@@ -1,0 +1,29 @@
+# [ RevAutoSell required]
+
+Settings:
+  Enabled: true
+  InGui: true
+  Name: 出售翻倍
+  Colour: '&7'
+  Slot: 31
+  MaxLevel: 10
+  Currency: RevToken
+  Cost: 10000
+  Increase-Cost-by: 10000
+  Chance: 100
+  Increase-Chance-by: 0
+  Multiplier: 0.1
+  Increase-Multiplier-by: 0.1
+  Requirement:
+    Enabled: false
+    Number: 5
+    Placeholder: '%RevEnchants_Tool_Flag_Level%'
+  Description: '&7提升镐子的翻倍出售等级%nl%&7与自动出售附魔/碎片兼容'
+  Book:
+    ==: org.bukkit.inventory.ItemStack
+    v: 3700
+    type: LEGACY_BOOK
+  Message:
+    Enabled: false
+    Bar: true
+    Format: '&7出售翻倍 + %Amount% '

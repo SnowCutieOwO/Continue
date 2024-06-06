@@ -1,0 +1,269 @@
+# ========================= 文件 config.yml =========================
+#
+# 对应版本: 1.20
+#
+# 该文件包含了 GlobalMarketChest 的所有配置选项
+#
+# ===================================================================
+
+General:
+  # 可用值: lang-fr_FR.yml, lang-en_US.yml, lang-zh_CN.yml, lang-de_DE.yml, lang-pl_PL.yml, lang-tr_TR.yml, lang-ru_RU.yml, lang-ja_JP.yml, lang-es_PE.yml
+  Lang: "lang-en_US.yml"
+  # 是否启用上传至 bStats 的数据统计. 可以帮助作者更好地了解用户的使用情况 :)
+  Metrics: true
+  # 检查更新是否可用.
+  CheckUpdate: true
+Storage:
+  # 数据存储类型. 可用值: sqlite (本地存储), mysql
+  # 若存储种类设置为 mysql, 你需要在 Connections 下进行额外的配置
+  Type: sqlite
+  # 为防止与其他数据表冲突, 所使用的前缀
+  TablePrefix: GMC_
+  # 连接相关信息
+  Connection:
+    # 连接至数据库服务器的地址/ip
+    Host: localhost
+    # 数据库服务器所使用的端口号
+    Port: 3306
+    # 已创建的数据库名称
+    Database: my_database
+    # 登录所使用的用户名
+    User: my_user
+    # 上述用户名的对应密码
+    Password: my_password
+    # 决定连接是否使用 SSL
+    # UseSSL: false
+    # 数据库能同时创建的最大连接数, 合理配置该项可节省接口交互时间
+    SimultaneousConnection: 4
+# 包括所有跨服支持的配置
+MultiServer:
+  # 分配给商店的服务器名称
+  ServerName: "default"
+  # 是否启用用于同步货币的 MysqlPlayerDataBride 支持
+  MysqlPlayerDataBridgeSupport: true
+Options:
+  # 是否使用未分类的物品
+  UncategorizedItems: false
+  # 该设置决定创造竞拍下的强制堆叠按钮是否显示
+  EnableMaxInOne: true
+  # 该设置决定创造竞拍下的最大重复按钮是否显示
+  EnableMaxRepeat: true
+  # 该设置决定创造竞拍下的重复次数调整按钮是否显示 (RepeatIncrease 和 RepeatDecrease)
+  EnableRepeatOneByOne: true
+  # 该设置决定将物品拖至分类浏览图标上的操作是否可以寻找相似商品
+  EnableSimilarAuctions: true
+  # 发起新竞拍的默认最低价
+  DefaultPrice: 100
+  # 发起新竞拍时是否使用上一场竞拍时的起拍价为默认价格
+  UseLastPrice: true
+  # 决定单个玩家可发起的最大拍卖场次
+  MaxAuctionByPlayer: 50
+  # 是否限制玩家可以创建的全球商店数量
+  LimitGlobalShopByPlayer: false
+  # 决定玩家可以上架的全球商店物品数量. 若要使其工作, 玩家必须拥有权限 globalmarketchest.globalshop.createshop
+  MaxGlobalShopByPlayer: 1
+  # 竞拍最长能持续的时间, 超出该时间视作过期
+  NumberDaysExpiration: 7
+  # 是否能创建带耐久物品的拍卖
+  AcceptDamagedItems: false
+  # 下文设置 'AllowedLinkBlock' 中连接的半径
+  RadiusLinkBlock: 1
+  # 在管理员移除其他玩家拍卖时, 物品是否返还给玩家或直接删除
+  AdminRemoveAuctionGetItems: true
+  # 决定是否展示最近 n 小时的竞拍
+  EnableLastAuctions: true
+  # 决定最近拍卖中竞拍的时间范围
+  LastAuctionsHours: 24
+  # 关于建议价格的相关设置
+  AdvicePrice:
+    # 决定建议价分析的类型. 可用值: all, in_progress, finished
+    Analyze: "all"
+    # 决定分析平均建议价的数据时间长度
+    Days: 30
+  # 潜影盒相关设置
+  ShulkerBox:
+    # 是否允许买家浏览潜影盒内容
+    SeeContent: true
+    # 带有下列名称的物品不会被本部分内容影响
+    # 若 SeeContent 设置为 true, 下列名称的物品不会被本功能设置影响 (无视大小写)
+    # 若 SeeContent 设置为 false, 只有下列名称的物品才可被预览 (无视大小写)
+    ExceptDisplayNames:
+    #  - "lucky"
+  # 创建拍卖或竞拍成功时发送公告的相关设置
+  Broadcast:
+    # 在创建拍卖的世界内向所有玩家发送公告
+    CreationInsideWorld: true
+    # 在竞拍成功时向玩家所在的世界发送公告
+    BuyInsideWorld: true
+    # 向加入服务器的玩家发送消息
+    LoginMessage:
+      # 已售出拍卖的数量提醒
+      SoldAuctions: true
+      # 已过期拍卖的数量提醒
+      ExpiredAuctions: true
+    # 在有玩家购买物品时提醒卖家
+    NotifyPlayer: true
+  # 匿名竞拍的相关设置
+  Anonymous:
+    # 决定卖家名称是否隐藏 (匿名)
+    Seller: false
+    # 决定买家名称是否隐藏 (匿名)
+    Buyer: false
+Logs:
+  # 若设置为 true, 则消息文本内的前缀 [GlobalMarketChest] 会被删除
+  HidePrefix: false
+  # 决定消息文本内的前缀
+  Prefix: "&a[GlobalMarketChest]"
+# 决定创建商店的世界限制
+ShopWorlds:
+  # 决定使用哪种过滤类型
+  # 可用值: whitelist (白名单) 或 blacklist (黑名单) (默认为黑名单)
+  Type: "blacklist"
+  # 允许 (白名单模式下) 或禁止 (黑名单模式下) 的世界名称
+  Worlds:
+  # - world
+  # - world_the_end
+# 可以与商店告示牌相连接的方块
+AllowedLinkBlock:
+  - minecraft:ender_chest
+  - minecraft:chest
+Price:
+  # 限制物品出售的价格 (可在生成的 price-limits.yml 中配置单独物品的价格)
+  LimitPriceChoice: false
+  # 决定 "免费" 按钮是否自动放置在行末的固定位置
+  DynamicFreePosition: true
+  # 所有价格调整值, 最多可设置 9 个 (即菜单界面宽度上限)
+  Ranges:
+    - 1000
+    - 100
+    - 10
+    - 1
+    - 0.1
+    - 0.01
+  # 用于设置调整价格的按钮物品样式, 若物品少于实际价格调整按钮数量, 则价格调整范围会相应地停止在最后一个物品所能到达的范围
+  # 如, +1000 +100 +10 +1 +0.1 +0.01, 若下列只有五个物品, 则实际菜单内不会显示 -100 对应的物品
+  Items:
+    - minecraft:emerald_block
+    - minecraft:emerald
+    - minecraft:diamond_block
+    - minecraft:diamond
+    - minecraft:gold_ingot
+    - minecraft:iron_ingot
+    - minecraft:coal
+    - minecraft:redstone
+    - minecraft:lapis_lazuli
+# 对物品限制出售的相关设置
+ItemsBlacklist:
+  # 禁止特定的物品出售
+  Items:
+    - minecraft:barrier
+    - minecraft:chain_command_block
+    - minecraft:command_block
+    - minecraft:command_block_minecart
+    - minecraft:debug_stick
+    - minecraft:knowledge_book
+    - minecraft:repeating_command_block
+    - minecraft:structure_block
+    - minecraft:structure_void
+    - minecraft:jigsaw
+  # 禁止带有特定描述的物品出售
+  Lores: 
+    # - "禁止出售"
+Interfaces:
+  # 警告界面的物品在下面的物品与背景的正常显示物品间切换显示
+  Warn: minecraft:red_stained_glass_pane
+  # 交互界面的背景按钮
+  Backgrounds:
+    Default: minecraft:black_stained_glass_pane
+    Admin: minecraft:light_blue_stained_glass_pane
+  # 所有其他按钮在此设置
+  Buttons:
+    NewAuction: minecraft:nether_star
+    CreateAuction: minecraft:nether_star
+    BuyAuction: minecraft:nether_star
+    AdminRemoveAuction: minecraft:red_wool
+    AdminSeePlayerAuctions: minecraft:player_head
+    RenewAuction: minecraft:orange_wool
+    UndoAuction: minecraft:red_wool
+    RenewEveryAuction: minecraft:orange_wool
+    UndoEveryAuction: minecraft:red_wool
+    ExitButton: minecraft:barrier
+    Validate: minecraft:spectral_arrow
+    Return: minecraft:tipped_arrow
+    CreateShop: minecraft:nether_star
+    Money: minecraft:gold_ingot
+    GlobalView: minecraft:enchanted_book
+    Search: minecraft:hopper
+    SearchItemDrop: minecraft:grass_block
+    SearchItemText: minecraft:paper
+    SearchByPlayer: minecraft:player_head
+    ViewByCategory: minecraft:compass
+    ViewByPlayer: minecraft:chest
+    ViewByLastCreated: minecraft:apple
+    AuctionSide: minecraft:blue_stained_glass_pane
+    AuctionMiddle: minecraft:white_stained_glass_pane
+    GlobalShop: minecraft:ender_chest
+    AuctionShop: minecraft:shulker_box
+    AdminShop: minecraft:chest
+    ShopIcon: minecraft:ender_chest
+    EditGroupName: minecraft:blue_stained_glass_pane
+    PreviousPage: minecraft:arrow
+    NextPage: minecraft:arrow
+    NumPage: minecraft:book
+    MaxInOne: minecraft:orange_stained_glass_pane
+    MaxRepeat: minecraft:orange_stained_glass_pane
+    RepeatIncrease: minecraft:purple_stained_glass_pane
+    RepeatDecrease: minecraft:light_blue_stained_glass_pane
+    InProgressAuction: minecraft:book
+    ExpiredAuction: minecraft:book
+    SoldAuction: minecraft:book
+    BoughtAuction: minecraft:book
+    CanceledAuction: minecraft:book
+    FreePrice: minecraft:lime_stained_glass_pane
+    CircleSetItem: minecraft:lime_stained_glass_pane
+    CircleUnsetItem: minecraft:blue_stained_glass_pane
+    YesButton: minecraft:lime_wool
+    NoButton: minecraft:red_wool
+    Question: minecraft:redstone_torch
+    LastAuctions: minecraft:clock
+    LastCreatedAuctions: minecraft:clock
+    LastBoughtAuctions: minecraft:compass
+    AdvicePriceInfo: minecraft:name_tag
+    SeeShulkerBoxContent: minecraft:shulker_shell
+Sign:
+  Appearance:
+    # 全球商店的创建配置
+    GlobalShop:
+      # 若成功创建商店, 显示在告示牌上的首行文本
+      DisplayName: "&a[全球商店]"
+      # 在商店内作为图标的物品
+      DisplayItem: minecraft:compass
+      # 用于创建商店的告示牌的首行文本内容
+      FirstLineToCreate: "globalshop"
+    # 商店创建失败时显示在告示牌上的首行文本
+    NotWorkingShopDisplayName : "&c[无效商店]"
+Chat:
+  # 决定在玩家使用聊天栏输入参数 (例如: 通过名称搜索拍卖) 时是否会超时 
+  UseTimeout: true
+  # 玩家在聊天栏输入内容时 (例如: 通过名称搜索拍卖) 的超时时间 
+  Timeout: 10
+  # 决定玩家是否使用特定内容退出参数输入模式
+  UseExitSequence: true
+  # 退出聊天栏输入的关键词
+  ExitSequence: "exit"
+  # 决定是否显示消息 (Divers.ExitChatMode)
+  DisplayHelpExit: true
+Ranking:
+  # 决定是否启用等级
+  EnableRanks: false
+  # 等级列表
+  Ranks:
+    # Name of rank
+    # 等级名称
+    # 可通过权限 globalmarketchest.ranks.<等级名称> 为玩家分配指定的等级
+    # 此处示例等级对应的权限: globalmarketchest.ranks.member
+    Member:
+      # 该等级下的玩家默认属性 (发起竞拍最大场次), 可覆盖上文设置的内容
+      MaxAuctionByPlayer: 100
+      # 该等级下的玩家默认属性 (可创建全球商店数量), 可覆盖上文设置的内容
+      MaxGlobalShopByPlayer: 1

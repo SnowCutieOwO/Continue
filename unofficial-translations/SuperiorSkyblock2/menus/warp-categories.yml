@@ -1,0 +1,50 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                  插件作者 Ome_R                   ##
+##                                                  ##
+######################################################
+
+title: '&l传送分类'
+previous-menu: true
+
+pattern:
+  - '@ @ @ @ @ @ @ @ @'
+  - '@ @ @ @ @ @ @ @ @'
+  - '@ @ @ @ @ @ @ @ @'
+  - '@ @ @ @ @ @ @ @ @'
+  - '$ $ $ $ $ $ $ $ $'
+  - '# # % # * # ^ # #'
+
+slots: '@'
+previous-page: '%'
+current-page: '*'
+next-page: '^'
+
+# 该描述会被加入分类图标下的描述末尾.
+edit-lore:
+  - '&f '
+  - '&f '
+  - '&7&o(( &f&o鼠标左键 &7&o浏览岛屿传送点. ))'
+  - '&7&o(( &f&o鼠标右键 &7&o编辑该分类. ))'
+
+items:
+  '@':
+    type: STAINED_GLASS_PANE
+    data: 15
+    name: '&f'
+  '%':
+    type: PAPER
+    name: '&c上一页'
+  '*':
+    type: DOUBLE_PLANT
+    name: '&a当前页'
+    lore:
+      - '&7第 1 页'
+  '^':
+    type: PAPER
+    name: '&c下一页'
+  '$':
+    type: STAINED_GLASS_PANE
+    data: 15
+    name: '&f'

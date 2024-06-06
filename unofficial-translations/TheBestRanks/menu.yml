@@ -1,0 +1,36 @@
+name: '&e&l等级菜单 &7第 %page% 页'
+size: 54
+done_status: '&a&l✔'
+not_done_status: '&c&l✘'
+passed:
+  name: '%rank% &7- &a&l已到达'
+  material: STAINED_GLASS_PANE
+  data: 5
+  lore: []
+current:
+  name: '%rank% &7- &2&l当前等级'
+  lore: []
+  material: STAINED_GLASS_PANE
+  data: 13
+in_progress:
+  name: '%rank% &7- &e&l仍在升级'
+  material: STAINED_GLASS_PANE
+  data: 4
+  # 进度显示描述将会在 ranks.yml 中设置
+locked:
+  name: '&c&l已锁定'
+  material: STAINED_GLASS_PANE
+  data: 14
+  lore: []
+next:
+  name: '&e下一页'
+  material: ARROW
+  data: 0
+  lore:
+    - '&7点击翻到下一页'
+previous:
+  name: '&e上一页'
+  material: ARROW
+  data: 0
+  lore:
+    - '&7点击翻到上一页'

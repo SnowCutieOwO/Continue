@@ -1,0 +1,730 @@
+# 在这个文件中你可以设置指定事件能够触发的命令.
+# 插件维基: https://github.com/Angeschossen/General/wiki/Events
+
+events:
+  BroadcastEvent:
+    commands:
+      condition: ''
+      groups:
+        recipients:
+          1:
+            condition: ''
+            commands: [ ]
+  LandUnclaimSelectionEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        land_online:
+          1:
+            condition: ''
+            commands: [ ]
+  LandUnclaimAllEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        land_online:
+          1:
+            condition: ''
+            commands: [ ]
+  ChunkDeleteEvent:
+    cancel: ''
+    commands:
+      # 非常推荐使用在土地删除、选区解除占领等方面使用更具体的事件.
+      # 这样的话, 我们只监听影响单个区块的解除占领时间. 你也不能在解除占领种类不为 DEFAULT 的情况下取消该事件.
+      # 可被取消的指定解除占领事件列表:
+      # LAND_DELETION: LandDeleteEvent
+      # SELECTION: LandUnclaimSelectionEvent
+      # ALL: LandUnclaimAllEvent
+      condition: 'type == "DEFAULT"'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        land_online:
+          1:
+            condition: ''
+            commands: [ ]
+  ChunkPostClaimEvent:
+    commands:
+      condition: ''
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        land_online:
+          1:
+            condition: ''
+            commands: [ ]
+  ChunkPreClaimEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        land_online:
+          1:
+            condition: ''
+            commands: [ ]
+  LandBanPlayerEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        player_target:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: 'area_name == null'
+            commands: [ ]
+        land_online:
+          1:
+            condition: 'area_name == null'
+            commands: [ ]
+        area_trusted:
+          1:
+            condition: 'area_name != null'
+            commands: [ ]
+        area_online:
+          1:
+            condition: 'area_name != null'
+            commands: [ ]
+  LandChatEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        recipients:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        land_online:
+          1:
+            condition: ''
+            commands: [ ]
+        nation_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        nation_online:
+          1:
+            condition: ''
+            commands: [ ]
+  LandCreateEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        land_online:
+          1:
+            condition: ''
+            commands: [ ]
+  LandDeleteEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        land_online:
+          1:
+            condition: ''
+            commands: [ ]
+  LandInvitePlayerEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        player_target:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: 'area_name == null'
+            commands: [ ]
+        land_online:
+          1:
+            condition: 'area_name == null'
+            commands: [ ]
+        area_trusted:
+          1:
+            condition: 'area_name != null'
+            commands: [ ]
+        area_online:
+          1:
+            condition: 'area_name != null'
+            commands: [ ]
+  LandOwnerChangeEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        player_target:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: 'area_name == null'
+            commands: [ ]
+        land_online:
+          1:
+            condition: 'area_name == null'
+            commands: [ ]
+        area_trusted:
+          1:
+            condition: 'area_name != null'
+            commands: [ ]
+        area_online:
+          1:
+            condition: 'area_name != null'
+            commands: [ ]
+  LandRenameEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        land_online:
+          1:
+            condition: ''
+            commands: [ ]
+  LandTrustPlayerEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        player_target:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: 'area_name == null'
+            commands: [ ]
+        land_online:
+          1:
+            condition: 'area_name == null'
+            commands: [ ]
+        area_trusted:
+          1:
+            condition: 'area_name != null'
+            commands: [ ]
+        area_online:
+          1:
+            condition: 'area_name != null'
+            commands: [ ]
+  LandUnbanPlayerEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        player_target:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: 'area_name == null'
+            commands: [ ]
+        land_online:
+          1:
+            condition: 'area_name == null'
+            commands: [ ]
+        area_trusted:
+          1:
+            condition: 'area_name != null'
+            commands: [ ]
+        area_online:
+          1:
+            condition: 'area_name != null'
+            commands: [ ]
+  LandUntrustPlayerEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        player_target:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: 'area_name == null'
+            commands: [ ]
+        land_online:
+          1:
+            condition: 'area_name == null'
+            commands: [ ]
+        area_trusted:
+          1:
+            condition: 'area_name != null'
+            commands: [ ]
+        area_online:
+          1:
+            condition: 'area_name != null'
+            commands: [ ]
+  PlayerLeaveLandEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: 'area_name == null'
+            commands: [ ]
+        land_online:
+          1:
+            condition: 'area_name == null'
+            commands: [ ]
+        area_trusted:
+          1:
+            condition: 'area_name != null'
+            commands: [ ]
+        area_online:
+          1:
+            condition: 'area_name != null'
+            commands: [ ]
+  PlayerAreaEnterEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: 'area_name == null'
+            commands: [ ]
+        land_online:
+          1:
+            condition: 'area_name == null'
+            commands: [ ]
+        area_trusted:
+          1:
+            condition: 'area_name != null'
+            commands: [ ]
+        area_online:
+          1:
+            condition: 'area_name != null'
+            commands: [ ]
+  PlayerAreaLeaveEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: 'area_name == null'
+            commands: [ ]
+        land_online:
+          1:
+            condition: 'area_name == null'
+            commands: [ ]
+        area_trusted:
+          1:
+            condition: 'area_name != null'
+            commands: [ ]
+        area_online:
+          1:
+            condition: 'area_name != null'
+            commands: [ ]
+  PlayerSpawnLandEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        land_online:
+          1:
+            condition: ''
+            commands: [ ]
+  PlayerTaxEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: 'area_name == null'
+            commands: [ ]
+        land_online:
+          1:
+            condition: 'area_name == null'
+            commands: [ ]
+        area_trusted:
+          1:
+            condition: 'area_name != null'
+            commands: [ ]
+        area_online:
+          1:
+            condition: 'area_name != null'
+            commands: [ ]
+  WarDeclareEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        war_attacker_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        war_attacker_online:
+          1:
+            condition: ''
+            commands: [ ]
+        war_defender_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        war_defender_online:
+          1:
+            condition: ''
+            commands: [ ]
+  WarEndEvent:
+    cancel: ''
+    commands:
+      condition: ''
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        war_attacker_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        war_attacker_online:
+          1:
+            condition: ''
+            commands: [ ]
+        war_defender_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        war_defender_online:
+          1:
+            condition: ''
+            commands: [ ]
+        war_winner_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        war_winner_online:
+          1:
+            condition: ''
+            commands: [ ]
+        war_loser_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        war_loser_online:
+          1:
+            condition: ''
+            commands: [ ]
+  NationCreateEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        nation_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        nation_online:
+          1:
+            condition: ''
+            commands: [ ]
+  NationDeleteEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        nation_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        nation_online:
+          1:
+            condition: ''
+            commands: [ ]
+  NationRenameEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        nation_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        nation_online:
+          1:
+            condition: ''
+            commands: [ ]
+  NationTrustLandEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        nation_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        nation_online:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        land_online:
+          1:
+            condition: ''
+            commands: [ ]
+  NationUntrustLandEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        nation_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        nation_online:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        land_online:
+          1:
+            condition: ''
+            commands: [ ]
+  InboxMessageReceivedEvent:
+    commands:
+      condition: ''
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        nation_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        nation_online:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        land_online:
+          1:
+            condition: ''
+            commands: [ ]
+  LevelChangedEvent:
+    commands:
+      condition: ''
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        nation_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        nation_online:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        land_online:
+          1:
+            condition: ''
+            commands: [ ]
+  MemberHolderUpkeepEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        nation_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        nation_online:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        land_online:
+          1:
+            condition: ''
+            commands: [ ]
+  LandConvertEvent:
+    cancel: ''
+    commands:
+      condition: '!cancelled'
+      groups:
+        player_self:
+          1:
+            condition: ''
+            commands: [ ]
+        land_trusted:
+          1:
+            condition: ''
+            commands: [ ]
+        land_online:
+          1:
+            condition: ''
+            commands: [ ]

@@ -1,0 +1,104 @@
+use-bin-timer: true
+use-buy-it-now: true
+#This will make the buy-it-now auction to be the default one
+#in the create auction menu (use-buy-it-now needs to be enabled)
+use-buy-it-now-as-default: false
+#This will disable normal auctions
+use-only-buy-it-now: false
+
+buy-it-now-select-price:
+  item-id: '27'
+  # 使用 %price% 返回物品价格
+  name: '&f物品价格: &6%price%'
+  lore:
+    - '&7设置物品的售价.'
+    - ''
+    - '&7额外费用: &6+%fee% 枚硬币 &e(1%)'
+    - ''
+    - '&e点击编辑!'
+
+# 设置上架税比例
+buy-it-now-fee: 1
+
+switch-button:
+  switch-to-auction:
+    material: '266'
+    name: '&a切换为拍卖'
+    lore:
+      - '&7在拍卖模式下,'
+      - '&7多位竞拍者参与出价'
+      - '&7轮流给出更高的价格.'
+      - ''
+      - '&e点击切换!'
+  switch-to-bin:
+    material: 27
+    name: '&a切换为即时购买'
+    lore:
+      - '&7该模式最普通.'
+      - ''
+      - '&7设置固定价格, '
+      - '&7玩家需要使用对应数量的货币购买物品.'
+      - ''
+      - '&e点击切换!'
+
+buy-it-now-lore:
+  on-going:
+    - '&8&m---------------------'
+    - '&7卖家: %display-name-seller%'
+    - '&7直接购买价格: &6%starting-bid% 枚硬币'
+    - ''
+    - '&7结束时间: &e%duration%'
+    - ''
+    - '&e点击查看!'
+  expired:
+    - '&8&m---------------------'
+    - '&7卖家: %display-name-seller%'
+    - '&7直接购买价格: &6%price% 枚硬币'
+    - ''
+    - '&7状态: &c已结束!'
+    - ''
+    - '&e点击查看!'
+  # 使用 %buyer-display-name% 返回买家展示名称
+  # 使用 %buyer-name% 返回买家实际名称
+  bought:
+    - '&8&m---------------------'
+    - '&7卖家: %display-name-seller%'
+    - '&7价格: &6%price% 枚硬币'
+    - ''
+    - '&7买家: %buyer-display-name%'
+    - ''
+    - '&e点击查看!'
+
+# 使用 %item% 返回物品展示名称
+# 使用 %seller-display-name% 返回卖家展示名称
+# 使用 %seller-name% 返回卖家实际名称
+# 使用 %coins% 返回本次购买花费的硬币数量
+bought-item-message: '&e你花费了 &6%coins% &e枚硬币购买了玩家 %seller-display-name% 的 &f%item% &e!'
+
+# 卖家收到的购买物品提示
+bought-seller-notification: '&6[拍卖] &f玩家 &6%bidder-display-name% &f以 &6%price% 枚硬币&f的价格购买了你的 %item%&f!'
+
+sort-item:
+  material: '381'
+  name: '&a商品过滤'
+  show-all: '显示全部'
+  bin-only: '仅直销'
+  auctions-only: '仅拍卖'
+  click-to-switch: '&e点击切换过滤模式!'
+
+view-auction-buy-now-button:
+  name: '&6立即购买'
+  click-to-buy:
+    material: '371'
+    lore:
+      - ''
+      - '&7价格: &6%price% 枚硬币'
+      - ''
+      - '&e点击购买!'
+  cannot-afford:
+    material: '394'
+    lore:
+      - ''
+      - '&7价格: &6%price% 枚硬币'
+      - ''
+      - '&c金钱不足!'

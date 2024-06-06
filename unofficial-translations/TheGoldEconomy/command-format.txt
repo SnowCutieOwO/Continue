@@ -1,0 +1,18 @@
+helpTitle: &a--[ &e%cmdname% 的命令帮助 &a]--
+helpEntry: &e%cmdname%&a: %help%
+helpTextColor: &a
+noPermission: &c你没有权限输入这个命令! (%permission%)
+mustHoldItem: &c你必须在手中持有物品才可以这么做!
+playerOnly: &c这个命令只能通过玩家执行!
+consoleOnly: &c这个命令只能通过控制台执行!
+invalidArgument: &c无效参数 %arg%: %value%
+needArgument: &c必须指定 %arg% 的至少一个有效参数
+needFlagValue: &c必须指定 %flag% 标志的值
+wrongArgumentCount: &c参数或数量不正确. 应当有 %args% 个参数, 实际上有 %count%
+invalidSubcommand: &c无效子命令: %value%
+contextDefaultFromConsole: &c找不到参数 %arg% 在控制台中的默认值, 请指定
+contextDefaultFlagFromConsole: &c找不到标志 %flag% 在控制台中的默认值, 请指定
+ambiguousOptional: &c这里至少有一个重复的可选参数, 请在确保没有参数缺少的情况下重试
+commandError: &c执行该命令时遇到未知错误. 请联系管理员.
+showUsage: &c命令用法: %usage%
+numberOutsideRange: &c数字超出范围: %range%

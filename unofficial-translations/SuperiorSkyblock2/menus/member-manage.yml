@@ -1,0 +1,57 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                  插件作者 Ome_R                   ##
+##                                                  ##
+######################################################
+
+title: '&8&l{}'
+previous-menu: true
+
+pattern:
+  - '$ $ $ $ $ $ $ $ $'
+  - '$ # # # # # # # $'
+  - '$ # @ # % # ^ # $'
+  - '$ # # # # # # # $'
+  - '$ $ $ $ $ $ $ $ $'
+
+roles: '@'
+ban: '%'
+kick: '^'
+
+items:
+  '$':
+    type: STAINED_GLASS_PANE
+    data: 15
+    name: '&f'
+  '@':
+    type: DIAMOND_CHESTPLATE
+    name: '&e玩家职位'
+    lore:
+      - '&7点击编辑玩家职位.'
+    flags:
+      - HIDE_ATTRIBUTES
+  '%':
+    type: BARRIER
+    name: '&e封禁玩家'
+    lore:
+      - '&7点击将该玩家从岛屿上封禁.'
+  '^':
+    type: SKULL_ITEM
+    name: '&e踢出玩家'
+    lore:
+      - '&7点击踢出该玩家.'
+
+sounds:
+  '@':
+    type: BLOCK_CHEST_OPEN
+    volume: 0.8
+    pitch: 1
+  '%':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2
+  '^':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2

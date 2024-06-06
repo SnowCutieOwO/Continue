@@ -1,0 +1,60 @@
+# 插件前缀
+prefix: '&8[&eItemTags&8]'
+# 插件所使用的默认语言
+language: en_US
+# 重命名操作过程中表示取消操作的关键词是什么?
+cancel word: cancel
+# 重命名物品时禁止输入下列词语
+blocked words:
+  - fuck
+  - bitch
+# 重命名的名称最大长度
+max rename length: 16
+# 物品标签是否应当限制重命名长度?
+use max rename length: false
+white list:
+  # 禁止重命名的物品是否使用白名单而不是黑名单?
+  use: false
+  # 玩家允许修改名称的物品
+  items:
+    - DIAMOND_SWORD
+    - IRON_SWORD
+blocked:
+  # 不应该被重命名的物品列表, 此处仅为示例, 你需要自行添加更多.
+  items:
+    - ENDER_CHEST
+    - CHEST
+    - SPAWNER
+tags:
+  lore prefix:
+    # 添加的描述附近是否应当有前缀
+    use: false
+    # 添加至新描述的前缀
+    prefix: '&e&l描述'
+  item name tag:
+    # 
+    item: NAME_TAG
+    # 
+    lore:
+      - '&7右键该物品以使用'
+      - '&7可随时取消重命名操作'
+    # 
+    name: '&e&l物品命名卡'
+  item lore tag:
+    # 
+    item: NAME_TAG
+    # 
+    lore:
+      - '&7右键该物品以使用'
+      - '&7可随时取消修改操作'
+    # 
+    name: '&e&l物品描述编辑卡'
+  item delore tag:
+    # 
+    item: NAME_TAG
+    # 
+    lore:
+      - '&7右键该物品以使用'
+      - '&7可随时取消删除操作'
+    # 
+    name: '&e&l物品描述移除卡'

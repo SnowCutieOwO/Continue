@@ -1,0 +1,111 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                  插件作者 Ome_R                   ##
+##                                                  ##
+######################################################
+
+# 使用的任务文件名称
+mission-file: BlocksMissions
+
+# 任务在达到条件时是否自动并领取奖励.
+auto-reward: true
+
+# 是否在完成任务后重置玩家的方块计数?
+reset-after-finish: true
+
+# 是否只将自然生成的方块计入任务进度.
+only-natural-blocks: true
+
+# 完成任务时给予的奖励.
+rewards:
+  commands:
+    - 'eco give %player% 5000'
+    - 'is admin rankup %player% generator-rates'
+    - 'is admin msg %player% &e&l矿工 | &7成功完成了任务 矿工 II!'
+    - 'is admin msg %player% &e&l矿工 | &7我喜欢铁, 给我再挖点来可以吗?'
+    - 'is admin msg %player% &e&l矿工 | &7&o关于更多的任务信息, 请输入命令 /is missions 查看'
+
+# 完成任务所需要的前置任务.
+required-missions:
+  - 'miner_1'
+
+# 完成任务所需要放置的方块种类及其数量.
+required-blocks:
+  '1':
+    types:
+      - 'COBBLESTONE'
+    amount: 96
+  '2':
+    types:
+      - 'COAL_ORE'
+    amount: 32
+  '3':
+    types:
+      - 'IRON_ORE'
+    amount: 16
+
+# 菜单中使用的图标.
+icons:
+  not-completed:
+    type: PAPER
+    name: '&a矿工 II'
+    lore:
+      - '&7继续挖矿!'
+      - '&7挖掘 96 块圆石, 32 块煤矿和 16 块铁矿 .'
+      - ''
+      - '&6任务需求:'
+      - '&8 - &7x96 圆石'
+      - '&8 - &7x32 煤矿'
+      - '&8 - &7x16 铁矿'
+      - ''
+      - '&6任务奖励:'
+      - '&8 - &7$5,000'
+      - '&8 - &7刷石机升级'
+      - ''
+      - '&6已挖掘圆石: &7{value_cobblestone}/96'
+      - '&6已挖掘煤矿石: &7{value_coal_ore}/32'
+      - '&6已挖掘铁矿石: &7{value_iron_ore}/16'
+      - '&6总进度: &7{0}%'
+      - '&c&l ✘ &7尚未完成'
+  can-complete:
+    type: PAPER
+    name: '&a矿工 II'
+    lore:
+      - '&7继续挖矿!'
+      - '&7挖掘 96 块圆石, 32 块煤矿和 16 块铁矿 .'
+      - ''
+      - '&6任务需求:'
+      - '&8 - &7x96 圆石'
+      - '&8 - &7x32 煤矿'
+      - '&8 - &7x16 铁矿'
+      - ''
+      - '&6任务奖励:'
+      - '&8 - &7$5,000'
+      - '&8 - &7刷石机升级'
+      - ''
+      - '&6已挖掘圆石: &796/96'
+      - '&6已挖掘煤矿石: &732/32'
+      - '&6已挖掘铁矿石: &716/16'
+      - '&6总进度: &7100%'
+      - '&a&l ✔ &7点击领取任务奖励.'
+    enchants:
+      DURABILITY: 1
+    flags:
+      - HIDE_ENCHANTS
+  completed:
+    type: MAP
+    name: '&a矿工 II'
+    lore:
+      - '&7继续挖矿!'
+      - '&7挖掘 96 块圆石, 32 块煤矿和 16 块铁矿 .'
+      - ''
+      - '&6任务奖励:'
+      - '&8 - &7$5,000'
+      - '&8 - &7刷石机升级'
+      - ''
+      - '&6已挖掘圆石: &796/96'
+      - '&6已挖掘煤矿石: &732/32'
+      - '&6已挖掘铁矿石: &716/16'
+      - '&6总进度: &7100%'
+      - '&a&l ✔ &7已经领取.'

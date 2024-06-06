@@ -1,0 +1,326 @@
+# 此处的配置文件同时支持彩色字符 '&' 和 16 位全彩字符! 格式为: <#000000>
+# 参数请使用诸如 $1, $2, 等内建变量代替。
+general:
+  prefix: <#9753f5>[Dungeons]
+
+# #############
+# # 命令消息 ##
+# #############
+# 命令返回的消息文本.
+
+commands:
+  # /recruit
+  recruit:
+    no-party-system: '&c该服务器未启用组队系统!'
+    already-recruiting: '&c你已经在招募成员了!'
+    leader-only: '&c仅队伍领袖可招募成员!'
+    recruit-for: '&e请使用不多于三个的词汇描述你的招募需求。'
+    cancel:
+      not-recruiting: '&c你现在没有在招募成员!'
+      success: '&e你取消了成员招募.'
+    join:
+      unspecified: '&c你必须要指定加入的玩家!'
+      join-self: '&c你不能加入自己的队伍!'
+      player-not-found: '&c玩家不存在!'
+      not-recruiting: '&c该玩家没有在招募成员!'
+  # /leave 和 /md leave 显示的消息
+  leave:
+    not-in-dungeon: '&c你尚未处于地牢!'
+  # /ready 显示的消息
+  ready:
+    not-queued: '&c你尚未在排队进入地牢的队伍中!'
+    # $1 = 已就绪玩家名称.
+    # $2 = 所有已就绪的玩家数量.
+    # $3 = 开始副本所需就绪玩家数.
+    success: '&a&l$1 &a已准备进入地牢! &b($2/$3)'
+  # /notready 显示的消息文本
+  notready:
+    not-queued: '&c你尚未在排队进入地牢的队伍中!'
+    # $1 = 取消准备的玩家名称.
+    cancel: '&c&l$1 &c打消了进入地牢的想法.'
+  # /stuck 和 /md stuck 返回的消息
+  stuck:
+    not-in-dungeon: '&c你尚未处于地牢中!'
+    success: '&d真糟糕! 正在将你传送回你的上一个记录点.'
+  # /md loot 返回的消息文本
+  loot:
+    create:
+      # $1 = 提供的道具池名称.
+      already-exists: '&c已有名为 ''&6$1&c'' 的道具池!'
+      # $1 = 提供的道具池名称.
+      success: '&a成功创建了新的道具池 ''&6$1&a''!'
+    remove:
+      # $1 = 提供的道具池名称.
+      success: '&e成功删除了道具池 ''&6$1&e''!'
+    edit:
+      # $1 = 提供的道具池名称.
+      not-found: '&c未找到名为 ''&6$1&c'' 的道具池!'
+      # $1 = 提供的道具池名称.
+      already-editing: '&c其他玩家正在编辑道具池 ''&6$1&c''!'
+  # /md play 返回的消息文本
+  play:
+    # $1 = 提供的玩家名称.
+    player-not-found: '&c未找到名为 ''&6$1&c'' 的玩家!'
+    console-needs-player: '&c若要在控制台执行该命令, 你需要指定一个玩家!'
+    already-in-dungeon: '&c你已经处在一个地牢中了!'
+    already-in-queue: '&c你已经在其他地牢的排队队伍中!'
+    # $1 = 提供的地牢名称.
+    dungeon-not-found: '&c未找到名为 ''&6$1&c'' 的地牢!'
+    party-lead-only: '&c只有队伍领袖才可发起向地牢进发的请求!'
+    # $1 = 正处于地牢中的玩家.
+    player-in-dungeon: '&6&l$1 &c正在探索其他地牢!'
+    requirements-not-met: '&6&l$1 &c尚未到达进入该地牢的条件!'
+    instances-full: '&c所有地牢副本均已满人! 当地牢空闲时会向你发送提醒.'
+  lives:
+    not-in-dungeon: '&c你没有在地牢中!'
+    infinite-lives: '&e你还有 &6无限 &e次复活机会.'
+    # $1 = 剩余复活次数.
+    lives-remaining: '&e你还有 &6$1 &e次复活机会.'
+  join:
+    not-in-dungeon: '&c该玩家尚未处于地牢中!'
+  status:
+    # $1 = 正在运行的地牢副本总数.
+    total-instances: '&e当前正在运行数: $1'
+    # $1 = 参与地牢副本的所有玩家数量.
+    total-players: '&e参与副本的玩家数: $1'
+    # $1 = 特定地牢副本数量.
+    dungeon-instances: '&e - 副本数: $1'
+    # $1 = 特定地牢所有副本的玩家数量.
+    dungeon-players: '&e - 副本玩家数: $1'
+    # $1 = 提供的地牢名称.
+    dungeon-not-found: '&c未找到名为 ''&6$1&c'' 的地牢!'
+    none-loaded: '&e此地牢尚未载入副本!'
+  reload:
+    config-reloading: '&e正在重载配置文本与道具池...'
+    config-reloaded: '&a配置重载完毕!'
+    all-dungeons-reloading: '&e正在重载所有地牢...'
+    all-dungeons-reloaded: '&a地牢重载完毕!'
+    reload-all-warning: '&c这将会踢出所有在地牢中的玩家!'
+    reload-all-confirm: '&c请再次输入命令 &6/dungeon reload all &c来确认此操作.'
+    # $1 = 被重载的地牢名称
+    dungeon-reloading: '&e正在重载地牢 $1...'
+    # $1 = 重载完毕的地牢名称
+    dungeon-reloaded: '&a地牢 $1 重载完毕!'
+    # $1 = 提供的地牢名称.
+    dungeon-not-found: '&c未找到名为 ''&6$1&c'' 的地牢!'
+    # $1 = 将要被重载的地牢名称.
+    reload-dungeon-warning: '&c这将会踢出在地牢 $1 中的所有玩家!'
+    # $1 = 将要被重载的地牢名称.
+    reload-dungeon-confirm: '&c请再次输入命令 &6/dungeon reload $1 &c来确认此操作.'
+  create:
+    already-exists: '&c已存在同名地牢!'
+    failed-to-create: '&创建地牢失败! 请检查控制台...'
+    # $1 = 提供的地牢名称.
+    success: '&a成功创建了空白地牢 &6$1'
+  edit:
+    already-in-dungeon: '&c你已经在地牢中了!'
+    # $1 = 提供的地牢名称.
+    dungeon-not-found: '&c未找到名为 ''&6$1&c'' 的地牢!'
+    no-permission: '&c你没有编辑该地牢的权限!'
+    loading: 正在载入地牢...
+  delete:
+    # $1 = 提供的地牢名称.
+    dungeon-not-found: '&c未找到名为 ''&6$1&c'' 的地牢!'
+    edit-in-progress: '&c有其他玩家正在编辑该地牢!'
+    delete-warning: '&c你确认要删除该地牢吗? (将会保留备份.)'
+    delete-confirm: '&b再次输入命令以确认.'
+    notification: '&c该地牢已被管理员删除!'
+    # $1 = 被删除的地牢名称.
+    success: '&c地牢 ''$1'' 已成功删除.'
+  addkey:
+    # $1 = 提供的地牢名称.
+    dungeon-not-found: '&c未找到名为 ''&6$1&c'' 的地牢!'
+    no-permission: '&c你没有编辑该地牢的权限!'
+    no-held-item: '&c你的主手没有持有任何物品!'
+    success: '&a成功将该物品设置为了进入地牢的钥匙!'
+  removekey:
+    # $1 = 提供的地牢名称.
+    dungeon-not-found: '&c未找到名为 ''&6$1&c'' 的地牢!'
+    no-permission: '&c你没有编辑该地牢的权限!'
+    no-held-item: '&c你的主手没有持有任何物品!'
+    no-key-found: '&c没有找到该物品匹配的地牢钥匙.'
+    success: '&a成功设置,该物品不再是地牢钥匙.'
+  setlobby:
+    not-in-dungeon: '&c你现在没有在编辑地牢!'
+    # $1 = X 轴位置
+    # $2 = Y 轴位置
+    # $3 = Z 轴位置
+    # $4 = 视角角度
+    success: '&a成功将地牢大厅位置设置在了 &6X: $1 Y: $2 Z: $3 仰角: $4'
+  setspawn:
+    not-in-dungeon: '&c你现在没有在编辑地牢!'
+    # $1 = X 轴位置
+    # $2 = Y 轴位置
+    # $3 = Z 轴位置
+    # $4 = 视角角度
+    success: '&a成功将地牢出生点设置在了 &6X: $1 Y: $2 Z: $3 仰角: $4'
+  banitem:
+    not-in-dungeon: '&c你现在没有在编辑地牢!'
+    success: '&e成功将手上物品加入了地牢物品封禁列表.'
+  unbanitem:
+    not-in-dungeon: '&c你现在没有在编辑地牢!'
+    not-banned: '&c该物品未处在地牢物品封禁列表中!'
+    success: '&e成功将手上物品移出了地牢物品封禁列表.'
+  dungeonitem:
+    not-in-dungeon: '&c你现在没有在编辑地牢!'
+    success: '&e成功将手上物品设置为了地牢物品.'
+  functiontool:
+    not-in-dungeon: '&c你现在没有在编辑地牢!'
+  save:
+    not-in-dungeon: '&c你现在没有在编辑地牢!'
+    saving: '&e正在保存地牢...'
+    # $1 = 保存的地牢名称.
+    success: '&a地牢 &6$1 &a保存完毕!'
+  import:
+    # $1 = 提供的世界名称.
+    world-not-found: '&c未找到名为 &6$1 &c的世界.'
+    # $1 = 提供的维度种类.
+    invalid-dimension: '&c$1 不是一个有效的维度种类!'
+    failed: '&c导入地牢! 请检查控制台...'
+    # $1 = 提供的世界名称.
+    success: '&a成功导入了地牢 &6$1'
+  dxlimport:
+    # $1 = 提供的 DungeonXL 地图名称.
+    importing: '&e正在尝试转化 DungeonXL 地图 ''&6$1&e''...'
+    failed: '&c&l失败! &c导入 DungeonXL 地图失败! 有关信息请检查控制台.'
+    success: '&a&l成功! &a导入 DungeonXL 地图完毕!'
+    check-console: '&d请在控制台检查你想要手动修改的内容!'
+    clean-signs: '&d你可使用命令 &6&l/dungeon cleansigns &d来移除 DXL 地牢中的告示牌!'
+  cleansigns:
+    not-in-dungeon: '&c你现在没有在编辑地牢!'
+    # $1 = 清理的告示牌数量.
+    success: '&e清除了 &6$1 &e个告示牌. (包括交互触发器.)'
+  setcooldown:
+    # $1 = 提供的地牢名称.
+    dungeon-not-found: '&c无效的地牢名称 ''&6$1&c''!'
+    # $1 = 提供的玩家名称.
+    player-not-found: '&c无效的玩家名称 ''&6$1&c''!'
+    invalid-duration: '&c无效的时间格式! 输入一个数字并以 &6s (秒), m
+      (分), h (时), 或 d (天)&c 结尾来设置时长.'
+    # $1 = 提供的时间.
+    # $2 = 提供的地牢名称.
+    success: '&e成功为地牢 &6$2&e 设置了解锁时间 &6$1!'
+    # $1 = 地牢解锁的时间点.
+    cooldown-time: '&e地牢将会在 &6$1 &e再次解锁'
+
+# ##############
+# # 示例 信息 ##
+# ##############
+# 与地牢示例有关的消息文本.
+
+instance:
+  loading: 正在载入地牢...
+  is-saving: '&c地牢正在保存! 请稍后重试.'
+  timed-out: '&c地牢加载失败! 请联系管理员获取帮助. (加载超时)'
+  loaded: 成功载入地牢!
+  failed: '&c地牢加载失败! 请联系管理员获取帮助.'
+  requirements:
+    # $1 = 未达到进入地牢要求的玩家名称.
+    requirements-not-met: '&6$1 &c未达到进入该地牢的要求!'
+    # $1 = 进入地牢所需最大人数.
+    party-too-big: '&c该地牢仅接受至多包含 &6$1 &c名成员的队伍.'
+    # $1 = 进入地牢所需队伍最少人数.
+    party-too-small: '&c该地牢仅接受至少包含 &6$1 &c名成员的队伍.'
+    # $1 = 玩家缺少的权限名称.
+    no-permission: '&c所需权限: &6$1'
+    on-cooldown: '&c你必须等待地牢游玩冷却事件结束!'
+    # $1 = 地牢解锁时间.
+    cooldown-time: '&e将会在 &6$1 &e解锁'
+    # $1 = 玩家需要完成的前置地牢.
+    complete-required: '&c你需要先通关地牢 &6$1 &c!'
+    # $1 = 进入地牢收取的金币数.
+    not-enough-money: '&c你没有足够的金币游玩此地牢! 你需要花费:
+      &6$1'
+    # $1 = 进入地牢花费的金币数量.
+    money-deducted: '&e你花费了 &6$1 &e金币进入地牢!'
+    # $1 = 被禁止的物品名称.
+    banned-item: '&c该物品被此地牢禁止: &6$1'
+    no-access-key: '&c你需要一把访问钥匙才可进入此地牢!'
+  events:
+    # $1 = 因下线而被踢出的玩家名称.
+    player-kicked: '&6$1 &c离开了游戏, 已视作离开了本地牢!'
+    # $1 = 重新上线的玩家名称.
+    player-returned: '&6$1 &a返回了地牢的战斗!'
+    # $1 = 死亡的玩家名称.
+    # $2 = 剩余复活次数.
+    life-lost: '&6$1 &c倒下了! 他还有 &6$2 &c次复活机会...'
+    # $1 = 用完所有复活机会的玩家名称.
+    all-lives-lost: '&6$1 &c用完了所有的复活机会!'
+    enderpearl-deny: '&c禁止在这里使用末影珍珠!'
+    chorus-fruit-deny: '&c禁止在这里使用紫颂果!'
+    bucket-deny: '&c禁止在这里使用桶!'
+    item-banned: '&c该物品在地牢内被禁止!'
+    command-deny: '&c该命令在地牢内不可用!'
+    spectate-deny: '&c地牢外不可观察该玩家!'
+  queue:
+    # $1 = 玩家将要进入的地牢名称.
+    dungeon-ready: '&e地牢 ''&6$1&e'' 已开放! 你是否准备好了?'
+    click-one: ' &e请选择 →  '
+    ready-button: '&b&l[我准备好了!] '
+    cancel-button: '&c&l[取消] '
+    dungeon-ready-title: '&6地牢已准备!'
+    not-all-ready: '&c有玩家尚未准备就绪! 操作已取消...'
+    all-ready: '&e所有玩家已准备就绪. 向地牢进发!'
+  editmode:
+    autosaving: '&e&l自动保存地牢中...'
+    autosaved: '&a&l自动保存完毕!'
+    function-select: '&e选择要在此设置的功能!'
+    # $1 = 被选中的功能.
+    function-selected: '&e选择功能: $1'
+  rewards:
+    # $1 = 收到的经验点数.
+    xp-received: '&a你获得了 $1 点经验!'
+    # $1 = 收到的经验等级数.
+    levels-received: '&a你获得了 $1 级经验!'
+    rewards-inv-info: '&e这些物品将会加入你的奖励背包! 完成地牢后你将会收到这些物品.'
+    view-rewards-info: '&b输入命令 &l/rewards &b浏览你的奖励'
+    already-received: '&c你已领取了这个奖励!'
+    # $1 = 物品可再次领取的事件.
+    cooldown-time: '&e解锁于: &6$1'
+    on-cooldown: ''
+    added-to-inv: '&e尚未领取的物品已发送至你的背包.'
+    added-to-rewards-inv: '&e尚未领取的物品已存入奖励背包.'
+    unclaimed-rewards: '&e你有尚未领取的奖励! &b&l点击此处浏览!'
+    invalid-loottable: '&c错误: 此为无效道具池! 请联系管理员获取帮助!'
+  functions:
+    start-dungeon-ready: '&e你已准备出发至地牢探险.'
+    finish-dungeon: '&a你完成了地牢 $1&a!'
+    checkpoint: '&e已成功抵达重生点!'
+    # $1 = 玩家当前复活次数.
+    # $2 = 显示复活次数的增减.
+    lives-editor: '&e你现在有 &6$1 &e次复活机会. ($2&e)'
+    # $1 = 收到的物品名称.
+    # $2 = 收到的物品数量.
+    item-dispenser: '&a你获得了 &b$1 &6$2&a!'
+    # $1 = 完成的地牢名称.
+    keys:
+      key-ground: '&e队伍成员找到了一把钥匙! 它掉落在了地上...'
+      # $1 = 找到钥匙的玩家名称.
+      key-player: '&6$1 &e找到了一把钥匙!'
+      # $1 = 队伍领袖的名称.
+      key-leader: '&e队伍成员找到了一把钥匙! 已将钥匙给予了领袖 &6$1'
+    doors:
+      lock: '&c门锁上了!'
+      unlock: '&a门打开了!'
+      # $1 = 被定义为钥匙的物品名称.
+      locked-key: '&c这个门锁上了! 你需要 &6$1 &c来打开它!'
+      locked: '&c这个门锁上了!'
+    reviver:
+      no-uses: '&c该复活器不能复活更多玩家了!'
+      infinite-uses: '&a你可不限次数地使用该复活器.'
+      # $1 = 复活器剩余使用次数.
+      uses-remaining: '&a你可以再使用该复活器 &6$1 &a次.'
+      # $1 = 受施救的玩家名称.
+      not-in-dungeon: '&c尝试解救 &6$1&c, 但他已经离开了地牢!'
+      not-dead: '&cThis player isn''t dead!'
+      # $1 = 被复活的玩家名称.
+      revived: '&a&l$1 &a成功复活!!'
+
+# ##############
+# # 杂项 消息 ##
+# ##############
+# 尚未分类的消息.
+
+misc:
+  item-dropped: '&c你的背包已满! 物品将会掉落在地上...'
+  rewards-unavailable: '&c该地牢内的部分奖励你不能获取!'

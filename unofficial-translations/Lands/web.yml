@@ -1,0 +1,143 @@
+# 网页集成
+# 支持插件 (Dynmap, BlueMap, squaremap)
+# 三个插件可同时使用.
+# 该部分配置文件的修改需要重启服务器.
+map:
+  general:
+    # 土地地标是否默认隐藏?
+    hide: false
+    # 当用户可以看见他们标注的土地时名称的样式.
+    layer: 'Lands'
+    # 如果你想要将玩家活动设置为匿名状态, 你可以指定一个更新间隔.
+    # 这可以防止敌方通过网页地图探测土地位置以追踪玩家活动.
+    # 有效时间单位: d(天), h(时), m(分), s(秒) -> 示例: 1h
+    # 默认: -1 = 使用 Lands 自带的处理方法 (推荐)
+    # 对该选项的改动需要重启服务器.
+    update_time: -1
+    land:
+      # 是否显示管理员的土地(/lands admin menu)?
+      show-admin: true
+      # 是否只在地图上显示属于国家的土地?
+      # 注意: 对该选项的改动需要重启服务器.
+      only-nation: false
+      # 若要编辑颜色, 你需要在这里插入这个网站给定的 hex 值:
+      # https://www.google.com/search?q=color+picker
+      color:
+        from-name:
+          # 根据土地名称设置颜色?
+          land: false
+          # 根据国家名称设置颜色?
+          nation: true
+        # 默认颜色, 在土地名称没有设置颜色或 from-name 选项被禁用时使用
+        # 拾色器: https://www.google.com/search?q=color+picker
+        land: '#00ff00'
+        admin: '#ffff00'
+    border:
+      # 默认边界颜色:
+      # 拾色器: https://www.google.com/search?q=color+picker
+      color:
+        from-name:
+          # 根据土地名称设置颜色?
+          land_2: false
+          # 根据国家名称设置颜色?
+          nation_2: true
+        # 默认颜色, 在土地名称没有设置颜色或 from-name 选项被禁用时使用
+        # 拾色器: https://www.google.com/search?q=color+picker
+        land_2: '#009933'
+        admin_2: '#ffcc00'
+
+  dynmap:
+    enabled: true
+    # 设置出生点图标
+    # 可通过将其设置为 '' 以禁用该项
+    spawn:
+      # 设置图标
+      icon: 'greenflag'
+      # 设置代表国家首都的图标.
+      icon-capital: 'greenflag'
+      # 设置最小缩放. 图标在浏览器内的指定缩放倍数 (鼠标滚轮控制) 下不显示.
+      min-zoom: 0
+    land:
+      # 土地显示的不透明度. 需要为处在 0 (最低) 到 1 (最高) 的小数.
+      opacity: 0.35
+    border:
+      # 土地边界的不透明度. 需要为处在 0 (最低) 到 1 (最高) 的小数.
+      opacity_2: 1
+      # 边界线条的粗细.
+      thickness: 2
+
+  bluemap:
+    enabled_2: true
+    # 设置出生点图标
+    # 可通过将其设置为 '' 以禁用该项
+    spawn:
+      # 设置图标
+      # 注意: 所填入内容必须为绝对路径. 推荐图片大小: 32 x 32 pixels
+      # 路径与服务器内的 "bluemap" 文件夹相对.
+      # 示例: 'assets\steve.png'
+      icon_2: ''
+      # 为国家首都设置图标.
+      # 注意: 所填入内容必须为绝对路径. 推荐图片大小: 32 x 32 pixels
+      # 路径与服务器内的 "bluemap" 文件夹相对.
+      # 示例: 'assets\steve.png'
+      icon-capital_2: ''
+      # 设置最小缩放. 图标在浏览器内的指定缩放倍数 (鼠标滚轮控制) 下不显示.
+      min-zoom_2: 5
+    # Set the markers height.
+    height: 62
+    land:
+      # 土地显示的不透明度. 需要为处在 0 (最低) 到 1 (最高) 的小数.
+      opacity_3: 0.35
+      # 是否在区域可视化中使用三维图标? 这意味着它们会覆盖区域的整个高度.
+      3d: false
+
+    border:
+      # 土地边界的不透明度. 需要为处在 0 (最低) 到 1 (最高) 的小数.
+      opacity_4: 1
+
+
+  squaremap:
+    enabled_3: true
+    # 设置出生点图标
+    # 可通过将其设置为 '' 以禁用该项
+    spawn:
+      # 设置图标
+      # 注意: 所填入内容必须为绝对路径. 推荐图片大小: 32 x 32 pixels
+      # 示例: 'path-to-server\bluemap\web\assets\steve.png'
+      icon_3: ''
+      # 设置图标 for a nations capital.
+      # 注意: 所填入内容必须为绝对路径. 推荐图片大小: 32 x 32 pixels
+      # 示例: 'path-to-server\bluemap\web\assets\steve.png'
+      icon-capital_3: ''
+      # 设置最小缩放. 图标在浏览器内的指定缩放倍数 (鼠标滚轮控制) 下不显示.
+      min-zoom_3: 126
+    land:
+      # 土地显示的不透明度. 需要为处在 0 (最低) 到 1 (最高) 的小数.
+      opacity_5: 0.35
+    border:
+      # 土地边界的不透明度. 需要为处在 0 (最低) 到 1 (最高) 的小数.
+      opacity_6: 1
+      # 边界线条的粗细.
+      thickness_3: 2
+
+  Pl3xMap:
+    enabled_4: true
+    # 设置出生点图标
+    # 可通过将其设置为 '' 以禁用该项
+    spawn:
+      # 设置图标
+      # 注意: 所填入内容必须为绝对路径. 推荐图片大小: 32 x 32 pixels
+      # 示例: 'path-to-server\bluemap\web\assets\steve.png'
+      icon_4: ''
+      # 设置图标 for a nations capital.
+      # 注意: 所填入内容必须为绝对路径. 推荐图片大小: 32 x 32 pixels
+      # 示例: 'path-to-server\bluemap\web\assets\steve.png'
+      icon-capital_4: ''
+    land:
+      # 土地显示的不透明度. 需要为处在 0 (最低) 到 1 (最高) 的小数.
+      opacity_7: 0.6
+    border:
+      # 土地边界的不透明度. 需要为处在 0 (最低) 到 1 (最高) 的小数.
+      opacity_8: 0.9
+      # 边界线条的粗细.
+      thickness_4: 2

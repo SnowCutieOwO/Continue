@@ -1,0 +1,57 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                  插件作者 Ome_R                   ##
+##                                                  ##
+######################################################
+
+title: '&l岛屿传送'
+previous-menu: true
+
+pattern:
+  - '@ @ @ @ @ @ @ @ @'
+  - '@ @ @ @ @ @ @ @ @'
+  - '@ @ @ @ @ @ @ @ @'
+  - '@ @ @ @ @ @ @ @ @'
+  - '$ $ $ $ $ $ $ $ $'
+  - '# # % # * # ^ # #'
+
+warps: '@'
+previous-page: '%'
+current-page: '*'
+next-page: '^'
+
+
+# 当启用时, 除了显示传送点, 访客传送点也会被显示.
+# 若要显示传送点描述, 请使用内置变量 {1}.
+visitor-warps: false
+
+items:
+  '@':
+    type: SKULL_ITEM
+    data: 3
+    name: '&e{0} 的岛屿'
+    lore:
+      - '&7点击查看该玩家岛屿上的所有传送点.'
+      - '&8>> &7该岛屿有 {2} 个传送点.'
+  '%':
+    type: PAPER
+    name: '{0}上一页'
+  '*':
+    type: DOUBLE_PLANT
+    name: '&a当前页'
+    lore:
+      - '&7第 {0} 页'
+  '^':
+    type: PAPER
+    name: '{0}下一页'
+  '$':
+    type: STAINED_GLASS_PANE
+    data: 15
+    name: '&f'
+
+sounds:
+  '@':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2

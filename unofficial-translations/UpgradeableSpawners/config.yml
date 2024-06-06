@@ -1,0 +1,257 @@
+# 全局设置
+general:
+  # 默认语言: 英文 (美国) - 无需下载.
+  # 该设置可决定使用的默认语言. 你可以在插件的语言文件夹中放置多个 "语言" 文件来根据玩家使用的语言显示不同的语言.
+  # 你可以在 Discord 找到社区维护的语言文件: https://discord.gg/B4MAJVk
+  # 若要获取除 en-US 外的翻译, 在 Discord 群组服中输入命令 /translations 即可.
+  language: 'en-US'
+  # 玩家能放置升级刷怪笼的世界.
+  # 使用 '*' 表示所有世界.
+  worlds_list:
+    - 'world'
+
+  # 设置所有经济相关的显示格式.
+  # 有关信息: https://docs.oracle.com/javase/7/docs/api/java/text/DecimalFormat.html
+  # 注意: 修改本项后需要重启服务器才可生效.
+  eco-format:
+    normal: '$#,##0.00'
+    # 若数字小于 1000 则会使用上方的普通格式.
+    # 若值不小于 1000, 则它会返回按千分隔的值.
+    # 该格式只会在一小部分消息中使用.
+    short-unit: '${value}{unit}'
+
+  # 若启用, 限制权限将会结合生效而不是取最大值.
+  # 示例: 一个玩家拥有两个权限 uspawners.spawners.5 和 uspawners.spawners.2
+  #       启用本项: 玩家可以放置 7 个刷怪笼
+  #       禁用本项: 玩家只能放置 5 个刷怪笼
+  permission-stacking: false
+
+
+# 全局传送设置
+# 命令指定的传送设置可在对应部分的配置中找到.
+teleport:
+  # 对首次加入服务器的玩家在一段时间内免去传送扣费.
+  # 你可以在这里设置时间长度. 示例: 1天 = 23 小时前加入服务器的玩家, 无需支付任何传送费用.
+  first-join_time: 0h
+  # Waittime
+  # 传送预热的等待时间
+  # 时间单位: 秒
+  wait: 3
+
+
+# 数据库设置
+database:
+  # MySQL
+  mysql:
+    # 是否启用 MySQL, 而不是“基于文件”的 SQLite.
+    # 从性能角度考虑, 推荐使用 MySQL, 若你不能使用 MySQL 服务器,
+    # 将其禁用即可.
+    enabled: false
+    ip-address: 'localhost'
+    port: '3306'
+    database: 'upgradeablespawners'
+    table-prefix: ''
+    user: 'minecraft'
+    password: 'password'
+
+
+command:
+  # 使用 /spawner get 命令购买刷怪笼时是够需要确认购买?
+  get-confirm: false
+  # 设置 /upgradeableSpawners 命令的等价用法
+  # 注意: 修改本项后需要重启服务器才可生效.
+  alias:
+    upgradeablespawners_list:
+      - 'uspawners'
+      - 'uspawner'
+      - 'spawners'
+      - 'spawner'
+
+
+# 刷怪笼设置
+spawner:
+  # 仅允许刷怪笼的拥有者将其放置.
+  only-owner: true
+  # 是否允许所有玩家破坏未被任何插件占领的刷怪笼?
+  # 破坏刷怪笼的玩家将会视作刷怪笼的拥有者.
+  # 注意: 只有拥有者可破坏/删除所拥有的刷怪笼.
+  # 注意: 修改本项后需要重启服务器才可生效.
+  visitor-break: false
+  # 是够允许修改升级刷怪笼的实体种类?
+  # 若你也想要禁用刷怪蛋, 请确保你一并禁用了下文的设置 (vanilla.egg).
+  # 你也可以在界面语言文件中加上 enabled: false 将其禁用. 
+  entity-change: true
+  # 刷怪笼是否只可以被精准采集挖掘?
+  # 注意: 若启用, 玩家仍需要权限 uspawners.silktouch 才可挖掘刷怪笼.
+  # 拥有权限 uspawners.bypass.delete 的玩家可以徒手挖掘它.
+  # 若禁用, 玩家可以通过 shift+鼠标左键点击删除并返还刷怪笼.
+  silktouch:
+    enabled_5: false
+    # 设置挖掘刷怪笼所需的最小精准采集等级.
+    min-level: 1
+    # 挖掘后掉落刷怪笼的几率.
+    chance: 100
+    # 是否允许挖掘原版刷怪笼?
+    # 注意: 若转化原版刷怪笼的设置项启用, 该设置不会有任何作用, 因为原版刷怪笼会在接触后被转化为本插件的刷怪笼.
+    # 注意: 若你想要掉落的原版刷怪笼被转化为插件的升级刷怪笼, 你需要启用下文的 "enabled_2" 选项.
+    vanilla_2: false
+
+  # 可以用于挖掘刷怪笼的工具.
+  # ALL: 表示接受所有工具, 包括空手.
+  # 可填入的材料名称: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+  allowed-tools_list:
+    - ALL
+
+  # /spawner get 的物品设置.
+  item:
+    # 从 /spawner get 商店中获取的物品价格.
+    cost: 1500.0
+
+  # 限制原版刷怪笼, 例如使用刷怪蛋等的行为.
+  vanilla:
+    # 是否允许放置原版刷怪笼?
+    placing: true
+    # 是否允许原版刷怪笼生成实体?
+    spawn: true
+    # 是否允许通过刷怪笼修改其中的实体种类?
+    egg: false
+    # 是否要在玩家与原版刷怪笼交互时将它们立即转化为插件的升级刷怪笼?
+    # 注意: 不可以在玩家完全没有与原版刷怪笼交互的情况下将其转化为升级刷怪笼, 服务器没有提供此类能直接鉴别拥有者的方法.
+    claim:
+      enabled_2: false
+      # 是否允许拥有升级刷怪笼数量达到上限的玩家转化原版刷怪笼?
+      ignore-max: false
+      # 是否转化正在生成实体的刷怪笼? 玩家可以稍后占领, 且刷怪笼拥有者会被改为该玩家.
+      on-spawn: false
+
+  # 若禁用, 则不会生成任何骑士实体 (如鸡骑士), 不只是刷怪笼生成的受影响.
+  # 因为插件难以鉴别骑士是否由刷怪笼生成.
+  jockeys: true
+
+  # 传送设置 (/spawners list)
+  # 所需权限: uspawners.teleport
+  teleportation:
+    # 设置传送花费.
+    cost_2: 200
+
+  # 默认设置. 仅对新创建的刷怪笼有效.
+  # 可用内容: BUTCHER
+  default-settings_list: [ ]
+
+  # 设置由升级刷怪笼产生的实体掉落的经验数量.
+  # 设置为 -1 可禁用该项.
+  xp-drop: -1
+
+
+# 在升级刷怪笼上显示刷怪笼等级和实体类型.
+hologram:
+  # 该设置生效需要重启服务器.
+  enabled_3: true
+  # 是否仅在刷怪笼暂停时显示悬浮字?
+  only-paused: true
+  # Y 轴偏移量 - 修改悬浮字高度
+  offset: 0
+
+
+protection:
+  # 保护刷怪笼免受爆炸破坏?
+  # 若禁用, 刷怪笼被爆炸破坏后会掉落.
+  anti-explosive: true
+
+
+# 限制升级刷怪笼
+limit:
+  # 搜索绕过限制的区域间隔.
+  interval_time: 30s
+  # 设置一个区块内可放置的刷怪笼最大数量.
+  # 设置为 0 可将其禁用.
+  max-per-chunk: 5
+  # 设置区域限制.
+  area:
+    # 设置刷怪笼附近检查的区块半径.
+    # 0 = 仅刷怪笼所处的区块内 (不推荐)
+    # 1 =
+    #     xxx  x = 附近区块
+    #     xsx  s = 刷怪笼所在区块.
+    #     xxx
+    chunk-radius: 2
+    # 设置区域内的最大实体数量. 仅包含通过本插件的刷怪笼生成的实体.
+    # 若到达上限, 区域内所有的升级刷怪笼都会暂停, 直到生成的实体数量减少.
+    # 该设置仅考虑本插件生成的实体.
+    # 设置为 0 可禁用.
+    max-entities: 150
+
+  # 设置升级刷怪笼的间隔.
+  # 间隔次数升级可通过禁用菜单物品并将默认间隔设置为 0 来禁用.
+  # 禁用菜单物品: https://github.com/Angeschossen/General/wiki/GUI-Menus#disable-items
+  period:
+    # 设置生成间隔.
+    # 示例: 所有刷怪笼在 1 小时内会生成 x 个实体.
+    # 每个刷怪笼在间隔内产出的实体数量可通过菜单升级. 既提升性能, 又可以让升级变得有用.
+    # 时间单位: d(天), h(时), m(分), s(秒)
+    time_time: 1h
+
+
+# 注意: 修改本项后需要重启服务器才可生效.
+optimization:
+  redstone:
+    # 若刷怪笼接收到红石信号, 是否自动暂停?
+    pause-on-signal: false
+
+
+# Economy settings
+# 经济设置
+economy:
+  # 若所有类型的经济都被禁用, 插件会使用基于物品的经济.
+  type:
+    # Vault: 你需要一个支持 Vault 的经济插件才可让该设置正常运转.
+    vault: true
+    # 是否以玩家经验为货币?
+    exp: false
+
+
+# 第三方插件联动
+integration:
+  # Lands (https://www.spigotmc.org/resources/53313)
+  lands:
+    # 是否只允许玩家在土地内放置升级刷怪笼?
+    # 这会禁用玩家在郊区放置升级刷怪笼的能力.
+    only-land: false
+    # 支持插件: Lands (https://www.spigotmc.org/resources/53313), SuperiorSkyblock2, BentoBox, PlotSquared, WorldGuard
+    # 是否允许刷怪笼处于受信任区域内的玩家破坏、放置方块和交互?
+    allow-region-members: true
+
+  # 若该项设置为 false, 刷怪笼的邻近实体上限为邻近区域的生成上限.
+  # 这意味着, 若邻近区域的生成上限被设置为 10, 生成数量就不能大于 10.
+  # 该项需要在你使用其他实体堆叠插件时必须启用.
+  # 若你没有使用任何堆叠插件, 你可以禁用该项来确保刷怪笼不会生成超过邻近上限数量的实体
+  3rd-party-stacking: false
+
+  # 经济设置
+  # 若所有种类的经济都被禁用, 插件将使用物品经济.
+  # 注意: 在修改下列这些选项的时候, 你可能也需要修改本配置文件中的 "eco-format"(参见上文) 项.
+  economy:
+    vault:
+      # 你需要一个支持 Vault 的经济插件才可启用该设置.
+      enabled_10: true
+      # 服务器的收款账户玩家名称. 玩家花费的硬币最终都会流向这里.
+      server-bank: ''
+    # 玩家经验
+    exp:
+      enabled_15: false
+    # 在所有其他经济选项不可用时使用基于物品的经济.
+    # 代表货币的物品可以在菜单界面语言文件的 "currency" 设置下配置.
+    items:
+      # 若启用, 只有名称、描述相同的物品才会被识别为货币物品.
+      # 而不仅仅是类型或自定义模型数据值相同的物品.
+      strict: false
+
+
+# 日志记录相关设置
+logging:
+  # 在提交漏洞时我们可能要求你启用该设置.
+  debug: false
+  # 标出事件等的调用者。
+  # 当前可用: chunk_load_unload
+  print-callstack_list: []
+

@@ -1,0 +1,217 @@
+# PlayerAuctions 插件作者 Olzie-12
+# https://www.spigotmc.org/resources/83073
+# 我们也有可以提供帮助的 Discord 聊天群组: https://olziedev.com/discord 和插件维基 https://docs.olziedev.com/projects/playerauctions
+# 如果你找到任何 BUG, 我很乐意第一时间修复它们 :)
+# 为爱发电
+
+startauction:
+  # 是否启用该界面?
+  enabled: true
+  # 该界面的名称是什么?
+  name: "startauction"
+  # 该界面的显示标题是什么? (可以使用彩色代码)
+  title: "&b&l发起拍卖"
+  # 界面的大小? (填入 9 的倍数, 最大为 54)
+  size: 54
+  # 打开该界面的时候执行哪些额外的操作?
+  open-actions: []
+  # 关闭该界面的时候执行哪些额外的操作?
+  close-actions: []
+  # 玩家所购买的物品显示在哪一格?
+  slot-buying: 13
+  # 发起拍卖的默认类型是什么?
+  default-type: sell
+
+  # 在菜单界面中搜索拍卖
+  search:
+    # 是否使用该功能?
+    # 该功能仅在安装 ProtocolLib 后可用.
+    enabled: true
+    # 该界面的标题是什么?
+    # 内建变量 %search% 用于返回玩家输入的关键词, 请确保它所在的那一行没有额外的文本.
+    # 若这些内容中不包含变量, 那么插件会假定第一行就是玩家输入的关键词. 颜色代码在这里不会正常工作.
+    lines:
+      - "%search%"
+      - "----------------"
+      - "请输入数量."
+      - "----------------"
+
+    item:
+      material: OAK_SIGN
+      data: 0
+      name: "&b输入本次拍卖的起始价格."
+      lore:
+        - "&e点击&b输入本次拍卖的起始价格."
+      slot: 22
+      amount: 1
+      glowing: false
+
+  # 通过界面输入数量
+  enter-2:
+    # 是否使用该功能?
+    # 该功能仅在安装 ProtocolLib 后可用.
+    enabled: true
+    # 该界面的标题是什么?
+    # 内建变量 %search% 用于返回玩家输入的关键词, 请确保它所在的那一行没有额外的文本.
+    # 若这些内容中不包含变量, 那么插件会假定第一行就是玩家输入的关键词. 颜色代码在这里不会正常工作.
+    lines:
+      - "%search%"
+      - "----------------"
+      - "请输入数量."
+      - "----------------"
+
+    item:
+      material: OAK_SIGN
+      data: 0
+      name: "&b输入拍卖的物品数量"
+      lore:
+        - "&e点击&b输入本次拍卖的物品数量."
+      slot: 4
+      amount: 1
+      glowing: false
+
+  clickable-items:
+    accept:
+      # 若你希望禁用这些物品, 你可以将 material: 项设置为 "AIR"
+      name: "&a确认拍卖"
+      # 此即为确认拍卖物品的样式. 有效材料名称请参阅: https://javadocs.olziedev.com/spigot/latest/org/bukkit/Material.html
+      material: LIME_WOOL
+      data: 5
+      lore:
+        - "&e点击&b将该物品以 &e[price]&b 的起拍价进行拍卖!"
+      slot: 11
+      amount: 1
+      glowing: false
+      # 仅在头颅种类为 PLAYER_HEAD 且数据值为 3 时有效!
+      #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWE0ZjY4YzhmYjI3OWU1MGFiNzg2ZjlmYTU0Yzg4Y2E0ZWNmZTFlYjVmZDVmMGMzOGM1NGM5YjFjNzIwM2Q3YSJ9fX0= - 头颅材质
+      #owner: Next - 头颅拥有者
+    deny:
+      name: "&c停止拍卖"
+      material: RED_WOOL
+      data: 14
+      lore:
+        - "&c点击中止本场拍卖."
+      slot: 15
+      amount: 1
+      glowing: false
+    sell:
+      name: "&a改为竞拍"
+      material: DIAMOND
+      data: 0
+      lore:
+        - "&e点击&b将出售类型改为拍卖."
+        - "&b当前模式为&b&l一口价出售"
+      slot: 3
+      amount: 1
+      glowing: false
+    bid:
+      name: "&a改为一口价出售"
+      material: EMERALD
+      data: 0
+      lore:
+        - "&e点击&b将出售类型改为一口价出售."
+        - "&b当前模式为&a&l竞拍"
+      slot: 3
+      amount: 1
+      glowing: false
+    currency:
+      name: "&b货币"
+      material: GOLD_INGOT
+      data: 0
+      lore:
+        - "&e点击&b修改本次拍卖所使用的货币."
+        - "&b当前: &e[currency]"
+      slot: 5
+      amount: 1
+      glowing: false
+    add-1:
+      name: "&a增加 $1"
+      material: LIME_STAINED_GLASS_PANE
+      data: 5
+      lore:
+        - "&a点击将价格增加 $1."
+        - " "
+        - "&b当前价格: &e[price]"
+      slot: 0
+      amount: 1
+      glowing: false
+    add-10:
+      name: "&a增加 $10"
+      material: LIME_STAINED_GLASS_PANE
+      data: 5
+      lore:
+        - "&a点击将价格增加 $10."
+        - " "
+        - "&b当前价格: &e[price]"
+      slot: 9
+      amount: 10
+      glowing: false
+    add-100:
+      name: "&a增加 $100"
+      material: LIME_STAINED_GLASS_PANE
+      data: 5
+      lore:
+        - "&a点击将价格增加 $100."
+        - " "
+        - "&b当前价格: &e[price]"
+      slot: 18
+      amount: 64
+      glowing: false
+    remove-1:
+      name: "&c减少 $1"
+      material: RED_STAINED_GLASS_PANE
+      data: 14
+      lore:
+        - "&c点击将价格减少 $1."
+        - " "
+        - "&b当前价格: &e[price]"
+      slot: 8
+      amount: 1
+      glowing: false
+    remove-10:
+      name: "&c减少 $10"
+      material: RED_STAINED_GLASS_PANE
+      data: 14
+      lore:
+        - "&c点击将价格减少 $10."
+        - " "
+        - "&b当前价格: &e[price]"
+      slot: 17
+      amount: 10
+      glowing: false
+    remove-100:
+      name: "&c减少 $100"
+      material: RED_STAINED_GLASS_PANE
+      data: 14
+      lore:
+        - "&c点击将价格减少 $100."
+        - " "
+        - "&b当前价格: &e[price]"
+      slot: 26
+      amount: 64
+      glowing: false
+
+  items:
+    # 在菜单界面中的物品样式
+    1:
+      # 此为物品名称.
+      name: " "
+      # 此为物品材料名称
+      material: AIR
+      # 此为物品数据值
+      data: 0
+      # 你可以添加物品描述!
+      # lore:
+      #   - "&b这是一个玻璃板."
+      slot: 0
+      # 此为物品数量
+      amount: 1
+      # 点击时执行的命令.
+      # [server] 表示这条命令会以控制台身份执行
+      # [player] 表示这条命令会以玩家身份执行
+      # commands:
+      #   - "[server] msg %player% 你点击了这个物品!"
+      glowing: false
+      # 仅在头颅种类为 PLAYER_HEAD 且数据值为 3 时有效!
+      #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTZmOGFmYjI3YmFmYzc3YzJiODI1OTljMmY3YjhmMWY2ODMxMGU2YWE5MDRmMDUxYjA3YWIxYzJiNmIifX19 - 头颅材质
+      #owner: Glass - 头颅对应玩家名称

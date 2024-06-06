@@ -1,0 +1,31 @@
+Settings:
+  Enabled: true
+  InGui: true
+  Name: 自动收集
+  Colour: '&7'
+  Slot: 41
+  MaxLevel: 1000
+  MultiBreak: true
+  MultiBreakMaxSuccess: 1000
+  Commands:
+  - give %Player% core 1
+  - give %Player% core 2
+  - give %Player% core 3
+  Currency: RevToken
+  Cost: 10000
+  Increase-Cost-by: 1000
+  Chance: 1
+  Increase-Chance-by: 0.01
+  Requirement:
+    Enabled: false
+    Number: 5
+    Placeholder: '%RevEnchants_Tool_Flag_Level%'
+  Description: '&7概率在挖掘时获得随机物品%nl%&7获得概率随等级提升而提升'
+  Book:
+    ==: org.bukkit.inventory.ItemStack
+    v: 3700
+    type: LEGACY_BOOK
+  Message:
+    Enabled: true
+    Bar: true
+    Format: '&7自动收集 %Amount_FormattedA%'

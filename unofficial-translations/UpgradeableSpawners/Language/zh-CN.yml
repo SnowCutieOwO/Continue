@@ -1,0 +1,214 @@
+# 在这里你可以编辑所有聊天消息.
+#
+# 若遇到任何问题可加 Discord 聊天群组:
+# https://discord.gg/B4MAJVk
+#
+# 插件 Wiki: https://github.com/Angeschossen/General/wiki/Messages
+
+general:
+  prefix:
+    normal: '&8[&eUpgradeSpawners&8] '
+    help: '&8[&eUpgradeSpawners&8] &7用法: '
+  time:
+    seconds: 秒
+    minutes: 分
+    hours: 时
+  teleportation:
+    bossbar: '&7在进行传送前还需等待&5 {time} &7秒.'
+  command:
+    argument:
+      optional: '&8<&e{arg}&8>'
+      required: '&8[&e{arg}&8]'
+      type:
+        cmd: cmd
+        player: player
+        name: name
+        confirm: confirm
+        menu: menu
+        world: world
+        args: arguments
+        page: page
+        database: database
+        plugin: plugin
+        amount: amount
+        type: type
+        entity-type: entity-type
+  
+  stacking:
+    name: '{entity} &7- &6{amount}x'
+
+help:
+  help:
+    root:
+      header: '[NoPrefix][T]&7&l&m━━&e&l<<<<&7&l&m━[H]&7点击这里翻到上一页.[/H][C]{cmd} {previous}[/C][/T] &eUpgradeSpawners 命令列表
+        &7第&3 {page} &8/&3 {pages} &7页[T]&7&l&m━&e&l>>>>&7&l&m━━[H]&7点击这里翻到下一页.[/H][C]{cmd} {next}[/C][/T]'
+      footer: |
+        [NoPrefix]
+        &7在下方箭头上点击可翻页.
+        [T]&7&l&m━━&e&l<<<<&7&l&m━[H]&7点击这里翻到上一页.[/H][C]{cmd} {previous}[/C][/T] &eUpgradeSpawners 命令列表 &7第&3 {page} &8/&3 {pages} &7页 [T]&7&l&m━&e&l>>>>&7&l&m━━[H]&7点击这里翻到下一页.[/H][C]{cmd} {next}[/C][/T]
+    sub:
+      unknown: |
+        &c子命令&4 {command} &c不存在.
+          [T]&7✖ 浏览命令: &3/{cmd} &8[点此][H]&7点击这里查询可用命令列表[/H][C]{cmd}[/C][/T]
+      header: '[NoPrefix][T]&7&l&m━━&e&l<<<<&7&l&m━[H]&7点击这里翻到上一页.[/H][C]{cmd} {previous}[/C][/T] &e子命令 &7第&3
+        {page} &8/&3 {pages} &7页[T]&7&l&m━&e&l>>>>&7&l&m━━[H]&7点击这里翻到下一页.[/H][C]{cmd} {next}[/C][/T]'
+      footer: |
+        [NoPrefix]
+        &7在下方箭头上点击可翻页.
+        [T]&7&l&m━━&e&l<<<<&7&l&m━[H]&7点击这里翻到上一页.[/H][C]{cmd} {previous}[/C][/T] &e子命令 &7第&3 {page} &8/&3 {pages} &7页[T]&7&l&m━&e&l>>>>&7&l&m━━[H]&7点击这里翻到下一页.[/H][C]{cmd} {next}[/C][/T]
+  command:
+    upgradeablespawners:
+      help: '[T]&e{parent} {subcmd} {args} - &7获取帮助[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      get: '[T]&e{parent} {subcmd} &8- &7获取刷怪笼[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      list: '[T]&e{parent} {subcmd} {args} - &7浏览刷怪笼[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      confirmtp: '[T]&e{parent} {subcmd} &8- &7确认不安全传送[H]&7点击知悉.[/H][C]{fullcmd}[/C][/T]'
+      admin:
+        main: '[T]&e{parent} {subcmd} &8- &7管理员命令[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+        give: '[T]&e{parent} {subcmd} {args} &8- &7给予刷怪笼[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+        reload: '[T]&e{parent} {subcmd} &8- &7重载配置文件[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+        about: '[T]&e{parent} {subcmd} &8- &7调试信息[H]&7点击执行[/H][C]{fullcmd}[/C][/T]'
+        import: '[T]&e{parent} {subcmd} {args} &8- &7从其他插件导入数据[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+        listperms: '[T]&e{parent} {subcmd} {args} &8- &7列出可用权限[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+        migratedb: '[T]&e{parent} {subcmd} {args} &8- &7迁移数据库[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+        player: '[T]&e{parent} {subcmd} {args} &8- &7管理玩家[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+        teleport: '[T]&e{parent} {subcmd} {args} &8- &7传送至刷怪笼[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+
+
+upgradeablespawners:
+  message:
+    general:
+      no-permission: '&c你没有权限这么做. &7你需要权限
+        {permission}.'
+      break-tool: '&4&l警告:&c 使用当前物品破坏刷怪笼不会掉落物品. &7使用这些工具挖掘刷怪笼才可掉落: {tools}'
+    
+    spawner:
+      created: '#t#&e&l刷怪笼{newline}&7成功放置'
+      deleted: '#t#&e&l刷怪笼{newline}&c成功移除'
+      convert:
+        untrusted: '&c你不能占领该原版刷怪笼, 你未在该区域内受信任.'
+        success: '&7你成功占领了该原版刷怪笼, 并将其转化为了可升级刷怪笼.'
+      egg: '#t#&e&l实体种类{newline}&7修改成功.'
+    
+    no-access:
+      upgrade: '&c你不能升级这个刷怪笼. &7它属于玩家&3 {owner}&7.'
+      delete: '&c你不能移除这个刷怪笼. &7它属于玩家&3 {owner}&7.'
+      vanilla:
+        craft: '&c你不能合成原版刷怪笼. &7请使用 &8/&espawners get &7命令购买刷怪笼. &8绕过权限: uspawners.bypass.vanilla.craft'
+        place: '&c你不能放置原版刷怪笼. &7请使用 &8/&espawners get &7命令购买刷怪笼. &8绕过权限: uspawners.bypass.vanilla.place'
+        egg: '&c你不能使用刷怪蛋更改刷怪笼种类. &7你可以在刷怪笼界面这么做.'
+    
+    creation:
+      world: '&c你不能在该世界创建升级刷怪笼. &7请联系管理员将世界&3 {world} &7添加至配置文本的 worlds_list 项'
+      owner: '&c你不能放置该刷怪笼. &7它属于玩家&3 {owner}&7. &8管理员可在配置文件中修改该设定.'
+      max-per-chunk: '&c你不能再在该区块内放置更多的刷怪笼了. &7本服只允许一个区块内存在最多&3 {max} &7个刷怪笼. &8管理员可在配置文件中修改该设定.'
+      max: '&c你不能再放置更多升级刷怪笼了. &7你最多可放置&3 {max}&7 个.'
+      only-land: |
+        &c你不能在郊区放置刷怪笼. &7你需要将它放置在你的土地内.
+         [T]&7占领土地: &3/lands claim &8[点此][H]&7点击占领当前位置的土地.[/H][C]{fullcmd}[/C][/T]
+      untrusted: '&c你不能在这里放置升级刷怪笼. &7你不是这片土地的受信任成员.'
+    silk:
+      enchantment: '&4&l警告:&c 你需要精准采集 (至少 {level} 级) 才可挖掘该刷怪笼. &7本次挖掘将不会获得任何物品.'
+      permission: '&4&l警告:&c 你不能使用精准采集挖掘这个刷怪笼.
+        &7本次挖掘将不会获得任何物品. &8所需权限: uspawners.silktouch'
+      chance: '&c本次挖掘未获得刷怪笼. &7本服设置了只有 &3{chance}% &7的概率才可获得刷怪笼.'
+    teleportation:
+      already: '&c你不能二次发起传送请求. 已有传送请求等待处理. &7请耐心等待.'
+      started: '&7准备传送. 将在&5 {sec} 秒后开始传送&7. 请勿移动.'
+      cmd: '&c传送时不得使用任何命令. &7请再等待&5 {sec} 秒&7直至传送完成.'
+      progress: '#b#[config]color:purple,style:solid[/config]&7请再等待&5 {time} &7秒.'
+      cancelled: '&c传送已取消. &7请在&5 {sec} &7秒的传送预热时间内不要移动.'
+      plugin: '&c传送请求被第三方插件取消. &7请检查其他插件. &7该问题与 UpgradeableSpawners 无关.'
+      unsafe: |
+        &7待处理的传送请求已经取消, 目标位置不安全.
+          [T]&2✔ 强制传送: &8[点此][H]&7警告: 目标位置不安全, 可能会导致你受伤.[/H][C]{cmd}[/C][/T]
+      corrected: '&7原传送位置不安全. &7已将你传送到目的地附近.'
+  
+  command:
+    general:
+      cant-afford: '&c你买不起. &7你需要&c {cost} &7硬币来购买这个.'
+      player-offline: '&c找不到玩家. &7玩家&3 {player} &7已离线.'
+      invalid-number: '&c你在参数&e {argument} &c处输入的内容无效.
+        &7请输入数字.'
+      input-invalid: '&c所输入的内容 &8(&4{input}&8) &c不能作为&4 {pos}
+        &c的有效参数. &7你应输入: {expected}'
+      player-not-exist: '&c找不到名为&4 {input}&c 的玩家. &7是否正确输入?'
+      input:
+        number: '&c所输入的&4 {input} &c不是数字. &7参数 {pos}: {expected}'
+        player: '&c找不到名为&4 {player} &c的玩家. &7是否正确输入?'
+        offline: '&c找不到名为&4 {player} &c的在线玩家. &7是否正确输入?'
+        world: '&c所输入的世界&4 {input} &c不存在. &7参数 {pos}: {expected}'
+        confirm: |
+          &7请通过点击下方按钮确认本次操作 &8(&e/{input}&8) &7:
+            [T]&2✔ 确认 &8[点此][H]&7点此确认操作.[/H][C]{fullcmd}[/C][/T]
+    get:
+      confirm: |
+        &c请确认本次购买. &7这些物品将会花费&c {costs}&7.
+          [T]&2✔ 确认: &8[点此&8][H]&7点此确认购买.[/H][C]upgradeablespawners get {amount} confirm[/C][/T]
+      dropped: '&7你收到了 &3{amount} &7个刷怪笼并花费了&c {cost}&7. &c因你的背包已满, 物品已经掉落在地面, 请注意拾取.'
+      success: '&7你收到了 &3{amount} &7个刷怪笼并花费了&c {cost}&7. 物品已经发放至背包.'
+    
+    list:
+      retrieving: '&7正在返回玩家 {player} 放置的刷怪笼位置...'
+    
+    give:
+      type: '&c实体名称在当前服务器版本无效. &7种类&3 {type}
+        &7不存在. 请确保你已经在 entities.yml 中预先配置. &7可供使用的实体种类: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html'
+      dropped: '&7你收到了 &3{amount} &7个刷怪笼. &c因你的背包已满, 物品已经掉落在地面, 请注意拾取.'
+      success:
+        sender: '&7你成功将&3 {amount} &7个刷怪笼给予了玩家&3 {player}&7.'
+        target: '&7你收到了&3 {amount} &7个刷怪笼. 物品已经发放至背包.'
+    confirmtp:
+      none: '&c你没有待处理的传送请求.'
+    
+    admin:
+      listperms:
+        header: '[NoPrefix][T]&7----------&e&l<<<<&7-[H]&7点击这里翻到上一页.[/H][C]{cmd} listperms {player} {previous}[/C][/T] &2权限列表 &7第&3 {page} &8/&3 {pages} &7页[T]&7-&e&l>>>>&7----------[H]&7点击这里翻到下一页.[/H][C]{cmd} listperms {player} {next}[/C][/T]'
+        footer: |
+          [NoPrefix]
+          &c玩家 &4{player} &c有如下权限, 因为你的权限插件支持通配符 (perm.*) 导致了他们同时拥有以下权限. &7在下方箭头上点击可翻页.
+          &c红色 = 通配符权限
+          &e黄色 = 标号权限
+          [T]&7----------&e&l<<<<&7-[H]&7点击这里翻到上一页.[/H][C]{cmd} listperms {player} {previous}[/C][/T] &2权限列表 &7第&3 {page} &8/&3 {pages} &7页[T]&7-&e&l>>>>&7----------[H]&7点击这里翻到下一页.[/H][C]{cmd} listperms {player} {next}[/C][/T]
+list:
+  status:
+    running:
+    - '&e{entity} &8- &a运行中'
+    - '间隔: {level_interval}'
+    - '生成间隔: {level_period}'
+    - '邻近实体: {level_nearby}'
+    - '激活距离: {level_distance}'
+    paused_period_amount:
+    - '&e{entity} &8- &4暂停'
+    - '&c在当前时间段内已生成了最多&4 {period_max_entities}&c 个实体.'
+    - ' '
+    - '结束时间: {period_end}'
+    - 可在菜单内升级刷怪间隔.
+    paused_area_max_entities:
+    - '&e{entity} &8- &4暂停'
+    - '&c刷怪笼附近实体过多'
+    - '&r实体数量计算可能包含邻近区块.'
+    - ' '
+    - '可生成最大实体数量: {area_max_entities}'
+    paused_spawner_max_entities:
+    - '&e{entity} &8- &4暂停'
+    - '&c邻近实体过多.'
+    - ' '
+    - '最大数: {spawner_max_entities}'
+    paused_manually:
+    - '&e{entity} &8- &4暂停'
+    - '&c刷怪笼被玩家手动暂停.'
+    paused_redstone_signal:
+    - '&e{entity} &8- &4暂停'
+    - '&c刷怪笼受红石信号激活而暂停.'
+  paused:
+    chunk:
+    - '&c刷怪笼已停止工作:'
+    - 可刷怪区域内实体过多.
+    - ' '
+    - '可生成最大实体数量: {max}'
+    period:
+    - '&c刷怪笼已停止工作:'
+    - 当前时间段 {period} 内已生成 {max} 个实体.
+    - ' '
+    - '将会于 ~{reset} 后重启'
+    - 可在菜单中升级刷怪间隔.

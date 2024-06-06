@@ -1,0 +1,31 @@
+Settings:
+  Enabled: true
+  InGui: true
+  Name: 信标发掘
+  Colour: '&7'
+  Slot: 40
+  MaxLevel: 1000
+  MultiBreak: true
+  MultiBreakMaxSuccess: 1000
+  GiveItem:
+    ==: org.bukkit.inventory.ItemStack
+    v: 3700
+    type: LEGACY_BEACON
+  Currency: RevToken
+  Cost: 10000
+  Increase-Cost-by: 1000
+  Chance: 1
+  Increase-Chance-by: 0.01
+  Requirement:
+    Enabled: false
+    Number: 5
+    Placeholder: '%RevEnchants_Tool_Flag_Level%'
+  Description: '&7概率在挖掘时获得信标%nl%&7概率随等级提升而提升'
+  Book:
+    ==: org.bukkit.inventory.ItemStack
+    v: 3700
+    type: LEGACY_BOOK
+  Message:
+    Enabled: false
+    Bar: true
+    Format: '&7信标发掘 %Amount_FormattedA%'

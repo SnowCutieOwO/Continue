@@ -1,0 +1,339 @@
+# PlayerWarps by Olzie-12
+# https://www.spigotmc.org/resources/66692/
+# We also have a discord server for help: https://olziedev.com/discord or check docs https://docs.olziedev.com/projects/playerwarps
+# Also if you find any bugs be happy to report them I will fix them :)
+# Made with love
+
+category:
+  # Should you enable a category gui meaning players will have to sort their warp into a category?
+  enabled: true
+  # If you don't want the category menu to be disabled entirely, but you don't want it to open up on prompt
+  # then you can select the default category it'll open up or set it to main if you want the main menu.
+  prompt-category: main
+  # What is the name of the gui? 
+  name: "category"
+  # The title of the gui (Can use color codes)
+  title: "&b&lPlayer Warps"
+  # What is the size of this GUI? (multiples of 9 can only go up to 54)
+  size: 27
+  # What are the actions when this menu is opened up?
+  open-actions: []
+  # What are the actions when this menu is closed?
+  close-actions: []
+  # What is the default category for a warp to be placed into?
+  default: "other"
+  # For when a player doesn't have permission for that category.
+  no-permission:
+    # If a player does not have access to view the category, should the item be replaced?
+    enabled: true
+    item:
+      # Set the material to AIR if you dont want the item to appear.
+      name: "&cNo permission!"
+      material: BARRIER
+      data: 0
+      lore:
+        - "&cYou cannot view this category."
+      amount: 1
+  # Do you want the plugin to automatically create sub commands for each category? for example /pw <category> to open that category gui.
+  register-category-commands: false
+
+  sponsor:
+    # Should sponsor warps be enabled?
+    enabled: true
+    # If enabled, should the sponsor warps show in the main player warp menu?
+    appear-playerwarp: false
+    # When a player cancels the sponsor with the permission "pw.admin.sponsor", should it refund the players money?
+    # This will only work if you have the economy as money and not items.
+    cancel-refund: false
+    # The item that will appear when the warp is being sponsored.
+    item:
+      # Should the icon show the customized icon by the player via /pwarp icon if its been set?
+      show-custom-icon: true
+      name: "&b[warp_display]"
+      lore:
+        - "&b[delsponsor]"
+        - " "
+        - "&bOwner: &d[owner]"
+        - "&bLocation: &d[world], [location]"
+        - "&bVisits: &d[visits]"
+        - "&bDescription: "
+        - "&d[desc]"
+        - "&bTeleport Cost: &d[cost]"
+        - " "
+        - "&bTime: &d[time]"
+      # The variable "[delsponsor]" will display the message below if they do have permission to delete the sponsor warp.
+      del-sponsor: "&dShift+Right&b to remove this sponsor.\n[safe]"
+      # The variable "[delsponsor]" will display the message below if they don't have permission to delete the sponsor warp.
+      del-not-sponsor: "&c[safe]"
+
+    # The item that will appear when the player is on cooldown.
+    cooldown:
+      name: "&cSponsor cooldown"
+      material: BARRIER
+      data: 0
+      lore:
+        - "&cYou are currently on cooldown! You have [cooldown] left."
+      amount: 1
+
+  items:
+    # What are the items that are placed into the GUI to make it more pretty?
+    1:
+      # This is the name of the item.
+      name: "&bFavourite"
+      # This is the item material.
+      material: NETHER_STAR
+      # This is the data item
+      data: 0
+      # What is the lore of item?
+      lore:
+        - "&dClick&b to view your favourite warps."
+      # You can add lores!
+      # example of what you can do:
+      # lore:
+      #   - "&bThis is a pane."
+      slot: 0
+      # What is the stack amount?
+      amount: 1
+      # commands that will be executed on click.
+      # [server] means the command is executed as the console
+      # [player] means the command is executed as the player
+      commands:
+        - "[player] %cmd% open favourite"
+      glowing: false
+      all: true
+      # These only work if the skull is a PLAYER_HEAD and the data is 3!
+      #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTZmOGFmYjI3YmFmYzc3YzJiODI1OTljMmY3YjhmMWY2ODMxMGU2YWE5MDRmMDUxYjA3YWIxYzJiNmIifX19 - Skull texture
+      #owner: Glass - Skull owner
+    2:
+      name: " "
+      material: MAGENTA_STAINED_GLASS_PANE
+      data: 2
+      slot: [1, 3, 5, 7, 9, 17, 19, 21, 23, 25]
+      amount: 1
+    3:
+      name: " "
+      material: LIGHT_BLUE_STAINED_GLASS_PANE
+      data: 3
+      slot: [2, 6, 18, 20, 22, 24, 26]
+      amount: 1
+    4:
+      name: "&bVisited Warps"
+      material: ENDER_EYE
+      data: 0
+      lore:
+        - "&dClick&b to view your visited warps."
+      slot: 8
+      amount: 1
+      commands:
+        - "[player] %cmd% open visitedwarps"
+
+  category-items:
+    # What are the items to click on to go to a certain category?
+    # The first category that is used here will be counted as the ALL category where ALL the warps are displayed. You can change the category names if you want.
+
+    all: # This is the name of category.
+      displayname: "All" # This is the display name of the category. This is what will be used to show to the player.
+      name: "&bAll Warps"
+      material: BOOK
+      data: 0
+      lore:
+        - "&dClick&b to view all the warps."
+      slot: 4
+      amount: 1
+      # commands that will be executed on click.
+      # [server] means the command is executed as the console
+      # [player] means the command is executed as the player
+      #commands:
+      #  - "[server] msg %player% you clicked this item!"
+      glowing: false
+      # These only work if the skull is a PLAYER_HEAD and the data is 3!
+      #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzIzZDFjNDVmNDlkZTllOGE4YTEzZDViOWMyYTU4ZDYxZjcyNTljZDQ2OGYzM2M0NzI0Njg2Y2FlODlhOTMifX19 - Skull texture
+      #owner: All - Skull owner
+      # All teleport prices by default will be 50 in this category menu.
+      #teleport-price: 50
+    houses:
+      displayname: "Houses"
+      name: "&bHouse Warps"
+      material: OAK_PLANKS
+      data: 0
+      lore:
+        - "&dClick&b to view all the house warps."
+      slot: 11
+      amount: 1
+    shops:
+      displayname: "Shops"
+      name: "&bShop Warps"
+      material: CHEST
+      data: 0
+      lore:
+        - "&dClick&b to view all the shop warps."
+      slot: 12
+      amount: 1
+      permission: pw.view.shop
+      teleport-price: -1
+      purge-time: 40
+      remove-days-time: 40
+    farms:
+      displayname: "Farms"
+      name: "&bFarm Warps"
+      material: DIAMOND_HOE
+      data: 0
+      lore:
+        - "&dClick&b to view all the farm warps."
+      slot: 13
+      amount: 1
+    pvp:
+      displayname: "PvP"
+      name: "&bPvP Warps"
+      material: DIAMOND_SWORD
+      data: 0
+      lore:
+        - "&dClick&b to view all the pvp warps."
+      slot: 14
+      amount: 1
+    other:
+      displayname: "Other"
+      name: "&bOther Warps"
+      material: PAPER
+      data: 0
+      lore:
+        - "&dClick&b to view all the other warps."
+      slot: 15
+      amount: 1
+
+  sponsor-items:
+    1:
+      # How should the player pay in for this sponsor? If the option below is disabled, the player will have to pay using an item
+      pay-in-price: true
+      pay-item:
+        material: DIAMOND
+        amount: 100
+      price: 100000
+      # Time in seconds
+      time: 172800
+      message: "&bPlease enter the warp name you would like to set."
+      available-commands: []
+      sponsored-commands: []
+      auto: false:online=true
+      repeat:
+        time: 86400
+        commands: []
+      item:
+        name: "&bSponsor slot #1"
+        material: NETHER_STAR
+        data: 0
+        lore:
+          - "&dClick&b to purchase this sponsor slot."
+          - " "
+          - "&bPrice: &d$100,000"
+          - "&bTime for: &d2 days"
+        slot: 20
+        amount: 1
+    2:
+      # How should the player pay in for this sponsor? If the option below is disabled, the player will have to pay using an item
+      pay-in-price: true
+      pay-item:
+        material: DIAMOND
+        amount: 50
+      price: 50000
+      # Time in seconds
+      time: 86400
+      message: "&bPlease enter the warp name you would like to set."
+      available-commands: []
+      sponsored-commands: []
+      auto: false:online=true
+      repeat:
+        time: 43200
+        commands: []
+      item:
+        name: "&bSponsor slot #2"
+        material: NETHER_STAR
+        data: 0
+        lore:
+          - "&dClick&b to purchase this sponsor slot."
+          - " "
+          - "&bPrice: &d$50,000"
+          - "&bTime for: &d1 day"
+        slot: 21
+        amount: 1
+    3:
+      # How should the player pay in for this sponsor? If the option below is disabled, the player will have to pay using an item
+      pay-in-price: true
+      pay-item:
+        material: DIAMOND
+        amount: 35
+      price: 35000
+      # Time in seconds
+      time: 43200
+      message: "&bPlease enter the warp name you would like to set."
+      available-commands: []
+      sponsored-commands: []
+      auto: false:online=true
+      repeat:
+        time: 21600
+        commands: []
+      item:
+        name: "&bSponsor slot #3"
+        material: NETHER_STAR
+        data: 0
+        lore:
+          - "&dClick&b to purchase this sponsor slot."
+          - " "
+          - "&bPrice: &d$35,000"
+          - "&bTime for: &d12 hours"
+        slot: 22
+        amount: 1
+    4:
+      # How should the player pay in for this sponsor? If the option below is disabled, the player will have to pay using an item
+      pay-in-price: true
+      pay-item:
+        material: DIAMOND
+        amount: 10
+      price: 100000
+      # Time in seconds
+      time: 21600
+      message: "&bPlease enter the warp name you would like to set."
+      available-commands: []
+      sponsored-commands: []
+      auto: false:online=true
+      repeat:
+        time: 10800
+        commands: []
+      item:
+        name: "&bSponsor slot #4"
+        material: NETHER_STAR
+        data: 0
+        lore:
+          - "&dClick&b to purchase this sponsor slot."
+          - " "
+          - "&bPrice: &d$25,000"
+          - "&bTime for: &d6 hours"
+        slot: 23
+        amount: 1
+    5:
+      # How should the player pay in for this sponsor? If the option below is disabled, the player will have to pay using an item
+      pay-in-price: true
+      pay-item:
+        material: DIAMOND
+        amount: 1
+      price: 10000
+      # Time in seconds
+      time: 3600
+      message: "&bPlease enter the warp name you would like to set."
+      available-commands: []
+      sponsored-commands: []
+      auto: false:online=true
+      repeat:
+        time: 1800
+        commands: []
+      item:
+        name: "&bSponsor slot #5"
+        material: NETHER_STAR
+        data: 0
+        lore:
+          - "&dClick&b to purchase this sponsor slot."
+          - " "
+          - "&bPrice: &d$10,000"
+          - "&bTime for: &d1 hour"
+        slot: 24
+        amount: 1

@@ -1,0 +1,5609 @@
+Items:
+  AIR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 空气
+  STONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 石头
+  GRANITE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 花岗岩
+  POLISHED_GRANITE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制花岗岩
+  DIORITE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 闪长岩
+  POLISHED_DIORITE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制闪长岩
+  ANDESITE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 安山岩
+  POLISHED_ANDESITE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制安山岩
+  DEEPSLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深板岩
+  COBBLED_DEEPSLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深板岩圆石
+  POLISHED_DEEPSLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制深板岩
+  CALCITE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 方解石
+  TUFF:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 凝灰岩
+  DRIPSTONE_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 滴水石块
+  GRASS_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 草方块
+  DIRT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 泥土
+  COARSE_DIRT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 砂土
+  PODZOL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 灰化土
+  ROOTED_DIRT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 缠根泥土
+  MUD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 泥巴
+  CRIMSON_NYLIUM:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绯红菌岩
+  WARPED_NYLIUM:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 诡异菌岩
+  COBBLESTONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 圆石
+  OAK_PLANKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橡木木板
+  SPRUCE_PLANKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 云杉木板
+  BIRCH_PLANKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白桦木板
+  JUNGLE_PLANKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 丛林木板
+  ACACIA_PLANKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金合欢木板
+  CHERRY_PLANKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 樱花木板
+  DARK_OAK_PLANKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深色橡木木板
+  MANGROVE_PLANKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红树木板
+  BAMBOO_PLANKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 竹板
+  CRIMSON_PLANKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绯红木板
+  WARPED_PLANKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 诡异木板
+  BAMBOO_MOSAIC:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 竹马赛克
+  OAK_SAPLING:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橡树树苗
+  SPRUCE_SAPLING:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 云杉树苗
+  BIRCH_SAPLING:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白桦树苗
+  JUNGLE_SAPLING:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 丛林树苗
+  ACACIA_SAPLING:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金合欢树苗
+  CHERRY_SAPLING:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 樱花树苗
+  DARK_OAK_SAPLING:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深色橡树树苗
+  MANGROVE_PROPAGULE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红树胎生苗
+  BEDROCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 基岩
+  SAND:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 沙子
+  SUSPICIOUS_SAND:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 可疑的沙子
+  SUSPICIOUS_GRAVEL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 可疑的沙砾
+  RED_SAND:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红沙
+  GRAVEL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 沙砾
+  COAL_ORE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 煤矿石
+  DEEPSLATE_COAL_ORE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深层煤矿石
+  IRON_ORE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铁矿石
+  DEEPSLATE_IRON_ORE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深层铁矿石
+  COPPER_ORE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铜矿石
+  DEEPSLATE_COPPER_ORE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深层铜矿石
+  GOLD_ORE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金矿石
+  DEEPSLATE_GOLD_ORE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深层金矿石
+  REDSTONE_ORE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红石矿石
+  DEEPSLATE_REDSTONE_ORE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深层红石矿石
+  EMERALD_ORE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绿宝石矿石
+  DEEPSLATE_EMERALD_ORE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深层绿宝石矿石
+  LAPIS_ORE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 青金石矿石
+  DEEPSLATE_LAPIS_ORE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深层青金石矿石
+  DIAMOND_ORE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 钻石矿石
+  DEEPSLATE_DIAMOND_ORE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深层钻石矿石
+  NETHER_GOLD_ORE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界金矿石
+  NETHER_QUARTZ_ORE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界石英矿石
+  ANCIENT_DEBRIS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 远古残骸
+  COAL_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 煤炭块
+  RAW_IRON_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 粗铁块
+  RAW_COPPER_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 粗铜块
+  RAW_GOLD_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 粗金块
+  AMETHYST_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫水晶块
+  BUDDING_AMETHYST:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫水晶母岩
+  IRON_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铁块
+  COPPER_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铜块
+  GOLD_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金块
+  DIAMOND_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 钻石块
+  NETHERITE_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界合金块
+  EXPOSED_COPPER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 斑驳的铜块
+  WEATHERED_COPPER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 锈蚀的铜块
+  OXIDIZED_COPPER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 氧化的铜块
+  CUT_COPPER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 切制铜块
+  EXPOSED_CUT_COPPER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 斑驳的切制铜块
+  WEATHERED_CUT_COPPER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 锈蚀的切制铜块
+  OXIDIZED_CUT_COPPER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 氧化的切制铜块
+  CUT_COPPER_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 切制铜楼梯
+  EXPOSED_CUT_COPPER_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 斑驳的切制铜楼梯
+  WEATHERED_CUT_COPPER_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 锈蚀的切制铜楼梯
+  OXIDIZED_CUT_COPPER_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 氧化的切制铜楼梯
+  CUT_COPPER_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 切制铜台阶
+  EXPOSED_CUT_COPPER_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 斑驳的切制铜台阶
+  WEATHERED_CUT_COPPER_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 锈蚀的切制铜台阶
+  OXIDIZED_CUT_COPPER_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 氧化的切制铜台阶
+  WAXED_COPPER_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 涂蜡的铜块
+  WAXED_EXPOSED_COPPER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 涂蜡的斑驳铜块
+  WAXED_WEATHERED_COPPER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 涂蜡的锈蚀铜块
+  WAXED_OXIDIZED_COPPER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 涂蜡的氧化铜块
+  WAXED_CUT_COPPER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 涂蜡的切制铜块
+  WAXED_EXPOSED_CUT_COPPER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 涂蜡的斑驳切制铜块
+  WAXED_WEATHERED_CUT_COPPER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 涂蜡的锈蚀切制铜块
+  WAXED_OXIDIZED_CUT_COPPER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 涂蜡的氧化切制铜块
+  WAXED_CUT_COPPER_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 涂蜡的切制铜楼梯
+  WAXED_EXPOSED_CUT_COPPER_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 涂蜡的斑驳切制铜楼梯
+  WAXED_WEATHERED_CUT_COPPER_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 涂蜡的锈蚀切制铜楼梯
+  WAXED_OXIDIZED_CUT_COPPER_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 涂蜡的氧化切制铜楼梯
+  WAXED_CUT_COPPER_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 涂蜡的切制铜台阶
+  WAXED_EXPOSED_CUT_COPPER_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 涂蜡的斑驳切制铜台阶
+  WAXED_WEATHERED_CUT_COPPER_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 涂蜡的锈蚀切制铜台阶
+  WAXED_OXIDIZED_CUT_COPPER_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 涂蜡的氧化切制铜台阶
+  OAK_LOG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橡木原木
+  SPRUCE_LOG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 云杉原木
+  BIRCH_LOG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白桦原木
+  JUNGLE_LOG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 丛林原木
+  ACACIA_LOG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金合欢原木
+  CHERRY_LOG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 樱花原木
+  DARK_OAK_LOG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深色橡木原木
+  MANGROVE_LOG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红树原木
+  MANGROVE_ROOTS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红树根
+  MUDDY_MANGROVE_ROOTS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 沾泥的红树根
+  CRIMSON_STEM:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绯红菌柄
+  WARPED_STEM:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 诡异菌柄
+  BAMBOO_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 竹块
+  STRIPPED_OAK_LOG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 去皮橡木原木
+  STRIPPED_SPRUCE_LOG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 去皮云杉原木
+  STRIPPED_BIRCH_LOG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 去皮白桦原木
+  STRIPPED_JUNGLE_LOG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 去皮丛林原木
+  STRIPPED_ACACIA_LOG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 去皮金合欢原木
+  STRIPPED_CHERRY_LOG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 去皮樱花原木
+  STRIPPED_DARK_OAK_LOG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 去皮深色橡木原木
+  STRIPPED_MANGROVE_LOG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 去皮红树原木
+  STRIPPED_CRIMSON_STEM:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 去皮绯红菌柄
+  STRIPPED_WARPED_STEM:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 去皮诡异菌柄
+  STRIPPED_OAK_WOOD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 去皮橡木
+  STRIPPED_SPRUCE_WOOD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 去皮云杉木
+  STRIPPED_BIRCH_WOOD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 去皮白桦木
+  STRIPPED_JUNGLE_WOOD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 去皮丛林木
+  STRIPPED_ACACIA_WOOD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 去皮金合欢木
+  STRIPPED_CHERRY_WOOD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 去皮樱花木
+  STRIPPED_DARK_OAK_WOOD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 去皮深色橡木
+  STRIPPED_MANGROVE_WOOD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 去皮红树木
+  STRIPPED_CRIMSON_HYPHAE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 去皮绯红菌核
+  STRIPPED_WARPED_HYPHAE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 去皮诡异菌核
+  STRIPPED_BAMBOO_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 去皮竹块
+  OAK_WOOD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橡木
+  SPRUCE_WOOD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 云杉木
+  BIRCH_WOOD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白桦木
+  JUNGLE_WOOD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 丛林木
+  ACACIA_WOOD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金合欢木
+  CHERRY_WOOD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 樱花木
+  DARK_OAK_WOOD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深色橡木
+  MANGROVE_WOOD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红树木
+  CRIMSON_HYPHAE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绯红菌核
+  WARPED_HYPHAE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 诡异菌核
+  OAK_LEAVES:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橡树树叶
+  SPRUCE_LEAVES:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 云杉树叶
+  BIRCH_LEAVES:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白桦树叶
+  JUNGLE_LEAVES:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 丛林树叶
+  ACACIA_LEAVES:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金合欢树叶
+  CHERRY_LEAVES:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 樱花树叶
+  DARK_OAK_LEAVES:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深色橡树树叶
+  MANGROVE_LEAVES:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红树树叶
+  AZALEA_LEAVES:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 杜鹃树叶
+  FLOWERING_AZALEA_LEAVES:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 盛开的杜鹃树叶
+  SPONGE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 海绵
+  WET_SPONGE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 湿海绵
+  GLASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 玻璃
+  TINTED_GLASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 遮光玻璃
+  LAPIS_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 青金石块
+  SANDSTONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 砂岩
+  CHISELED_SANDSTONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 雕纹砂岩
+  CUT_SANDSTONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 切制砂岩
+  COBWEB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蜘蛛网
+  GRASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 草
+  FERN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蕨
+  AZALEA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 杜鹃花丛
+  FLOWERING_AZALEA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 盛开的杜鹃花丛
+  DEAD_BUSH:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 枯萎的灌木
+  SEAGRASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 海草
+  SEA_PICKLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 海泡菜
+  WHITE_WOOL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白色羊毛
+  ORANGE_WOOL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橙色羊毛
+  MAGENTA_WOOL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 品红色羊毛
+  LIGHT_BLUE_WOOL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡蓝色羊毛
+  YELLOW_WOOL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄色羊毛
+  LIME_WOOL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄绿色羊毛
+  PINK_WOOL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 粉红色羊毛
+  GRAY_WOOL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 灰色羊毛
+  LIGHT_GRAY_WOOL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡灰色羊毛
+  CYAN_WOOL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 青色羊毛
+  PURPLE_WOOL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫色羊毛
+  BLUE_WOOL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蓝色羊毛
+  BROWN_WOOL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 棕色羊毛
+  GREEN_WOOL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绿色羊毛
+  RED_WOOL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红色羊毛
+  BLACK_WOOL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黑色羊毛
+  DANDELION:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蒲公英
+  POPPY:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 虞美人
+  BLUE_ORCHID:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 兰花
+  ALLIUM:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绒球葱
+  AZURE_BLUET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蓝花美耳草
+  RED_TULIP:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红色郁金香
+  ORANGE_TULIP:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橙色郁金香
+  WHITE_TULIP:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白色郁金香
+  PINK_TULIP:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 粉红色郁金香
+  OXEYE_DAISY:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 滨菊
+  CORNFLOWER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 矢车菊
+  LILY_OF_THE_VALLEY:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铃兰
+  WITHER_ROSE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 凋灵玫瑰
+  TORCHFLOWER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 火把花
+  PITCHER_PLANT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 瓶子草
+  SPORE_BLOSSOM:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 孢子花
+  BROWN_MUSHROOM:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 棕色蘑菇
+  RED_MUSHROOM:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红色蘑菇
+  CRIMSON_FUNGUS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绯红菌
+  WARPED_FUNGUS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 诡异菌
+  CRIMSON_ROOTS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绯红菌索
+  WARPED_ROOTS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 诡异菌索
+  NETHER_SPROUTS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界苗
+  WEEPING_VINES:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 垂泪藤
+  TWISTING_VINES:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 缠怨藤
+  SUGAR_CANE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 甘蔗
+  KELP:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 海带
+  MOSS_CARPET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 覆地苔藓
+  PINK_PETALS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 粉红色花簇
+  MOSS_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 苔藓块
+  HANGING_ROOTS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 垂根
+  BIG_DRIPLEAF:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 大型垂滴叶
+  SMALL_DRIPLEAF:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 小型垂滴叶
+  BAMBOO:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 竹子
+  OAK_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橡木台阶
+  SPRUCE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 云杉木台阶
+  BIRCH_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白桦木台阶
+  JUNGLE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 丛林木台阶
+  ACACIA_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金合欢木台阶
+  CHERRY_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 樱花木台阶
+  DARK_OAK_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深色橡木台阶
+  MANGROVE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红树木台阶
+  BAMBOO_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 竹台阶
+  BAMBOO_MOSAIC_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 竹马赛克台阶
+  CRIMSON_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绯红木台阶
+  WARPED_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 诡异木台阶
+  STONE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 石头台阶
+  SMOOTH_STONE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 平滑石头台阶
+  SANDSTONE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 砂岩台阶
+  CUT_SANDSTONE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 切制砂岩台阶
+  PETRIFIED_OAK_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 石化橡木台阶
+  COBBLESTONE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 圆石台阶
+  BRICK_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红砖台阶
+  STONE_BRICK_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 石砖台阶
+  MUD_BRICK_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 泥砖台阶
+  NETHER_BRICK_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界砖台阶
+  QUARTZ_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 石英台阶
+  RED_SANDSTONE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红砂岩台阶
+  CUT_RED_SANDSTONE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 切制红砂岩台阶
+  PURPUR_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫珀台阶
+  PRISMARINE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 海晶石台阶
+  PRISMARINE_BRICK_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 海晶石砖台阶
+  DARK_PRISMARINE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 暗海晶石台阶
+  SMOOTH_QUARTZ:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 平滑石英块
+  SMOOTH_RED_SANDSTONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 平滑红砂岩
+  SMOOTH_SANDSTONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 平滑砂岩
+  SMOOTH_STONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 平滑石头
+  BRICKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红砖块
+  BOOKSHELF:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 书架
+  CHISELED_BOOKSHELF:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 雕纹书架
+  DECORATED_POT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 饰纹陶罐
+  MOSSY_COBBLESTONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 苔石
+  OBSIDIAN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黑曜石
+  TORCH:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 火把
+  END_ROD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 末地烛
+  CHORUS_PLANT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫颂植株
+  CHORUS_FLOWER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫颂花
+  PURPUR_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫珀块
+  PURPUR_PILLAR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫珀柱
+  PURPUR_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫珀楼梯
+  SPAWNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: Spawner
+  CHEST:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 箱子
+  CRAFTING_TABLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 工作台
+  FARMLAND:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 耕地
+  FURNACE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 熔炉
+  LADDER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 梯子
+  COBBLESTONE_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 圆石楼梯
+  SNOW:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 雪
+  ICE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 冰
+  SNOW_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 雪块
+  CACTUS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 仙人掌
+  CLAY:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黏土块
+  JUKEBOX:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 唱片机
+  OAK_FENCE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橡木栅栏
+  SPRUCE_FENCE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 云杉木栅栏
+  BIRCH_FENCE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白桦木栅栏
+  JUNGLE_FENCE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 丛林木栅栏
+  ACACIA_FENCE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金合欢木栅栏
+  CHERRY_FENCE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 樱花木栅栏
+  DARK_OAK_FENCE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深色橡木栅栏
+  MANGROVE_FENCE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红树木栅栏
+  BAMBOO_FENCE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 竹栅栏
+  CRIMSON_FENCE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绯红木栅栏
+  WARPED_FENCE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 诡异木栅栏
+  PUMPKIN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 南瓜
+  CARVED_PUMPKIN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 雕刻南瓜
+  JACK_O_LANTERN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 南瓜灯
+  NETHERRACK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界岩
+  SOUL_SAND:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 灵魂沙
+  SOUL_SOIL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 灵魂土
+  BASALT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 玄武岩
+  POLISHED_BASALT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制玄武岩
+  SMOOTH_BASALT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 平滑玄武岩
+  SOUL_TORCH:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 灵魂火把
+  GLOWSTONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 荧石
+  INFESTED_STONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 虫蚀石头
+  INFESTED_COBBLESTONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 虫蚀圆石
+  INFESTED_STONE_BRICKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 虫蚀石砖
+  INFESTED_MOSSY_STONE_BRICKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 虫蚀苔石砖
+  INFESTED_CRACKED_STONE_BRICKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 虫蚀裂纹石砖
+  INFESTED_CHISELED_STONE_BRICKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 虫蚀雕纹石砖
+  INFESTED_DEEPSLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 虫蚀深板岩
+  STONE_BRICKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 石砖
+  MOSSY_STONE_BRICKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 苔石砖
+  CRACKED_STONE_BRICKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 裂纹石砖
+  CHISELED_STONE_BRICKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 雕纹石砖
+  PACKED_MUD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 泥坯
+  MUD_BRICKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 泥砖
+  DEEPSLATE_BRICKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深板岩砖
+  CRACKED_DEEPSLATE_BRICKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 裂纹深板岩砖
+  DEEPSLATE_TILES:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深板岩瓦
+  CRACKED_DEEPSLATE_TILES:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 裂纹深板岩瓦
+  CHISELED_DEEPSLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 雕纹深板岩
+  REINFORCED_DEEPSLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 强化深板岩
+  BROWN_MUSHROOM_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 棕色蘑菇方块
+  RED_MUSHROOM_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红色蘑菇方块
+  MUSHROOM_STEM:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蘑菇柄
+  IRON_BARS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铁栏杆
+  CHAIN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 锁链
+  GLASS_PANE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 玻璃板
+  MELON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 西瓜
+  VINE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 藤蔓
+  GLOW_LICHEN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 发光地衣
+  BRICK_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红砖楼梯
+  STONE_BRICK_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 石砖楼梯
+  MUD_BRICK_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 泥砖楼梯
+  MYCELIUM:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 菌丝体
+  LILY_PAD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 睡莲
+  NETHER_BRICKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界砖块
+  CRACKED_NETHER_BRICKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 裂纹下界砖块
+  CHISELED_NETHER_BRICKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 雕纹下界砖块
+  NETHER_BRICK_FENCE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界砖栅栏
+  NETHER_BRICK_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界砖楼梯
+  SCULK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 幽匿块
+  SCULK_VEIN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 幽匿脉络
+  SCULK_CATALYST:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 幽匿催发体
+  SCULK_SHRIEKER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 幽匿尖啸体
+  ENCHANTING_TABLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 附魔台
+  END_PORTAL_FRAME:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 末地传送门框架
+  END_STONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 末地石
+  END_STONE_BRICKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 末地石砖
+  DRAGON_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 龙蛋
+  SANDSTONE_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 砂岩楼梯
+  ENDER_CHEST:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 末影箱
+  EMERALD_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绿宝石块
+  OAK_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橡木楼梯
+  SPRUCE_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 云杉木楼梯
+  BIRCH_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白桦木楼梯
+  JUNGLE_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 丛林木楼梯
+  ACACIA_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金合欢木楼梯
+  CHERRY_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 樱花木楼梯
+  DARK_OAK_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深色橡木楼梯
+  MANGROVE_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红树木楼梯
+  BAMBOO_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 竹楼梯
+  BAMBOO_MOSAIC_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 竹马赛克楼梯
+  CRIMSON_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绯红木楼梯
+  WARPED_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 诡异木楼梯
+  COMMAND_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 命令方块
+  BEACON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 信标
+  COBBLESTONE_WALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 圆石墙
+  MOSSY_COBBLESTONE_WALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 苔石墙
+  BRICK_WALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红砖墙
+  PRISMARINE_WALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 海晶石墙
+  RED_SANDSTONE_WALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红砂岩墙
+  MOSSY_STONE_BRICK_WALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 苔石砖墙
+  GRANITE_WALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 花岗岩墙
+  STONE_BRICK_WALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 石砖墙
+  MUD_BRICK_WALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 泥砖墙
+  NETHER_BRICK_WALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界砖墙
+  ANDESITE_WALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 安山岩墙
+  RED_NETHER_BRICK_WALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红色下界砖墙
+  SANDSTONE_WALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 砂岩墙
+  END_STONE_BRICK_WALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 末地石砖墙
+  DIORITE_WALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 闪长岩墙
+  BLACKSTONE_WALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黑石墙
+  POLISHED_BLACKSTONE_WALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制黑石墙
+  POLISHED_BLACKSTONE_BRICK_WALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制黑石砖墙
+  COBBLED_DEEPSLATE_WALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深板岩圆石墙
+  POLISHED_DEEPSLATE_WALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制深板岩墙
+  DEEPSLATE_BRICK_WALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深板岩砖墙
+  DEEPSLATE_TILE_WALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深板岩瓦墙
+  ANVIL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铁砧
+  CHIPPED_ANVIL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 开裂的铁砧
+  DAMAGED_ANVIL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 损坏的铁砧
+  CHISELED_QUARTZ_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 雕纹石英块
+  QUARTZ_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 石英块
+  QUARTZ_BRICKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 石英砖
+  QUARTZ_PILLAR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 石英柱
+  QUARTZ_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 石英楼梯
+  WHITE_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白色陶瓦
+  ORANGE_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橙色陶瓦
+  MAGENTA_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 品红色陶瓦
+  LIGHT_BLUE_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡蓝色陶瓦
+  YELLOW_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄色陶瓦
+  LIME_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄绿色陶瓦
+  PINK_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 粉红色陶瓦
+  GRAY_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 灰色陶瓦
+  LIGHT_GRAY_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡灰色陶瓦
+  CYAN_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 青色陶瓦
+  PURPLE_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫色陶瓦
+  BLUE_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蓝色陶瓦
+  BROWN_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 棕色陶瓦
+  GREEN_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绿色陶瓦
+  RED_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红色陶瓦
+  BLACK_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黑色陶瓦
+  BARRIER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 屏障
+  LIGHT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 光源方块
+  HAY_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 干草捆
+  WHITE_CARPET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白色地毯
+  ORANGE_CARPET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橙色地毯
+  MAGENTA_CARPET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 品红色地毯
+  LIGHT_BLUE_CARPET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡蓝色地毯
+  YELLOW_CARPET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄色地毯
+  LIME_CARPET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄绿色地毯
+  PINK_CARPET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 粉红色地毯
+  GRAY_CARPET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 灰色地毯
+  LIGHT_GRAY_CARPET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡灰色地毯
+  CYAN_CARPET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 青色地毯
+  PURPLE_CARPET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫色地毯
+  BLUE_CARPET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蓝色地毯
+  BROWN_CARPET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 棕色地毯
+  GREEN_CARPET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绿色地毯
+  RED_CARPET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红色地毯
+  BLACK_CARPET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黑色地毯
+  TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 陶瓦
+  PACKED_ICE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 浮冰
+  DIRT_PATH:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 土径
+  SUNFLOWER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 向日葵
+  LILAC:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 丁香
+  ROSE_BUSH:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 玫瑰丛
+  PEONY:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 牡丹
+  TALL_GRASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 高草丛
+  LARGE_FERN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 大型蕨
+  WHITE_STAINED_GLASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白色染色玻璃
+  ORANGE_STAINED_GLASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橙色染色玻璃
+  MAGENTA_STAINED_GLASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 品红色染色玻璃
+  LIGHT_BLUE_STAINED_GLASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡蓝色染色玻璃
+  YELLOW_STAINED_GLASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄色染色玻璃
+  LIME_STAINED_GLASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄绿色染色玻璃
+  PINK_STAINED_GLASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 粉红色染色玻璃
+  GRAY_STAINED_GLASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 灰色染色玻璃
+  LIGHT_GRAY_STAINED_GLASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡灰色染色玻璃
+  CYAN_STAINED_GLASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 青色染色玻璃
+  PURPLE_STAINED_GLASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫色染色玻璃
+  BLUE_STAINED_GLASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蓝色染色玻璃
+  BROWN_STAINED_GLASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 棕色染色玻璃
+  GREEN_STAINED_GLASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绿色染色玻璃
+  RED_STAINED_GLASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红色染色玻璃
+  BLACK_STAINED_GLASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黑色染色玻璃
+  WHITE_STAINED_GLASS_PANE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白色染色玻璃板
+  ORANGE_STAINED_GLASS_PANE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橙色染色玻璃板
+  MAGENTA_STAINED_GLASS_PANE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 品红色染色玻璃板
+  LIGHT_BLUE_STAINED_GLASS_PANE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡蓝色染色玻璃板
+  YELLOW_STAINED_GLASS_PANE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄色染色玻璃板
+  LIME_STAINED_GLASS_PANE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄绿色染色玻璃板
+  PINK_STAINED_GLASS_PANE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 粉红色染色玻璃板
+  GRAY_STAINED_GLASS_PANE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 灰色染色玻璃板
+  LIGHT_GRAY_STAINED_GLASS_PANE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡灰色染色玻璃板
+  CYAN_STAINED_GLASS_PANE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 青色染色玻璃板
+  PURPLE_STAINED_GLASS_PANE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫色染色玻璃板
+  BLUE_STAINED_GLASS_PANE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蓝色染色玻璃板
+  BROWN_STAINED_GLASS_PANE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 棕色染色玻璃板
+  GREEN_STAINED_GLASS_PANE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绿色染色玻璃板
+  RED_STAINED_GLASS_PANE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红色染色玻璃板
+  BLACK_STAINED_GLASS_PANE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黑色染色玻璃板
+  PRISMARINE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 海晶石
+  PRISMARINE_BRICKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 海晶石砖
+  DARK_PRISMARINE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 暗海晶石
+  PRISMARINE_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 海晶石楼梯
+  PRISMARINE_BRICK_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 海晶石砖楼梯
+  DARK_PRISMARINE_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 暗海晶石楼梯
+  SEA_LANTERN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 海晶灯
+  RED_SANDSTONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红砂岩
+  CHISELED_RED_SANDSTONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 雕纹红砂岩
+  CUT_RED_SANDSTONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 切制红砂岩
+  RED_SANDSTONE_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红砂岩楼梯
+  REPEATING_COMMAND_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 循环型命令方块
+  CHAIN_COMMAND_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 连锁型命令方块
+  MAGMA_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 岩浆块
+  NETHER_WART_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界疣块
+  WARPED_WART_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 诡异疣块
+  RED_NETHER_BRICKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红色下界砖块
+  BONE_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 骨块
+  STRUCTURE_VOID:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 结构空位
+  SHULKER_BOX:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 潜影盒
+  WHITE_SHULKER_BOX:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白色潜影盒
+  ORANGE_SHULKER_BOX:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橙色潜影盒
+  MAGENTA_SHULKER_BOX:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 品红色潜影盒
+  LIGHT_BLUE_SHULKER_BOX:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡蓝色潜影盒
+  YELLOW_SHULKER_BOX:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄色潜影盒
+  LIME_SHULKER_BOX:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄绿色潜影盒
+  PINK_SHULKER_BOX:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 粉红色潜影盒
+  GRAY_SHULKER_BOX:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 灰色潜影盒
+  LIGHT_GRAY_SHULKER_BOX:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡灰色潜影盒
+  CYAN_SHULKER_BOX:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 青色潜影盒
+  PURPLE_SHULKER_BOX:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫色潜影盒
+  BLUE_SHULKER_BOX:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蓝色潜影盒
+  BROWN_SHULKER_BOX:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 棕色潜影盒
+  GREEN_SHULKER_BOX:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绿色潜影盒
+  RED_SHULKER_BOX:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红色潜影盒
+  BLACK_SHULKER_BOX:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黑色潜影盒
+  WHITE_GLAZED_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白色带釉陶瓦
+  ORANGE_GLAZED_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橙色带釉陶瓦
+  MAGENTA_GLAZED_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 品红色带釉陶瓦
+  LIGHT_BLUE_GLAZED_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡蓝色带釉陶瓦
+  YELLOW_GLAZED_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄色带釉陶瓦
+  LIME_GLAZED_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄绿色带釉陶瓦
+  PINK_GLAZED_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 粉红色带釉陶瓦
+  GRAY_GLAZED_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 灰色带釉陶瓦
+  LIGHT_GRAY_GLAZED_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡灰色带釉陶瓦
+  CYAN_GLAZED_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 青色带釉陶瓦
+  PURPLE_GLAZED_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫色带釉陶瓦
+  BLUE_GLAZED_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蓝色带釉陶瓦
+  BROWN_GLAZED_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 棕色带釉陶瓦
+  GREEN_GLAZED_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绿色带釉陶瓦
+  RED_GLAZED_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红色带釉陶瓦
+  BLACK_GLAZED_TERRACOTTA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黑色带釉陶瓦
+  WHITE_CONCRETE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白色混凝土
+  ORANGE_CONCRETE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橙色混凝土
+  MAGENTA_CONCRETE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 品红色混凝土
+  LIGHT_BLUE_CONCRETE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡蓝色混凝土
+  YELLOW_CONCRETE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄色混凝土
+  LIME_CONCRETE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄绿色混凝土
+  PINK_CONCRETE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 粉红色混凝土
+  GRAY_CONCRETE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 灰色混凝土
+  LIGHT_GRAY_CONCRETE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡灰色混凝土
+  CYAN_CONCRETE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 青色混凝土
+  PURPLE_CONCRETE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫色混凝土
+  BLUE_CONCRETE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蓝色混凝土
+  BROWN_CONCRETE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 棕色混凝土
+  GREEN_CONCRETE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绿色混凝土
+  RED_CONCRETE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红色混凝土
+  BLACK_CONCRETE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黑色混凝土
+  WHITE_CONCRETE_POWDER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白色混凝土粉末
+  ORANGE_CONCRETE_POWDER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橙色混凝土粉末
+  MAGENTA_CONCRETE_POWDER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 品红色混凝土粉末
+  LIGHT_BLUE_CONCRETE_POWDER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡蓝色混凝土粉末
+  YELLOW_CONCRETE_POWDER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄色混凝土粉末
+  LIME_CONCRETE_POWDER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄绿色混凝土粉末
+  PINK_CONCRETE_POWDER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 粉红色混凝土粉末
+  GRAY_CONCRETE_POWDER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 灰色混凝土粉末
+  LIGHT_GRAY_CONCRETE_POWDER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡灰色混凝土粉末
+  CYAN_CONCRETE_POWDER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 青色混凝土粉末
+  PURPLE_CONCRETE_POWDER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫色混凝土粉末
+  BLUE_CONCRETE_POWDER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蓝色混凝土粉末
+  BROWN_CONCRETE_POWDER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 棕色混凝土粉末
+  GREEN_CONCRETE_POWDER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绿色混凝土粉末
+  RED_CONCRETE_POWDER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红色混凝土粉末
+  BLACK_CONCRETE_POWDER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黑色混凝土粉末
+  TURTLE_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 海龟蛋
+  SNIFFER_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 嗅探兽蛋
+  DEAD_TUBE_CORAL_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 失活的管珊瑚块
+  DEAD_BRAIN_CORAL_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 失活的脑纹珊瑚块
+  DEAD_BUBBLE_CORAL_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 失活的气泡珊瑚块
+  DEAD_FIRE_CORAL_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 失活的火珊瑚块
+  DEAD_HORN_CORAL_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 失活的鹿角珊瑚块
+  TUBE_CORAL_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 管珊瑚块
+  BRAIN_CORAL_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 脑纹珊瑚块
+  BUBBLE_CORAL_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 气泡珊瑚块
+  FIRE_CORAL_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 火珊瑚块
+  HORN_CORAL_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 鹿角珊瑚块
+  TUBE_CORAL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 管珊瑚
+  BRAIN_CORAL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 脑纹珊瑚
+  BUBBLE_CORAL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 气泡珊瑚
+  FIRE_CORAL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 火珊瑚
+  HORN_CORAL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 鹿角珊瑚
+  DEAD_BRAIN_CORAL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 失活的脑纹珊瑚
+  DEAD_BUBBLE_CORAL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 失活的气泡珊瑚
+  DEAD_FIRE_CORAL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 失活的火珊瑚
+  DEAD_HORN_CORAL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 失活的鹿角珊瑚
+  DEAD_TUBE_CORAL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 失活的管珊瑚
+  TUBE_CORAL_FAN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 管珊瑚扇
+  BRAIN_CORAL_FAN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 脑纹珊瑚扇
+  BUBBLE_CORAL_FAN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 气泡珊瑚扇
+  FIRE_CORAL_FAN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 火珊瑚扇
+  HORN_CORAL_FAN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 鹿角珊瑚扇
+  DEAD_TUBE_CORAL_FAN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 失活的管珊瑚扇
+  DEAD_BRAIN_CORAL_FAN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 失活的脑纹珊瑚扇
+  DEAD_BUBBLE_CORAL_FAN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 失活的气泡珊瑚扇
+  DEAD_FIRE_CORAL_FAN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 失活的火珊瑚扇
+  DEAD_HORN_CORAL_FAN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 失活的鹿角珊瑚扇
+  BLUE_ICE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蓝冰
+  CONDUIT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 潮涌核心
+  POLISHED_GRANITE_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制花岗岩楼梯
+  SMOOTH_RED_SANDSTONE_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 平滑红砂岩楼梯
+  MOSSY_STONE_BRICK_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 苔石砖楼梯
+  POLISHED_DIORITE_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制闪长岩楼梯
+  MOSSY_COBBLESTONE_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 苔石楼梯
+  END_STONE_BRICK_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 末地石砖楼梯
+  STONE_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 石头楼梯
+  SMOOTH_SANDSTONE_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 平滑砂岩楼梯
+  SMOOTH_QUARTZ_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 平滑石英楼梯
+  GRANITE_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 花岗岩楼梯
+  ANDESITE_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 安山岩楼梯
+  RED_NETHER_BRICK_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红色下界砖楼梯
+  POLISHED_ANDESITE_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制安山岩楼梯
+  DIORITE_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 闪长岩楼梯
+  COBBLED_DEEPSLATE_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深板岩圆石楼梯
+  POLISHED_DEEPSLATE_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制深板岩楼梯
+  DEEPSLATE_BRICK_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深板岩砖楼梯
+  DEEPSLATE_TILE_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深板岩瓦楼梯
+  POLISHED_GRANITE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制花岗岩台阶
+  SMOOTH_RED_SANDSTONE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 平滑红砂岩台阶
+  MOSSY_STONE_BRICK_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 苔石砖台阶
+  POLISHED_DIORITE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制闪长岩台阶
+  MOSSY_COBBLESTONE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 苔石台阶
+  END_STONE_BRICK_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 末地石砖台阶
+  SMOOTH_SANDSTONE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 平滑砂岩台阶
+  SMOOTH_QUARTZ_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 平滑石英台阶
+  GRANITE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 花岗岩台阶
+  ANDESITE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 安山岩台阶
+  RED_NETHER_BRICK_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红色下界砖台阶
+  POLISHED_ANDESITE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制安山岩台阶
+  DIORITE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 闪长岩台阶
+  COBBLED_DEEPSLATE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深板岩圆石台阶
+  POLISHED_DEEPSLATE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制深板岩台阶
+  DEEPSLATE_BRICK_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深板岩砖台阶
+  DEEPSLATE_TILE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深板岩瓦台阶
+  SCAFFOLDING:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 脚手架
+  REDSTONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红石粉
+  REDSTONE_TORCH:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红石火把
+  REDSTONE_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红石块
+  REPEATER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红石中继器
+  COMPARATOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红石比较器
+  PISTON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 活塞
+  STICKY_PISTON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黏性活塞
+  SLIME_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黏液块
+  HONEY_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蜂蜜块
+  OBSERVER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 侦测器
+  HOPPER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 漏斗
+  DISPENSER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 发射器
+  DROPPER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 投掷器
+  LECTERN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 讲台
+  TARGET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 标靶
+  LEVER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 拉杆
+  LIGHTNING_ROD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 避雷针
+  DAYLIGHT_DETECTOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 阳光探测器
+  SCULK_SENSOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 幽匿感测体
+  CALIBRATED_SCULK_SENSOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 校频幽匿感测体
+  TRIPWIRE_HOOK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绊线钩
+  TRAPPED_CHEST:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 陷阱箱
+  TNT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: Tnt
+  REDSTONE_LAMP:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红石灯
+  NOTE_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 音符盒
+  STONE_BUTTON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 石头按钮
+  POLISHED_BLACKSTONE_BUTTON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制黑石按钮
+  OAK_BUTTON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橡木按钮
+  SPRUCE_BUTTON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 云杉木按钮
+  BIRCH_BUTTON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白桦木按钮
+  JUNGLE_BUTTON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 丛林木按钮
+  ACACIA_BUTTON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金合欢木按钮
+  CHERRY_BUTTON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 樱花木按钮
+  DARK_OAK_BUTTON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深色橡木按钮
+  MANGROVE_BUTTON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红树木按钮
+  BAMBOO_BUTTON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 竹按钮
+  CRIMSON_BUTTON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绯红木按钮
+  WARPED_BUTTON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 诡异木按钮
+  STONE_PRESSURE_PLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 石头压力板
+  POLISHED_BLACKSTONE_PRESSURE_PLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制黑石压力板
+  LIGHT_WEIGHTED_PRESSURE_PLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 轻质测重压力板
+  HEAVY_WEIGHTED_PRESSURE_PLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 重质测重压力板
+  OAK_PRESSURE_PLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橡木压力板
+  SPRUCE_PRESSURE_PLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 云杉木压力板
+  BIRCH_PRESSURE_PLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白桦木压力板
+  JUNGLE_PRESSURE_PLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 丛林木压力板
+  ACACIA_PRESSURE_PLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金合欢木压力板
+  CHERRY_PRESSURE_PLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 樱花木压力板
+  DARK_OAK_PRESSURE_PLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深色橡木压力板
+  MANGROVE_PRESSURE_PLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红树木压力板
+  BAMBOO_PRESSURE_PLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 竹压力板
+  CRIMSON_PRESSURE_PLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绯红木压力板
+  WARPED_PRESSURE_PLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 诡异木压力板
+  IRON_DOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铁门
+  OAK_DOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橡木门
+  SPRUCE_DOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 云杉木门
+  BIRCH_DOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白桦木门
+  JUNGLE_DOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 丛林木门
+  ACACIA_DOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金合欢木门
+  CHERRY_DOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 樱花木门
+  DARK_OAK_DOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深色橡木门
+  MANGROVE_DOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红树木门
+  BAMBOO_DOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 竹门
+  CRIMSON_DOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绯红木门
+  WARPED_DOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 诡异木门
+  IRON_TRAPDOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铁活板门
+  OAK_TRAPDOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橡木活板门
+  SPRUCE_TRAPDOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 云杉木活板门
+  BIRCH_TRAPDOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白桦木活板门
+  JUNGLE_TRAPDOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 丛林木活板门
+  ACACIA_TRAPDOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金合欢木活板门
+  CHERRY_TRAPDOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 樱花木活板门
+  DARK_OAK_TRAPDOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深色橡木活板门
+  MANGROVE_TRAPDOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红树木活板门
+  BAMBOO_TRAPDOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 竹活板门
+  CRIMSON_TRAPDOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绯红木活板门
+  WARPED_TRAPDOOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 诡异木活板门
+  OAK_FENCE_GATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橡木栅栏门
+  SPRUCE_FENCE_GATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 云杉木栅栏门
+  BIRCH_FENCE_GATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白桦木栅栏门
+  JUNGLE_FENCE_GATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 丛林木栅栏门
+  ACACIA_FENCE_GATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金合欢木栅栏门
+  CHERRY_FENCE_GATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 樱花木栅栏门
+  DARK_OAK_FENCE_GATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深色橡木栅栏门
+  MANGROVE_FENCE_GATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红树木栅栏门
+  BAMBOO_FENCE_GATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 竹栅栏门
+  CRIMSON_FENCE_GATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绯红木栅栏门
+  WARPED_FENCE_GATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 诡异木栅栏门
+  POWERED_RAIL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 动力铁轨
+  DETECTOR_RAIL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 探测铁轨
+  RAIL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铁轨
+  ACTIVATOR_RAIL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 激活铁轨
+  SADDLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 鞍
+  MINECART:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 矿车
+  CHEST_MINECART:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 运输矿车
+  FURNACE_MINECART:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 动力矿车
+  TNT_MINECART:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: TNT 矿车
+  HOPPER_MINECART:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 漏斗矿车
+  CARROT_ON_A_STICK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 胡萝卜钓竿
+  WARPED_FUNGUS_ON_A_STICK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 诡异菌钓竿
+  ELYTRA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 鞘翅
+  OAK_BOAT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橡木船
+  OAK_CHEST_BOAT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橡木运输船
+  SPRUCE_BOAT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 云杉木运输船
+  SPRUCE_CHEST_BOAT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 云杉木船
+  BIRCH_BOAT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白桦木船
+  BIRCH_CHEST_BOAT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白桦木运输船
+  JUNGLE_BOAT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 丛林木船
+  JUNGLE_CHEST_BOAT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 丛林木运输船
+  ACACIA_BOAT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金合欢木船
+  ACACIA_CHEST_BOAT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金合欢木运输船
+  CHERRY_BOAT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 樱花木船
+  CHERRY_CHEST_BOAT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 樱花木运输船
+  DARK_OAK_BOAT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深色橡木船
+  DARK_OAK_CHEST_BOAT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深色橡木运输船
+  MANGROVE_BOAT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红树木船
+  MANGROVE_CHEST_BOAT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红树木运输船
+  BAMBOO_RAFT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 竹筏
+  BAMBOO_CHEST_RAFT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 运输竹筏
+  STRUCTURE_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 结构方块
+  JIGSAW:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 拼图方块
+  TURTLE_HELMET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 海龟壳
+  SCUTE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 鳞甲
+  FLINT_AND_STEEL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 打火石
+  APPLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 苹果
+  BOW:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 弓
+  ARROW:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 箭
+  COAL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 煤炭
+  CHARCOAL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 木炭
+  DIAMOND:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 钻石
+  EMERALD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绿宝石
+  LAPIS_LAZULI:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 青金石
+  QUARTZ:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: Quartz
+  AMETHYST_SHARD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫水晶碎片
+  RAW_IRON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 粗铁
+  IRON_INGOT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铁锭
+  RAW_COPPER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 粗铜
+  COPPER_INGOT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铜锭
+  RAW_GOLD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 粗金
+  GOLD_INGOT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金锭
+  NETHERITE_INGOT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界合金锭
+  NETHERITE_SCRAP:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界合金碎片
+  WOODEN_SWORD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 木剑
+  WOODEN_SHOVEL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 木锹
+  WOODEN_PICKAXE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 木镐
+  WOODEN_AXE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 木斧
+  WOODEN_HOE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 木锄
+  STONE_SWORD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 石剑
+  STONE_SHOVEL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 石锹
+  STONE_PICKAXE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 石镐
+  STONE_AXE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 石斧
+  STONE_HOE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 石锄
+  GOLDEN_SWORD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金剑
+  GOLDEN_SHOVEL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金锹
+  GOLDEN_PICKAXE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金镐
+  GOLDEN_AXE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金斧
+  GOLDEN_HOE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金锄
+  IRON_SWORD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铁剑
+  IRON_SHOVEL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铁锹
+  IRON_PICKAXE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铁镐
+  IRON_AXE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铁斧
+  IRON_HOE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铁锄
+  DIAMOND_SWORD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 钻石剑
+  DIAMOND_SHOVEL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 钻石锹
+  DIAMOND_PICKAXE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 钻石镐
+  DIAMOND_AXE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 钻石斧
+  DIAMOND_HOE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 钻石锄
+  NETHERITE_SWORD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界合金剑
+  NETHERITE_SHOVEL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界合金锹
+  NETHERITE_PICKAXE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界合金镐
+  NETHERITE_AXE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界合金斧
+  NETHERITE_HOE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界合金锄
+  STICK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 木棍
+  BOWL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 碗
+  MUSHROOM_STEW:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蘑菇煲
+  STRING:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 线
+  FEATHER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 羽毛
+  GUNPOWDER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 火药
+  WHEAT_SEEDS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 小麦种子
+  WHEAT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 小麦
+  BREAD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 面包
+  LEATHER_HELMET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 皮革头盔
+  LEATHER_CHESTPLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 皮革胸甲
+  LEATHER_LEGGINGS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 皮革护腿
+  LEATHER_BOOTS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 皮革靴子
+  CHAINMAIL_HELMET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 锁链头盔
+  CHAINMAIL_CHESTPLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 锁链胸甲
+  CHAINMAIL_LEGGINGS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 锁链护腿
+  CHAINMAIL_BOOTS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 锁链靴子
+  IRON_HELMET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铁头盔
+  IRON_CHESTPLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铁胸甲
+  IRON_LEGGINGS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铁护腿
+  IRON_BOOTS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铁靴子
+  DIAMOND_HELMET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 钻石头盔
+  DIAMOND_CHESTPLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 钻石胸甲
+  DIAMOND_LEGGINGS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 钻石护腿
+  DIAMOND_BOOTS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 钻石靴子
+  GOLDEN_HELMET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金头盔
+  GOLDEN_CHESTPLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金胸甲
+  GOLDEN_LEGGINGS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金护腿
+  GOLDEN_BOOTS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金靴子
+  NETHERITE_HELMET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界合金头盔
+  NETHERITE_CHESTPLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界合金胸甲
+  NETHERITE_LEGGINGS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界合金护腿
+  NETHERITE_BOOTS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界合金靴子
+  FLINT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 燧石
+  PORKCHOP:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 熟猪排
+  COOKED_PORKCHOP:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 熟猪排
+  PAINTING:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 画
+  GOLDEN_APPLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金苹果
+  ENCHANTED_GOLDEN_APPLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 附魔金苹果
+  OAK_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橡木告示牌
+  SPRUCE_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 云杉木告示牌
+  BIRCH_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白桦木告示牌
+  JUNGLE_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 丛林木告示牌
+  ACACIA_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金合欢木告示牌
+  CHERRY_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 樱花木告示牌
+  DARK_OAK_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深色橡木告示牌
+  MANGROVE_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红树木告示牌
+  BAMBOO_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 竹告示牌
+  CRIMSON_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绯红木告示牌
+  WARPED_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 诡异木告示牌
+  OAK_HANGING_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 悬挂式橡木告示牌
+  SPRUCE_HANGING_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 悬挂式云杉木告示牌
+  BIRCH_HANGING_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 悬挂式白桦木告示牌
+  JUNGLE_HANGING_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 悬挂式丛林木告示牌
+  ACACIA_HANGING_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 悬挂式金合欢木告示牌
+  CHERRY_HANGING_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 悬挂式樱花木告示牌
+  DARK_OAK_HANGING_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 悬挂式深色橡木告示牌
+  MANGROVE_HANGING_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 悬挂式红树木告示牌
+  BAMBOO_HANGING_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 悬挂式竹告示牌
+  CRIMSON_HANGING_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 悬挂式绯红木告示牌
+  WARPED_HANGING_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 悬挂式诡异木告示牌
+  BUCKET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铁桶
+  WATER_BUCKET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 水桶
+  LAVA_BUCKET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 熔岩桶
+  POWDER_SNOW_BUCKET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 细雪桶
+  SNOWBALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 雪球
+  LEATHER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 皮革
+  MILK_BUCKET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 奶桶
+  PUFFERFISH_BUCKET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 河豚桶
+  SALMON_BUCKET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 鲑鱼桶
+  COD_BUCKET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 鳕鱼桶
+  TROPICAL_FISH_BUCKET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 热带鱼桶
+  AXOLOTL_BUCKET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 美西螈桶
+  TADPOLE_BUCKET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蝌蚪桶
+  BRICK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红砖
+  CLAY_BALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黏土球
+  DRIED_KELP_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 干海带块
+  PAPER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 纸
+  BOOK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 书
+  SLIME_BALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 粘液球
+  EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 鸡蛋
+  COMPASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 指南针
+  RECOVERY_COMPASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 追溯指针
+  BUNDLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 收纳袋
+  FISHING_ROD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 钓鱼竿
+  CLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 时钟
+  SPYGLASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 望远镜
+  GLOWSTONE_DUST:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 荧石粉
+  COD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 鳕鱼
+  SALMON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 鲑鱼
+  TROPICAL_FISH:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 热带鱼
+  PUFFERFISH:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 河豚
+  COOKED_COD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 熟鳕鱼
+  COOKED_SALMON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 熟鲑鱼
+  INK_SAC:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墨囊
+  GLOW_INK_SAC:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 荧光墨囊
+  COCOA_BEANS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 可可豆
+  WHITE_DYE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白色染料
+  ORANGE_DYE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橙色染料
+  MAGENTA_DYE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 品红色染料
+  LIGHT_BLUE_DYE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡蓝色染料
+  YELLOW_DYE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄色染料
+  LIME_DYE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄绿色染料
+  PINK_DYE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 粉红色染料
+  GRAY_DYE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 灰色染料
+  LIGHT_GRAY_DYE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡灰色染料
+  CYAN_DYE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 青色染料
+  PURPLE_DYE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫色染料
+  BLUE_DYE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蓝色染料
+  BROWN_DYE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 棕色染料
+  GREEN_DYE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绿色染料
+  RED_DYE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红色染料
+  BLACK_DYE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黑色染料
+  BONE_MEAL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 骨粉
+  BONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 骨头
+  SUGAR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 糖
+  CAKE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蛋糕
+  WHITE_BED:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白色床
+  ORANGE_BED:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橙色床
+  MAGENTA_BED:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 品红色床
+  LIGHT_BLUE_BED:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡蓝色床
+  YELLOW_BED:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄色床
+  LIME_BED:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄绿色床
+  PINK_BED:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 粉红色床
+  GRAY_BED:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 灰色床
+  LIGHT_GRAY_BED:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡灰色床
+  CYAN_BED:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 青色床
+  PURPLE_BED:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫色床
+  BLUE_BED:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蓝色床
+  BROWN_BED:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 棕色床
+  GREEN_BED:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绿色床
+  RED_BED:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红色床
+  BLACK_BED:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黑色床
+  COOKIE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 曲奇
+  FILLED_MAP:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 地图
+  SHEARS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 剪刀
+  MELON_SLICE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 西瓜片
+  DRIED_KELP:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 干海带
+  PUMPKIN_SEEDS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 南瓜种子
+  MELON_SEEDS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 西瓜种子
+  BEEF:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 生牛肉
+  COOKED_BEEF:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 牛排
+  CHICKEN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 生鸡肉
+  COOKED_CHICKEN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 熟鸡肉
+  ROTTEN_FLESH:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 腐肉
+  ENDER_PEARL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 末影珍珠
+  BLAZE_ROD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 烈焰棒
+  GHAST_TEAR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 恶魂之泪
+  GOLD_NUGGET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金粒
+  NETHER_WART:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界疣
+  POTION:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 药水
+  GLASS_BOTTLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 玻璃瓶
+  SPIDER_EYE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蜘蛛眼
+  FERMENTED_SPIDER_EYE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 发酵蛛眼
+  BLAZE_POWDER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 烈焰粉
+  MAGMA_CREAM:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 岩浆膏
+  BREWING_STAND:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 酿造台
+  CAULDRON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 炼药锅
+  ENDER_EYE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 末影之眼
+  GLISTERING_MELON_SLICE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 闪烁的西瓜片
+  ALLAY_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 悦灵刷怪蛋
+  AXOLOTL_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 美西螈刷怪蛋
+  BAT_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蝙蝠刷怪蛋
+  BEE_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蜜蜂刷怪蛋
+  BLAZE_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 烈焰人刷怪蛋
+  CAT_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 猫刷怪蛋
+  CAMEL_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 骆驼刷怪蛋
+  CAVE_SPIDER_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 洞穴蜘蛛刷怪蛋
+  CHICKEN_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 鸡刷怪蛋
+  COD_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 鳕鱼刷怪蛋
+  COW_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 牛刷怪蛋
+  CREEPER_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 苦力怕刷怪蛋
+  DOLPHIN_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 海豚刷怪蛋
+  DONKEY_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 驴刷怪蛋
+  DROWNED_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 溺尸刷怪蛋
+  ELDER_GUARDIAN_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 远古守卫者刷怪蛋
+  ENDER_DRAGON_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 末影龙刷怪蛋
+  ENDERMAN_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 末影人刷怪蛋
+  ENDERMITE_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 末影螨刷怪蛋
+  EVOKER_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 唤魔者刷怪蛋
+  FOX_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 狐狸刷怪蛋
+  FROG_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 青蛙刷怪蛋
+  GHAST_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 恶魂刷怪蛋
+  GLOW_SQUID_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 发光鱿鱼刷怪蛋
+  GOAT_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 山羊刷怪蛋
+  GUARDIAN_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 守卫者刷怪蛋
+  HOGLIN_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 疣猪兽刷怪蛋
+  HORSE_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 马刷怪蛋
+  HUSK_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 尸壳刷怪蛋
+  IRON_GOLEM_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铁傀儡刷怪蛋
+  LLAMA_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 羊驼刷怪蛋
+  MAGMA_CUBE_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 岩浆怪刷怪蛋
+  MOOSHROOM_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 哞菇刷怪蛋
+  MULE_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 骡刷怪蛋
+  OCELOT_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 豹猫刷怪蛋
+  PANDA_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 熊猫刷怪蛋
+  PARROT_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 鹦鹉刷怪蛋
+  PHANTOM_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 幻翼刷怪蛋
+  PIG_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 猪刷怪蛋
+  PIGLIN_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 猪灵刷怪蛋
+  PIGLIN_BRUTE_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 猪灵蛮兵刷怪蛋
+  PILLAGER_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 掠夺者刷怪蛋
+  POLAR_BEAR_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 北极熊刷怪蛋
+  PUFFERFISH_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 河豚刷怪蛋
+  RABBIT_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 兔子刷怪蛋
+  RAVAGER_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 劫掠兽刷怪蛋
+  SALMON_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 鲑鱼刷怪蛋
+  SHEEP_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绵羊刷怪蛋
+  SHULKER_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 潜影贝刷怪蛋
+  SILVERFISH_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蠹虫刷怪蛋
+  SKELETON_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 骷髅刷怪蛋
+  SKELETON_HORSE_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 骷髅马刷怪蛋
+  SLIME_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 史莱姆刷怪蛋
+  SNIFFER_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 嗅探兽刷怪蛋
+  SNOW_GOLEM_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 雪傀儡刷怪蛋
+  SPIDER_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蜘蛛刷怪蛋
+  SQUID_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 鱿鱼刷怪蛋
+  STRAY_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 流浪者刷怪蛋
+  STRIDER_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 炽足兽刷怪蛋
+  TADPOLE_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蝌蚪刷怪蛋
+  TRADER_LLAMA_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 行商羊驼刷怪蛋
+  TROPICAL_FISH_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 热带鱼刷怪蛋
+  TURTLE_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 海龟刷怪蛋
+  VEX_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 恼鬼刷怪蛋
+  VILLAGER_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 村民刷怪蛋
+  VINDICATOR_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 卫道士刷怪蛋
+  WANDERING_TRADER_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 流浪商人刷怪蛋
+  WARDEN_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 监守者刷怪蛋
+  WITCH_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 女巫刷怪蛋
+  WITHER_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 凋灵刷怪蛋
+  WITHER_SKELETON_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 凋灵骷髅刷怪蛋
+  WOLF_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 狼刷怪蛋
+  ZOGLIN_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 僵尸疣猪兽刷怪蛋
+  ZOMBIE_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 僵尸刷怪蛋
+  ZOMBIE_HORSE_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 僵尸马刷怪蛋
+  ZOMBIE_VILLAGER_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 僵尸村民刷怪蛋
+  ZOMBIFIED_PIGLIN_SPAWN_EGG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 僵尸猪灵刷怪蛋
+  EXPERIENCE_BOTTLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 附魔之瓶
+  FIRE_CHARGE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 火焰弹
+  WRITABLE_BOOK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 书与笔
+  WRITTEN_BOOK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 成书
+  ITEM_FRAME:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 物品展示框
+  GLOW_ITEM_FRAME:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 荧光物品展示框
+  FLOWER_POT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 花盆
+  CARROT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 胡萝卜
+  POTATO:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 马铃薯
+  BAKED_POTATO:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 烤马铃薯
+  POISONOUS_POTATO:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 毒马铃薯
+  MAP:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 地图
+  GOLDEN_CARROT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金胡萝卜
+  SKELETON_SKULL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 骷髅头颅
+  WITHER_SKELETON_SKULL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 凋灵骷髅头颅
+  PLAYER_HEAD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 玩家的头
+  ZOMBIE_HEAD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 僵尸的头
+  CREEPER_HEAD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 苦力怕的头
+  DRAGON_HEAD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 龙首
+  PIGLIN_HEAD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 猪灵的头
+  NETHER_STAR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界之星
+  PUMPKIN_PIE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 南瓜派
+  FIREWORK_ROCKET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 烟花火箭
+  FIREWORK_STAR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 烟火之星
+  ENCHANTED_BOOK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 附魔书
+  NETHER_BRICK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界砖
+  PRISMARINE_SHARD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 海晶碎片
+  PRISMARINE_CRYSTALS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 海晶砂粒
+  RABBIT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 生兔肉
+  COOKED_RABBIT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 熟兔肉
+  RABBIT_STEW:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 兔肉煲
+  RABBIT_FOOT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 兔子脚
+  RABBIT_HIDE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 兔子皮
+  ARMOR_STAND:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 盔甲架
+  IRON_HORSE_ARMOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铁马铠
+  GOLDEN_HORSE_ARMOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金马铠
+  DIAMOND_HORSE_ARMOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 钻石马铠
+  LEATHER_HORSE_ARMOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 皮革马铠
+  LEAD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 拴绳
+  NAME_TAG:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 命名牌
+  COMMAND_BLOCK_MINECART:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 命令方块矿车
+  MUTTON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 生羊肉
+  COOKED_MUTTON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 熟羊肉
+  WHITE_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白色旗帜
+  ORANGE_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橙色旗帜
+  MAGENTA_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 品红色旗帜
+  LIGHT_BLUE_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡蓝色旗帜
+  YELLOW_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄色旗帜
+  LIME_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄绿色旗帜
+  PINK_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 粉红色旗帜
+  GRAY_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 灰色旗帜
+  LIGHT_GRAY_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡灰色旗帜
+  CYAN_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 青色旗帜
+  PURPLE_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫色旗帜
+  BLUE_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蓝色旗帜
+  BROWN_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 棕色旗帜
+  GREEN_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绿色旗帜
+  RED_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红色旗帜
+  BLACK_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黑色旗帜
+  END_CRYSTAL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 末地水晶
+  CHORUS_FRUIT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫颂果
+  POPPED_CHORUS_FRUIT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 爆裂紫颂果
+  TORCHFLOWER_SEEDS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 火把花种子
+  PITCHER_POD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 瓶子草荚果
+  BEETROOT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 甜菜根
+  BEETROOT_SEEDS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 甜菜种子
+  BEETROOT_SOUP:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 甜菜汤
+  DRAGON_BREATH:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 龙息
+  SPLASH_POTION:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 喷溅药水
+  SPECTRAL_ARROW:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 光灵箭
+  TIPPED_ARROW:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 药箭
+  LINGERING_POTION:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 滞留药水
+  SHIELD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 盾牌
+  TOTEM_OF_UNDYING:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 不死图腾
+  SHULKER_SHELL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 潜影壳
+  IRON_NUGGET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铁粒
+  KNOWLEDGE_BOOK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 知识之书
+  DEBUG_STICK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 调试棒
+  MUSIC_DISC_13:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 音乐唱片 - 13
+  MUSIC_DISC_CAT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 音乐唱片 - Cat
+  MUSIC_DISC_BLOCKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 音乐唱片 - Blocks
+  MUSIC_DISC_CHIRP:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 音乐唱片 - Chirp
+  MUSIC_DISC_FAR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 音乐唱片 - Far
+  MUSIC_DISC_MALL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 音乐唱片 - Mall
+  MUSIC_DISC_MELLOHI:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 音乐唱片 - Mellohi
+  MUSIC_DISC_STAL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 音乐唱片 - Stal
+  MUSIC_DISC_STRAD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 音乐唱片 - Strad
+  MUSIC_DISC_WARD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 音乐唱片 - Ward
+  MUSIC_DISC_11:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 音乐唱片 - 11
+  MUSIC_DISC_WAIT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 音乐唱片 - Wait
+  MUSIC_DISC_OTHERSIDE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 音乐唱片 - Otherside
+  MUSIC_DISC_RELIC:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 音乐唱片 - Relic
+  MUSIC_DISC_5:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 音乐唱片 - 5
+  MUSIC_DISC_PIGSTEP:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 音乐唱片 - Pigstep
+  DISC_FRAGMENT_5:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 唱片残片
+  TRIDENT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 三叉戟
+  PHANTOM_MEMBRANE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 幻翼膜
+  NAUTILUS_SHELL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 鹦鹉螺壳
+  HEART_OF_THE_SEA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 海洋之心
+  CROSSBOW:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 弩
+  SUSPICIOUS_STEW:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 谜之炖菜
+  LOOM:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 织布机
+  FLOWER_BANNER_PATTERN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 花朵盾徽 旗帜图案
+  CREEPER_BANNER_PATTERN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 苦力怕盾徽 旗帜图案
+  SKULL_BANNER_PATTERN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 头颅盾徽 旗帜图案
+  MOJANG_BANNER_PATTERN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: Mojang徽标 旗帜图案
+  GLOBE_BANNER_PATTERN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 地球 旗帜图案
+  PIGLIN_BANNER_PATTERN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 猪鼻 旗帜图案
+  GOAT_HORN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 山羊角
+  COMPOSTER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 堆肥桶
+  BARREL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 木桶
+  SMOKER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 烟熏炉
+  BLAST_FURNACE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 高炉
+  CARTOGRAPHY_TABLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 制图台
+  FLETCHING_TABLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 制箭台
+  GRINDSTONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 砂轮
+  SMITHING_TABLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 锻造台
+  STONECUTTER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 切石机
+  BELL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 钟
+  LANTERN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 灯笼
+  SOUL_LANTERN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 灵魂灯笼
+  SWEET_BERRIES:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 甜浆果
+  GLOW_BERRIES:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 发光浆果
+  CAMPFIRE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 营火
+  SOUL_CAMPFIRE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 灵魂营火
+  SHROOMLIGHT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 菌光体
+  HONEYCOMB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蜜脾
+  BEE_NEST:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蜂巢
+  BEEHIVE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蜂箱
+  HONEY_BOTTLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蜂蜜瓶
+  HONEYCOMB_BLOCK:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蜜脾块
+  LODESTONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磁石
+  CRYING_OBSIDIAN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 哭泣的黑曜石
+  BLACKSTONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黑石
+  BLACKSTONE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黑石台阶
+  BLACKSTONE_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黑石楼梯
+  GILDED_BLACKSTONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 镶金黑石
+  POLISHED_BLACKSTONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制黑石
+  POLISHED_BLACKSTONE_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制黑石台阶
+  POLISHED_BLACKSTONE_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制黑石楼梯
+  CHISELED_POLISHED_BLACKSTONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 雕纹磨制黑石
+  POLISHED_BLACKSTONE_BRICKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制黑石砖
+  POLISHED_BLACKSTONE_BRICK_SLAB:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制黑石砖台阶
+  POLISHED_BLACKSTONE_BRICK_STAIRS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 磨制黑石砖楼梯
+  CRACKED_POLISHED_BLACKSTONE_BRICKS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 裂纹磨制黑石砖
+  RESPAWN_ANCHOR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 重生锚
+  CANDLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蜡烛
+  WHITE_CANDLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白色蜡烛
+  ORANGE_CANDLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橙色蜡烛
+  MAGENTA_CANDLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 品红色蜡烛
+  LIGHT_BLUE_CANDLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡蓝色蜡烛
+  YELLOW_CANDLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄色蜡烛
+  LIME_CANDLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黄绿色蜡烛
+  PINK_CANDLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 粉红色蜡烛
+  GRAY_CANDLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 灰色蜡烛
+  LIGHT_GRAY_CANDLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 淡灰色蜡烛
+  CYAN_CANDLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 青色蜡烛
+  PURPLE_CANDLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫色蜡烛
+  BLUE_CANDLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蓝色蜡烛
+  BROWN_CANDLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 棕色蜡烛
+  GREEN_CANDLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绿色蜡烛
+  RED_CANDLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红色蜡烛
+  BLACK_CANDLE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 黑色蜡烛
+  SMALL_AMETHYST_BUD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 小型紫晶芽
+  MEDIUM_AMETHYST_BUD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 中型紫晶芽
+  LARGE_AMETHYST_BUD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 大型紫晶芽
+  AMETHYST_CLUSTER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 紫水晶簇
+  POINTED_DRIPSTONE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 滴水石锥
+  OCHRE_FROGLIGHT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 赭黄蛙明灯
+  VERDANT_FROGLIGHT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 青翠蛙明灯
+  PEARLESCENT_FROGLIGHT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 珠光蛙明灯
+  FROGSPAWN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 青蛙卵
+  ECHO_SHARD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 回响碎片
+  BRUSH:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 刷子
+  NETHERITE_UPGRADE_SMITHING_TEMPLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界合金升级锻造模板
+  SENTRY_ARMOR_TRIM_SMITHING_TEMPLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 哨兵盔甲纹饰锻造模板
+  DUNE_ARMOR_TRIM_SMITHING_TEMPLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 沙丘盔甲纹饰锻造模板
+  COAST_ARMOR_TRIM_SMITHING_TEMPLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 海岸盔甲纹饰锻造模板
+  WILD_ARMOR_TRIM_SMITHING_TEMPLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 荒野盔甲纹饰锻造模板
+  WARD_ARMOR_TRIM_SMITHING_TEMPLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 监守盔甲纹饰锻造模板
+  EYE_ARMOR_TRIM_SMITHING_TEMPLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 眼眸盔甲纹饰锻造模板
+  VEX_ARMOR_TRIM_SMITHING_TEMPLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 恼鬼盔甲纹饰锻造模板
+  TIDE_ARMOR_TRIM_SMITHING_TEMPLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 潮汐盔甲纹饰锻造模板
+  SNOUT_ARMOR_TRIM_SMITHING_TEMPLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 猪鼻盔甲纹饰锻造模板
+  RIB_ARMOR_TRIM_SMITHING_TEMPLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 肋骨盔甲纹饰锻造模板
+  SPIRE_ARMOR_TRIM_SMITHING_TEMPLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 尖塔盔甲纹饰锻造模板
+  WAYFINDER_ARMOR_TRIM_SMITHING_TEMPLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 向导盔甲纹饰锻造模板
+  SHAPER_ARMOR_TRIM_SMITHING_TEMPLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 塑造盔甲纹饰锻造模板
+  SILENCE_ARMOR_TRIM_SMITHING_TEMPLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 幽静盔甲纹饰锻造模板
+  RAISER_ARMOR_TRIM_SMITHING_TEMPLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 牧民盔甲纹饰锻造模板
+  HOST_ARMOR_TRIM_SMITHING_TEMPLATE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 雇主盔甲纹饰锻造模板
+  ANGLER_POTTERY_SHERD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 垂钓纹样陶片
+  ARCHER_POTTERY_SHERD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 弓箭纹样陶片
+  ARMS_UP_POTTERY_SHERD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 举臂纹样陶片
+  BLADE_POTTERY_SHERD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 利刃纹样陶片
+  BREWER_POTTERY_SHERD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 佳酿纹样陶片
+  BURN_POTTERY_SHERD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 烈焰纹样陶片
+  DANGER_POTTERY_SHERD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 危机纹样陶片
+  EXPLORER_POTTERY_SHERD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 探险纹样陶片
+  FRIEND_POTTERY_SHERD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 挚友纹样陶片
+  HEART_POTTERY_SHERD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 爱心纹样陶片
+  HEARTBREAK_POTTERY_SHERD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 心碎纹样陶片
+  HOWL_POTTERY_SHERD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 狼嚎纹样陶片
+  MINER_POTTERY_SHERD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 采矿纹样陶片
+  MOURNER_POTTERY_SHERD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 悲恸纹样陶片
+  PLENTY_POTTERY_SHERD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 富饶纹样陶片
+  PRIZE_POTTERY_SHERD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 珍宝纹样陶片
+  SHEAF_POTTERY_SHERD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 麦捆纹样陶片
+  SHELTER_POTTERY_SHERD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 树荫纹样陶片
+  SKULL_POTTERY_SHERD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 头颅纹样陶片
+  SNORT_POTTERY_SHERD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 嗅探纹样陶片
+  WATER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 水
+  LAVA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 熔岩
+  TALL_SEAGRASS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 高海草
+  PISTON_HEAD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 活塞头
+  MOVING_PISTON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 移动的活塞
+  WALL_TORCH:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的火把
+  FIRE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 火
+  SOUL_FIRE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 灵魂火
+  REDSTONE_WIRE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红石线
+  OAK_WALL_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的橡木告示牌
+  SPRUCE_WALL_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的云杉木告示牌
+  BIRCH_WALL_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的白桦木告示牌
+  ACACIA_WALL_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的金合欢木告示牌
+  CHERRY_WALL_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的樱花木告示牌
+  JUNGLE_WALL_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的丛林木告示牌
+  DARK_OAK_WALL_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的深色橡木告示牌
+  MANGROVE_WALL_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的红树木告示牌
+  BAMBOO_WALL_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的竹告示牌
+  OAK_WALL_HANGING_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的悬挂式橡木告示牌
+  SPRUCE_WALL_HANGING_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的悬挂式云杉木告示牌
+  BIRCH_WALL_HANGING_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的悬挂式白桦木告示牌
+  ACACIA_WALL_HANGING_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的悬挂式金合欢木告示牌
+  CHERRY_WALL_HANGING_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的悬挂式樱花木告示牌
+  JUNGLE_WALL_HANGING_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的悬挂式丛林木告示牌
+  DARK_OAK_WALL_HANGING_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的悬挂式深色橡木告示牌
+  MANGROVE_WALL_HANGING_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的悬挂式红树木告示牌
+  CRIMSON_WALL_HANGING_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的悬挂式绯红木告示牌
+  WARPED_WALL_HANGING_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的悬挂式诡异木告示牌
+  BAMBOO_WALL_HANGING_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的悬挂式竹告示牌
+  REDSTONE_WALL_TORCH:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的红石火把
+  SOUL_WALL_TORCH:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的灵魂火把
+  NETHER_PORTAL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 下界传送门
+  ATTACHED_PUMPKIN_STEM:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 结果的南瓜茎
+  ATTACHED_MELON_STEM:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 结果的西瓜茎
+  PUMPKIN_STEM:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 南瓜茎
+  MELON_STEM:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 西瓜茎
+  WATER_CAULDRON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 装有水的炼药锅
+  LAVA_CAULDRON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 装有熔岩的炼药锅
+  POWDER_SNOW_CAULDRON:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 装有细雪的炼药锅
+  END_PORTAL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 末地传送门
+  COCOA:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 可可果
+  TRIPWIRE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绊线
+  POTTED_TORCHFLOWER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 火把花盆栽
+  POTTED_OAK_SAPLING:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橡树树苗盆栽
+  POTTED_SPRUCE_SAPLING:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 云杉树苗盆栽
+  POTTED_BIRCH_SAPLING:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白桦树苗盆栽
+  POTTED_JUNGLE_SAPLING:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 丛林树苗盆栽
+  POTTED_ACACIA_SAPLING:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 金合欢树苗盆栽
+  POTTED_CHERRY_SAPLING:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 樱花树苗盆栽
+  POTTED_DARK_OAK_SAPLING:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 深色橡树树苗盆栽
+  POTTED_MANGROVE_PROPAGULE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红树胎生苗盆栽
+  POTTED_FERN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蕨盆栽
+  POTTED_DANDELION:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蒲公英盆栽
+  POTTED_POPPY:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 虞美人盆栽
+  POTTED_BLUE_ORCHID:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 兰花盆栽
+  POTTED_ALLIUM:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绒球葱盆栽
+  POTTED_AZURE_BLUET:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 蓝花美耳草盆栽
+  POTTED_RED_TULIP:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红色郁金香盆栽
+  POTTED_ORANGE_TULIP:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 橙色郁金香盆栽
+  POTTED_WHITE_TULIP:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 白色郁金香盆栽
+  POTTED_PINK_TULIP:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 粉红色郁金香盆栽
+  POTTED_OXEYE_DAISY:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 滨菊盆栽
+  POTTED_CORNFLOWER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 矢车菊盆栽
+  POTTED_LILY_OF_THE_VALLEY:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 铃兰盆栽
+  POTTED_WITHER_ROSE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 凋灵玫瑰盆栽
+  POTTED_RED_MUSHROOM:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 红色蘑菇盆栽
+  POTTED_BROWN_MUSHROOM:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 棕色蘑菇盆栽
+  POTTED_DEAD_BUSH:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 枯萎的灌木盆栽
+  POTTED_CACTUS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 仙人掌盆栽
+  CARROTS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 胡萝卜
+  POTATOES:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 马铃薯
+  SKELETON_WALL_SKULL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的骷髅头颅
+  WITHER_SKELETON_WALL_SKULL:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的凋灵骷髅头颅
+  ZOMBIE_WALL_HEAD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的僵尸的头
+  PLAYER_WALL_HEAD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的玩家的头
+  CREEPER_WALL_HEAD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的苦力怕的头
+  DRAGON_WALL_HEAD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的龙首
+  PIGLIN_WALL_HEAD:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的猪灵的头
+  WHITE_WALL_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的白色旗帜
+  ORANGE_WALL_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的橙色旗帜
+  MAGENTA_WALL_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的品红色旗帜
+  LIGHT_BLUE_WALL_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的淡蓝色旗帜
+  YELLOW_WALL_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的黄色旗帜
+  LIME_WALL_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的黄绿色旗帜
+  PINK_WALL_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的粉红色旗帜
+  GRAY_WALL_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的灰色旗帜
+  LIGHT_GRAY_WALL_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的淡灰色旗帜
+  CYAN_WALL_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的青色旗帜
+  PURPLE_WALL_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的紫色旗帜
+  BLUE_WALL_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的蓝色旗帜
+  BROWN_WALL_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的棕色旗帜
+  GREEN_WALL_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的绿色旗帜
+  RED_WALL_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的红色旗帜
+  BLACK_WALL_BANNER:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的黑色旗帜
+  TORCHFLOWER_CROP:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 火把花植株
+  PITCHER_CROP:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 瓶子草植株
+  BEETROOTS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 甜菜根
+  END_GATEWAY:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 末地折跃门
+  FROSTED_ICE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 霜冰
+  KELP_PLANT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 海带植株
+  DEAD_TUBE_CORAL_WALL_FAN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的失活管珊瑚扇
+  DEAD_BRAIN_CORAL_WALL_FAN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的失活脑纹珊瑚扇
+  DEAD_BUBBLE_CORAL_WALL_FAN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的失活气泡珊瑚扇
+  DEAD_FIRE_CORAL_WALL_FAN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的失活火珊瑚扇
+  DEAD_HORN_CORAL_WALL_FAN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的失活鹿角珊瑚扇
+  TUBE_CORAL_WALL_FAN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的管珊瑚扇
+  BRAIN_CORAL_WALL_FAN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的脑纹珊瑚扇
+  BUBBLE_CORAL_WALL_FAN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的气泡珊瑚扇
+  FIRE_CORAL_WALL_FAN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的火珊瑚扇
+  HORN_CORAL_WALL_FAN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的鹿角珊瑚扇
+  BAMBOO_SAPLING:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 竹笋
+  POTTED_BAMBOO:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 竹子盆栽
+  VOID_AIR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 虚空空气
+  CAVE_AIR:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 洞穴空气
+  BUBBLE_COLUMN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 气泡柱
+  SWEET_BERRY_BUSH:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 甜浆果丛
+  WEEPING_VINES_PLANT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 垂泪藤植株
+  TWISTING_VINES_PLANT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 缠怨藤植株
+  CRIMSON_WALL_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的绯红木告示牌
+  WARPED_WALL_SIGN:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 墙上的诡异木告示牌
+  POTTED_CRIMSON_FUNGUS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绯红菌盆栽
+  POTTED_WARPED_FUNGUS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 诡异菌盆栽
+  POTTED_CRIMSON_ROOTS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 绯红菌索盆栽
+  POTTED_WARPED_ROOTS:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 诡异菌索盆栽
+  CANDLE_CAKE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 插上蜡烛的蛋糕
+  WHITE_CANDLE_CAKE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 插上白色蜡烛的蛋糕
+  ORANGE_CANDLE_CAKE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 插上橙色蜡烛的蛋糕
+  MAGENTA_CANDLE_CAKE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 插上品红色蜡烛的蛋糕
+  LIGHT_BLUE_CANDLE_CAKE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 插上淡蓝色蜡烛的蛋糕
+  YELLOW_CANDLE_CAKE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 插上黄色蜡烛的蛋糕
+  LIME_CANDLE_CAKE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 插上黄绿色蜡烛的蛋糕
+  PINK_CANDLE_CAKE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 插上粉色蜡烛的蛋糕
+  GRAY_CANDLE_CAKE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 插上灰色蜡烛的蛋糕
+  LIGHT_GRAY_CANDLE_CAKE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 插上淡灰色蜡烛的蛋糕
+  CYAN_CANDLE_CAKE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 插上青色蜡烛的蛋糕
+  PURPLE_CANDLE_CAKE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 插上紫色蜡烛的蛋糕
+  BLUE_CANDLE_CAKE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 插上蓝色蜡烛的蛋糕
+  BROWN_CANDLE_CAKE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 插上棕色蜡烛的蛋糕
+  GREEN_CANDLE_CAKE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 插上绿色蜡烛的蛋糕
+  RED_CANDLE_CAKE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 插上红色蜡烛的蛋糕
+  BLACK_CANDLE_CAKE:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 插上黑色蜡烛的蛋糕
+  POWDER_SNOW:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 细雪
+  CAVE_VINES:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 洞穴藤蔓
+  CAVE_VINES_PLANT:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 洞穴藤蔓植株
+  BIG_DRIPLEAF_STEM:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 大型垂滴叶茎
+  POTTED_AZALEA_BUSH:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 杜鹃花丛盆栽
+  POTTED_FLOWERING_AZALEA_BUSH:
+    Has Hologram: true
+    Max Stack Size: -1
+    Display Name: 盛开的杜鹃花丛盆栽

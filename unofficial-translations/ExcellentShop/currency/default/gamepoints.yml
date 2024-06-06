@@ -1,0 +1,10 @@
+Enabled: true
+Name: Game Points
+Format: '%price% %currency_name%'
+Icon:
+  Material: SUNFLOWER
+  Amount: 1
+  Durability: 0
+  Name: '&e%currency_name%'
+  Item_Flags: []
+  Unbreakable: false

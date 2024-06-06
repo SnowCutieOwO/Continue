@@ -1,0 +1,19 @@
+# 全局消息
+general:
+  nametag:
+    prefix: '&8[&6UltimateStacker&8]'
+
+# 命令消息
+
+command:
+  give:
+    success: '&7你被给予了一个 &6%type%&7.'
+
+# 事件消息
+
+event:
+  general:
+    nopermission: '&c你没有权限这么做.'
+  egg:
+    needmore: '&7你需要至少 &6%amount% &7个刷怪蛋才可转化此刷怪笼'
+    sametype: '&7该刷怪笼类型已经为 &6%type%s&7.'

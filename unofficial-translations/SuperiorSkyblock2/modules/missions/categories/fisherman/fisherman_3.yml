@@ -1,0 +1,91 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                  插件作者 Ome_R                   ##
+##                                                  ##
+######################################################
+
+# 使用的任务文件名称
+mission-file: FishingMissions
+
+# 任务在达到条件时是否自动并领取奖励.
+auto-reward: true
+
+# 是否在完成任务后重置玩家的方块计数?
+reset-after-finish: true
+
+# 完成任务时给予的奖励.
+rewards:
+  commands:
+    - 'eco give %player% 50000'
+    - 'is admin msg %player% &e&l渔夫 | &7成功完成了任务 渔夫 III!'
+    - 'is admin msg %player% &e&l渔夫 | &7现在你已经能熟练钓鱼了!'
+    - 'is admin msg %player% &e&l渔夫 | &7&o你现在是一个专业的渔夫了, 祝贺!'
+
+# 完成任务所需要的前置任务.
+required-missions:
+  - 'fisherman_1'
+  - 'fisherman_2'
+
+# 完成任务所需要获得的物品种类.
+required-caughts:
+  '1':
+    types:
+      - 'BOW'
+      - 'ENCHANTED_BOOK'
+      - 'FISHING_ROD'
+      - 'NAME_TAG'
+      - 'SADDLE'
+    amount: 3
+
+# 菜单中使用的图标.
+icons:
+  not-completed:
+    type: PAPER
+    name: '&a渔夫 III'
+    lore:
+      - '&7海里也能钓上宝藏.'
+      - '&7钓上任意 3 个宝藏物品.'
+      - ''
+      - '&6任务需求:'
+      - '&8 - &7x3 宝藏物品'
+      - ''
+      - '&6任务奖励:'
+      - '&8 - &7$50,000'
+      - ''
+      - '&6宝藏物品: &7{1}/3'
+      - '&6: &7{0}%'
+      - '&c&l ✘ &7尚未完成'
+  can-complete:
+    type: PAPER
+    name: '&a渔夫 III'
+    lore:
+      - '&7海里也能钓上宝藏.'
+      - '&7钓上任意 3 个宝藏物品.'
+      - ''
+      - '&6任务需求:'
+      - '&8 - &7x3 宝藏物品'
+      - ''
+      - '&6任务奖励:'
+      - '&8 - &7$50,000'
+      - ''
+      - '&6宝藏物品: &73/3'
+      - '&6总进度: &7100%'
+      - '&a&l ✔ &7点击领取任务奖励.'
+    enchants:
+      DURABILITY: 1
+    flags:
+      - HIDE_ENCHANTS
+  completed:
+    type: MAP
+    name: '&a渔夫 III'
+    lore:
+      - '&7海里也能钓上宝藏.'
+      - '&7钓上任意 3 个宝藏物品.'
+      - ''
+      - '&6任务奖励:'
+      - '&8 - &7$50,000'
+      - ''
+      - '&6宝藏物品: &73/3'
+      - '&6总进度: &7100%'
+      - '&a&l ✔ &7已经领取.'

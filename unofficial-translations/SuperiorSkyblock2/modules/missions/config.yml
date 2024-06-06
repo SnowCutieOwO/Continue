@@ -1,0 +1,34 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                  插件作者 Ome_R                   ##
+##                                                  ##
+######################################################
+
+# Should missions be enabled on your server?
+# 是否在服务器上使用任务系统?
+enabled: true
+
+# 有关任务分类的设置.
+# 配置任务内容的相关设置可以在这里找到:
+# https://wiki.bg-software.com/superiorskyblock/missions
+categories:
+  miner:
+    name: '矿工'
+    slot: 20
+
+  slayer:
+    name: '屠夫'
+    slot: 21
+
+  farmer:
+    name: '农夫'
+    slot: 22
+
+  fisherman:
+    name: '渔夫'
+    slot: 23
+
+  explorer:
+    name: '探险者'
+    slot: 24

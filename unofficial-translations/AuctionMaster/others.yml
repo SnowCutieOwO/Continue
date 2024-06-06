@@ -1,0 +1,15 @@
+others-menu-item: '32'
+others-menu-name: '&2其他'
+others-menu-lore:
+  - '&8分类'
+  - ''
+  - '&7其他可以竞拍'
+  - '&7且不属于任何分类的物品.'
+
+# 若你需要将特定的物品归于这个分类
+# 请将它们的名字写在这里
+custom-item-names:
+  - '&e&l示例&6&l物品'
+
+custom-item-ids:
+  - '2266'

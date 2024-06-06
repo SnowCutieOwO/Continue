@@ -1,0 +1,503 @@
+#
+#        ▀██ ▀██▀  ▀█▀ ▀██       ██    ▄           ▀██▀       ██           ▄   █▀▀██▀▀█  ██
+#  ▄▄▄▄   ▀█▄ ▀█▄  ▄▀   ██ ▄▄   ▄▄▄  ▄██▄    ▄▄▄▄   ██       ▄▄▄   ▄▄▄▄  ▄██▄     ██    ▄▄▄  ▄▄ ▄▄ ▄▄     ▄▄▄▄
+# ██▄ ▀    ██  ██  █    ██▀ ██   ██   ██   ▄█▄▄▄██  ██        ██  ██▄ ▀   ██      ██     ██   ██ ██ ██  ▄█▄▄▄██
+# ▄ ▀█▄▄    ███ ███     ██  ██   ██   ██   ██       ██        ██  ▄ ▀█▄▄  ██      ██     ██   ██ ██ ██  ██
+# █▀▄▄█▀     █   █     ▄██▄ ██▄ ▄██▄  ▀█▄▀  ▀█▄▄▄▀ ▄██▄▄▄▄▄█ ▄██▄ █▀▄▄█▀  ▀█▄▀   ▄██▄   ▄██▄ ▄██ ██ ██▄  ▀█▄▄▄▀
+#
+# 对那些想知道这个文本怎么做的, 这里是链接: https://texteditor.com/multiline-text-art/
+#
+# 插件作者 Snon_S - https://www.spigotmc.org/resources/authors/vitalikspigo.769951/
+# Discord - snon_s
+
+# 支持如 &4 的原版颜色格式，及 &#123456 的 1.16+ RGB 格式。
+
+#───────────────────────────────────────────────────────────────────────────────────────────────
+# /swlt add 命令的消息
+Command-Arg-Add-Messages:
+  No-Permission:
+  - '&b[sWhiteListTime] &8- &c你没有权限使用 &6add&c 命令'
+  - '&b[sWhiteListTime] &8- &c你需要权限 &6%permission%'
+  Database-Error:
+  - '&b[sWhiteListTime] &8- &c连接数据库时出现错误!'
+  Incorrect-Time-Format:
+  - '&b[sWhiteListTime] &8- &c时间格式错误. 正确用法 &65y:5d:5h:5m:5s &c或 &6-1.'
+  Player-Added-Forever:
+  - '&b[sWhiteListTime] &8- &a玩家 &6%player% &a已被永久添加至白名单.'
+  Player-Added-Time:
+  - '&b[sWhiteListTime] &8- &a玩家 &6%player% &a已被添加至白名单, 有效时间:'
+  - ' &6%years% &f%yearsLabel%, &6%days% &f%daysLabel%, &6%hours% &f%hoursLabel%, &6%minutes% &f%minutesLabel%, &6%seconds% &f%secondsLabel%'
+  - ' &f到期时间: &6%expiryDate%'
+  - ' &f添加时间: &6%addedDate%'
+  Label-Add-Year-1: year
+  Label-Add-Years-2: years
+  Label-Add-Years-3: years
+  Label-Add-Day-1: day
+  Label-Add-Days-2: days
+  Label-Add-Days-3: days
+  Label-Add-Hour-1: hour
+  Label-Add-Hours-2: hours
+  Label-Add-Hours-3: hours
+  Label-Add-Minute-1: minute
+  Label-Add-Minutes-2: minutes
+  Label-Add-Minutes-3: minutes
+  Label-Add-Second-1: second
+  Label-Add-Seconds-2: seconds
+  Label-Add-Seconds-3: seconds
+  Player-Updated-Time:
+  - '&b[sWhiteListTime] &8- &a玩家 &6%player% &a的白名单有效时间已更新为:'
+  - ' &6%years% &f%yearsLabel%, &6%days% &f%daysLabel%, &6%hours% &f%hoursLabel%, &6%minutes% &f%minutesLabel%, &6%seconds% &f%secondsLabel%'
+  - ' &f到期时间: &6%expiryDate%'
+  - ' &f增加时间: &6%addedDate%'
+  - ' &f当前状态: &6%onlineStatus%'
+  Label-Add-Year-Updated-Time-1: year
+  Label-Add-Years-Updated-Time-2: years
+  Label-Add-Years-Updated-Time-3: years
+  Label-Add-Day-Updated-Time-1: day
+  Label-Add-Days-Updated-Time-2: days
+  Label-Add-Days-Updated-Time-3: days
+  Label-Add-Hour-Updated-Time-1: hour
+  Label-Add-Hours-Updated-Time-2: hours
+  Label-Add-Hours-Updated-Time-3: hours
+  Label-Add-Minute-Updated-Time-1: minute
+  Label-Add-Minutes-Updated-Time-2: minutes
+  Label-Add-Minutes-Updated-Time-3: minutes
+  Label-Add-Second-Updated-Time-1: second
+  Label-Add-Seconds-Updated-Time-2: seconds
+  Label-Add-Seconds-Updated-Time-3: seconds
+  Exceed-Character-Limit:
+  - '&b[sWhiteListTime] &8- &c玩家名称长度不可超过 &6%limit% &c个字符. 超出字符: &6%excess% &c个'
+  Cannot-Add-From-Whitelist:
+  - '&b[sWhiteListTime] &8- &c不能将玩家 &6%player% &c添加至白名单.'
+  Loading-Data-Message:
+  - '&b[sWhiteListTime] &8- &c数据仍在载入, 请耐心等待.'
+  Online-当前状态: '&a在线'
+  Offline-当前状态: '&c离线'
+  Usage:
+  - '&b[sWhiteListTime] &8- &f命令用法: &6/swlt add [名称] [时间]'
+  - '&b[sWhiteListTime] &8- &f示例: &6/swlt add Snon_SS 5y:5d:5h:5m:5s &f或 &6-1'
+  - '&b[sWhiteListTime] &8- &f将指定玩家添加至白名单.'
+#───────────────────────────────────────────────────────────────────────────────────────────────
+# /swlt on命令显示的消息
+Command-Arg-On-Messages:
+  No-Permission:
+  - '&b[sWhiteListTime] &8- &c你没有权限使用 &6on&c 命令'
+  - '&b[sWhiteListTime] &8- &c你需要权限 &6%permission%'
+  On-WhiteList-Kick-Message:
+  - '&f玩家 &6%sender% &f启用了白名单.'
+  Console-Sender: '控制台'
+  Rcon-Sender: 'Rcon'
+  Unknown-Sender: '未知用户'
+  Whitelist-Enabled:
+  - '&b[sWhiteListTime] &8- &a白名单已启用. 被踢出的玩家数量: &6%count%'
+  Whitelist-Enabled-No-Kick:
+  - '&b[sWhiteListTime] &8- &a白名单已启用. &6没有玩家被踢出.'
+  Whitelist-Already-Enabled:
+  - '&b[sWhiteListTime] &8- &c白名单已经被启用了.'
+  Usage:
+  - '&b[sWhiteListTime] &8- &f命令用法: &6/swlt on'
+  - '&b[sWhiteListTime] &8- &f启用白名单.'
+#───────────────────────────────────────────────────────────────────────────────────────────────
+# /swlt off 命令显示的消息
+Command-Arg-Off-Messages:
+  No-Permission:
+  - '&b[sWhiteListTime] &8- &c你没有权限使用 &6off&c 命令'
+  - '&b[sWhiteListTime] &8- &c你需要权限 &6%permission%'
+  Whitelist-Disabled:
+  - '&b[sWhiteListTime] &8- &a白名单已禁用.'
+  Whitelist-Already-Disabled:
+  - '&b[sWhiteListTime] &8- &c白名单已经被禁用了.'
+  Usage:
+  - '&b[sWhiteListTime] &8- &f命令用法: &6/swlt off'
+  - '&b[sWhiteListTime] &8- &f禁用白名单.'
+#───────────────────────────────────────────────────────────────────────────────────────────────
+# /swlt remove 命令显示的消息
+Command-Arg-Remove-Messages:
+  No-Permission:
+  - '&b[sWhiteListTime] &8- &c你没有权限使用 &6remove&c 命令'
+  - '&b[sWhiteListTime] &8- &c你需要权限 &6%permission%'
+  Database-Error:
+  - '&b[sWhiteListTime] &8- &c连接数据库时出现错误!'
+  Player-Removed:
+  - '&b[sWhiteListTime] &8- &a玩家 &6%player% &a已从白名单中移除. %onlineStatus%'
+  Remove-WhiteList-Kick-Message:
+  - '&f你已被玩家 &6%sender% &f移出白名单.'
+  Console-Sender: '控制台'
+  Rcon-Sender: 'Rcon'
+  Unknown-Sender: '未知用户'
+  Player-Not-Found:
+  - '&b[sWhiteListTime] &8- &c玩家 &6%player% &c不在白名单中.'
+  Exceed-Character-Limit:
+  - '&b[sWhiteListTime] &8- &c玩家名称长度不可超过 &6%limit% &c个字符. 超出字符: &6%excess% &c个'
+  Cannot-Remove-From-Whitelist:
+  - '&b[sWhiteListTime] &8- &c不能将玩家 &6%player% &c移除白名单.'
+  Loading-Data-Message:
+  - '&b[sWhiteListTime] &8- &c数据仍在载入, 请耐心等待.'
+  Online-当前状态: '&a在线'
+  Offline-当前状态: '&c离线'
+  Usage:
+  - '&b[sWhiteListTime] &8- &f命令用法: &6/swlt remove [名称]'
+  - '&b[sWhiteListTime] &8- &f将玩家从白名单中移出.'
+#───────────────────────────────────────────────────────────────────────────────────────────────
+# /swlt checkme命令显示的消息
+Command-Arg-CheckMe-Messages:
+  No-Permission:
+  - '&b[sWhiteListTime] &8- &c你没有权限使用 &6checkme &c命令'
+  - '&b[sWhiteListTime] &8- &c你需要权限 &6%permission%'
+  Command-Player-Only:
+  - '&b[sWhiteListTime] &8- &c只有玩家才可以使用此命令!'
+  Database-Error:
+  - '&b[sWhiteListTime] &8- &c连接数据库时出现错误!'
+  Whitelist-Forever:
+  - '&b[sWhiteListTime] &8- &a你永久处于白名单上.'
+  Whitelist-Expired:
+  - '&b[sWhiteListTime] &8- &c你在白名单上已过期.'
+  Whitelist-Remaining:
+  - '&b╔'
+  - '&b║ &f在白名单中的剩余时间:'
+  - '&b║'
+  - '&b║ &6%years% &f%yearsLabel%'
+  - '&b║ &6%days% &f%daysLabel%'
+  - '&b║ &6%hours% &f%hoursLabel%'
+  - '&b║ &6%minutes% &f%minutesLabel%'
+  - '&b║ &6%seconds% &f%secondsLabel%'
+  - '&b║ &f到期时间: &d%expiryDate%'
+  - '&b║ &f增加时间: &d%addedDate%'
+  - '&b╚'
+  Label-Year-1: year
+  Label-Years-2: years
+  Label-Years-3: years
+  Label-Day-1: day
+  Label-Days-2: days
+  Label-Days-3: days
+  Label-Hour-1: hour
+  Label-Hours-2: hours
+  Label-Hours-3: hours
+  Label-Minute-1: minute
+  Label-Minutes-2: minutes
+  Label-Minutes-3: minutes
+  Label-Second-1: second
+  Label-Seconds-2: seconds
+  Label-Seconds-3: seconds
+  Not-In-Whitelist:
+  - '&b[sWhiteListTime] &8- &c你不在白名单中.'
+  Loading-Data-Message:
+  - '&b[sWhiteListTime] &8- &c数据仍在载入, 请耐心等待.'
+  Usage:
+  - '&b[sWhiteListTime] &8- &f命令用法: &6/swlt checkme'
+  - '&b[sWhiteListTime] &8- &f检查白名单的剩余时间.'
+#───────────────────────────────────────────────────────────────────────────────────────────────
+# /swlt reload 命令显示的消息
+Command-Arg-Reload-Messages:
+  No-Permission:
+  - '&b[sWhiteListTime] &8- &c你没有权限使用 &6reload &c命令'
+  - '&b[sWhiteListTime] &8- &c你需要权限 &6%permission%'
+  Database-Error:
+  - '&b[sWhiteListTime] &8- &c连接数据库时出现错误!'
+  Successfully-Reload:
+  - '&b[sWhiteListTime] &8- &a插件成功重载. %mc% ms'
+  Usage:
+  - '&b[sWhiteListTime] &8- &f命令用法: &6/swlt reload'
+  - '&b[sWhiteListTime] &8- &f重载插件.'
+#──────────────────────────────────────────────────────────────────────────────────────────────
+# /swlt list 命令显示的消息
+Command-Arg-List-Messages:
+  No-Permission:
+  - '&b[sWhiteListTime] &8- &c你没有权限使用 &6list &c命令'
+  - '&b[sWhiteListTime] &8- &c你需要权限 &6%permission%'
+  Database-Error:
+  - '&b[sWhiteListTime] &8- &c连接数据库时出现错误!'
+  No-Players:
+  - '&b[sWhiteListTime] &8- &c没有该玩家.'
+  Invalid-Page:
+  - '&b[sWhiteListTime] &8- &c无效页码.'
+  List-Header:
+  - ''
+  - '&6玩家列表 (页码: %page%/%total-pages% | 永久: %forever% | 临时: %time% | 总数: %all%):'
+  - ''
+  Button-Back-Hover-Text:
+  - '点击返回'
+  Button-Back: '&e返回'
+  Separator: " | "
+  Button-Forward-Hover-Text:
+  - '点击翻页'
+  Button-Forward: '&e翻页'
+  Player-Info-Message:
+  - '&d%player% &6%years% &f%yearsLabel%, &6%days% &f%daysLabel%, &6%hours% &f%hoursLabel%, &6%minutes% &f%minutesLabel%, &6%seconds% &f%secondsLabel%, &d%expiryDate%, %addedDate%, %onlineStatus%'
+  Label-List-Year-1: year
+  Label-List-Years-2: years
+  Label-List-Years-3: years
+  Label-List-Day-1: day
+  Label-List-Days-2: days
+  Label-List-Days-3: days
+  Label-List-Hour-1: hour
+  Label-List-Hours-2: hours
+  Label-List-Hours-3: hours
+  Label-List-Minute-1: minute
+  Label-List-Minutes-2: minutes
+  Label-List-Minutes-3: minutes
+  Label-List-Second-1: second
+  Label-List-Seconds-2: seconds
+  Label-List-Seconds-3: seconds
+  Loading-Data-Message:
+  - '&b[sWhiteListTime] &8- &c数据仍在载入, 请耐心等待.'
+  Online-当前状态: '&a在线'
+  Offline-当前状态: '&c离线'
+  Usage:
+  - '&b[sWhiteListTime] &8- &f命令用法: &6/swlt list [1,2,3]'
+  - '&b[sWhiteListTime] &8- &fList all players.'
+#───────────────────────────────────────────────────────────────────────────────────────────────
+# /swlt check命令显示的消息
+Command-Arg-Check-Messages:
+  No-Permission:
+  - '&b[sWhiteListTime] &8- &c你没有权限使用 &6check &c命令'
+  - '&b[sWhiteListTime] &8- &c你需要权限 &6%permission%'
+  Database-Error:
+  - '&b[sWhiteListTime] &8- &c连接数据库时出现错误!'
+  Whitelist-Forever:
+  - '&b[sWhiteListTime] &8- &a玩家 &6%player% &a永久处于白名单. %onlineStatus%'
+  Whitelist-Expired:
+  - '&b[sWhiteListTime] &8- &a玩家 &6%player% &a在白名单上已到期. %onlineStatus%'
+  Whitelist-Remaining:
+  - '&b╔'
+  - '&b║ &f玩家 &6%player% &f在白名单中的剩余时间:'
+  - '&b║'
+  - '&b║ &6%years% &f%yearsLabel%'
+  - '&b║ &6%days% &f%daysLabel%'
+  - '&b║ &6%hours% &f%hoursLabel%'
+  - '&b║ &6%minutes% &f%minutesLabel%'
+  - '&b║ &6%seconds% &f%secondsLabel%'
+  - '&b║ &f到期时间: &d%expiryDate%'
+  - '&b║ &f增加时间: &d%addedDate%'
+  - '&b║ &f当前状态: &6%onlineStatus%'
+  - '&b╚'
+  Label-Check-Year-1: year
+  Label-Check-Years-2: years
+  Label-Check-Years-3: years
+  Label-Check-Day-1: day
+  Label-Check-Days-2: days
+  Label-Check-Days-3: days
+  Label-Check-Hour-1: hour
+  Label-Check-Hours-2: hours
+  Label-Check-Hours-3: hours
+  Label-Check-Minute-1: minute
+  Label-Check-Minutes-2: minutes
+  Label-Check-Minutes-3: minutes
+  Label-Check-Second-1: second
+  Label-Check-Seconds-2: seconds
+  Label-Check-Seconds-3: seconds
+  Not-In-Whitelist:
+  - '&b[sWhiteListTime] &8- &c玩家 &6%player% &c不在白名单中.'
+  Exceed-Character-Limit:
+  - '&b[sWhiteListTime] &8- &c玩家名称长度不可超过 &6%limit% &c个字符. 超出字符: &6%excess% &c个'
+  Loading-Data-Message:
+  - '&b[sWhiteListTime] &8- &c数据仍在载入, 请耐心等待.'
+  Online-当前状态: '&a在线'
+  Offline-当前状态: '&c离线'
+  Usage:
+  - '&b[sWhiteListTime] &8- &f命令用法: &6/swlt check [名称]'
+  - '&b[sWhiteListTime] &8- &f检查指定玩家在白名单中的剩余时间.'
+#──────────────────────────────────────────────────────────────────────────────────────────────
+# /swlt version命令显示的消息
+Command-Arg-Version-Messages:
+  No-Permission:
+  - '&b[sWhiteListTime] &8- &c你没有权限使用 &6version &c命令'
+  - '&b[sWhiteListTime] &8- &c你需要权限 &6%permission%'
+  Checking-Version:
+  - '&b[sWhiteListTime] &8- &6检查插件新版本...'
+  Latest-Version-Message:
+  - '&b[sWhiteListTime] &8- &e你的插件已是最新版: &6%latest-version%'
+  New-Version-Message:
+  - ''
+  - '&b[sWhiteListTime] &8- &a新版本插件可用: &6%new-version%. &a你使用的版本: &6%old-version%.'
+  - '&b[sWhiteListTime] &8- &a你可以在这里下载: &6https://www.spigotmc.org/resources/swhitelisttime-plugin-for-adding-players-to-the-white-list-temporarily-or-permanently.116429/updates'
+  - ''
+  Error-Checking-Version-Message:
+  - '&b[sWhiteListTime] &8- &c检查更新时出现错误. &6%error%'
+  Usage:
+  - '&b[sWhiteListTime] &8- &f命令用法: &6/swlt version'
+  - '&b[sWhiteListTime] &8- &f检查插件新版本.'
+#───────────────────────────────────────────────────────────────────────────────────────────────
+# /swlt removeall命令显示的消息
+Command-Arg-RemoveAll-Messages:
+  Console-Only:
+  - '&b[sWhiteListTime] &8- &c该命令只能在控制台使用.'
+  Database-Error:
+  - '&b[sWhiteListTime] &8- &c连接数据库时出现错误!'
+  No-Records:
+  - '&b[sWhiteListTime] &8- &c没有待移除的记录.'
+  Deleted-Records:
+  - '&b[sWhiteListTime] &8- &a删除了 &6%count-records% &a条记录! 已踢出玩家: &6%count-players% 位'
+  Kicked-Message:
+  - '&b[sWhiteListTime] &8- &c所有数据已被删除. &6%sender% &c将你踢出了服务器.'
+  Loading-Data-Message:
+  - '&b[sWhiteListTime] &8- &c数据仍在载入, 请耐心等待.'
+  Console-Sender: '控制台'
+  Rcon-Sender: 'Rcon'
+  Unknown-Sender: '未知用户'
+  Usage:
+  - '&b[sWhiteListTime] &8- &f命令用法: &6/swlt removeall'
+  - '&b[sWhiteListTime] &8- &f移除所有数据.'
+#──────────────────────────────────────────────────────────────────────────────────────────────
+# /swlt info命令显示的消息
+Command-Arg-Info-Messages:
+  No-Permission:
+  - '&b[sWhiteListTime] &8- &c你没有权限使用 &6info &c命令'
+  - '&b[sWhiteListTime] &8- &c你需要权限 &6%permission%'
+  Usage:
+  - '&b[sWhiteListTime] &8- &f命令用法: &6/swlt info'
+  - '&b[sWhiteListTime] &8- &f浏览插件的所有数据.'
+#──────────────────────────────────────────────────────────────────────────────────────────────
+# 提醒白名单剩余时间的提醒消息
+Reminder-Messages:
+  Reminder-Message:
+  - '&b╔'
+  - '&b║ &c&l提醒!!!'
+  - '&b║'
+  - '&b║ &d%player%'
+  - '&b║ &f你在白名单中的时间还剩:'
+  - '&b║'
+  - '&b║ &6%years% &f%yearsLabel%'
+  - '&b║ &6%days% &f%daysLabel%'
+  - '&b║ &6%hours% &f%hoursLabel%'
+  - '&b║ &6%minutes% &f%minutesLabel%'
+  - '&b║ &6%seconds% &f%secondsLabel%'
+  - '&b║ &f到期时间: &d%expiryDate%'
+  - '&b║ &f增加时间: &d%addedDate%'
+  - '&b║'
+  - '&b║ &c&l提醒!!!'
+  - '&b╚'
+  Label-Reminder-Year-1: year
+  Label-Reminder-Years-2: years
+  Label-Reminder-Years-3: years
+  Label-Reminder-Day-1: day
+  Label-Reminder-Days-2: days
+  Label-Reminder-Days-3: days
+  Label-Reminder-Hour-1: hour
+  Label-Reminder-Hours-2: hours
+  Label-Reminder-Hours-3: hours
+  Label-Reminder-Minute-1: minute
+  Label-Reminder-Minutes-2: minutes
+  Label-Reminder-Minutes-3: minutes
+  Label-Reminder-Second-1: second
+  Label-Reminder-Seconds-2: seconds
+  Label-Reminder-Seconds-3: seconds
+#──────────────────────────────────────────────────────────────────────────────────────────────
+# 接近白名单时的时间倒数提醒
+Countdown-Messages:
+  Countdown-Message:
+  - '&b[sWhiteListTime] &8- &d%player% &f你将会在 &6%seconds% &f%secondsLabel% 后被踢出'
+  Label-Countdown-Second-1: second
+  Label-Countdown-Seconds-2: seconds
+  Label-Countdown-Seconds-3: seconds
+#───────────────────────────────────────────────────────────────────────────────────────────────
+# 变量消息
+Placeholders-Messages:
+  Placeholder-Infinity-Worth-The-Time: '&c你没有永久处在白名单是!'
+  Placeholder-Whitelist-On: '&a白名单已启用.'
+  Placeholder-Whitelist-Off: '&c白名单已禁用.'
+  Placeholder-Plugin-Enabled: '&a插件已启用.'
+  Placeholder-Plugin-Disabled: '&c插件已禁用.'
+  Placeholder-Label-Year-1: '&7年'
+  Placeholder-Label-Years-2: '&7年'
+  Placeholder-Label-Years-3: '&7年'
+  Placeholder-Label-Day-1: '&7日'
+  Placeholder-Label-Days-2: '&7日'
+  Placeholder-Label-Days-3: '&7日'
+  Placeholder-Label-Hour-1: '&7时'
+  Placeholder-Label-Hours-2: '&7时'
+  Placeholder-Label-Hours-3: '&7时'
+  Placeholder-Label-Minute-1: '&7分'
+  Placeholder-Label-Minutes-2: '&7分'
+  Placeholder-Label-Minutes-3: '&7分'
+  Placeholder-Label-Second-1: '&7秒'
+  Placeholder-Label-Seconds-2: '&7秒'
+  Placeholder-Label-Seconds-3: '&7秒'
+  Placeholder-Years-Color: '&a'
+  Placeholder-Days-Color: '&a'
+  Placeholder-Hours-Color: '&a'
+  Placeholder-Minutes-Color: '&a'
+  Placeholder-Seconds-Color: '&a'
+  Placeholder-Time-List-Time-Color: '&a'
+  Placeholder-Time-List-Forever-Color: '&a'
+  Placeholder-Expiry-Date-Color: '&a'
+  Placeholder-Added-Date-Color: '&a'
+  Placeholder-Years-Not-In-WhiteList: '&c你不在白名单中!'
+  Placeholder-Days-Not-In-WhiteList: '&c你不在白名单中!'
+  Placeholder-Hours-Not-In-WhiteList: '&c你不在白名单中!'
+  Placeholder-Minutes-Not-In-WhiteList: '&c你不在白名单中!'
+  Placeholder-Seconds-Not-In-WhiteList: '&c你不在白名单中!'
+  Placeholder-Infinity-Not-In-WhiteList: '&c你不在白名单中!'
+  Placeholder-Expiry-Date-Not-In-WhiteList: '&c你不在白名单中!'
+  Placeholder-Added-Date-Not-In-WhiteList: '&c你不在白名单中!'
+  Placeholder-Years-Infinity-Stands: '&2ꝏ'
+  Placeholder-Days-Infinity-Stands: '&2ꝏ'
+  Placeholder-Hours-Infinity-Stands: '&2ꝏ'
+  Placeholder-Minutes-Infinity-Stands: '&2ꝏ'
+  Placeholder-Seconds-Infinity-Stands: '&2ꝏ'
+  Placeholder-Infinity: '&2ꝏ'
+  Placeholder-Expiry-Date-Infinity-Stands: '&2ꝏ'
+  Placeholder-Years-Time-Is-Up: '&c时间已到!'
+  Placeholder-Days-Time-Is-Up: '&c时间已到!'
+  Placeholder-Hours-Time-Is-Up: '&c时间已到!'
+  Placeholder-Minutes-Time-Is-Up: '&c时间已到!'
+  Placeholder-Seconds-Time-Is-Up: '&c时间已到!'
+  Placeholder-Infinity-Time-Is-Up: '&c时间已到!'
+  Placeholder-Expiry-Date-Time-Is-Up: '&c时间已到!'
+#──────────────────────────────────────────────────────────────────────────────────────────────
+# 在玩家白名单到期时的消息.
+Whitelist-Expired-Messages:
+  Whitelist-Expired-Message-Kick:
+  - '&b[sWhiteListTime] &8- &c白名单上的时间已到期.'
+#──────────────────────────────────────────────────────────────────────────────────────────────
+# 玩家不在白名单从服务器被踢出的消息提示.
+Not-In-Whitelist-Kick-Online-Player-Messages:
+  Not-In-Whitelist-Kick-Online-Player:
+  - '&b[sWhiteListTime] &8- &c你已被踢出服务器.'
+  - '&b[sWhiteListTime] &8- &c你没有在此服务器的白名单中.'
+#──────────────────────────────────────────────────────────────────────────────────────────────
+# Messages when the player is not in the whitelist and tries to join the server.
+Not-In-Whitelist-Join-Player-Messages:
+  Database-Error:
+  - '&b[sWhiteListTime] &8- &c连接数据库时出现错误!'
+  Loading-Data-Message:
+  - '&b[sWhiteListTime] &8- &c数据仍在载入, 请耐心等待.'
+  Not-In-Whitelist-Join-Player:
+  - '&b[sWhiteListTime] &8- &c你不能加入服务器.'
+  - '&b[sWhiteListTime] &8- &c你没有在此服务器的白名单中.'
+#──────────────────────────────────────────────────────────────────────────────────────────────
+# Plugin messages
+Server-Messages:
+  Plugin-Enabled-Message:
+  - ''
+  - '&b[sWhiteListTime] &8- &a插件已启用! &b%mc% &ams'
+  - ''
+  Plugin-Disabled-Message:
+  - ''
+  - '&b[sWhiteListTime] &8- &c插件已禁用! &b%mc% &cms'
+  - ''
+#──────────────────────────────────────────────────────────────────────────────────────────────
+# /swlt命令显示的消息
+Command-Arg-Help-Messages:
+  No-Permission:
+  - '&b[sWhiteListTime] &8- &c你不能使用 &6help &c参数'
+  - '&b[sWhiteListTime] &8- &c你需要权限 &6%permission%'
+  Usages:
+  - '&b&l┏'
+  - '&b&l┃ &d插件命令:'
+  - '&b&l┃  &6/swlt add [名称] [时间] &8- &f将玩家添加至白名单. %hasAddPermission%'
+  - '&b&l┃  &6/swlt check [名称] &8- &f检查指定玩家是否处于白名单中. %hasCheckPermission%'
+  - '&b&l┃  &6/swlt checkme &8- &f检查你自己是否处于白名单中. %hasCheckMePermission%'
+  - '&b&l┃  &6/swlt list [page] &8- &f列出白名单上的所有玩家. %hasListPermission%'
+  - '&b&l┃  &6/swlt off &8- &f禁用白名单. %hasOffPermission%'
+  - '&b&l┃  &6/swlt on &8- &f启用白名单. %hasOnPermission%'
+  - '&b&l┃  &6/swlt reload &8- &f重载插件. %hasReloadPermission%'
+  - '&b&l┃  &6/swlt remove [名称] &8- &f将玩家从白名单中移出. %hasRemovePermission%'
+  - '&b&l┃  &6/swlt removeall &8- &f将所有玩家从白名单中移出.'
+  - '&b&l┃  &6/swlt version &8- &f检查插件更新. %hasVersionPermission%'
+  - '&b&l┃  &6/swlt info &8- &f浏览插件信息. %hasInfoPermission%'
+  - '&b&l┃  &6/swlt help &8- &f显示帮助页面. %hasHelpPermission%'
+  - '&b&l┗'
+  Usage:
+  - '&b[sWhiteListTime] &8- &f命令用法 &6/swlt help'
+  - '&b[sWhiteListTime] &8- &f显示帮助页面.'

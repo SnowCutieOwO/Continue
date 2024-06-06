@@ -1,0 +1,123 @@
+####################################################
+##                                                ##
+##              WildTools 消息文件                ##
+##              插件作者 Ome_R                    ##
+##                                                ##
+####################################################
+
+# 若你需要禁用一条消息, 请将其设置为 '' (空字符串)
+
+# 在玩家缺少对应方块时发送.
+BUILDER_NO_BLOCK: '&b&lWildTools &7你需要至少拥有 1 个 {0} 才可建造柱子.'
+
+# 在玩家输入错误的参数时发送.
+COMMAND_USAGE: '&b&lWildTools &7命令用法: /{0}'
+
+# 在玩家所使用的工具处于冷却时发送.
+COOLDOWN_TIME: '&b&lWildTools &7使用该工具前还需等待 {0} 秒.'
+
+# 玩家在箱子上使用合成魔杖时发送.
+CRAFT_SUCCESS: '&b&lWildTools &7成功合成了 {0} 个物品.'
+NO_CRAFT_ITEMS: '&b&lWildTools &7没有可供合成的物品.'
+
+# 在玩家成功使用填充工具后发送.
+FILLED_DISPENSERS: '&b&lWildTools &7成功用 {1} 个 TNT 填充了 {0} 个发射器.'
+NO_FILLED_DISPENSERS: '&b&lWildTools &7没有可填入的发射器.'
+
+# 在玩家成功通过命令将工具给予其他玩家后发送.
+GIVE_TOOL_SUCCESS: '&b&lWildTools &7成功给予了 {0} 个 {1} 至玩家 {2}.'
+
+# 内建变量 {sell-mode} 返回的值
+HARVESTER_SELL_ENABLED: '&a&l启用'
+HARVESTER_SELL_DISABLED: '&c&l禁用'
+
+# 在玩家使用收割魔杖后出售所得物品时发送.
+HARVESTER_SELL_SUCCEED: '&b&lWildTools &7成功出售了 {0} 个物品, 获得了 ${1}.'
+
+# 在玩家输入了无效的工具字命令时发送.
+HELP_COMMAND_HEADER: '&8&m---------------&b&l WildTools &8&m---------------'
+HELP_COMMAND_LINE: '&7- &b/{0} &8- &f{1}'
+HELP_COMMAND_FOOTER: '&8&m---------------&b&l WildTools &8&m---------------'
+
+# 在玩家手持合成魔杖右键非容器方块时发送.
+INVALID_CONTAINER_CRAFTING: '&b&lWildTools &7你只能合成在箱子中的物品.'
+
+# 在玩家手持出售魔杖右键非容器方块时发送.
+INVALID_CONTAINER_SELL_WAND: '&b&lWildTools &7你只能出售在箱子中的物品.'
+
+# 在玩家手持整理魔杖右键非容器方块时发送.
+INVALID_CONTAINER_SORT_WAND: '&b&lWildTools &7你只能整理在箱子中的物品.'
+
+# 玩家在命令参数中使用的数字无效时发送.
+INVALID_NUMBER: '&b&lWildTools &7无效数字 ''{0}''.'
+
+# 玩家在玩家参数中使用的名称无效时发送.
+INVALID_PLAYER: '&b&lWildTools &7无效玩家 ''{0}''.'
+
+# 玩家在工具参数中使用的名称无效时发送.
+INVALID_TOOL: '&b&lWildTools &7无效工具 ''{0}''.'
+
+# 玩家尝试在工具上添加破坏魔杖失败时发送.
+MCMMO_TOOL_SUPER_BREAKER: '&b&lWildTools &7你不能在该工具上使用破坏魔杖.'
+
+# 玩家执行没有命令的权限时提示的消息.
+NO_PERMISSION: '&f未知命令. 请输入 "/help" 获取帮助.'
+
+# 玩家尝试使用不属于自己的工具时提示的消息.
+NOT_OWNER: '&c你不是该工具的拥有者.'
+
+# 在玩家输入命令并成功重载所有配置文本的消息.
+RELOAD_SUCCESS: '&b&lWildTools &7成功重载了配置文件.'
+
+# 在玩家使用填充工具选择区域时发送.
+SELECTION_RIGHT_CLICK: '&b&lWildTools &7已选择二号位点'
+SELECTION_LEFT_CLICK: '&b&lWildTools &7已选择一号位点'
+
+# 玩家尝试在选区外使用填充工具时发送的消息.
+SELECTION_MUST_BE_INSIDE: '&b&lWildTools &7你必须在选区内操作才可填充所有的发射器.'
+
+# 玩家尝试在没有圈定选区时使用填充工具时发送的消息.
+SELECTION_NOT_READY: '&b&lWildTools &7你必须圈定一个选区才可以进行操作.'
+
+# 在玩家将收获魔杖切换为出售模式时发送的消息.
+SELL_MODE_ENABLED: '&b&lWildTools &7已启用该收获魔杖的出售功能.'
+SELL_MODE_DISABLED: '&b&lWildTools &7已禁用该收获魔杖的出售功能.'
+
+# 在玩家使用出售工具时发送的消息.
+SOLD_CHEST: '&b&lWildTools &7成功以 ${0}{1} 的价格出售了容器中的物品.'
+MULTIPLIER: ' (翻 {0} 倍)'
+NO_SELL_ITEMS: '&b&lWildTools &7没有可供出售的物品.'
+
+# 在玩家使用整理魔杖成功对容器进行整理操作发送的消息.
+SORTED_CHEST: '&b&lWildTools &7成功整理了该容器.'
+NO_SORT_ITEMS: '&b&lWildTools &7没有可供整理的物品.'
+
+# 在玩家输入信息子命令后发送的消息.
+# 可选部分的配置只会在持有特定工具时显示.
+TOOL_INFO_HEADER: '&8&m---------------&b&l WildTools &8&m---------------'
+TOOL_INFO_NAME: '&b 工具名称&7: &f{0}'
+TOOL_INFO_MODE: '&b 当前模式&7: &f{0}'
+TOOL_INFO_TYPE: '&b 工具种类&7: &f{0}'
+TOOL_INFO_WHITELISTED_BLOCKS: '&b 白名单方块&7: &f{0}'
+TOOL_INFO_WHITELISTED_DROPS: '&b 白名单掉罗&7: &f{0}'
+TOOL_INFO_BLACKLISTED_BLOCKS: '&b 黑名单方块&7: &f{0}'
+TOOL_INFO_BLACKLISTED_DROPS: '&b 黑名单掉落&7: &f{0}'
+TOOL_INFO_UNBREAKABLE: '&b 不可破坏&7: &f{0}'
+TOOL_INFO_USES: '&b 使用次数&7: &f{0}'
+TOOL_INFO_COOLDOWN: '&b 冷却时长&7: &f{0}'
+TOOL_INFO_AUTO_COLLECT: '&b 自动收集&7: &f{0}'
+TOOL_INFO_SILK_TOUCH: '&b 精准采集&7: &f{0}'
+TOOL_INFO_SAME_TYPE: '&b 仅限同类&7: &f{0}'
+TOOL_INFO_INSIDE_CLAIM: '&b 仅在领地内&7: &f{0}'
+TOOL_INFO_BREAK_LEVEL: '&b 挖掘等级&7: &f{0}'
+TOOL_INFO_RADIUS: '&b 范围&7: &f{0}'
+TOOL_INFO_TNT_AMOUNT: '&b TNT 数量&7: &f{0}'
+TOOL_INFO_FOOTER: '&8&m---------------&b&l WildTools &8&m---------------'
+
+# 在玩家使用 list 命令时发送.
+TOOL_LIST_HEADER: '&8&m---------------&b&l WildTools &8&m---------------'
+TOOL_LIST_TYPE: |
+  &b {0}&7:
+  {1}
+TOOL_LIST_LINE: '&7  - {0}'
+TOOL_LIST_FOOTER: '&8&m---------------&b&l WildTools &8&m---------------'

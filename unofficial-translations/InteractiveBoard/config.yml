@@ -1,0 +1,9 @@
+# InteractiveBoard, 插件作者 Joiubas
+
+settings:
+  language:
+    defaultlanguage: en_lang.yml
+  bungee-freeze-fix: false
+  frame-delay: 0
+  pause-gifs-for-bedrock-players: true
+configversion: '19.95'

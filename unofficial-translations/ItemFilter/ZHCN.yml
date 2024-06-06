@@ -1,0 +1,20 @@
+no_perms: "&c权限不足"
+invalid_command: "&c命令无效"
+invalid_material:  "&c材料无效"
+help_header: "&7┅┅┅┅┅┅┅┅┅┅┅[物品过滤]┅┅┅┅┅┅┅┅┅┅┅"
+help_reload: "&6/itemfilter reload &f- 重载配置"
+help_menu: "&6/itemfilter menu &f- 打开菜单界面"
+help_add: "&6/itemfilter add [material] &f- 将物品添加至过滤器"
+help_remove:  "&6/itemfilter remove [material] &f- 将物品从过滤器移除"
+help_reset: "&6/itemfilter reset &f- 重置你设置的所有过滤器"
+help_toggle: "&6/itemfilter toggle &f- 切换过滤器"
+help_footer: "&7┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅"
+
+reload_success: "&2配置文件已成功重载."
+
+reset_success: "&2成功重置了你的过滤器."
+
+filter_on: "过滤器当前模式为 &2开启"
+filter_off: "过滤器当前模式为 &c关闭"
+filter_add: "&f成功&2添加了材料 &f%0% 至过滤器"
+filter_remove: "&f成功&c从过滤器移除了材料 &f%0%"

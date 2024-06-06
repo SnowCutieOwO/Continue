@@ -1,0 +1,150 @@
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#                                        ----[ClansLite]----                                        #
+#                                     ----[插件作者 Loving11ish]----                                 #
+#                        ----[贡献者: Gamlin,TechnicallyCoded,GameKuchen]----                        #
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#                                       ----[插件配置文件]----                                       #
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#ClansLite 主配置文件, 对应版本 1.4.3
+
+# 是否启用本插件的菜单? [默认值: true]
+use-global-GUI-system: true
+
+clan-tags:
+  # 设置公会前缀和名称的最小长度. [默认值: 3]
+  min-character-limit: 3
+  # 设置公会前缀和名称的最大长度. [默认值: 32]
+  max-character-limit: 32
+  # 设置前缀和名称中的屏蔽词. [大小写&格式敏感]
+  disallowed-tags:
+    - "Gamers"
+    - "Rise"
+    - "Up"
+  # 聊天栏的公会前缀后是否增加一个空格. [默认值: true]
+  prefix-add-space-after: true
+  # 聊天栏的公会前缀是否增加包裹字符. [默认值: true]
+  prefix-add-brackets: false
+  #Below is how the above brackets should appear.
+  # 下文为自定义字符
+  brackets-opening: "&f["
+  brackets-closing: "&f]"
+
+clan-size:
+  # 设置公会默认的成员数量上限. [默认值: 8]
+  default-max-clan-size: 8
+  # 若要按权限限制公会的成员数量上限, 请使用下面的配置.
+  tiered-clan-system:
+    # 是否启用公会等级, [默认值: false]
+    enabled: false
+    permission-group-list:
+      group-1: 4  #对应权限: 'clanslite.maxclansize.group1' [默认拥有的是该权限]
+      group-2: 8  #对应权限: 'clanslite.maxclansize.group2'
+      group-3: 12 #对应权限: 'clanslite.maxclansize.group3'
+      group-4: 16 #对应权限: 'clanslite.maxclansize.group4'
+      group-5: 20 #对应权限: 'clanslite.maxclansize.group5'
+      group-6: 24 #对应权限: 'clanslite.maxclansize.group6'
+
+clan-creation:
+  # 创建新公会时是否向全服发送消息? [默认值: true]
+  announce-to-all: true
+  # 是否将消息以标题格式发出? [默认值: true]
+  send-as-title: true
+
+clan-join:
+  # 玩家加入公会时是否向全服发送消息? [默认值: true]
+  announce-to-all: true
+  # 是否将消息以标题格式发出? [默认值: false]
+  send-as-title: false
+
+clan-chat:
+  # 启用公会聊天系统. [默认值: true]
+  enabled: true
+  # 如下设置决定了公会聊天消息的格式. [默认值: &6[&3CC&6]&r]
+  chat-prefix: "&6[&3CC&6]&r &b%CLAN%&r"
+  cool-down:
+    # 是否启用 '/cc <消息>' 的冷却以防止刷屏 (推荐). [默认值: true]
+    enabled: true
+    # 冷却时间, 单位为秒. [默认值: 5, 表示五秒]
+    time: 5
+  chat-spy:
+    # 是否允许带有 'clanslite.chat.spy' 的玩家允许窃听所有聊天信息? [默认值: true]
+    enabled: true
+    # 窃听消息的前缀. [默认值: &6[&c窃听&6]&r]
+    chat-spy-prefix: "&6[&cS窃听&6]&r"
+
+# 设置公会可设置的同盟最大数量. [默认值: 4]
+max-clan-allies: 4
+
+# 设置公会可设置的敌人最大数量. [默认值: 2]
+max-clan-enemies: 2
+
+# 公会保护
+protections:
+  pvp:
+    # 全局启用友伤系统. [默认值: true]
+    pvp-command-enabled: true
+    # 是否允许玩家通过权限 'clanslite.bypass.pvp' 绕过 PVP 保护. [默认值: true]
+    enable-bypass-permission: true
+  chests:
+    # 下列设置对任意低于 1.14.4 的版本均无效!
+    # 全局启用公会保护箱子系统. [默认值: true]
+    enabled: true
+    # 是否允许玩家通过权限 'clanslite.bypass.chests' 绕过箱子保护. [默认值: true]
+    enable-bypass-permission: true
+    # 是否允许保护箱子被 TNT 爆炸摧毁? [默认值: true]
+    enable-TNT-destruction: true
+    # 是否允许保护箱子被苦力怕爆炸摧毁? [默认值: true]
+    enable-creeper-destruction: true
+    # 设置购买新保护箱子所需的公会积分. [默认值: 250]
+    clan-points-purchase-value: 250
+
+# 公会与玩家积分
+points:
+  player-points:
+    # 是否在击杀其他玩家时获得积分? [默认值: true]
+    enabled: true
+    # 玩家击杀非敌对公会的玩家所获得的积分? [默认值: 5]
+    non-enemy-clan-point-amount-on-kill: 5
+    # 玩家击杀敌对公会的玩家所获得的积分? [默认值: 10]
+    enemy-clan-point-amount-on-kill: 10
+    # 玩家击杀所获点数是否从被击杀玩家账户中获取? [默认值: true]
+    take-points-from-victim: true
+
+# 公会据点系统
+clan-home:
+  # 是否启用 '/clan [sethome|home]' 命令. [默认值: true]
+  enabled: true
+  cool-down:
+    # 是否启用 '/clan home' 命令的冷却, 防止刷屏? [默认值: true]
+    enabled: true
+    # 冷却时间, 单位为秒. [默认值: 120, 即两分钟]
+    time: 120
+  delay-before-teleport:
+    # 传送回据点前是否要求玩家原地站定一段时间? [默认值: true]
+    enabled: true
+    # 站定时间的长度 (单位为秒) [默认值: 5]
+    time: 5
+    # 是否让服务器持续检查玩家在处理据点传送前的移动?
+    ## 警告 - 这会启用额外的移动检查, 可能会导致服务器卡顿 ##
+    ## 若出现性能问题, 请将下文该项设置为 'false' ##
+    #[默认值: true]
+    cancel-teleport-on-move: true
+
+# 插件更新设置
+plugin-update-notifications:
+  # 是否要让拥有权限的玩家接收更新消息? (权限: 'clanslite.update'). [默认值: true]
+  enabled: true
+
+# 插件通用设置
+general:
+  show-auto-save-task-message:
+    # 是否要在控制台中显示自动保存任务的进度? [默认值: true]
+    enabled: true
+  show-auto-invite-wipe-message:
+    # 是否要在控制台中显示自动清理请求任务的进度? [默认值: true]
+    enabled: true
+  developer-debug-mode:
+    # 是否要在控制台中显示大部分操作的调试信息? [默认值: false]
+    enabled: false

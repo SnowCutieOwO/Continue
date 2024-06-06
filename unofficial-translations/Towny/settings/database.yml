@@ -1,0 +1,31 @@
+  
+database:
+  
+  # 数据库版本. 此项请勿修改.
+  version: '1'
+  
+  # 有效的读取与保存类型为: flatfile (文件) 与 mysql.
+  database_load: flatfile
+  database_save: flatfile
+  
+  # SQL 数据库连接设置 (若设置为使用 mysql 的话需要配置如下内容).
+  sql:
+    hostname: localhost
+    port: '3306'
+    dbname: towny
+    table_prefix: towny_
+    username: root
+    password: ''
+    flags: ?verifyServerCertificate=false&useSSL=false&useUnicode=true&characterEncoding=utf-8
+  
+    # 在使用 mysql 的情况下对部分 Towny 数据进行备份时是否发出警告.
+    # 在了解不使用文件备份且你的 mysql 数据库不可用时的后果可将该项设置为 true.
+    disable_backup_warning: 'false'
+  
+    # 连接池相关设置.
+    # 除非你知道你在做什么, 且充分了解了 Towny 如何使用数据库
+    # 否则不推荐你修改如下设置.
+    pooling:
+      max_pool_size: '5'
+      max_lifetime: '180000'
+      connection_timeout: '5000'

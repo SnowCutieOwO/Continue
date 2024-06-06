@@ -1,0 +1,21 @@
+Settings:
+  Enabled: true
+  Name: '&c飞行'
+  MaxLevel: 1
+  MaxStack: 2
+  Requirement:
+    Enabled: false
+    Number: 10
+    Placeholder: '%RevEnchants_Tool_Flag_Level%'
+  Description: '&7允许飞行'
+  Shard:
+    Item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3700
+      type: LEGACY_PRISMARINE_SHARD
+    Glow: true
+    Name: '&cFly + %Level%'
+    Lore:
+    - '&1独特碎片  '
+    - '&7允许飞行 '
+    - '&7同时提升 0.1 * %Level% 的玩家速度'

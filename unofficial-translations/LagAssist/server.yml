@@ -1,0 +1,704 @@
+#  _                                  _     _   
+# | |                   /\           (_)   | |  
+# | |     __ _  __ _   /  \   ___ ___ _ ___| |_ 
+# | |    / _` |/ _` | / /\ \ / __/ __| / __| __|
+# | |___| (_| | (_| |/ ____ \\__ \__ \ \__ \ |_ 
+# |______\__,_|\__, /_/    \_\___/___/_|___/\__|
+#               __/ |                           
+#              |___/     插件作者 EntryRise       
+# 
+# 此为默认配置，我们推荐保持默认设置。
+# 若你需要修改其中设置，我们建议先联系 Discord 聊天群组。
+# DISCORD: https://discord.gg/4aWWPcb
+
+# 智能清理可以依据下列配置清理实体...
+#
+# 提示: 该功能不会清除命名实体，即便实体符合列表中的设置.
+# 这些功能遵照原版特性 - 命名实体不会被清除, 玩家大多已经习惯了这些特性.
+smart-cleaner:
+  # 清理系统应当启用白名单或黑名单模式
+  # TIP: 白名单 - 仅列表上的会被清理 ; 黑名单则相反
+  whitelist: false
+  # 在 TPS 掉到一定值后会开始清理实体
+  # 例：TPS 小于 16，插件会尝试清除下列实体.
+  # 提示：设置为 0.0 可将其禁用.
+  maxtps-cull: 16.0
+  # 在 TPS 低于以下值时禁用生物生成.
+  # 例：TPS 小于 14，插件会阻止所有实体生成。
+  maxtps-disablespawn: 14.0
+  # 会被清理（或保留，取决于上述设置为白名单或黑名单）的实体列表
+  # 可用实体名称列表: htttps://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html
+  mobs:
+  - "ZOMBIE"
+  - "CREEPER"
+  - "SKELETON"
+  - "WITHER_SKELETON"
+  - "SQUID"
+  - "SPIDER"
+  - "SILVERFISH"
+  - "PIG_ZOMBIE"
+  - "MINECART"
+  - "ILLUSIONER"
+  - "GHAST"
+  - "HUSK"
+  - "EVOKER"
+  - "ENDERMAN"
+  - "ENDERMITE"
+  - "ELDER_GUARDIAN"
+  - "CAVE_SPIDER"
+  - "BAT"
+  - "BLAZE"
+# 创造服务器可考虑设置
+#  - ARMOR_STAND
+# 公会服务器可考虑设置
+#  - PRIMED_TNT
+
+
+# 智能堆叠系统允许将一个区块内的同类实体堆叠.
+# 该算法相较其他插件的更为轻量化，能为服务器节省更多的性能开销.
+smart-stacker:
+  # 是否启用智能堆叠系统?
+  enabled: false
+  checks:
+    # 是否在实体生成后立即执行堆叠任务.
+    spawn-check: true
+    # (!) （除非获得我们的指导或允许）请勿将下列设置启用
+    pre-spawn-check: false # <-- 请勿启用
+    # 是否在实体分离时尝试再次堆叠实体?
+    # 禁用该功能可能有助于提升性能，但不建议这么做，因为实体在跨区块转移时会分离.
+    split-change-check: true
+  gameplay:
+    # 是否允许实体名称总是可见?
+    # (!) 将该项设置为 false 会使得只有你看向实体时才显示名称
+    tag-visibility: true
+    # (!) 请注意保留 {size} 内建变量，否则堆叠功能会不能正常运转
+    tag-format: "&f{type} &cx{size}"
+    # 能正常参与堆叠的实体生成理由.
+    # 使用 ALL 来允许所有实体堆叠, 或者你可以使用下列的生成理由:
+    # 完整生成理由列表: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html
+    spawn-reasons:
+    - "ALL"
+    # 能被堆叠的实体类型列表.
+    # 实体名称列表: htttps://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html
+    stackable:
+#    - "SKELETON"
+#    - "ZOMBIE"
+#    - "BLAZE"
+#    - "VINDICATOR"
+#    - "VILLAGER"
+#    - "WITCH"
+#    - "SPIDER"
+#    - "EVOKER"
+  technical:
+    # 每个区块垂直分离的数量（必须能整除 256）。设置为更小的数值会导致堆叠区域减小，但可以提升与实体密集类区域的兼容性
+    # (!) 不推荐将其设置为小于 4 的值。我们推荐设置为 8 或者 16。
+    splits: 8
+    # 是否在插件禁用后移除所有本插件产生的堆叠实体? (禁用功能)
+    # (!) 推荐将其设置为 true, 因为该功能有助于维持 TPS. 它也防止了在区块为空时搜索旧实体导致的额外负担.
+    # (!) 若设置为 false, 堆叠系统会在加载区块时触发一次.
+    # shutdown-clean: false <-- 请勿启用
+    # 若生物按序击杀，是否将掉落物按其数量翻倍
+    drops-fix: true
+    # 堆叠实体的最大数量是多少? 每块区域的堆叠实体都有其数量上限, 因此建议将该设置保持在较高的值. 
+    max-stack: 500
+    # 最小堆叠功能允许插件在堆叠前检查一个区域内的实体数量
+    # 这能够保留一些原版功能, 但可能会对性能产生影响. 因用户群体的要求, 该功能还是被加入了
+    # 尽管如此, 插件的总体效率应该还是会比市面上的插件要高, 若你将性能考虑在内则请不要设置最小堆叠数量.
+    #
+    # (!) 为了缓解性能压力, 本插件使用了缓存, 可能会导致实际堆叠的实体数量与显示的有一些差距, 但这不影响实际使用且不易被注意到.
+    #
+    min-stack: 0
+    # 该部分配置可对堆叠实体的受伤来源进行控制.
+    damage:
+      # 哪些受伤原因应当按实体数量进行翻倍.
+      # (!) 该设置一般是针对刷怪场的. 例如, 翻倍的摔落伤害可解决插件与坠落式刷怪塔的兼容性问题.
+      multiply:
+      - "CRAMMING"
+      - "FALL"
+      - "DROWNING"
+      - "CONTACT"
+      - "VOID"
+      - "FIRE_TICK"
+      - "DRYOUT"
+    # 实体比较用于阻止两个相似的实体被堆叠.
+    # 若你需要保持原版的游戏体验, 这项功能对你非常有用.
+    comparison:
+      sheep: true
+      pig: true
+      slime: true
+      villager: false
+      tameable: true
+      horse: true
+      # 是否比较实体的年龄相似度
+      ageable: false
+
+
+# 此为简单的生物改变设置. 它会修改实体的行为来提升服务器性能.
+mob-manager:
+  # 禁用盔甲架重力. 这可能在创造模式的服务器上有帮助, 因为那种地方经常会出现一大堆盔甲架.
+  no-armorstand-gravity: false
+  # 禁用史莱姆的分裂, 史莱姆死亡后掉落数量近似的掉落物. 对大于原版大小的史莱姆非常有用.
+  # 注意: 这也对原版史莱姆生效，但（在我的观点中）除非服务器会因为史莱姆卡顿否则大部分时间无需使用此项。
+  simple-slime: false
+
+
+# 提供了简单但有效缓解卡顿的微功能. 大部分是方法简单而无需单独设置的功能.
+microfeatures:
+  # 自动摧毁活塞附近的掉落物来优化刷怪场
+  # 可以优化刷怪场的红石结构. 对于 1.8.8 以上以公会玩法为主的服务器非常有用.
+  optimize-growable-farms:
+    enable: false
+    blocks:
+    - "PUMPKIN"
+    # 两个版本 (1.13+ 扁平化之后和之前的 ID)
+    - "MELON_BLOCK"
+    - "MELON"
+  # 修复了高频红石物品交互导致卡服的问题
+  # https://rz.al/u/5591.png
+  click-spam-fix:
+    enable: false
+    # 会提升触发计数的方块
+    blocks:
+    - "LEVER"
+    counter:
+      message: "&c请不要过快点击此类方块!"
+      # 每次交互增加的数值是多少?
+      increment: 20
+      # 在显示消息之前需要达到的阈值
+      max: 80
+  # 该功能会堆叠区块内的可生长物，并只掉落一整叠物品.
+  # 它应该会降低区块内的实体数量, 并可以帮助使用区块漏斗的服务器提升性能.
+  #
+  # (!) 对包含巨型刷怪场的服务器不推荐启用此项, 因为来自小型刷怪场的掉落物会产生延迟
+  stack-growables:
+    enable: false
+    # 堆叠大小是什么? 大于 64 的物品不会被渲染.
+    stacksize: 64
+    blocks:
+    - "CACTUS"
+    - "SUGAR_CANE"
+
+
+# 卡顿区块检测. 你可以不停调试并找出最适合服务器的值。
+#
+# 提示: 找到服务器卡顿的实体或 tiles 并为其设置合适的卡顿阈值.
+#       默认值应该运转正常, 但通常最好找到适合服务器设置的值.
+chunkanalyse:
+  # 在点击文本时输入的传送命令.
+  # 变量: {x}, {y}, {z}, {chunkx}, {chunkz} {world}
+  #
+  # 提示: 可将其设置为你自己的命令. 这也可以用于设置清理区块中的卡顿或直接将其卸载等.
+  tp-cmd: "lagassist tpchunk {world} {chunkx} {chunkz}"
+  # 服务器内分值超过几分的区块会被标记为卡顿并出现在列表中. 你应该合理调试这个值, 使得你想要找的区块能正确显示.
+  #
+  # 提示: 此为 /lagassist chunkanalyse 会显示的区块数量.
+  #      (总会显示前 x 个最卡顿的区块.)
+  ammount: 10
+  # 卡顿值的实体 & 材料名.
+  #
+  # 材料名称列表: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+  # 实体名称列表: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html
+  # Tile 实体名称列表: https://minecraft.gamepedia.com/Block_entity
+  #
+  # TIP: 仅检测 tile 实体与实体. 正常方块不会参与 tick 计算. 这意味着如果我们想要检测普通方块时会产生卡顿.
+  #      另外, 正常方块也不会让服务器产生卡顿.
+  values:
+    # -------------
+    # TILE 实体
+    # -------------
+    chest: 1
+    trapped_chest: 2
+    burning_furnace: 3
+    sign: 1
+    # 信标一般不会卡服, 但它们一般会出现在卡顿区块中, 因为经常会被放在怪物处理区 & 自动刷怪场附近.
+    # 因其稀有性故设置较高的值.
+    beacon: 35
+    hopper: 6
+    note_block: 4
+    piston_extension: 5
+    dispenser: 10
+    # 刷怪笼是卡服元凶, 所以我们推荐为其设置一个较高的值.
+    mob_spawner: 60
+    # --------------
+    # 普通实体
+    # --------------
+    # 玩家本身. 他们会有适当的检测值是因为玩家会产生卡服行为 (建造刷怪场、在其内挂机等)
+    player: 15
+    # 一个区块内可发现的普通实体. 将该值设置为较为适中的值. 一般对服务器无过大影响.
+    # 苦力怕分数略高是因为它产生的爆炸可以卡服.
+    zombie: 2
+    spider: 2
+    skeleton: 2
+    creeper: 3
+    # 被动实体. 可能会影响到一些带有自定义刷怪笼的刷怪场. 尽管这些内容在 AdvancedSpigotTweaks 中被很好地优化了.
+    cow: 1
+    pig: 1
+    # 丢出的物品. 不要尝试上报因这些内容造成的卡顿, 因为它们已经被 AdvancedSpigotTweaks 优化过了. 末影之眼 (ender_signal) 可能表示附近存在末地传送门, 也就会有更多活动 (即卡顿). 蛋可以生成实体, 因而有较高的阈值.
+    ender_signal: 5
+    egg: 3
+    fishing_hook: 2
+    ender_pearl: 2
+    snowball: 2
+    arrow: 1
+    # 静态实体可能会卡服, 但都取决于情况. 它们一般表示附近存在较大规模的玩家聚落, 因而与卡顿相关联.
+    painting: 2
+    item_frame: 3
+    armor_stand: 4
+    # 堆叠物品 & 经验值不会很卡服. 若你在使用 AdvancedSpigotTweaks, 则应注意.
+    # 烟花可能会卡服, 尤其是当其产生较大爆炸时.
+    dropped_item: 2
+    experience_orb: 3
+    firework: 8
+    # Bosses 有更复杂的机制, 因而会卡服. 实体的能力也会在 boss 参与战斗时导致卡顿.
+    ender_dragon: 85
+    ender_crystal: 10
+    wither: 55
+    wither_skull: 20
+    # TNT 是服务器卡顿的主要问题. 我们推荐设置点燃 TNT (激活 TNT) 为较高的值. 需要记住的是, TNT 本身并不会很卡服, 但它们会被用在 TNT 大炮等结构中.
+    # minecart_tnt 因其移动规律成为更大的卡顿源.
+    primed_tnt: 7
+    minecart_tnt: 15
+    # 高度活跃的实体. 包括那些包含许多检查与用于相关机制的实体.
+    minecart_hopper: 20
+    minecart_mob_spawner: 80
+    endermite: 5
+
+
+# 区块管理系统.
+chunk-manager:
+  # 是否启用区块管理器? 若你的加载区块数量很多, 启用该功能有助于缓解内存问题.
+  # 注意: 需要将服务器内 server.properties 文件下的服务器视距调到最大.
+  #
+  # (!) 该功能仅在 Paper 服务端上可用.
+  enabled: false
+  # 所有玩家一次可保持载入的最大区块数量.
+  # 提示: 视距由下列公式计算:
+  #      SQRT(最大区块数量 / 玩家数量 / 4).
+  # 例: 若最大区块数量为 600, 且有 100 名玩家在线, 那么你的视距为 4.
+  # (!) 若要该功能工作, 请将 server.properties 和 spigot.yml 下的视距设置为你想要的最小值.
+  max-chunks: 5000
+  # (!) 试着让它逐步更大. 有时候保持在更小的视距更安全.
+  max-view: 12
+    
+
+# 卡顿测量配置
+lag-measures:
+  # 卡顿测量会在服务器 TPS 低于一定值时启用卡顿清理程序
+  # 若要配置 TPS 设置, 可以在配置文件中寻找最大 TPS 的设置.
+  #
+  # 在控制台和聊天栏公告卡顿清理.
+  announce:
+    # 是否通报在卡顿清理过程中出现的玩家.
+    enabled: false
+    # 是否向管理员显示更详细的卡顿测量消息?
+    # 对应权限节点: lagassist.notify
+    staffmsg: true
+    message: "&c&lLag&f&lAssist &e» &f正在处理服务器卡顿..."
+  # 设置卡顿清理程序之间的间隔.
+  # 我们推荐将其保持在 6000, 频繁清理导致红石被禁用可能会让玩家游玩体验大打折扣.
+  #
+  # 提示: 时间单位为刻. 1 秒 = 20 刻. 若要设置为 60 秒, 则将该设置调整为 60 * 20 即 1200
+  # (对于 10 秒间隔, 设置为 200 即可)
+  # 默认: 6000 刻 - 三分钟间隔
+  timer: 6000
+
+
+# 红石削减 调整
+redstone-culler:
+  # 红石元件损坏的几率, 概率数值为 1 - 100. 若你不觉得服务器上的卡顿来源为红石, 则可考虑将其禁用.
+  #
+  # 破坏系统可能会因此破坏玩家的生电装置. 若设置为 0, 服务器将会很难避免红石导致的卡顿
+  # 因为玩家可以在几秒之内重新启动他们的刷怪场或生电机械.
+  #
+  # 提示: 若要让生电电路被破坏, 概率不必设置得过大. 触发系统会监测所有活跃红石线路并破坏其中的 X%
+  #      记住如果你设置几率为 2%, 则在你放置 100 个红石的情况下你仍可以看见红石线被破坏的效果.
+  #
+  # (!) TO disable set chance to 0.
+  # (!) 若要禁用可将其设置为 0.
+  #     非常推荐将其设置在 2-5 之间来防止玩家重启被破坏的生电机器. 大多数可疑玩家会这么做, 也会不惜时间调整他们的卡服机器.
+  #
+  chance: 0
+  #
+  # 红石削减所影响的方块. 这允许你防止压力板或其他有价值且不太可能造成卡顿的方块得以避免被破坏.
+  affected-materials:
+  - "REDSTONE"
+  - "REDSTONE_WIRE"
+  - "REDSTONE_COMPARATOR"
+  - "REDSTONE_COMPARATOR_OFF"
+  - "REDSTONE_COMPARATOR_ON"
+  - "REDSTONE_TORCH_OFF"
+  - "REDSTONE_TORCH_ON"
+  - "REDSTONE_TORCH"
+  - "DIODE"
+  #
+  # 在红石线路信号改变后多少刻进行检查? 设置为过小的值可能无法停止红石计时器, 过大值可能会让破坏性检查收效甚微.
+  #
+  # 提示: 破坏性检查的推荐设置值为 10-30; 普通检查则为 50-70.
+  ticks: 60
+  # 破坏性检查. 用于检测侦测器相关卡服, 它可以让一台 i7-4770k 的服务器很快处于高压状态.
+  # 它会检查信号改变并移除超出一定值的侦测器.
+  # 侦测器卡服示例: http://stefatorus.go.ro/img/SpigotTweaks/ObserverFix.gif
+  #
+  # (!) 这个设置大部分情况下是正常的, 但与此同时不建议无故启用该功能.
+  #     这些卡服机通常很难找到, 如果服务器一切正常就无需删除它们.
+  destructive:
+    # 是否启用破坏性检查?
+    enabled: false
+    # 触发侦测器移除的信号刷新次数. 推荐保持默认值.
+    value: 16
+  #
+  # 自动红石削除会在 TPS 低于该值时触发.
+  # 例: 若 TPS 低于 19, 插件将会在监测器启动时削除多余的红石线路. 
+  # 提示: 设置为 0 可将其禁用.
+  maxtps: 19.0
+
+
+# 禁用漏斗合成. 漏斗是服主必须面对的非小游戏问题之一. 启用该项检查会让你更少使用漏斗.
+# 不会影响已有刷怪场, 但会让它们变得更高效.
+#
+# 漏斗在原版 Minecraft 中很容易合成, 这也导致了它们易被滥用 (>100 漏斗/刷怪场)
+hopper-check:
+  enabled: false
+  reason: "&c&lLag&f&lAssist &e» &f已禁止合成漏斗."
+  # 防止玩家使用漏斗, 将其破坏. 这会暂时破坏那些刷怪场, 可能有更大概率破坏一连串漏斗而不只是一个. (取决于数量)
+  #
+  # 提示: 该设置不是普通概率, 它是每万分之 X 的概率.
+  # 不要将该值设置得太大. 若你将其设置为 1 或 2, 它会确保大型的挂机刷怪场会被破坏,
+  # 且不会被正常活跃的玩家破坏, 这也不会干扰到那些玩法不那么极端的玩家.
+  #
+  # 可设置为 0 将其禁用.
+  chance: 0
+  # 使得掉落物直接进入漏斗. 该设置是为公会服务器设置的, 这可以替代那些作物漏斗来在较多掉落物的情况下提升性能.
+  chunk-hoppers:
+    # 是否启用区块漏斗? 这会收集区块内非玩家掉落的列表内所有物品并将其放入指定漏斗.
+    enabled: true
+    # 区块漏斗的模式
+    # FIRST   - 使用最先空闲的漏斗
+    # RANDOM  - 随机获取漏斗 (可能可以提升物流速度)
+    # CLOSEST - 选择距离物品最近的漏斗.
+    mode: "RANDOM"
+    # 区块漏斗如何使用?
+    # DEFAULT - 所有漏斗都变成区块漏斗. 对那些已建立一段时间但未使用漏斗的服务器有用.
+    # NAME    - 带有自定义名称的漏斗为区块漏斗. 可以减少排序的漏斗数量并提升性能 (若服务器先前已宣传了区块漏斗)
+    define: "&e区块&f漏斗"
+    # 过滤系统允许玩家选择区块漏斗能够捡起的物品. 该功能在创建简单高效的漏斗时非常有用, 也可以促使玩家更多地使用区块漏斗.
+    filter:
+      # 区块漏斗可拾起的默认物品列表. 这会在漏斗没有自定义过滤器时使用.
+      # (!) 既然你能使用漏斗过滤器, 那么请确保格子数量大于默认列表中的物品种类.
+      default:
+      - "IRON_ORE"
+      - "ROTTEN_FLESH"
+      - "BONE"
+      - "ARROW"
+      gui:
+        # 过滤界面的标题名称. 用于自定义过滤系统时非常有用.
+        name: "&d&l漏斗过滤"
+        # 这代表了漏斗过滤界面的大小. 调整该数值允许你调整漏斗的复杂程度.
+        # (!) 必须设置为 9 的倍数.
+        size: 18
+    # 生物漏斗允许玩家立即将刷怪笼的掉落物聚在一块. 它会使用上述的过滤器.
+    # 玩家可以在列表中加入刷怪蛋使得漏斗可以吸住对应类型的怪物.
+    mob-hopper:
+      # (!) 注意: 生物漏斗仅在 1.13+ 的服务器上可用.
+      #
+      # 该检查可用于缓解极限卡顿的情况, 或永久使用. 在我们推荐将其临时开启时, 若你的玩家不介意使用漏斗吸怪, 你可以将其设置为仅在服务器卡顿时启用.
+      # (!) 若要禁用本功能, 将该值设置为 0 即可.
+      #     若需要临时开启, 可将其设置为 17, 若要永久开启请设置为 20.
+      maxtps: 0.0
+      # 生物漏斗会吸住的实体生成原因. 这允许将普通生物和刷怪笼生物区别开来并吸入漏斗.
+      spawn-reasons:
+      - "SPAWNER"
+      - "NETHER_PORTAL"
+      # 将掉落物倍率提升可允许你调整怪物生成而无需修改玩家与漏斗的数量, 可提升效率而无需影响玩家.
+      multiplier: 1
+      # 实体对应材料, 当漏斗中包含对应物品时可将对应实体捕获.
+      filter-items:
+        zombie: "ROTTEN_FLESH"
+        creeper: "GUNPOWDER"
+        skeleton: "BONE"
+    # 在将物品放入区块漏斗之前自动出售出现在列表中的物品
+    # 对自动出售箱子的高效替代. 需要 Vault 才可生效.
+    sell-hopper:
+      # 是否启用出售漏斗功能?
+      # (!) 若要启用, 请将权限 "lagassist.sellhopper.PERCENTAGE" 给予玩家.
+      #     例: lagassist.sellhopper.70 会使得玩家获得 70% 的所得款.
+      # 
+      enabled: false
+      # 在支付后玩家将会支付的价格. 支付阶段是用于防止卡顿的功能.
+      prices:
+        ROTTEN_FLESH: 10
+        GUNPOWDER: 5.3
+        BONE: 1
+        
+
+# 限制器允许你限制单区块内的实体与 tiles 数量
+# 该系统可用于限制实体生成以及矿车堆积等.
+#
+# 软限制表示区块内实体生成的位置.
+# 硬限制表示从其他区块带入的实体限制 (例如: 水流或铁轨)
+#
+# 这可以在允许实体跨区块转移的同时防止区块内实体数量过多.
+limiter:
+  # 在区块清理之间的时间间隔. 将其设置为更小的值会导致服务器更卡.
+  # 更大值表示服务器检查之间的时间间隔更长.
+  timer-time: 1200
+  # 是否无视命名实体?
+  ignore-named-mobs: false
+  mobs:
+    # 每个区块内实体最大数量. 可将该项设置为更大的数值, 并使用 per-limit 配置来限制指定类型的实体数量.
+    total-limit: -1
+    soft-limit:
+      # 掉落物会处于该列表中的原因是我们不希望掉落物不生成.
+      dropped_item: 200
+      entity2: -1
+      #armor_stand: 20
+    hard-limit:
+      entity1: 100
+      #armor_stand: 100
+  tiles:
+    # 每个区块内可放置的最大 tile 实体数量. 需要注意的是游戏内包含很多种 tile 实体, 且它们产生的卡顿并不很多.
+    # 因此这对解决卡顿相当有限, 但在其他功能方面也许有用.
+    # (!) 设置为 -1 可将其禁用.
+    total-limit: -1
+    per-limit:
+      #crafthopper: 16
+      #craftchest: 128
+      tileentity1: -1
+      tileentity2: -1
+
+
+# 防止刷怪笼在大规模服务器上的卡服
+spawner-check:
+  # 是否启用刷怪笼检测?
+  enabled: true
+  # 是否有概率直接破坏刷怪笼 (千分之 X 概率)? 对很容易获取刷怪笼的服务器非常有用.
+  breaker: false
+  # 应当设置 (千分之 X 概率) 的损坏几率.
+  # 例: 若设置为 5, 则几率为 5/1000, 即 1/200.
+  chance: 5
+  # 自定义刷怪笼实现. 该功能应当兼容大部分刷怪笼插件, 如 EpicSpawners 或 SilkSpawners.
+  custom-settings:
+    # 刷怪笼生成实体的间隔
+    delay: 300
+    # (!) 仅 1.12 可用
+    # 刷怪笼应当生成多少实体. 可大幅缓解刷怪笼导致的卡顿.
+    amount:
+      min: 1
+      max: 2
+    # 生成实体的范围应该为多大. 我们推荐将其保持在较小值.
+    spawnrange: 3
+    # 玩家可以激活刷怪笼的最小距离.
+    player-range: 12
+  # 自动刷怪笼检查激活器. 在该系统禁用时无效.
+  # 例: 若 TPS 小于 16, 插件将会开始改变刷怪笼的机制.
+  # 提示: 设置为 0.0 可将其禁用.
+  maxtps: 16.0
+
+# 物理系统禁用那些产生卡顿或无用的游戏机制. 物理系统可以设置为在开服时自动启用或使用命令 /lagassist 启用.
+#
+# 提示: 在这里禁用不会完全禁用你使用命令 /lagassist 的检查. 若你需要其中一些检查仍然运转, 请将它们添加至此.
+deny-physics:
+  # 是否在服务器启动时禁用物理特性?
+  # 提示: 可以用于修改游戏特性.
+  # 例如，你可以禁用建筑服务器的树叶腐烂，火焰熄灭或冰雪消融。
+  enabled: false
+  # 自动物理特性禁止器会在 TPS 低于该值时触发.
+  # 例: 若 TPS 低于 17, 插件将会禁用物理特性.
+  # 提示: 将该项设置为 0.0 可禁用. 
+  maxtps: 17.0
+  # 哪些物理活动应当被禁用? 请确保这些设置能很好吻合服务器情况. 如果你的服务器大量用到 TNT 大炮, 那么禁用爆炸是没用的.
+  # 与此同时, 你不应为生存类服务器启用这些功能.
+  systems:
+    physics: false
+    explosions: true
+    grassspread: true
+    melting: true
+    pistons: true
+    fire: true
+    liquidspread: true
+    decay: true
+    redstone: true
+    # 经常能见到音符盒&侦测器显著卡服的问题
+    noteblock: true
+
+    
+benchmark:
+# 智能栅栏会根据服务器情况估算最适合的玩家数量.
+#
+# 提示: 若你需要更精确的结果 (且接受等得更久), 可修改下文的 ftp 链接
+# 变量: %RND% - 生成随机名称 (用于上传命名).
+#
+# (!) 上传内容大小为字节, 1 MB = 1,000,000 字节. 默认值表示 50MB
+  download:
+    link: "https://speed.cloudflare.com/__down?bytes=50000000"
+  upload: 
+    link: "https://speed.cloudflare.com/__up"
+    size: 50000000
+
+
+blacklisted-worlds:
+# 插件不会生效的世界名称. 所有卡顿优化及检测措施都会被禁用.
+# (!) 分析功能不会被禁用. (卡顿监控、卡顿地图)
+  enabled: false
+  list:
+  - blacklisted1name
+  - blacklisted2name
+  
+safety-manager:
+# 安全管理会尝试在服务器处于高压状态下减小崩服的概率.
+#
+# 它会在达到相应的条件时尝试安全地关闭服务器.
+# (!) 该功能仍在测试, 不推荐启用.
+  enabled: false
+  # 在剩余空间不足以运行 Minecraft 服务器时自动关闭服务器.
+  # 关闭服务器可防止错误区块的产生.
+  no-space:
+    # 服务器启动的空间大小. 默认值为 50 MB.
+    startup-space: 50000000
+    # 服务器安全地自行关闭的阈值. 默认为 20 MB.
+    shutdown-space: 20000000
+  # 反崩服模块可防止玩家恶意发包崩服.
+  #
+  # 它可以通过限制每秒发包及其大小来防止崩服.
+  anti-crasher:
+    # 书本崩服限制.
+    settings:
+      # 在启用调试模式时, 你可以看见序列化发包的内容. 在分析并正确解决崩溃客户端时该功能很有用.
+      # (!) 仅显示带配置部分的包内容.
+      debug: false
+    packets:
+      packetplayinsetcreativeslot:
+        # 在玩家掉线前记录的发包数量.
+        drop-threshold: 350
+        # 每秒“遗忘”发包的数量.
+        decay: 80
+        # 发包最大的大小. 对大页面很有用.
+        size: 10000
+        # 包中的非法值. 在反序列化后的内容中可以找到相关内容.
+        illegals:
+        - "THIS IS A TEST ILLEGAL VALUE"
+      # 修复自定义负载刷屏. 可能在使用一些奇怪的插件与 Bungee 群组服时会出现问题. (检查大小)
+      packetplayincustompayload:
+        drop-threshold: 25
+        decay: 15
+        size: 15000
+        illegals: []
+      packetplayinuseentity:
+        drop-threshold: 25
+        decay: 21
+        size: 5500
+        illegals: []
+      packetplayinuseitem:
+        drop-threshold: 25
+        decay: 21
+        size: 5500
+        illegals: []
+      packetplayinblockdig:
+        drop-threshold: 25
+        decay: 21
+        size: 2500
+        illegals: []
+      packetplayinblockplace:
+        drop-threshold: 25
+        decay: 21
+        size: 22000
+        illegals: []
+      packetplayinwindowclick:
+        drop-threshold: 25
+        decay: 21
+        size: 19000
+        illegals: []
+      packetplayinchat:
+        drop-threshold: 30
+        decay: 20
+        size: 10000
+        illegals: []
+
+
+logcleaner:
+# 日志清理会从你选定的文件夹中清理旧日志. 你可以使用该功能清理不需要的日志文件.
+#
+# maxsize = 符合清理条件的文件最大大小 (单位为 MB).
+# maxage = 符合清理条件的文件最长时间 (单位为天).
+#
+# (!) 上述这些设置都是独立的. 任意条件满足的日志文件都会被删除.
+  enabled: false
+  list:
+  - "logs/"
+  conditions:
+    maxsize: 30
+    maxage: 7
+
+
+# (!) 高度实验性! - 可能会对服务器造成不可逆的损伤. 慎用.
+super-loader:
+# 超级载入功能允许本插件和其他插件实现所谓的 "NMS 拓展".
+# NMS 拓展允许在运行时修改 Minecraft 类
+  enabled: false # (!) - 除非必要否则不应启用
+
+
+stats-bar:
+# 状态栏可通过 /lagassist statsbar 命令显示. 你可以自行设置以让其显示服务器性能, 或用于辅助决定服务器的设计选择.
+# 可用变量: {TPS} {CHKS} {MEM} {ENT}
+  message: "&c&l⬛ &fTPS: &a{TPS} &7&m|&r &f内存: &a{MEM}GB &7&m|&r &f检查: &a{CHKS} &7&m|&r &f试题数量: &a{ENT} &c&l⬛"
+  # TPS 平均值测量间隔. 设置为更低值会使得 TPS 更精确但效率更低.
+  # 设置为 6-12 的值使得效率和精确度相对均衡.
+  tps-interval: 8
+  # 状态栏刷新的间隔是多少? 设置为更低的值可以让状态栏更精确, 但会花费更长时间（尽管只有很小一段时间差距）处理
+  show-delay: 5
+
+  
+# 绘制卡顿地图的系统.
+lag-map:
+  # 是否要保留 filled_map:0? 这将会允许在主城放置卡顿地图并将其发送给玩家.
+  fully-reserve: false
+
+
+# LagAssist API 为其他插件通过不常见的方法提供了获取服务器信息的方法. 这会为其他插件的通信提供便利.
+#
+# (!) 目前仅在 EntryRise.com 的监测工具中使用.
+api:
+  # 服务器图标数据的配置部分.
+  server-icon:
+    # 允许使用该 API 的 IP 地址. 留空表示禁用该功能.
+    # (!) 支持 * 通配符
+    allowed-ips:
+    - "1.2.3.4"
+    - "9.9.9.9.*"
+
+
+# 该部分配置允许你设置智能更新提醒.
+# 该系统用于更好地提醒用户关于本插件的重大更新,
+# 并可提示玩家使用本插件的某些方式可能过时且低效.
+smart-updater:
+  # 该功能允许你选择你会收到哪些更新.
+  # 默认设置只播报稳定版.
+  enabled: true
+  announce:
+    # 是否不播报那些因被检测为不安全的主要问题.
+    unsafe: false
+    # 收到更新帖子的最小点赞数.
+    # 通常发布重大漏洞修复或我推出新功能时会获得很多点赞.
+    min-likes: 1
+    # 播报更新所需的最小下载量.
+    min-downloads: 10
+    # 最小评分. 需要注意的是 5 星评分不计入其内.
+    min-rating: 3.95
+  settings:
+    # 悬浮提示框可提示你当前版本的插件存在哪些功能不能正常运作, 并给予你解决问题的相关提示.
+    tooltips: true
+    # 未测试系统则会提醒你是否在使用未经测试的插件版本, 以此防止误用.
+    untested: true
+
+
+# 控制本插件与其他插件的对接行为
+hooks:
+  # Vault 用于向玩家支付货币.
+  vault:
+    # 在支付之前的钱缓存的时间. 设置为更小的值可以使得到账更快但性能开销更大.
+    cache-duration: 1200
+    # 当玩家获得经济的时候显示什么消息. %amount% 表示经济数量.
+    message: "&c&lLag&f&lAssist &e» &f你获得了 %amount% 枚硬币."
+    
+# 该设置可帮助系统在插件更新时更新配置文件.
+version: 32

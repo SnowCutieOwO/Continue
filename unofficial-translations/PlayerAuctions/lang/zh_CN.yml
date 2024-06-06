@@ -1,0 +1,127 @@
+# PlayerAuctions 插件作者 Olzie-12
+# https://www.spigotmc.org/resources/83073
+# 我们也有可以提供帮助的 Discord 聊天群组: https://olziedev.com/discord 和插件维基 https://docs.olziedev.com/projects/playerauctions
+# 如果你找到任何 BUG, 我很乐意第一时间修复它们 :)
+# 为爱发电
+
+# 若你想要禁用某条消息, 只需将它设置为空字符串, 如:
+# list: "" <- 这会让这条消息不再被发出.
+
+# 每条插件使用的消息文本都在这里.
+# 请在编辑时确保你的字符串都以英文双引号 "" 包裹.
+# 你也可以在其中使用彩色代码 <3
+
+# 若你要使用 HEX 彩色, 你需要按如下格式填写
+# '{# RRGGBB}'
+
+lang:
+  cancel-chat-wait: "取消"
+  friendly-max-auctions: "无限" # 若你需要显示实际数量, 请将它替换为 %amount%
+  prefix: "&b&lPA &7»" # 可以使用 %prefix% 将前缀插入消息中!
+  auction-confirmation: "%prefix% &a发起该拍卖将会花费你 &e%price%&a, 请重复执行一次命令以确认本次操作."
+  auction-sell: "%prefix% &a发起了 &e%item%&a 的拍卖, 起拍价为 &e%price%&a!"
+  auction-added: "%prefix% &a你向市场上的拍卖加入了 &e%amount%&a 个相同的物品, 物品的总价格已变为 &e%price%&a, 单价已变为 &e$%priceper%&a."
+  auction-bid: "%prefix% &a开始在拍卖会上以 &e%price%&a 的价格参与竞拍!"
+  reloaded: "%prefix% &a成功重载了所有配置文件!"
+  money-taken: "%prefix% &a%price% 已从你的银行账户中支出."
+  auctions-cancelled: "%prefix% &a你的拍卖已被取消!"
+  auctions-collected: "%prefix% &a成功收回了 &e%items%&a 个过期物品!"
+  bought-item: "%prefix% &a成功花费了 &e%price%&a 购买了 &e%item%&a!"
+  someone-purchased: "%prefix% &e%player%&a 花费了 &e%price%&a 购买了 &e%amount%&a 个 &e%item%&a!"
+  offline-title: "%prefix% &b在你离线的时候..."
+  bidder: "%prefix% &e%player%&a 对你物品 &e%item%&a 的拍卖给出了 &e%price% &a的价格"
+  bidded: "%prefix% &a你对物品 &e%item%&a 的拍卖给出了 &e%price% &a的价格"
+  bid-success: "%prefix% &e%player%&a 以 &e%price%&a 的价格赢下了你的物品 &e%item%&a 拍卖"
+  bidder-success: "%prefix% &a你以 &e%price%&a 的价格赢下了物品 &e%item%&a 的拍卖, 检查收件箱."
+  earned-offline: "%prefix% &a你获得 &e$%total%&a!"
+  given-more-auctions-success: "%prefix% &a成功给予了玩家 &e%player%&a 额外的 &e%extra%&a 场拍卖, 和总计 &e%total%&a 的硬币!"
+  dbexec-successful: "%prefix% &a成功更新了 &d%count%&a 行数据. &a请执行命令 &d/%cmd% reload&a 来重新读取更新."
+  current-amount-of-auctions:
+    - "%prefix% &7&l&m----------&7&l[ &b&lPlayer Auctions &7&l]&m----------"
+    - "%prefix% &b你当前可最多发起 &e%auctionsmax%&b 场 (&e%staticauctions% 场&b) 拍卖."
+    - "%prefix% &b你当前已发起了 &e%auctionsused%&b 场拍卖."
+    - "%prefix% &7&l&m----------&7&l[ &b&lPlayer Auctions &7&l]&m----------"
+  current-amount-of-auctions-other:
+    - "%prefix% &7&l&m----------&7&l[ &b&lPlayer Auctions &7&l]&m----------"
+    - "%prefix% &d%player%&b 当前可最多发起 &e%auctionsmax%&b 场 (&e%staticauctions% 场&b) 拍卖."
+    - "%prefix% &d%player%&b 当前已发起了 &e%auctionsused%&b 场拍卖."
+    - "%prefix% &7&l&m----------&7&l[ &b&lPlayer Auctions &7&l]&m----------"
+  amount-auctions-others-alert: "&c%player% 当前不在线, 仅显示他们历史发起的最多拍卖场次."
+
+  # 玩家帮助菜单的显示文本
+  # 内建变量 %cmd% 为任意源自 config.yml 的命令 :)
+  help-player:
+    - "%prefix% &7&l&m----------&7&l[ &b&lPlayer Auctions &7&l]&m----------"
+    - "%prefix% &e/%cmd% help &7&l- &b显示本帮助菜单."
+    - "%prefix% &e/%cmd% sell <价格> [货币] [数量] &7&l- &b出售一个物品."
+    - "%prefix% &e/%cmd% bid <价格> &7&l- &b参与物品的竞拍."
+    - "%prefix% &e/%cmd% auction &7&l- &b打开竞拍界面."
+    - "%prefix% &e/%cmd% cancel [id] [玩家] &7&l- &b取消正参与竞拍的物品."
+    - "%prefix% &e/%cmd% collect &7&l- &b收回已被取消的竞拍物品."
+    - "%prefix% &e/%cmd% open [菜单] [选项] &7&l- &b打开玩家拍卖界面."
+    - "%prefix% &e/%cmd% amount &7&l- &b检查你当前开启的拍卖场次."
+    - "%prefix% &e/%cmd% reload &7&l- &b重载所有配置文件."
+    - "%prefix% &7&l&m----------&7&l[ &b&lPlayer Auctions &7&l]&m----------"
+
+  # 控制台的帮助菜单
+  # 内建变量 %cmd% 为任意源自 config.yml 的命令 :)
+  help-console:
+    - "%prefix% &7&l&m----------&7&l[ &b&lPlayer Auctions &7&l]&m----------"
+    - "%prefix% &e/%cmd% help &7&l- &b显示本帮助菜单."
+    - "%prefix% &e/%cmd% open [菜单名称] [额外选项] &7&l- &b打开玩家拍卖界面."
+    - "%prefix% &e/%cmd% reload &7&l- &b重载所有配置文件."
+    - "%prefix% &e/%cmd% dbexec <请求内容> &7&l- &b查询指定内容."
+    - "%prefix% &7&l&m----------&7&l[ &b&lPlayer Auctions &7&l]&m----------"
+
+  # 错误消息.
+  errors:
+    command-syntax: "%prefix% &c格式不正确, 请使用:\n%syntax%"
+    player-only: "%prefix%&c 只有玩家才可执行该命令!"
+    console-only: "%prefix% &c只有控制台才可执行该命令!"
+    not-a-number: "%prefix%&c 输入内容不是数字!"
+    no-permission: "%prefix%&c 你没有这么做的权限 &4%permission%&c! %reason%"
+    auction-dont-exist: "%prefix% &c对应竞拍不存在!"
+    too-many-auctions: "%prefix%&c 你不能过量出售该物品, 根据你的权限/统计数量你只能出售 &4%amount%&c 个!"
+    money-not-enough-sell: "%prefix%&c 你没有足够的硬币 %price% 出售该物品!"
+    money-not-enough-buy: "%prefix%&c 你没有足够的硬币 %price% 购买该物品!"
+    money-not-enough-bid: "%prefix%&c 你没有足够的物品 %price% 参与该物品的竞拍!"
+    disabled-world-sell: "%prefix%&c 你不能在这个世界中出售该物品!"
+    invalid-item: "%prefix%&c 该物品不可用于出售!"
+    damaged-item: "%prefix%&c 你不能出售已损坏的物品!"
+    invalid-gamemode: "%prefix%&c 该游戏模式下不可进行出售操作!"
+    invalid-category: "%prefix%&c 该分类无效"
+    min-price: "%prefix%&c 你需要设置不小于 %min% 的价格!"
+    max-price: "%prefix%&c 你需要设置小于 %max% 的价格!"
+    no-auctions: "%prefix%&c 你当前没有发起的竞拍!"
+    no-expired-auctions: "%prefix%&c 你当前没有可收回物品的过期竞拍!"
+    purchase-own: "%prefix%&c 你不能购买自己的竞拍!"
+    bid-own: "%prefix%&c 你不能在自己的竞拍中出价!"
+    sell-cooldown: "%prefix%&c 你当前还处在物品拍卖的冷却中! (%cooldown% 剩余)"
+    bid-cooldown: "%prefix%&c 你当前还处在参与竞价的冷却中! (%cooldown% 剩余)"
+    offer-cooldown: "%prefix%&c 你当前还处在支付竞价的冷却中! (%cooldown% 剩余)"
+    purchase-cooldown: "%prefix%&c 你当前还处在购买物品的冷却中! (%cooldown% 剩余)"
+    no-player-joined: "%prefix% &c该玩家不存在!"
+    bidder-no-money: "%prefix% &c%player% 无法支付足够的钱用于购买你的物品 &e%item%, 订单已取消."
+    bid-no-money: "%prefix% &c你无法支付足够的钱用于购买物品 &e%item%, 订单已取消."
+    min-bid: "%prefix% &c你付不起那么多! 你可以竞拍的价格最低为 $1,000"
+    gui-cooldown: "%prefix% &c请耐心等待一会再使用这个."
+    not-enough-add-bid: "%prefix% &c你没有足够的钱将 $%amount% 加至 $%bid%"
+    cancel-bid: "%prefix% &c有玩家竞价的拍卖无法取消!"
+    auction-doesnt-exist: "%prefix% &c这场拍卖不存在!"
+    dbexec-failed: "%prefix% &c执行请求时出现错误. %error%"
+
+# 在这里你可以通过指定权限指定不同类型的无权限消息.
+# 或者你也可以将它们设置为空字符串以使其不提醒.
+# no-permission:
+#   pa.purchase: "你没有权限购买该物品!"
+
+n/a:
+  no-seller: "N/A"
+  no-expire: "N/A"
+  no-category: "N/A"
+  no-displayname: "%player%" # 显示玩家名称
+
+# 在这里你可以配置物品的格式, 需要注意的是你需要在下面手动添加你需要修改的物品材料名
+# 完整材料名称列表可见此: https://javadocs.olziedev.com/spigot/latest/org/bukkit/Material.html
+item-names:
+  ARMOR_STAND: "盔甲架"

@@ -1,0 +1,15 @@
+common:
+  Name: '普通'
+  Chance: 50.0
+
+uncommon:
+  Name: '精良'
+  Chance: 30.0
+
+rare:
+  Name: '稀有'
+  Chance: 15.0
+
+legendary:
+  Name: '传奇'
+  Chance: 5.0

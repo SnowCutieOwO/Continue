@@ -1,0 +1,140 @@
+bids-menu-name: '&8拍卖预览'
+
+bid-history-item: '358:0'
+bid-history-item-name: '&f竞价历史'
+bid-history-item-lore:
+  no-bids:
+    - '&7本物品尚未竞价.'
+    - ''
+    - '&7快来成为首位竞价者吧!'
+  # 竞价历史物品的描述通常是变化的
+  # 每次竞拍都会让物品增加下面的一段描述
+  # 使用 %bid-amount% 返回竞价总次数
+  # 使用 %bidder-display-name% 返回竞价者的名称
+  # 使用 %when-bidded% 返回竞价时间 (例如: 2 天) ("之前"一类的结尾单词默认没有, 你可以自行设置)
+  bid-structure:
+    - '&8&m--------------'
+    - '&7竞价: &6%bid-amount% coins'
+    - '&7玩家: %bidder-display-name%'
+    - '&b%when-bidded% 前'
+
+# 点击 "即将结束" 的物品会显示的内容
+too-late-to-open-now: '&c现在打开这个太晚了!'
+
+# 卖家出售的物品被领取后, 竞价历史的 %when-bidded% 将不会再更新
+# 下方的描述将会被添加在物品的末尾
+# 使用 %date% 返回最后一次更新日期
+bid-history-last-updated-message: '&8最后更新于 %date%'
+
+submit-bid-cannot-afford-item: '394'
+# 使用 %bid-amount% 返回所需数量 (玩家仍需要的数量)
+submit-bid-cannot-afford-item-name: '&6提交竞价'
+submit-bid-cannot-afford-item-lore:
+  - ''
+  - '&7新竞价: &6%bid-amount% 枚硬币'
+  - ''
+  - '&c无法竞价!'
+
+submit-bid-item: '371'
+submit-bid-item-name: '&6提交竞价'
+submit-bid-item-lore:
+  no-previous-bids:
+    - ''
+    - '&7新竞价: &6%bid-amount% 枚硬币'
+    - ''
+    - '&e点击竞价!'
+  # 使用 %bid-amount% for the amount the bid will have
+  # 使用 %previous-bid% for the previous bid's amount
+  # 使用 %coins-to-pay% for the difference between previous bid and actual bid
+  with-previous-bids:
+    - ''
+    - '&7新竞价: &6%bid-amount% 枚硬币'
+    - '&7原竞价: &e%previous-bid% 枚硬币'
+    - ''
+    - '&7你需要支付: &6%coins-to-pay% 枚硬币'
+    - ''
+    - '&e点击竞价!'
+
+collect-bid-item: '41'
+collect-bid-item-name: '&6回收竞拍'
+collect-bid-item-lore:
+  # 使用 %coins% 返回玩家可回收的硬币数量
+  collect-coins:
+    - ''
+    - '&7你可以从本次拍卖中'
+    - '&7回收 &6%coins% 枚硬币'
+    - ''
+    - '&e点击回收!'
+  collect-item:
+    - ''
+    - '&7你可以从本次拍卖中'
+    - '&7回收到竞拍物品'
+    - ''
+    - '&e点击收集!'
+
+# 发起新竞价需要比原拍价高的比例
+# 默认值的示例: 若要竞价一个 100 硬币的竞价, 你需要至少给出 '100 + 15% * 100' 枚硬币
+# 若你移除这个百分号, 则每次竞价不得低于原价+ 15 枚硬币的价格.
+bid-step: '15%'
+
+# 当竞拍价低于该设置的树木时
+# 下一次竞拍的价格显示原竞价为该数值
+# 设置为 0 可禁用该项
+# 除非你知道如何处理它
+bid-jump: 20
+
+edit-bid-item: '266'
+# 使用 %current-bid% 返回当前的竞拍价格
+edit-bid-item-name: '&f竞拍数量: &6%current-bid% 枚硬币'
+# 使用 %minimum-bid% 返回本次竞拍竞价的最小差价
+edit-bid-item-lore:
+  - '&7你需要至少出价'
+  - '&6%minimum-bid% 枚硬币 &7才可'
+  - '&7暂时成为最高竞价.'
+  - ''
+  - '&7只有拍卖上的 &e最高竞价&7'
+  - '&7才可以赢得竞拍物品.'
+  - ''
+  - '&7如果你没有成功拍下商品'
+  - '&7你可以稍后回收你的硬币.'
+  - ''
+  - '&e点击编辑数量!'
+
+# 告示牌上显示的竞拍价格
+# 与竞拍创建向导显示的最低价格相同
+
+# 当竞拍时给出更低价格时显示的文本
+edit-bid-deny-message: '&c你的竞价太低.'
+
+# 成功竞价提示的文本
+placed-bid-message: '&a提交竞价成功!'
+
+# 当你竞价超过 28 次 (达到上限)
+max-bids-reached: '&c一次竞拍中你最多只能出价 28 次'
+
+# 提醒玩家自己的最高竞价被超过时的提示
+# 使用 %outbid-player-display-name% 返回被超越的玩家名称
+# 使用 %top-bid% 返回新竞价
+# 使用 %bid-item% 返回物品名称
+outbid-message:
+  - '&6[拍卖] &f你参与的物品 %bid-item% 拍卖的最高竞价被玩家 %outbid-player-display-name%&f 超过了&f.'
+  - '&f新的最高竞价为 &6%top-bid% 枚硬币&f. &e&l点击浏览'
+
+# 提醒拍卖创建者有玩家在他们的竞拍上出价
+# 使用 %bidder% 返回竞拍者名称
+# 使用 %bid-amount% 返回竞拍价格
+# 使用 %bid-item% for 返回物品名称
+bid-message: '&6[拍卖] &f玩家 &6%bidder% &f在你的 %bid-item% 拍卖上开出了 &6%bid-amount% 枚硬币&f的新价格&f!'
+
+not-enough-money-bid: '&c你没有足够的钱来支付本次竞价.'
+
+# 这条消息会加在那些查看者自己的竞拍物品图标上
+own-auction-message: '&a这是你自己的竞拍!'
+
+# 防止两名玩家同时竞拍相同价格的 BUG
+# (当两名玩家同时打开竞拍菜单并同时出价出现的问题)
+# 若有玩家在其他玩家已经出价的时候重复出了相同价格
+# 则下列信息会被发送给玩家
+bid-error-message:
+  - '&c[竞拍错误] &f你正在提交的时候已经有其他玩家抢先竞价.'
+  - '&c正在重新打开菜单...'

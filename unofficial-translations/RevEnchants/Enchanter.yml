@@ -1,0 +1,104 @@
+Settings:
+  Title: '&c附魔台'
+  Rows: 6
+  Open:
+    Right-click: true
+    isSneaking: false
+  Click:
+    Left-Click: 1
+    Right-Click: 10
+    Middle-Click: 100
+    Shift-Left-Click: 120
+    Shift-Right-Click: 150
+  Tool:
+    Enabled: true
+    Slot: 4
+  Empty-slots:
+    Enabled: true
+    Item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3700
+      type: LEGACY_STAINED_GLASS_PANE
+  LevelUp:
+    Enabled: true
+    Slot: 3
+    Item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3700
+      type: LEGACY_INK_SACK
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        enchants:
+          LOOT_BONUS_BLOCKS: 1
+    Name: '&c&l升级'
+    Lore:
+    - ' '
+    - '&b若能量足够, 可点此升级你的镐子'
+    - '&b有概率获得额外附魔/碎片槽位'
+  Shard:
+    Enabled: true
+    Slot: 8
+    Item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3700
+      type: LEGACY_PRISMARINE_SHARD
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        enchants:
+          LOOT_BONUS_BLOCKS: 1
+    Name: '&c&l碎片'
+    Lore:
+    - ' '
+    - '&b点击打开碎片菜单'
+  Colours:
+    Enabled: true
+    Slot: 5
+    Item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3700
+      type: LEGACY_INK_SACK
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        enchants:
+          LOOT_BONUS_BLOCKS: 1
+    Name: '&c&l颜色'
+    Lore:
+    - ' '
+    - '&b点此修改附魔颜色'
+  Repair:
+    Enabled: true
+    Slot: 0
+    Item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3700
+      type: LEGACY_INK_SACK
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        enchants:
+          LOOT_BONUS_BLOCKS: 1
+    Name: '&c&l修复'
+    Lore:
+    - ' '
+    - '&b点此修复手中工具'
+  Enchants:
+    IfNotAtRequiredLevelItem:
+      Enabled: true
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3700
+        type: LEGACY_BARRIER
+    GlowIfMax: true
+    Name: '%Colour%%Name%'
+    Lore:
+    - ' '
+    - '&b当前等级: &e%Current_Level%'
+    - '&b花费: &a%Cost% &7/ &f%Currency_Player%  %Currency_Name% %Currency_Symbol%'
+    - '&b当前概率: &e%Current_Chance%%'
+    - '&b最大等级: &a%Max_Level%'
+    - ' '
+    - '&C描述'
+    - '&7%Description%'

@@ -1,0 +1,47 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                  插件作者 Ome_R                   ##
+##                                                  ##
+######################################################
+
+title: '&l{0} 任务'
+previous-menu: true
+
+pattern:
+  - '# # # # # # # # #'
+  - '# # @ @ @ @ @ # #'
+  - '# # # # # # # # #'
+
+slots: '@'
+previous-page: '*'
+current-page: '*'
+next-page: '*'
+
+# 任务是否按照完成状态排序?
+# 顺序为 未完成 -> 可进行 -> 已完成
+sort-by-completion: false
+
+# 是否隐藏已完成的任务?
+remove-completed: false
+
+items:
+  '#':
+    type: STAINED_GLASS_PANE
+    data: 15
+    name: '&f'
+
+sounds:
+  '@':
+    completed:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2
+    not-completed:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2
+    can-complete:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2

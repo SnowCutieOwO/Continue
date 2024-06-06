@@ -1,0 +1,88 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                  插件作者 Ome_R                   ##
+##                                                  ##
+######################################################
+
+# 使用的任务文件名称
+mission-file: KillsMissions
+
+# 任务在达到条件时是否自动并领取奖励.
+auto-reward: true
+
+# 是否在完成任务后重置玩家的方块计数?
+reset-after-finish: true
+
+# 完成任务时给予的奖励.
+rewards:
+  commands:
+    - 'eco give %player% 250000'
+    - 'is admin unlockworld %player% the_end true'
+    - 'is admin msg %player% &e&l屠夫 | &7成功完成了任务 屠夫 IV!'
+    - 'is admin msg %player% &e&l屠夫 | &7你已经通过了所有的考验, 准备迎接终极挑战吧...'
+    - 'is admin msg %player% &e&l屠夫 | &7&o你现在是专业的屠夫了, 祝贺!'
+
+# 完成任务所需要的前置任务.
+required-missions:
+  - 'slayer_1'
+  - 'slayer_2'
+  - 'slayer_3'
+
+# 完成任务所需要击杀的实体及其数量.
+required-entities:
+  '1':
+    types:
+      - 'WITHER'
+    amount: 1
+
+# 菜单中使用的图标.
+icons:
+  not-completed:
+    type: PAPER
+    name: '&a屠夫 IV'
+    lore:
+      - '&7在面对最后挑战之前, 只剩一件事了.'
+      - '&7击杀凋灵.'
+      - ''
+      - '&6任务需求:'
+      - '&8 - &7x1 凋灵'
+      - ''
+      - '&6任务奖励:'
+      - '&8 - &7$250,000'
+      - '&8 - &7解锁末地'
+      - ''
+      - '&6已击杀凋灵: &c&l ✘'
+  can-complete:
+    type: PAPER
+    name: '&a屠夫 IV'
+    lore:
+      - '&7在面对最后挑战之前, 只剩一件事了.'
+      - '&7击杀凋灵.'
+      - ''
+      - '&6任务需求:'
+      - '&8 - &7x1 凋灵'
+      - ''
+      - '&6任务奖励:'
+      - '&8 - &7$250,000'
+      - '&8 - &7解锁末地'
+      - ''
+      - '&6已击杀凋灵: &a&l ✔'
+      - '&a&l ✔ &7Click to redeem your reward.'
+    enchants:
+      DURABILITY: 1
+    flags:
+      - HIDE_ENCHANTS
+  completed:
+    type: MAP
+    name: '&a屠夫 IV'
+    lore:
+      - '&7在面对最后挑战之前, 只剩一件事了.'
+      - '&7击杀凋灵.'
+      - ''
+      - '&6任务奖励:'
+      - '&8 - &7$250,000'
+      - '&8 - &7解锁末地'
+      - ''
+      - '&6已击杀凋灵: &a&l ✔'
+      - '&a&l ✔ &7Click to redeem your reward.'

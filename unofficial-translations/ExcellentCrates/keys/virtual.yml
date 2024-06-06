@@ -1,0 +1,9 @@
+Name: §x§3§F§6§8§E§A§l虚拟宝箱钥匙
+Virtual: true
+Item:
+  Material: TRIPWIRE_HOOK
+  Amount: 1
+  Durability: 0
+  Name: '&6虚拟宝箱钥匙'
+  Item_Flags: [ ]
+  Unbreakable: false

@@ -1,0 +1,27 @@
+# 除了 "remove-ai" 外在该设置中的配置只对堆叠实体有效.
+
+entity:
+  # 是否要让生成的实体被堆叠?
+  stacking:
+    enabled_2: true
+    # 是否堆叠原版刷怪笼生成的实体?
+    # 注意: 需要重启服务器使该项生效.
+    vanilla: false
+    # 最大堆叠数量
+    # 设置为 0 表示不作限制.
+    max-size: 500
+
+  # 堆叠实体是否能够被击退?
+  knockback: true
+
+  # 是否允许生成的实体自行移动?
+  # 若设置为 false, 实体将不会移动, 但可以被水流等推动.
+  # 这可以解决服务器性能问题.
+  remove-ai:
+    enabled: false
+    # 是否允许没有 AI 的实体被推动? 这也会影响被击退时实体的行为
+    # 除此之外, 若禁用此项, 在空中生成的实体会浮空.
+    pushing: true
+    # 在这里可以配置保留 AI 的实体列表.
+    # 可填入的实体列表: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html
+    blacklist_list: [ ]

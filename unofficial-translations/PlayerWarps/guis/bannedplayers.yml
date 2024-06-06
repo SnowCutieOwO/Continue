@@ -1,0 +1,159 @@
+# PlayerWarps, 插件作者 Olzie-12
+# https://www.spigotmc.org/resources/66692/
+# 我们也有可以提供帮助的 Discord 聊天群组: https://olziedev.com/discord 和插件维基 https://docs.olziedev.com/projects/playerauctions
+# 如果你找到任何 BUG, 我很乐意第一时间修复它们 :)
+# 为爱发电
+
+
+bannedplayers:
+  # 是否启用该界面?
+  enabled: true
+  # 该界面的名称是什么?
+  name: "bannedplayers"
+  # 该界面的显示标题是什么? (可以使用彩色代码)
+  title: "&b&lBanned Players ([page]/[pages])"
+  # 界面的大小? (填入 9 的倍数, 最大为 54)
+  size: 36
+  # 打开该界面的时候执行哪些额外的操作?
+  open-actions: []
+  # 关闭该界面的时候执行哪些额外的操作?
+  close-actions: []
+  # 物品数量是否在不足时不显示对应按钮. 例如, 你在购买一个物品时不会显示增加数量的按钮.
+  # 你也可以在物品数量的位置附近放一个物品, 这样它就会在物品数量不足时显示.
+  show-needed-page-items: false
+  # 物品不会出现在本菜单界面的哪些格子中?
+  # 若你想在界面中央加入一些元素的话会很有用.
+  blacklisted-slots:
+    - ""
+
+  # 通过界面查找玩家
+  search:
+    # 是否启用该功能?
+    # 你需要安装 ProtocolLib 插件才可让该功能生效.
+    enabled: true
+    # 该界面的标题是什么??
+    title: "&b&l搜索 [search] - ([page]/[pages])"
+    # 告示牌中的内容是什么? 
+    # 内建变量 %search% 用于返回玩家输入的关键, 所以请确保在这一行内没有其他的内容.
+    # 若这些内容中不包含变量, 那么插件会假定第一行就是玩家输入的关键词. 颜色代码在这里不会正常工作.
+    lines:
+      - "%search%"
+      - "----------------"
+      - "请输入玩家名称."
+      - "----------------"
+    # 用于展开搜索界面的物品名称. 仅支持填入告示牌.
+    material: OAK_SIGN
+
+    item:
+      material: OAK_SIGN
+      data: 0
+      name: "&b搜索"
+      lore:
+        - "&d点击&b搜索指定玩家."
+      slot: 27
+      amount: 1
+      glowing: false
+
+  icon:
+    # 物品的默认图标是否为玩家的头颅?
+    skull: true
+    # 若你禁用了上述选项, 你可以在这里选择默认物品.
+    # 这个格子放什么物品?
+    material: DIAMOND_AXE
+    # 物品的数据值是多少?
+    data: 0
+    # 仅在头颅种类为 PLAYER_HEAD 且数据值为 3 时有效!
+    #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODcyZDM0MWQ3N2RiZGU2ZDUzZGFkNjFiZjE5MjUyNGRiZGI5NmFmMTM1OGUwNzQ4ZmVlYTE0ODFiMWY4In19fQ== - 头颅材质
+    #owner: Warp - 头颅对应玩家名称
+
+    # 此为菜单界面中的头颅名称.
+    name: "&b[bannedplayer]"
+    # 你可以在这里加入多行描述 <3
+    # 若你使用了 SQL 存储方式, 你可以使用内建变量 [server] 返回玩家所在的服务器.
+    # 你可以使用内建变量 [world_type] 返回 config.yml 中定义的世界类型.
+    lore:
+      - "[delban]"
+      - "&b理由: &d[reason]"
+      - "[timeleft]"
+    # 物品是否带有附魔光泽?
+    glowing: false
+
+    # 可用的物品标志列表请见 https://javadocs.olziedev.com/spigot/latest/org/bukkit/inventory/ItemFlag.html
+    item-flags:
+      - HIDE_ATTRIBUTES
+    # 内建变量 "[delban]" 会在浏览的玩家有权限解封该玩家时显示下列信息.
+    remove-ban: "&dClick点击&b解封该玩家."
+    # 内建变量 "[delban]" 会在浏览的玩家没有权限解封该玩家时显示下列信息.
+    remove-not-ban: ""
+    # 内建变量 "[timeleft]" 会在玩家封禁时间未到期时显示下列内容
+    time-left: "&b剩余时间: &d[timeleft]"
+    # 内建变量 "[timeleft]" 会在玩家封禁时间已到时显示下列内容
+    time-not-left: ""
+    # 点击玩家图标时执行什么命令?
+    commands: []
+
+  clickable-items:
+    next-page:
+      # 此为翻页物品的名称
+      # 若你想要禁用这些物品, 只需将它设置为 "AIR"
+      name: "&b下一页"
+      # 此为翻页物品的材料名称. 有效材料名称可见此: https://javadocs.olziedev.com/spigot/latest/org/bukkit/Material.html
+      material: ARROW
+      data: 0
+      lore:
+        - "&e点击&b翻到下一页."
+      slot: 50
+      amount: 1
+      glowing: false
+      # 仅在头颅种类为 PLAYER_HEAD 且数据值为 3 时有效!
+      #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWE0ZjY4YzhmYjI3OWU1MGFiNzg2ZjlmYTU0Yzg4Y2E0ZWNmZTFlYjVmZDVmMGMzOGM1NGM5YjFjNzIwM2Q3YSJ9fX0= - 头颅材质
+      #owner: Next - 头颅对应玩家名称
+    previous-page:
+      name: "&b上一页"
+      material: BARRIER
+      data: 0
+      lore:
+        - "&e点击&b翻到上一页."
+      slot: 48
+      amount: 1
+      glowing: false
+    menu:
+      name: "&b返回菜单"
+      material: BOOK
+      data: 0
+      lore:
+        - "&e点击&b返回至菜单."
+      slot: 49
+      amount: 1
+      glowing: false
+
+  items:
+    1:
+      # 此为物品名称.
+      name: " "
+      # 此为物品材料名称
+      material: LIGHT_BLUE_STAINED_GLASS_PANE
+      # 此为物品数据值
+      data: 0
+      # 你可以添加物品描述!
+      # 示例配置:
+      # lore:
+      #   - "&b这是一个玻璃板."
+      slot: 0
+      # 此为物品数量
+      amount: 1
+      # 点击时执行的命令.
+      # [server] 表示这条命令会以控制台身份执行
+      # [player] 表示这条命令会以玩家身份执行
+      # commands:
+      #   - "[server] msg %player% 你点击了这个物品!"
+      glowing: false
+      # 仅在头颅种类为 PLAYER_HEAD 且数据值为 3 时有效!
+      #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTZmOGFmYjI3YmFmYzc3YzJiODI1OTljMmY3YjhmMWY2ODMxMGU2YWE5MDRmMDUxYjA3YWIxYzJiNmIifX19 - 头颅材质
+      #owner: Glass - 头颅对应玩家名称
+    2:
+      name: " "
+      material: MAGENTA_STAINED_GLASS_PANE
+      data: 2
+      slot: [28, 34]
+      amount: 1

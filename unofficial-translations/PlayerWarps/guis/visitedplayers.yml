@@ -1,0 +1,148 @@
+# PlayerWarps by Olzie-12
+# https://www.spigotmc.org/resources/66692/
+# We also have a discord server for help: https://olziedev.com/discord or check docs https://docs.olziedev.com/projects/playerwarps
+# Also if you find any bugs be happy to report them I will fix them :)
+# Made with love
+
+visitedplayers:
+  # Should you enable a warps gui?
+  enabled: true
+  # What is the name of the gui? 
+  name: "visitedplayers"
+  # The title of the gui (Can use color codes)
+  title: "&b&lVisited Players ([page]/[pages])"
+  # What is the size of this GUI? (multiples of 9 can only go up to 54)
+  size: 36
+  # What are the actions when this menu is opened up?
+  open-actions: []
+  # What are the actions when this menu is closed?
+  close-actions: []
+  # What are the max players that are shown in the GUI? (If it reaches the max it will delete the first one every time)
+  # Set to -1 to disable.
+  max-players: -1
+  # Should the page items be removed if there is page for that button. E.g. you're on page 0, it won't show the previous item.
+  # You can also put an item where this page item is, and it'll only show if the page item isn't there.
+  show-needed-page-items: false
+  # What are the blacklisted slots that players will not appear in the GUI?
+  # This is useful if you want to add empty slots in the middle of the GUI instead of having an item there instead.
+  blacklisted-slots:
+    - ""
+
+  # Searching for players through the GUI
+  search:
+    # Should the feature be enabled?
+    # You will need ProtocolLib for this to work.
+    enabled: true
+    # What is the title for the inventory?
+    title: "&b&lSearch [search] - ([page]/[pages])"
+    # What are the premade lines in the sign?
+    # %search% is the variable they have to enter the warp in, so please make sure that line doesn't contain anything else.
+    # If it doesn't contain the variable, then the plugin will just assume line 1 is user input. Colour codes will not work either.
+    lines:
+      - "%search%"
+      - "----------------"
+      - "Please enter a"
+      - "player name."
+    # This is the sign material that will be used for the search. This is only allowed to be a sign.
+    material: OAK_SIGN
+
+    item:
+      material: OAK_SIGN
+      data: 0
+      name: "&bSearch"
+      lore:
+        - "&dClick&b to search for a player."
+      slot: 27
+      amount: 1
+      glowing: false
+
+  icon:
+    # Should the default icon of the item be their skull?
+    skull: true
+    # If the option is disabled above, you can choose the default item here.
+    # What is the item material?
+    material: DIAMOND_AXE
+    # What is the item id?
+    data: 0
+    # These only work if the skull is a PLAYER_HEAD and the data is 3!
+    #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODcyZDM0MWQ3N2RiZGU2ZDUzZGFkNjFiZjE5MjUyNGRiZGI5NmFmMTM1OGUwNzQ4ZmVlYTE0ODFiMWY4In19fQ== - Skull texture
+    #owner: Warp - Skull owner
+
+    # This is the name of the skull in the gui.
+    name: "&b[visitor]"
+    # you can add multiple lores bc i god <3
+    # If you're using SQL you can use the placeholder [server] to tell the player the server.
+    lore:
+      - "&d[visitor] &bhas visited you &d[visits] &btime(s)."
+    # Should the item appear with the glowing effect?
+    glowing: false
+    # Here are the available item flags https://javadocs.olziedev.com/spigot/latest/org/bukkit/inventory/ItemFlag.html
+    item-flags:
+      - HIDE_ATTRIBUTES
+    # What are the commands that are ran when a player clicks on a player?
+    commands: []
+
+  clickable-items:
+    next-page:
+      # This is the name of the next page item
+      # If you wish to disable any of these please set them the material to "AIR"
+      name: "&bNext Page"
+      # this is the material of the next page item. valid material names: https://javadocs.olziedev.com/spigot/latest/org/bukkit/Material.html
+      material: ARROW
+      data: 0
+      lore:
+        - "&dClick&b to go to the next page."
+      slot: 32
+      amount: 1
+      glowing: false
+      # These only work if the skull is a PLAYER_HEAD and the data is 3!
+      #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWE0ZjY4YzhmYjI3OWU1MGFiNzg2ZjlmYTU0Yzg4Y2E0ZWNmZTFlYjVmZDVmMGMzOGM1NGM5YjFjNzIwM2Q3YSJ9fX0= - Skull texture
+      #owner: Next - Skull owner
+    previous-page:
+      name: "&bPrevious page"
+      material: BARRIER
+      data: 0
+      lore:
+        - "&dClick&b to go to the previous page."
+      slot: 30
+      amount: 1
+      glowing: false
+    menu:
+      name: "&bGo back to menu"
+      material: BOOK
+      data: 0
+      lore:
+        - "&dClick&b to go back to the menu."
+      slot: 31
+      amount: 1
+      glowing: false
+
+  items:
+    1:
+      # This is the name of the item.
+      name: " "
+      # This is the item material. To disable set this to AIR
+      material: LIGHT_BLUE_STAINED_GLASS_PANE
+      # This is the data item
+      data: 3
+      # You can add lores!
+      # lore:
+      #   - "&bThis is a pane."
+      slot: [27, 29, 33, 35]
+      # What is the stack amount?
+      amount: 1
+      # commands that will be executed on click.
+      # [server] means the command is executed as the console
+      # [player] means the command is executed as the player
+      # commands:
+      #   - "[server] msg %player% you clicked this item!"
+      glowing: false
+      # These only work if the skull is a PLAYER_HEAD and the data is 3!
+      #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTZmOGFmYjI3YmFmYzc3YzJiODI1OTljMmY3YjhmMWY2ODMxMGU2YWE5MDRmMDUxYjA3YWIxYzJiNmIifX19 - Skull texture
+      #owner: Glass - Skull owner
+    2:
+      name: " "
+      material: MAGENTA_STAINED_GLASS_PANE
+      data: 2
+      slot: [28, 34]
+      amount: 1

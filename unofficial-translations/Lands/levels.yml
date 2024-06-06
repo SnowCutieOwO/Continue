@@ -1,0 +1,467 @@
+# 在这个文件中你可以编辑/添加默认的土地和国家等级.
+# 需要注意的是每个配置文件的部分 (等级部分配置) 名称和等级名称都不可以重复.
+# 你也必须按照 YAML 的语法填写配置文件. 若要检查配置文件是否存在错误, 你可以将文件放进这个网站进行验证: https://yaml-online-parser.appspot.com
+
+# 默认的土地和国家等级. 你也可以根据要求自行添加.
+# 不同等级的顺序是递增的 (最低级 -> 最高级).
+# 该文件中的配置不能通过命令 /lands reload 重载.
+
+general:
+  # 若启用, 土地和国家奖不再会降级, 即使对应的数值不再符合对应等级的升级条件.
+  keep-level: false
+
+land:
+  # 是否启用土地等级?
+  enabled: true
+  # 在这里你可以编辑已存在的等级或添加新的等级.
+  levels:
+    1:
+      # 设置等级的名称.
+      title: '定居点'
+      # 这些值仅在土地不属于任何国家时有效.
+      attributes:
+        # 区块属性会添加或移除 (= 负值)土地所拥有的区块. 这意味着土地可以通过命令 /claim 占领更多 (或更少) 区块.
+        chunks:
+          description: '&7{value} 块占领区块'
+          value: 0
+        # 维护属性会基于给定值变得更高或更低 (= 负值).
+        # 这些值仅在土地不属于任何国家时有效.
+        upkeep:
+          description: '&7{value}% 维护费用'
+          value: 0
+    2:
+      title: '小村庄'
+      requirements:
+        # 达到该等级所需要的成员数量.
+        members:
+          required: 4
+          title: '拥有 {req} 名玩家'
+          description:
+            - '&7土地内至少拥有 {req} 玩家.'
+            - '&7命令: &e/lands trust'
+        # 达到该等级所需要的区块数量.
+        chunks:
+          required: 0
+          title: '占领 {req} 个区块'
+          description:
+            - '&7土地内至少占领 {req} 个区块.'
+            - '&7命令: &e/claim'
+        # 达到该等级所需的银行存款 (/lands balance).
+        balance:
+          required: 7500
+          title: '存款达到 ${req}'
+          description:
+            - '&7土地银行内的存款达到 ${req}.'
+            - '&7命令: &e/lands deposit'
+        # 对应插件: https://www.spigotmc.org/resources/67627
+        betterfarming:
+          farms:
+            required: 1
+            title: '{req} 个升级农场'
+            description:
+              - '&7土地内拥有 {req} 个升级农场.'
+              - '&7命令: &e/farm get'
+        # 对应插件: https://www.spigotmc.org/resources/69201
+        upgradeablehoppers:
+          hoppers:
+            required: 5
+            title: '{req} 个升级漏斗'
+            description:
+              - '&7土地内拥有 {req} 个升级漏斗.'
+              - '&7命令: &e/hopper get'
+        # 对应插件: https://www.spigotmc.org/resources/77717
+        upgradeablespawners:
+          spawners:
+            required: 3
+            title: '{req} 升级刷怪笼'
+            description:
+              - '&7土地内拥有 {req} 个升级刷怪笼.'
+              - '&7命令: &e/spawner get'
+      attributes:
+        chunks:
+          description: '&7{value} 个占领区块'
+          value: 1
+        upkeep:
+          description: '&7{value}% 维护费用'
+          value: 5
+      # 土地升或降级到该等级所执行的控制台命令.
+      # 可用变量:
+      # {level}: 等级名称
+      # {land}: 土地的字段名称 = 没有空格.
+      # {land_name}: 土地的名称. 可能有空格.
+      # {owner}: 土地拥有者玩家的名称.
+      # {member}: 土地成员玩家的名称.
+      # 如果命令包含 {menber} 变量, 则命令自动会为每个土地内的成员执行.
+      commands:
+        # 当岛屿成功升级执行的命令.
+        reached: [ ]
+        # 当岛屿从上一等级降到该等级时执行的命令.
+        down: [ ]
+    3:
+      title: '城镇'
+      requirements:
+        members:
+          required: 8
+          title: '拥有 {req} 名玩家'
+          description:
+            - '&7土地内至少拥有 {req} 玩家.'
+            - '&7命令: &e/lands trust'
+        chunks:
+          required: 0
+          title: '占领 {req} 个区块'
+          description:
+            - '&7土地内至少占领 {req} 个区块.'
+            - '&7命令: &e/claim'
+        balance:
+          required: 17000
+          title: '存款达到 ${req}'
+          description:
+            - '&7土地银行内的存款达到 ${req}.'
+            - '&7命令: &e/lands deposit'
+        # 对应插件: https://www.spigotmc.org/resources/67627
+        betterfarming:
+          farms:
+            required: 3
+            title: '{req} 个升级农场'
+            description:
+              - '&7土地内拥有 {req} 个升级农场.'
+              - '&7命令: &e/farm get'
+        # 对应插件: https://www.spigotmc.org/resources/69201
+        upgradeablehoppers:
+          hoppers:
+            required: 8
+            title: '{req} 个升级漏斗'
+            description:
+              - '&7土地内拥有 {req} 个升级漏斗.'
+              - '&7命令: &e/hopper get'
+        # 对应插件: https://www.spigotmc.org/resources/77717
+        upgradeablespawners:
+          spawners:
+            required: 3
+            title: '{req} 升级刷怪笼'
+            description:
+              - '&7土地内拥有 {req} 个升级刷怪笼.'
+              - '&7命令: &e/spawner get'
+      attributes:
+        chunks:
+          description: '&7{value} 个占领区块'
+          value: 2
+        upkeep:
+          description: '&7{value}% 维护费用'
+          value: 10
+      commands:
+        reached: [ ]
+        down: [ ]
+    4:
+      title: '省会'
+      requirements:
+        members:
+          required: 14
+          title: '拥有 {req} 名玩家'
+          description:
+            - '&7土地内至少拥有 {req} 玩家.'
+            - '&7命令: &e/lands trust'
+        chunks:
+          required: 0
+          title: '占领 {req} 个区块'
+          description:
+            - '&7土地内至少占领 {req} 个区块.'
+            - '&7命令: &e/claim'
+        balance:
+          required: 30000
+          title: '存款达到 ${req}'
+          description:
+            - '&7土地银行内的存款达到 ${req}.'
+            - '&7命令: &e/lands deposit'
+        # 对应插件: https://www.spigotmc.org/resources/67627
+        betterfarming:
+          farms:
+            required: 5
+            title: '{req} 个升级农场'
+            description:
+              - '&7土地内拥有 {req} 个升级农场.'
+              - '&7命令: &e/farm get'
+        # 对应插件: https://www.spigotmc.org/resources/69201
+        upgradeablehoppers:
+          hoppers:
+            required: 15
+            title: '{req} 个升级漏斗'
+            description:
+              - '&7土地内拥有 {req} 个升级漏斗.'
+              - '&7命令: &e/hopper get'
+        # 对应插件: https://www.spigotmc.org/resources/77717
+        upgradeablespawners:
+          spawners:
+            required: 5
+            title: '{req} 升级刷怪笼'
+            description:
+              - '&7土地内拥有 {req} 个升级刷怪笼.'
+              - '&7命令: &e/spawner get'
+      attributes:
+        chunks:
+          description: '&7{value} 个占领区块'
+          value: 4
+        upkeep:
+          description: '&7{value}% 维护费用'
+          value: 25
+      commands:
+        reached: [ ]
+        down: [ ]
+    5:
+      title: '城市'
+      requirements:
+        members:
+          required: 24
+          title: '拥有 {req} 名玩家'
+          description:
+            - '&7土地内至少拥有 {req} 玩家.'
+            - '&7命令: &e/lands trust'
+        chunks:
+          required: 0
+          title: '占领 {req} 个区块'
+          description:
+            - '&7土地内至少占领 {req} 个区块.'
+            - '&7命令: &e/claim'
+        balance:
+          required: 55000
+          title: '存款达到 ${req}'
+          description:
+            - '&7土地银行内的存款达到 ${req}.'
+            - '&7命令: &e/lands deposit'
+        # 对应插件: https://www.spigotmc.org/resources/67627
+        betterfarming:
+          farms:
+            required: 6
+            title: '{req} 个升级农场'
+            description:
+              - '&7土地内拥有 {req} 个升级农场.'
+              - '&7命令: &e/farm get'
+        # 对应插件: https://www.spigotmc.org/resources/69201
+        upgradeablehoppers:
+          hoppers:
+            required: 25
+            title: '{req} 个升级漏斗'
+            description:
+              - '&7土地内拥有 {req} 个升级漏斗.'
+              - '&7命令: &e/hopper get'
+        # 对应插件: https://www.spigotmc.org/resources/77717
+        upgradeablespawners:
+          spawners:
+            required: 6
+            title: '{req} 升级刷怪笼'
+            description:
+              - '&7土地内拥有 {req} 个升级刷怪笼.'
+              - '&7命令: &e/spawner get'
+      attributes:
+        chunks:
+          description: '&7{value} 个占领区块'
+          value: 8
+        upkeep:
+          description: '&7{value}% 维护费用'
+          value: 30
+      commands:
+        reached: [ ]
+        down: [ ]
+
+
+nation:
+  # 是否启用国家等级功能?
+  enabled: true
+  # 在这里你可以编辑已存在的国家等级或添加新的国家等级.
+  levels:
+    1:
+      # 设置该等级的名称.
+      title: '联邦'
+      # 对初始等级而言, 默认属性是不存在的. 但你还是可以通过修改数值设定添加它们.
+      attributes:
+        chunks:
+          description: '&7{value} 个占领区块'
+          value: 0
+        upkeep:
+          description: '&7{value}% 维护费用'
+          value: 0
+        effects:
+          description: '&a+ 解锁效果: {value}'
+          value: [ ]
+        effects_amount:
+          description: '&a+ 同时激活 {value} 个效果'
+          value: 0
+    2:
+      title: '国家'
+      requirements:
+        # 所需要国家内拥有土地的数量.
+        # 不包括用作首都的土地.
+        lands:
+          required: 3
+          title: '{req} 块土地'
+          description:
+            - '&7邀请至少 {req} 土地加入你的国家.'
+            - '&7命令: &e/nation trust'
+        # 达到该等级所需的总成员数 (不重复的总玩家数量).
+        members:
+          required: 32
+          title: '{req} 名不重复玩家'
+          description:
+            - '&7达到共计 {req} 名玩家.'
+            - '&7命令: &e/lands trust'
+        # 达到该等级所需的总区块数.
+        chunks:
+          required: 0
+          title: '占领 {req} 个区块'
+          description:
+            - '&7共计占领 {req} 个区块.'
+            - '&7命令: &e/claim'
+        # 到达该等级所需要的国库 (所有土地银行存款) 存款数量.
+        balance:
+          required: 100000
+          title: '国库存款 ${req}'
+          description:
+            - '&7所有土地达到 ${req} 的存款.'
+            - '&7命令: &e/lands deposit'
+        # 对应插件: https://www.spigotmc.org/resources/67627
+        betterfarming:
+          farms:
+            required: 9
+            title: '{req} 个升级农场'
+            description:
+              - '&7土地内拥有 {req} 个升级农场.'
+              - '&7命令: &e/farm get'
+        # 对应插件: https://www.spigotmc.org/resources/69201
+        upgradeablehoppers:
+          hoppers:
+            required: 24
+            title: '{req} 个升级漏斗'
+            description:
+              - '&7土地内拥有 {req} 个升级漏斗.'
+              - '&7命令: &e/hopper get'
+        # 对应插件: https://www.spigotmc.org/resources/77717
+        upgradeablespawners:
+          spawners:
+            required: 9
+            title: '{req} 升级刷怪笼'
+            description:
+              - '&7土地内拥有 {req} 个升级刷怪笼.'
+              - '&7命令: &e/spawner get'
+      attributes:
+        # 给予每个国家的土地 x 个额外区块.
+        chunks:
+          description: '&7{value} 个占领区块'
+          value: 20
+        # 按 x 的比例修改维护费用. 也支持负值。
+        # 国家向服务器缴纳的维护费用.
+        upkeep:
+          description: '&7{value}% 维护费用'
+          value: 20
+        # 允许国家在国内激活指定的效果. 可随升级解锁各种效果.
+        effects:
+          description: '&a+ 解锁效果: {value}'
+          # 配置该等级下的解锁效果. 有效效果名称在这里查看: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html
+          # 效果格式: 效果名称:效果等级
+          # 等级即为效果的强度. 例如: JUMP:2 -> 跳跃提升 II
+          value:
+            - JUMP
+            - SPEED
+            - FAST_DIGGING
+            - DOLPHINS_GRACE
+        # 修改单次可激活的效果数量.
+        effects_amount:
+          description: '&a+ 同时激活 {value} 个效果'
+          value: 1
+      # 国家升或降级到该等级所执行的控制台命令.
+      # 可用变量:
+      # {level}: 等级名称
+      # {land}: 国家的字段名称 = 没有空格.
+      # {land_name}: 国家的名称. 可能有空格.
+      # {owner}: 国家拥有者玩家的名称.
+      # {member}: 国家成员玩家的名称.
+      # 如果命令包含 {menber} 变量, 则命令自动会为每个国家内的成员执行.
+      commands:
+        # 当国家升到该级时执行的命令.
+        reached: [ ]
+        # 当国家从上一级降到该级时执行的命令.
+        down: [ ]
+    3:
+      title: '帝国'
+      requirements:
+        lands:
+          required: 6
+          title: '{req} 块土地'
+          description:
+            - '&7邀请至少 {req} 土地加入你的国家.'
+            - '&7命令: &e/nation trust'
+        members:
+          required: 64
+          title: '{req} 名不重复玩家'
+          description:
+            - '&7达到共计 {req} 名玩家.'
+            - '&7命令: &e/lands trust'
+        chunks:
+          required: 0
+          title: '占领 {req} 个区块'
+          description:
+            - '&7共计占领 {req} 个区块.'
+            - '&7命令: &e/claim'
+        balance:
+          required: 250000
+          title: '国库存款 ${req}'
+          description:
+            - '&7所有土地达到 ${req} 的存款.'
+            - '&7命令: &e/lands deposit'
+        # 对应插件: https://www.spigotmc.org/resources/67627
+        betterfarming:
+          farms:
+            required: 18
+            title: '{req} 个升级农场'
+            description:
+              - '&7土地内拥有 {req} 个升级农场.'
+              - '&7命令: &e/farm get'
+        # 对应插件: https://www.spigotmc.org/resources/69201
+        upgradeablehoppers:
+          hoppers:
+            required: 30
+            title: '{req} 个升级漏斗'
+            description:
+              - '&7土地内拥有 {req} 个升级漏斗.'
+              - '&7命令: &e/hopper get'
+        # 对应插件: https://www.spigotmc.org/resources/77717
+        upgradeablespawners:
+          spawners:
+            required: 18
+            title: '{req} 升级刷怪笼'
+            description:
+              - '&7土地内拥有 {req} 个升级刷怪笼.'
+              - '&7命令: &e/spawner get'
+      attributes:
+        chunks:
+          description: '&7{value} 个占领区块'
+          value: 35
+        upkeep:
+          description: '&7{value}% 维护费用'
+          value: 35
+        effects:
+          description: '&a+ 解锁效果: {value}'
+          value:
+            - JUMP:2
+            - SPEED:2
+            - FAST_DIGGING:2
+            - DOLPHINS_GRACE:2
+            - ABSORPTION
+            - NIGHT_VISION
+            - LUCK
+            - INCREASE_DAMAGE
+            - HEALTH_BOOST
+        effects_amount:
+          description: '&a+ 同时激活 {value} 个效果'
+          value: 3
+      commands:
+        reached: [ ]
+        down: [ ]
+
+
+# 可以将其设置为 '' 以禁用声音
+sound:
+  # 向玩家播放代表升级的音效名称.
+  up: 'BLOCK_BELL_USE'
+  # 向玩家播放代表降级的音效名称.
+  down: 'BLOCK_ANVIL_DESTROY'
+

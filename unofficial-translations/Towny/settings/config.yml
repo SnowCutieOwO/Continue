@@ -1,0 +1,2403 @@
+  
+version:
+  # 此为 Towny 当前版本号, 请勿修改.
+  version: 0.100.1.0
+  # 该项用于显示更新日志, 请勿修改.
+  last_run_version: 0.100.1.0
+  
+language:
+  # 服务器使用的语言文件. 你的默认语言会在控制台中显示, 任意不使用下列语言的玩家也会使用默认语言.
+  # 可用语言: bg-BG.yml, cz-CZ.yml, da-DK.yml, de-DE.yml, en-US.yml,
+  # es-AR.yml, es-CL.yml, es-EC.yml, es-ES.yml, es-MX.yml, es-UY.yml, es-VE.yml,
+  # fr-FR.yml, he-IL.yml, id-ID.yml, it-IT.yml, ja-JP.yml, ko-KR.yml, nl-NL.yml,
+  # no-NO.yml, pl-PL.yml, pt-BR.yml, pt-PT.yml, ro-RO.yml, ru-RU.yml, sr-CS.yml,
+  # sv-SE.yml, th-TH.yml, tl-PH.yml, tr-TR.yml, uk-UA.yml, vi-VN.yml, zh-CN.yml,
+  # zh-TW.yml
+  #
+  # 若你想要用自己的内容覆盖上述的任意文件, 你需要:
+  # - 将 towny\settings\lang\reference\ 文件夹
+  #   复制到 lang\override\ 文件夹, 并在其中修改你所需要的部分.
+  # 若你想要覆盖所有语言文件, 例如修改颜色, 你必须:
+  # - 将你想要的消息复制至 towny\settings\lang\global.yml 文件并自行修改.
+  #
+  # 插件会随玩家客户端语言改变而改变所使用的翻译内容.
+  language: en-US.yml
+  
+  # 你想要启用的语言. 设置为 '*' 表示启用所有语言.
+  # 若你只想要启用 en-US,ru-RU,es-ES,fr-FR 四种语言, 只需将其填入下方即可
+  # 若玩家所使用的语言尚未启用或尚无翻译, 则会使用默认的语言.
+  # 考虑到兼容性问题, en-US 语言总是保持启用.
+  enabled_languages: '*'
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                  权限与 Towny 的提示                  | #
+# +------------------------------------------------------+ #
+#                                                          #
+# 对 TownyPerms 的完整权限列表及相关教程请访问                #
+# https://git.io/JUBLd                                     #
+# 许多服主连这里开头的页面都不去读就来问我们维基已经解释很多次的 #
+# 问题!                                                    #
+#                                                          #
+############################################################
+permissions: ''
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                     镇区与国家等级                    | #
+# +------------------------------------------------------+ #
+############################################################
+  
+levels:
+  
+  # 相关配置教程: https://github.com/TownyAdvanced/Towny/wiki/How-Towny-Works#configuring-town_level-and-nation_level
+  town_level:
+  - townBlockTypeLimits: {}
+    upkeepModifier: 1.0
+    townOutpostLimit: 0
+    numResidents: 0
+    debtCapModifier: 1.0
+    namePostfix: ' 废墟'
+    bankCapModifier: 1.0
+    mayorPrefix: '灵魂 '
+    townBlockBuyBonusLimit: 0
+    namePrefix: ''
+    mayorPostfix: ''
+    peacefulCostMultiplier: 1.0
+    townBlockLimit: 1
+    resourceProductionModifier: 1.0
+  - townBlockTypeLimits: {}
+    upkeepModifier: 1.0
+    townOutpostLimit: 0
+    numResidents: 1
+    debtCapModifier: 1.0
+    namePostfix: ' (定居)'
+    bankCapModifier: 1.0
+    mayorPrefix: '隐者 '
+    townBlockBuyBonusLimit: 0
+    namePrefix: ''
+    mayorPostfix: ''
+    peacefulCostMultiplier: 1.0
+    townBlockLimit: 16
+    resourceProductionModifier: 1.0
+  - townBlockTypeLimits: {}
+    upkeepModifier: 1.0
+    townOutpostLimit: 1
+    numResidents: 2
+    debtCapModifier: 1.0
+    namePostfix: ' (哈姆雷特)'
+    bankCapModifier: 1.0
+    mayorPrefix: '首领 '
+    townBlockBuyBonusLimit: 0
+    namePrefix: ''
+    mayorPostfix: ''
+    peacefulCostMultiplier: 1.0
+    townBlockLimit: 32
+    resourceProductionModifier: 1.0
+  - townBlockTypeLimits: {}
+    upkeepModifier: 1.0
+    townOutpostLimit: 1
+    numResidents: 6
+    debtCapModifier: 1.0
+    namePostfix: ' (村庄)'
+    bankCapModifier: 1.0
+    mayorPrefix: '男爵 '
+    townBlockBuyBonusLimit: 0
+    namePrefix: ''
+    mayorPostfix: ''
+    peacefulCostMultiplier: 1.0
+    townBlockLimit: 96
+    resourceProductionModifier: 1.0
+  - townBlockTypeLimits: {}
+    upkeepModifier: 1.0
+    townOutpostLimit: 2
+    numResidents: 10
+    debtCapModifier: 1.0
+    namePostfix: ' (镇)'
+    bankCapModifier: 1.0
+    mayorPrefix: '子爵 '
+    townBlockBuyBonusLimit: 0
+    namePrefix: ''
+    mayorPostfix: ''
+    peacefulCostMultiplier: 1.0
+    townBlockLimit: 160
+    resourceProductionModifier: 1.0
+  - townBlockTypeLimits: {}
+    upkeepModifier: 1.0
+    townOutpostLimit: 2
+    numResidents: 14
+    debtCapModifier: 1.0
+    namePostfix: ' (大镇)'
+    bankCapModifier: 1.0
+    mayorPrefix: '伯爵 '
+    townBlockBuyBonusLimit: 0
+    namePrefix: ''
+    mayorPostfix: ''
+    peacefulCostMultiplier: 1.0
+    townBlockLimit: 224
+    resourceProductionModifier: 1.0
+  - townBlockTypeLimits: {}
+    upkeepModifier: 1.0
+    townOutpostLimit: 3
+    numResidents: 20
+    debtCapModifier: 1.0
+    namePostfix: ' (城市)'
+    bankCapModifier: 1.0
+    mayorPrefix: '伯爵 '
+    townBlockBuyBonusLimit: 0
+    namePrefix: ''
+    mayorPostfix: ''
+    peacefulCostMultiplier: 1.0
+    townBlockLimit: 320
+    resourceProductionModifier: 1.0
+  - townBlockTypeLimits: {}
+    upkeepModifier: 1.0
+    townOutpostLimit: 3
+    numResidents: 24
+    debtCapModifier: 1.0
+    namePostfix: ' (大城市)'
+    bankCapModifier: 1.0
+    mayorPrefix: '公爵 '
+    townBlockBuyBonusLimit: 0
+    namePrefix: ''
+    mayorPostfix: ''
+    peacefulCostMultiplier: 1.0
+    townBlockLimit: 384
+    resourceProductionModifier: 1.0
+  - townBlockTypeLimits: {}
+    upkeepModifier: 1.0
+    townOutpostLimit: 4
+    numResidents: 28
+    debtCapModifier: 1.0
+    namePostfix: ' (大都市)'
+    bankCapModifier: 1.0
+    mayorPrefix: '市长 '
+    townBlockBuyBonusLimit: 0
+    namePrefix: ''
+    mayorPostfix: ''
+    peacefulCostMultiplier: 1.0
+    townBlockLimit: 448
+    resourceProductionModifier: 1.0
+  
+  # 相关配置教程: https://github.com/TownyAdvanced/Towny/wiki/How-Towny-Works#configuring-town_level-and-nation_level
+  nation_level:
+  - kingPostfix: ''
+    capitalPostfix: ''
+    upkeepModifier: 1.0
+    kingPrefix: '领袖 '
+    capitalPrefix: ''
+    numResidents: 0
+    nationBonusOutpostLimit: 0
+    namePostfix: ' (国家)'
+    bankCapModifier: 1.0
+    townBlockLimitBonus: 10
+    namePrefix: '土地 '
+    peacefulCostMultiplier: 1.0
+    nationZonesSize: 1
+    nationTownUpkeepModifier: 1.0
+  - kingPostfix: ''
+    capitalPostfix: ''
+    upkeepModifier: 1.0
+    kingPrefix: '伯爵 '
+    capitalPrefix: ''
+    numResidents: 10
+    nationBonusOutpostLimit: 1
+    namePostfix: ' (国家)'
+    bankCapModifier: 1.0
+    townBlockLimitBonus: 20
+    namePrefix: '联邦 '
+    peacefulCostMultiplier: 1.0
+    nationZonesSize: 1
+    nationTownUpkeepModifier: 1.0
+  - kingPostfix: ''
+    capitalPostfix: ''
+    upkeepModifier: 1.0
+    kingPrefix: 'Duke '
+    capitalPrefix: ''
+    numResidents: 20
+    nationBonusOutpostLimit: 2
+    namePostfix: ' (国家)'
+    bankCapModifier: 1.0
+    townBlockLimitBonus: 40
+    namePrefix: '领域 '
+    peacefulCostMultiplier: 1.0
+    nationZonesSize: 1
+    nationTownUpkeepModifier: 1.0
+  - kingPostfix: ''
+    capitalPostfix: ''
+    upkeepModifier: 1.0
+    kingPrefix: '王 '
+    capitalPrefix: ''
+    numResidents: 30
+    nationBonusOutpostLimit: 3
+    namePostfix: ' (国家)'
+    bankCapModifier: 1.0
+    townBlockLimitBonus: 60
+    namePrefix: '大国 '
+    peacefulCostMultiplier: 1.0
+    nationZonesSize: 2
+    nationTownUpkeepModifier: 1.0
+  - kingPostfix: ''
+    capitalPostfix: ''
+    upkeepModifier: 1.0
+    kingPrefix: '帝王 '
+    capitalPrefix: ''
+    numResidents: 40
+    nationBonusOutpostLimit: 4
+    namePostfix: ' 帝国'
+    bankCapModifier: 1.0
+    townBlockLimitBonus: 100
+    namePrefix: ' '
+    peacefulCostMultiplier: 1.0
+    nationZonesSize: 2
+    nationTownUpkeepModifier: 1.0
+  - kingPostfix: ''
+    capitalPostfix: ''
+    upkeepModifier: 1.0
+    kingPrefix: '圣上 '
+    capitalPrefix: ''
+    numResidents: 60
+    nationBonusOutpostLimit: 5
+    namePostfix: ' 领域'
+    bankCapModifier: 1.0
+    townBlockLimitBonus: 140
+    namePrefix: ' '
+    peacefulCostMultiplier: 1.0
+    nationZonesSize: 3
+    nationTownUpkeepModifier: 1.0
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                     新城镇默认设置                    | #
+# +------------------------------------------------------+ #
+############################################################
+  
+town:
+  
+  # 城镇的默认状态 (用于 /town spawn)
+  default_public: 'true'
+  
+  # 城镇的默认开放状态 (城镇在创建之初是否就开服且允许所有玩家加入?)
+  default_open: 'false'
+  
+  # 城镇的中立状态 (城镇在创建之初是否为中立状态?)
+  default_neutral: 'false'
+  
+  # 城镇的默认状态, (是否允许新城镇发起战争?)
+  # 该设置不在 Towny 内部使用, 可以开放给其他战争插件使用.
+  # 将该设置调整为 false 意味着新创建的城镇不可以参与其他插件提供的战争.
+  default_allowed_to_war: 'true'
+  
+  # 默认的城镇公告
+  default_board: /town set board [msg]
+  
+  # 将该项设置为 true 则会将城镇的默认标签自动调整为城镇名称的四个首字母
+  set_tag_automatically: 'false'
+  
+  # 新城镇的默认税收设置.
+  default_taxes:
+  
+    # 新城镇的默认税收量. 该项的值必须小于 economy.daily_taxes.max_town_tax_amount 项设置.
+    tax: '0.0'
+  
+    # 新城镇的默认商店税收.
+    shop_tax: '0.0'
+  
+    # 新城镇的默认大使馆税收.
+    embassy_tax: '0.0'
+  
+    # 新城镇的默认地皮税收.
+    plot_tax: '0.0'
+  
+    # 在玩家无力支付地皮费用时是否将地皮出售?
+    # 当设置为 false 时, 地皮会成为城镇土地且必须被拥有者或管理员设置为出售状态.
+    does_non-payment_place_plot_for_sale: 'false'
+  
+    # 新城镇的默认税收比例状态. 设置为 true 表示为 default_tax 视作百分数而不是整数.
+    taxpercentage: 'true'
+  
+    # default_tax 的最小数值, 不会改变任何已设置收税的城镇.
+    # 请不要忘了将 default_tax 设置为大于零的数, 否则新城镇的默认税收会被设置为 0.
+    # 该设置在允许负数税收时无效.
+    minimumtax: '0.0'
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                  新国家默认设置                       | #
+# +------------------------------------------------------+ #
+############################################################
+  
+nation:
+  
+  # 若设置为 true, 新创建的国家将自动把出生点设置为首都.
+  default_public: 'false'
+  
+  # 若设置为 true, 新创建的国家默认设置为开放且加入无需申请.
+  default_open: 'false'
+  
+  # 默认的城镇公告
+  default_board: /nation set board [msg]
+  
+  # 将该项设置为 true 会将国家的标签设置为国家名称的前四个首字母.
+  set_tag_automatically: 'false'
+  
+  # 新国家的默认税收设置.
+  default_taxes:
+  
+    # 新国家的默认税收量. 该项的值必须小于 economy.daily_taxes.max_nation_tax_amount 项设置.
+    tax: '0.0'
+  
+    # 新国家的默认税收比例状态. 设置为 true 表示为 default_tax 视作百分数而不是整数.
+    taxpercentage: 'false'
+  
+    # default_tax 的最小数值, 不会改变任何已设置收税的国家.
+    # 请不要忘了将 default_tax 设置为大于零的数, 否则新国家的默认税收会被设置为 0.
+    # 该设置在允许负数税收时无效.
+    minimumtax: '0.0'
+  
+    # 国家向被征服城镇收取的金额.
+    default_nation_conquered_tax: '0'
+  
+    # 国家或被征服城镇可收取的最大数量金币.
+    max_nation_conquered_tax: '100'
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                   新世界的默认设置                    | #
+# +------------------------------------------------------+ #
+#                                                          #
+#   这些标志只会用在新创建的世界上!                           #
+#   在你首次使用 Towny 时这些设定会被添加至所有已存在的世界.   #
+#   大多数设置可以在各自世界中输入命令 /tw toggle 命令切换.    #
+#   这些设置分别保存在 towny\data\worlds\ 文件夹中.          #
+#                                                          #
+############################################################
+  
+new_world_settings:
+  # 新世界是否默认启用 Towny 插件?
+  # 你可以通过命令 /townyworld toggle usingtowny 为新世界单独调整设置.
+  using_towny: 'true'
+  
+  # 新世界是否可占领土地?
+  # 将该项设置为 false 表示 Towny 虽然开启但不可以占领新土地.
+  # 你可以通过命令 /townyworld toggle claimable 为新世界单独调整设置.
+  are_new_world_claimable: 'true'
+  
+  pvp:
+    # 是否默认启用 pvp?
+    # 你可以通过命令 /townyworld toggle pvp 为新世界单独调整设置.
+    world_pvp: 'true'
+  
+    # 是否强制启用 pvp?
+    # 该设置会覆盖城镇的设置.
+    # 你可以通过命令 /townyworld toggle forcepvp 为新世界单独调整设置.
+    force_pvp_on: 'false'
+  
+    # 新世界是否默认启用友伤?
+    # 不影响全时启用友伤的竞技场区域.
+    # 设置为 true 后所有同属于一个国家或城镇的玩家可以相互造成伤害.
+    # 你可以通过命令 /townyworld toggle friendlyfire 为新世界单独调整设置.
+    friendly_fire_enabled: 'false'
+  
+    # 新世界是否默认允许战争?
+    # 你可以通过命令 /townyworld toggle warallowed 为新世界单独调整设置.
+    war_allowed: 'true'
+  
+  mobs:
+    # 新世界是否默认允许生成怪物?
+    # 你可以通过命令 /townyworld toggle worldmobs 为新世界单独调整设置.
+    world_monsters_on: 'true'
+  
+    # 新世界是否默认允许郊区刷怪?
+    # 你可以通过命令 /townyworld toggle wildernessmobs 为新世界单独调整设置.
+    wilderness_monsters_on: 'true'
+  
+    # 新世界是否强制允许怪物在城镇内生成?
+    # 该设置会覆盖城镇的设置.
+    # 你可以通过命令 /townyworld toggle townmobs 为新世界单独调整设置.
+    force_town_monsters_on: 'false'
+  
+  explosions:
+    # 新世界是否默认允许爆炸破坏?
+    # 你可以通过命令 /townyworld toggle explosion 为新世界单独调整设置. 
+    world_explosions_enabled: 'true'
+  
+    # 新世界是否强制启用爆炸破坏?
+    # 该设置会覆盖城镇的设置, 且会阻止城镇内的爆炸破坏被关闭.
+    # 你可以通过命令 /townyworld toggle forceexplosion 为新世界单独调整设置.
+    force_explosions_on: 'false'
+  
+  fire:
+    # 新世界是否允许火焰燃烧与蔓延?
+    # 你可以通过命令 /townyworld toggle fire 为新世界单独调整设置.
+    world_firespread_enabled: 'true'
+  
+    # 新世界是否强制启用火焰蔓延?
+    # 该设置会覆盖城镇的设置.
+    # 你可以通过命令 /townyworld toggle forcefire 为新世界单独调整设置.
+    force_fire_on: 'false'
+  
+  # 新世界是否默认阻止末影人搬运方块?
+  enderman_protect: 'true'
+  
+  # 新世界是否默认阻止耕地踩踏?
+  disable_creature_crop_trampling: 'true'
+  
+  # 占领/解除占领地皮的相关世界管理
+  plot_management:
+  
+    # 如下设置会自动应用至新世界.
+    block_delete:
+  
+      # 你可以通过命令 /townyworld toggle unclaimblockdelete 为新世界单独调整设置.
+      enabled: 'true'
+  
+      # 在占领区被删除后, 这些方块会被自动移除.
+      unclaim_delete: BEDS,TORCHES,REDSTONE_WIRE,SIGNS,DOORS,PRESSURE_PLATES
+  
+    # 如下设置会自动应用至新世界.
+    entity_delete:
+      enabled: 'false'
+  
+      # 在占领区被删除后, 这些实体会被自动移除.
+      # 有效 EntityTypes 可在这里找到: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
+      unclaim_delete: end_crystal
+  
+    # 如下设置会自动应用至新世界.
+    mayor_plotblock_delete:
+  
+      # 你可以通过命令 /townyworld toggle plotcleardelete 为新世界单独调整设置.
+      enabled: 'true'
+  
+      # 在拥有者使用命令 /plot clear 命令后会被删除的物品
+      # 若要禁用删除功能, 请将如下内容设置为 NONE.
+      mayor_plot_delete: SIGNS
+  
+    # 如下设置会自动应用至新世界.
+    revert_on_unclaim:
+      # ***警告***
+      # 若启用该项, 所有解除占领的土地都会缓慢还原至区域未被占领的状态.
+      #
+      # 土地还原仅对在该功能启用状态下被占领的地皮有效.
+      #
+      # 你可以通过命令 /townyworld toggle revertunclaim 为新世界单独调整设置.
+      #
+      # 与剩余部分配置不用, 速度设置不可以分世界设置. 你设置的速度会应用在所有世界中.
+      #
+      # 若你允许玩家在郊区破坏/建造, 那么插件也会一并将这些痕迹还原.
+      enabled: 'true'
+      speed: 1s
+  
+      # 如下方块将不会被 revert-on-unclaim 或 revert-explosion 选项的回溯效果影响
+      block_ignore: ORES,LAPIS_BLOCK,GOLD_BLOCK,IRON_BLOCK,DIAMOND_BLOCK,EMERALD_BLOCK,NETHERITE_BLOCK,MOSSY_COBBLESTONE,TORCHES,SPAWNER,SIGNS,SHULKER_BOXES,BEACON,LODESTONE,RESPAWN_ANCHOR,NETHER_PORTAL,FURNACE,BLAST_FURNACE,SMOKER,BREWING_STAND,TNT,AIR,FIRE,SKULLS,DRAGON_EGG,CRYING_OBSIDIAN,MOVING_PISTON
+  
+      # 下列方块允许重生成, 若该列表为空则所有方块均允许再生.
+      # 该列表在你只想要 '自然' 方块例如石头、草、树木等方块重生成时非常有用,.
+      # 且也在你允许玩家在郊区中建筑的情况下有用.
+      # 与 new_world_settings 部分的其他设置相同, 该设置只会对新世界生效.
+      # 分世界配置列表可在 towny\data\worlds\世界名称.txt 中找到.
+      block_whitelist: ''
+  
+    # 如下设置会自动应用至新世界.
+    wild_revert_on_mob_explosion:
+  
+      # 启用该项会将郊区中怪物破坏出的坑洼缓慢回溯.
+      # 你可以通过命令 /townyworld toggle revertentityexpl 为新世界单独调整设置.
+      enabled: 'true'
+  
+      # 下列实体产生的爆炸会被回溯.
+      entities: CREEPER,END_CRYSTAL,ENDER_DRAGON,FIREBALL,SMALL_FIREBALL,TNT,TNT_MINECART,WITHER,WITHER_SKULL
+  
+      # 回溯破坏与实体爆炸之间的时间间隔.
+      delay: 20s
+  
+    # 如下设置会自动应用至新世界.
+    wild_revert_on_block_explosion:
+  
+      # 启用该项会将郊区中方块爆炸破坏出的坑洼缓慢回溯.
+      # 你可以通过命令 /townyworld toggle revertblockexpl 为新世界单独调整设置.
+      enabled: 'true'
+  
+      # 下列方块产生的爆炸会被回溯.
+      blocks: BEDS,RESPAWN_ANCHOR
+    # 允许重生成的方块. (若列表为空则允许所有方块重生成)
+    wild_revert_on_explosion_block_whitelist: ''
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                     城镇全局设置                      | #
+# +------------------------------------------------------+ #
+############################################################
+  
+global_town_settings:
+  
+  # 服务器上能拥有的城镇最大数量.
+  town_limit: '3000'
+  
+  # 两个城镇的方块单元达到合并要求所需的最小距离.
+  max_distance_for_merge: '10'
+  
+  # 处于同盟城镇或己方城镇中的玩家会每隔 health_regen_speed 设置的秒数回复 1 点生命值.
+  health_regen:
+    speed: 3s
+    enable: 'true'
+  
+  # 城镇内切换 pvp 的冷却时间.
+  # 对城镇内通过 /res toggle pvp 切换 pvp 的玩家有效.
+  # 对地皮内通过 /plot toggle pvp 切换 pvp 的玩家同样有效.
+  pvp_cooldown_time: '30'
+  
+  # 城镇内切换和平模式的冷却时间.
+  peaceful_cooldown_time: '30'
+  
+  # 玩家删除旧城镇后创建新城镇的冷却时间长度.
+  town_delete_cooldown_time: '0'
+  
+  # 解除认领城镇方块单元后再次认领的冷却时间长度.
+  town_unclaim_cooldown_time: '0'
+  
+  # 玩家放置城镇方块单元后再次移动位置所需的冷却时间.
+  homeblock_movement_cooldown_hours: '0'
+  
+  # 城镇方块单元单次可移动的最大距离.
+  # 示例: 将该设置的值设置为 3 表示玩家每次移动可以将方块单元向周围移动至多 3 格.
+  # 与上述 homeblock_movement_cooldown_hours 设置搭配使用时很有用.
+  homeblock_movement_distance_limit: '0'
+  
+  # 启用 [~Home] 城镇名称 - 地皮拥有者 - 地皮名称 消息行
+  # 若设置为 false, 则玩家在进出城镇之间不会收到任何提示.
+  show_town_notifications: 'true'
+  
+  # 被驱逐玩家是否可以在城镇内游荡?
+  # 若设置为 false, 被驱逐玩家将会在逗留时间过长时立即传送出去.
+  # 能够逗留的时间在下文的 outlaw_teleport_warmup 处设置.
+  allow_outlaws_to_enter_town: 'true'
+  
+  # 被驱逐玩家是否可以在城镇内自由传送至其他区域?
+  # 若设置为 false, 被驱逐玩家不可以使用命令传送出城.
+  # 若你不想要被驱逐玩家使用传送物品, 请接着设置 allow_outlaws_use_teleport_items 项.
+  allow_outlaws_to_teleport_out_of_town: 'true'
+  
+  # 若设置为 false, 处于城镇内的驱逐玩家将不能使用传送类物品, 例如末影珍珠与紫颂果.
+  # 将该项设置为 false 需要 allow_outlaws_to_teleport_out_of_town 项也为 false.
+  allow_outlaws_use_teleport_items: 'true'
+  
+  # 是否在城镇内存在被驱逐玩家时发出警告?
+  # 警告: 启用该功能可能会导致城镇居民收到刷屏警告!
+  # 非常推荐仅在驱逐玩家传送预热为 0 秒时启用该设置.
+  warn_town_on_outlaw: 'false'
+  
+  # 警告消息之间的间隔时间, 单位为秒.
+  warn_town_on_outlaw_message_cooldown_in_seconds: '30'
+  
+  # 若将该项设置为 true, 在玩家通过命令 /t outlaw add 名称 被驱逐且玩家处于城镇边界内时, 该玩家会以于 outlaw_teleport_warmup 设置的预热时间之后被传送出去.
+  outlaw_teleport_away_on_becoming_outlawed: 'false'
+  
+  # 被驱逐玩家被传送之前需要等待多久?
+  # 你可以将该项设置为 0 以使被驱逐玩家立即传送出城镇区域.
+  # 该项在 allow_outlaws_to_enter_town 启用时无效.
+  outlaw_teleport_warmup: '5'
+  
+  # 若被驱逐玩家不属于任何城镇且在镇外区域没有床重生点, 则你希望他们被传送到哪个世界.
+  # 他们会传送至下列世界的出生点.
+  # 若留空, 他们会被传送至城镇所在世界的出生点.
+  outlaw_teleport_world: ''
+  
+  # 处于将其驱逐城镇的玩家不能使用如下的命令.
+  outlaw_blacklisted_commands: somecommandhere,othercommandhere
+  
+  # 正在处于战争的玩家不能使用如下的命令.
+  war_blacklisted_commands: somecommandhere,othercommandhere
+  
+  # 当该值设置大于 0 时, 此为城镇最多可收留无国家的居民数.
+  # 请不要将该值设置得小于下文 required_number_residents_join_nation 和 required_number_residents_create_nation 设置的值.
+  maximum_number_residents_without_nation: '0'
+  
+  # 城镇加入国家所需的最小居民数
+  # 若设置为 0, 则城镇加入国家不会对居民数量进行限制
+  required_number_residents_join_nation: '0'
+  
+  # 创建国家所需城镇居民最小数量
+  # 若设置为 0. 则城镇创建国家无居民数量限制
+  required_number_residents_create_nation: '0'
+  
+  # 若设置为 true, 国家在因缺少居民而解散时, 首都会获得组建国家时花费的费用.
+  refund_disband_low_residents: 'true'
+  
+  # 可在农场区域内被城镇居民击杀的动物列表.
+  farm_animals: PIG,COW,CHICKEN,SHEEP,MOOSHROOM
+  
+  # 城镇可容纳的最大居民数量. 将该项设置为 0 可禁用该功能.
+  max_residents_per_town: '0'
+  
+  # 加入首都的居民最大数量.
+  # 该设置项的值必须大于零.
+  # 在城镇为首都的情况下, 城镇居民上线为 max_residents_per_town 与该设置中的值所取的最大值.
+  max_residents_capital_override: '0'
+  
+  # 是否在玩家登录时显示他们所加入城镇的公告板.
+  display_board_onlogin: 'true'
+  
+  # 若设置为 true, 在被驱逐玩家存在于方块单元边界内时 Towny 会阻止玩家进行解除占领操作.
+  # 在启用该功能后使用 /t unclaim 命令可能会略微产生卡顿, 该情况的严重性取决于在线玩家的数量.
+  outsiders_prevent_unclaim_townblock: 'false'
+  
+  # 若设置为 true, 在被驱逐玩家存在于方块单元边界内时 Towny 会阻止玩家进行改变 PVP 状态的操作.
+  # 在启用该功能后使用 /t toggle pvp 命令可能会略微产生卡顿, 该情况的严重性取决于在线玩家的数量.
+  outsiders_prevent_pvp_toggle: 'false'
+  
+  # 若设置为 true, 在某个世界将强制 pvp 设置为 true 时, 城镇的方块单元将不会受到影响且默认将 pvp 模式设置为关.
+  # 在战争事件发生时无效.
+  homeblocks_prevent_forcepvp: 'false'
+  
+  # 在城镇内死亡的玩家是否保留背包中的物品.
+  # 不保证完全兼容其他死亡不掉落插件!
+  keep_inventory_on_death_in_town: 'false'
+  
+  # 在所属城镇内死亡的玩家是否保留背包中的物品.
+  # 不保证完全兼容其他死亡不掉落插件!
+  keep_inventory_on_death_in_own_town: 'false'
+  
+  # 在盟友城镇内死亡的玩家是否保留背包中的物品.
+  # 不保证完全兼容其他死亡不掉落插件!
+  keep_inventory_on_death_in_allied_town: 'false'
+  
+  # 在竞技场区域内死亡的玩家是否保留背包中的物品.
+  # 不保证完全兼容其他死亡不掉落插件!
+  keep_inventory_on_death_in_arena: 'false'
+  
+  # 是否在玩家死亡时保留他们获得的经验.
+  # 不保证完全兼容其他经验保留插件!
+  keep_experience_on_death_in_town: 'false'
+  
+  # 在竞技场区域内死亡的玩家是否保留他们获得的经验.
+  # 不保证完全兼容其他经验保留插件!
+  keep_experience_on_death_in_arena: 'false'
+  
+  # 城镇区域出售的最高标价. 此即为玩家通过命令 /t buytown 购买一个在售城镇所可支付的最高价格.
+  max_buytown_price: '999999999'
+  
+  # 土地区域, 如地皮、大使馆、商店等出售的最高标价.
+  # 若你将 Towny 数据存储在 MySQL 数据库中, 将该值标得过高可能会存在一定危险. 大数字可以科学计数法表示.
+  maximum_plot_price_cost: '1000000.0'
+  
+  # 每位居民可拥有的最大地皮数量
+  max_plots_per_resident: '100'
+  
+  # 若设置为 true, 命令 /town screen 将会显示城镇出生点的 xyz 坐标而不是方块单元的坐标.
+  display_xyz_instead_of_towny_coords: 'false'
+  
+  # 若设置为 true, 命令 /town list 将会随机展示而无视所使用的比较器, 且隐藏居民数量.
+  display_town_list_randomly: 'false'
+  
+  # 竞选新市长时优先考虑的等级, 以递减的顺序填入下文用作参考.
+  # 所有等级应当在 `townyperms.yml` 中设置.
+  # 例如, 若要使得 `visemayor` 比 `assistant` 更容易当选市长, 则你需要将该段设置调整为 `visemayor,assistant`. 
+  order_of_mayoral_succession: assistant
+  
+  # 当启用时, 诸如岩浆或水等的方块将不可以流入拥有者不同的地皮.
+  prevent_fluid_griefing: 'true'
+  
+  # 在城镇内限制执行某些命令, 并将它们设置为只有地皮拥有者才可执行.
+  # 对非地皮拥有者的 sethome/home 类命令的限制非常有用.
+  # 拥有 towny.admin.town_commands.blacklist_bypass 权限的管理员和玩家不会受到该部分配置的限制.
+  # 可以指定子命令: 如, 指定 /town spawn 不会导致 /town 被禁用.
+  # 在配置下列的命令时, 无需填入斜杠 / 符号.
+  town_command_blacklisting:
+  
+    # 通过 town_blacklisted_commands 设置禁用城镇内的命令执行.
+    # 该设置允许你控制该功能是否完全开启或关闭, 取决于你是否需要它.
+    enabled: 'false'
+  
+    # 以逗号分隔的列表, 这些命令不能在任何城镇内执行.
+    town_blacklisted_commands: somecommandhere,othercommandhere
+  
+    # 如下列表的命令只允许地皮拥有者在其地皮内执行.
+    # 拥有 towny.claimed.townowned.* 权限的玩家可无视该设置在城镇拥有的地皮中执行如下命令.
+    # 这也包括市长、市长助理及部分建筑者等级的玩家.
+    # 拥有 towny.claimed.owntown.* 权限 (通常给予市长/市长助理) 的玩家不会被该设置限制.
+    player_owned_plot_limited_commands: sethome,home
+  
+    # 该设置限制玩家在城镇和郊区中使用的命令 (基本上用于阻止访客或旅行者使用命令)
+    # 拥有 towny.globally_welcome 权限的玩家不受该列表的限制.
+    # 所限制的命令需处于 town_command_blacklisting.town_blacklisted_commands 列表下, 否则不会被检查.
+    own_town_and_wilderness_limited_commands: sethome,home
+  
+    # 当设置为 true 时, 受信任的居民 (被城镇直接信任的居民, 与受信任城镇的居民) 允许使用只有城镇居民能够使用的命令.
+    own_town_and_wilderness_limited_commands_allow_trusted_residents: 'true'
+  
+    # 当设置为 true 时, 同盟城镇的居民 (既可以为同一国家的成员, 也可为同盟国家的成员) 能够使用只有城镇居民才可以使用的命令.
+    own_town_and_wilderness_limited_commands_allow_allies: 'false'
+  
+  # 启用后, 城镇 (和国家) 名称将会在创建后自动修正大小写.
+  automatic_capitalisation: 'false'
+  
+  # 在禁用后, 城镇将不能以带数字的名称创建或重命名.
+  # 禁用该选项不会影响已经创建的城镇.
+  allow_numbers_in_town_name: 'true'
+  
+  # 该设置决定了能够使用的旗帜颜色.
+  # 这些颜色格式为 hex 十六进制.
+  allowed_map_colors: aqua:00ffff, azure:f0ffff, beige:f5f5dc, black:000000, blue:0000ff, brown:a52a2a, cyan:00ffff, darkblue:00008b, darkcyan:008b8b, darkgrey:a9a9a9, darkgreen:006400, darkkhaki:bdb76b, darkmagenta:8b008b, darkolivegreen:556b2f, darkorange:ff8c00, darkorchid:9932cc, darkred:8b0000, darksalmon:e9967a, darkviolet:9400d3, fuchsia:ff00ff, gold:ffd700, green:008000, indigo:4b0082, khaki:f0e68c, lightblue:add8e6, lightcyan:e0ffff, lightgreen:90ee90, lightgrey:d3d3d3, lightpink:ffb6c1, lightyellow:ffffe0, lime:00ff00, magenta:ff00ff, maroon:800000, navy:000080, olive:808000, orange:ffa500, pink:ffc0cb, purple:800080, violet:800080, red:ff0000, silver:c0c0c0, white:ffffff, yellow:ffff00
+  
+  # 不会被踢出城镇的等级列表 (以逗号分隔)
+  unkickable_ranks: assistant
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                    全局国家设置                       | #
+# +------------------------------------------------------+ #
+############################################################
+  
+global_nation_settings:
+  
+  # 国家区域是一类特殊的郊区, 它会环绕在国家的首都或首都与城镇附近之间的区域.
+  # 在启用的情况下, 属于该国家的玩家可以与这片郊区进行正常的交互.
+  # 不属于该国家的玩家则不能在这些区域内破坏/建造/切换/使用物品.
+  # 这片区域所消耗的城镇方块单元数量取决于国家的大小, 及配置文件中按国家等级设置的数量.
+  # 因为这些区域仍然是郊区, 所以任何玩家都可以占领这些方块单元.
+  # 无论你设置了什么大小, 我们都非常建议你将这些数字的值设置得小于 min_plot_distance_from_town_plot 的值, 否则某些玩家就不能在城镇区域之外进行建造/破坏方块的活动.
+  nationzone:
+  
+    # 国家区域功能默认是禁用的. 这是因为它可能会在玩家数量足够多时对服务器造成较大的负担.
+    enable: 'false'
+  
+    # 在设置为 true 之后, 只有首都城镇才可以被郊区类型的国家区域环绕.
+    only_capitals: 'true'
+  
+    # 环绕首都的国家区域缓冲区大小. 在国家首都附近会产生一圈更大的缓冲区域. 
+    capital_bonus_size: '0'
+  
+    # 当设置为 true 时, 国家区域在 Towny 战争期间禁用.
+    war_disables: 'true'
+  
+    # 在设置为 true 时, 玩家在进入国家区域时会收到提醒.
+    # 默认设置为 false 的原因是, 就像国家区域功能本身一样, 它会对服务器造成更多负担.
+    show_notifications: 'false'
+  
+  # 在玩家登录时是否向玩家显示国家公告板.
+  display_board_onlogin: 'true'
+  
+  # 若设置为 true, 则国家首都不能设置中立/和平状态.
+  capitals_cannot_be_neutral: 'false'
+  
+  # 当设置为 true 时, 国家的国家等级受拥有的城镇数量而不是拥有的居民数量限制.
+  nation_level_is_determined_by_town_count_instead_of_resident_count: 'false'
+  
+  # 若设置的值大于 0, 它将会限制能加入一个国家的城镇数量.
+  # 不对加入数量已超过上限的国家生效.
+  max_towns_per_nation: '0'
+  
+  # 若设置的值大于 0, 它将会限制能加入一个国家的居民数量.
+  # 不对加入数量已超过上线的国家生效.
+  max_residents_per_nation: '0'
+  
+  # 该设置决定了能使用的国家地图颜色.
+  # 颜色代码为 hex 十六进制色码.
+  allowed_map_colors: aqua:00ffff, azure:f0ffff, beige:f5f5dc, black:000000, blue:0000ff, brown:a52a2a, cyan:00ffff, darkblue:00008b, darkcyan:008b8b, darkgrey:a9a9a9, darkgreen:006400, darkkhaki:bdb76b, darkmagenta:8b008b, darkolivegreen:556b2f, darkorange:ff8c00, darkorchid:9932cc, darkred:8b0000, darksalmon:e9967a, darkviolet:9400d3, fuchsia:ff00ff, gold:ffd700, green:008000, indigo:4b0082, khaki:f0e68c, lightblue:add8e6, lightcyan:e0ffff, lightgreen:90ee90, lightgrey:d3d3d3, lightpink:ffb6c1, lightyellow:ffffe0, lime:00ff00, magenta:ff00ff, maroon:800000, navy:000080, olive:808000, orange:ffa500, pink:ffc0cb, purple:800080, violet:800080, red:ff0000, silver:c0c0c0, white:ffffff, yellow:ffff00
+  
+  # 一个国家可拥有的同盟国家数量上限, 设置为 -1 可将其禁用.
+  max_allies: '-1'
+  
+  proximity:
+  
+    # 城镇的方块单元与国家首都的方块单元的最远距离.
+    # 自动无视那些与首都不处于同一个世界的国家.
+    # 若设置为 0, 城镇与国家首都之间的距离将不作任何限制.
+    nation_proximity_to_capital_city: '0.0'
+  
+    # 城镇的方块单元与其他城镇的方块单元的最远距离.
+    # 该设置仅在 nation_proximity_to_capital_city 设置的值大于 0 时使用.
+    # This setting is only used when nation_proximity_to_capital_city is above 0.
+    # 在使用时, 若城镇在国家首都范围之外, 剩余的城镇将会被用于判断, 若其中的一些城镇的方块单元与该城镇的方块单元足够近,
+    # 那么这个城镇就可以属于这个国家.
+    # 将该设置保持为 0.0 可禁用距离限制.
+    nation_proximity_to_other_nation_towns: '0.0'
+  
+    # 在城镇因上述的 nation_proximity_to_other_nation_towns 而能够与首都距离足够远时, 城镇的方块单元与首都的方块单元的最远距离.
+    # 该设置可阻止那些像英国一样将各个城镇如链条一般串联起来的国家.
+    # This setting is what will stop a nation being able to go incredibly wide due to towns 'chaining' together.
+    # 该设置仅在 nation_proximity_to_capital_city 设置的值大于 0 时使用.
+    # 将该设置保持为 0.0 可禁用距离限制.
+    absolute_distance_from_capital: '0.0'
+  
+  # 在禁用后, 国家将不能重命名为带有数字的名称.
+  # 禁用该项不影响已创建的国家.
+  allow_numbers_in_nation_name: 'true'
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                     城镇占领的设置                    | #
+# +------------------------------------------------------+ #
+############################################################
+  
+claiming:
+  
+  # 城镇可拥有的最大方块单元数量为 (居民数 * 比率)
+  # 将该设置调整为 0 会使用配置文本中预先定义的基于等级的跳跃值.
+  # 将该设置调整为 -1 会使得城镇方块数量不限.
+  town_block_ratio: '8'
+  
+  # 一个城镇可拥有的最多城镇方块单元数量, 若上述的 town_block_ratio 设置为 0 则最大大小由 town_levels 设置项决定.
+  # 将该项设置为 0 表示对大小不作限制.
+  town_block_limit: '0'
+  
+  # 城镇方块单元的大小. 仅在你第一次安装 Towny 时考虑修改该项.
+  # 在产生数据后仍要修改该设置则可能会导致意想不到的后果. 使用更小的值可允许更高的精度, 但需要你做更多设置工作.
+  # 另外, 使用非常小的值会让缓存毫无用处.
+  # 每个单元的大小都是 (town_block_size * town_block_size * 世界建筑高度), 世界建筑高度即为可建筑范围内的世界底至世界顶的高度.
+  town_block_size: '16'
+  
+  # 在设置为 false 的情况下, 玩家将不能在占领方块单元时看见边界上的粒子效果.
+  show_claiming_particles: 'true'
+  
+  # 拓展边界所需的最小相邻城镇方块单元.
+  # 可用于阻止玩家创建长条或蛇形的城镇占地.
+  # 设置为 -1 可禁用. 设置为 3 可强制拓展城镇的边界.
+  min_adjacent_blocks: '-1'
+  
+  # 在 /town claim/unclaim # 命令中可使用的最大数字.
+  # 设置为 0 可禁用占领范围检查的限制.
+  # 需要注意的是默认值 4 为半径, 它会一次性认领 3*3 (80 地皮) 的区域.
+  max_claim_radius_value: '4'
+  
+  
+  biome_rules:
+  
+    # 在一块城镇单元中包含过多如下生物群系的方块后, 它就不可被城镇占领.
+    unwanted_biomes:
+  
+      # 当设置为 true, 禁领的生物群系会在玩家尝试占领土地后测试.
+      enabled: 'false'
+  
+      # 一个以逗号分隔的列表, 在该列表中的生物群系会提升禁止占领的可能.
+      # 在该列表中的生物群系应当只使用小写字母, 否则该功能可能会变得不正常.
+      biomes: the_end,end_barrens,end_highlands,end_midlands,small_end_islands
+  
+      # 允许城镇占领的土地中, 禁领生物群系的最大占比.
+      # 例如, 若一个城镇单元内包含多于百分之 X 的海洋生物群系, 那么它将不可被占领. 
+      threshold: '55'
+  
+  
+    ocean_blocking:
+  
+      # 当设置为 true 时, 任意包含海洋生物群系大于一定比例的郊区地皮将不可被占领.
+      enabled: 'false'
+  
+      # 允许城镇占领的土地中, 禁领生物群系的最大占比.
+      # 例如, 若一个城镇单元内包含多于百分之 X 的海洋生物群系, 那么它将不可被占领. 
+      threshold: '55'
+  
+  
+  distance_rules:
+  
+    # 若设置为 true, 下方设置: min_plot_distance_from_town_plot 与 min_distance_from_town_homeblock 将会对处在同一国家的城镇无效.
+    # 将该设置调整为 false 会让所有城镇保持分离.
+    min_distances_ignored_for_towns_in_same_nation: 'true'
+  
+    # 若设置为 true, 下方设置: min_plot_distance_from_town_plot 与 min_distance_from_town_homeblock 将会对处在同一国家的城镇无效.
+    # 将该设置调整为 false 会让所有城镇保持分离.
+    min_distances_ignored_for_towns_in_allied_nation: 'false'
+  
+    # 任意城镇地皮与其他城镇地皮的最小距离.
+    # 换句话说: 每块占地之间的缓冲区, 这些缓冲区是禁止被任何城镇占领的.
+    # 不影响在同一国家的城镇.
+    # 在某种程度上可以阻止城镇围堵现象.
+    min_plot_distance_from_town_plot: '5'
+  
+    # 任意城镇地皮与其他地皮最小的间隔距离.
+    # 换句话说: 每方块城镇单元之间的缓冲区, 这些缓冲区是禁止被任何城镇占领的.
+    # 不影响在同一国家的城镇.
+    # 这可以阻止某些人在占地的附近创建另一个城镇的行为
+    min_distance_from_town_homeblock: '5'
+  
+    # 前哨站与其他城镇占地的最小距离
+    # 在 min_plot_distance_from_town_plot 的值靠近 0 即允许其他城镇紧挨但又想保留前哨站时非常有用.
+    min_distance_for_outpost_from_plot: '5'
+  
+    # 设置为 0 可将其禁用. 在该设置的值大于 0 时, 前哨站必须设置在与城镇有一定距离的位置.
+    # 将该值设置为大于 0 的值会阻止前哨站在其他世界建立.
+    # 不要将该设置的值调整得小于上述的 min_distance_for_outpost_from_plot 设置.
+    max_distance_for_outpost_from_town_plot: '0'
+  
+    # 城镇单元之间的最小距离.
+    min_distance_between_homeblocks: '0'
+  
+    # 城镇单元之间的最大距离.
+    # 这会强制让玩家建筑得更近.
+    max_distance_between_homeblocks: '0'
+  
+    # 新创建的城镇占地与邻近城镇的占地的最小距离.
+    # 当设置为 -1 时, 该设置使用的值将取自上文 min_plot_distance_from_town_plot 设置的值.
+    new_town_min_distance_from_town_plot: '-1'
+  
+    # 新创建的城镇展读与邻近城镇单元的最小距离.
+    # 当设置为 -1 时, 该设置使用的值将取自上文 min_distance_from_town_homeblock 设置的值.
+    new_town_min_distance_from_town_homeblock: '-1'
+  
+  
+  outposts:
+  
+    # 允许城镇占领分离土地 (方块单元不与城镇土地相连).
+    allow_outposts: 'true'
+  
+    # 当设置为 true 时, 分离土地可以被不同城镇等级的 townOutpostLimit 值或不同国家等级的 nationBonusOutpostLimit 值限制
+    # 在这种情况下国家是唯一一种能合并分离土地的方式, 也能激励玩家占领更多的分离土地. 规模更大的城镇能拥有更多的分离土地.
+    # 在激活后, 该设置将不会导致过度扩张的城镇失去分离土地. 但他们将不再能创建新的分离土地, 直到他们解除占领已有的分离土地, 使得总数量不再到达上限.
+    # 相似地, 加入国家且获得了额外分离土地的城镇将会在他们离开国家之后超过土地数量上限, 进而触发该功能
+    limit_outposts_using_town_and_nation_levels: 'false'
+  
+    # 在 limit_outposts_using_town_and_nation_levels 为 true 时, 超过分离土地数量上限的城镇将不再能通过命令 /town outpost 传送至超出上限的分离土地
+    # 直到分离土地数量重新低于上限.
+    # 示例: 若限制为 3 则他们不能使用 /t outpost 4
+    over_outpost_limits_stops_teleports: 'false'
+  
+    # 城镇能够占领分离土地所需的居民数,
+    # 将该设置值调整为 0 表示城镇可无视居民数量占领分离土地.
+    minimum_amount_of_residents_in_town_for_outpost: '0'
+  
+  
+  overclaiming:
+  
+    # 允许占领过多土地 (过度扩张) 的城镇, 如拥有 120/100 方块单元的城镇, 多余的土地可被其他未过度扩张的城镇占领.
+    # 该设置可刺激城镇保持区域, 且可让拥有者更加仔细地考虑占领区的选址.
+    # 过度扩张不允许城镇分成几片区域 (互相之间没有连接的占领区), 所以这要求窃取占领区的其他城镇从外向内侵吞.
+    # 非常推荐仅在禁用前哨站的服务器上使用, 且要求启用相邻占领区数量允许超过 1 的设置.
+    # 其他城镇可使用命令 /t takeoverclaim 来占领过度扩张城镇的土地.
+    being_overclaimed_allows_other_towns_to_steal_land: 'false'
+  
+    # 设置为 true 时, 过度扩张行为会被下方 min_distance_from_town_homeblock 设置所阻止
+    # 该设置可阻止通过方块单元偷窃其他方块的行为.
+    overclaiming_prevented_by_homeblock_radius: 'true'
+  
+    # 在使用该功能时, 占据其他城镇土地的城镇所需存在的最短创建时间. 该选项可用于阻止新创建的城镇立马尝试覆盖其他城镇的土地.
+    # 默认限制时间为 7 天.
+    town_age_requirement: 7d
+  
+    # 在使用该功能时, 使用命令 /t takeoverclaim 会产生冷却时间.
+    command_cooldown: 0m
+  
+    # 当设置为 true 时, 涉及覆盖占领的城镇若均归属国家, 尝试覆盖土地城镇所在的国家需要先将对方国家声明为敌人.
+    # 不属于国家的城镇不受该规则影响.
+    nations_required_to_be_enemies: 'false'
+  
+  
+  purchased_bonus_blocks:
+  
+    # 限制一个城镇可购买的额外单元数量.
+    # 该设置在 town.max_purchased_blocks_uses_town_levels 设置为 true 时无效.
+    max_purchased_blocks: '0'
+  
+    # 当设置为 true 时, 配置文件的 town_level 部分会决定城镇可购买的最大额外单元数量.
+    max_purchased_blocks_uses_town_levels: 'true'
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                       出生点设置                      | #
+# +------------------------------------------------------+ #
+############################################################
+  
+spawning:
+  
+  # 决定了在带有重生费用的区域重生时是否要求确认操作.
+  spawn_cost_warnings: 'true'
+  
+  # 若启用, 城镇、国家、前哨站和监狱出生点会产生粒子效果.
+  visualized_spawn_points_enabled: 'true'
+  
+  spawning_warmups:
+  
+    # 若该设置值不为零, 则传送至出生点的冷却时间为下方设置的值, 单位为秒. 
+    teleport_warmup_time: '0'
+  
+    # 当设置为 true 时, 若玩家正处于出生点传送预热, 玩家的移动将会打断传送操作.
+    movement_cancels_spawn_warmup: 'false'
+  
+    # 当设置为 true 时, 若玩家在处于出生点传送预热时受伤, 那么传送操作将会被阻止.
+    damage_cancels_spawn_warmup: 'false'
+  
+  town_spawn:
+  
+    # Allow the use of /town spawn
+    # 是否允许使用命令 /town spawn
+    # 有效值为:  true, false, war, peace
+    # Valid values are:
+    # 在设置为 war 或 peace 的状态下, 只能在战争或和平状态下使用该命令.
+
+    allow_town_spawn: 'true'
+  
+    # 是否允许普通居民使用命令 /town spawn [城镇名称] (传送至其他公开城镇).
+    # 有效值为: true, false, war, peace
+    # 在设置为 war 或 peace 的状态下, 只能在战争或和平状态下使用该命令.
+
+    allow_town_spawn_travel: 'true'
+  
+    # 是否允许普通居民使用命令 /town spawn [城镇名称] 传送至国家内的任意城镇.
+    # 有效值为: true, false, war, peace
+    # 在设置为 war 或 peace 的状态下, 只能在战争或和平状态下使用该命令.
+
+    allow_town_spawn_travel_nation: 'true'
+  
+    # 是否允许普通居民使用命令 /town spawn [城镇名称] 传送至盟国的任意城镇.
+    # 有效值为: true, false, war, peace
+    # 在设置为 war 或 peace 的状态下, 只能在战争或和平状态下使用该命令.
+
+    allow_town_spawn_travel_ally: 'true'
+  
+    # 当设置为 true 时, 国家与盟国出生点旅行也会需要目标城镇状态为对外开放.
+    is_nation_ally_spawning_to_town_requiring_public_status: 'false'
+  
+    # 当设置为 true 时, 受城镇信任的玩家若为居民, 则允许传送至城镇出生点.
+    # 当一个城镇被其他城镇受信任时, 城镇内的其他玩家均可以使用该命令.
+    do_trusted_residents_count_as_residents: 'false'
+  
+    # 当居民加入城镇时是否要将其传送至城镇的出生点?
+    # 这需要该玩家不处于城镇内, 且允许付费或免费使用命令 /t spawn.
+    are_new_residents_prompted_to_town_spawn: 'false'
+  
+    # 阻止处于未占领区或敌方/中立城镇区域的玩家使用 /town spawn 命令.
+    # 可用设置项: unclaimed,enemy,neutral,outlaw
+    prevent_town_spawn_in: enemy,outlaw
+  
+    # 当设置为 true 时, 玩家允许重生在视作敌方的和平/中立城镇出生点.
+    # 将该项设置为 true 将会让部分带有敌人的国家的私有城镇出生点变得不安全.
+    allow_enemies_spawn_to_peaceful_towns: 'false'
+  
+    spawning_cooldowns:
+  
+      # 玩家使用 /t spawn 或 /res spawn 命令的冷却时长.
+      town_spawn_cooldown_time: '30'
+  
+      # 玩家使用 /t outpost 命令的冷却时长.
+      outpost_cooldown_time: '30'
+  
+      # 同一国家的玩家使用 /t spawn 命令的冷却时长.
+      nation_member_town_spawn_cooldown_time: '30'
+  
+      # 处于盟国的玩家使用 /t spawn 命令的冷却时长.
+      nation_ally_town_spawn_cooldown_time: '30'
+  
+      # 非国家成员或盟友使用 /t spawn 命令的冷却时长.
+      unaffiliated_town_spawn_cooldown_time: '30'
+  
+  nation_spawn:
+  
+    # 若启用, 仅允许国家出生点设置在首都.
+    force_nation_spawn_in_capital: 'true'
+  
+    # 是否允许使用 /nation spawn 命令
+    # 有效值为: true, false, war, peace
+    # 在设置为 war 或 peace 的状态下, 只能在战争或和平状态下使用该命令.
+    allow_nation_spawn: 'true'
+  
+    # 是否允许普通居民使用命令 /nation spawn [nation] (传送至其他开放的国家).
+    # 有效值为: true, false, war, peace
+    # 在设置为 war 或 peace 的状态下, 只能在战争或和平状态下使用该命令.
+    allow_nation_spawn_travel: 'true'
+  
+    # 是否允许普通居民使用命令 /nation spawn [nation] 传送至其他盟国.
+    # 有效值为: true, false, war, peace
+    # 在设置为 war 或 peace 的状态下, 只能在战争或和平状态下使用该命令.
+    allow_nation_spawn_travel_ally: 'true'
+  
+    spawning_cooldowns:
+  
+      # 使用 /n spawn 命令的冷却时间.
+      nation_member_nation_spawn_cooldown_time: '30'
+  
+      # 盟国玩家使用 /n spawn 命令的冷却时间.
+      nation_ally_nation_spawn_cooldown_time: '30'
+  
+      # 非盟国或国家成员的玩家使用 /n spawn 命令的冷却时间.
+      unaffiliated_nation_spawn_cooldown_time: '30'
+  
+  respawning:
+  
+    # 当设置为 true 时, Towny 会在城镇或居民使用回城命令时处理重生命令.
+    town_respawn: 'false'
+  
+    # 城镇重生仅在玩家死于与城镇出生点所在的相同世界时生效.
+    town_respawn_same_world_only: 'false'
+  
+    # 当设置为 true, 玩家将会重生至重生锚附近而非自己的城镇.
+    respawn_anchor_higher_precendence: 'true'
+  
+    respawn_protection:
+  
+      # 当大于 0 秒时, 该设置为玩家重生后的无敌时间.
+      # 处于无敌状态下的玩家若攻击其他玩家, 则会失去自己的无敌状态.
+      # 在重生后进行传送操作的玩家也会失去自己的无敌状态.
+      time: 10s
+  
+      # 若禁用, 玩家在重生保护状态下将不能捡起物品.
+      allow_pickup: 'true'
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                       插件界面                        | #
+# +------------------------------------------------------+ #
+############################################################
+  
+plugin:
+  # 文件/mysql 存储相关设置请见 database.yml 文件.
+  database:
+  
+    # 文件保存设置.
+    daily_backups: 'true'
+    backups_are_deleted_after: 90d
+  
+    # 有效格式为: tar, tar.gz, zip, 或设置为 none 表示不作备份.
+    flatfile_backup_type: tar
+  
+  interfacing:
+  
+    tekkit:
+      # 若要模组类模拟假玩家 (如 Tekkit) 的操作能在城镇内允许, 请将模组 ID 填入此处.
+      fake_residents: '[IndustrialCraft],[BuildCraft],[Redpower],[Forestry],[Turtle]'
+  
+    # 该设置可启用/禁用 Towny 的经济功能.
+    # 它会尝试与 Vault 对接或与你对接 Towny 的经济插件对接.
+    # 若保留/Vault 未找到, 则插件会开始寻找受支持的经济插件.
+    # 若上述尝试均为成功, 插件将在玩家进行付费操作时阻止执行或返回执行失败的消息提示.
+    using_economy: 'true'
+  
+    luckperms:
+  
+      # If enabled, Towny contexts will be available in LuckPerms. https://luckperms.net/wiki/Context
+      # 若启用, Towny 的上下文将会在 LuckPerms 中可用. https://luckperms.net/wiki/Context
+      # Towny 将会为 LuckPerms 提供如下内容: Townyperms 等级上下文、基于位置的上下文等.
+      contexts: 'false'
+  
+      # 配置启用/禁用的上下文, 多个上下文可用英文逗号分隔.
+      # 可填入的上下文: towny:resident, towny:mayor, towny:king, towny:insidetown, towny:insideowntown, towny:insideownplot, towny:townrank
+      # towny:nationrank, towny:town, towny:nation
+      enabled_contexts: '*'
+  
+    # 若启用, 由 Towny 生成的方块, 例如解除占领后的回溯或爆炸回溯, 都会被 CoreProtect 记录.
+    # 操作均被 `#towny` 用户记录, 所以 Towny 的操作可以通过 user:#towny 撤销.
+    coreprotect_support: 'true'
+  
+    web_map:
+  
+      # 若启用, 玩家将可以在点击 Towny 统计界面时点击坐标而打开链接.
+      enabled: 'false'
+  
+      # 玩家在统计界面点击坐标打开的链接内容.
+      # 有效的内建变量为 {world}, {x}, 和 {y}, 分别对应世界名称、x 坐标与 y 坐标.
+      url: https://example.com/map/?worldname={world}&mapname=flat&zoom=5&x={x}&y=64&z={z}
+  
+  day_timer:
+  
+    # 每个"城镇日"的时间长度, 用于计算税收与维护费用等其他日常计时所需.
+    # 默认时间长度为 24 小时. 请勿将其设置为大于 1 天的时间长度, 但可以设置得短于该长度.
+    day_interval: 1d
+  
+    # 每 "天" 收税的时间.
+    # 仅在小于 day_interval 时使用. 默认为 12 小时 (中午).
+    # 若 day_interval 设置为诸如 20 分钟的值, new_day_time 不会被使用, 而是使用 day_interval 的值.
+    new_day_time: 12h
+  
+    # 若启用 (默认禁用), Java Timer 会用于计划新一天的相关内容, 比起 Towny 的 Bukkit Timer 更为精确, 但会占用额外的线程.
+    uses_java_timer: 'false'
+  
+    # 是否在新的一天到来时删除那些尚未占领任何区域的城镇.
+    delete_0_plot_towns: 'false'
+  hour_timer:
+  
+    # 每 "天" 的分钟数.
+    # 默认为 60 分钟.
+    hour_interval: 60m
+    # 每 "小时" 的时间, 此为小时计时器所使用的.
+    # 必须小于上述 hour_interval 的设置. 默认为 30 分钟.
+    new_hour_time: 30m
+    # 每个 "短" 计时器的刻
+    # 默认为 20 秒.
+    short_interval: 20s
+  
+  # 提醒你服务器发生事件的有关大量消息, 即调试模式.
+  debug_mode: 'false'
+  
+  # 查询游戏内方块与实体的信息查询工具.
+  info_tool: BRICK
+  
+  # 将大量有关 Towny 的消息发送给 dev_name 项标注的开发人员.
+  dev_mode:
+    enable: 'false'
+    dev_name: LlmDl
+  
+  # 若设置为 true 将会在服务器启动时清除日志文件.
+  reset_log_on_boot: 'true'
+  
+  # 决定 /towny top 命令显示的默认数量.
+  towny_top_size: '10'
+  
+  # 用于过滤国家/城镇名称的黑名单.
+  # 多个名称可通过逗号分隔, 如: 名称1,名称2
+  name_blacklist: ''
+  
+  update_notifications:
+  
+    # 若启用, 拥有 towny.admin.updatealerts 权限的玩家会在登录时获取更新信息.
+    alerts: 'true'
+  
+    # 若启用, 只有完整更新会向玩家发送更新提醒.
+    # 若服务器正在使用预发布版本, 则该设置会被忽略.
+    major_only: 'true'
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                    过滤颜色与聊天                     | #
+# +------------------------------------------------------+ #
+############################################################
+  
+filters_colour_chat:
+  
+  # 任意分配为市长的 NPC 名称.
+  npc_prefix: NPC
+  
+  # 用于过滤输入内容的正则表达式.
+  regex:
+    name_filter_regex: '[\\\/]'
+    name_check_regex: ^[\p{L}\*a-zA-Z0-9._\[\]-]*$
+    string_check_regex: ^[a-zA-Z0-9 \s._\[\]\#\?\!\@\$\%\^\&\*\-\,\*\(\)\{\}]*$
+    name_remove_regex: '[^\P{M}a-zA-Z0-9\&._\[\]-]'
+  
+  modify_chat:
+  
+    # 国家和城镇名称的最大长度. 将该值调整为小于当前设置的值可能会导致现有国家或城镇名称长度小于该限制时进入安全模式.
+    max_name_length: '20'
+  
+    # 城镇和国家标签的最大长度.
+    max_tag_length: '4'
+  
+    # 标题和姓的的最大长度.
+    max_title_length: '10'
+  
+  # 见本插件维基的变量章节获取所有可用的 PAPI 变量.
+  # https://github.com/TownyAdvanced/Towny/wiki/Placeholders
+  papi_chat_formatting:
+  
+    # 在使用 PlaceholderAPI 且标签会同时在国家和城镇间显示时, 该项会决定这些标签的格式.
+    both: '&f[&6%n&f|&b%t&f] '
+  
+    # 在使用 PlaceholderAPI 时, 若一个标签用于表示城镇, 该设置将会决定这些标签的格式.
+    town: '&f[&b%s&f] '
+  
+    # 在使用 PlaceholderAPI 时, 若一个标签用于表示国家, 该设置将会决定这些标签的格式.
+    nation: '&f[&6%s&f] '
+  
+    # %townyadvanced_towny_colour% 变量按照不同玩家身份返回的颜色值.
+    ranks:
+      nomad: '&f'
+      resident: '&f'
+      mayor: '&b'
+      king: '&6'
+  
+  papi_leaderboard_formatting:
+  
+    # %townyadvanced_top_....% 格式的内容, 第一个 %s 返回的是城镇名称, 第二个则为总财富、居民数量或城镇大小.
+    format: '%s - %s'
+  
+  # 在有关变量 %rel_townyadvanced_color% 中用于表示玩家之间关系的颜色代码.
+  papi_relational_formatting:
+    # 在双方没有特殊关系时使用该颜色.
+    none: '&f'
+  
+    # 该颜色会在玩家没有任何城镇时使用.
+    no_town: '&f'
+  
+    # 该颜色会在双方同属于一个城镇时使用的名称.
+    same_town: '&2'
+  
+    # 该颜色会在双方同属于一个国家时使用的名称.
+    same_nation: '&2'
+  
+    # 该颜色会在双方所属国家属于同盟关系时使用.
+    ally: '&b'
+  
+    # 该颜色会在双方互为敌人时使用.
+    enemy: '&c'
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                  方块/物品/实体保护                   | #
+# +------------------------------------------------------+ #
+############################################################
+  
+protection:
+  
+  # 在城镇内可通过城镇/地皮标志阻止的物品.
+  # 这些物品会被城镇/领地/地皮的 item_use 设置阻止.
+  # 一个物品列表, 这些列表中的物品在手持使用时会被阻止.
+  # 你可以在该列表中使用的, 用于指代一系列物品的名称: BOATS, MINECARTS
+  # 完整的物品或方块名称可在该链接中浏览 https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html 
+  item_use_ids: MINECARTS,BOATS,ENDER_PEARL,FIREBALL,CHORUS_FRUIT,LEAD,EGG
+  
+  # Blocks that are protected via town/plot flags.
+  # 可通过城镇/地皮标志保护的方块.
+  # 这些是可通过城镇/领地/地皮的切换设置在该世界内保护的方块.
+  # Switches 类即为可右键交互的开关.
+  # Towny 将会在持有查询魔杖 (默认设置为砖块) 告诉你该列表中使用的正确名称
+  # 你可以在该列表中使用的, 用于指代一系列物品的名称: BOATS,MINECARTS,WOOD_DOORS,PRESSURE_PLATES,NON_WOODEN_PRESSURE_PLATES,FENCE_GATES,TRAPDOORS,SHULKER_BOXES,BUTTONS.
+  # 注意: 如 MINECARTS 和 BOATS 等的载具可添加至此. 若你想要向列表中加入 SADDLE
+  #       以此保护 HORSES, DONKEYS, MULES, PIGS, STRIDERS 等可骑乘生物 (该行为不推荐, 除非你想让玩家在他们不可切换的城镇内禁止重新骑乘这些生物.)
+  # 完整的物品或方块名称可在该链接中浏览 https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html 
+  switch_ids: CHEST,SHULKER_BOXES,TRAPPED_CHEST,FURNACE,BLAST_FURNACE,DISPENSER,HOPPER,DROPPER,JUKEBOX,SMOKER,COMPOSTER,BELL,BARREL,BREWING_STAND,LEVER,NON_WOODEN_PRESSURE_PLATES,BUTTONS,WOOD_DOORS,FENCE_GATES,TRAPDOORS,MINECARTS,LODESTONE,RESPAWN_ANCHOR,TARGET,OAK_CHEST_BOAT,DECORATED_POT,CRAFTER
+  
+  # 在 firespread 被禁用时可被点燃的材料.
+  # 仍需要使用打火石才可点燃.
+  fire_spread_bypass_materials: NETHERRACK,SOUL_SAND,SOUL_SOIL
+  
+  # 可填入的实体名称列表 https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/LivingEntity.html
+  # Animals, Chicken, Cow, Creature, Creeper, Flying, Ghast, Giant, Monster, Pig, 
+  # PigZombie, Sheep, Skeleton, Slime, Spider, Squid, WaterMob, Wolf, Zombie, Shulker
+  # Husk, Stray, SkeletonHorse, ZombieHorse, Vex, Vindicator, Evoker, Endermite, PolarBear, Axolotl, Goat, GlowSquid
+  
+  # 若城镇设置了定时清理的生物, 在城镇边界一定范围内会被清理的实体名称.
+  town_mob_removal_entities: Monster,Flying,Slime,Shulker,SkeletonHorse,ZombieHorse
+  
+  # 城镇内的实体定时清理是否清楚 THE_KILLER_BUNNY 类兔子实体.
+  town_mob_removal_killer_bunny: 'true'
+  
+  # 阻止幼年村民在城镇区域中生成.
+  town_prevent_villager_breeding: 'false'
+  
+  # 以逗号分隔的生成原因列表, 以如下理由生成的实体将不会被定时清理清除.
+  # 有效的生成原因列表请见 https://jd.papermc.io/paper/1.20/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html
+  # 出于技术原因, 该设置仅在 Paper 系列服务端上有效.
+  town_mob_removal_ignored_spawn_causes: ''
+  
+  # 是否禁止实体触发石质压力板.
+  disable_creature_pressureplate_stone: 'true'
+  
+  # 在 wildernessmobs 关闭的世界郊区中会全局移除的实体名称列表.
+  wilderness_mob_removal_entities: Monster,Flying,Slime,Shulker,SkeletonHorse,ZombieHorse
+  
+  # 在 worldmobs 关闭的世界中会全局移除的实体名称列表.
+  world_mob_removal_entities: Monster,Flying,Slime,Shulker,SkeletonHorse,ZombieHorse
+  
+  # 是否在指定世界中禁止生成幼年村民.
+  world_prevent_villager_breeding: 'false'
+  
+  # 当设置为 true 时, 被命名牌改过名称的实体将不会被定时清理清除.
+  mob_removal_skips_named_mobs: 'false'
+  
+  # 在被传送至虚空之前实体可存在城镇边界区域之内的最长时间.
+  # 设置为更低的值可能会导致较高的服务器开销.
+  # 请不要将其设置为小于 1 的值.
+  mob_removal_speed: 5s
+  
+  # 可填入的实体名称列表 https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/package-summary.html
+  # Animals, Chicken, Cow, Creature, Creeper, Flying, Ghast, Giant, Monster, Pig, 
+  # PigZombie, Sheep, Skeleton, Slime, Spider, Squid, WaterMob, Wolf, Zombie
+  
+  # 在城镇内受到保护不被其他玩家或实体击杀的实体.
+  mob_types: Animals,WaterMob,NPC,Snowman,ArmorStand,Villager,Hanging
+  
+  # 当设置为 true 时, 上述的 mob_types 中的生物会在其处于城镇内时被保护, 也允许进入空的船.
+  # 这可以阻止其他玩家通过船偷走实体.
+  mob_types_protected_from_boat_theft: 'false'
+  
+  # 将该项设置为 false 会允许非玩家实体伤害上述的受保护实体.
+  # 这也包括凋灵, 会相当痛.
+  are_mob_types_protected_against_mobs: 'true'
+  
+  # 可填入的药水效果名称列表 https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionType.html
+  # ABSORPTION, BLINDNESS, CONFUSION, DAMAGE_RESISTANCE, FAST_DIGGING, FIRE_RESISTANCE, HARM, HEAL, HEALTH_BOOST, HUNGER, 
+  # INCREASE_DAMAGE, INVISIBILITY, JUMP, NIGHT_VISION, POISON, REGENERATION, SATURATION, SLOW , SLOW_DIGGING, 
+  # SPEED, WATER_BREATHING, WEAKNESS, WITHER.
+  
+  # 在阻止 PVP 时同样阻止带有下列效果的药水使用.
+  potion_types: BLINDNESS,CONFUSION,HARM,HUNGER,POISON,SLOW,SLOW_DIGGING,WEAKNESS,WITHER
+  
+  # 当设置为 true 时, 带有冰霜行者附魔的玩家需要有 build 权限才可在对应区域内形成霜冰.
+  prevent_frost_walker_freezing: 'false'
+  
+  # 当设置为 true 时, 玩家将无法破坏耕地. 当设置为 false 时, 玩家仍需要空手破坏种植其上的作物才可踩踏耕地.
+  prevent_player_crop_trample: 'true'
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                      郊区设置                         | #
+# +------------------------------------------------------+ #
+#                                                          #
+# 此为创建新世界时添加的默认设置. 这些设置会在世界创建时发送至  #
+# 世界的配置文件中.                                         #
+# 若你是初次运行 Towny, 那么这些设置会全部应用于你已创建的所有  #
+# 世界中.                                                  #
+#                                                          #
+# 若要修改世界设定, 请转向 'plugins/Towny/data/worlds/' 下的 #
+# 文件夹进行相关的编辑.                                      #
+#                                                          #
+# 另: 这些设定仅在 Towny 测试玩家的 towny.wild.* 权限之后才会 #
+# 生效.                                                    #
+#                                                          #
+############################################################
+  
+unclaimed:
+  
+  # 玩家是否可以在郊区建筑?
+  unclaimed_zone_build: 'false'
+  
+  # 玩家是否可以在郊区挖掘方块?
+  unclaimed_zone_destroy: 'false'
+  
+  # 玩家是否可以在郊区不受限制地使用上述 protection.item_use_ids 列表中的物品?
+  unclaimed_zone_item_use: 'false'
+  
+  # 玩家是否可以在郊区不受限制地使用上述 protection.switch_ids 列表中的物品?
+  unclaimed_zone_switch: 'false'
+  
+  # 下列表中的方块将会无视上述限制且在放置时不会检查 towny.wild.* 权限节点.
+  # 这些方块也会用于决定能在城镇内的郊区地皮交互的方块.
+  unclaimed_zone_ignore: TORCH,LADDER,ORES,PLANTS,TREES,SAPLINGS
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                       城镇提醒                        | #
+# +------------------------------------------------------+ #
+############################################################
+  
+  # 此为玩家在地皮间移动时发送消息的格式.
+  # 将下文的任意内容设置为空字符串(留空)表示将其禁用.
+  
+  # 示例:
+  # [notification.format]
+  # ~ [notification.area_[wilderness/town]][notification.splitter][notification.[no_]owner][notification.splitter][notification.plot.format]
+  # ... [notification.plot.format]
+  # ... [notification.plot.homeblock][notification.plot.splitter][notification.plot.forsale][notification.plot.splitter][notification.plot.type]
+  # ~ Wak Town - Lord Jebus - [家园] [售价: 50 硬币] [商店]
+  
+notification:
+  format: '&6 ~ %s'
+  splitter: '&7 - '
+  area_wilderness: '&2%s'
+  area_wilderness_pvp: '%s'
+  area_town: '&6%s'
+  area_town_pvp: '%s'
+  owner: '&a%s'
+  no_owner: '&a%s'
+  plot:
+    splitter: ' '
+    format: '%s'
+    homeblock: '&b[家园]'
+    outpostblock: '&b[前哨站]'
+    forsale: '&e[售价: %s]'
+    notforsale: '&e[非卖]'
+    type: '&6[%s]'
+  group: '&f[%s]'
+  
+  # 当设置为 true 时, 城镇的名称会依照 town_level 部分的配置 (城镇前缀)(城镇名称)(城镇后缀) 显示.
+  # 当设置为 false 时, 仅显示城镇名称.
+  town_names_are_verbose: 'true'
+  
+  # 若设置为 true, MC 的标题与子标题功能将会用于提醒玩家进入地皮.
+  # 可能看起来会有点烦人, 所以默认设置为 false.
+  using_titles: 'false'
+  
+  # 该设置需要上述 using_titles 设置为 true 才有效.
+  # 进入郊区时显示的标题与子标题内容. 默认情况下第一行为空, 第二行显示城镇名称或"郊区".
+  # 你可以使用诸如 &f, &c 等的颜色代码.
+  # 对于 town_title 和 town_subtitle 部分的配置, 你可以使用如下的内建变量:
+  # {townname} - 返回城镇名称.
+  # {town_motd} - 返回城镇公告板信息.
+  # {town_residents} - 返回城镇居民总数.
+  # {town_residents_online} - 返回城镇在线居民总数.
+  # {nationname} - 国家的名称, 具体格式在下文配置,
+  # {nationcapital} - 国家与其首都的名称, 具体格式在下文配置,
+  # {nation_motd} - 返回国家公告板信息.
+  # {nation_residents} - 返回国家居民总数.
+  # {nation_residents_online} - 返回国家在线居民总数.
+  # notification.town_names_are_verbose 设置会影响到 {townname} 内建变量的显示内容.
+  titles:
+  
+    # 进入城镇时显示的主标题内容.
+    town_title: ''
+  
+    # 进入城镇时显示的副标题内容.
+    town_subtitle: '&b{townname}'
+  
+    # 进入郊区时显示的主标题内容.
+    wilderness_title: ''
+  
+    # 进入郊区时显示的副标题内容.
+    wilderness_subtitle: '&2{wilderness}'
+  
+    # 内建变量 {nationname} 返回的内容. %s 会返回国家的名称.
+    nationname_format: '&6%s'
+  
+    # 内建变量 {nationcapital} 返回的内容, 首都和国家的名称会被两个 %s 替换.
+    # 相似地, 你可以使用 %t 返回城镇名称, %n 返回国家名称, 并可自行决定是否显示或其显示顺序.
+    nationcapital_format: '&6正在进入国家 %s, 首都为 %s'
+  
+    # 标题和副标题显示的持续时间(单位为刻).
+    # Minecraft 中标题的默认持续显示时间为 70 刻, 即 3.5 秒.
+    duration: '70'
+  
+  # 当设置为 true 时, 地皮提醒会使用地皮拥有者的详细名称, 例如: 通过城镇/国家等级配置文件设置的城镇/国家的标题或前缀.
+  # 当设置为 false 时, 仅显示名称.
+  owner_shows_verbose_name: 'true'
+  
+  # 该设置决定了区块提醒会在玩家界面中的哪里显示.
+  # 默认情况下, 提醒自只会在玩家的 ActionBar 中出现.
+  # 可用选项有: action_bar, chat, bossbar, or none.
+  notifications_appear_as: action_bar
+  
+  # 该设置决定了 ActionBar 的显示持续时间 (显示在快捷栏上的文本) 或 BossBar 的显示持续时间.
+  notification_actionbar_duration: '15'
+  
+  bossbars:
+  
+    # BossBar 类提醒的血条颜色.
+    # 可用颜色为 blue, green, pink, purple, red, white, or yellow.
+    color: white
+  
+    # BossBar 类提醒的血条样式.
+    # 可用样式为 progress, notched_6, notched_10, notched_12, notched_20
+    overlay: progress
+  
+    # BossBar 类提醒显示的进度, 设置的值应在 0 到 1 之间.
+    progress: '0'
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                 默认城镇/地皮标志                      | #
+# +------------------------------------------------------+ #
+############################################################
+  
+default_perm_flags:
+  
+  # 在城镇内的领地地皮的默认权限标志
+  #
+  # 是否允许盟友/好友/访客在城镇内执行某些操作
+  #
+  # build - 放置方块与其他物品
+  # destroy - 破坏方块与其他物品
+  # itemuse - 使用诸如熔炉的物品 (如 item_use_ids 中定义的那样)
+  # switch - 触发或激活开关类的物品 (如 switch_ids 中定义的物品名)
+  resident:
+    friend:
+      build: 'true'
+      destroy: 'true'
+      item_use: 'true'
+      switch: 'true'
+    town:
+      build: 'false'
+      destroy: 'false'
+      item_use: 'false'
+      switch: 'false'
+    ally:
+      build: 'false'
+      destroy: 'false'
+      item_use: 'false'
+      switch: 'false'
+    outsider:
+      build: 'false'
+      destroy: 'false'
+      item_use: 'false'
+      switch: 'false'
+  
+  # 城镇的默认权限标志
+  # 这些会在城镇创建时复制进城镇的对应配置
+  #
+  # 是否允许盟友/好友/访客在城镇内执行某些操作
+  #
+  # build - 放置方块与其他物品
+  # destroy - 破坏方块与其他物品
+  # itemuse - 使用诸如熔炉的物品 (如 item_use_ids 中定义的那样)
+  # switch - 触发或激活开关类的物品 (如 switch_ids 中定义的物品名)
+  town:
+    default:
+      pvp: 'true'
+      fire: 'false'
+      explosion: 'false'
+      mobs: 'false'
+    resident:
+      build: 'true'
+      destroy: 'true'
+      item_use: 'true'
+      switch: 'true'
+    nation:
+      build: 'false'
+      destroy: 'false'
+      item_use: 'false'
+      switch: 'false'
+    ally:
+      build: 'false'
+      destroy: 'false'
+      item_use: 'false'
+      switch: 'false'
+    outsider:
+      build: 'false'
+      destroy: 'false'
+      item_use: 'false'
+      switch: 'false'
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                    Towny 邀请系统                     | #
+# +------------------------------------------------------+ #
+############################################################
+  
+invite_system:
+  
+  # 用于接受城镇邀请的命令
+  # 例如: 加入城镇邀请时的相关命令.
+  accept_command: accept
+  
+  # 用于拒绝城镇邀请的命令
+  # 例如: 加入城镇邀请时的相关命令.
+  deny_command: deny
+  
+  # 用于确认城镇操作/任务的命令.
+  # 例如: 合并数据库或移除大量城镇核心方块
+  confirm_command: confirm
+  
+  # 用于取消城镇操作/任务的命令.
+  # 例如: 合并数据库或移除大量城镇核心方块
+  cancel_command: cancel
+  
+  # 命令接收者超过多长时间不作出反应则视作超时, 单位为秒.
+  # 该设置用于部分需确认的付费操作和重要操作.
+  confirmation_timeout: '20'
+  
+  # 当该值大于 0m 时, 该设置决定的是玩家首次加入游戏与加入城镇之间的冷却时间.
+  cooldowntime: 0m
+  
+  # 当该值大于 0m 时, 该设置决定的是邀请视作超时的时间长度.
+  # 每个小时, 插件会检查现有邀请是否超时.
+  # 有效值包括: 30s, 30m, 24h, 2d, 等.
+  expirationtime: 0m
+  
+  # 城镇与国家可发出最大邀请数的相关设置. 该设置可在较大服务器上减少性能开销.
+  # 可以将下文的上限提升, 但不推荐. 邀请/请求不会在服务器重启/关闭时保留.
+  maximum_invites_sent:
+  
+    # 城镇向玩家发出的最大邀请数量.
+    town_toplayer: '35'
+  
+    # 国家向玩家发出的最大邀请数量.
+    nation_totown: '35'
+  
+    # 国家向其他城镇发出结盟邀请的最大数量.
+    # 仅在 war.disallow_one_way_alliance 项设置为 true 时有效.
+    nation_tonation: '35'
+  
+  # 玩家、国家、城镇可收到的最大邀请数量. 该设置可在较大服务器上减少性能开销.
+  # 可以将下文的上限提升, 但不推荐. 邀请/请求不会在服务器重启/关闭时保留.
+  maximum_invites_received:
+  
+    # 玩家可暂存来自城镇邀请的最大数量.
+    player: '10'
+  
+    # 玩家可暂存来自国家邀请的最大数量.
+    town: '10'
+  
+    # 国家可暂存来自其他国家结盟邀请的最大数量
+    nation: '10'
+  
+  # 当该设置大于 0 时, 决定的是玩家收到邀请时与对应城镇出生点的最大距离.
+  # 使用该设置可限制玩家受城镇邀请时必须处于对应城镇范围内.
+  maximum_distance_from_town_spawn: '0'
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                       居民设置                        | #
+# +------------------------------------------------------+ #
+############################################################
+  
+resident_settings:
+  
+  # 若启用, 超过 2 个月(默认设置)未登录旧居民数据会后被删除, 失去他们所属的城镇、城镇单元、好友.
+  # 若符合条件的玩家为城镇拥有者, 则拥有者会以 order_of_mayoral_succession 配置的顺序继承给其他职位的玩家.
+  delete_old_residents:
+    enable: 'false'
+    deleted_after_time: 60d
+    delete_economy_account: 'true'
+  
+    # 当设置为 true 时, 只有不属于任何城镇的玩家才会被删除信息.
+    delete_only_townless: 'false'
+  
+    # 当设置为 true 时玩家会被清除出城镇并成为流浪者而不是被完全删除.
+    only_remove_town: 'false'
+  
+  # 玩家首次注册时自动加入的城镇名称.
+  default_town_name: ''
+  
+  # 若设置为 true, 玩家将只能使用他们拥有的地皮中的床.
+  deny_bed_use: 'false'
+  
+  # 若设置为 true, 首次加入服务器的玩家将会被告知玩家使用的语言, 以及 Towny 的本地化系统相关信息.
+  is_showing_locale_message: 'true'
+  
+  # 显示在居民的统计界面的默认居民"关于..."项的显示文本.
+  default_about: /res set about [msg]
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                       经济设置                        | #
+# +------------------------------------------------------+ #
+############################################################
+  
+economy:
+  
+  # 默认值为 true.
+  # 很少需要设置为 false. 若你在收税功能方面遇到问题时请将该项设置为 false.
+  use_async: 'true'
+  
+  # 城镇和国家银行账户缓存的时间, 单位为秒.
+  # 这个时间也会用于居民的税收相关计时.
+  # 默认的 600 秒即为 10 分钟. 修改此项需要重启服务器.
+  # 缓存的经济用于显示 PlaceholderAPI 变量, 城镇和国家列表中的相关内容.
+  bank_account_cache_timeout: 600s
+  
+  # 所有城镇经济账户的前缀.
+  town_prefix: town-
+  
+  # 所有国家经济账户的前缀.
+  nation_prefix: nation-
+  
+  # 重命名城镇的价格.
+  town_rename_cost: '0'
+  
+  # 重命名国家的价格.
+  nation_rename_cost: '0'
+  
+  # 设置城镇地图颜色的价格
+  town_set_mapcolour_cost: '0'
+  
+  # 修改国家地图颜色的价格.
+  nation_set_mapcolour_cost: '0'
+  
+  spawn_travel:
+  
+    # 使用 /town spawn 花费的价格.
+    price_town_spawn_travel: '0.0'
+  
+    # 在你的国家内其他城镇内使用 '/town spawn [城镇名称]' 的价格.
+    price_town_nation_spawn_travel: '5.0'
+  
+    # 在盟国内的城镇使用 '/town spawn [城镇名称]' 的价格.
+    price_town_ally_spawn_travel: '10.0'
+  
+    # 城镇拥有者可通过 /t set spawncost 命令设置的命令 /town spawn [城镇名称] 最高使用价格. 
+    # 该笔钱款会直接汇入对应城镇.
+    price_town_public_spawn_travel: '10.0'
+  
+    # 当设置为 false 时, price_town_public_spawn_travel 项设置的价格会用于设置公开出生点价格, 即使拥有者已经设置了城镇的传送价格.
+    # 当设置为 true 时, 城镇拥有者设置的传送价格和配置文件的 price_town_public_spawn_travel 值会取较低值.
+    is_public_spawn_cost_affected_by_town_spawncost: 'true'
+  
+    # 当设置为 true 时, 玩家执行 '/town spawn' 及其任意子命令所支付的钱款均会流向城镇的银行账户.
+    # 当设置为 false 时, 这些钱款将会被转至下方设置的服务器账号中.
+    town_spawn_cost_paid_to_town: 'true'
+  
+  # 中立的维持费用, 通过国家银行支付. 若无法支付则会失去中立/和平状态.
+  # 花费的倍率为等级配置下不同的 peacefulCostMultiplier 值.
+  # 中立将使你可以不被卷入战争, 也无需指定敌人.
+  price_nation_neutrality: '100.0'
+  
+  # 当设置为 true 时, 维持和平状态的花费会乘以国家所拥有的城镇数量.
+  # 需要注意的是基础的保持和平状态花费计算公式为 price_nation_neutrality * peacefulCostMultiplier (随国家等级变化而变化).
+  price_nation_neutrality_charges_per_town: 'false'
+  
+  # 维持中立状态时的每日收取费用, 通过城镇银行支付. 若无法支付则会失去中立/和平状态.
+  # 花费的倍率为等级配置下不同的 peacefulCostMultiplier 值.
+  price_town_neutrality: '25.0'
+  
+  # When it is true, the peaceful cost is multiplied by the town's number of claimed townblocks.
+  # 当设置为 true 时, 维持和平状态的价格会乘以城镇所占领的单位土地数量.
+  # 需要注意的是基础的保持和平状态花费计算公式为 price_town_neutrality * peacefulCostMultiplier (随国家等级变化而变化).
+  price_town_neutrality_charges_per_plot: 'false'
+  
+  new_expand:
+  
+    # 创建国家所需的费用.
+    price_new_nation: '1000.0'
+  
+    # 创建城镇所需的费用.
+    price_new_town: '250.0'
+  
+    # 与其他城镇合并所需的基础价格. 合并后仍持有城镇的一方支付费用.
+    price_town_merge: '0'
+  
+    # 与其他城镇合并时需要按地皮数量支付的百分比. 合并后仍持有城镇的一方支付费用.
+    # 该设置会基于 price_claim_townblock 的设置值.
+    price_town_merge_per_plot_percentage: '50'
+  
+    # 重新占领一个废弃城镇的价格.
+    # 仅在 town-ruins & town-reclaim 功能启用时有效.
+    price_reclaim_ruined_town: '500.0'
+  
+    # 创建一个哨站所需支付的价格. 哨站无需处于城镇边缘.
+    price_outpost: '500.0'
+  
+    # 扩张一单位城镇土地所需的价格.
+    price_claim_townblock: '25.0'
+  
+    # 每单位占领的城镇土地所增加的价格. 将该项设置为 1 可禁用. 1.3 表示每次占领一单位土地时会增加 30% 的费用.
+    price_claim_townblock_increase: '1.0'
+  
+    # 每单位占领城镇土地的最大价格. 不管城镇之前占领了多少单位的土地, 都不会高出该数值. 设置为 -1 可将该项禁用.
+    max_price_claim_townblock: '-1.0'
+  
+    # 解除某部分城镇土地占领时退还的价格.
+    # 警告: 不要尝试将该值调整为高于占领一单位土地的价格.
+    # 非常不建议你将该值调整为与占领一单位土地相同的价格, 否则的话城镇就可以使用前哨站来无限地扩张土地
+    # 额外地, 将该项设置为复负值可让玩家在解除占领时支付一定数量的钱。
+    price_claim_townblock_refund: '0.0'
+  
+    # 玩家买下一单位土地所需的额外价格.
+    price_purchased_bonus_townblock: '25.0'
+  
+    # 每单位土地额外增加的比例, 设置为 -1 可将其禁用. 1.2 表示每次购买一单位土地时会增加 20% 的费用.
+    price_purchased_bonus_townblock_increase: '1.0'
+  
+    # 购买一单位城镇土地的最大价格. 设置为 -1 可将该项禁用.
+    price_purchased_bonus_townblock_max_price: '-1.0'
+  
+  
+  takeoverclaim:
+  
+    # 在 town.being_overclaimed_allows_other_towns_to_steal_land 项启用时, 使用 /t takeoverclaim 命令的价格
+    price: '100.0'
+  
+  death:
+  
+    # 使用数字或百分比的数值.
+    # 例如 1.0 用百分比表示为 100%, 0.01 为 (扣除) 1% (的余额)
+    price_death_type: fixed
+  
+    # 玩家死亡时损失的最大金钱数量.
+    # 设置为 0 表示没有上限.
+    percentage_cap: '0.0'
+  
+    # 若设置为 true, 仅在死亡原因为玩家击杀时收取费用.
+    price_death_pvp_only: 'false'
+  
+    # 玩家死亡时所要支付的费用. 若是被其他玩家击杀, 则该笔存款会发送给击杀者.
+    # 使用比例或数值取决于上文的 price_death_type 设置.
+    price_death: '1.0'
+  
+    # 玩家死亡时城镇支付的费用. 若是被其他玩家击杀, 则该笔存款会发送给击杀者.
+    # 使用比例或数值取决于上文的 price_death_type 设置.
+    price_death_town: '0.0'
+  
+    # 玩家死亡时国家支付的费用. 若是被其他玩家击杀, 则该笔存款会发送给击杀者.
+    # 使用比例或数值取决于上文的 price_death_type 设置.
+    price_death_nation: '0.0'
+  
+  banks:
+  
+    # 城镇银行内的最大存款数量
+    # 设置为 0 表示没有上限
+    town_bank_cap: '0.0'
+  
+    # 设置为 true 则允许从城镇银行中取款
+    town_allow_withdrawals: 'true'
+  
+    # 玩家一次能向城镇银行存入钱款的最少数量.
+    town_min_deposit: '0'
+  
+    # 玩家一次能向城镇银行存入钱款的最多数量.
+    town_min_withdraw: '0'
+  
+    # 国家银行内的最大存款数量
+    # 设置为 0 表示没有上限
+    nation_bank_cap: '0.0'
+  
+    # 设置为 true 表示允许从国家银行中取款
+    nation_allow_withdrawals: 'true'
+  
+    # 玩家一次能向国家银行存入钱款的最少数量.
+    nation_min_deposit: '0'
+  
+    # 玩家一次能向国家银行存入钱款的最多数量.
+    nation_min_withdraw: '0'
+  
+    # 当设置为 true 时, 玩家只能在城镇内时使用城镇银行的存/取款命令.
+    # 依此类推, 玩家只能在国家范围内时使用国家银行的存/取款命令.
+    disallow_bank_actions_outside_town: 'false'
+  
+  closed_economy:
+  
+    # 所有玩家支付的存款所流向的账号.
+    server_account: towny-server
+  
+    # 开启/关闭所有没有第二方的定量交易/
+    # 示例: 在每日收税时收取的费用, 若将该项设置为 true 则这些钱款会流向其他账号.
+    #       该设置也会在玩家得到钱时生效, 例如玩家在传送失败时退款所得的钱
+    enabled: 'false'
+  
+  daily_taxes:
+  
+    # 是否启用城镇/国家每日收取的税收.
+    # 若城镇无力支付税收, 则会被国家踢出.
+    # 若居民无力支付地皮税收, 则会失去他的地皮.
+    # 若居民无力支付城镇税收, 则该居民会被踢出城镇.
+    # 若城镇或国家无力支付维护费用则会被强制解散.
+    enabled: 'true'
+  
+    # 每单位城镇方块出售给玩家所收取的最大费用.
+    max_plot_tax_amount: '1000.0'
+  
+    # 当使用数值税收时所允许城镇收取的最大税收值.
+    max_town_tax_amount: '1000.0'
+  
+    # 当使用数值税收时所允许国家收取的最大税收值.
+    max_nation_tax_amount: '1000.0'
+  
+    # 当使用百分比税收时所允许城镇收取的最大百分比.
+    max_town_tax_percent: '25'
+  
+    # 当使用百分比税收时能从账户中支出的最大钱款, 此为对所有城镇的默认设置.
+    max_town_tax_percent_amount: '10000'
+  
+    # 当使用百分比税收时所允许国家收取的最大税收值.
+    max_nation_tax_percent: '25'
+  
+    # 当使用百分比税收时能从账户中支出的最大钱款, 此为对所有国家的默认设置.
+    max_nation_tax_percent_amount: '10000'
+  
+    # 当设置为 true 时, 国家首都会为国家从城镇银行中支付每日税收.
+    # 该设置略微有些多余, 因为国家拥有者可以自行从银行中取出钱款.
+    # 但是这么做可能会导致银行中没有足够的存款而使得国家被强制解散.
+    do_nation_capitals_pay_nation_tax: 'false'
+  
+    # 服务器对每个国家的默认每日收费. 若某个国家无力支付该收费则所有城镇都会被踢出, 国家也会一并强制解散.
+    price_nation_upkeep: '100.0'
+  
+    # 以国内存在城镇的总数决定维护费用而不是 nation_pertown_upkeep 或国家等级配置中的设置 (居民数量).
+    # 计算公式为 (price_nation_upkeep * 国家城镇占领的土地单位数量.)
+    nation_perplot_upkeep: 'false'
+  
+    # 以国内存在城镇的总数决定维护费用而不是国家等级中的配置 (居民总数)
+    # 计算公式为 (number of towns in nation X price_nation_upkeep).
+    nation_pertown_upkeep: 'false'
+  
+    # 若设置为 true, 按城镇收取维护费用的系统将会被国家等级维护费用的倍率影响.
+    nation_pertown_upkeep_affected_by_nation_level_modifier: 'false'
+  
+    # 国家对下属城镇每日的收费. 若城镇无力支付该维护费用则该城镇会被国家踢出.
+    price_town_upkeep: '10.0'
+  
+    # 以国家拥有的总土地数量而不是国家等级中的配置 (居民总数)
+    # 计算公式为 (number of claimed plots * price_town_upkeep).
+    town_plotbased_upkeep: 'false'
+  
+    # 若设置为 true, 按地皮收取维护费用的系统将会受到城镇等级维护费用的倍率影响.
+    town_plotbased_upkeep_affected_by_town_level_modifier: 'false'
+  
+    # 若设置为任意大于零的数字, 且城镇基于地皮的维护价格低于该值, 则城镇所需支付的价格为二者取最小值.
+    town_plotbased_upkeep_minimum_amount: '0.0'
+  
+    # 若设置为任意大于零的数字, 且城镇基于地皮的维护高于该值， 则城镇所需支付的价格为二者取最大值.
+    town_plotbased_upkeep_maximum_amount: '0.0'
+  
+    # 服务器对超出占领上限的城镇的每日收费.
+    price_town_overclaimed_upkeep_penalty: '0.0'
+  
+    # 使用城镇超出上限的占领地皮总数来决定 price_town_overclaimed_upkeep_penalty 的价格.
+    # 若设置为 true 则惩罚价格为 (超出上限的地皮数量 * price_town_overclaimed_upkeep_penalty)
+    price_town_overclaimed_upkeep_penalty_plotbased: 'false'
+  
+    # 若启用且你为城镇维护费用设置了负数, 所有通过每日维护费用所获的存款会被地皮拥有者平分.
+    use_plot_payments: 'false'
+  
+    # 若启用, 如果地皮税收被设置为负数, 则所得钱款会由城镇银行发送 (只要城镇能够支付).
+    allow_negative_plot_tax: 'false'
+  
+    # 若启用, 如果地皮税收被设置为负数且为固定数字 (而非百分比),
+    # 则每个城镇居民会收到来自城镇银行的钱款 (只要城镇能够支付).
+    allow_negative_town_tax: 'false'
+  
+    # 若启用, 且城镇税收设置为负数, 为固定数字 (而非百分比),
+    # 则每个城镇会收到来自国家银行的钱款 (只要国家能够支付).
+    allow_negative_nation_tax: 'false'
+  
+  # The Bankruptcy system in Towny will make it so that when a town cannot pay their upkeep costs,
+  # rather than being deleted the towns will go into debt. Debt is capped based on the Town's costs
+  # or overriden with the below settings.
+  bankruptcy:
+  
+    # If this setting is true, then if a town runs out of money (due to upkeep, nation tax etc.),
+    # it does not get deleted, but instead goes into a 'bankrupt state'.
+    # While bankrupt, the town bank account is in debt, and the town cannot expand (e.g claim, recruit, or build).
+    # The debt has a ceiling equal to the estimated value of the town (from new town and claims costs)
+    # The debt can be repaid using /t deposit x.
+    # Once all debt is repaid, the town immediately returns to a normal state.
+    enabled: 'false'
+  
+    # When using bankruptcy is enabled a Town a debtcap.
+    # The debt cap is 计算公式为 adding the following:
+    # The cost of the town,
+    # The cost of the town's purchased townblocks,
+    # The cost of the town's purchased outposts.
+    debt_cap:
+  
+      # When set to greater than 0.0, this will be used to determine every town''s maximum debt,
+      # overriding the above calculation if the calculation would be larger than the set maximum.
+      maximum: '0.0'
+  
+      # When set to greater than 0.0, this setting will override all other debt calculations and maximums,
+      # making all towns have the same debt cap.
+      override: '0.0'
+  
+      # When true the debt_cap.override price will be multiplied by the debtCapModifier in the town_level
+      # section of the config. (Ex: debtCapModifier of 3.0 and debt_cap.override of 1000.0 would set 
+      # a debtcap of 3.0 x 1000 = 3000.
+      debt_cap_uses_town_levels: 'false'
+  
+      # When true a town will only be allowed to be bankrupt for a specific number of days, before they will be deleted,
+      # requires delete_towns_that_reach_debt_cap to be true.
+      debt_cap_uses_fixed_days: 'false'
+  
+      # When debt_cap_uses_fixed_days is set to true, how many days will a town be allowed to be bankrupt?
+      allowed_days: '7'
+  
+    upkeep:
+  
+      # If a town has reached their debt cap and is unable to pay the upkeep with debt,
+      # will Towny delete them?
+      delete_towns_that_reach_debt_cap: 'false'
+  
+    neutrality:
+  
+      # If a town is bankrupt can they still pay for neutrality?
+      can_bankrupt_towns_pay_for_neutrality: 'true'
+  
+    nation_tax:
+  
+      # Will bankrupt towns pay their nation tax?
+      # If false towns that are bankrupt will not pay any nation tax and will leave their nation.
+      # If true the town will go into debt up until their debt cap is reached.
+      # True is recommended if using a war system where towns are forced to join a conqueror's nation,
+      # otherwise conquered towns would be able to leave the nation by choosing to go bankrupt.
+      # False is recommended otherwise so that nations are not using abandoned towns to gather taxes.
+      do_bankrupt_towns_pay_nation_tax: 'false'
+  
+      # If a town can no longer pay their nation tax with debt because they have
+      # reach their debtcap, are they kicked from the nation?
+      kick_towns_that_reach_debt_cap: 'false'
+  
+      # Does a conquered town which cannot pay the nation tax get deleted?
+      does_nation_tax_delete_conquered_towns_that_cannot_pay: 'false'
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                      银行历史设置                     | #
+# +------------------------------------------------------+ #
+############################################################
+  
+bank_history:
+  
+  # 该部分设置允许你自定义 bankhistory 查询的银行历史内容样式.
+  book: |-
+    {time}
+    交易 {type} {amount} 至 {to-from} {name}
+    原因: {reason}
+    存款: {balance}
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                     城镇方块类型                      | #
+# |                                                      | #
+# | 你可以在该部分配置中加入自己的城镇方块设置. 不推荐删除    | #
+# | 插件为你默认准备的这些方块.                            | #
+# |                                                      | #
+# | name: 该方块在游戏和数据库内使用的名称.                 | #
+# | cost: 玩家设置该类型城镇方块的价格.                     | #
+# | tax: 玩家每日要支付的费用. 若该值设为 0, 则会使用        | #
+# |      城镇的地皮税收值.                                 | #
+# | mapKey: 在命令 /towny map 中显示的字符                 | #
+# |         若要使用  Unicode 字符, 请使用诸如 \u#### 或   | #
+# |         HTML-code 版本的 Unicode 字符格式.            | #
+# | colour: 该类型城镇方块在字符地图上使用的颜色, 设置为空表 | #
+# |         示不使用任何颜色.                             | #
+# | itemUseIds: 若留空, 则会使用 protection.item_use_ids  | #
+# |             设置的值. 若不为空则该部分会决定哪些物品的  | #
+# |             交互会算在 item_use 中.                   | #
+# | switchIds: 若留空, 则会使用 protection.switch_ids     | #
+# |            设置的值. 若不为空则该部分会决定哪些方块     | #
+# |            视作开关.                                  | #
+# | allowedBlocks: Will make it so players with build or | #
+# |    destroy permissions are only able to affect those | #
+# |    blocks, see the farm type for an example.         | #
+# |                                                      | #
+# +------------------------------------------------------+ #
+############################################################
+  
+townblocktypes:
+  types:
+  - name: default
+    cost: 0.0
+    tax: 0.0
+    mapKey: +
+    colour: ''
+    itemUseIds: ''
+    switchIds: ''
+    allowedBlocks: ''
+  - name: shop
+    cost: 0.0
+    tax: 0.0
+    mapKey: C
+    colour: <blue>
+    itemUseIds: ''
+    switchIds: ''
+    allowedBlocks: ''
+  - name: arena
+    cost: 0.0
+    tax: 0.0
+    mapKey: A
+    colour: ''
+    itemUseIds: ''
+    switchIds: ''
+    allowedBlocks: ''
+  - name: embassy
+    cost: 0.0
+    tax: 0.0
+    mapKey: E
+    colour: ''
+    itemUseIds: ''
+    switchIds: ''
+    allowedBlocks: ''
+  - name: wilds
+    cost: 0.0
+    tax: 0.0
+    mapKey: W
+    colour: ''
+    itemUseIds: ''
+    switchIds: ''
+    allowedBlocks: GOLD_ORE,IRON_ORE,COAL_ORE,COPPER_ORE,REDSTONE_ORE,EMERALD_ORE,LAPIS_ORE,DIAMOND_ORE,DEEPSLATE_COAL_ORE,DEEPSLATE_IRON_ORE,DEEPSLATE_COPPER_ORE,DEEPSLATE_GOLD_ORE,DEEPSLATE_EMERALD_ORE,DEEPSLATE_REDSTONE_ORE,DEEPSLATE_LAPIS_ORE,DEEPSLATE_DIAMOND_ORE,NETHER_GOLD_ORE,NETHER_QUARTZ_ORE,ANCIENT_DEBRIS,OAK_LOG,SPRUCE_LOG,BIRCH_LOG,JUNGLE_LOG,ACACIA_LOG,DARK_OAK_LOG,CRIMSON_STEM,WARPED_STEM,ACACIA_LEAVES,OAK_LEAVES,DARK_OAK_LEAVES,JUNGLE_LEAVES,BIRCH_LEAVES,SPRUCE_LEAVES,CRIMSON_HYPHAE,WARPED_HYPHAE,ACACIA_SAPLING,BAMBOO_SAPLING,BIRCH_SAPLING,DARK_OAK_SAPLING,JUNGLE_SAPLING,OAK_SAPLING,SPRUCE_SAPLING,TALL_GRASS,BROWN_MUSHROOM,RED_MUSHROOM,CACTUS,ALLIUM,AZURE_BLUET,BLUE_ORCHID,CORNFLOWER,DANDELION,LILAC,LILY_OF_THE_VALLEY,ORANGE_TULIP,OXEYE_DAISY,PEONY,PINK_TULIP,POPPY,RED_TULIP,ROSE_BUSH,SUNFLOWER,WHITE_TULIP,WITHER_ROSE,CRIMSON_FUNGUS,LARGE_FERN,TORCH,LADDER,CLAY,PUMPKIN,GLOWSTONE,VINE,NETHER_WART_BLOCK,COCOA
+  - name: inn
+    cost: 0.0
+    tax: 0.0
+    mapKey: I
+    colour: ''
+    itemUseIds: ''
+    switchIds: ''
+    allowedBlocks: ''
+  - name: jail
+    cost: 0.0
+    tax: 0.0
+    mapKey: J
+    colour: ''
+    itemUseIds: ''
+    switchIds: ''
+    allowedBlocks: ''
+  - name: farm
+    cost: 0.0
+    tax: 0.0
+    mapKey: F
+    colour: ''
+    itemUseIds: ''
+    switchIds: ''
+    allowedBlocks: COW_SPAWN_EGG,GOAT_SPAWN_EGG,MOOSHROOM_SPAWN_EGG,BAMBOO,BAMBOO_SAPLING,JUNGLE_LOG,JUNGLE_SAPLING,JUNGLE_LEAVES,OAK_LOG,OAK_SAPLING,OAK_LEAVES,BIRCH_LOG,BIRCH_SAPLING,BIRCH_LEAVES,ACACIA_LOG,ACACIA_SAPLING,ACACIA_LEAVES,DARK_OAK_LOG,DARK_OAK_SAPLING,DARK_OAK_LEAVES,SPRUCE_LOG,SPRUCE_SAPLING,SPRUCE_LEAVES,BEETROOTS,COCOA,CHORUS_PLANT,CHORUS_FLOWER,SWEET_BERRY_BUSH,KELP,SEAGRASS,TALL_SEAGRASS,GRASS,TALL_GRASS,FERN,LARGE_FERN,CARROTS,WHEAT,POTATOES,PUMPKIN,PUMPKIN_STEM,ATTACHED_PUMPKIN_STEM,NETHER_WART,COCOA,VINE,MELON,MELON_STEM,ATTACHED_MELON_STEM,SUGAR_CANE,CACTUS,ALLIUM,AZURE_BLUET,BLUE_ORCHID,CORNFLOWER,DANDELION,LILAC,LILY_OF_THE_VALLEY,ORANGE_TULIP,OXEYE_DAISY,PEONY,PINK_TULIP,POPPY,RED_TULIP,ROSE_BUSH,SUNFLOWER,WHITE_TULIP,WITHER_ROSE,CRIMSON_FUNGUS,CRIMSON_STEM,CRIMSON_HYPHAE,CRIMSON_ROOTS,MUSHROOM_STEM,NETHER_WART_BLOCK,BROWN_MUSHROOM,BROWN_MUSHROOM_BLOCK,RED_MUSHROOM,RED_MUSHROOM_BLOCK,SHROOMLIGHT,WARPED_FUNGUS,WARPED_HYPHAE,WARPED_ROOTS,WARPED_STEM,WARPED_WART_BLOCK,WEEPING_VINES_PLANT,WEEPING_VINES,NETHER_SPROUTS,SHEARS
+  - name: bank
+    cost: 0.0
+    tax: 0.0
+    mapKey: B
+    colour: ''
+    itemUseIds: ''
+    switchIds: ''
+    allowedBlocks: ''
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                     监狱地皮设置                      | #
+# +------------------------------------------------------+ #
+############################################################
+  
+jail:
+  
+  # 若设置为 true, 在敌方城镇内死亡的玩家会被关入敌方监狱 (若有).
+  is_jailing_attacking_enemies: 'false'
+  
+  # 若设置为 true, 则被视作驱逐的玩家在城镇内死亡时会被关入监狱 (若有).
+  is_jailing_attacking_outlaws: 'false'
+  
+  # 被视作驱逐的玩家关入监狱的时长, 单位为小时.
+  outlaw_jail_hours: '5'
+  
+  # 敌方玩家关入监狱的时长, 单位为小时.
+  pow_jail_hours: '5'
+  
+  # 拥有者可设置某玩家的最长监禁时间 (小时), 应当填入整数.
+  maximum_jail_hours: '5'
+  
+  # 每位玩家进入监狱时所要花费的初始费用, 从城镇银行中直接支出. 设置为 -1 可将其禁用.
+  fee_initial_amount: '-1'
+  
+  # 每位玩家进入监狱后每小时所要花费的费用, 从城镇银行中直接支出. 设置为 -1 可将其禁用.
+  fee_hourly_amount: '-1'
+  
+  # 若设置为 true 则监狱内的玩家可以使用物品进行传送, 例如末影珍珠或紫颂果, 但仍不能使用其他方法传送.
+  jail_allows_teleport_items: 'false'
+  
+  # 若设置为 false 则玩家可以使用 /town leave 并逃出监狱.
+  jail_denies_town_leave: 'false'
+  
+  bail:
+  
+    # If true players can pay a bail amount to be unjailed.
+    is_allowing_bail: 'false'
+  
+    # Amount that bail costs for outlaw or POW arrests.
+    bail_amount: '10'
+  
+    # Max bail cost that a mayor can set.
+    bailmax_amount: '100'
+  
+    # Amount that bail costs for Town mayors if captured.
+    bail_amount_mayor: '10'
+  
+    # Amount that bail costs for Nation kings if captured.
+    bail_amount_king: '10'
+  
+  # Amount of potential jailed players per town, set to -1 to disable.
+  max_jailed_count: '-1'
+  
+  # Behaviour for new jail attempts if max jailed count is reached
+  # 0 = Unable to jail new players until a current prisoner is released.
+  # 1 = A prisoner slot will be made by automatically releasing a prisoner based on lowest remaining time.
+  # 2 = A prisoner slot will be made by automatically releasing a prisoner based on lowest custom bail.
+  max_jailed_newjail_behavior: '0'
+  
+  # If false players will not be provided with a book upon being jailed.
+  # The jail book is a book given to people when they are jailed, which explains to them
+  # how they can potentially escape from jail and other jail behaviours based on the
+  # settings you have configured for your server.
+  is_jailbook_enabled: 'true'
+  
+  # Commands which a jailed player cannot use.
+  blacklisted_commands: home,spawn,teleport,tp,tpa,tphere,tpahere,back,dback,ptp,jump,kill,warp,suicide
+  
+  # When true, jail plots will prevent any PVP from occuring. Applies to jailed residents only.
+  do_jail_plots_deny_pvp: 'false'
+  
+  # When true, Towny will prevent a person who has been jailed by their mayor/town from logging out,
+  # if they do log out they will be killed first, ensuring they respawn in the jail.
+  prevent_newly_jailed_players_logging_out: 'false'
+  
+  # How long do new players have to be on the server before they can be jailed?
+  new_player_immunity: 1h
+  
+  # Most types of unjailing result in a player being teleported when they are freed.
+  # Setting this to false will prevent that teleporting, resulting in the player not being teleported when they are freed.
+  unjailed_players_get_teleported: 'true'
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                    银行地皮设置                       | #
+# +------------------------------------------------------+ #
+############################################################
+# 银行地皮可以通过其他使用 Towny API 的插件进行交互. 
+  
+bank:
+  
+  # 若设置为 true 则玩家将只能在对应城镇或国家首都的银行地皮内使用 /t deposit, /t withdraw, /n deposit & /n withdraw 命令.
+  # 家园地皮也允许使用存取款命令.
+  is_banking_limited_to_bank_plots: 'false'
+  
+  # 若设置为 true, 拥有一个以上银行地皮的城镇将不再能使用各自的家园方块进行存/取款操作.
+  # 需要上述 is_banking_limited_to_bank_plots 设置为 true.
+  do_homeblocks_not_work_when_a_town_has_bank_plots: 'false'
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                     废弃城镇设置                      | #
+# +------------------------------------------------------+ #
+############################################################
+  
+town_ruining:
+  town_ruins:
+  
+    # 若该项设置为 true, 若城镇被删除则会在一段时间保持为 '废弃' 状态.
+    # 在该状态下, 该城镇不可被占领, 但可被搜刮.
+    # 该功能可用于防止拥有者通过快速删除重建城镇躲避攻击或占领.
+    enabled: 'false'
+  
+    # 该值决定了城镇保持废弃状态的最长时间.
+    # 在该段时间后, 城镇才会被完全删除.
+    # 不接受大于 8760 的值, 该值相当于一年.
+    max_duration_hours: '72'
+  
+    # 该值决定了城镇保持废弃状态的最短时间, 在此之后居民可重新占领该城镇.
+    min_duration_hours: '4'
+  
+    # 若该项设置为 true, 则在城镇废弃之后可被重新占领的一段时间之内可被任意玩家通过命令 /t reclaim 并支付相应价格重新占领. (价格在经济部分已有配置)
+  
+    reclaim_enabled: 'true'
+  
+    # 若该项设置为 true, 当城镇废弃时也会更新对外状态, 这意味着任何玩家可以通过命令 /t spawn 名称 传送至该城镇.
+    ruins_become_public: 'false'
+  
+    # 若该项设置为 true, 当城镇处于废弃状态时, 城镇也允许所有人加入.
+    # 这意味着任何玩家都可以加入城镇并重新占领对应土地.
+    # 你应该预料到某些会预先占领城镇以防止其他玩家占领的玩家出现.
+    ruins_become_open: 'false'
+  
+    # 若该设置为 true, 当一个属于国家的城镇被废弃时, 在城镇银行内的存款会直接进入国家银行.
+    town_bank_is_sent_to_nation: 'false'
+  
+  
+############################################################
+# +------------------------------------------------------+ #
+# |                  字符地图符号 & 大小                  | #
+# |                                                      | #
+# | 在字符地图中使用的符号不受 townblocktype 限制.          | #
+# | 见城镇方块类型部分配置以获得更多参考.                   | #
+# | 若要使用  Unicode 字符, 请使用诸如 \u#### 或           | #
+# | HTML-code 版本的 Unicode 字符格式.                    | #
+# |                                                      | #
+# | 在设置高度时你不能将其设置为小于 7 或大于 18 的值.       | #
+# | 你设置的宽度也必须处于 7 到 27 之间. 这些大小会在命令    | #
+# | /towny map command 展示的内容中使用, 但不会在命令       | #
+# | /towny map big 命令展示的内容中使用.                   | #
+# +------------------------------------------------------+ #
+############################################################
+  
+ascii_map_symbols:
+  
+  # 用于表示家的字符.
+  home: H
+  
+  # 用于表示前哨站的字符.
+  outpost: O
+  
+  # 用于表示待售的字符.
+  forsale: $
+  
+  # 用于表示郊区的字符.
+  wilderness: '-'
+  
+  # 在 /towny map 和 /res toggle map 中显示的地图高度.
+  # 可设置的最小值为 7, 最大值为 18.
+  map_height: '7'
+  
+  # 在 /towny map 和 /res toggle map 中显示的地图宽度.
+  # 可设置的最小值为 7, 最大值为 27, 仅能填入奇数.
+  map_width: '27'

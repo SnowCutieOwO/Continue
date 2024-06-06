@@ -1,0 +1,124 @@
+# Slabbo 配置文件
+
+########################
+#       通用           #
+########################
+
+# 悬浮物品显示方式
+# 接受下面几种设置:
+# - quantity (商店出售的物品数量)
+# - full (一组 (64 个物品))
+# - single (单个物品)
+# - none (不显示物品)
+itemdisplay: quantity
+
+# 是否检查插件更新
+checkupdates: true
+
+# 玩家是否可以使用上半砖作为商店
+stairs: true
+
+# 屏障方块是否可以用作商店
+barriershops: true
+
+# 商店是否可以出售超量堆叠物品
+# 例如, 出售镐子的商店只能堆叠一个物品,
+# 而超量堆叠商店可以堆叠 64 个同种类物品.
+sellOversized: false
+
+# 商店是否可以取出超量堆叠物品
+# 例如, 出售镐子的商店只能堆叠一个物品,
+# 而超量堆叠商店可以堆叠 64 个同种类物品.
+withdrawOversized: false
+
+# 商店库存中可存入的最大物品数量.
+# 设置为 -1 表示不限制
+maxStockSize: -1
+
+# 用于创建物品的商店.
+# 物品种类可在 https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html 找到, 在 "Enum Constant Summary" 下
+shopCreationItem: STICK
+
+punchRestock:
+  # 玩家是否可以手持物品点击为商店补货
+  single: true
+
+  # 玩家是否可以通过 Shift+左键 点击将背包中所有符合要求的物品存入商店
+  bulk: true
+
+# 是否禁用商店功能
+disableShops: false
+
+# 是否允许商店售价为小数 (例如, 1.05)
+allowCents: false
+
+# 交易种类.
+# 若设置为 "Slabbo", 那么会使用 "general.currency-format" 中的设置.
+# 若设置为 "Vault", 那么会使用来自 vault (和你的经济插件) 的格式.
+currencyFormat: Vault
+
+########################
+#       箱子连接        #
+########################
+
+chestlinks:
+
+  # 是否启用箱子连接功能
+  enabled: true
+
+  # 玩家是否需要权限来连接箱子
+  enforcepermission: false
+
+  # 连接箱子的漏斗功能
+  hoppers:
+    # 是否允许漏斗用于补货
+    enabled: true
+
+    # Slabbo 应该在漏斗还在补货时延迟多久进行保存操作
+    # 单位为秒
+    savetime: 5
+
+  player:
+    # 玩家是否允许向箱子中存入物品
+    enabled: true
+
+    # Slabbo 应该在玩家还在对箱子补货时延迟多久进行保存操作
+    # 单位为秒
+    savetime: 5
+
+########################
+#     商店默认设置      #
+########################
+
+defaults:
+    buyPrice: 0
+    sellPrice: 0
+    quantity: 0
+
+
+########################
+#    自定义模型物品     #
+########################
+
+# 请注意, 该内容仅在 1.14+ 有效
+
+items:
+  customModelData:
+      redStainedPane: 0
+      greenStainedPane: 0
+      yellowStainedPane: 0
+      limeStainedPane: 0
+      commandBlock: 0
+      chestMinecart: 0
+      comparator: 0
+      oakSign: 0
+      hopperMinecart: 0
+      minecart: 0
+      chest: 0
+      enderChest: 0
+      barrier: 0
+      netherStar: 0
+      goldIngot: 0
+      ironIngot: 0
+      paper: 0
+      nametag: 0

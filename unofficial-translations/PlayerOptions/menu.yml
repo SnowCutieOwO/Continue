@@ -1,0 +1,145 @@
+####################################################################################################
+# +----------------------------------------------------------------------------------------------+ #
+# |              _____  _                        ____        _   _                               | #
+# |             |  __ \| |                      / __ \      | | (_)                              | #
+# |             | |__) | | __ _ _   _  ___ _ __| |  | |_ __ | |_ _  ___  _ __  ___               | #
+# |             |  ___/| |/ _` | | | |/ _ \ '__| |  | | '_ \| __| |/ _ \| '_ \/ __|              | #
+# |             | |    | | (_| | |_| |  __/ |  | |__| | |_) | |_| | (_) | | | \__ \              | #
+# |             |_|    |_|\__,_|\__, |\___|_|   \____/| .__/ \__|_|\___/|_| |_|___/              | #
+# |                              __/ |                | |                                        | #
+# |                             |___/                 |_|                                        | #
+# |                                                                                              | #
+# |                                                                                              | #
+# |                                                                                              | #
+# |                                                                                              | #
+# |  插件 WIKI:   https://pedrojm96.com/minecraft-plugin/deluxeplayeroptions                     | #
+# |  提交漏洞:    https://www.spigotmc.org/resources/deluxeplayeroptions.33033/                  | #
+# |  插件作者: PedroJM96 (pedrojm96.com)                                                         | #
+# |  官方服务器: mc.mundopixels.net                                                              | #
+# |                                                                                              | #
+# +----------------------------------------------------------------------------------------------+ #
+####################################################################################################
+
+# +----------------------------------------------------------------------------------------------+ #
+# |                                          Items Nodes                                         | #
+# +----------------------------------------------------------------------------------------------+ #
+# |                                                                                              | #
+# |  enable: 是否在菜单中显示该物品.                                                              | #
+# |  name: 物品的名称.                                                                            | #
+# |  lore: 物品的描述.                                                                            | #
+# |  id: 物品的材料名称 (https://www.minecraftinfo.com/idlist.htm).                               | #
+# |  data: 物品的材料种类数据值.                                                                  | #
+# |  slot: 物品在界面中的位置.                                                                    | #
+# |  itemuse-enable: 显示玩家状态的二级菜单按钮.                                                  | #
+# |  itemuse-slot: 二级菜单在界面中的位置 .                                                       | #
+# |                                                                                              | #
+# |                                                                                              | #
+# +----------------------------------------------------------------------------------------------+ #
+
+# +----------------------------------------------------------------------------------------------+ #
+# | 为浏览详细的配置文本解释, 请访问下面的链接.                                                   | #
+# | https://pedrojm96.com/minecraft-plugin/deluxeplayeroptions/po-menu-yml/                      | #
+# +----------------------------------------------------------------------------------------------+ #
+
+# 菜单的名称.
+name: '&b&l玩家选项'
+
+# 打开菜单的命令.
+command: Options
+
+# 菜单行数.
+row: 6
+
+# 是否启用菜单内的装饰玻璃板.
+glass-enable: true
+
+# 菜单内装饰玻璃板的颜色.
+glass-color: 3
+
+# 显示该选项被启用的内容.
+item-on:
+  name: '&a&l启用'
+  material: LIME_DYE
+  material-old: INK_SACK
+  data: 10
+  lore:
+  - '&7点击 &c禁用'
+
+# 显示该选项被禁用的内容.
+item-off:
+  name: '&c&l禁用'
+  material: INK_SAC
+  material-old: INK_SACK
+  data: 8
+  lore:
+  - '&7点击 &a启用'
+  
+# 设置玩家速度的内容.
+speed:
+  enable: true
+  name: '&3&l速度 <status>'
+  material: SUGAR
+  slot: 1
+  itemuse-enable: true
+  itemuse-slot: 10
+  lore:
+  - '&7修改玩家的移动速度'
+  
+# 设置玩家跳跃高度的内容.
+jump:
+  enable: true
+  name: '&3&l跳跃高度 <status>'
+  material: DIAMOND_BOOTS
+  slot: 20
+  itemuse-enable: true
+  itemuse-slot: 29
+  lore:
+  - '&7修改玩家跳跃高度'
+
+# 设置玩家飞行模式的内容.
+fly:
+  enable: true
+  name: '&3&l飞行状态 <status>'
+  material: FEATHER
+  slot: 3
+  itemuse-enable: true
+  itemuse-slot: 12
+  lore:
+  - '&7修改玩家的飞行能力'
+
+# 设置聊天功能的内容.
+chat:
+  enable: true
+  name: '&3&l聊天 <status>'
+  material: PAPER
+  slot: 7
+  itemuse-enable: true
+  itemuse-slot: 16
+  lore:
+  - '&7修改聊天栏可见性'
+  - '&7及是否可以聊天'
+
+# 设置 PVP 功能的内容.
+pvp:
+  enable: false
+  name: '&3&lPVP <status>'
+  material: DIAMOND_SWORD
+  slot: 22
+  itemuse-enable: true
+  itemuse-slot: 31
+  lore:
+  - '&7修改玩家的 PVP 状态'
+
+
+# 显示关闭菜单按钮的内容.
+close:
+  enable: true
+  name: '&3&l关闭菜单'
+  commands-enable: false
+  keep-open: false
+  commands:
+  - 'tell: '
+  material: NETHER_STAR
+  slot: 49
+  lore:
+  - '&7点击退出本界面'

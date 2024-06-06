@@ -1,0 +1,340 @@
+# 该文件会基于你的服务器版本自动生成, 包括了所有可通过刷怪笼生成的实体.
+# 你可以使用来自 https://minecraft-heads.com/ 的自定义头颅来设置实体的在菜单界面中显示的头颅样式.
+#
+# 若要购买一个刷怪笼, 玩家需要拥有权限 uspawners.mob.实体种类
+# 示例: 猪 = uspawners.mob.pig
+# 注意: 本配置中的一些改动需要服务器重启才可生效.
+types:
+  pig:
+    name: 猪
+    cost: 5000.0
+    skull: skin:bee8514892f3d78a32e8456fcbb8c6081e21b246d82f398bd969fec19d3c27b3
+    # '/spawners get' 将会给予一个猪刷怪笼. 你可以移除该选项并把它放在别的地方来改变默认给予的刷怪笼实体种类.
+    default: true
+    # Should spawners of this entity type to have butcher mode enabled?
+    # 是否允许该种类的实体启用屠戮模式?
+    # 因为不会生成实体, 所以启用本设置可以节省服务器性能开支. 这会让刷怪笼像一个虚拟刷怪笼, 不会生产任何实体但会收获它们的掉落物.
+    # 若你再次禁用本项, 屠戮模式将会为每个启用该模式之前的刷怪笼进行单独设置.
+    force-butcher:
+      # 是否强制启用屠戮模式?
+      always: false
+    # 是否允许对应类型实体的刷怪笼总是生成实体? 这意味着它们不会受到除升级等级配置 levels.yml 中设置的内容外任何生成条件的影响. 
+    # 注意: 本配置中的一些改动需要服务器重启才可生效.
+    no-conditions: true
+    # 若你允许基岩版玩家进入服务器, 且你安装了 floodgate, 你可以为该实体在基岩版菜单中设置镜像.
+    # 更多信息请见: https://github.com/Angeschossen/PluginFrameworkAPI/wiki/Bedrock-Menus#button-icons
+    bedrock-image: ''
+sheep:
+  name: 绵羊
+  cost: 5000
+  skull: "skin: 292df216ecd27624ac771bacfbfe006e1ed84a79e9270be0f88e9c8791d1ece4"
+  force-butcher:
+    always: false
+  no-conditions: true
+cow:
+  name: 牛
+  cost: 5000
+  skull: skin:be8456155142cbe4e61353ffbaff304d3d9c4bc9247fc27b92e33e6e26067edd
+  force-butcher:
+    always: false
+  no-conditions: true
+goat:
+  name: 山羊
+  cost: 5000
+  skull: "skin: 457a0d538fa08a7affe312903468861720f9fa34e86d44b89dcec5639265f03"
+  force-butcher:
+    always: false
+  no-conditions: true
+chicken:
+  name: 鸡
+  cost: 5000
+  skull: "skin: 1638469a599ceef7207537603248a9ab11ff591fd378bea4735b346a7fae893"
+  force-butcher:
+    always: false
+  no-conditions: true
+squid:
+  name: 鱿鱼
+  cost: 5000
+  skull: "skin: 01433be242366af126da434b8735df1eb5b3cb2cede39145974e9c483607bac"
+  force-butcher:
+    always: false
+  no-conditions: true
+glow_squid:
+  name: 发光鱿鱼
+  cost: 5000
+  skull: "skin: 3e94a1bb1cb00aaa153a74daf4b0eea20b8974522fe9901eb55aef478ebeff0d"
+  force-butcher:
+    always: false
+  no-conditions: true
+wolf:
+  name: 狼
+  cost: 5000
+  skull: "skin: 69d1d3113ec43ac2961dd59f28175fb4718873c6c448dfca8722317d67"
+  force-butcher:
+    always: false
+  no-conditions: true
+mushroom_cow:
+  name: 哞菇
+  cost: 5000
+  skull: "skin: 42a805209fa3f99983f42b99b92b99ebb89da4bcdaf6628645f11257d16ddabb"
+  force-butcher:
+    always: false
+  no-conditions: true
+snowman:
+  name: 雪傀儡
+  cost: 5000
+  skull: "skin: 8e8d206f61e6de8a79d0cb0bcd98aced464cbfefc921b4160a25282163112a"
+  force-butcher:
+    always: false
+  no-conditions: true
+ocelot:
+  name: 豹猫
+  cost: 5000
+  skull: "skin: 5657cd5c2989ff97570fec4ddcdc6926a68a3393250c1be1f0b114a1db1"
+  force-butcher:
+    always: false
+  no-conditions: true
+iron_golem:
+  name: 铁傀儡
+  cost: 5000
+  skull: skin:e13f34227283796bc017244cb46557d64bd562fa9dab0e12af5d23ad699cf697
+  force-butcher:
+    always: false
+  no-conditions: true
+horse:
+  name: 马
+  cost: 5000
+  skull: "skin: 29ac1eab3d6959394b4ef9c6d3f62eda65dc41ad18b816a783eba7074ec5bea0"
+rabbit:
+  name: 兔子
+  cost: 5000
+  skull: skin:ffecc6b5e6ea5ced74c46e7627be3f0826327fba26386c6cc7863372e9bc
+polar_bear:
+  name: 北极熊
+  cost: 5000
+  skull: skin:d46d23f04846369fa2a3702c10f759101af7bfe8419966429533cd81a11d2b
+llama:
+  name: 羊驼
+  cost: 5000
+  skull: "skin: 9f7d90b305aa64313c8d4404d8d652a96eba8a754b67f4347dcccdd5a6a63398"
+parrot:
+  name: 鹦鹉
+  cost: 5000
+  skull: skin:a4ba8d66fecb1992e94b8687d6ab4a5320ab7594ac194a2615ed4df818edbc3
+creeper:
+  name: 苦力怕
+  cost: 5000
+  skull: "skin: 1ff8f6d00d5b07387584f117c66d698c90c69cedb01a6e69dbb02771c7302d16"
+skeleton:
+  name: 骷髅
+  cost: 5000
+  skull: "skin: 301268e9c492da1f0d88271cb492a4b302395f515a7bbf77f4a20b95fc02eb2"
+spider:
+  name: 蜘蛛
+  cost: 5000
+  skull: skin:cd541541daaff50896cd258bdbdd4cf80c3ba816735726078bfe393927e57f1
+dolphin:
+  name: 海豚
+  cost: 5000
+  skull: "skin: 8e9688b950d880b55b7aa2cfcd76e5a0fa94aac6d16f78e833f7443ea29fed3"
+cat:
+  name: 猫
+  cost: 5000
+  skull: "skin: 7ba68e716c0bdb0d39cd5418dad43c0fcee6b8af41a2d4c90e63ee7bdd78c216"
+panda:
+  name: 熊猫
+  cost: 5000
+  skull: skin:df00858926cd8cdf3f1cf71e210cde5daf8708320547bd6df5795859c68d9b3f
+cod:
+  name: 鳕鱼
+  cost: 5000
+  skull: "skin: 7892d7dd6aadf35f86da27fb63da4edda211df96d2829f691462a4fb1cab0"
+salmon:
+  name: 鲑鱼
+  cost: 5000
+  skull: skin:b770d917d1ccc12f3a1cf73fe7de8c6548f4a842086923c7bb4446bcc7aaebfa
+pufferfish:
+  name: 河豚
+  cost: 5000
+  skull: "skin: 17152876bc3a96dd2a2299245edb3beef647c8a56ac8853a687c3e7b5d8bb"
+tropical_fish:
+  name: 热带鱼
+  cost: 5000
+  skull: "skin: 747c63ff0f41a531e6081fc65880470699c1daa3a471ac514f4534c5e3f4b5dd"
+axolotl:
+  name: 美西螈
+  cost: 5000
+  skull: "skin: 5c138f401c67fc2e1e387d9c90a9691772ee486e8ddbf2ed375fc8348746f936"
+bat:
+  name: 蝙蝠
+  cost: 5000
+  skull: "skin: 9e99deef919db66ac2bd28d6302756ccd57c7f8b12b9dca8f41c3e0a04ac1cc"
+villager:
+  name: 村民
+  cost: 5000
+  skull: skin:126ec1ca185b47aad39f931db8b0a8500ded86a127a204886ed4b3783ad1775c
+turtle:
+  name: 海龟
+  cost: 5000
+  skull: "skin: 212b58c841b394863dbcc54de1c2ad2648af8f03e648988c1f9cef0bc20ee23c"
+trader_llama:
+  name: 行商羊驼
+  cost: 5000
+  skull: "skin: 5a4eed85697c78f462c4eb5653b05b76576c1178f704f3c5676f505d8f3983b4"
+  enabled: false
+wandering_trader:
+  name: 流浪商人
+  cost: 5000
+  skull: skin:ee011aac817259f2b48da3e5ef266094703866608b3d7d1754432bf249cd2234
+  enabled: false
+fox:
+  name: 狐狸
+  cost: 5000
+  skull: "skin: 89a3a9e946b1dcf852710cef63635ca2cb06eb8a5aadd1beb6f9905474961788"
+bee:
+  name: 蜜蜂
+  cost: 5000
+  skull: skin:fa2cb74c13245d3ce9bacc8b1600af02fd7c91f501feaf97364e1f8b6f04f47f
+elder_guardian:
+  name: 远古守卫者
+  cost: 5000
+  skull: "skin: 1c797482a14bfcb877257cb2cff1b6e6a8b8413336ffb4c29a6139278b436b"
+  enabled: false
+wither_skeleton:
+  name: 凋灵骷髅
+  cost: 5000
+  skull: "skin: 886dc0cfcaeecfe1ab69146e4d4f1190837076a67dec135fabda6271f375d01f"
+stray:
+  name: 流浪者
+  cost: 5000
+  skull: "skin: 78ddf76e555dd5c4aa8a0a5fc584520cd63d489c253de969f7f22f85a9a2d56"
+  enabled: false
+husk:
+  name: 尸壳
+  cost: 5000
+  skull: skin:c096164f81950a5cc0e33e87999f98cde792517f4d7f99a647a9aedab23ae58
+zombie_villager:
+  name: 僵尸村民
+  cost: 5000
+  skull: "skin: 75ab0527ecb313aab1413e65353aacd8672bc91e98b8a09c1a1ae78bb1db9681"
+skeleton_horse:
+  name: 骷髅马
+  cost: 5000
+  skull: skin:47effce35132c86ff72bcae77dfbb1d22587e94df3cbc2570ed17cf8973a
+zombie_horse:
+  name: 僵尸马
+  cost: 5000
+  skull: skin:d22950f2d3efddb18de86f8f55ac518dce73f12a6e0f8636d551d8eb480ceec
+donkey:
+  name: 驴
+  cost: 5000
+  skull: "skin: 63a976c047f412ebc5cb197131ebef30c004c0faf49d8dd4105fca1207edaff3"
+mule:
+  name: 骡
+  cost: 5000
+  skull: skin:a0486a742e7dda0bae61ce2f55fa13527f1c3b334c57c034bb4cf132fb5f5f
+evoker:
+  name: 唤魔者
+  cost: 5000
+  skull: skin:d954135dc82213978db478778ae1213591b93d228d36dd54f1ea1da48e7cba6
+vex:
+  name: 恼鬼
+  cost: 5000
+  skull: skin:c2ec5a516617ff1573cd2f9d5f3969f56d5575c4ff4efefabd2a18dc7ab98cd
+vindicator:
+  name: 卫道士
+  cost: 5000
+  skull: "skin: 6deaec344ab095b48cead7527f7dee61b063ff791f76a8fa76642c8676e2173"
+illusioner:
+  name: 幻术师
+  cost: 5000
+  skull: "skin: 512512e7d016a2343a7bff1a4cd15357ab851579f1389bd4e3a24cbeb88b"
+  enabled: false
+zombie:
+  name: 僵尸
+  cost: 5000
+  skull: "skin: 783aaaee22868cafdaa1f6f4a0e56b0fdb64cd0aeaabd6e83818c312ebe66437"
+slime:
+  name: 史莱姆
+  cost: 5000
+  skull: skin:a20e84d32d1e9c919d3fdbb53f2b37ba274c121c57b2810e5a472f40dacf004f
+ghast:
+  name: 恶魂
+  cost: 5000
+  skull: skin:de8a38e9afbd3da10d19b577c55c7bfd6b4f2e407e44d4017b23be9167abff02
+  enabled: false
+enderman:
+  name: 末影人
+  cost: 5000
+  skull: "skin: 96c0b36d53fff69a49c7d6f3932f2b0fe948e032226d5e8045ec58408a36e951"
+cave_spider:
+  name: 洞穴蜘蛛
+  cost: 5000
+  skull: "skin: 5617f7dd5ed16f3bd186440517cd440a170015b1cc6fcb2e993c05de33f"
+silverfish:
+  name: 蠹虫
+  cost: 5000
+  skull: skin:da91dab8391af5fda54acd2c0b18fbd819b865e1a8f1d623813fa761e924540
+blaze:
+  name: 烈焰人
+  cost: 5000
+  skull: skin:b78ef2e4cf2c41a2d14bfde9caff10219f5b1bf5b35a49eb51c6467882cb5f0
+  butcher-drops:
+    - "BLAZE_ROD: 0: 1"
+magma_cube:
+  name: 岩浆怪
+  cost: 5000
+  skull: "skin: 38957d5023c937c4c41aa2412d43410bda23cf79a9f6ab36b76fef2d7c429"
+  butcher-drops:
+    - "MAGMA_CREAM: 0: 1"
+ender_dragon:
+  name: 末影龙
+  cost: 5000
+  skull: skin:f68c1c079a7ffb36f48dd7150355e3e0b7f68dd605e6f8847313c360cf61e0c
+  enabled: false
+wither:
+  name: 凋灵
+  cost: 5000
+  skull: "skin: 964e1c3e315c8d8fffc37985b6681c5bd16a6f97ffd07199e8a05efbef103793"
+  enabled: false
+witch:
+  name: 女巫
+  cost: 5000
+  skull: "skin: 20e13d18474fc94ed55aeb7069566e4687d773dac16f4c3f8722fc95bf9f2dfa"
+  enabled: false
+endermite:
+  name: 末影螨
+  cost: 5000
+  skull: "skin: 5bc7b9d36fb92b6bf292be73d32c6c5b0ecc25b44323a541fae1f1e67e393a3e"
+guardian:
+  name: 守卫者
+  cost: 5000
+  skull: skin:e8b0a74335696b2bf4cf4780aca4a2835d401edb934669dcaec56fb97b670a7
+shulker:
+  name: 潜影贝
+  cost: 5000
+  skull: skin:f2c642cfe33814767d692d27599c8bef4f5a306fc210d4b50a580b7040f02b18
+phantom:
+  name: 幻翼
+  cost: 5000
+  skull: "skin: 746830da5f83a3aaed838a99156ad781a789cfcf13e25beef7f54a86e4fa4"
+drowned:
+  name: 溺尸
+  cost: 5000
+  skull: skin:c84df79c49104b198cdad6d99fd0d0bcf1531c92d4ab6269e40b7d3cbbb8e98c
+pillager:
+  name: 掠夺者
+  cost: 5000
+  skull: "skin: 4aee6bb37cbfc92b0d86db5ada4790c64ff4468d68b84942fde04405e8ef5333"
+ravager:
+  name: 劫掠兽
+  cost: 5000
+  skull: skin:cd20bf52ec390a0799299184fc678bf84cf732bb1bd78fd1c4b441858f0235a8
+piglin:
+  name: 猪灵
+  cost: 5000
+  skull: "skin: 5081a1239fffe135cbfa4a98a6aa6cc5b0787ad0790f56a16bf07f86374606c5"
+zombified_piglin:
+  name: 僵尸猪灵
+  cost: 5000
+  skull: skin:e935842af769380f78e8b8a88d1ea6ca2807c1e5693c2cf797456620833e936f

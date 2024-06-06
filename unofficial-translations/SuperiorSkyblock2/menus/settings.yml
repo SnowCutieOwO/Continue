@@ -1,0 +1,451 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                  插件作者 Ome_R                   ##
+##                                                  ##
+######################################################
+
+title: '&l岛屿设置'
+previous-menu: true
+
+pattern:
+  - '$ $ $ $ $ $ $ $ $'
+  - '$ @ @ @ @ @ @ @ $'
+  - '$ @ @ @ @ @ @ @ $'
+  - '$ @ @ @ @ @ @ @ $'
+  - '$ $ % $ * $ ^ $ $'
+
+slots: '@'
+previous-page: '%'
+current-page: '*'
+next-page: '^'
+
+items:
+  '$':
+    type: STAINED_GLASS_PANE
+    data: 3
+    name: '&f'
+  '%':
+    type: PAPER
+    name: '{0}上一页'
+  '*':
+    type: DOUBLE_PLANT
+    name: '&a当前页'
+    lore:
+      - '&7第 {0} 页'
+  '^':
+    type: PAPER
+    name: '{0}下一页'
+
+settings:
+  always_day:
+    settings-enabled:
+      type: STAINED_CLAY
+      data: 4
+      name: '&6保持白天'
+      lore:
+        - '&7将岛屿时间保持在白天.'
+        - '&7当前 &a启用&7.'
+    settings-disabled:
+      type: STAINED_CLAY
+      data: 4
+      name: '&6保持白天'
+      lore:
+        - '&7将岛屿时间保持在白天.'
+        - '&7当前 &c禁用&7.'
+    sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+
+  always_middle_day:
+    settings-enabled:
+      type: STAINED_CLAY
+      data: 1
+      name: '&6保持正午'
+      lore:
+        - '&7将岛屿时间保持在正午.'
+        - '&7当前 &a启用&7.'
+    settings-disabled:
+      type: STAINED_CLAY
+      data: 1
+      name: '&6保持正午'
+      lore:
+        - '&7将岛屿时间保持在正午.'
+        - '&7当前 &c禁用&7.'
+    sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+
+  always_night:
+    settings-enabled:
+      type: STAINED_CLAY
+      data: 3
+      name: '&6保持夜晚'
+      lore:
+        - '&7将岛屿时间保持在夜晚.'
+        - '&7当前 &a启用&7.'
+    settings-disabled:
+      type: STAINED_CLAY
+      data: 3
+      name: '&6保持夜晚'
+      lore:
+        - '&7将岛屿时间保持在夜晚.'
+        - '&7当前 &c禁用&7.'
+    sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+
+  always_middle_night:
+    settings-enabled:
+      type: STAINED_CLAY
+      data: 11
+      name: '&6保持午夜'
+      lore:
+        - '&7将岛屿时间保持在午夜.'
+        - '&7当前 &a启用&7.'
+    settings-disabled:
+      type: STAINED_CLAY
+      data: 11
+      name: '&6保持午夜'
+      lore:
+        - '&7将岛屿时间保持在午夜.'
+        - '&7当前 &c禁用&7.'
+    sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+
+  always_rain:
+    settings-enabled:
+      type: WATER_LILY
+      name: '&6保持下雨'
+      lore:
+        - '&7将岛屿天气保持在下雨.'
+        - '&7当前 &a启用&7.'
+    settings-disabled:
+      type: WATER_LILY
+      name: '&6保持下雨'
+      lore:
+        - '&7将岛屿天气保持在下雨.'
+        - '&7当前 &c禁用&7.'
+    sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+
+  always_shiny:
+    settings-enabled:
+      type: DEAD_BUSH
+      name: '&6保持晴天'
+      lore:
+        - '&7将岛屿天气保持在晴天.'
+        - '&7当前 &a启用&7.'
+    settings-disabled:
+      type: DEAD_BUSH
+      name: '&6保持晴天'
+      lore:
+        - '&7将岛屿天气保持在晴天.'
+        - '&7当前 &c禁用&7.'
+    sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+
+  creeper_explosion:
+    settings-enabled:
+      type: SKULL_ITEM
+      data: 4
+      name: '&6苦力怕爆炸'
+      lore:
+        - '&7允许苦力怕的爆炸摧毁方块.'
+        - '&7当前 &a启用&7.'
+    settings-disabled:
+      type: SKULL_ITEM
+      data: 4
+      name: '&6苦力怕爆炸'
+      lore:
+        - '&7允许苦力怕的爆炸摧毁方块.'
+        - '&7当前 &c禁用&7.'
+    sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+
+  crops_growth:
+    settings-enabled:
+      type: SEEDS
+      name: '&6作物生长'
+      lore:
+        - '&7允许岛屿内的作物生长.'
+        - '&7当前 &a启用&7.'
+    settings-disabled:
+      type: SEEDS
+      name: '&6作物生长'
+      lore:
+        - '&7允许岛屿内的作物生长.'
+        - '&7当前 &c禁用&7.'
+    sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+
+  egg_lay:
+    settings-enabled:
+      type: EGG
+      name: '&6下蛋'
+      lore:
+        - '&7允许岛屿内的鸡下蛋.'
+        - '&7当前 &a启用&7.'
+    settings-disabled:
+      type: EGG
+      name: '&6下蛋'
+      lore:
+        - '&7允许岛屿内的鸡下蛋.'
+        - '&7当前 &c禁用&7.'
+    sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+
+  enderman_grief:
+    settings-enabled:
+      type: ENDER_PEARL
+      name: '&6末影人破坏'
+      lore:
+        - '&7允许岛屿内的末影人搬运方块.'
+        - '&7当前 &a启用&7.'
+    settings-disabled:
+      type: ENDER_PEARL
+      name: '&6末影人破坏'
+      lore:
+        - '&7允许岛屿内的末影人搬运方块.'
+        - '&7当前 &c禁用&7.'
+    sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+
+  fire_spread:
+    settings-enabled:
+      type: FLINT_AND_STEEL
+      name: '&6火焰传播'
+      lore:
+        - '&7允许岛屿内的火焰传播.'
+        - '&7当前 &a启用&7.'
+    settings-disabled:
+      type: FLINT_AND_STEEL
+      name: '&6火焰传播'
+      lore:
+        - '&7允许岛屿内的火焰传播.'
+        - '&7当前 &c禁用&7.'
+    sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+
+  ghast_fireball:
+    settings-enabled:
+      type: FIREBALL
+      name: '&6恶魂发射火球'
+      lore:
+        - '&7允许岛屿内恶魂发射的火球摧毁方块.'
+        - '&7当前 &a启用&7.'
+    settings-disabled:
+      type: FIREBALL
+      name: '&6恶魂发射火球'
+      lore:
+        - '&7允许岛屿内恶魂发射的火球摧毁方块.'
+        - '&7当前 &c禁用&7.'
+    sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+
+  lava_flow:
+    settings-enabled:
+      type: LAVA_BUCKET
+      name: '&6岩浆流动'
+      lore:
+        - '&7允许岛屿内的岩浆流动.'
+        - '&7当前 &a启用&7.'
+    settings-disabled:
+      type: LAVA_BUCKET
+      name: '&6岩浆流动'
+      lore:
+        - '&7允许岛屿内的岩浆流动.'
+        - '&7当前 &c禁用&7.'
+    sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+
+  natural_animals_spawn:
+    settings-enabled:
+      type: MONSTER_EGG
+      data: 90
+      name: '&6动物自然生成'
+      lore:
+        - '&7允许岛屿上自然生成动物.'
+        - '&7当前 &a启用&7.'
+    settings-disabled:
+      type: MONSTER_EGG
+      data: 90
+      name: '&6动物自然生成'
+      lore:
+        - '&7允许岛屿上自然生成动物.'
+        - '&7当前 &c禁用&7.'
+    sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+
+  natural_monster_spawn:
+    settings-enabled:
+      type: MONSTER_EGG
+      data: 54
+      name: '&6怪物自然生成'
+      lore:
+        - '&7允许岛屿上自然生成怪物.'
+        - '&7当前 &a启用&7.'
+    settings-disabled:
+      type: MONSTER_EGG
+      data: 54
+      name: '&6怪物自然生成'
+      lore:
+        - '&7允许岛屿上自然生成怪物.'
+        - '&7当前 &c禁用&7.'
+    sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+
+  pvp:
+    settings-enabled:
+      type: DIAMOND_SWORD
+      name: '&6PvP'
+      lore:
+        - '&7允许玩家在岛屿中攻击其他玩家.'
+        - '&7当前 &a启用&7.'
+    settings-disabled:
+      type: DIAMOND_SWORD
+      name: '&6PvP'
+      lore:
+        - '&7允许玩家在岛屿中攻击其他玩家.'
+        - '&7当前 &c禁用&7.'
+    sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+
+  spawner_animals_spawn:
+    settings-enabled:
+      type: MOB_SPAWNER
+      name: '&6刷怪笼生成动物'
+      lore:
+        - '&7允许岛屿内的刷怪笼生成动物.'
+        - '&7当前 &a启用&7.'
+    settings-disabled:
+      type: MOB_SPAWNER
+      name: '&6刷怪笼生成动物'
+      lore:
+        - '&7允许岛屿内的刷怪笼生成动物.'
+        - '&7当前 &c禁用&7.'
+    sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+
+  spawner_monster_spawn:
+    settings-enabled:
+      type: MOB_SPAWNER
+      name: '&6刷怪笼生成怪物'
+      lore:
+        - '&7允许岛屿内的刷怪笼生成怪物.'
+        - '&7当前 &a启用&7.'
+    settings-disabled:
+      type: MOB_SPAWNER
+      name: '&6刷怪笼生成怪物'
+      lore:
+        - '&7允许岛屿内的刷怪笼生成怪物.'
+        - '&7当前 &c禁用&7.'
+    sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+
+  tnt_explosion:
+    settings-enabled:
+      type: TNT
+      name: '&6TNT 爆炸'
+      lore:
+        - '&7允许岛屿内的 TNT 爆炸摧毁方块.'
+        - '&7当前 &a启用&7.'
+    settings-disabled:
+      type: TNT
+      name: '&6TNT 爆炸'
+      lore:
+        - '&7允许岛屿内的 TNT 爆炸摧毁方块.'
+        - '&7当前 &c禁用&7.'
+    sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+
+  tree_growth:
+    settings-enabled:
+      type: SAPLING
+      name: '&6树木生长'
+      lore:
+        - '&7允许岛屿内的树木生长.'
+        - '&7当前 &a启用&7.'
+    settings-disabled:
+      type: SAPLING
+      name: '&6树木生长'
+      lore:
+        - '&7允许岛屿内的树木生长.'
+        - '&7当前 &c禁用&7.'
+    sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+
+  water_flow:
+    settings-enabled:
+      type: WATER_BUCKET
+      name: '&6水流动'
+      lore:
+        - '&7允许岛屿内的水流动.'
+        - '&7当前 &a启用&7.'
+    settings-disabled:
+      type: WATER_BUCKET
+      name: '&6水流动'
+      lore:
+        - '&7允许岛屿内的水流动.'
+        - '&7当前 &c禁用&7.'
+    sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+
+  wither_explosion:
+    settings-enabled:
+      type: SKULL_ITEM
+      data: 1
+      name: '&6凋灵爆炸'
+      lore:
+        - '&7允许岛屿内的凋灵爆炸摧毁方块.'
+        - '&7当前 &a启用&7.'
+    settings-disabled:
+      type: SKULL_ITEM
+      data: 1
+      name: '&6凋灵爆炸'
+      lore:
+        - '&7允许岛屿内的凋灵爆炸摧毁方块.'
+        - '&7当前 &c禁用&7.'
+    sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2

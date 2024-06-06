@@ -1,0 +1,38 @@
+# [
+#  , 
+#  there is no support will be provided for this enchantment, 
+#  there is no support will be provided for this enchantment, 
+#  there is no support will be provided for this enchantment]
+
+Settings:
+  Enabled: true
+  InGui: true
+  Name: 吞噬
+  Colour: '&7'
+  Slot: 48
+  MaxLevel: 1
+  Currency: RevToken
+  Cost: 1000
+  Increase-Cost-by: 1000
+  Dont-Remove-Blocks: false
+  Chance: 5
+  Increase-Chance-by: 0.1
+  Requirement:
+    Enabled: false
+    Number: 5
+    Placeholder: '%RevEnchants_Tool_Flag_Level%'
+  Sound:
+    Enabled: true
+    ID: ENTITY_DRAGON_FIREBALL_EXPLODE
+    Volume: 1
+    Pitch: 1
+  Description: '&7吞噬一整个矿场 %nl%&c&l警告 &6&l我不会提供该附魔的任何技术支持 %nl%&6&l这个附魔对服务器不很友好%nl%&6&l除非启用上述 Dont-Remove-Blocks%nl%&6&l使用该附魔不会得到任何技术支持%nl%&6&l使用过程中遇到任何问题都应将其直接禁用'
+  Book:
+    ==: org.bukkit.inventory.ItemStack
+    v: 3700
+    type: LEGACY_BOOK
+  PerformanceOverQuality: false
+  Message:
+    Enabled: true
+    Bar: true
+    Format: '&7世界吞噬者清除了 %Amount_FormattedA% 格方块'

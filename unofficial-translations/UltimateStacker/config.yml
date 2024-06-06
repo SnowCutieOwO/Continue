@@ -1,0 +1,292 @@
+Main:
+
+  # 生成新堆叠的间隔.
+  # 建议将该设置保持较低值.
+  Stack Search Tick Speed: 5
+
+  # 不触发堆叠的世界名称.
+  Disabled Worlds:
+  - World1
+  - World2
+  - World3
+
+Entities:
+
+  # 是否允许实体堆叠?
+  Enabled: true
+
+  # 显示在堆叠实体头上的名称
+  # {TYPE} 表示生物种类，而 {AMT} 表示堆叠生物的数量
+  Name Format: '&f{TYPE} &6{AMT}x'
+
+  # 产生堆叠的同类实体距离.
+  Search Radius: 5
+
+  # 单个堆叠实体内最大实体数量。可设置的最大值为 2000000000(2*10^9)
+  Max Stack Size: 15
+
+  # 可形成堆叠的密集实体最小数量.
+  # 请勿将其设置为小于 2 的值.
+  Min Stack Amount: 5
+
+  # 每个区块内可存在的最大堆叠实体数量.
+  Max Per Type Stacks Per Chunk: -1
+
+  # 是否以区块为单位堆叠其中满足条件的实体?
+  # 该设置会覆盖上文"搜索半径"的设置.
+  Stack Whole Chunk: false
+
+  # 是否在堆叠实体上显示额外的悬浮字?
+  Holograms Enabled: true
+
+  # 是否将实体名称设置为只在准星指向时可见
+  Only Show Holograms On Look: false
+  Custom Drops:
+
+    # 是否启用自定义掉落物?
+    Enabled: true
+
+    # 若原版掉落机制未产生稀有掉落物, 则通过本插件提升稀有掉落物的爆率 (需拥有抢夺附魔).
+    # 此为 MC 默认的掉落机制.
+    Reroll: true
+
+  # 堆叠实体是否为整堆击杀还是单个击杀?
+  # 若你只需要特定实体受该效果的影响, 你可以在 entities.yml 中修改.
+  Kill Whole Stack On Death: false
+
+  # 启用后, 插件将会与 ClearLag 对接，并将本插件产生的堆叠实体纳入清理任务
+  # 若启用本项，则插件自带的实体清理程序不会启动.
+  Clear Lag: false
+
+  # 堆叠实体触发下列事件时视作被秒杀.
+  # 若上一条设置(Clear Lag 对接)为 true 则此条设置无效.
+  # 下列值可被加入配置中:
+  # "CONTACT", "ENTITY_ATTACK", "ENTITY_SWEEP_ATTACK", "PROJECTILE",
+  # "SUFFOCATION", "FALL", "FIRE", "FIRE_TICK",
+  # "MELTING", "LAVA", "DROWNING", "BLOCK_EXPLOSION",
+  # "ENTITY_EXPLOSION", "VOID", "LIGHTNING", "SUICIDE",
+  # "STARVATION", "POISON", "MAGIC", "WITHER",
+  # "FALLING_BLOCK", "THORNS", "DRAGON_BREATH", "CUSTOM",
+  # "FLY_INTO_WALL", "HOT_FLOOR", "CRAMMING", "DRYOUT".
+  Instant Kill:
+  - FALL
+  - DROWNING
+  - LAVA
+  - VOID
+
+  # 若实体触发秒杀, 是否阻止其掉落经验值?
+  No Exp For Instant Kills: false
+
+  # 是否在启用自定义掉落物时阻止其掉落身上的装备?
+  Dont Drop Armor: false
+
+  # These are checks that are processed before an entity is stacked.
+  # 在实体被堆叠前会检查实体的某些特征
+  # 你可以自由修改本列表的内容.
+  # 下列值可被加入配置中:
+  # "SPAWN_REASON", "NERFED", "AGE", "TICK_AGE",
+  # "IS_TAMED", "ANIMAL_OWNER", "SKELETON_TYPE", "ZOMBIE_BABY",
+  # "SLIME_SIZE", "PIG_SADDLE", "SHEEP_SHEARED", "SHEEP_COLOR",
+  # "SNOWMAN_DERPED", "WOLF_COLLAR_COLOR", "OCELOT_TYPE", "HORSE_COLOR",
+  # "HORSE_STYLE", "HORSE_CARRYING_CHEST", "HORSE_HAS_ARMOR", "HORSE_HAS_SADDLE",
+  # "HORSE_JUMP", "RABBIT_TYPE", "VILLAGER_PROFESSION", "LLAMA_COLOR",
+  # "LLAMA_STRENGTH", "PARROT_TYPE", "PUFFERFISH_STATE", "TROPICALFISH_PATTERN",
+  # "TROPICALFISH_BODY_COLOR", "TROPICALFISH_PATTERN_COLOR", "PHANTOM_SIZE", "CAT_TYPE".
+  Stack Checks:
+  - NERFED # 是否被移除了 AI
+  - AGE # 年龄是否相同, 如果有的话
+  - IS_TAMED # 是否被驯服
+  - ANIMAL_OWNER # 是否属于同一个玩家
+  - SKELETON_TYPE # 骷髅类型
+  - ZOMBIE_BABY # 是否为幼年僵尸
+  - SLIME_SIZE # 史莱姆的大小
+  - PIG_SADDLE # 是否装备了鞍
+  - SHEEP_SHEARED # 是否被剃毛
+  - SNOWMAN_DERPED # 是否被摘掉了南瓜头
+  - WOLF_COLLAR_COLOR # 狗的项圈颜色
+  - HORSE_STYLE # 马的毛色
+  - HORSE_CARRYING_CHEST # 是否载着箱子
+  - HORSE_HAS_ARMOR # 是否包含马铠
+  - HORSE_HAS_SADDLE # 是否装备了鞍
+  - HORSE_JUMP # 马的跳跃力度
+  - VILLAGER_PROFESSION # 村民的职业
+  - LLAMA_STRENGTH # 羊驼的强度
+  - PUFFERFISH_STATE # 河豚的状态
+  - TROPICALFISH_PATTERN # 热带鱼的图案
+  - TROPICALFISH_BODY_COLOR # 热带鱼的体色
+  - TROPICALFISH_PATTERN_COLOR # 热带鱼的图案颜色
+  - PHANTOM_SIZE # 幻翼的大小
+
+  # 下列操作将会把单个实体从堆叠列表中分离出来.
+  # 下列选项可以被添加至列表：
+  # "NAME_TAG", "MUSHROOM_SHEAR", "SHEEP_SHEAR", "SNOWMAN_DERP",
+  # "SHEEP_DYE", "ENTITY_BREED".
+  Split Checks:
+  - NAME_TAG
+  - MUSHROOM_SHEAR
+  - SHEEP_SHEAR
+  - SNOWMAN_DERP
+  - SHEEP_DYE
+  - ENTITY_BREED
+
+  # 是否只堆叠来自刷怪笼的实体?
+  # 需要注意的是, 该类实体的特征会在服务器重启之后被移除, 也就是重启后的实体不会被标记为"由刷怪笼产生"
+  Only Stack From Spawners: false
+
+  # 通过某些原因生成的实体不会被堆叠.
+  # 在上一条设置启用时本设置无效.
+  # 下列选项可以被添加至列表：
+  # "NATURAL", "JOCKEY", "CHUNK_GEN", "SPAWNER",
+  # "EGG", "SPAWNER_EGG", "LIGHTNING", "BUILD_SNOWMAN", "HAS_EQUIPMENT",
+  # "BUILD_IRONGOLEM", "BUILD_WITHER", "VILLAGE_DEFENSE", "VILLAGE_INVASION",
+  # "BREEDING", "SLIME_SPLIT", "REINFORCEMENTS", "NETHER_PORTAL",
+  # "DISPENSE_EGG", "INFECTION", "CURED", "OCELOT_BABY",
+  # "SILVERFISH_BLOCK", "MOUNT", "TRAP", "ENDER_PEARL",
+  # "SHOULDER_ENTITY", "DROWNED", "SHEARED", "EXPLOSION",
+  # "CUSTOM", "DEFAULT".
+  Stack Reasons: []
+
+  # 该设置允许手持武器的实体参与堆叠. 包括附魔武器.
+  # 若要禁用此类实体参与堆叠, 你可以将上一条设置中的 "HAS_EQUIPMENT" 项去除(虽然默认是空的)
+  Weapons Arent Equipment: false
+
+  # 是否只堆叠站在地上或游泳中的实体?
+  # 该设置不会影响在空中的实体.
+  Only Stack On Surface: true
+
+  # 悬空实体是否只与高度低于它的实体堆叠
+  # 该设置对刷怪塔至关重要, 否则会出现实体通过不断向上堆叠而无法坠地的情况
+  Only Stack Flying Down: true
+
+  # 武器伤害是否取决于处于堆叠中的实体?
+  Use Realistic Weapon Damage: true
+
+  # 是否禁用未堆叠生物的击退?
+  Disable Knockback: false
+
+  # 是否允许一次性剪下堆叠实体中的所有羊毛?
+  Shear In One Click: false
+
+  # 对接哪个自定义生物插件?
+  # 将该列表下的插件名称移除可让本插件不再堆叠这些插件产生的自定义实体.
+  Enabled Custom Entity Plugins:
+  - MythicMobs
+
+  # 阻止哪些实体的堆叠?
+  # 下文格式: 插件名称为前缀, 实体名称处于其后, 均全部小写
+  # 示例: mythicmobs_test 表示来自 MythicMobs 的 ID 为 test 的实体.
+  Blacklisted Custom Entities:
+  - mythicmobs_test
+
+  # 实体需要在数据库中多久不更新才可被移除?
+  # 本插件会防止堆叠实体被其他插件误杀, 产生错误数据并造成卡顿
+  Database purge: 14
+
+Items:
+
+  # 是否允许堆叠物品?
+  Enabled: true
+
+  # 是否在被堆叠的物品上显示悬浮字?
+  Holograms Enabled: true
+
+  # 显示悬浮字的最小物品堆叠数量
+  Minimum Hologram Stack Size: 0
+
+  # 是否允许黑名单中的物品同样显示悬浮字?
+  Show Holograms For Blacklisted Items: true
+
+  # 物品的最大堆叠数量. 能设置的最大值为 1500000000(1.5*10^9)
+  Max Stack Size: 512
+
+  # 堆叠掉落物显示的名称
+  Name Format: '&f{TYPE} &rx&6{AMT}'
+
+  # 是否在堆叠中显示物品名称的时候忽略物品的颜色代码?
+  # 仅用于保持格式一致性, 且仅为视觉效果, 不会对物品实际内容产生影响.
+  Name Format Reset: true
+
+  # 按 Minecraft 默认逻辑堆叠的物品列表.
+  # 完整材料列表: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+  # 若不像禁用任何物品, 请将该栏设置为 "blacklist: []"
+  Blacklist:
+  - BARRIER
+
+  # 可以堆叠的物品列表
+  # 完整材料列表: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+  # 若想要任何物品均可被堆叠, 请将该栏留空.
+  # 不处于该列表中的物品堆叠行为与上条设置相同.
+  Whitelist: []
+
+  # 在启用后, 只有单个物品的堆叠不会显示.
+  # 堆叠数量只会在物品不小于 2 时显示.
+  Show Stack Size For Single: false
+
+Spawners:
+
+  # 是否允许刷怪笼堆叠?
+  Enabled: true
+
+  # 是否在堆叠刷怪笼上显示悬浮字?
+  Holograms Enabled: true
+
+  # 是否允许刷怪蛋修改刷怪笼类型?
+  # 启用本项后仍需给予玩家权限才可正常工作.
+  Eggs Convert Spawners: true
+
+  # 挖掘后刷怪笼是否直接进入背包而不是掉落在地上
+  Add Spawners To Inventory On Drop: false
+
+  # 刷怪笼可堆叠的最大数量
+  Max Stack Size: 5
+
+  # 按住 shift 挖掘刷怪笼时是否能获得堆叠刷怪笼.
+  Sneak To Receive A Stacked Spawner: true
+
+  # 刷怪笼是否不可被爆炸摧毁?
+  Prevent Spawners From Exploding: false
+
+  # TNT 爆炸摧毁刷怪笼时, 刷怪笼掉落其本身的几率.
+  Chance On TNT Explosion: 100%
+
+  # 苦力怕爆炸摧毁刷怪笼时, 刷怪笼掉落其本身的几率.
+  Chance On Creeper Explosion: 100%
+
+  # 若刷怪笼产生实体, 是否去除该实体的 AI
+  Nerf Spawner Mobs: false
+
+  # 堆叠刷怪笼显示的名称
+  # {TYPE} 表示刷怪笼种类，而 {AMT} 表示堆叠数量.
+  Name Format: '&f{TYPE} 刷怪笼 &6x{AMT}'
+
+Blocks:
+
+  # 是否启用方块堆叠?
+  Enabled: true
+
+  # 是否在堆叠方块上显示悬浮字?
+  Holograms Enabled: true
+
+  # 哪些方块可以堆叠?
+  Stackable Blocks:
+  - DIAMOND_BLOCK
+
+  # 不论玩家是否按住 shift 键, 玩家在点击堆叠方块的时候是否将对应方块全部堆入?
+  Always Add All: false
+
+  # 单次点击可移除的最大数量?
+  # 较高数值可能会引起卡顿.
+  Max Removeable: 64
+
+  # 在堆叠方块被破坏时, 掉落物是否直接进入背包而不是掉落在地上
+  Add To Inventory: false
+
+  # 堆叠方块上显示的内容.
+  # {TYPE} 表示方块种类，而 {AMT} 表示堆叠数量.
+  Name Format: '&6{AMT}x &f{TYPE}'
+
+System:
+
+  # 所启用的语言文件.
+  # 更多语言文件 (如果可用) 可以在插件的 locales 文件夹下找到.
+  Language Mode: en_US

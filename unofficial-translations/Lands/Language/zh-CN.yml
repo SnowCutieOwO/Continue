@@ -1,0 +1,1481 @@
+# 在这里你可以编辑所有聊天栏信息。
+#
+# 若你遇到了任何问题或需要帮助：
+# Discord 聊天群组: https://discord.gg/B4MAJVk
+#
+# 插件维基: https://github.com/Angeschossen/General/wiki/Messages
+
+general:
+  prefix:
+    normal: '&8[&2Lands&8] '
+    help: '&8[&2Lands&8] &7命令用法: '
+  wYes: '&a是'
+  wNo: '&c否'
+  value:
+    none: '&8无'
+    unlimited: '&a不限'
+  disabled: '&c禁用'
+  wilderness: '&a郊区'
+  server: '服务器'
+  affiliation:
+    land: '&8[&2{land}&8]'
+    nation: '&8[&9{nation} &8|&2 {land}&8]'
+  relation:
+    ally: '&a同盟'
+    enemy: '&c敌人'
+    neutral: '&7中立'
+  land:
+    title:
+      land: '&7%level% &7级, 拥有者为&3 %owner%&7.'
+      camp: '&3 %owner%&7 的营地.'
+      admin: '&7这块土地属于服务器.'
+    default-area: '默认'
+  area:
+    description:
+      default: 认领的新区域将会属于这片土地.
+      sub: 这是一片子区域, 拥有特殊标志与成员.
+      rented: 该区域已被玩家 {player} 租赁.
+      sold: 该区域已被卖给玩家 {player}.
+  time:
+    days: 天
+    hours: 时
+    minutes: 分
+    seconds: 秒
+  status:
+    online: '&a在线'
+    offline: '&c离线'
+  top:
+    hologram:
+      land:
+        title: '&7&m━━━━━━━━━━━━━━<━&r &2排名前十土地 &8(&7共计: {total}&8) &7&m━>━━━━━━━━━━━━━━'
+        entry: '&c#{pos} &2{object} &7{sorting}:&3 {value}'
+        footer: '&7&m━━━━━━━━━━━━━━<━&r &2排名前十土地 &8(&7共计: {total}&8) &7&m━>━━━━━━━━━━━━━━'
+      nation:
+        title: '&7&m━━━━━━━━━━━━━━<━&r &2排名前十国家 &8(&7共计: {total}&8) &7&m━>━━━━━━━━━━━━━━'
+        entry: '&c#{pos} &2{object} &7{sorting}:&3 {value}'
+        footer: '&7&m━━━━━━━━━━━━━━<━&r &2排名前十国家 &8(&7共计: {total}&8) &7&m━>━━━━━━━━━━━━━━'
+  integration:
+    dynmap:
+      land:
+        description: '<div class="\&quot;infowindow\&quot;"><span style="font-size:
+          200%;"><span style="color: {land_color};">{land}</span><br /></span>{title}</div>
+          <ul> <li class="\&quot;infowindow\&quot;">等级: {level}</li> <li class="\&quot;infowindow\&quot;">经济:
+          {balance}</li> <li class="\&quot;infowindow\&quot;">区块: {chunks}</li>
+          <li class="\&quot;infowindow\&quot;">玩家 ({members_amount}): {members}</li>
+          </ul>'
+        spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span
+          style="color: {land_color};">出生点</span></span></div> <div class="\&quot;infowindow\&quot;"><br
+          />对不受信任成员开放: {public}</div> <ul> <li>如果该出生点对不受信任者开放, 任何玩家都可通过命令 /lands spawn {land} 进行传送.</li> </ul>'
+      nation:
+        description: '<div class="\&quot;infowindow\&quot;"><span style="font-size:
+          200%;"><span style="color: {land_color};">{land}</span><br /></span>{title}</div>
+          <ul> <li class="\&quot;infowindow\&quot;">等级: {level}</li> <li class="\&quot;infowindow\&quot;">经济:
+          {balance}</li> <li class="\&quot;infowindow\&quot;">区块: {chunks}</li>
+          <li class="\&quot;infowindow\&quot;">玩家 ({members_amount}): {members}</li>
+          </ul> <p><strong>这片土地隶属于国家 {nation}:</strong></p> <ul>
+          <li>等级: {level_nation}</li> <li>首都: {capital}</li> <li>土地 (总玩家: {members_amount_nation}): {lands}</li> </ul>'
+      capital:
+        spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span
+          style="color: {land_color};">首都出生点</span><br /></span>该出生点属于国家 {nation} 的首都.</div><div class="\&quot;infowindow\&quot;"><br
+          />对不受信任成员开放: {public}</div><ul><li>如果该出生点对不受信任者开放, 任何玩家都可通过命令 /lands spawn {land} 进行传送.</li></ul>'
+    bluemap:
+      land:
+        description: '<div class="\&quot;infowindow\&quot;"><span style="font-size:
+          200%;"><span style="color: {land_color};">{land}</span><br /></span>{title}</div>
+          <ul> <li class="\&quot;infowindow\&quot;">等级: {level}</li> <li class="\&quot;infowindow\&quot;">经济:
+          {balance}</li> <li class="\&quot;infowindow\&quot;">区块: {chunks}</li>
+          <li class="\&quot;infowindow\&quot;">玩家 ({members_amount}): {members}</li>
+          </ul>'
+        spawn: '{land} 的出生点. 对不受信任成员开放: {public}. 如果该出生点对不受信任者开放, 任何玩家都可通过命令 /lands spawn {land} 进行传送.'
+      nation:
+        description: '<div class="\&quot;infowindow\&quot;"><span style="font-size:
+          200%;"><span style="color: {land_color};">{land}</span><br /></span>{title}</div>
+          <ul> <li class="\&quot;infowindow\&quot;">等级: {level}</li> <li class="\&quot;infowindow\&quot;">经济:
+          {balance}</li> <li class="\&quot;infowindow\&quot;">区块: {chunks}</li>
+          <li class="\&quot;infowindow\&quot;">玩家 ({members_amount}): {members}</li>
+          </ul> <p><strong>这片土地隶属于国家 {nation}:</strong></p> <ul>
+          <li>等级: {level_nation}</li> <li>首都: {capital}</li> <li>土地 (总玩家: {members_amount_nation}): {lands}</li> </ul>'
+      capital:
+        spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span
+          style="color: {land_color};">首都出生点</span><br /></span>该出生点属于国家 {nation} 的首都.</div><div class="\&quot;infowindow\&quot;"><br
+          />对不受信任成员开放: {public}</div><ul><li>如果该出生点对不受信任者开放, 任何玩家都可通过命令 /lands spawn {land} 进行传送.</li></ul>'
+    squaremap:
+      land:
+        description: '<div class="\&quot;infowindow\&quot;"><span style="font-size:
+          200%;"><span style="color: {land_color};">{land}</span><br /></span>{title}</div>
+          <ul> <li class="\&quot;infowindow\&quot;">等级: {level}</li> <li class="\&quot;infowindow\&quot;">经济:
+          {balance}</li> <li class="\&quot;infowindow\&quot;">区块: {chunks}</li>
+          <li class="\&quot;infowindow\&quot;">玩家 ({members_amount}): {members}</li>
+          </ul>'
+        spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span
+          style="color: {land_color};">出生点</span></span></div> <div class="\&quot;infowindow\&quot;"><br
+          />对不受信任成员开放: {public}</div> <ul> <li>如果该出生点对不受信任者开放, 任何玩家都可通过命令 /lands spawn {land} 进行传送.</li> </ul>'
+      nation:
+        description: '<div class="\&quot;infowindow\&quot;"><span style="font-size:
+          200%;"><span style="color: {land_color};">{land}</span><br /></span>{title}</div>
+          <ul> <li class="\&quot;infowindow\&quot;">等级: {level}</li> <li class="\&quot;infowindow\&quot;">经济:
+          {balance}</li> <li class="\&quot;infowindow\&quot;">区块: {chunks}</li>
+          <li class="\&quot;infowindow\&quot;">玩家 ({members_amount}): {members}</li>
+          </ul> <p><strong>这片土地隶属于国家 {nation}:</strong></p> <ul>
+          <li>等级: {level_nation}</li> <li>首都: {capital}</li> <li>土地 (总玩家: {members_amount_nation}): {lands}</li> </ul>'
+      capital:
+        spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span
+          style="color: {land_color};">首都出生点</span><br /></span>该出生点属于国家 {nation} 的首都.</div><div class="\&quot;infowindow\&quot;"><br
+          />对不受信任成员开放: {public}</div><ul><li>如果该出生点对不受信任者开放, 任何玩家都可通过命令 /lands spawn {land} 进行传送.</li></ul>'
+    pl3xmap:
+      land:
+        description: '<div class="\&quot;infowindow\&quot;"><span style="font-size:
+          200%;"><span style="color: {land_color};">{land}</span><br /></span>{title}</div>
+          <ul> <li class="\&quot;infowindow\&quot;">等级: {level}</li> <li class="\&quot;infowindow\&quot;">经济:
+          {balance}</li> <li class="\&quot;infowindow\&quot;">区块: {chunks}</li>
+          <li class="\&quot;infowindow\&quot;">玩家 ({members_amount}): {members}</li>
+          </ul>'
+        spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span
+          style="color: {land_color};">出生点</span></span></div> <div class="\&quot;infowindow\&quot;"><br
+          />对不受信任成员开放: {public}</div> <ul> <li>如果该出生点对不受信任者开放, 任何玩家都可通过命令 /lands spawn {land} 进行传送.</li> </ul>'
+      nation:
+        description: '<div class="\&quot;infowindow\&quot;"><span style="font-size:
+          200%;"><span style="color: {land_color};">{land}</span><br /></span>{title}</div>
+          <ul> <li class="\&quot;infowindow\&quot;">等级: {level}</li> <li class="\&quot;infowindow\&quot;">经济:
+          {balance}</li> <li class="\&quot;infowindow\&quot;">区块: {chunks}</li>
+          <li class="\&quot;infowindow\&quot;">玩家 ({members_amount}): {members}</li>
+          </ul> <p><strong>这片土地隶属于国家 {nation}:</strong></p> <ul>
+          <li>等级: {level_nation}</li> <li>首都: {capital}</li> <li>土地 (总玩家: {members_amount_nation}): {lands}</li> </ul>'
+      capital:
+        spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span
+          style="color: {land_color};">首都出生点</span><br /></span>该出生点属于国家 {nation} 的首都.</div><div class="\&quot;infowindow\&quot;"><br
+          />对不受信任成员开放: {public}</div><ul><li>如果该出生点对不受信任者开放, 任何玩家都可通过命令 /lands spawn {land} 进行传送.</li></ul>'
+  map:
+    wilderness: '&2▉ '
+    yours: '&a▉ '
+    trusted: '&e▉ '
+    others: '&c▉ '
+    position: '&9▉ '
+    info:
+      wilderness: ' &2▉ &7= 郊区'
+      yours: ' &a▉ &7= 你的'
+      trusted: ' &e▉ &7= 受信任成员'
+      others: ' &c▉ &7= 其他'
+      position: ' &9▉ &7= 位置'
+    hover:
+      wilderness: '&7该区块处于郊区中. 点击占领.'
+      yours: '&7该土地为你所有. 点击显示土地&3 {land}&7 的信息.'
+      trusted: '&7你是该土地的受信任成员. 点击显示土地&3 {land}&7 的信息&7.'
+      others: '&7你不是该土地的受信任成员. 点击显示土地&3 {land}&7 的信息&7.'
+      position: '&7这是你的当前位置.'
+  inbox:
+    general:
+      created: '&7土地 {0} &7已创建.'
+    member:
+      join: '&7玩家 {0} 已加入.'
+      leave: '&7玩家 {0} 已离开.'
+      ban: '&c玩家 {0} 已被封禁.'
+      owner: '&7玩家 {0} 已成为了新的拥有者.'
+    economy:
+      upkeep:
+        warning: '&c不能支付维护费用: {0}'
+        unclaim: '&c不能支付 {0} 的维护费用. 最后占领的 {1} 格区块已重新进入荒野状态.'
+        paid: '&7已支付维护费用: {0}, 当前余额: {1}'
+        nation: '&c国家 {0} 支付 {1} 保养费用失败, 不能从首都的银行中支出, 现已被删除.'
+      bank:
+        withdraw: '&c玩家 {0} 取出了 {1}., 当前余额: {2}'
+        deposit: '&7玩家 {0} 存入了 {1}., 当前余额: {2}'
+      taxes:
+        warning: '&c玩家 {0} 无法支付税收.'
+        untrusted: '&c玩家 {0} 无法支付税收. 现已被取消信任.'
+        received: '&7收到了来自土地成员的 {0} 税收. 当前余额: {1}'
+    war:
+      shield: '&7收到了额外的战争保护时间 {0}&7. 共: {1}'
+      start: '&7与 {0} &7的战争已经开始. 结束时间:&5 {1}'
+      declaration:
+        sent: '&7对 {0}&7 宣战. 战争将在&5 {1}&7 内开始.'
+        received: '&c{0} &c向我们宣战. &7战争将在&5 {1} &7内开始.'
+        mutual:
+          sent: '&7已将战书发送给 {0}&7. 他们需要时间考虑.'
+          received: '&c{0} &c发来了一份战书. 通过命令接受: &e/wars declare {1}'
+          denied: '&7多个战书已被玩家 {0}&7 拒绝.'
+      surrender:
+        sent: '&c战争失败. 向敌方支付了 {0} 作为贡礼.'
+        received: '&7敌方 {0} &7已投降. 收到了 {1} 作为贡礼.'
+      end:
+        won: '&7我们在与敌人 {0} &7的战斗中胜出, 取得了&3 {1} &7点分数. &7而他们只有&3 {2} &7点分数. 战争耗费了 &5{3}&7.'
+        draw: '&7与 {0} &7的战争耗费了了&3 {1} &7点分数.'
+        lost: '&7我们在与敌人 {0} &7的战争中失败, 只获得了&3 {1} &7点分数.
+          &7而他们有&3 {2} &7点分数. 战争耗费了 &5{3}&7.'
+    nation:
+      general:
+        created: '&7国家 {0} &7已创建.'
+      member:
+        join: '&7土地 {0} 已加入.'
+        leave: '&7土地 {0} 已分裂.'
+      economy:
+        upkeep:
+          warning: '&c不能支付维护费用 {0}.'
+          paid: '&7已支付维护费用: - {0}'
+        taxes:
+          warning: '&c土地 {0} 不能支付税收.'
+          untrusted: '&c土地 {0} 不能支付税收. 他们已被驱逐.'
+          received: '&7收到了来自所有土地的 {0} 税收. 当前余额: {1}'
+    relation:
+      ally:
+        offer: '&7{0} &7想要成为我们的同盟.'
+        accepted: '&7我们现在与 {0}&7 是同盟.'
+        remove: '&7我们不再与 {0}&7 是同盟了.'
+      enemy:
+        add: '&7我们现在与 {0}&7敌对.'
+        offer: '&7{0} &7想要与我们保持中立关系.'
+        accepted: '&7我们不再与 {0}&7 为敌了.'
+  wars:
+    object:
+      enemy: '&c敌人'
+      ally: '&a盟友'
+    nametag:
+      enemy: '&c敌人 &8| '
+      ally: '&a盟友 &8| '
+    state:
+      preparation: '&a准备阶段'
+      fight: '&c战争开始'
+  command:
+    argument:
+      optional: '&8<&e{arg}&8>'
+      required: '&8[&e{arg}&8]'
+      type:
+        land: land
+        nation: nation
+        cmd: cmd
+        area: area
+        player: player
+        name: name
+        number: number
+        confirm: confirm
+        funds: funds
+        menu: menu
+        world: world
+        args: arguments
+        page: page
+        database: database
+        holder: land | nation
+        plugin: plugin
+        role: role
+        flag: flag
+        radius: radius
+        context: context
+        boolean: true | false
+        flag_or_all: flag | all
+        amount: amount
+        tribute: tribute
+        y-min: y-min
+        y-max: y-max
+        silent: silent
+        sorting: sorting
+        preparation_time: preparation time
+        category: category
+
+
+help:
+  help:
+    root:
+      header: '[NoPrefix][T]&7&l&m━━&e&l<<<<&7&l&m━[H]&7点击这里翻到上一页.[/H][C]{cmd} {previous}[/C][/T] &2土地命令 &7第&3 {page} &8/&3 {pages} &7页 [T]&7&l&m━&e&l>>>>&7&l&m━━[H]&7点击这里翻到下一页.[/H][C]{cmd} {next}[/C][/T]'
+      footer: |
+        [NoPrefix]
+        &7点击箭头翻页.
+        [T]&7&l&m━━&e&l<<<<&7&l&m━[H]&7点击这里翻到上一页.[/H][C]{cmd} {previous}[/C][/T] &2土地命令 &7第&3 {page} &8/&3 {pages} &7页 [T]&7&l&m━&e&l>>>>&7&l&m━━[H]&7点击这里翻到下一页.[/H][C]{cmd} {next}[/C][/T]
+    sub:
+      unknown: |
+        &c子命令&4 {command} &c不存在.
+          [T]&7✖ 浏览命令: &3/{cmd} &8[CLICK][H]&7点击这里浏览可用命令[/H][C]{cmd}[/C][/T]
+      header: '[NoPrefix][T]&7&l&m━━━━━&e&l<<<<&7&l&m━[H]&7点击这里翻到上一页.[/H][C]{cmd} {previous}[/C][/T] &2子命令 &7第&3 {page} &8/&3 {pages} &7页 [T]&7&l&m━&e&l>>>>&7&l&m━━━━━[H]&7点击这里翻到下一页.[/H][C]{cmd} {next}[/C][/T]'
+      footer: |
+        [NoPrefix]
+        &7点击箭头翻页.
+        [T]&7&l&m━━━━━&e&l<<<<&7&l&m━[H]&7点击这里翻到上一页.[/H][C]{cmd} {previous}[/C][/T] &2子命令 &7第&3 {page} &8/&3 {pages} &7页 [T]&7&l&m━&e&l>>>>&7&l&m━━━━━[H]&7点击这里翻到下一页.[/H][C]{cmd} {next}[/C][/T]
+  command:
+    lands:
+      help: '[T]&e{parent} {subcmd} {args} - &7获取帮助[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      edit: '[T]&e{parent} {subcmd} {args} &8- &7进入土地编辑模式[H]&7土地编辑模式用于诸如 /lands claim 的命令. &7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      confirmtp: '[T]&e{parent} {subcmd} &8- &7确认不安全的传送操作[H]&7点击执行..[/H][C]{fullcmd}[/C][/T]'
+      claim:
+        main: '[T]&e{parent} {subcmd} {args} &8- &7占领区块[H]&7可通过不同的方法占领该区块 &8(&e/selection&7, fill, auto, radius&8)&7. &7点击执行.[/H][SC]{fullcmd}[/SC][/T]'
+        auto: '[T]&e{parent} {subcmd} &8- &7移动时占领所经区块[H]&7这会占领在你移动时所经过的所有区块. 点击执行.[/H][C]{fullcmd}[/C][/T]'
+        fill: '[T]&e{parent} {subcmd} &8- &7占领形状内的所有区块[H]&7占领封闭图形内的所有区块. 点击执行.[/H][C]{fullcmd}[/C][/T]'
+        radius: '[T]&e{parent} {subcmd} {args} &8- &7半径占领[H]&7占领一定范围内的所有区块. 点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      
+      create: '[T]&e{parent} {subcmd} {args} &8- &7创建土地[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      createcamp: '[T]&e{parent} {subcmd} {args} &8- &7创建营地[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      merge: '[T]&e{parent} {subcmd} {args} &8- &7将土地合并至当前土地[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      leave: '[T]&e{parent} {subcmd} {args} &8- &7离开土地或区域.[H]&7若不指定土地名称, 默认离开当前所处的土地. &7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      unclaim:
+        main: '[T]&e{parent} {subcmd} &8- &7解除区块占领[H]&7也支持解除认领 &e/lands selection&7 选中的区块. &7点击执行.[/H][C]{fullcmd}[/C][/T]'
+        auto: '[T]&e{parent} {subcmd} &8- &7移动时解除所处区块的占领状态[H]&7这会解除你所经过的所有区块的占领状态. 点击执行.[/H][C]{fullcmd}[/C][/T]'
+        all: '[T]&e{parent} {subcmd} &8- &7解除所有区块的占领状态[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      delete: '[T]&e{parent} delete {args} &8- &7删除土地[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      trust: '[T]&e{parent} {subcmd} {args} &8- &7信任玩家[H]&7使用 * 表示区域名称, 让土地对该玩家信任. &7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      untrust: '[T]&e{parent} {subcmd} {args} &8- &7解除信任[H]&7使用 * 表示区域名称, 让土地对该玩家解除信任. &7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      setRole: '[T]&e{parent} {subcmd} {args} &8- &7设置职位[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      accept: '[T]&e{parent} {subcmd} {args} &8- &7接受邀请[H]&7你可以通过命令 /lands invites 查看所有可用的邀请. &7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      deny: '[T]&e{parent} {subcmd} {args} &8- &7拒绝邀请[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      view:
+        main: '[T]&e{parent} {subcmd} {args} &8- &7占领区域的信息[H]&7该命令会将附近区域一并可视化. &7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+        disable: '[T]&e{parent} {subcmd} &8- &7禁用可视化[H]&7关闭当前由命令 &e/lands view &7显示的可视化效果. 点击执行.[/H][C]{fullcmd}[/C][/T]'
+        here: '[T]&e{parent} {subcmd} &8- &7启用可视化[H]&7可视化你所处的子区域. &7点击执行.[/H][C]{fullcmd}[/C][/T]'
+        stay: '[T]&e{parent} {subcmd} &8- &7锁定 Y 轴位置[H]&7可视化边界不再随你的 Y 轴移动而移动. &7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      
+      menu: '[T]&e{parent} {subcmd} {args} &8- &7打开菜单[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      setSpawn: '[T]&e{parent} {subcmd} &8- &7设置土地出生点[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      spawn: '[T]&e{parent} {subcmd} {args} &8- &7传送至土地[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      wild: '[T]&e{parent} {subcmd} {args} &8- &7随机传送[H]&7点击执行..[/H][C]{fullcmd}[/C][/T]'
+      top: '[T]&e{parent} {subcmd} &8- &7显示土地排行[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      selection:
+        main: '[T]&e{parent} {subcmd} {args} &8- &7选择模式[H]&7在此命令的帮助下你可以调整子区域的大小, 或扩张你的选区至整个 Y 轴. &7点击执行.[/H][C]{fullcmd}[/C][/T]'
+        assign: '[T]&e{parent} {subcmd} {args} &8- &7重新调整区域[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+        expand: '[T]&e{parent} {subcmd} &8- &7扩张选区[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      chat: '[T]&e{parent} {subcmd} {args} &8- &7土地聊天[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      rename: '[T]&e{parent} {subcmd} {args} &8- &7重命名土地[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      teleport: '[T]&e{parent} {subcmd} {args} &8- &7传送至制定区块[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      invites: '[T]&e{parent} {subcmd} &8- &7显示收到的邀请[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      info: '[T]&e{parent} {subcmd} {args} &8- &7浏览岛屿相关信息[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      player: '[T]&e{parent} {subcmd} {args} &8- &7浏览玩家信息[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      map: '[T]&e{parent} {subcmd} &8- &7浏览地图[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      balance: '[T]&e{parent} {subcmd} {args} &8- &7检查余额[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      deposit: '[T]&e{parent} {subcmd} {args} &8- &7存款[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      withdraw: '[T]&e{parent} {subcmd} {args} &8- &7取款[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      list: '[T]&e{parent} {subcmd} {args} &8- &7列出所有土地[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      assign: '[T]&e{parent} {subcmd} {args} &8- &7将选区应用到该区域[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      setowner: '[T]&e{parent} {subcmd} {args} &8- &7转移归属权[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      ban: '[T]&e{parent} {subcmd} {args} &8- &7封禁玩家[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      unban: '[T]&e{parent} {subcmd} {args} &8- &7解封玩家[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      taxes: '[T]&e{parent} {subcmd} &8- &7显示下次税收价格[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      upkeep: '[T]&e{parent} {subcmd} &8- &7显示下次维护费用.[H]&7点击执行..[/H][C]{fullcmd}[/C][/T]'
+      unstuck: '[T]&e{parent} {subcmd} &8- &7传送逃脱[H]&7如果被困在土地中不能出去, 可以使用这个命令. &7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      claimlist: '[T]&e{parent} {subcmd} {args} &8- &7列出土地占领地区[H]&7该命令将会显示你通过命令 /lands claim 占有的所有区块. &7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      rent:
+        main: '[T]&e{parent} {subcmd} {args} &8- &7管理租赁[H]&7管理你当前位置的租赁. &7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+        cancel: '[T]&e{parent} {subcmd} &8- &7取消租赁[H]&7取消当前位置子区域的租赁. &7点击执行.[/H][C]{fullcmd}[/C][/T]'
+        info: '[T]&e{parent} {subcmd} &8- &7显示信息[H]&7显示当前所处子区域的租赁信息. &7点击执行.[/H][C]{fullcmd}[/C][/T]'
+        list: '[T]&e{parent} {subcmd} &8- &7查询租赁[H]&7查询所有土地的租赁. &7点击执行.[/H][C]{fullcmd}[/C][/T]'
+        remove:
+          main: '[T]&e{parent} {subcmd} {args} &8- &7管理当前租赁[H]&7管理当前所处区域的租赁状态. &7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+          offer: '[T]&e{parent} {subcmd} &8- &7解除租赁[H]&7玩家不再能续租. &7点击执行.[/H][C]{fullcmd}[/C][/T]'
+          tenant: '[T]&e{parent} {subcmd} &8- &7移除租户[H]&7向现有住户支付补偿金并将其移除. &7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      level: '[T]&e{parent} {subcmd} &8- &7显示等级进度[H]&7显示解锁下一级的进度及当前等级和下一级的权利.
+        &7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      relations:
+        main: '[T]&e{parent} {subcmd} {args} &8- &7管理关系[H]&7将土地或国家设置为盟友或敌人. 点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+        allies:
+          main: '[T]&e{parent} {subcmd} {args} &8- &7管理盟友[H]&7将周边的土地或国家设置为你的盟友. 点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+          add: '[T]&e{parent} {subcmd} {args} &8- &7添加盟友[H]&7将土地或国家设置为你的盟友. 点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+          remove: '[T]&e{parent} {subcmd} {args} &8- &7移除盟友[H]&7将土地或国家移除盟友. 点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+        enemies:
+          main: '[T]&e{parent} {subcmd} {args} &8- &7管理敌人[H]&7将周边的土地或国家设置为梦游. 点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+          add: '[T]&e{parent} {subcmd} {args} &8- &7添加敌人[H]&7将一个国家或土地设置为敌人. 点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+          remove: '[T]&e{parent} {subcmd} {args} &8- &7移除敌人[H]&7向敌人发出中立请求. 点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      
+      admin:
+        main: '[T]&e{parent} {subcmd} {args} &8- &7管理员命令[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+        listperms: '[T]&e{parent} {subcmd} {args} &8- &7列出玩家所拥有的权限[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+        debug: '[T]&e{parent} {subcmd} &8- &7显示已载入数据信息[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+        reload: '[T]&e{parent} {subcmd} &8- &7重载配置与消息文件[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+        about: '[T]&e{parent} {subcmd} &8- &7显示本插件的信息[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+        chatspy: '[T]&e{parent} {subcmd} {args} &8- &7监听聊天[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+        dismiss: '[T]&e{parent} {subcmd} {args} &8- &7忽略提醒[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+        import: '[T]&e{parent} {subcmd} {args} &8- &7从第三方插件导入土地[H]&7点击执行.[/H][SC]{fullcmd}[/SC][/T]'
+        menu: '[T]&e{parent} {subcmd} {args} &8- &7打开管理员菜单[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+        deleteinactive: '[T]&e{parent} {subcmd} &8- &7删除不活跃玩家/土地的数据[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+        migratedb: '[T]&e{parent} {subcmd} {args} &8- &7迁移数据库[H]&7点击执行.[/H][SC]{fullcmd}[/SC][/T]'
+        player:
+          main: '[T]&e{parent} {subcmd} {args} &8- &7特殊玩家管理[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+          menu: '[T]&e{parent} {subcmd} &8- &7打开玩家菜单[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+          delete: '[T]&e{parent} {subcmd} &8- &7删除玩家及其所拥有的岛屿[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+          give:
+            main: '[T]&e{parent} {subcmd} {args} &8- &7给予玩家[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+            camp: '[T]&e{parent} {subcmd} {args} &8- &7给予营地物品[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+            captureflag: '[T]&e{parent} {subcmd} {args} &8- &7给予旗帜[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+            claimblock: '[T]&e{parent} {subcmd} {args} &8- &7给予占据方块[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+            permission:
+              main: '[T]&e{parent} {subcmd} {args} &8- &7修改数字权限[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+              chunks: '[T]&e{parent} {subcmd} {args} &8- &7修改最大占领区块[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+              chunks-support: '[T]&e{parent} {subcmd} {args} &8- &7修改支持区块[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+              lands: '[T]&e{parent} {subcmd} {args} &8- &7修改最大成员土地[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+              members: '[T]&e{parent} {subcmd} {args} &8- &7修改最大成员[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+              ownlands: '[T]&e{parent} {subcmd} {args} &8- &7修改最大拥有土地[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+        
+        resetworld: '[T]&e{parent} {subcmd} {args} &8- &7删除世界中的所有占地[H]&7点击执行.[/H][SC]{fullcmd}[/SC][/T]'
+        hologram:
+          main: '[T]&e{parent} {subcmd} {args} &8- &7管理排行榜悬浮字[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+          create: '[T]&e{parent} {subcmd} {args} &8- &7创建悬浮字[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+          delete: '[T]&e{parent} {subcmd} &8- &7删除附近悬浮字[H]&7点击复制.[/H][C]{fullcmd}[/C][/T]'
+          list: '[T]&e{parent} {subcmd} &8- &7列出悬浮字[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+        land:
+          main: '[T]&e{parent} {subcmd} {args} &8- &7特殊土地管理[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+          setflag: '[T]&e{parent} {subcmd} {args} &8- &7设置标志状态[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+          resetflag: '[T]&e{parent} {subcmd} {args} &8- &7将标志重置为 roles.yml 中的默认设置[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+          addrole: '[T]&e{parent} {subcmd} {args} &8- &7从 roles.yml 中加入新职位[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+          menu: '[T]&e{parent} {subcmd} &8- &7打开土地菜单[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+          syncpermissions: '[T]&e{parent} {subcmd} &8- &7同步权限限制[H]&7点击复制.[/H][C]{fullcmd}[/C][/T]'
+          bank:
+            main: '[T]&e{parent} {subcmd} &8- &7编辑银行存款[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+            modify: '[T]&e{parent} {subcmd} {args} &8- &7存入或取出钱款[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+            set: '[T]&e{parent} {subcmd} {args} &8- &7设置存款[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+          shield:
+            main: '[T]&e{parent} {subcmd} &8- &7编辑保护时间[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+            modify: '[T]&e{parent} {subcmd} {args} &8- &7添加或减少时间[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+            set: '[T]&e{parent} {subcmd} {args} &8- &7设置时间[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+    
+    wars:
+      declare: '[T]&e{parent} {subcmd} {args} - &7宣战[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      info:
+        main: '[T]&e{parent} {subcmd} {args} &8- &7战争信息[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+        captureflag: '[T]&e{parent} {subcmd} &8- &7浏览旗帜配方[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      menu: '[T]&e{parent} {subcmd} {args} &8- &7打开战争菜单[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      deny: '[T]&e{parent} {subcmd} &8- &7拒绝宣战邀请[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      spawn: '[T]&e{parent} {subcmd} &8- &7传送至敌方位置[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      
+      admin:
+        main: '[T]&e{parent} {subcmd} {args} &8- &7特殊战争管理[H]&7点击执行.[/H][SC]{fullcmd}[/SC][/T]'
+        start: '[T]&e{parent} {subcmd} {args} &8- &7开始战争[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+        end: '[T]&e{parent} {subcmd} {args} &8- &7结束战争[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+    
+    nations:
+      chat: '[T]&e{parent} {subcmd} {args} &8- &7国家聊天[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      trust: '[T]&e{parent} {subcmd} {args} &8- &7邀请土地[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      untrust: '[T]&e{parent} {subcmd} {args} &8- &7移除土地[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      accept: '[T]&e{parent} {subcmd} {args} &8- &7接受邀请[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      deny: '[T]&e{parent} {subcmd} {args} &8- &7拒绝邀请[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      menu: '[T]&e{parent} {subcmd} {args} &8- &7打开菜单[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      create: '[T]&e{parent} {subcmd} {args} &8- &7创建国家[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      delete: '[T]&e{parent} {subcmd} &8- &7移除国家[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      leave: '[T]&e{parent} {subcmd} &8- &7离开国家[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      spawn: '[T]&e{parent} {subcmd} &8- &7首都出生点[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      rename: '[T]&e{parent} {subcmd} &8- &7重命名国家[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      setcapital: '[T]&e{parent} {subcmd} {args} &8- &7设置首都[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      level: '[T]&e{parent} {subcmd} &8- &7浏览等级进度[H]&7浏览下一级升级进度与当前等级和下一等级所拥有的权利.
+        &7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      info: '[T]&e{parent} {subcmd} {args} &8- &7浏览国家信息[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      list: '[T]&e{parent} {subcmd} {args} &8- &7列出所有国家[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      top: '[T]&e{parent} {subcmd} &8- &7显示国家排行榜[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      relations:
+        main: '[T]&e{parent} {subcmd} {args} &8- &7管理关系[H]&7将附近的土地或国家设置为盟友或敌人. 点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+        allies:
+          main: '[T]&e{parent} {subcmd} {args} &8- &7管理盟友[H]&7调整与附近土地和国家的盟友关系. 点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+          add: '[T]&e{parent} {subcmd} {args} &8- &7添加盟友[H]&7将附近的土地或国家设置为盟友. 点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+          remove: '[T]&e{parent} {subcmd} {args} &8- &7移除盟友[H]&7解除与土地或国家的盟约. 点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+        enemies:
+          main: '[T]&e{parent} {subcmd} {args} &8- &7管理敌人[H]&7调整与附近土地和国家的敌对关系. 点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+          add: '[T]&e{parent} {subcmd} {args} &8- &7添加敌人[H]&7将附近的土地或国家设置为敌人. 点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+          remove: '[T]&e{parent} {subcmd} {args} &8- &7移除敌人[H]&7向土地或国家发送中立请求. 点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+
+lands:
+  message:
+    feature-disabled: '&c该功能已被管理员禁用. &8他们需要在配置文本中启用 ''{setting}'' 设置, 才可让你使用该功能.'
+    war: '&c你现在还不能这么做. &7{object} &7正在进行与 {enemy}&7 的战争. &7请在战争结束后重试.'
+    combat:
+      tag: '#b#[config]color:purple,style:solid[/config]&7战斗标签:&5 {time}'
+    flags:
+      block_place: '&c你不能在这里放置方块 (&c区域:&4 {area} &c土地:&4
+        {land}&c). &8标志: {flag}'
+      block_break: '&c你不能在这里破坏方块 (&c区域:&4 {area} &c土地:&4
+        {land}&c). &8标志: {flag}'
+      block_ignite: '&c你不能在这里点火 (&c区域:&4 {area}
+        &c土地:&4 {land}&c). &8标志: {flag}'
+      interact_general: '&c你不能在这里交互 (&c区域:&4 {area}
+        &c土地:&4 {land}&c). &8标志: {flag}'
+      interact_door: '&c你不能在这里开门 (&c区域:&4 {area} &c土地:&4
+        {land}&c). &8标志: {flag}'
+      interact_mechanism: '&c你不能在这里与机制交互 (&c区域:&4
+        {area} &c土地:&4 {land}&c). &8标志: {flag}'
+      interact_container: '&c你不能在这里打开容器 (&c区域:&4
+        {area} &c土地:&4 {land}&c). &8标志: {flag}'
+      interact_villager: '&c你不能在这里与村民进行交易 (&c区域:&4
+        {area} &c土地:&4 {land}&c). &8标志: {flag}'
+      fly: '&c你不能在这里飞行 (&c区域:&4 {area} &c土地:&4 {land}&c).
+        &8标志: {flag}'
+      spawn_teleport: '&c你不能传送至土地&4 {land}&c 的出生点.
+        &7他们可以通过对应的职位设置你的权限来让你能够传送至这个地方. &8标志: {flag}'
+      land_enter: '&c你不能传送至土地 &4{land} &c的&4 {area} &c区域
+        (&c区域:&4 {area} &c土地:&4 {land}&c). &7你已被传送回之前的位置. &8标志: {flag}'
+      vehicle_use: '&c你不能在这里使用载具 (&c区域:&4 {area} &c土地:&4
+        {land}&c). &8标志: {flag}'
+      item_pickup: '&c你不能在这里丢弃或捡起物品 (&c区域:&4
+        {area} &c土地:&4 {land}&c). &8标志: {flag}'
+      ender_pearl: '&c你不能使用该物品传送至区域内部&6
+        {area} &cof land&4 {land}&c. &8标志: {flag}'
+      attack_animal: '&c你不能在这里伤害动物 (&c区域:&4 {area}
+        &c土地:&4 {land}&c). &8标志: {flag}'
+      attack_monster: '&c你不能在这里伤害怪物 (&c区域:&4 {area}
+        &c土地:&4 {land}&c). &7但是它们也不能攻击你. &8标志: {flag}'
+    rented:
+      edit: '&c你不能在区域&4 {area}&c 被出租或出售时这么做.
+        &7移除租户: &e/{cmd}'
+      tenant: '&c你不能编辑区域&4 {area}&c 的租户&4 {player}&c. &7移除租户: &e/{cmd}'
+    noaccess:
+      wilderness: '&c你不能在郊区这么做. &8标志: {flag}'
+      area: '&c你不能在区域内这么做 (&c区域:&4 {area} &c土地:&4
+        {land}&c). &8标志: {flag}'
+      banned: '&c你不能进入该区域. &7你已被该区域封禁 &8(&7区域:&6 {area} &7土地:&2 {land}&8)&7.'
+      claimblock: '&c你不是该占领方块的拥有者. &7它属于玩家&3 {player}&7.'
+      
+      combat:
+        attacker: '&c你不能在这里攻击玩家. &7该区域属于土地&2 {land}&7.'
+        target: '&c你的目标不能在这里攻击玩家. &7你不能在这里和他们战斗. &7该区域属于土地&2 {land}&7.'
+        ally: '&c你不能在郊区攻击该玩家, 因为他是你的土地成员. &7可以在你的土地中设置竞技场并为其设置相应角色的PVP权限.'
+        wilderness: '&c你不能攻击该玩家, 因为他处于郊区中而你在土地中.'
+    area:
+      exists: '&c名为&4 {area} &c的区域已存在与土地&4 {land}&c.'
+      not-exist: '&c区域&4 {area} &c不存在于土地&4 {land}&c.'
+      default: '&c你不能在土地 &4 {land}&c 的默认区域&4 {area} &c中这么干.'
+    introduction:
+      container-placement: |
+        &c你在郊区中放置了一个容器. &7其他玩家可以打开并取走里面的东西.
+          [T]&7✖ 若要保护它: &e/{cmd} &8[CLICK][H]&7占领这片土地来保护它.[/H][C]{fullcmd}[/C][/T]
+    event:
+      fly:
+        counter: '#t#&6飞行模式[newline]&7将在 &3{sec} &7秒内禁用'
+        disabled: '&c你的飞行模式已被关闭. &7你不能在这里飞行.'
+      elytra:
+        counter: '#t#&6鞘翅[newline]&7将在 &3{sec} &7秒内禁用'
+        disabled: '&c你的鞘翅已被禁用. &7你不能在这里使用鞘翅.'
+      enter:
+        land: '#t#[config]in:5,stay:40,out:2[/config]&2&l{land}[newline]&3{title}'
+        camp: '#t#[config]in:5,stay:40,out:2[/config]&2&l{land}[newline]&3{title}'
+        admin: '#t#[config]in:5,stay:40,out:2[/config]&2&l{land}[newline]{title}'
+        pvp-warning: '#a#&c你已进入 PVP 区域.'
+      leave:
+        land: '#t#[config]in:5,stay:30,out:2[/config]&2&l郊区[newline]&7感受荒野'
+        camp: '#t#[config]in:5,stay:30,out:2[/config]&2&l郊区[newline]&7感受荒野'
+        admin: '#t#[config]in:5,stay:30,out:2[/config]&2&l郊区[newline]&7感受荒野'
+      level:
+        up: '#t#&6{object}[newline]&7升级: {level}'
+        down: '#t#&6{object}[newline]&7降级: {level}'
+      inbox: '&e信息 &8- {object}&8: {message}'
+    teleportation:
+      already: '&c你不能进行第二次传送操作. 已有传送操作待处理. &7请耐心等待.'
+      started: '&7传送已开始. 将会在&5 {sec} 秒&7内传送. 请勿移动.'
+      cmd: '&c传送时不能使用任何命令. &7请再等待&5
+        {sec} 秒 &7直至传送过程结束.'
+      combat: '&c进入战斗模式时不能进行传送. &7请在你没有攻击其他玩家的情况下再等待&5 {time} &7.'
+      progress: '#b#[config]color:purple,style:solid[/config]&7等待&5 {time} &后进行传送.'
+      cancelled: '&c待处理的传送请求已取消. &7请不要在传送过程中的&5 {sec} &7秒内移动.'
+      chunk: '#t#&6已传送[newline]&7X: {x} Z: {z} 花费:&c {cost}'
+      plugin: '&c传送请求被第三方插件阻止. &7请检查其他的插件是否对传送进行了拦截. &7此问题与本插件无关.'
+      unsafe: |
+        &7待处理的传送请求已取消, 因为目的地不安全.
+          [T]&2✔ 强制传送: &e/{cmd} &8[CLICK][H]&7警告: 传送目的地不安全, 有可能致命.[/H][C]{cmd}[/C][/T]
+      corrected: '&7原传送目的地不安全. &7你的目的地已被更改至安全区域.'
+    claimblock:
+      dropped: '&c部分占领方块已掉落在地. &7你的背包没有足够的空间了.'
+      success: '&你获得了&3 {blocks} &7个占领方块. &7请将它们放在区块中以占领区块.'
+    capture:
+      dropped: '&c部分旗帜已掉落在地. &7你的背包没有足够的空间了.'
+      success: '&7你获得了&3 {blocks} &7个旗帜. &7将它们放置在敌方土地以开始夺旗战.'
+    camp:
+      dropped: '&c部分营地方块已掉落在地. &7你的背包没有足够的空间了.'
+      success: '&7你获得了&3 {blocks} &7个营地方块. &7将它们放置可在区域内创建营地.'
+    blacklist:
+      untrusted: '&c你不能在这里使用这个命令. &7你不在土地 &2 {land}&7 的区域&6 {area} &7受信任. &8绕过权限: {permission}'
+      general: '&c你不能在占领土地内使用这个命令. &8绕过权限: {permission}'
+      war: '&c你不能在参战时使用这个命令. &8绕过权限: {permission}'
+    auto-action:
+      started:
+        claim: '#t#&6自动占领[newline]&7保持走动以占领所经过的区块'
+        unclaim: '#t#&6自动解除占领[newline]&7保持走动以解除所经区块的占领状态'
+      stopped:
+        claim: '#t#&6自动占领[newline]&c已关闭'
+        unclaim: '#t#&6自动解除占领[newline]&c已关闭'
+    role:
+      exists: '&c同名职位&4 {role} &c已存在. &7请尝试使用其他名称.'
+      not-exist: '&c职位&4 {role} &c不存在于土地 &4 {land}&c 的区域 &4{area} &c. &7名称是否正确?'
+      max: '&c你不能再为这个土地创建更多的职位了. &7你最多只能创建&3 {max} &7个角色. 权限: lands.roles.<number>'
+      player:
+        land: '&c你不能编辑处于土地&4 {land}&c 中的这位玩家. &7该职位&6 {role} &7等级等于或高于你的职位.'
+        area: '&c你不能编辑该区域中的玩家 (&c区域:&4 {area} &c土地:&4
+          {land}&c). &7该职位&6 {role} &7等级等于或高于你的职位.'
+      weight:
+        land: '&c你不能编辑土地 &4 {land}&c 的职位&4 {role} &c. &7该职位等级等于或高于你的职位.'
+        area: '&c你不能编辑区域 (&c区域:&4 {area} &c土地:&4 {land}&c) 中的职位&4 {role} &c. &7该职位等级等于或高于你的职位.'
+      delete:
+        role: '&c你不能删除职位&4 {role}&c. &7该职位为必要职位.'
+        entry: '&c你不能删除初始职位&4 {role}&c. &7该职位为新玩家准备.'
+        visitor: '&c你不能删除不受信任职位&4 {role}&c. &7该职位为不受信任的玩家准备.'
+    
+    chat-input:
+      player: '#t#&6在聊天栏输入[newline]&7玩家的名称[newline]&7输入 "cancel" 取消操作.'
+      object: '#t#&6在聊天栏输入[newline]&7土地或国家的名称[newline]&7输入 "cancel" 取消操作.'
+      land: '#t#&6在聊天栏输入[newline]&7目标土地的名称[newline]&7输入 "cancel" 取消操作.'
+      title: '#t#&6在聊天栏输入[newline]&7该土地的新名称[newline]&7输入 "cancel" 取消操作.'
+      rename: '#t#&6在聊天栏输入[newline]&7新的名称[newline]&7不允许输入空格. 输入 "cancel" 取消操作.'
+      name: '#t#&6Enter the Name[newline]&7in chat[newline]&7输入 "cancel" 取消操作.'
+  command:
+    menu:
+      invalid: '&c没有名为&4 {shortcut}&c 的快捷方式.'
+    rent:
+      own: '&c你不能租借/购买自己出租的土地. &7若要移除出租, 请破坏告示牌或对着悬浮字 Shift+点击.'
+      edit: '&c你现在不能编辑土地 &4 {land}&7 的区域&4 {area} &c, 因为该区域已被租借/出售给了玩家r&3 {player}&7.'
+      tenant: '&c你还没有租借当前位置上的区域. &7土地 &2 {land} &7的区域&6 {area} &7不是你租借的.'
+      none: '&c你当前所处的土地&4 {land} &c的区域&4 {area} &c尚未租借或出售给任何人.'
+      status: '&c你当前所处的土地&4 {land} &c的区域&4 {area} &c并未开放租借或出售.'
+      sign: |
+        &7你需要按格式为告示牌写上文字 (第二行)
+         &8第一行:&7 Lands
+         &8第二行:&3 rent &7或 &3sell &8[&7区域名称&8]
+      set:
+        land: '&c你不能将整块土地&4 {land} &c用于出租. &7你可以将它们的子区域租借或将其整块出售 (第二行: sell).'
+        already: '&c你现在不能再为这块土地设置出租. &7区域&6 {area} &7现在已被玩家&3 {player}&7租界. 它将会在&5 {time}&7 后到期.'
+        sold: '&c你不能将已出售的区域用于出租. &7区域&6 {area} &7已经被玩家&3 {player}&7 购买.'
+        success: |
+          &7你成功将区域&6 {area} &7设置为出租. 租下这块地的玩家每&5 {time} &7需要向你支付&c {cost} &7.
+            [T]&8✖ &7取消出租: &e/{cmd} &8[CLICK][H]&7点击这里取消该区域的出租.[/H][C]{cmd}[/C][/T]
+        invalid: |
+          &7你填写的格式不正确(第 {line} 行)
+           &8第一行:&7 Lands
+           &8第二行:&7 rent &8[&7区域名称&8]
+           &8第三行:&7 TIME 最长租借时间 (非必须)
+           &8第四行:&7 价格 (示例: 5 = 5)
+        info: |
+          [NoPrefix]
+          &7&m━━━━━━━━━<━&r &5&l区域租借a &7&m━>━━━━━━━━━
+          [T]&8• &7土地:&a {land} &8[&8点击&8][H]&7点击这里显示区域边界.[/H][C]在此浏览土地[/C][/T]
+           &8• &7区域:&6 {area}
+           &8• &7价格:&c {cost} &7each {time}
+           &8• &8Max time: {max}
+          &7&m━━━━━━━━━<━&r &5&l区域租借 &7&m━>━━━━━━━━━
+      rent:
+        expire: '&c你不能再租住区域&4 {area}&c 了. &7土地&2 {land} &7已取消该区域的出租状态. 它将会在 &5{time} &7后到期.'
+        max: '&c你不能再延长区域&4 {area}&c 的租期了. &7土地&2 {land} &7设置了最长&5 {max} &7的租期.'
+        add: '&7你花费了 &c{cost}&7 为你租住的区域 &6{area} &7延长了&5 {add} &7的租期. 它将会在 &5{time} &7后到期.'
+        success: |
+          &7你以 &c{cost} &7的价格出租了土地&2 {land} &7的区域&6 {area} &7. 它将会在 &5{time} &7后到期.
+            &8✖ &7延长租期: 点击告示牌或悬浮字
+            [T]&8✖ &7取消租借: &e/{cmd} &8[CLICK][H]&7点击这里取消你的租借.[/H][C]{cmd}[/C][/T]
+        info: |
+          [NoPrefix]
+          &7&m━━━━━━━━━<━&r &5&l出租信息 &7&m━>━━━━━━━━━
+          [T]&8• &7土地:&a {land} &8[&8点击&8][H]&7点击这里显示区域边界.[/H][C]在此浏览土地[/C][/T]
+           &8• &7区域:&6 {area}
+           &8• &7租客: {player}
+           &8• &7剩余时间:&5 {left}
+           &8• &8租金: 每 {time} {cost} 
+          &7&m━━━━━━━━━<━&r &5&l出租信息 &7&m━>━━━━━━━━━
+      cancel:
+        success: '&7你取消了区域&6 {area}&7 的租借. 你不再能进入这片区域了.'
+      remove:
+        offer:
+          success:
+            land: '&7土地&2 {land} &7不再能被购买.'
+            area: '&7土地&2 {land} &7的区域&6 {area} &7不再能被购买或租借. 已租借的玩家可以持续使用区域直到租期结束.'
+        tenant:
+          confirm: |
+            &c你是否要支付&4 {cost} &c作为给玩家&4 {player} &c的迁出补偿:
+              [T]&2✔ 确认: &e/{cmd} &8[CLICK][H]&7点击这里确认此操作并支付.[/H][C]{cmd}[/C][/T]
+          success: '&7你成功将玩家&3 {player} &7迁出土地&2 {land} &7的区域&6 {area} &7并给予了&c {cost} &7的补偿.'
+          target: '&c你已被迁出土地&4 {land}&c的区域&4 {area}&7, 土地拥有者向你支付了&c {compensation} &7作为补偿.'
+    sell:
+      sell:
+        rented: '&c你不能出售被玩家租住的区域. &7区域&6 {area} &7已被玩家&3 {player}&7 租借. 它将会在&5 {time}&7 之后到期.'
+        success:
+          area: |
+            &7你将区域&6 {area} &7设置为出售状态. 花费:&c {cost}
+             &8✖ &7删除出售: &e/lands rent removeoffer
+          land: |
+            &7你将土地&2 {land} &7设置为出售状态. 花费:&c {cost}
+             &8✖ &7删除出售: &e/lands rent removeoffer
+        invalid: |
+          &7告示牌格式无效 (第 {line} 行)
+           &8第一行:&7 Lands
+           &8第二行:&7 sell &8[&7区域名称&8]
+           &8第三行:&7 价格 (示例: 5 = 5)
+      buy:
+        owner-cooldown: '&c土地拥有权每&4 {cooldown}&c 可更换. &7你必须再等待&5 {time} &7直到土地&2 {land} &7能被购买.'
+        success:
+          area: '&7你购买了土地&2 {land} &7的区域&6 {area}&7,花费了&c {cost}&7.'
+          land: '&7你花费了&c {cost} &7购买了土地&2 {land} &7.'
+        info:
+          area: |
+            [NoPrefix]
+            &7&m━━━━━━━━━<━&r &5&l区域购买 &7&m━>━━━━━━━━━
+            [T]&7土地:&a {land} &8[&8点击&8][H]&7点击这里显示区域边界.[/H][C]lands view here[/C][/T]
+             &7区域:&6 {area}
+             &7价格:&c {cost}
+            &7&m━━━━━━━━━<━&r &5&l区域购买 &7&m━>━━━━━━━━━
+          land: |
+            [NoPrefix]
+            &7&m━━━━━━━━━<━&r &5&l土地购买 &7&m━>━━━━━━━━━
+            [T]&7土地:&a {land} &8[&8点击&8][H]&7C点击这里显示土地边界.[/H][C]lands view[/C][/T]
+            &7价格:&c {cost}
+            &7&m━━━━━━━━━<━&r &5&l土地购买 &7&m━>━━━━━━━━━
+      sold: |
+        [NoPrefix]
+        &7---------<- &5&lArea Sold &7->---------
+        [T]&7土地:&a {land} &8[&8点击&8][H]&7点击这里显示区域边界.[/H][C]在此浏览土地[/C][/T]
+         &7区域:&6 {area}
+         &7以&c {cost} &7的价格卖给了玩家&3 {player} &7.
+        &7---------<- &5&lArea Sold &7->---------
+    general:
+      no-permission: '&c你没有权限这么做. &8你需要权限 {permission}.'
+      not-exist: '&c没有名为&4 {object} &c的国家或土地. &7是否正确输入?'
+      land-not-exist: '&c土地&2 {land} &c不存在. &7没有这片土地.'
+      area-not-exist: '&c区域&4 {area} &c不存在于土地&4 {land}&c. &7你可以在你的土地菜单中的区域部分创建一个这样的新区域. &7是否正确输入?'
+      noaccess:
+        untrusted: '&c你尚未在土地&4 {land} &c中受信任. &7使用命令 &e/lands menu &7列出你所属的土地.'
+        land: '&c你不能在土地&4 {land}&c上这么做. &8标志:
+          {flag}'
+        owner: '&c你不能在土地&4 {land}&c上这么做. &7只有土地的拥有者才可以这么做. &7请选择你自己的土地 &8(/&elands edit &8<&e土地&8>) &7或者创建一个 &8(/&elands create &8<&e土地名称&8>)&7.'
+        area: '&c你不能在土地 &4 {land} &c的区域&4 {area} &c.'
+        position:
+          flag: '&c你不能在土地&4 {land} &c的当前位置这么做. &8标志: {flag}'
+          untrusted: '&c你不能在土地&4 {land} &c的当前位置这么做. &7你没有被该土地列为受信任对象.'
+      no-edit-land: '&7你尚未选中要编辑的土地. &7使用命令 &e/lands edit &8<&e土地&8> &7来选中土地.'
+      name-exists: '&c名称&4 {name} &c已被其他国家或土地占用. &7请输入一个其他的名称.'
+      swear-word: '&c检测到违规词. &7请更改名称后重试. 违规词:&c
+        {word}'
+      action-cooldown: '&c你现在还不能这么做. &7你需要再等待&5 {time} &7秒.'
+      wilderness: '&c当前位置没有占领的土地. &7若要执行该操作, 请先前往你的土地. &7你可以使用命令 &e/view &7来显示你周围的土地.'
+      player-self: '&c你不能自己那么做.'
+      banks-disabled: '&7银行功能已被管理员禁用. &8可在配置文本重新启用.'
+      land-not-trusted: '&c玩家&4 {player} &7不是土地&4 {land}&c 的一部分. 你需要先使用命令 &e/lands trust&7 对他进行信任操作.'
+      area-not-trusted: '&c你不能在这里干这个. &7你没有在土地&2 {land}&7 的区域 &6{area} &7受信任.'
+      number: '&c你输入的&4 {input} &c不是数字. &7参数&3 {argument} &7要求的是一个数字.'
+      none: |
+        &c你不是任何土地的成员.
+          [T]&8✖ &7创建自己的土地: &e/{cmd} &8[CLICK][H]&7点击复制.[/H][SC]{cmd}[/SC][/T]
+             &7任何土地都可以使用命令邀请你: &e/lands trust
+      name:
+        number: '&c你不能在名称上使用数字. &7请只输入字符. 发现数字:&3 {invalid}'
+        character: '&c你不能在名称中使用非法字符. &7请只输入英文字母与数字. &7发现无效字符:&3 {invalid}'
+        color: '&c你不能在名称中使用彩色字符. &7请移除名称中的任何彩色字符.'
+        length: '&c名称太长了. &7最大长度为&3 {max} &7个字符 &8(&7你输入的长度: {input}&8)&7. &8包括彩色字符. &7请考虑使用一个更短的名称.'
+        empty: '&c该名称无效. &7你需要至少输入一个不为彩色字符的数字.'
+      money:
+        fallback: '&7注意:&c {cost} &7已从你的个人账户中支出, 因为&2 {land} &7土地的银行没有足够的钱支付费用. 存入: &e/{cmd}[T]&8[CLICK][H]&7点击这里将钱存入土地 {land} 的银行.[/H][SC]{cmd}[/SC][/T]'
+        failure:
+          bank: '&c你没有足够的钱支付这笔费用. &7你仍需要 &c{cost}&7.
+            向土地银行存钱: [T]&e/{cmd} &8[CLICK][H]&7点击这里将 {cost} 存入你的土地银行.[/H][C]{cmd}[/C][/T]'
+          personal: '&c你没有足够的钱支付这笔费用. &7你仍需要 &c{cost}&7. 你的余额: {balance}'
+      input:
+        confirm: |
+          &7请通过下方按钮确认此操作 &8(&e/{input}&8) &7:
+            [T]&2✔ 确认: &e/{fullcmd} &8[CLICK][H]&7点击这里确认此操作.[/H][C]{fullcmd}[/C][/T]
+        land: '&c土地&4 {input} &c不存在. &7没有这个名字的土地.'
+        nation: '&c国家&4 {input} &c不存在. &7没有这个名字的国家.'
+        holder: '&c没有名为&4 {input} &c的土地或国家. &7是否正确输入?'
+        number: '&c你输入的&4 {input} &c不是数字. &7参数 {pos}: {expected}'
+        category: '&c你输入的&4 {input} &c不是分类名称. &7参数 {pos}: {expected}'
+        funds: '&c你输入的 &4{input} &c不是任何货币名称. &7参数 {pos}:
+          {expected}'
+        player: '&c没有名为&4 {input} &c的玩家. &7是否正确输入?'
+        offline: '&c没有名为&4 {input} &c的玩家在线. &7是否正确输入?'
+        world: '&c世界&4 {input} &c不存在. &7参数 {pos}: {expected}'
+        world-disabled: '&c该功能已在此世界被禁用. &8世界: {input}'
+        time: '&c你输入的 &4{input} &c不是有效的时间. &7参数 {pos}: {expected}. 正确示例: 1h'
+    create:
+      land-other: '&c你不能拥有自己的土地或成为其他土地的成员. &7你需要先离开土地&2 {land} &7.'
+      max:
+        land: '&c你不能再创建更多土地了. &7你最多只能拥有&3 {max} &7块土地.'
+        camp: '&c你不能再创建更多营地了. &7你最多只能拥有&3 {max} &7块土地.'
+      success:
+        land: |
+          &7成功创建了土地&2 {land} &7并花费了&c {cost}&7.
+          设置土地 {land} &7为你的编辑土地以进行下一步操作.
+            [T]&7✖ 修改编辑土地: &3/{cmd_edit} &8[CLICK][SC]{cmd_edit}[/SC][H]&7土地 {land} 已被设置为你的编辑土地, 你可以编辑诸如信任玩家等的内容. 若要修改请执行此命令. 点击复制.[/H][/T]
+            [T]&7✖ 占领区块: &3/{cmd_claim} &8[CLICK][C]{cmd_claim}[/C][H]&7点击这里占领你所处的区块.[/H][/T]
+            [T]&7✖ 领地选择: &3/{cmd_selection} &8[CLICK][C]{cmd_selection}[/C][H]&7点击这里占领选择的所有区块.[/H][/T]
+            [T]&7✖ 信任玩家: &3/{cmd_trust} &8[CLICK][SC]{cmd_trust}[/SC][H]&7点击复制.[/H][/T]
+        camp: '&7你在当前位置创建了营地&2 {land} &7. &7你为此支付了&c {cost}&7. 营地不能被扩张, 且会在&5 {time} &7后到期.'
+      broadcast: '&7土地&2 {land} &7是被玩家&3 {player} &7创建的.'
+    rename:
+      success: '&7成功设置了土地&2 {land}&7 的新名称&3 {name} &7. 为此你支付了&c {cost}&7.'
+    edit:
+      success: '&7你进入了对土地&2 {land} &7的编辑模式. 下次操作, 例如&e/lands claim &7或 &e/lands trust&7, 都会以此土地为基础进行操作.'
+    selection:
+      max: '&c你选择的区域包含过多的区块. &7大小:&3 {current} &7,而你最大只能选择&3 {max} &7个区块.'
+      too-far: '&c你所看向的方块太远了. &7请离它更近一些.'
+      world: '&c两个位置必须处于同一世界中. &7请在同一世界中选择两个点.'
+      pos:
+        warn: '&c警告: &7该区块属于其他的区块管理插件. 名称:&3
+          {plugin}'
+        cancelled: '&c你不能在这里设置选区. &7该区块属于其他的区块管理插件. 名称:&3 {plugin}'
+      area:
+        conflicts: '&c找到了&4 {conflicts} &c个与已分配至区域的区块的冲突. &7请使用命令 &e/lands selection assign {area} confirm &7来确认覆盖操作. 冲突来自于区域: {areas}'
+      expand:
+        y: '&7成功扩大了选区的最低点&3 {y-min} &7格, 和最高点&3 {y-max} &7格.'
+        enabled: '&7从下至上提升选区的高度 (占地的最小与最大高度).'
+        disabled: '&7你的选区不再是从下至上扩张的了.'
+      status:
+        complete: '#t#&6选择已完成[newline]&7占领: &e&l/claim &7未占领:
+          &e&l/unclaim[newline]&6&l将选区分配给区域: &e&l/assign'
+        progress: '#t#&6选择[newline]&7左键: {first} &7右键: {second}[newline]&6&l设置角落: &6左键/右键 点击或键盘 Q 键 &7&l撤销: &7切换快捷栏'
+        reminder: |
+          &7选择完毕: 可以执行下列操作:
+            [T]&7✖ 占领: &e/claim &8[&8点击&8][H]&7点击这里占领该选区内覆盖的区块.[/H][C]lands claim[/C][/T]
+            [T]&7✖ 解除占领: &e/unclaim &8[&8点击&8][H]&7点击这里取消该选区内的区块占领状态.[/H][C]lands unclaim[/C][/T]
+            [T]&7✖ 设置子区域: &e/assign &8[&8点击&8][H]&7将该选区设置为子区域.[/H][SC]lands assign <区域>[/SC][/T]
+        not-complete: '&c你创建的选区不完整. &7请确保你已经设置了对角线两点. [T]&7你可以通过命令 &e/lands selection 切换选区模式&8[&8点击&8][H]&7点击这里切换选区.[/H][C]lands selection[/C][/T]'
+        disabled: '#t#&6Selection[newline]&c模式已禁用'
+    claim:
+      camp: |
+        &c土地&4 {land} &c的营地不能扩张.
+          [T]&7✖ 修改土地: &e/lands edit &8<&e土地&8> &8[&8点击&8][SC]lands edit[/SC][H]&7点击复制.[/H][/T]
+      create:
+        auto: |
+          &7已自动创建新土地&2 {land}&7, 因为你没有可以用于占领的土地.
+            [T]&7✖ 重命名: &e/lands rename &8<&e新名称&8> &8[&8点击&8][SC]lands rename[/SC][H]&7点击复制.[/H][/T]
+        force_near: |
+          &7已自动创建新土地&2 {land}&7, 因为你之前的土地不能连接至该占领区域.
+            [T]&7✖ 重命名: &e/lands rename &8<&e新名称&8> &8[&8点击&8][SC]lands rename[/SC][H]&7点击复制.[/H][/T]
+      region:
+        chunk: '&c你不能在这里占领区块. &7这个区块属于第三方区块管理插件: {plugin}'
+        selection: '&c你不能占领选区内的区块. &7选区内包含由第三方插件管理的区域: {plugin}'
+      war: '&c你不能占领这片区域, 因为 {object}&c 正在进行战争.'
+      already: '&c你不能占领这片区块. &7它已经属于土地&2 {land}&7.'
+      initial-world: '&c对于土地&4 {land} &c你只能在它所处的世界&4 {world}&c 占领新土地. &7你可能想要在你所在的世界 ({current}) 中创建一个新占领区域: &e/lands create &8<&e土地名称&8>'
+      near-other: '&c过于靠近土地&4 {land}&c. &7你需要离它远一点. 最小的区块间隔为&3 {distance}&7.'
+      force-near:
+        far-land: '&c你不能占领这个区块. &7你占领的区块需要靠近你的土地&2 {land}&7.'
+        parts: '&c你不能占领这个区块. &7你占领的区块需要与你的土地&2 {land}&7 相邻, 因为它已经到达了 &c{max} &7个分离部分的上限.'
+      success: '&7成功占领了这块区域 &8(&7土地:&2 {land} &7X: {x} Z:
+        {z}&8) &7并花费了&c {cost}&7. 下次占领将会耗费&c {next}&7.'
+      already-claimed: '&c你的选区内存在一块已被领取且不属于你的土地 &8(&7X: {x} Z: {z}&8)&c. &7它属于土地&2
+        {land}&7.'
+      max-chunk: '&c你不能为这块土地占领&4 {chunks} &c个更多区块. &7土地&2 {land} &7能拥有的最大区块上限为&3 {max} &7个. &8权限: lands.chunks.<number>'
+      processing: '&c已经有待处理的选区了. &7请等待它处理完毕.'
+      selection:
+        success: '&7你成功为你的土地 &2{land}&7 占领了&3 {chunks} &7个区块. 你支付了&c {cost}&7.'
+      radius:
+        success: '&7你成功为你的土地&2 {land} &7占领了半径 {radius} 内的&3 {chunks} &7个区块. 你支付了&c {cost}&7.'
+      fill:
+        none: '&c找不到形状. &7请确保你站在由已占领区块围城的郊区中.'
+        success: '&7你成功为你的土地&2 {land} &7填充占领了&3 {chunks} &7个区块. 你支付了&c {cost}&7.'
+    merge:
+      confirm: |
+        &7请确认你要将土地&2 {merge} &7和&2 {land}&7 进行合并:
+          [T]&2✔ 确认: &e/{fullcmd} &8[CLICK][H]&7点击这里确认此操作.[/H][C]{fullcmd}[/C][/T]
+      same: '&c你不能将土地&4 {merge} &c与它自己合并. &7请指定一个不同的土地.'
+      max:
+        chunks: '&c你不能将土地&4 {merge} &c与土地&4 {land}&c 合并. &7它们的总区块数量&3 {chunks} &7到达了&3 {max} &7你的土地&2 {land}&7的区块数量上限.'
+      connection: '&c你不能将土地&4 {merge} &c与土地&4 {land}&c 合并. &7它们的占地处在同一个世界&3 {world}&7 中.'
+      nation: |
+        &c你不能将土地&4 {merge} &c与土地&4 {land}&c 合并. &7土地&2 {merge} &7为国家&9 {nation}&7 的首都.
+          [T]&7✖ 修改首都: &e/nations setcapital &8<&eland&8>[H]&7点击这里修改国家首都. 这会允许你合并土地 {merge}. 点击复制.[/H][SC]nations setcapital[/SC][/T]
+      success: '&7你成功地将土地&2 {merge} &7与土地&2 {land}&7 合并. 你支付了&c {cost}&7.'
+    assign:
+      selection: '&c你需要先创建一个选区. &7请使用命令 &e/lands selection &7来创建一个选区. 之后再重试一次本命令.'
+      default: '&c你不能将选区分配给默认区域. &7区域可在土地菜单中的区域选项中删除.'
+      confirm: |
+        &c选区高度过低. &7子区域与占地不同, 有高度限制且该区域不默认从世界底部通天.
+          [T] &7✖ 处理: &e/{cmd_confirm} &8[CLICK][H]&7点击这里修改选区.[/H][C]{cmd_confirm}[/C][/T]
+          [T] &7✖ 完全扩大: &e/{cmd_expand} &8[CLICK][H]&7点击将该选区扩展到覆盖整个Y轴.[/H][C]{cmd_expand}[/C][/T]
+      size: '&c你的选区过小. &7选区最小需为&3 {min} &7格方块, 而你的是&3 {current}&7.'
+      success: '&7你成功调整了土地&2 {land} 的区域&6 {area} &7. 改动已自动显示.'
+      conflict:
+        land: '&c你的选区与土地&4 {land}&c 冲突. &7请修改你的选区.'
+        area: '&c你的选区与土地&4 {area}&c 冲突. &7请修改你的选区.'
+    leave:
+      owner: |
+        &c你不能离开这块土地. &7作为土地的拥有者你可以将其删除或转移拥有权.
+          [T]&c✘ 删除土地 &8[&8点击&8][C]lands delete[/C][H]&7点击删除土地&2 {land}&7.[/H][/T]
+          [T]&2✔ 转移所有权 &8[&8点击&8][SC]lands setowner [/SC][H]&7点击复制.[/H][/T]
+      land:
+        untrusted: '&7你不在土地&2 {land}&7 的任何地方受信任.'
+        success: '&7成功离开了土地&2 {land}&7.'
+      area:
+        untrusted: '&7你不在土地&2 {land}&7 的区域&6 {area} &7受信任.'
+        success: '&7成功离开了土地&2 {land}&7 的区域&6 {area} &7.'
+    unclaim:
+      rental: '&c你不能解除该区块的占领状态&7, 因为它包含了被出租或出售的区域&6 {area}&7. 可尝试移除租客/买家&3 {player}&7: &e/{cmd}'
+      split: '&c你不能解除该区块的占领状态, 这会导致你的土地四分五裂. &7会分裂的部分区域现在已为你显示.'
+      success: '&7成功解除了该区块的占领状态 &8(&7土地:&2 {land} &7X: {x} Z:
+        {z}&8)&7. 你获得了&c {back} &7.'
+      all:
+        success: '&7你成功解除了来自土地&2 {land} &7的所有区块占领状态并获得了&3 {back} &7b.'
+        confirm: |
+          &7请确认你要解除土地&2 {land} &7所有区块的占领状态:
+            [T]&2✔ 确认: &e/{fullcmd} &8[CLICK][H]&7点击这里确认此操作.[/H][C]{fullcmd}[/C][/T]
+      selection:
+        empty: '&c你没有解除任何区块的占领状态, 因为它们本就处于未占领状态或你没有权限解除占领.'
+        rental: '&c你不能解除该区块的占领状态&7, 因为它包含了被出租或出售的土地 &2 {land} &7的区域&6 {area} &7. 可尝试移除租客/买家&3 {player}&7:
+          &e/{cmd}'
+        split: '&7你成功解除了该选区内 {success} / {size} 个区块的占领状态, &c但剩下的 {failed} 个区块不能被解除占领状态, 因为这些区域的解除占领会导致土地四分五裂 &8(管理员可在配置文件中禁用)&7. 会分裂的部分区域现在已为你显示. 你获得了 &c{back}&7.'
+        partly: '&7你成功解除了该选区内 {success} / {size} 个区块的占领状态. 你获得了 &c{back}&7.'
+        success: '&7你成功解除了该选区内所有区块的占领状态. 你获得了&c {back} &7.'
+    delete:
+      confirm: |
+        &7请通过点击下方按钮确认土地&2 {land} &7的删除操作:
+          [T]&2✔ 确认: &e/{fullcmd} &8[CLICK][H]&7点击这里确认此操作.[/H][C]{fullcmd}[/C][/T]
+      nation: '&c你不能删除该土地, 因为它是国家&4 {nation} &c的首都. &7你需要先删除这个国家: &e/nations delete'
+      success: '&7成功删除了土地&2 {land}&7. 你获得了&e {back} &7.'
+      rented: '&c你不能删除该土地, 因为土地中的区域&4 {area} &c被出租或出售给了玩家&4 {player}&c. [T]&7若要移除租客/买家, 可尝试站在区域内输入命令 &e/{cmd} &8[CLICK] &7.[H]&7点击这里移除租客/买家.[/H][C]{cmd}[/C][/T]'
+      broadcast: '&7土地&2 {land} &7已被玩家&3 {player}&7 删除.'
+    trust:
+      own-land: '&c玩家&4 {player} &c不能被邀请加入其他土地. &7他们不能同时拥有自己的土地且为其他土地的成员. 他们需要先删除自己的土地&2 {land} &7.'
+      max-lands: '&7玩家&3 {player} &7已经到达了土地数量的上限. &8权限: lands.lands.<number>'
+      max-members: '&c不能在土地 &4 {land} &c中信任玩家&4 {player} &c. &7你的土地&2 {land} &7已经达到了&3 {members} &7名成员的数量上限.'
+      max: '&c玩家&4 {player} &c不能加入更多土地了. &7他们已经达到了&3 {max} &7个加入土地的数量上限. &8权限: lands.lands.<number>'
+      flag: '&c玩家&4 {player}&c 拒绝接收任何土地的邀请. &7他们可以通过命令 &8/&3{cmd}&7 在设置菜单中修改.'
+      area:
+        invited: '&c玩家&4 {player} &c已经被邀请到土地&4 {land}&c 的区域&4 {area}&c. &7邀请已在&5 {time} &7前送出.'
+        trusted: '&7玩家&3 {player} &7已经受到土地&2 {land}&7 的区域&6 {area} &7信任.'
+        banned: |
+          &c你不能让玩家&4 {player}&c 受到土地&4 {land}&c 的区域&4 {area}&c 信任. &7他们被封禁了.
+            [T]&2✔ 解封: &e/{cmd} &8[&8点击&8][H]&7点击这里解封该玩家.[/H][C]{cmd}[/C][/T]
+        success: '&7成功将玩家&3 {player} &7邀请至了土地&2 {land}&7 的区域&6 {area} &7. 他们现在可以接受你的邀请了.'
+        target: |
+          [T]&7玩家&3 {player} &7邀请你加入土地&2 {land}&7 的区域&6 {area} &7.[H]&7点击打开你的邀请菜单.[/H][C]lands invites[/C][/T] &7税收:&c {tax}
+            [T]&2✔ 接受: &e/{cmd_accept} &8[&8点击&8][H]&7点击这里接受该邀请.[/H][C]{cmd_accept}[/C][/T]
+            [T]&c✘ 拒绝: &e/{cmd_accept} &8[&8点击&8][H]&7点击这里拒绝该邀请.[/H][C]{cmd_deny}[/C][/T]
+      land:
+        invited: '&c玩家&4 {player} &c已经被邀请至整个土地&4 {land}&c 了. &7邀请已在&5 {time} &7前送出.'
+        trusted: '&7玩家&3 {player} &7已经受到整个土地&2 {land}&7 的信任了.'
+        banned: |
+          &c你不能在土地&4 {land}&c 中信任玩家&4 {player}&c. &7他们已经被整个土地封禁.
+            [T]&2✔ 解封: &e/{cmd} &8[&8点击&8][H]&7点击这里将该玩家解除整个土地的封禁.[/H][C]{cmd}[/C][/T]
+        success: '&7成功邀请了玩家&3 {player} &7至整个土地&2 {land}&7. 他们现在可以接受你的邀请了.'
+        target: |
+          [T]&7玩家&3 {player} &7邀请你进入土地&2 {land}&7.[H]&7点击打开邀请菜单.[/H][C]{cmd_invites}[/C][/T] &7税收:&c {tax}
+            [T]&2✔ 接受: &e/{cmd_accept} &8[&8点击&8][H]&7点击接受该邀请.[/H][C]{cmd_accept}[/C][/T]
+            [T]&c✘ 拒绝: &e/{cmd_deny} &8[&8点击&8][H]&7点击拒绝该邀请.[/H][C]{cmd_deny}[/C][/T]
+    untrust:
+      owner: '&c土地拥有者不能被解除信任. [T]&7新拥有者可以通过命令 &e/{cmd}&7 设置. &8[CLICK][H]&7点击复制.[/H][SC]{cmd}[/SC][/T]'
+      area:
+        already: '&7玩家&3 {player} &7不被该区域信任 &8(&7区域:&6
+          {area} &7土地:&2 {land}&8) &7且之前尚未收到过邀请.'
+        revoke: '&7成功拒绝了来自该区域的玩家&3 {player} &7的邀请 &8(&7区域:&6 {area} &7土地:&2 {land}&8)&7. 该玩家不受信任.'
+        success: '&7成功将玩家&3 {player} &7取消了受信任状态 &8(&7区域:&6 {area} &7土地:&2 {land}&8)&7.'
+        rental: '&c你不能取消区域&4 {area}&c 的租客&4 {player} &c的受信任状态.
+          &7若要移除该区域的出租状态, 请在处于区域内时使用命令 &e/lands rent remove &7.'
+      land:
+        already: '&7玩家&3 {player} &7没有收到土地&2 {land} &7任何区域的信任且未收到任何邀请.'
+        revoke: '&7成功拒绝了玩家&3 {player} &7对整个土地受信任&2 {land}&7 的邀请. 该玩家没有在任何区域受信任.'
+        success: '&7成功解除了玩家&3 {player} &7在土地&2 {land}&7 的受信任状态, 除了他们租借/购买的区域.'
+    setrole:
+      visitor: '&c你不能设置&4 {role} &c职位. &7若你需要解除该玩家信任, 请使用命令 &e/lands untrust {player} [区域]&7.'
+      land:
+        untrusted: '&c玩家&4 {player} &c尚未在土地&4 {land}&c 内受信任.
+          &7请先将他们设置为信任状态.'
+        success: '&7成功为玩家&3 {player} &7在他们受信任土地&2 {land} &7的区域设置了角色&3 {role} &7 .'
+      area:
+        untrusted: '&c玩家&4 {player} &c尚未在土地&4 {land}&c 的区域&4 {area} &c受信任. &7请先将他们设置为信任状态.'
+        success: '&7成功将职位&3 {role} &7在土地&2 {land} &7的区域&6 {area} &7授予玩家&3 {player} &7 .'
+    accept:
+      max: '&c你不能加入更多土地了. &7你最多只能加入&3 {max} &7块土地. &8权限: lands.lands.<number>'
+      not-exist: '&c你没有来自土地&4 {land} &c的邀请或它已过期. &7请检查你的输入是否正确.'
+      own-land: '&c你不能加入其他领地. &7你不能同时为土地的拥有者和其他土地的成员. &7你需要先删除你自己的土地&2 {land} &7.'
+      max-lands: '&c你不能再加入更多土地了. &7你只能拥有最多&3 {max} &7个土地. &8权限: lands.lands.<number>'
+      banned: '&c你不能加入土地&4 {land}&c 的区域&4 {area}&7. &7他们已将你封禁'
+      max-members: '&c你不能加入土地&4 {land}&c. &7他们已经到达了土地的&3 {members} &7最大成员数.'
+      war: '&c你当前还不能加入土地d&4 {land}&c, 因为他们正在进行与 {object} &c的战争. &7请等战争结束后重试.'
+      notification: "&7你收到了来自其他土地的&3 {invites} &7个邀请. \n\n [T]&7浏览邀请: &e/{cmd} &8[CLICK][H]&7浏览来自所有土地的邀请.[/H][C]{cmd}[/C][/T]\n"
+      area:
+        success: '&7成功接收了来自土地&2 {land} &7的区域&6 {area}&7 邀请.'
+        broadcast: '&2{land} &8| &7玩家&3 {player} &7现在是我们土地的区域&6 {area} &7成员了.'
+      land:
+        success: '&7成功接受了来自土地&2 {land} &7的邀请并受到了整个土地的信任.'
+        owner: '&7你接受了来自土地&2 {land}&7的要求. 你现在是土地&2 {land}&7 的拥有者了.'
+        broadcast: '&2{land} &8| &7玩家&3 {player} &7现在是我们土地的一员了.'
+    setowner:
+      confirm: |
+        &7将玩家 {player} 设置为土地&2 {land}&7 的新拥有者:
+          [T]&2✔ 确认: &e/{fullcmd} &8[CLICK][H]&7点击这里确认此操作.[/H][C]{fullcmd}[/C][/T]
+      max:
+        ownlands: '&c玩家&4 {player} &c不能拥有更多土地了. &7他们最多只能拥有&3 {max} &7块土地.'
+        chunks: '&c玩家&4 {player} &c不能拥有该土地. &7它拥有&3 {chunks} &7个区块, 超过了他们所能持有土地的&4 {max} &7个区块上限.'
+      cooldown: '&c土地拥有者每&4 {cooldown}&c 可更换一次. &7你必须再等待&5 {time}&7.'
+      success:
+        invited: '&7你成功邀请了玩家&3 {player} &7成为土地&2 {land}&7 的新拥有者.'
+        set: '&7你成功将玩家&3 {player} &7设置为了土地&2 {land}&7 的新拥有者.'
+        target: |
+          [T]&7玩家&3 {player} &7邀请你成为土地&2 {land}&7 的新拥有者.[H]&7点击打开邀请菜单.[/H][C]lands invites[/C][/T] &7维护费用:&c {upkeep}
+            [T]&2✔ 接受: &e/{cmd_accept} &8[&8点击&8][H]&7点击这里接受该邀请.[/H][C]{cmd_accept}[/C][/T]
+            [T]&c✘ 拒绝: &e/{cmd_deny} &8[&8点击&8][H]&7点击这里拒绝该邀请.[/H][C]{cmd_deny}[/C][/T]
+    deny:
+      not-exist: '&c你没有来自土地&4 {land} &c的请求或它已经过期. &7是否正确输入?'
+      success: '&7你拒绝了来自土地&2 {land}&7 的邀请.'
+    teleport:
+      chunk-not-claimed: '&c该位置的区块尚未占领 &8(&7X: {x} &7Z: {z}&8)&c.'
+      not-trusted: '&c你不能传送至这个位置. &7你没有在土地&2 {land}&7 的受信任列表中.'
+      success: '&7成功传送至了 X:&3 {x} &7Z:&3 {z} &7是否占领: {claimed}'
+    setspawn:
+      wilderness: '&c你只能在自己的土地上设置出生点. &7你需要向上或向下移动到你的土地&2 {land}&7 中.'
+      success: '#t#&6出生点已设置[newline]&7消耗:&c {cost}'
+    spawn:
+      not-exist: '&c土地&4 {land}&c 没有可用出生点. &7可能需要一些玩家通过命令 &e/lands setspawn&7 设置.'
+      not-allowed: '&c你不能传送到土地&4 {land}&c 的出生地那.
+        &7他们需要在对应的角色设置中给予你足够的权限.'
+      war: '&c你现在还不能传送到土地&4 {land}&c. &7这片土地正在进行一场战争, 将会在&5 {time}&7 后结束.'
+      chunk: '&7土地&2 {land} &7尚未设置出生点 &8(&e/lands setspawn&8) &7.
+        &7已将你传送至该土地的最初认领区域.'
+      success: '&7成功传送至了土地&2 {land} &7的出生点, 花费了:&c
+        {cost}'
+    wild:
+      perm: '&c你不能在世界&4 {world}&c 中进行随机传送.
+        &8你缺少了该世界所需要的权限 {perm}.'
+      no-location: '&c根据配置文本中的过滤选项, 找不到安全的传送点. &8请修改最小和最大传送距离并调整出生点位置 (/setworldspawn).'
+      searching: '#t#&6正在搜索[newline]&7传送点...'
+      success: '&7你被随机传送到了 &8(&7X: {x} Z: {z}&8)&7. 你花费了&c
+        {cost}&7.'
+    deposit:
+      number: '&7你需要指定钱的数量. 请使用命令 &e/lands deposit &8<&e数量&8>
+        &7或 &e/lands deposit &8<&e土地&8> <&3数量&8>&7.'
+      partly: '&c仅存入了&4 {cost} &c而不是原本输入的&4 {input}&7, 因为土地&2 {land} &7的存款已经到达了上限&3 {max}&7.'
+      success: '&7你成功将&3 {cost} &7存入了土地&2 {land}&7 的银行.
+        &7该土地银行现有余额:&3 {bank}'
+    withdraw:
+      number: '&7你需要指定钱的数量. 请使用命令 &e/lands withdraw &8<&e数量&8>
+        &7或 &e/lands withdraw &8<&e土地&8> <&3数量&8>&7.'
+      balance: '&c土地&4 {land}&c 的银行中没有足够的存款. &7当前余额为&3 {bank} &7. 实际需要取出:&3 {take}'
+      failed: '&c取出失败. &7服务器可能限制了你所能取出的最大存款数量.'
+      success: '&7你成功从岛屿 &2{land} &7取出了&3 {cost} &7存款.
+        &7该土地银行现有余额:&3 {bank}'
+    balance: '&7土地&2 {land} &7的银行余额为&3 {balance}'
+    ban:
+      area:
+        already: '&7玩家&3 {player} &7已经被土地&2 {land}&7 的区域&6 {area} &7封禁.'
+        success: '&7成功在土地&2 {land} &7的区域&6 {area} &7封禁玩家&3 {player} &7. 他们将不再能进入该区域或传送至该区域的出生点, 只要这些传送点位于该区域内.'
+        target: '&c土地&4 {land} &c将你从他们内部的区域&4 {area} &c封禁. &7你不再能传送到该区域的出生点或进入该区域, 只要这些传送点位于该区域内.'
+      land:
+        already: '&7玩家&3 {player} &7已经被土地&2 {land}&7 完全封禁.'
+        success: '&7成功将玩家&3 {player} &7被土地&2 {land}&7 完全封禁. 他们将不再能传送至该土地的出生点或进入其中的任何区域.'
+        tenant: '&c你不能将玩家&4 {player}&c 从土地&4 {land}&c 封禁, 因为他是区域&4 {area}&c 的租客. &7若要移除租客: &e/{cmd}'
+        target: '&c土地&4 {land} &c将你驱逐出境&c. &7你不再能传送到该区域的出生点或进入其中的任何区域.'
+    unban:
+      area:
+        success: '&7成功解除了对玩家&3 {player} &7在该区域的封禁 &8(&7区域:&6
+          {area} &7土地:&2 {land}&8)&7.'
+      land:
+        success: '&7成功解除了对玩家&3 {player} &7在土地&2 {land}&7 的封禁.'
+    chat:
+      activated: '&7启用了土地聊天. 在聊天栏发送信息会将消息发送至土地聊天频道.'
+      deactivated: '&7关闭了土地聊天.'
+      none: '&c土地聊天没有可用土地.&7使用命令 [T]&e/lands chat toggle &8[&8点击&8][H]&7点击关闭土地聊天模式.[/H][C]lands chat toggle[/C][/T] &7来关闭土地聊天模式.'
+      format:
+        minecraft: '[NoPrefix]&2{land} &8| {role} &7{player} &8»&f {message}'
+        discord: '[NoPrefix]&2{land} &8| &9Discord &7{player} &8»&f {message}'
+        spy: '[NoPrefix]&8[&c聊天窃听&8] &2{land} &8| {role} &7{player} &8»&f {message}'
+    view:
+      disabled: '&7你关闭了区域可视化.'
+      wilderness: '&7启用了区域可视化. &7你当前处于郊区.'
+      tool: '&7你指向的位置是郊区. [T]&7若要占领该区块: &e/{cmd} &8[CLICK][H]&7点击占领你看向的区块.[/H][C]{fullcmd}[/C][/T]'
+      y-level: '&7当前位置为郊区, 但该区块已被土地&2 {land} &7在不同的 Y 轴位置占领.'
+      y-lock:
+        enabled: '&c切换 Y 轴锁定模式: &7土地边界不再随着你的位置移动.'
+        disabled: '&a切换 Y 轴锁定模式: &7土地边界会随着你的位置移动.'
+      info: |
+        [NoPrefix]
+        &7&m━━━━━━━━━<━&r &5&lLand View &7&m━>━━━━━━━━━
+        [T]&8• &7土地: &2{land} &8[&8点击&8][H]&7Click here to get more information about this land.[/H][C]{cmd}[/C][/T]
+        &8• &7等级: {level}
+        &8• &7国家: {nation}
+        &8• &7Chunk &7X: {x} Z: {z}
+        &7&l区域:&6 {area}
+         &8• &7Tax:&c {tax}
+         &8• &7玩家:&7 {players}
+         &8• &7Description:&r {description}
+        &7&m━━━━━━━━━<━&r &5&lLand View &7&m━>━━━━━━━━━
+      area: |
+        [NoPrefix]
+        &7&m━━━━━━━━━<━&r &5&lArea View &7&m━>━━━━━━━━━
+        [T]&8• &7土地: &2{land} &8[&8点击&8][H]&7Click here to get more information about this land.[/H][C]lands info {land}[/C][/T]
+        &8• &7等级: {level}
+        [T]&7&l区域:&6 {area} &8[&8点击&8][H]&7Click here to get more information about this area.[/H][C]lands menu here[/C][/T]
+         &8• &7Tax:&c {tax}
+         &8• &7玩家:&7 {players}
+         &8• &7Description:&r {description}
+        &7&m━━━━━━━━━<━&r &5&lArea View &7&m━>━━━━━━━━━
+    map:
+      header: '&7&m━━━━━━━━━━<━&r &2土地地图 &7&m━>━━━━━━━━━━[newline]'
+      footer: '[newline]&7&m━━━━━━━━━━<━&r &2土地地图 &7&m━>━━━━━━━━━━'
+    unstuck:
+      success: '&7成功传送到了最近的未占领区域.'
+    taxes:
+      none: '&7当前还没有需要你处理的税收请求.'
+      upcoming:
+        header: '[NoPrefix]&7&m━━━━━━━━━<━&r &c下次税收 &7&m━>━━━━━━━━━'
+        entry: '[NoPrefix]&8- &7{land}: &c{tax}'
+        footer: |
+          [NoPrefix]&7在接下来的 &5{next} &7中你需要支付共 {total} &7的税收.
+          &7经济: {balance}
+          &7&m━━━━━━━━━<━&r &c下次税收 &7&m━>━━━━━━━━━
+      changes:
+        header: |
+          [NoPrefix]
+          &7&m━━━━━━━━━<━&r &4税收变动 &7&m━>━━━━━━━━━
+          &c部分土地的税收已经产生变动:
+        entry: '[NoPrefix]&8- &7{land}: {color}{tax} &8(前一次税收: {previous})'
+        footer: |
+          [NoPrefix]
+          &7剩余时间:&5 {next}
+          &7经济: {balance}
+          &8更多信息: /lands taxes
+          &7&m━━━━━━━━━<━&r &4税收变动 &7&m━>━━━━━━━━━
+    upkeep:
+      none: '&7你当前不需要为任何土地支付维护费用.'
+      header: '[NoPrefix]&7&m━━━━━━━━━<━&r &c下次维护 &7&m━>━━━━━━━━━'
+      entry: '[NoPrefix][T]{covered} {land}: {upkeep_form} &8[CLICK][C]{cmd}[/C][H]&7点击存入所需欠款.[/H][/T]'
+      footer: |
+        [NoPrefix]&7你的土地需要在剩下的 &5{next} 中凑齐 {total} &7的维护费用以保持它们在国家中的占地及成员. &7点击上述文本可将存款投入银行.
+        &7&m━━━━━━━━━<━&r &c下次维护 &7&m━>━━━━━━━━━
+    relations:
+      self: '&c你不能将&4 {object} &c设置为它自己的敌人或盟友.'
+      nation: '&c所有关系都通过国家&4 {nation}&c 管理, 是你土地的一部分.'
+      allies:
+        add:
+          already: '&7{target} &7已经是 {object}&7 的盟友了.'
+          nation: |
+            &c你不能与土地&4 {land}&c 结为盟友. &7这块土地被国家&9 {nation} &7所管理.
+              [T]&7✖ 请向国家&9 {nation} &7发出结为盟友的邀请: &e/{cmd} &8[CLICK][H]&7点击这里将邀请发送至国家&9 {nation}&7.[/H][C]{cmd}[/C][/T]
+          success: '&7成功向 {target} 发送结盟邀请&7. 若他们接受, 你 &8(&7{object}&8) &7就会与他们正式结为盟友.'
+        remove:
+          already: '&7{target} &7不是 {object}&7 的盟友.'
+          revoked: '&7你 &8(&7{object}&8) 拒绝了来自 {target}&7 的结盟邀请.'
+          broadcast: '&7{object} &7和 {target} &7不再是盟友了.'
+      enemies:
+        add:
+          already: '&7{target} &7已经是 {object}&7 的敌人了.'
+          revoked: '&7You &8(&7{object}&8) 撤销了对 {target}&7 的中立申请.'
+          nation: |
+            &c你不能将&4 {land} &c声明为敌人. &7这块土地被国家&9 {nation}&7 所拥有.
+              [T]&7✖ 声明国家&9 {nation} &7为敌人: &e/{cmd} &8[CLICK][H]&7点击将国家&9 {nation} &7声明为敌人.[/H][C]{cmd}[/C][/T]
+          success: '&7你 &8(&7{object}&8) &7和 {target} &7现在是敌人了.'
+          broadcast: '&7{object} &7和 {target} &7现在是敌人了.'
+        remove:
+          already: '&7{target} &7不是&7 {object}&7 的敌人.'
+          success: '&7成功向 {target}&7 发出了中立申请. 若他们接受, 那么 &8(&7{object}&8) &7将不再与你是敌人.'
+    confirmtp:
+      none: '&c你没有待处理的传送请求.'
+    
+    admin:
+      listperms:
+        header: '[NoPrefix][T]&7----------&e&l<<<<&7-[H]&7点击这里翻到下一页.[/H][C]{cmd} {player} {previous}[/C][/T] &2权限列表 &7第&3 {page} &8/&3 {pages} &7页 [T]&7-&e&l>>>>&7----------[H]&7点击这里翻到上一页.[/H][C]{cmd} {player} {next}[/C][/T]'
+        footer: |
+          [NoPrefix]
+          &c玩家 &4{player} &c拥有这些权限, 因为它们被你的权限插件分配了通配符权限 (perm.*). &7点击箭头翻页.
+
+           &c红色 = 通配符权限
+           &e黄色 = 数字权限
+          [T]&7----------&e&l<<<<&7-[H]&7点击这里翻到上一页.[/H][C]{cmd} {player} {previous}[/C][/T] &2权限列表 &7第&3 {page} &8/&3 {pages} &7页 [T]&7-&e&l>>>>&7----------[H]&7点击这里翻到下一页.[/H][C]{cmd} {player} {next}[/C][/T]
+      land:
+        addrole:
+          confirm: |
+            &c执行该命令可能会导致土地多次拥有同一个职位. &7例如新创建的土地已有从 roles.yml 继承来的职位. 执行该命令可能会对同一个职位产生多次重复并导致受影响的土地产生职位重复问题. &7若要确认此操作:
+              [T]&2✔ 确认: &e/{fullcmd} &8[CLICK][H]&7点击这里确认此操作.[/H][C]{fullcmd}[/C][/T]
+wars:
+  message:
+    noaccess:
+      wilderness: '&c战争时你不能在郊区这么做. &8标志: {flag}'
+      general: '&c你不能在当前与土地&4 {land}&c 的战争中这么做. &8标志: {flag}'
+      pillage: '&c你不能在对方防守人数不足的情况下攻击土地&4 {land} &c. &7P请等到至少有&3 {defenders} &7名土地&2 {land} &7的防卫者在线再继续.'
+    start:
+      broadcast: '&7{attacker} &7与 {defender} &7之间的战争已经开始. 它将会在&5 {time} &7结束.'
+    end:
+      broadcast: '&7{attacker} &7与 {defender} &7之间的战争已结束. 共用时&5 {time}&7.'
+      surrender: '{object} &7战败. 战争结束, 他们将&c {tribute} &7上贡给了敌方 {enemy}&7.'
+      draw: '&7{attacker} &7与 {defender} &7的战争以平局告终. 共用时&5 {time}&7.'
+    kill:
+      target:
+        attackers: '&7我们的队友&a {attacker} &7被防守方&c {defender}&7 击杀.'
+        defenders: '&7我们的队友&a {defender} &7被进攻方&c {attacker}&7 击杀.'
+      killer:
+        attackers: '&7我们的队友&a {attacker} &7击杀了防守方&c {defender}&7: &a+ {points} 点分数'
+        defenders: '&7我们的队友&a {defender} &7击杀了进攻方&c {attacker}&7: &a+ {points} 点分数'
+    capture:
+      place:
+        wilderness: '&c你不能在郊区放置旗帜. &7你需要将它放在地方土地中.'
+        overlap: '&c旗帜方块必须放在信标不会覆盖郊区的地方.'
+        region: '&c不能在这里放置旗帜. &7它与另一个要夺取的地区中的旗帜重叠.'
+        outskirts: '&c不能在这里放置旗帜. &7你必须在土地的郊区放置.'
+        state: '&cYou''re currently not at war against land&4 {land} &cor the war
+          hasn''t started yet.'
+        y: '&c不能在这里放置旗帜. &7它必须在&3 {min}
+          &7和&3 {max} &7高度之间的位置放置.'
+        already: '&c不能在这里放置旗帜. &7该区块内已存在占领旗帜.'
+        space: '&c不能在这里放置旗帜. &7该位置没有足够的空间.'
+        cooldown: '&c你需要在你可以再次放置旗帜之前等待&4 {time} &c.'
+        max: '&c你的团队已经放置了 &4 {max} &c面旗帜.'
+        invader: '#t#&a旗帜[newline]&a已放置于敌方土地: {land}, {x},
+          {y}, {z}[newline]&a加入他们来占领该地区.'
+        defender: '#t#&c旗帜[newline]&c已放置于我方土地: {land}, {x}, {y},
+          {z}[newline]&c快来加入防守方.'
+      destroy:
+        presense: '&c你当前还不能破坏这个旗帜. &7该区域内还剩余&3 {players} &7名敌方玩家.'
+        invader: '#t#&c旗帜[newline]&c已摧毁位于敌方土地 {land} 的旗帜'
+        defender: '#t#&a旗帜[newline]&a已摧毁位于我方土地 {land} 的旗帜[newline]&2&l+
+          {points} 点分数'
+      none: '#b#[config]color:yellow,style:solid[/config]&7夺旗战将会再次开始, 直到进攻方人数大于防守方.'
+      progress:
+        invaders:
+          broadcast: '#b#[config]color:red,style:solid[/config]&c敌方正在夺取土地 {land} - {progress}%, {invaders} 名入侵者, x: {x}, y: {y}, z: {z}'
+          invaders: '#b#[config]style:solid[/config]&c我们正在尝试夺取 - {progress}%,
+            {defenders} 名防卫者'
+          defenders: '#b#[config]style:solid[/config]&c敌方正在夺取 - {progress}%,
+            {invaders} 名入侵者'
+        defenders:
+          broadcast: '#b#[config]color:red,style:solid[/config]&a我们正在尝试夺回土地 {land} 的部分区域 - {progress}%, {invaders} 名入侵者, x: {x}, y:
+            {y}, z: {z}'
+          invaders: '#b#[config]style:solid[/config]&c防卫者正尝试夺回土地 - {progress}%, {defenders} defender(s)'
+          defenders: '#b#[config]style:solid[/config]&a我们正在尝试夺回 - {progress}%, {invaders} 名入侵者'
+      online: '#a#&c不能夺回: 土地 {land} 需要至少 {min} 名玩家在线.'
+      success:
+        invader: '#t#&a旗帜[newline]&a我们从土地 {lands} 夺取了 {chunks} 个区块 {land}[newline]&2&l+ {points} 点分数'
+        defender: '#t#&c旗帜[newline]&c敌方从土地 {lands} 夺取了 {chunks} 个区块'
+  command:
+    general:
+      no-war: '&c{object}&c 没有即将进行或正在进行的战争. &7一切如常.'
+    declare:
+      confirm: |
+        &7请确认你 &8(&7{attacker}&8) &7想要发起对 {defender}&7 的战争:
+          [T]&2✔ 确认: &e/{fullcmd} &8[CLICK][H]&7点击这里确认此操作.[/H][C]{fullcmd}[/C][/T]
+      not-allowed: '&c你不能发起对 {object}&c 的战争. &7需要 {object} &7才能这么做.'
+      member: '&c你不能发起对 {object}&c 的战争. &7你或敌方领袖在一个土地和/或国家内互相受信任.'
+      hour-of-day: '&c你只能在&4 {from} &c到&4 {to}&c 的时间段发起战争. &7当前时间:&5 {current}&8 (&7时区: {timezone}&8)'
+      enemies: |
+        &c你必须先将&4 {object} &c设置为敌人.
+          [T]&7✖ 添加为敌人: &e/{cmd} &8[CLICK][H]&7点击这里将 {object} &7设置为敌人并向他们宣战.[/H][C]{cmd}[/C][/T]
+      ally: |
+        &c你不能向你的盟友 {object}&c 发起战争.
+          [T]&7✖ 管理关系: &e/{cmd} &8[CLICK][H]&7点击这里管理你的关系.[/H][C]{cmd}[/C][/T]
+      war-shield: '&c你不能发起对 {object}&c 的战争. &7他们有持续到&5 {time}&7 的战争保护盾.'
+      no-nation: '&c你不能攻击土地&4 {land}&c. &7他们必须是参战国家的土地.'
+      admin: '&c你不能对管理员土地宣战.'
+      nation: '&c你不能向 {object}&c 宣战. &7他们已经是国家&9 {nation} &7的一部分.'
+      min-balance:
+        attacker: '&c发送战争邀请失败. &7进攻方 {object} &7需要最少&c {min} &7的存款才可以发起战争. 向土地银行汇款: [T]&e/{cmd} &8[CLICK][H]&7点击这里向银行存入 {min}.[/H][C]{cmd}[/C][/T]'
+        defender: '&c防守方的存款 {object} &c过低. &7你只能进攻存款多于&c {min} &7的土地.'
+      min-chunks:
+        attacker: '&c发送战争邀请失败. &7进攻方 {object} &7需要至少有&c {min} &7个区块才可进行战争. 占领: [T]{cmd} &8[CLICK][H]&7点击这里占领土地.[/H][C]{cmd}[/C][/T]'
+        defender: '&c防守方的区域数量 {object} &c过低. &7你能进攻的区域最少需要有&c {min} &7个区块.'
+      min-age:
+        attacker: '&c发送战争邀请失败. &7进攻方{object} &7的创建时间至少需要为&5 {min} &7才可发起战争.'
+        defender: '&c进攻方 {object} &c的创建时间过短. &7你只能进攻其他创建时间&5 {min} &7old.'
+      online: '&c发送战争邀请失败. &7{object} &7需要至少一个玩家在线.'
+      broadcast: '&7敌方 {attacker} &7申请与玩家 {defender}&7 进行战争. 战争将会在&5 {time}&7 内开始.'
+      success:
+        normal: '&7你 &8({object}&8) &7成功发起了对 {enemy}&7 的战争. 战争将会在&5 {time}&7 内开始.'
+        mutual:
+          accepted: '&7你 &8({object}&8) &7接受了来自 {enemy}&7 的战争请求. 战争将会在&5 {time}&7 内开始.'
+          sent: '&7你 &8({object}&8) &7向 {enemy}&7 发送了战争请求. 在战争开始前你需要等待他们的同意.'
+      target: '&7敌方 {attacker} &7发起了向 {defender} &8(&7你&8)&7 的战争. 战争将会在&5 {time}&7 内开始.'
+      mutual:
+        success: '&7你 &8({attacker}&8) &7成功向 {defender}&7 发起了进攻请求. &7在战争开始前你需要等待他们的同意.
+          &7对方若战败, 则需要向进攻方缴纳&c {tribute} &7的上贡费用.'
+        target: |
+          &7进攻方 {attacker} &7向 {defender} &8(&7你&8)&7 发起了进攻请求. &7若防守方战败, 则需要向进攻方缴纳&c {tribute} &7作为上贡费用.
+           [T]&2✔ 接受 &8[&8点击&8][H]&7点击这里接受战争邀请.[/H][C]wars declare {input}[/C][/T]
+           [T]&c✘ 拒绝 &8[&8点击&8][H]&7点击这里拒绝战争邀请.[/H][C]wars deny[/C][/T]
+      already:
+        attacker: '&c不能加入其他战争. &7当前的 {object} &7战争需要先结束.'
+        defender: '&c你现在还不能向他们发起战争. &7目标 {object} &7正在参与一场战争.'
+      min-players:
+        attacker: '&c你不能加入战争, 因为 {object} &c需要更多的受信任玩家. &7攻击方挑起战争至少需要&3 {min} &7名玩家.'
+        defender: '&c你不能挑起对 {object}&c 的战争, 对方需要更多的受信任玩家. &7防守方参战至少需要&3 {min} &7名玩家.'
+    deny:
+      attacker: '&c攻击方不能拒绝战争邀请. &7只有防守方可以这么做.'
+      ongoing: '&c你不能拒绝正在与 {enemy}&c 进行的战争. &7你只能拒绝与 {object}&7 的战争邀请.'
+      success: '&7你成功拒绝了 {object} &7对 {enemy}&7 的战争邀请.'
+    menu:
+      mutual: '&c你现在还不能打开战争菜单. &7{object} &7的战争邀请尚未被接受.'
+    spawn:
+      none: '&c敌方 {enemy} &c没有可供传送的区域.'
+      success: '&7你已被传送到敌方 {enemy}&7 的区域边界附近.'
+    info:
+      war: |
+        &4当前战争:
+        &8- &7进攻方 {attacker}&7:
+             &8• &7夺下据点: {att_cap}
+             &8• &7总击杀数: {att_总击杀数:}
+               &3= {att_points} / {towin} &7点分数
+               {att_bar}
+        &8- &7防守方 {defender}&7:
+             &8• &7夺下据点: {def_cap}
+             &8• &7总击杀数: {def_总击杀数:}
+               &3= {def_points} / {towin} &7点分数
+               {def_bar}
+
+        &7剩余时间:&5 ~{time}
+        [T]&7更多信息: &e/{cmd} &8[CLICK][H]&7点击这里打开战争菜单.[/H][C]{cmd}[/C][/T]
+      declaration:
+        normal: |
+          &4战况通报:
+            &8• &7进攻方: {attacker}
+            &8• &7防守方: {defender}
+            &8• &7开始时间:
+              &5~{time}
+
+          [T]&7更多信息: &e/{cmd} &8[CLICK][H]&7点击这里打开战争菜单.[/H][C]{cmd}[/C][/T]
+        mutual:
+          defender: |
+            &4战况通报:
+              &8• &7进攻方: {attacker}
+              &8• &7防守方: {defender}
+              &8• &7若你战败:
+                &7你会失去:&c {tribute}
+
+            [T]&2✔ 接受: &e/{cmd_accept} &8[&8点击&8][H]&7点击接受战争请求.[/H][C]{cmd_accept}[/C][/T]
+            [T]&c✘ 拒绝: &e/{cmd_deny} &8[&8点击&8][H]&7点击拒绝战争请求.[/H][C]{cmd_deny}[/C][/T]
+          attacker: |
+            &4战况通报:
+              &8• &7进攻方: {attacker}
+              &8• &7防守方: {defender}f
+              &8• &7若对方战败:
+                &7你可获得:&c {tribute}
+
+            &c防守方尚未接受战争请求.
+nations:
+  message:
+    current-war: '&c你现在还不能这么做. &7你的国家&9 {nation} &7正在参战. &7请在战争结束后重试.'
+    untrusted: '&c你不属于国家&4 {nation}&c.'
+  command:
+    chat:
+      activated: '&7国家聊天已启用. 在公屏发送的聊天信息会自动转入国家聊天频道.'
+      deactivated: '&7国家聊天已禁用.'
+      none: '&c国家聊天内没有可用频道. &7使用命令 [T]&e/nations chat toggle &8[&8点击&8][H]&7点击这里禁用国家聊天模式.[/H][C]nations chat toggle[/C][/T] &7关闭国家聊天模式.'
+      format:
+        minecraft: '[NoPrefix]&9国家 {nation} &8| &7{player} &8»&f {message}'
+        discord: '[NoPrefix]&9国家 {nation} &8| &9Discord 群组聊天 &7{player} &8»&f {message}'
+        spy: '[NoPrefix]&8[&c聊天窃听&8] &9国家 {nation} &8| &7{player} &8»&f {message}'
+    general:
+      not-exist: '&c国家&9 {nation} &c不存在. &7没有找到符合该名称的国家.'
+      no-member: '&c你不属于这个国家&c. &7你的土地均不属于国家&9 {nation}&7.'
+      none: |
+        &c你的土地&4 {land} &c不属于任何国家.
+
+          &7任何国家都可以邀请你的土地: &e/nations trust
+          [T]&7建立你自己的国家: &e/{cmd} &8[CLICK][H]&7点击复制.[/H][SC]{cmd}[/SC][/T]
+      noaccess: '&c你不能对国家&4 {nation}&c 使用这个. &8标志: {flag}'
+      not-trusted: '&c土地&4 {land} &c不属于你的国家&4 {nation}&c.'
+    create:
+      camp: |
+        &c你不能将带有营地的土地 &8(&4{land}&8) &c设置为首都.
+          [T]&7✖ 创建土地: &e/{cmd_create} &8[CLICK][SC]{cmd_create}[/SC][H]&7创建一块土地. 点击复制.[/H][/T]
+          [T]&7✖ 修改编辑土地: &3/{cmd_edit} &8[CLICK][SC]{cmd_edit}[/SC][H]&7使用该命令修改编辑的土地, 将其修改为你要设置为首都的土地. 点击复制.[/H][/T]
+      already: '&c你的土地&4 {land} &c已经是国家&4 {nation}&c 的一部分了. &7你的土地需要先通过命令 &e/nations leave&7 离开该土地.'
+      war: '&c你不能将土地&4 {land} &c设置为国家的首都, 因为它正在进行与&4 {object}&c 的战争. &7请在战争结束后重试.'
+      level: '&c你现在还不能建立国家. &7你的土地&2 {land} &7需要至少达到&3 {level} &7级&8(&7当前等级: {current}&8)&7.'
+      success: '&7你成功以土地&2 {land} &7为基础建立了国家&9 {nation} &7. [T]&7点击这里打开菜单.[H]&7打开菜单.[/H][C]nations menu[/C][/T]'
+    trust:
+      camp: '&c营地不能是国家的一部分. &7土地&2 {land} &7为营地.'
+      max-distance: '&c土地&4 {land} &c距离国家&4 {nation}&c 的首都太远了. &7最大为:&3 {max} 格方块&7, 而实际距离为:&3 {distance} 格方块&7'
+      already: '&c土地&4 {land} &c已经是国家&4 {nation}&c 的一部分了. &7他们需要先使用命令 &e/nations leave&7 离开国家.'
+      added: '&7你成功将土地&2 {land} &7添加为国家&9 {nation}&7 的成员.'
+      success: '&7你成功邀请了土地&2 {land} &7加入你的国家&9 {nation}&7.'
+      target: |
+        &7国家&9 {nation} &7邀请了你的土地&2 {land} &7加入他们.
+          [T]&2✔ 接受: &e/{cmd_accept} &8[&8点击&8][H]&7点击接受该邀请.[/H][C]{cmd_accept}[/C][/T]
+          [T]&c✘ 拒绝: &e/{cmd_deny} &8[&8点击&8][H]&7点击拒绝该邀请.[/H][C]{cmd_deny}[/C][/T]
+    accept:
+      war: '&c你现在还不能加入这个国家. &7国家&9 {nation} &7正在与 {object}&7 进行战争. 请在战争结束后重试.'
+      none: '&c你的土地&4 {land} &c没有收到任何来自国家&9 {nation}&c 的邀请. &7他们可以使用命令 &e/nations trust&7 邀请你.'
+      already: '&c你的土地&4 {land} &c已经是国家&4 {nation}&c 的一部分了. &7你需要先使用命令 &e/nations leave&7 离开国家.'
+      success: '&7你的土地&2 {land} &7现在已属于国家&9 {nation}&7.'
+    deny:
+      success: '&7你拒绝了来自国家&9 {nation}&7 的邀请.'
+    untrust:
+      capital: '&c你不能移除这个土地. &7土地&2 {land} &7属于国家&9 {nation}&7的首都.'
+      already: '&c土地&4 {land} &c不属于国家&4 {nation}&c.'
+      success: '&7你成功从国家&9 {nation} &7移除了土地&2 {land}&7.'
+    delete:
+      confirm: |
+        &7请通过点击下列选项确认删除国家&9 {nation}&7:
+          [T]&2✔ 确认: &e/{fullcmd} &8[CLICK][H]&7点击这里确认此操作.[/H][C]{fullcmd}[/C][/T]
+      war: '&c你现在不能删除你的国家. &7国家&9 {nation} &7正在与 {object}&7 进行战争. 请等到战争结束后重试.'
+      success: '&7成功删除了这个国家 &8(&7国家:&2 {nation}&8)&7.'
+    leave:
+      confirm: |
+        &7请通过点击下列选项确认要从国家&9 {nation} &7删除土地&2 {land} &7:
+          [T]&2✔ 确认: &e/{fullcmd} &8[CLICK][H]&7点击这里确认此操作.[/H][C]{fullcmd}[/C][/T]
+      capital: '&c你的土地&4 {land} &c不能离开国家&4 {nation}&c, 因为它是该国家的首都. &7若要删除你的国家, 请输入命令 &e/nations
+        delete&7.'
+      war: '&c你现在还不能离开这个国家. &7国家&9 {nation} &7正在与 {object}&7 进行战争. 战争将会在&5 {time}&7 后结束.'
+      success: '&7你成功带着土地&2 {land} &7离开了国家&9 {nation} &7.'
+    rename:
+      success: '&7成功将该国家&8(&7国家:&9 {nation}&8)&7的名称修改为了&3 {name} &7. 你支付了&c {cost}&7.'
+    setcapital:
+      confirm: |
+        &7请通过点击下列选项确认将土地&2 {land} &7设置为国家&9 {nation} &7的新首都:
+          [T]&2✔ 确认: &e/{fullcmd} &8[CLICK][H]&7点击这里确认此操作.[/H][C]{fullcmd}[/C][/T]
+      level: '&c你不能将土地&4 {land} &设置为国家&4 {nation} &c的新首都. &7它需要至少为&3 {level} &7级&8(&7当前等级: {current}&8)&7.'
+      success: '&7成功将土地&2 {land} &7设置为了国家&9 {nation} &7的新首都.'
+
+list:
+  swear-words: []
+  hologram:
+    landblock:
+      main:
+      - '&7土地&2 {land}'
+      - '&7信息:&r {inbox}'
+      - '&7区块: {chunks} / {chunks_max}'
+      - '&7成员: {members} / {members_max}'
+      - '&7经济: {balance}'
+      - '&7维护和税收费用: {upkeep_next}'
+    rent:
+    - '&6租界 {area}'
+    - '&7每 &5{time} &7消耗 &c{cost}'
+    - '&7最长租期: {max}'
+    - '&8点击租借.'
+    sell:
+      area:
+      - '&a购买'
+      - '&7区域: &6{area}'
+      - '&7共计 &c{cost} &7价格'
+      - '&8点击购买.'
+      land:
+      - '&a购买'
+      - '&7土地: &2{land}'
+      - '&7共计 &c{cost} &7价格'
+      - '&8点击购买.'
+    rented:
+    - '&7区域&6 {area}'
+    - '&7租户: {player}'
+    - '&7到期时间: &5{time}'
+    - '&7每 &5{time} &7消耗 &c{cost}'
+    - '&8Shift + 点击: 取消'
+    - '&8点击: 延长租期'
+    sold:
+      area:
+      - '&a已售'
+      - '&7区域: &6{area}'
+      - '&7买家: {player}'
+      - '&8Shift + 点击: 取消'
+      land:
+      - '&a已售'
+      - '&7土地: &2{land}'
+      - '&7买家: {player}'
+  sign:
+    top:
+      entry:
+      - '&6&l#{pos} {object}'
+      - '&7拥有者 {owner}'
+      - '&7{sorting}:'
+      - '&3{value}'
+      none:
+      - ''
+      - '&c无'
+      - ''
+      - ''
+    rent:
+    - '&6&l租界{area}'
+    - '&c{cost} &7/'
+    - '&5{time}'
+    - '&8最大: {max}'
+    sell:
+      area:
+      - '&a&l购买 {area}'
+      - '&7方块数量: {blocks}'
+      - '&7价格: &c{cost}'
+      - '&8点击购买.'
+      land:
+      - '&a&l购买土地'
+      - '&2&l{land}'
+      - '&7价格: &c{cost}'
+      - '&8点击购买.'
+    rented:
+    - '&6&l已租'
+    - '&7区域: &6{area}'
+    - '&7租客: {player}'
+    - '&5{time} &7租期剩余'
+    sold:
+      area:
+      - '&7&l已售'
+      - '&7区域: &6{area}'
+      - '&7买家: {player}'
+      land:
+      - '&7&l已售'
+      - '&7土地: &2{land}'
+      - '&7买家: {player}'

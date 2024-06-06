@@ -1,0 +1,21 @@
+Settings:
+  Enabled: true
+  Name: '&c耐久'
+  MaxLevel: 10
+  MaxStack: 100
+  Requirement:
+    Enabled: false
+    Number: 10
+    Placeholder: '%RevEnchants_Tool_Flag_Level%'
+  Description: '&7降低镐子损耗耐久的概率'
+  Shard:
+    Item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3700
+      type: LEGACY_PRISMARINE_SHARD
+    Glow: true
+    Name: '&c耐久 + %Level%'
+    Lore:
+    - '&1独特碎片 '
+    - '&7将镐子的耐久等级提升 %Level% 级'
+    - '&7最高提升 %MaxStack% 级'

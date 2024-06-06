@@ -1,0 +1,183 @@
+# Slabbo 翻译文件
+
+error-message:
+  chestlink:
+    no-destroy-linked: 你不能破坏连接至商店的箱子.
+    already-linked: 这个箱子已经连接至一个商店了.
+  general:
+    limit-hit: 你已到达创建数量上限! ({limit})
+    not-a-shop: 这不是有效商店.
+    not-a-linked-chest: 这不是连接箱子.
+    not-shop-owner: 这不是你的商店.
+    not-linked-chest-owner: 这不是你的连接箱子.
+    no-shops-found: 找不到商店!
+    not-admin-shop: 这不是管理员商店.
+    no-command-entered: 请输入命令!
+    no-buy-commands-in-shop: 商店尚未设置购买命令.
+    no-sell-commands-in-shop: 商店尚未设置出售命令.
+    invalid-index: 该序号无效!
+    shop-does-not-exist: 商店不存在!
+    named-shop-already-exists: 已存在同名商店.
+  import:
+    file-not-found: 文件不存在
+    plugin-not-supported: 不能导入该插件
+    general-error: 导入时遇到错误. 请见控制台以获取更多信息.
+  modify:
+    invalid-buy-price: 请输入正数购买价格或表示取消购买的 -1.
+    invalid-sell-price: 请输入正数出售价格或表示取消出售的 -1 .
+    invalid-quantity: 请输入正数数量
+    not-a-valid-number: 这不是有效数字!
+    invalid-note: 这不是有效交易货币!
+  shop-errors:
+    out-of-stock: 商店货物已售罄!
+    not-enough-funds: 你没有足够的钱!
+    not-enough-items: 你没有足够的物品!
+    not-enough-shop-funds: 商店的余额不足!
+    not-enough-inventory-space: 你没有足够的背包空间!
+    buy-limit-reached: 该商店已到达了购买限制!
+    sell-limit-reached: 该商店已到达了出售限制!
+    not-enough-stock: 商店剩余货物不足!
+    stock-limit-reached: 该商店的库存不能拥有超过 {limit} 个物品!
+    change-item-disallowed: 请在修改物品前清空货架!
+  plugin:
+    worldguard:
+      region-creation-prevented: WorldGuard 阻止了你在该区域中创建商店.
+      region-creation-limit-reached: 你不能再在该区域中创建更多商店了.
+
+success-message:
+  chestlink:
+    link-success: 箱子已连接至位于 {location} 的商店.
+    linking-cancelled: 连接操作已取消.
+    linking-removed: 商店连接已移除.
+    previous-linking-cancelled: 前一次连接操作已被取消.
+  general:
+    admin-create: 商店现在已为管理员商店!
+    admin-destroy: 商店现在不再是管理员商店
+    owner-name-set: 已设置拥有者显示内容.
+    owner-name-removed: 已移除拥有者显示内容.
+    shops-saved: 商店已保存!
+    limited-stock:
+      create: 商店库存已设置诶有限!
+      destroy: 商店库存已设置为无限!
+      set-time: 补货时间已被设置为 {time} 秒!
+      set-sell-stock: 出售数量已被设置为 {stock}!
+      set-buy-stock: 购买数量已被设置为 {stock}!
+    shop-commands:
+     added-command: 已成功添加命令 {command}.
+     removed-command: 已成功移除命令 {command}.
+  import:
+    importing: 正在转化商店!
+    success: 已成功转化 {count} 个商店. 跳过了 {skipped} 个商店, 因为其位置已经存在相同的商店.
+  modify:
+    buyprice-set: 购买价格已设置为 {price}
+    sellprice-set: 出售价格已设置为 {price}
+    quantity-set: 出售数量已设置为 {quantity}
+    owner-set: 拥有者已设置为 {owner}
+    stock-set: 库存已设置为 {stock}
+    note-set: 交易提示已设置为 {note}
+  client:
+    buy-success: 成功花费 {cost} 购买了 {count} 个 {item}
+    sell-success: 成功出售 {count} 个 {item} 并获得了 {cost}
+  owner:
+    buy-success: "{user} 在你的商店购买了 {count} 个 {item} 并花费了 {cost}."
+    sell-success: "{user} 在你的商店出售了 {count} 个 {item} 并获得了 {cost}."
+
+general:
+  currency-format: "${amount}"
+  shop-prefix: "[Slabbo] "
+  user-info-item-name: "半砖商店"
+  chestlink:
+    chest-name: "箱子 [{location}]"
+    crouch-to-link: 请蹲下并点击你需要连接的箱子.
+    link-for-refill: 连接补充库存的箱子!
+    cancel-chest-link: 取消箱子连接
+  general:
+    reloading: 重载
+    reloaded: 重载
+    restock-message: 你位于 {location} 的商店所出售的物品 {item} 已售罄
+    virtual-restock-message: 你的虚拟商店 {name} 所出售的物品 {item} 已售罄
+    stacks: 数量
+    cancel: 取消
+    confirm: 确认
+    item: 物品
+
+    next-page: 下一页
+    previous-page: 上一页
+    unknown-user: 未知玩家
+
+
+    buy-price: 购买价格
+    sell-price: 出售价格
+
+    click-to-set: 点击设置
+
+    quantity: 数量
+
+    current-funds: 当前余额
+    new-shop: 新的商店
+
+    shop: 商店
+    destroy-shop: 移除商店
+
+    destroy-shop-item-warning: 这会移除你的物品.
+    type-new-rate: 请输入新比率
+    type-new-buy-price: 请输入新的购买价格
+    type-new-sell-price: 请输入新的出售价格
+    type-new-quantity: 请输入新的购买数量
+    type-new-note: "请输入新的交易提示. 输入 # 可取消."
+
+    not-for-sale-explain: (-1 表示禁用出售)
+    not-buying-explain: (-1 表示禁用购买)
+    quantity-explain: (单次购买/出售的物品数量)
+
+    amount-per-transaction: "每次交易数量: {count}"
+    amount-per-click: "每次点击数量: {count}"
+    in-stock: "库存: {count}"
+
+    buy-for: "买价: {price}"
+    sell-for: "卖价: {price}"
+    funds-message: "金额: {funds}"
+
+    default-shop-note: "确认交易!"
+
+    pager: "(第 {page} / {pageCount} 页)"
+
+    shift-bulk:
+      deposit: Shift 点击以单独存入
+      withdraw: Shift 点击以单独取出
+
+    limited-stock:
+      sell-stock-left: "出售数量剩余: {count}"
+      buy-stock-left: "购买数量剩余: {count}"
+
+
+# [Slabbo] 拥有者
+gui:
+  owner-title: 拥有者
+  editing-shop: 编辑商店
+  client: 客户
+  items:
+    admin:
+      deposit-item: 存入 {item}
+      withdraw-item: 出售 {item}
+      changerate-item: 修改比率
+      modify-shop: 修改商店
+      view-as-customer: 切换顾客视角
+      link-chest: 连接箱子
+    user:
+      buy-item: 购买 {item} * {quantity}
+      sell-item: 出售 {item} * {quantity}
+      sellers-note: 交易提示
+    info:
+      owned-by: 拥有者为 {owner}
+      selling-item: "正在出售: {item}"
+      buy-each: 以 {buyPrice} 的价格购买 {quantity} 个 (单价 {buyPerItem})
+      sell-each: 以 {sellPrice} 的价格购买 {quantity} 个 (单价 {sellPerItem})
+      limit:
+        sell-stock: "出售数量: {sellStock}"
+        buy-stock: "购买数量: {buyStock}"
+        restock-time: "补货时间: {restockTime} 秒"
+        next-restock: "下次补货: {time}"
+
+    new-shop:
+      click-item-below: 点击下方物品

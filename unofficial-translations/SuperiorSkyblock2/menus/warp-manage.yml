@@ -1,0 +1,58 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                  插件作者 Ome_R                   ##
+##                                                  ##
+######################################################
+
+title: '&l传送点: {0}'
+previous-menu: true
+
+pattern:
+  - '@ @ @ @ @ @ @ @ @'
+  - '@ @ ! @ % @ $ @ @'
+  - '@ @ @ @ ~ @ @ @ @'
+  - '@ @ @ @ @ @ @ @ @'
+
+success-update-sound:
+  type: ENTITY_EXPERIENCE_ORB_PICKUP
+  volume: 0.2
+  pitch: 0.2
+
+warp-rename: '!'
+warp-icon: '~'
+warp-location: '$'
+warp-private: '%'
+
+items:
+  '!':
+    type: BOOK
+    name: '&6重命名传送点'
+    lore:
+      - '&f '
+      - '&f '
+      - '&7&o(( &f&o鼠标单击 &7&o来重命名传送点. ))'
+  '~':
+    type: STONE
+    lore:
+      - '&f '
+      - '&f '
+      - '&7&o你可使用下列内置变量:'
+      - '&7&o{0} 表示传送点名称.'
+      - '&7&o{1} 表示传送点位置.'
+      - '&7&o{2} 表示传送点开放状态.'
+      - '&7&o(( &f&o鼠标单击 &7&o编辑传送点图标. ))'
+  '$':
+    type: ENDER_PEARL
+    name: '&6传送位置'
+    lore:
+      - '&f '
+      - '&f '
+      - '&7&o(( &f&o鼠标单击 &7&o来更新传送点位置. ))'
+  '%':
+    type: FEATHER
+    name: '&6私有传送'
+    lore:
+      - '&f '
+      - '&f '
+      - '&7&o(( &f&o鼠标单击 &7&o来将该传送点重新开放. ))'

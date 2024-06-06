@@ -1,0 +1,33 @@
+Settings:
+  Enabled: true
+  InGui: true
+  Name: 庇护
+  Colour: '&7'
+  Slot: 10
+  MaxLevel: 100
+  Max: 10
+  Min: 1
+  GiveCurrency: RevToken
+  GiveCurrency-Increase-by-Lvl: 0
+  MultiBreak: true
+  MultiBreakMaxSuccess: 1000
+  EnchantNeeded: false
+  Currency: RevToken
+  Cost: 1000
+  Increase-Cost-by: 1000
+  Chance: 1
+  Increase-Chance-by: 0.01
+  Requirement:
+    Enabled: true
+    Number: 5
+    Placeholder: '%RevEnchants_Tool_Flag_Level%'
+  Description: '&7几率获取更多代币并分发给在线所有玩家%nl%获取几率随等级提升而提升%nl%需要镐子等级到达 10 才可购买'
+  Book:
+    ==: org.bukkit.inventory.ItemStack
+    v: 3700
+    type: LEGACY_BOOK
+  Message:
+    Enabled: true
+    Bar: true
+    '1': '&7你从庇护效果获得了 %amount% 枚代币'
+    '2': '&7%from player% 通过庇护效果给予了你 %amount% 枚代币'

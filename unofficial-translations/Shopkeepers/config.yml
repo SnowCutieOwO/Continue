@@ -1,0 +1,531 @@
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# Shopkeepers 配置文件
+# 插件维基: https://github.com/Shopkeepers/Shopkeepers-Wiki/wiki/Configuration
+# 维基也对物品检查相关的机制进行了解释.
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# 此设置项决定了是否需要进行配置迁移. 请勿手动修改!
+config-version: 5
+# 是否启用插件的调试模式
+debug: false
+# 额外的调试选项.
+# - 'log-all-events': 记录所有事件.
+# - 'print-listeners': 输出注册监听器的每次事件的首次调用.
+# - 'shopkeeper-activation': 启用村民商店激活时相关调试信息的输出.
+# - 'regular-tick-activities': 为一般的商店活动和行为启用调试信息的输出, 默认情况下启用会导致刷屏.
+# - 'visualize-shopkeeper-ticks': 在游戏内可视化村民商店的滴答活动.
+# - 'commands': 启用有关调试输出的命令.
+# - 'owner-name-updates': 在商店更新拥有者名称后记录信息.
+# - 'item-migrations': 在村民商店执行物品格式转换时记录信息 (例如进行交易时)
+# - 'item-conversions': 记录物品被静默转化为 Spigot 数据格式的操作. 需要注意的是这不会记录其发生的时间, 因为影响它的条件非常多.
+# - 'empty-trades': 对选定交易和其中输入的物品信息在玩家点击空白交易输出槽时进行记录.
+debug-options: []
+# 是否将匿名使用数据上传至 https://bStats.org
+# 所有上传的信息可在这里找到:
+# https://bstats.org/plugin/bukkit/Shopkeepers
+enable-metrics: true
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# 消息文本
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# 可在 https://github.com/Shopkeepers/Language-Files 找到各语言的翻译
+# 插件维基: https://github.com/Shopkeepers/Shopkeepers-Wiki/wiki/Language-Files
+language: en-default
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# 村民商店数据
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# 保存文件所使用的编码. 若你在保存文件时遇到问题, 例如特殊字符乱码, 请确保你所使用的编码
+# 支持这些字符. 非常推荐保留默认的 'UTF-8'. 不推荐在已有文件保存时修改这里的设置.
+file-encoding: "UTF-8"
+# 是否在编辑后立即保存所有村民商店的数据.
+# 若禁用, 村民商店数据会每五分钟保存一次, 服务器关闭的时候还会额外保存一次.
+# 若你的服务器体量足够巨大, 推荐禁用本项来提升性能.
+save-instantly: true
+
+# 在打开商店菜单时自动转化玩家背包和商店容器中的物品 (例如交易界面、编辑器、雇佣界面等)
+# 所转化的物品格式会适配 Spigot 的内部数据格式.
+# 该设置会帮助解决诸如在较老 Spigot 上或某些 Minecraft 机制(例如给予命令、战利品表等)产生的物品相关问题
+# 这会使得这些物品可以正常地被商店判断.
+# 若要物品在商店交易时能正确判断, 它们的数据会在插件尝试通过 Spigot API 创建物品时匹配 Spigot 的内部数据格式.
+# Spigot 偶尔会修改内部的数据格式. 这之前创建的物品, 或新创建的物品可能会出现不识别的问题, 导致了交易和物品之间的问题.
+# 本设置用于解决商店交易之间物品不能正常识别的问题.
+# 它不会帮你解决物品堆叠数量有关的问题.
+# 启用该设置可能会影响服务器性能! 尽可能避免启用本项并寻找其他的解决方法 (例如在通过 Minecraft 机制创建物品时, 坚持使用 Spigot 的数据格式)
+# 推荐仅在需要时启用该项 (例如假定大多数玩家的旧版物品都已被转化).
+convert-player-items: false
+# 若启用了 'convert-player-items' 项, 该设置会决定
+# 'convert-player-items-exceptions' 设置的排除方式为白名单或黑名单.
+# 若启用, 在列表中的所有物品都会被转化, 除了那些在  'convert-player-items-exceptions' 列表中的物品.
+# 若禁用, 只有在  'convert-player-items-exceptions' 列表中的物品才会被转化.
+convert-all-player-items: true
+# 受 'convert-player-items' 影响的物品黑/白名单.
+convert-player-items-exceptions: []
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# 插件兼容性
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# 在插件启动时, 插件需要检查与服务器的兼容性. 例如, 测试的其中一项就是 ItemStacks 是否可以正常工作,
+# 这对诸如本插件等以物易物的插件至关重要.
+# 若这些检查中的任意一个不能通过, 插件会自行禁用以防止更大的隐患出现.
+# 但是, 有些情况下插件即便未能通过某些检查还是可以正常启用. 例如, ItemsStack 的比较异常只会涉及到某些物品, 在这种情况下插件会正常工作.
+# 如果你想要无视风险继续运行插件的话, 你可以启用该项. 但是, 启用本项之后或启用过导致的问题将不会得到任何支持.
+ignore-failed-server-assumption-tests: false
+
+# 若启用, 村民商店会尝试绕过其他禁止生物生成的插件.
+# (例如土地保护插件)
+bypass-spawn-blocking: true
+
+# 若启用, 村民商店会考虑是否允许其他插件阻止玩家与村民商店的交互.
+check-shop-interaction-result: false
+
+# 若启用, 玩家只允许在拥有权限或将 'allow-shop' 标志设置为允许的 WorldGuard 区域内放置村民商店.
+enable-world-guard-restrictions: false
+# 若启用 (前提要先启用 enable-world-guard-restrictions), 玩家只允许在'allow-shop' 标志设置为允许的 WorldGuard 区域内放置村民商店
+# 但是, 玩家仍需要容器交互权限才可设置商店. 如果玩家所在区域不能放置容器, 则容器需要被其他有权限的玩家放置,
+# 同时还要禁用 require-container-recently-placed.
+require-world-guard-allow-shop-flag: false
+# 是否允许向 WorldGuard 注册 allow-shop 标志(若其他插件尚未注册的话)
+# 通常情况下无需调整此项. 此项生效需要服务器重启或完全重载!
+register-world-guard-allow-shop-flag: true
+
+# 若启用, 玩家只允许在 Towny 区域内定义的商业区域放置村民商店.
+enable-towny-restrictions: false
+
+# 若要在玩家当前打开的背包中记录不明显的改动, 本插件将会尝试在进行操作之前检查打开界面的类型是否与所期望的界面类型相匹配.
+# 该设置可禁用此类检查.
+# 通常推荐启用此验证. 如果本插件的运行环境是混合端 (例如 Cauldron 的分支或其继承),
+# 一个已知的问题是服务器经常会把实际打开的界面类型误报. 所得到的结果就是玩家尝试交易时无法打开交易界面.
+# 即便模组服不公开支持或者通过意想不到的方式破坏了某些插件的运作, 通过本设置禁用背包验证可以缓解这个问题.
+disable-inventory-verification: false
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# 商店的创建与移除
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# 用于创建玩家商店的物品.
+# 可在游戏内输入命令 '/shopkeeper give' 命令来将商店创建物品给予你自己.
+shop-creation-item:
+  type: VILLAGER_SPAWN_EGG
+  display-name: "&aShopkeeper"
+
+# 是否阻止商店创建物品的原有用法. 拥有绕过权限 (通常是管理员) 的玩家可无视该限制.
+prevent-shop-creation-item-regular-usage: true
+# 默认情况下, 商店类型可以通过手持商店创建物品右键, 实体类型可以通过 Shift+鼠标右键修改.
+# 若此项启用, 则上述操作相反.
+invert-shop-type-and-object-type-selection: false
+# 是否在删除 (破坏) 玩家商店时返还创建物品.
+deleting-player-shop-returns-creation-item: false
+
+# 是否允许玩家通过 /shopkeeper 命令创建村民商店.
+create-player-shop-with-command: false
+
+# 创建商店所选的容器是否要求为玩家最近放置的容器.
+require-container-recently-placed: true
+# 商店和容器的最大距离. 不可设置为超过 50 的数值.
+max-container-distance: 15
+# 玩家可拥有的最大商店数量. 设置为 -1 可禁用该限制.
+max-shops-per-player: -1
+# 一系列权限节点, 可以此限制玩家或特定权限组能创建的商店数量.
+# 权限节点为 'shopkeeper.maxshops.<数量>'
+# 权限节点 'shopkeeper.maxshops.unlimited' 表示没有限制.
+# 这些权限只能用于增加商店数量上限, 而不可以通过设置负权限来减少它.
+max-shops-perm-options: 5,15,25
+
+# 是否阻止容器被其他玩家打开或破坏. 推荐保持此项启用.
+protect-containers: true
+# 是否阻止商店容器的物品移动 (通过漏斗、投掷器等)
+# 若你禁用此项, 你和你的玩家需要自行保护商店物品不被窃取.
+# 这对某些土地保护插件来讲也相当困难, 因为物品也可以通过漏斗矿车偷取.
+# 你的土地保护插件需要拥有阻止其他玩家放置或将此类实体推入受保护区域的能力.
+# 如果上文的容器保护被禁用, 此项也一并会禁用.
+prevent-item-movement: true
+# 是否在容器被破坏时一并删除商店.
+delete-shopkeeper-on-break-container: false
+
+# 若启用 (将此设置设置为大于 0 的值), 插件将会检查并在服务器开启后检查并移除不活跃玩家的商店.
+# 该设置决定了几天前上线的玩家会被判断为不活跃玩家.
+player-shopkeeper-inactive-days: 0
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# 商店 (实体) 类型
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# 可以用作商店的实体种类列表. 不支持将新生物种类添加至这里的默认列表, 因为部分生物可能不会正确工作并产生诸多问题.
+enabled-living-shops:
+  - VILLAGER
+  - ALLAY
+  - AXOLOTL
+  - BEE
+  - BLAZE
+  - CAMEL
+  - CAT
+  - CAVE_SPIDER
+  - CHICKEN
+  - COD
+  - COW
+  - CREEPER
+  - DOLPHIN
+  - DONKEY
+  - DROWNED
+  - ENDERMAN
+  - EVOKER
+  - FOX
+  - FROG
+  - GHAST
+  - GIANT
+  - GLOW_SQUID
+  - GOAT
+  - HOGLIN
+  - HORSE
+  - HUSK
+  - ILLUSIONER
+  - IRON_GOLEM
+  - LLAMA
+  - MAGMA_CUBE
+  - MULE
+  - MUSHROOM_COW
+  - OCELOT
+  - PANDA
+  - PARROT
+  - PHANTOM
+  - PIG
+  - PIGLIN
+  - PIGLIN_BRUTE
+  - PILLAGER
+  - POLAR_BEAR
+  - PUFFERFISH
+  - RABBIT
+  - RAVAGER
+  - SALMON
+  - SHEEP
+  - SHULKER
+  - SILVERFISH
+  - SKELETON
+  - SKELETON_HORSE
+  - SLIME
+  - SNIFFER
+  - SNOWMAN
+  - SPIDER
+  - SQUID
+  - STRAY
+  - STRIDER
+  - TADPOLE
+  - TRADER_LLAMA
+  - TROPICAL_FISH
+  - TURTLE
+  - VEX
+  - VINDICATOR
+  - WANDERING_TRADER
+  - WARDEN
+  - WITCH
+  - WITHER_SKELETON
+  - WOLF
+  - ZOGLIN
+  - ZOMBIE
+  - ZOMBIE_HORSE
+  - ZOMBIE_VILLAGER
+  - ZOMBIFIED_PIGLIN
+
+# 本插件的商店实体是否不受重力影响.
+disable-gravity: false
+# 玩家单位为区块的范围内会受到重力影响的商店实体.
+# 将这个值设置得过大会对服务器性能造成较大压力.
+# 将这个值设置小于服务器的实体滴答范围会导致玩家可在视线内看到浮空生物直到他们靠得够近.
+# 设置为 0 将会将范围限制在与玩家处于同一区块的实体.
+# 若禁用了重力, 本设置将不会有任何效果.
+gravity-chunk-range: 4
+
+# 本插件的商店实体行为更新的 Minecraft 刻时长.
+# 这决定了我们更新重力和商店生物的速度.
+# 大于 1 的值会让生物看起来更卡顿、迟钝, 且会因为它较慢的动作而与周围的生物格格不入.
+# 若要补偿低刻设置带来的卡顿, 一些活动需要按比例压缩.
+# 这可以确保诸如实体转向玩家时头部的速度一致, 或正在受重力影响而下落的实体能够保持原移速.
+# 即便如此, 低刻设置虽然可以总体上减少服务器性能开销, 但是会略微增加行为更新时的性能开销.
+# 大于 3 的值使得实体更加流畅, 且有额外的优势.
+mob-behavior-tick-period: 3
+
+# 若商店实体类型为潜影贝, 是否在玩家靠近时探头.
+shulker-peek-if-player-nearby: true
+# 探头时潜影贝抬升上半部分壳体的高度, 所设置的值应当处于 0.0-1.0 之间.
+shulker-peek-height: 0.3
+
+# 是否允许实体商店发出声音.
+silence-living-shop-entities: true
+
+# 是否显示实体商店的名称.
+show-nameplates: true
+# 是否保持名称常显示. 若禁用, 名称只会在玩家看向该实体时显示.
+always-show-nameplates: false
+
+# 是否允许创建 Citizens 的 NPC 商店. 开启本功能前需在服务器内安装 Citizens
+enable-citizen-shops: true
+# 新创建的 Ctizens NPC 商店的默认实体类型, 此为"玩家"
+default-citizen-npc-type: "PLAYER"
+# 是否将 Citizens NPC 的拥有者设置为玩家商店的店主
+# 若禁用本项, 则插件会自动移除 Citizens NPC 商店的 NPC拥有者.
+# 在启用该选项且正确配置了 Citizens 的命令权限之后, 你可以允许玩家使用 Citizens 的命令修改他们的 NPC 商店
+set-citizen-npc-owner-of-player-shops: false
+# NPC 商店是(true)否(false)可被流体冲走, 或不改变他们的行为 ("unmodified")
+citizen-npc-fluid-pushable: false
+# 是否取消与 Citizens NPC 商店的额外交互
+# 默认行为即为取消所有与商店实体交互的行为 (实体、告示牌、Citizens NPC 等), 以此防止玩家触发原版交互 (例如与村民交互时打开他们的原版交易界面而不是插件的自定义交易界面)
+# 但是, Citizens NPC 可以在交互时触发某些操作, 例如执行命令. 在禁用本项后, NPC 的普通交互会同时触发打开商店界面和自身携带的交互命令等内容.
+# 但这也意味着可能会发生一些意想不到的事情. 例如, 在与村民 NPC 交互时, 默认情况下 Citizens 会阻止村民打开默认交易界面, 但其他原版操作例如 talked-to-villager (村民言论机制) 仍然会发生. 所以如果你禁用了这个设置, 你就需要确保 NPC 交互的结果在你预料之内.
+cancel-citizen-npc-interactions: true
+# 在村民商店插件修改 Citizens NPC 后是否立即保存一次所有的 Citizens NPC.
+# 若启用, Citizens 插件会如常处理 NPC 数据: 在 Citizens 插件关闭后保存, 服务器开启时按指定间隔保存, 或通过玩家命令手动保存.
+save-citizen-npcs-instantly: false
+# 是否允许本插件保存或恢复 Citizens NPC 数据的快照.
+# 警告: 在禁用本项后, 本插件会自动删除之前通过快照保存的 NPC 数据.
+snapshots-save-citizen-npc-data: true
+# Whether to automatically delete all invalid Citizen shopkeepers during plugin
+# 是否在启动时自动删除所有无效的 Citizen 商店配置.
+# 这包括了指向同一 Citizens NPC 实体的商店, 或任意对应了不存在的 NPC 的商店 (例如本插件被禁用时删除 Citizens 的 NPC)
+# 在之前的版本, 此为默认行为. 但是, 自动删除村民商店风险过大, 尤其是对文件损坏的检测可能出现潜在问题, 这个功能现在可通过配置开关, 且默认为禁用状态.
+# 在这种情况下, 插件会在检测到无效商店时记录至日志.
+# 相似地, 你可以使用命令 '/shopkeepers cleanupCitizenShopkeepers' 可以用于手动删除被检测为无效的商店.
+delete-invalid-citizen-shopkeepers: false
+
+# 是否允许创建告示牌商店.
+enable-sign-shops: true
+# 是否允许创建站立式告示牌 (而不是贴墙告示牌) 商店.
+enable-sign-post-shops: true
+# 是否允许创建悬挂式告示牌商店.
+enable-hanging-sign-shops: true
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# 命名
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# 用于筛选村民名称的正则表达式. 正则表达式的更多信息请见下述文章:
+# * https://docs.oracle.com/javase/9/docs/api/java/util/regex/Pattern.html
+# * http://www.regular-expressions.info/tutorial.html
+# 这里是一些例子:
+# * "[A-Za-z0-9 ]{3,25}": 默认实例. 允许任意大小写英文字母和 0 到 9 的数字
+# 名称长度最小为 3 个字符, 最大为 25 个字符.
+# * "[A-Za-z0-9&§# ]{3,25}": 与上述相同, 但允许玩家插入彩色代码.
+# * "[\\p{L}0-9 ]{3,25}": 与上述相同, 但允许使用任意语言的文字.
+# 若你在使用该设置时遇到问题, 请确保配置文件编码为 UTF-8.
+# * ".*": 表示匹配任意文本.
+# * 在表达式前面加上 "(?i)" 表示启用大小写敏感的匹配.
+# * "(?=X)": 名称中必须包含 "X" (X 可以为任意内容), 但不可以只包含这些字符, 且还需满足上述表达式.
+# * "(?!.*X).*": 名称不允许包含任何含 "X" 的内容.
+# * "(?i)(?=[a-z0-9 ]{3,25})(?!.*bitch|dick|ass).*": 过滤脏话的示例.
+name-regex: "[A-Za-z0-9 ]{3,25}"
+# 玩家商店是否可以通过物品重命名. 这会隐藏编辑器菜单中的重命名选项.
+naming-of-player-shops-via-item: false
+# 是否允许商店拥有者重命名他们的 Citizens NPC 商店.
+# 默认情况下, 这些商店会以商店拥有者的名称为自己的名称.
+allow-renaming-of-player-npc-shops: false
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# 编辑器菜单
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# 空白交易格子中使用的占位符物品.
+# 这些物品的描述和自定义名称 (除非被设置为 AIR 以禁用) 都是在语言文件中修改的.
+# 因为包含自定义名称和描述, 这些物品不能和玩家试图放入并进行交易的物品完全相同.
+selling-empty-trade-result-item: GRAY_STAINED_GLASS_PANE
+selling-empty-trade-item1: GRAY_STAINED_GLASS_PANE
+selling-empty-trade-item2: GRAY_STAINED_GLASS_PANE
+selling-empty-item1: BARRIER
+selling-empty-item2: BARRIER
+
+buying-empty-trade-result-item: GRAY_STAINED_GLASS_PANE
+buying-empty-trade-item1: GRAY_STAINED_GLASS_PANE
+buying-empty-trade-item2: AIR
+buying-empty-result-item: BARRIER
+buying-empty-item2: AIR
+
+trading-empty-trade-result-item: GRAY_STAINED_GLASS_PANE
+trading-empty-trade-item1: GRAY_STAINED_GLASS_PANE
+trading-empty-trade-item2: GRAY_STAINED_GLASS_PANE
+trading-empty-result-item: BARRIER
+trading-empty-item1: BARRIER
+trading-empty-item2: BARRIER
+
+book-empty-trade-result-item: GRAY_STAINED_GLASS_PANE
+book-empty-trade-item1: GRAY_STAINED_GLASS_PANE
+book-empty-trade-item2: GRAY_STAINED_GLASS_PANE
+book-empty-item1: BARRIER
+book-empty-item2: BARRIER
+
+# 交易显示的最大页数. 可设置的最大值为 10.
+max-trades-pages: 5
+
+# 显示翻页按钮的图标样式.
+# 这些按钮的名称和描述通过消息文件设置, 所以不可以在这里修改.
+previous-page-item: WRITABLE_BOOK
+next-page-item: WRITABLE_BOOK
+current-page-item: WRITABLE_BOOK
+trade-setup-item: PAPER
+
+# 玩家可用于重命名以替代他们想收购的物品的材料名.
+# 可将其设置为 AIR 以禁用本功能.
+placeholder-item: PAPER
+
+# 设置名称按钮和命名物品(若启用)所使用的样式.
+name-item: NAME_TAG
+
+# 是否允许商店拥有者移动商店的位置.
+enable-moving-of-player-shops: true
+# 移动按钮的样式.
+move-item: ENDER_PEARL
+
+# 玩家商店编辑菜单是否包含可直接查看库存容器的按钮.
+enable-container-option-on-player-shop: true
+# 库存按钮的样式.
+container-item: CHEST
+
+# 在玩家商店中用于编辑交易提示的按钮样式.
+trade-notifications-item: BELL
+
+# 删除按钮的样式.
+delete-item: BONE
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# 原版村民
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# 是否禁用与原版村民的交易.
+disable-other-villagers: false
+# 是否阻止原版村民生成. 其他通过插件、刷怪蛋、刷怪笼或治愈僵尸村民等生成方法不受该设置影响.
+block-villager-spawns: false
+# 是否阻止僵尸村民被治疗.
+disable-zombie-villager-curing: false
+# 是否能雇佣原版村民.
+hire-other-villagers: false
+
+# 是否阻止与原版流浪商人的交易.
+disable-wandering-traders: false
+# 是否阻止原版流浪商人与行商羊驼的生成.
+# 其他通过插件、刷怪蛋、刷怪笼等方法生成的流浪商人不受该设置影响.
+block-wandering-trader-spawns: false
+# 是否能雇佣原版流浪商人.
+hire-wandering-traders: false
+
+# 是否能通过 Shift+鼠标右键直接编辑原版村民.
+edit-regular-villagers: false
+# 是否能通过 Shift+鼠标右键直接编辑原版流浪商人.
+edit-regular-wandering-traders: false
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# 雇佣
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# 玩家商店中租赁按钮和雇佣原版村民时使用货币的样式.
+hire-item: EMERALD
+# 用于雇佣原版村民时使用的货币数量.
+hire-other-villagers-costs: 1
+# 雇佣其他玩家的村民商店时是否也要求雇佣者拥有创建村民商店的权限.
+hire-require-creation-permission: true
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# 交易
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# 是否阻止玩家与自己的商店交易. 推荐启用此项.
+prevent-trading-with-own-shop: true
+# 在启用本项后商店不会在拥有者在线时开放交易.
+# 可能对某些只允许玩家之间交易的角色扮演服务器有用.
+prevent-trading-while-owner-is-online: false
+# 在某些情况下, Minecraft 甚至允许不完全匹配的物品进行交易 (例如村民同样接受带有额外元数据的物品).
+# 在启用本项后, 插件将会检查待交易的物品是否完全匹配交易中的目标物品.
+use-strict-item-comparison: false
+
+# 是否在玩家打开交易菜单与村民进行交易时提升 Minecraft 原版的村民言论属性.
+increment-villager-statistics: false
+# 是否在玩家与插件村民进行交易时允许村民发出原版满足交易时的声音.
+# 该设置仅对插件的村民商店有效, 且无视上文的 'silence-living-shop-entities' 设置项.
+simulate-villager-trading-sounds: true
+# 是否允许插件的村民商店模拟村民游荡时发出的声音.
+# 该设置无视上文的 'silence-living-shop-entities' 设置项.
+simulate-villager-ambient-sounds: false
+# 是否在玩家与插件流浪商人进行交易时允许它发出原版流浪商人满足交易时的声音.
+# 该设置仅对插件的村民商店有效, 且无视上文的 'silence-living-shop-entities' 设置项.
+simulate-wandering-trader-trading-sounds: true
+# 是否允许插件的流浪商人商店模拟流浪商人游荡时发出的声音.
+# 该设置无视上文的 'silence-living-shop-entities' 设置项.
+simulate-wandering-trader-ambient-sounds: false
+# 是否只对进行交易的玩家发送流浪商人满足交易时的声音而非像原版那样向邻近所有玩家发送.
+# 该设置不会影响上述模拟村民游荡声音的设置.
+simulate-trading-sounds-only-for-the-trading-player: true
+
+# 在交易成功时向玩家发送的音效.
+trade-succeeded-sound:
+  sound: UI_BUTTON_CLICK
+  pitch: 2.0
+  volume: 0.3
+# 在交易被阻止时向玩家发送的音效.
+trade-failed-sound:
+  sound: BLOCK_BARREL_CLOSE
+  pitch: 2.0
+  volume: 0.5
+
+# 拥有者收到物品后扣除物品的百分比 (0-100).
+# 小心: 根据配置, 拥有者可能得不到任何物品!
+tax-rate: 0
+# 计算玩家商店税收时是否向上而不是向下取整.
+tax-round-up: false
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# 交易提醒
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# 是否向拥有权限 (管理员商店提醒为 'shopkeeper.trade-notifications.admin', 玩家商店为 'shopkeeper.trade-notifications.player')
+# 的玩家发送交易提醒. 如果玩家因拥有者启用了提醒而同样收到提醒, 他们只会收到拥有者方面的交易提示.
+notify-players-about-trades: false
+# 玩家收到交易提醒时播放的声音
+# 设置为 "" 可将其禁用.
+trade-notification-sound: ""
+
+# 是否向商店拥有者发送交易相关的提醒
+notify-shop-owners-about-trades: true
+# 当玩家收到交易提醒时播放的声音
+# 设置为 "" 可将其禁用.
+shop-owner-trade-notification-sound:
+  sound: ENTITY_EXPERIENCE_ORB_PICKUP
+  volume: 0.25
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# 交易记录
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# 玩家可以在一次快速会话中触发多次相同的交易. 例如, 当玩家按住 Shift 键点击输出格,
+# 他们可以以一次点击触发至多 64 次单独的交易. 即便点击的时候没有按住 Shift, 他们触发的交易次数仍然非常多.
+# 若要让记录的交易更为连贯, 我们会合并指定间隔内在相同玩家、商店或物品上发生的多次交易
+# 本设置所指定的是判定为连续合并交易的最大时长. 将这个值设置为 1 会只合并由同一个物品栏操作(即单次按住 Shift 键点击内)触发的交易
+# 非常推荐不将该值设置为大于几秒的值: 给定时间越长, 记录的时间戳和商店状态会与实际情况相差越大
+trade-log-merge-duration-ticks: 300
+# 交易合并会在两次交易之间的时间长于该设置的值之后被提前终止. 
+# 可以将这个设置调整为较高值并与上文的 'trade-log-merge-duration-ticks' 结合使用, 来限制交易的最长等待时间.
+# 若将该值设置为 0 或不小于上文 'trade-log-merge-duration-ticks' 的值会导致本项失效.
+# 若将该值设置得过低, 会导致需要手动触发的交易 (只有几刻时间) 毫无意义.
+# 出于性能考虑, 实际时间会根据服务器滴答而有所变化.
+trade-log-next-merge-timeout-ticks: 100
+
+# 是否将所有交易记录以 .csv 格式的文件保存至插件文件夹中.
+log-trades-to-csv: false
+
+# 是否同样记录物品的元数据. 这包括了诸如它们的自定义名称、描述、附魔等内容. 这些数据会以 Spigot 的格式存储在 YAML 格式的文件中.
+# 启用这项设置会导致插件的占用大小增加.
+log-item-metadata: false
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# 货币
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# 玩家商店中使用的货币物品.
+currency-item: EMERALD
+
+# 二级的高阶货币, 用于玩家的商店二号交易栏. 若要禁用, 则将该项设置为 'AIR'
+high-currency-item: EMERALD_BLOCK
+
+# 二阶货币与一阶货币的换算值.
+high-currency-value: 9
+# 二级货币仅在物品价值大于下面设置的值时才可以使用.
+high-currency-min-cost: 20

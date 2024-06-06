@@ -1,0 +1,151 @@
+# BlockLocker 的配置文件.
+# 该文件由插件版本为 1.12.1 的 BlockLocker 生成.
+
+# 插件所使用的语言文件. 这会在文件夹中生成对应文件, 你可以对其中的内容按需修改.
+# 插件内置的语言文件如下:
+# - translations-cs.yml (翻译作者 PetyXbron)
+# - translations-de.yml (翻译作者 Robert and Acursen)
+# - translations-en.yml
+# - translations-es.yml (翻译作者 TheCiROMG)
+# - translations-fr.yml (翻译作者 Kervinou)
+# - translations-hu.yml (翻译作者 Crankiee)
+# - translations-ja.yml (翻译作者 ikafly144)
+# - translations-kr.yml (翻译作者 iLar0213)
+# - translations-nl.yml
+# - translations-pl.yml (翻译作者 Asentra_/KebabXL)
+# - translations-tr.yml (翻译作者 ataturkthemcpro)
+# - translations-zh.yml (翻译作者 2125368097)
+# - translations-zh-tw.yml (翻译作者 Shen-Ta Hsieh)
+# 对于其他语言, 你需要以英语为原文进行翻译.
+# 非常推荐你将翻译发给作者, 这样其他用户就能使用这些内容.
+languageFile: translations-en.yml
+
+# 更新检查. 可用值:
+# JUST_NOTIFY - 仅检查更新, 并提醒管理有更新可用
+# DISABLED - 不检查更新
+updater: JUST_NOTIFY
+
+# 可以被保护的所有容器类型.
+# 完整方块名称可在这里找到:
+# https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+protectableContainers:
+- anvil
+- barrel
+- beacon
+- black_shulker_box
+- blast_furnace
+- blue_shulker_box
+- brewing_stand
+- brown_shulker_box
+- chest
+- chipped_anvil
+- cyan_shulker_box
+- crafting_table
+- damaged_anvil
+- dispenser
+- dropper
+- enchanting_table
+- furnace
+- gray_shulker_box
+- green_shulker_box
+- hopper
+- jukebox
+- light_blue_shulker_box
+- light_gray_shulker_box
+- lime_shulker_box
+- magenta_shulker_box
+- orange_shulker_box
+- pink_shulker_box
+- purple_shulker_box
+- red_shulker_box
+- shulker_box
+- smoker
+- trapped_chest
+- white_shulker_box
+- yellow_shulker_box
+
+# 将该项设置为 true 后, 一个告示牌将可以保护相邻的容器.
+# 当设置为 false 时, 每格容器都需要一个单独的告示牌进行保护.
+# 需要注意的是大型箱子算作一个容器, 因此一个告示牌便足以保护整个容器而无需设置此项.
+connectContainers: false
+
+# 可被保护的所有门的名称. 这些方块名称需使用下列提及的命名空间 ID:
+# https://zh.minecraft.wiki/w/%E9%97%A8#%E6%95%B0%E6%8D%AE%E5%80%BC
+protectableDoors:
+- acacia_door
+- bamboo_door
+- birch_door
+- cherry_door
+- crimson_door
+- dark_oak_door
+- iron_door
+- jungle_door
+- mangrove_door
+- oak_door
+- spruce_door
+- warped_door
+
+# All protections (except doors) that consist not only of the block listed here,
+# 所有 (除门以外) 可被保护的方块
+# 例如栅栏门与其下的方块会被一并保护, 直立式告示牌下的方块也会被保护.
+# 需要注意的是, 对某些方块 (如活板门或者拉杆, 如果你想把拉杆也加进列表的话) 而言, 支撑方块并不总是在正下方, 而是它位于其他位置, 取决于该方块本身的状态.
+protectableAttachables:
+- acacia_fence_gate
+- acacia_trapdoor
+- bamboo_fence_gate
+- bamboo_trapdoor
+- birch_fence_gate
+- birch_trapdoor
+- cherry_fence_gate
+- cherry_trapdoor
+- crimson_fence_gate
+- crimson_trapdoor
+- dark_oak_fence_gate
+- dark_oak_trapdoor
+- iron_trapdoor
+- jungle_fence_gate
+- jungle_trapdoor
+- mangrove_fence_gate
+- mangrove_trapdoor
+- oak_fence_gate
+- oak_trapdoor
+- spruce_fence_gate
+- spruce_trapdoor
+- warped_fence_gate
+- warped_trapdoor
+
+
+
+
+# 自动关闭前门保持打开的时间长度.
+# 玩家可在木牌上写上 [Timer:数字] 来覆盖该选项, 数字可为 0 至 9 的任意一个.
+# 在使用 0 或负数时, 门不会自动关上.
+# 对于通过红石开关的门, 它也不会自动关上.
+defaultDoorOpenSeconds: 0
+
+# 玩家不在线多少时间自动废弃箱子的锁.
+# 设置为 0 或负数可将其禁用.
+#
+# 该设置仅对开启正版验证的服务器 (或通过正版验证进入的 BC 所连接的离线子服) 有效. 理由如下.
+# 最后登录时间存储在玩家文件中. 若要读取这些文件, 现在需要玩家的 UUID, 在离线模式的情况下, UUID 取决于玩家的用户名, 且是大小写敏感.
+# 也就是说: 如果玩家 (无意或有意) 往告示牌上写上了大小写错误的名称 (如 notch 而非 Notch), 箱子保护就永远不会过期.
+# 这不是插件所预期的行为, 所以在离线模式下箱子过期保护是禁用的.
+autoExpireDays: 0
+
+# 除了能够防止人为破坏, 插件也能阻止其他生物 (如苦力怕和 TNT) 的破坏.
+# 若你想要特定的实体能爆炸摧毁箱子锁, 可将它们加入下列表中.
+# 例如, allowDestroyBy: [CREEPER, TNT] 允许苦力怕和 TNT 的爆炸摧毁箱子锁.
+#
+# 这些是你可以使用的值, 还有相关内容的描述.
+# BLOCK_EXPLOSION - 某些方块可以通过爆炸摧毁箱子锁, 如处于地狱中的床
+#                  注意: TNT 在爆炸时为实体, 所以它不受该值影响
+# CREEPER - 苦力怕可以通过爆炸摧毁箱子锁
+# ENDERMAN - 末影人可以通过拾起方块来破坏箱子锁
+# FIRE - 火可以烧掉箱子锁
+# GHAST - 恶魂可以射出爆炸火球进而摧毁箱子锁
+# PISTON - 活塞可以破坏箱子锁
+# SAPLING - 长大的树苗可以顶开箱子锁
+# TNT - TNT 可以通过爆炸摧毁箱子锁
+# ZOMBIE - 可以破开被锁上的门
+# UNKNOWN - 对其他种类破坏的统称
+allowDestroyBy: []

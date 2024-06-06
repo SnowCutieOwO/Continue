@@ -1,0 +1,114 @@
+Title: '#5d6d7e&lProduct Cart'
+Size: 54
+
+Product:
+  Slots: 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35
+
+Content:
+  accept:
+    Item:
+      Material: PLAYER_HEAD
+      Head_Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTc5YTVjOTVlZTE3YWJmZWY0NWM4ZGMyMjQxODk5NjQ5NDRkNTYwZjE5YTQ0ZjE5ZjhhNDZhZWYzZmVlNDc1NiJ9fX0='
+      Name: '#a5ff9a&l接受'
+      Lore:
+        - '#a5ff9a&l细节:'
+        - '#a5ff9a▪ #ddecee权重: #a5ff9ax%units%'
+        - '#a5ff9a▪ #ddecee总数量: #a5ff9a%amount%'
+        - '#a5ff9a▪ #ddecee价格: #a5ff9a%price%'
+        - '#a5ff9a▪ #ddecee余额: #a5ff9a%balance%'
+    Slots: 53
+    Type: CONFIRM
+
+  cancel:
+    Item:
+      Material: PLAYER_HEAD
+      Head_Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmViNTg4YjIxYTZmOThhZDFmZjRlMDg1YzU1MmRjYjA1MGVmYzljYWI0MjdmNDYwNDhmMThmYzgwMzQ3NWY3In19fQ=='
+      Name: '#ff9a9a&l取消'
+    Slots: 45
+    Type: DECLINE
+
+  pane1:
+    Item:
+      Material: BLACK_STAINED_GLASS_PANE
+    Slots: 46,47,48,49,50,51,52
+
+  add_1:
+    Item:
+      Material: PLAYER_HEAD
+      Head_Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmQ2NWNlODNmMWFhNWI2ZTg0ZjliMjMzNTk1MTQwZDViNmJlY2ViNjJiNmQwYzY3ZDFhMWQ4MzYyNWZmZCJ9fX0='
+      Name: '#a5ff9a&l[添加 x1]'
+    Units: 1
+    Slots: 42
+    Type: ADD
+
+  add_8:
+    Item:
+      Material: PLAYER_HEAD
+      Head_Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjJlZTEzNzFkOGYwZjVhOGI3NTljMjkxODYzZDcwNGFkYzQyMWFkNTE5ZjE3NDYyYjg3NzA0ZGJmMWM3OGE0In19fQ=='
+      Name: '#a5ff9a&l[添加 x8]'
+    Units: 8
+    Slots: 43
+    Type: ADD
+
+  add_16:
+    Item:
+      Material: PLAYER_HEAD
+      Head_Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTlmNjJhNDY5YTIwNmFkZDczODg3YzczNjYzNzZhNmM0ZjMzNzdiMmY1Yjk3OTM1MWU5NmFjNjM0NTcyIn19fQ=='
+      Name: '#a5ff9a&l[添加 x16]'
+    Units: 16
+    Slots: 44
+    Type: ADD
+
+  take_1:
+    Item:
+      Material: PLAYER_HEAD
+      Head_Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGQyNDU0ZTRjNjdiMzIzZDViZTk1M2I1YjNkNTQxNzRhYTI3MTQ2MDM3NGVlMjg0MTBjNWFlYWUyYzExZjUifX19'
+      Name: '#ff9a9a&l[减少 x1]'
+    Units: 1
+    Slots: 38
+    Type: TAKE
+
+  take_8:
+    Item:
+      Material: PLAYER_HEAD
+      Head_Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTY4MzQ0MGM2NDQ3YzE5NWFhZjc2NGUyN2ExMjU5MjE5ZTkxYzZkOGFiNmJkODlhMTFjYThkMmNjNzk5ZmE4In19fQ=='
+      Name: '#ff9a9a&l[减少 x8]'
+    Units: 8
+    Slots: 37
+    Type: TAKE
+
+  take_16:
+    Item:
+      Material: PLAYER_HEAD
+      Head_Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWUzZTRiYzcxZTNhYzMzMDgzNjE4MWVkYTk2YmM2ZjEyOGU1YzUzMTNhYjk1MmM4ZmY2ZGVkNTQ5ZTEzYTUifX19'
+      Name: '#ff9a9a&l[减少 x16]'
+    Units: 16
+    Slots: 36
+    Type: TAKE
+
+  set_1:
+    Item:
+      Material: PLAYER_HEAD
+      Head_Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmY2MTI2OTczNWYxZTQ0NmJlY2ZmMjVmOWNiM2M4MjM2Nzk3MTlhMTVmN2YwZmJjOWEwMzkxMWE2OTJiZGQifX19'
+      Name: '#9af7ff&l[设置 x1]'
+    Units: 1
+    Slots: 39
+    Type: SET
+
+  set_10:
+    Item:
+      Material: PLAYER_HEAD
+      Head_Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTc3YTU2Y2U0MTVkN2MzMDgwODcwNmE5NGNjMmJhZmE4OTdjYjdlNDg2Mjg3YzMzN2E0NGFmNDJiOTI4YzQzIn19fQ=='
+      Name: '#9af7ff&l[设置 x10]'
+    Units: 10
+    Slots: 40
+    Type: SET
+
+  set_999:
+    Item:
+      Material: PLAYER_HEAD
+      Head_Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTNhNDg3YjFmODFjOWVjYzZlMTg4NTdjNjU2NjUyOWU3ZWZhMjNlZWY1OTgxNGZlNTdkNjRkZjhlMmNmMSJ9fX0='
+      Name: '#9af7ff&l[设置 最大数.]'
+    Units: 100
+    Slots: 41
+    Type: SET

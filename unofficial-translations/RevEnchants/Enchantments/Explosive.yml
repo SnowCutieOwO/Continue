@@ -1,0 +1,35 @@
+Settings:
+  Enabled: true
+  InGui: true
+  Name: 爆破
+  Colour: '&7'
+  Slot: 14
+  MaxLevel: 10
+  Radius-1: 2
+  Radius-2: 2
+  Radius-3: 2
+  Currency: RevToken
+  Cost: 1000
+  Increase-Cost-by: 1000
+  Chance: 100
+  Increase-Chance-by: 0.1
+  Requirement:
+    Enabled: false
+    Number: 5
+    Placeholder: '%RevEnchants_Tool_Flag_Level%'
+  Sound:
+    Enabled: true
+    ID: ENTITY_GENERIC_EXPLODE
+    Volume: 1
+    Pitch: 1
+  Description: '&73 *3 范围挖掘'
+  Book:
+    ==: org.bukkit.inventory.ItemStack
+    v: 3700
+    type: LEGACY_BOOK
+  IgnoreBlocks:
+  - BEDROCK
+  Message:
+    Enabled: true
+    Bar: true
+    Format: '&7爆破成功破坏了 %Amount_FormattedA% 个方块'

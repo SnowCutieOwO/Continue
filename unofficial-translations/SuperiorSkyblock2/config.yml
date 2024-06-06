@@ -1,0 +1,810 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                  插件作者 Ome_R                   ##
+##                                                  ##
+######################################################
+
+# 在这里你可以设置所有岛屿价值重新计算的间隔
+# 若你需要关闭该功能, 将该设置的值设置为 0 即可
+# 建议将保存间隔调大, 因为它可能造成卡顿.
+calc-interval: 0
+
+# 本插件的数据库相关设置.
+database:
+  # 本地数据库请使用 "SQLite".
+  # 远程数据库请使用 "MySQL" 或 "MariaDB" (取决于你的预设).
+  type: SQLite
+  # 是否在服务器启动时进行备份.
+  backup: true
+  # 远程数据库连接信息
+  #（译者注：若你正在使用 SQLite，插件会自动处理设置，你不需要改动下方的任何配置）
+  address: 'localhost'
+  port: 3306
+  db-name: 'SuperiorSkyblock'
+  user-name: 'root'
+  password: 'root'
+  prefix: ''
+  useSSL: false
+  allowPublicKeyRetrieval: true
+  waitTimeout: 600000
+  maxLifetime: 1800000
+
+# 设置插件的主命令.
+# 可通过使用分隔符 ","(英文逗号) 添加命令别称(等价用法).
+# 若要使该变动生效, 你必须重启服务器.
+island-command: 'island,is,islands'
+
+# 设置岛屿边界最大值. 岛屿可供移动的距离为边界的 3 倍.
+# 若已存在岛屿世界请不要修改该数值!
+max-island-size: 200
+
+# 创建岛屿的默认数值设置.
+# 注意: 自带值的升级功能（不通过输入命令来更新值的功能）会覆盖这里所有的默认值
+# 例如, 如果我设置了修改生成器相关几率的升级,
+# 那么就没有必要修改这里的默认值, 因为新的岛屿会使用升级中所给的生成器几率, 而不是这里.
+default-values:
+  # 所有岛屿的默认大小.
+  # 岛屿大小可通过管理员命令 /is admin setsize 修改.
+  island-size: 20
+
+  # 设置岛屿默认的方块限制.
+  # 可通过管理员命令 /is admin setblocklimit 命令进行修改.
+  # 有效材料名称可通过该列表查找: https://bg-software.com/materials/
+  block-limits:
+    HOPPER: 8
+
+  # 设置岛屿的默认实体限制.
+  # 可通过管理员命令 /is admin setentitylimit 修改.
+  # You can find a list of entities here: https://bg-software.com/entities/
+  entity-limits:
+    MINECART: 4
+
+  # 设置岛屿默认可设置的传送点数量
+  # 可通过管理员命令 /is admin setwarpslimit 修改.
+  warps-limit: 3
+
+  # 设置岛屿的默认团队数量上限.
+  # 可通过管理员命令 /is admin setteamlimit 修改.
+  team-limit: 4
+
+  # 设置岛屿的默认合作成员数量上限.
+  # 可通过管理员命令 /is admin setcooplimit 修改.
+  coop-limit: 8
+
+  # 设置岛屿的默认作物生长速率.
+  # 该速率可在游戏内通过管理员命令 /is admin setcropgrowth 修改.
+  crop-growth: 1
+
+  # 设置岛屿的默认刷怪笼产生速率.
+  # 该速率可在游戏内通过管理员命令 /is admin setspawnerrates 修改.
+  spawner-rates: 1
+
+  # 设置岛屿的默认掉落物倍率.
+  # 该速率可在游戏内通过管理员命令 /is admin setmobdrops 修改.
+  mob-drops: 1
+
+  # 设置岛屿银行的存款上限.
+  # -1 表示不设限.
+  bank-limit: -1
+
+  # 默认岛屿的刷石机方块产生几率
+  # 示例: 'DIAMOND_BLOCK:50' 将有 50% 的几率生成钻石块.
+  # 可在这里找到完整的材料列表: https://bg-software.com/materials/
+  generator:
+    normal:
+      COBBLESTONE: 95
+      COAL_ORE: 5
+
+  # 默认岛屿的成员职位限制.
+  # 实例: '1:5' 表示将 ID 为 1(即管理员) 的职位限制为 5.
+  role-limits: [ ]
+
+# 设置岛屿的高度限制.
+islands-height: 100
+
+# 在岛屿内添加玩家世界边界的功能.
+# 若你想要全局禁用该功能, 将该选项设置为 false 即可.
+# 世界边界可通过命令 /is toggle border 切换显示.
+world-borders: true
+
+# 所有堆叠方块的设置.
+stacked-blocks:
+  # 若你想要全局禁用堆叠方块的功能, 将该选项设置为 false 即可.
+  # 堆叠方块的放置功能可通过命令 /is toggle blocks 切换.
+  enabled: true
+
+  # 堆叠方块的自定义名称.
+  custom-name: '&e{0}x {1}'
+
+  # 不可以堆叠方块的世界名称.
+  disabled-worlds: [ ]
+
+  # 在玩家启用堆叠模式的时候能够堆叠的方块列表.
+  whitelisted:
+    - 'DIAMOND_BLOCK'
+
+  # 对堆叠方块进行限制.
+  limits:
+    EXAMPLE_BLOCK: 5
+
+  # 取出的方块是否直接进入玩家背包中?
+  auto-collect: false
+
+  # 存款菜单相关设置.
+  deposit-menu:
+    # 是否在 shift+鼠标左键 点击打开界面的时候打开该界面?
+    enabled: true
+    # 菜单界面的标题
+    title: '&l存入方块'
+
+# 设置岛屿价值的计算方式
+# 使用 {} 表示岛屿上所有方块的原数值. 确保你只进行了整数及其运算操作!
+# 若你正在使用 Java 15 以上的版本 (Minecraft 1.16+), 请浏览这篇文章:
+# https://wiki.bg-software.com/superiorskyblock/new-java-engine
+island-level-formula: '{} / 2'
+
+# 岛屿等级是否应当取整?
+rounded-island-level: false
+
+# 岛屿排行榜以什么数据为根据进行排序?
+# 可用设置有 WORTH, LEVEL, RATING 或 PLAYERS. 
+island-top-order: 'WORTH'
+
+# 是否启用岛屿合作成员功能.
+coop-members: true
+
+# 所有与岛屿职位有关的功能.
+# 你可以在这里找到完整岛屿权限: https://wiki.bg-software.com/superiorskyblock/island-permissions
+island-roles:
+  # 给予非岛屿访客的职位设置.
+  guest:
+    # 该职位的显示名称.
+    name: '访客'
+    # 访客的默认权限列表.
+    permissions: [ ]
+
+  # 给予合作成员的玩家权限
+  coop:
+    name: '队友'
+    permissions:
+      - ANIMAL_BREED
+      - ANIMAL_DAMAGE
+      - ANIMAL_SHEAR
+      - BREAK
+      - BUILD
+      - CLOSE_BYPASS
+      - CROPS_GROWTH
+      - DROP_ITEMS
+      - ENDER_PEARL
+      - EXPEL_BYPASS
+      - FARM_TRAMPING
+      - FERTILIZE
+      - FISH
+      - HORSE_INTERACT
+      - INTERACT
+      - ITEM_FRAME
+      - LEASH
+      - MINECART_DAMAGE
+      - MINECART_ENTER
+      - MINECART_OPEN
+      - MINECART_PLACE
+      - MONSTER_DAMAGE
+      - NAME_ENTITY
+      - PAINTING
+      - PICKUP_AXOLOTL
+      - PICKUP_DROPS
+      - PICKUP_FISH
+      - PICKUP_LECTERN_BOOK
+      - SIGN_INTERACT
+      - TURTLE_EGG_TRAMPING
+      - USE
+      - VILLAGER_TRADING
+
+  # 岛屿成员的权限设置.
+  # 所有的岛屿成员默认权限都是这些.
+  #  - 可按喜好自由添加职位.
+  #  - 新岛屿成员职位权重为 0.
+  #  - 更高等级的职位拥有低等级职位的所有权限.
+  #  - 每个职位都必须有一个独特的 ID, 用于在名称被修改的时候区分不同职位的玩家.
+  #    请勿修改 ID!!! 但这些内容不需要按顺序来.
+  ladder:
+    member:
+      id: 0
+      name: '成员'
+      weight: 0
+      permissions:
+        - ANIMAL_SPAWN
+        - CHEST_ACCESS
+        - DEPOSIT_MONEY
+        - FLY
+        - ISLAND_CHEST
+        - MONSTER_SPAWN
+        - RANKUP
+        - SPAWNER_BREAK
+    mod:
+      id: 1
+      name: '行政员'
+      weight: 1
+      permissions:
+        - BAN_MEMBER
+        - CLOSE_ISLAND
+        - DELETE_WARP
+        - EXPEL_PLAYERS
+        - INVITE_MEMBER
+        - KICK_MEMBER
+        - OPEN_ISLAND
+        - RATINGS_SHOW
+        - SET_WARP
+        - VALUABLE_BREAK
+        - WITHDRAW_MONEY
+    admin:
+      id: 2
+      name: '管理员'
+      weight: 2
+      permissions:
+        - COOP_MEMBER
+        - DEMOTE_MEMBERS
+        - DISCORD_SHOW
+        - PAYPAL_SHOW
+        - PROMOTE_MEMBERS
+        - SET_BIOME
+        - SET_DISCORD
+        - SET_HOME
+        - SET_PAYPAL
+        - SET_PERMISSION
+        - SET_ROLE
+        - SET_SETTINGS
+        - UNCOOP_MEMBER
+    leader:
+      id: 3
+      name: '领袖'
+      weight: 3
+      permissions:
+        - ALL
+
+# 设置创建岛屿传送点的告示牌样式.
+sign-warp-line: '[传送点]'
+
+# 设置岛屿传送点的告示牌展示样式.
+sign-warp:
+  - '&a[岛屿传送点]'
+  - ''
+  - ''
+  - ''
+
+# 所有访客告示牌的相关设置.
+visitors-sign:
+  # 玩家作为访客访问岛屿时是否需要该岛屿设置访客告示牌.
+  # 若设置为 false, 访客在输入命令 `/is visit` 之后可直接传送至正常的岛屿传送点
+  required-for-visit: true
+  # 创建岛屿访客告示牌所需填写的内容.
+  line: '[访客传送点]'
+  # 当告示牌被激活时显示的文本.
+  active: '&a[访客传送点]'
+  # 当告示牌被禁用时显示的文本.
+  inactive: '&c[访客传送点]'
+
+# 与岛屿世界相关的设置.
+worlds:
+  # 所使用的默认世界名称.
+  # 可用设置为 normal(主世界), nether(下界) 或 the_end(末地).
+  # 若启用了 nether 或 the_end 但它们在下面的设置中被禁用, 它们将会...
+  # 译者注：原文此处缺损
+  default-world: normal
+  # 设置岛屿世界的名称.
+  world-name: SuperiorWorld
+  # 与正主世界相关的设置.
+  normal:
+    # 是否启用主世界?
+    enabled: true
+    # 该世界是否默认解锁?
+    unlock: true
+    # 该世界的建筑结构是否不计入岛屿价值和等级计算中?
+    schematic-offset: true
+    # 该世界的默认群系.
+    # 若填入的群系无效, 则默认使用 PLAINS.
+    biome: PLAINS
+  # 与下界有关的设置.
+  nether:
+    # 是否启用下界?
+    enabled: false
+    # 该世界是否默认解锁?
+    unlock: true
+    # 下界的自定义名称.
+    # 留空时, 即为 "<主世界名称>_nether"
+    name: ''
+    # 该世界的建筑结构是否不计入岛屿价值和等级计算中?
+    schematic-offset: true
+    # 该世界的默认群系.
+    # 若填入的群系无效, 则默认使用 NETHER (或 1.16+(含) 的服务器中).
+    biome: NETHER_WASTES
+  end:
+    # 是否启用末地世界?
+    enabled: false
+    # 该世界是否默认解锁?
+    unlock: false
+    # 末地的自定义名称.
+    # 留空时, 即为 "<island-world>_the_end"
+    name: ''
+    # 该世界的建筑结构是否不计入岛屿价值和等级计算中?
+    schematic-offset: true
+    # 该世界的默认群系.
+    # 若填入的群系无效, 则默认使用 THE_END.
+    biome: THE_END
+    # 与服务器上末影龙击杀的相关设置.
+    dragon-fight:
+      # 是否允许在该世界打末影龙.
+      # 若启用, 每个末地世界都会有一只末影龙.
+      enabled: false
+      # 末地传送门的距离主岛屿 (生成位置) 偏移量 
+      # 格式为 '<x偏移量>,<y偏移量>,<z偏移量>' (可为负数).
+      # 不可以将偏移量设置超出岛屿边界大小, 这是未定义行为!
+      portal-offset: '0, 0, 0'
+
+  # 岛屿世界的默认难度.
+  difficulty: EASY
+
+# 生成岛屿的相关设置.
+spawn:
+  # 岛屿的位置. 玩家会在许多事件下传送到该位置
+  # 例如岛屿被解散 & 被岛屿解雇
+  location: SuperiorWorld, 0, 100, 0, 0, 0
+
+  # 是否保护主城出生点?
+  # 当被禁用后, 你将自行承担保护主城的责任!
+  # 也就是说, 在设置为 false 的时候这个区域的岛屿设置会持续生效.
+  protection: true
+
+  # 对主城区域应用的设置.
+  settings:
+    - CROPS_GROWTH
+    - LAVA_FLOW
+    - NATURAL_ANIMALS_SPAWN
+    - SPAWNER_ANIMALS_SPAWN
+    - TREE_GROWTH
+    - WATER_FLOW
+
+  # 生成岛屿的权限列表.
+  permissions: [ ]
+
+  # 主城区域是否显示边界?
+  world-border: false
+
+  # 设置主城岛屿的大小.
+  # 这可以超出岛屿大小, 且不会覆盖其他岛屿.
+  size: 200
+
+  # 玩家是否能在主城受伤?
+  players-damage: false
+
+# 当启用后, 玩家将在落入虚空后被传送.
+# 如果他们不在岛屿附近坠入虚空, 则他们将会被传送至出生点.
+void-teleport:
+  members: true
+  visitors: true
+
+# 当被禁用时, 访客将不会在其他玩家的岛屿中受伤.
+visitors-damage: false
+
+# 当被禁用时, 合作玩家不会在他们合作的岛屿中受伤.
+coop-damage: true
+
+# 玩家可以解散岛屿的次数.
+# 若你要禁用该功能, 请将其设置为 0.
+disband-count: 5
+
+# 岛屿成员限制是否包括岛屿领袖?
+island-top-include-leader: true
+
+# 设置岛屿不存在的情况下指定变量返回的值.
+# 请使用 <变量>:默认值> 的格式.
+# 可以在这里找到所有变量: https://bg-software.com/superiorskyblock/#placeholders
+default-placeholders:
+  - 'superior_island_leader:N/A'
+  - 'superior_island_level:0'
+  - 'superior_island_worth:0'
+
+# 是否在执行命令 /is ban 时发送确认界面.
+ban-confirm: true
+
+# 是否在执行命令 /is disband 时发送确认界面.
+disband-confirm: true
+
+# 是否在执行命令 /is kick 时发送确认界面.
+kick-confirm: true
+
+# 是否在执行命令 /is leave 时发送确认界面.
+leave-confirm: true
+
+# 若你需要使用一个指定的刷怪笼提供者, 请在这里指定.
+# 可用提供者有: Auto, WildStacker, EpicSpawners, MergedSpawner, PvpingSpawners, SilkSpawners, RoseStacker
+spawners-provider: 'AUTO'
+
+# 若你需要使用一个指定的堆叠功能提供者, 请在这里指定.
+# 可用提供者有: Auto, WildStacker, RoseStacker
+stacked-blocks-provider: 'AUTO'
+
+# 在解散时是否清理岛屿成员的背包?
+disband-inventory-clear: true
+
+# 与岛屿名称有关的设置.
+island-names:
+  # Should creation of islands will ask for name (/is create <name>)?
+  # 创建岛屿的过程是否要求为岛屿命名 (/is create <名称>)?
+  required-for-creation: true
+
+  # 名称最大长度.
+  max-length: 16
+
+  # 名称最小长度.
+  min-length: 3
+
+  # 将会被禁用的岛屿名称.
+  filtered-names:
+    - fuck
+    - duck
+    - hypixel
+
+  # 名称是否支持彩色字符?
+  color-support: true
+
+  # 是否在岛屿排行榜中显示岛屿名称?
+  island-top: true
+
+  # 插件是否应当阻止玩家将岛屿名称设置为玩家名称?
+  prevent-player-names: false
+
+# 当同意请求后玩家是否应该立即传送至岛屿?
+teleport-on-join: false
+
+# 当从岛屿被踢出后玩家是否应当被传送回主城?
+teleport-on-kick: true
+
+# 当同意请求后玩家是否应该清空背包?
+clear-on-join: false
+
+# 玩家是否允许为自己的岛屿打分?
+rate-own-island: false
+
+# 新岛屿的默认设置.
+# 可以在这里找到完整的设置列表: https://wiki.bg-software.com/superiorskyblock/island-settings
+default-settings:
+  - 'CREEPER_EXPLOSION'
+  - 'NATURAL_ANIMALS_SPAWN'
+  - 'NATURAL_MONSTER_SPAWN'
+  - 'SPAWNER_ANIMALS_SPAWN'
+  - 'SPAWNER_MONSTER_SPAWN'
+  - 'WATER_FLOW'
+  - 'LAVA_FLOW'
+  - 'CROPS_GROWTH'
+  - 'TREE_GROWTH'
+  - 'FIRE_SPREAD'
+  - 'EGG_LAY'
+
+# 在没有成员在线的时候是否禁用岛屿上的红石?
+# 这可以提升服务器的性能.
+disable-redstone-offline: true
+
+# 与挂机有关的设置.
+# 支持的挂机插件: Essentials, CMI
+afk-integrations:
+  # 岛屿上的玩家在挂机时是否禁用岛屿上的红石?
+  disable-redstone: false
+  # Should mob spawning be disabled when all the players inside the island are AFK?
+  # 岛屿上的玩家在挂机时是否禁用岛屿上的生物生成?
+  disable-spawning: false
+
+# 需要设置冷却的命令.
+# 冷却时长为毫秒.
+# 可通过下列格式禁用该功能:
+# commands-cooldown:
+#   random:
+#     cooldown: 0
+commands-cooldown:
+  recalc:
+    cooldown: 30000
+    bypass-permission: superior.cooldown.bypass.recalc
+
+# 升级岛屿功能所需的冷却.
+# 冷却时间单位为毫秒.
+# 你可以将该选项设置为 -1 以禁用.
+upgrade-cooldown: -1
+
+# 设置使用的数字格式.
+# 你可以在“语言标签”下看到一系列的格式:
+# https://www.oracle.com/technetwork/java/javase/java8locales-2095355.html
+number-format: "en-US"
+
+# 设置使用的时间格式.
+# 可以在这里获取更多信息:
+# https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
+date-format: "dd/MM/yyyy HH:mm:ss"
+
+# 玩家是否可以无视只有一个物品的菜单?
+# 当启用后, 创建、岛屿传送点和岛屿仓库菜单在只有一个物品的情况下会被跳过.
+skip-one-item-menus: false
+
+# 是否在启用 PVP 的岛屿上将访客传送回出生点?
+teleport-on-pvp-enable: true
+
+# 传送至开放 PVP 的岛屿是否允许玩家拥有 10 秒的无敌?
+# This doesn't apply to the spawn island!
+# 该设置不会对主城岛屿生效!
+immune-to-pvp-when-teleport: true
+
+# 访客不能执行的命令.
+blocked-visitors-commands: [ ]
+
+# 设置岛屿结构内的容器初始物品.
+default-containers:
+  # 是否启用该项?
+  enabled: false
+  containers:
+    # 容器种类.
+    chest:
+      # 容器的内容.
+      '0':
+        type: ICE
+        amount: 2
+      '1':
+        type: MELON
+      '2':
+        type: TORCH
+        amount: 2
+      '3':
+        type: BONE
+      '4':
+        type: LAVA_BUCKET
+      '5':
+        type: PUMPKIN_SEEDS
+      '6':
+        type: SUGAR_CANE
+      '7':
+        type: RED_MUSHROOM
+      '8':
+        type: BROWN_MUSHROOM
+      '9':
+        type: CACTUS
+      '10':
+        type: BREAD
+      '11':
+        type: WHEAT
+      '12':
+        type: LEATHER_BOOTS
+      '13':
+        type: LEATHER_LEGGINGS
+      '14':
+        type: LEATHER_CHESTPLATE
+      '15':
+        type: LEATHER_HELMET
+
+# 设置岛屿结构的告示牌文本.
+# 你可以使用下列内建变量:
+# {player} - 岛屿拥有者的名称
+# {island} - 若存在则会返回岛屿名称. 若不存在, 则会返回玩家名称.
+# 可将该选项设置为 'default-signs: []' 以禁用该功能.
+default-signs: [ ]
+
+# 事件被取消时会执行的命令.
+# 可在这里找到完整事件列表@ https://bg-software.com/superiorskyblock/api/
+# 变量列表 (不是所有事件都可使用这些变量):
+# %island% %player% %schematic% %enter-cause% %target% %leave-cause% %old-owner% %new-owner% %worth% %level%
+event-commands:
+  IslandCreateEvent: [ ]
+
+# 传送至传送点的延迟 (单位为毫秒).
+# 该时间内的玩家不可移动, 否则传送会取消.
+warps-warmup: 0
+
+# 传送至岛屿的延迟 (单位为毫秒).
+# 该时间内的玩家不可移动, 否则传送会取消.
+home-warmup: 0
+
+# 是否在黏贴结构时更新流体?
+liquid-update: false
+
+# 是否在黏贴结构时更新光照?
+# 启用该功能可能会让性能略微下降.
+lights-update: false
+
+# 对岛屿间成员启用 PVP 的世界.
+pvp-worlds:
+  - 'PvP'
+
+# 是否在玩家试图跨过边界时阻止玩家.
+stop-leaving: false
+
+# 是否启用值设置菜单?
+values-menu: true
+
+# 允许被作物生长速率影响的作物.
+# 可在这里找到有关材料的列表: https://bg-software.com/materials/
+crops-to-grow:
+  - 'CACTUS'
+  - 'SUGAR_CANE_BLOCK'
+  - 'SUGAR_CANE'
+  - 'MELON_STEM'
+  - 'ATTACHED_MELON_STEM'
+  - 'RED_MUSHROOM'
+  - 'BROWN_MUSHROOM'
+  - 'PUMPKIN_STEM'
+  - 'ATTACHED_PUMPKIN_STEM'
+  - 'VINE'
+  - 'COCOA'
+  - 'SAPLING'
+  - 'DARK_OAK_SAPLING'
+  - 'JUNGLE_SAPLING'
+  - 'OAK_SAPLING'
+  - 'ACACIA_SAPLING'
+  - 'BIRCH_SAPLING'
+  - 'SPRUCE_SAPLING'
+  - 'CROPS'
+  - 'WHEAT'
+  - 'CARROT'
+  - 'CARROTS'
+  - 'POTATO'
+  - 'POTATOES'
+  - 'BEETROOTS'
+
+# 作物任务执行的频率是多少? (单位为刻)
+# 可通过将该选项设置为 0 以禁用该功能.
+# 警告: 禁用此项后, 作物生长速率功能将会无效化!
+crops-interval: 5
+
+# 是否只在关闭菜单中让返回按钮生效?
+only-back-button: false
+
+# 是否允许玩家在岛屿外建筑?
+# 所有岛屿的极限边界为其最大大小的 1.5 倍, 这意味着岛屿之间可以相互连接.
+# 推荐在启用该功能的时候将岛屿大小调整到较小值
+build-outside-island: false
+
+# 使用的默认语言.
+# 应当与语言文件夹中的文件名称相同.
+default-language: 'en-US'
+
+# 是否对新玩家默认启用世界边界?
+default-world-border: true
+
+# 是否对新玩家默认启用方块堆叠功能?
+default-blocks-stacker: true
+
+# 是否对新玩家默认启用岛屿控制面板?
+default-toggled-panel: false
+
+# 是否对新玩家默认启用飞行模式?
+default-island-fly: false
+
+# 世界边界的默认颜色是什么?
+# 可以为 BLUE(蓝色), GREEN(绿色) 或 RED(红色)
+default-border-color: BLUE
+
+# 是否启用桶右键黑曜石可回收岩浆的功能?
+obsidian-to-lava: false
+
+# 是否应当将价格与其他商店插件同步?
+# 你可以设置下列值: NONE (禁用), BUY(购买价格), SELL(出售价格)
+# 支持的提供者: ShopGUIPlus
+sync-worth: NONE
+
+# 岛屿价值可以是负数吗?
+negative-worth: true
+
+# 岛屿等级可以是负数吗?
+negative-level: true
+
+# 被阻止触发的事件. 有助于性能的提升.
+# 你可以在这里找到本插件所使用的事件 @ https://bg-software.com/superiorskyblock/api/
+disabled-events: [ ]
+
+# 需要禁用的插件命令.
+# 你可以添加命令的标签或简写来一并禁用.
+disabled-commands: [ ]
+
+# 关闭下列插件的联动.
+# 只需将插件名称填入即可阻止联动.
+disabled-hooks: [ ]
+
+# 是否应该在岛屿创建命令中增加结构名称参数?
+# 当启用后, 玩家将会允许跳过岛屿选择菜单而直接使用岛屿创建命令.
+schematic-name-argument: true
+
+# 岛屿仓库相关设置.
+island-chests:
+  # 箱子标题.
+  chest-title: '&4岛屿仓库'
+  # 默认页码数量.
+  # 可将该选项设置为 0 以使得游戏内的仓库默认没有翻页.
+  default-pages: 0
+  # 每页的行数.
+  # 此为普通箱子的行数.
+  # 数字必须处于 0 至 6 之间.
+  default-size: 3
+
+# 插件命令的别名.
+command-aliases:
+  example-command:
+    - 'Aliase1'
+    - 'Aliase2'
+
+# 一个有价值的方块列表.
+# 这些方块需要 "VALUABLE_BREAK" 权限才可破坏.
+valuable-blocks: [ ]
+
+# 设置结构的预览位置.
+# 你可以通过将该选项设置为 'preview-islands: {}' 来禁用该功能
+# 若设置, 请确保按照下列格式: '<世界名称>, <x>, <y>, <z>'
+preview-islands:
+  normal: world, 0, 100, 0
+  mycel: world, 0, 100, 0
+  desert: world, 0, 100, 0
+
+# 隐身玩家是否应该在 tab 补全中隐藏?
+tab-complete-hide-vanished: true
+
+# 当启用后, 掉落物翻倍将只会对玩家击杀的生物生效.
+drops-upgrade-players-multiply: false
+
+# 显示保护消息的间隔 (单位为刻)
+protected-message-delay: 60
+
+# 是否允许玩家创建传送分类?
+warp-categories: true
+
+# 是否使用物理监听器?
+# 如果堆叠方块中包含会受重力影响的方块, 则该项必须启用.
+# 但是禁用该监听器可提升少量性能
+physics-listener: true
+
+# 玩家在使用岛屿传送点时是否应当收费?
+# 你可以设置收费数量, 设置为 0 以禁用功能.
+charge-on-warp: 0
+
+# 岛屿传送点是否默认公开?
+public-warps: false
+
+# 计算任务算作超时的时间, 单位为秒.
+# 若你需要禁用超时, 则将其设置为 0 或负数.
+recalc-task-timeout: 10
+
+# 在玩家第一次进入服务器时自动检测其客户端语言.
+# 在对应翻译可用时会自动为玩家更换为该翻译,
+# 否则使用插件的默认语言.
+auto-language-detection: true
+
+# 在能解除合作关系的岛屿成员均不在线时解除所有在线合作关系的玩家.
+auto-uncoop-when-alone: false
+
+# 按玩家数量排序的排行榜可用 {4} 返回变量.
+# 可使用下列设置:
+# NAMES - 通过名称排序.
+# ROLES - 通过岛屿职位排序.
+island-top-members-sorting: NAMES
+
+# 限制玩家同时显示的 bossbar 数量.
+# 只要到达了数量上限, 新出现的 bossbar 会替换掉旧的 bossbar.
+bossbar-limit: 1
+
+# 在玩家试图自动传送至不安全的传送点时, 删除它们.
+# 若被禁用, 不安全的传送点会保留到玩家手动删除它们为止.
+delete-unsafe-warps: true
+
+# 当玩家重生时执行的操作.
+# 插件将会按顺序执行这里的操作, 从上往下, 直到其中一个操作能顺利执行.
+# 可通过 API 注册自定义操作.
+# 
+# 默认可用操作:
+# BED_TELEPORT - 若存在, 则传送至玩家设置的床重生点.
+# ISLAND_TELEPORT - 若存在, 则将玩家传送至他的岛屿.
+# SPAWN_TELEPORT - 将玩家传送回主城.
+# VANILLA - 重生在玩家的原版出生点 (床重生点或世界重生点).
+player-respawn:
+  - ISLAND_TELEPORT
+  - SPAWN_TELEPORT
+
+# 在将方块数量更新至数据库时所需要放置或破坏的方块数量.
+# This means that if the threshold is at 100, it will require 100 blocks to be added/removed before updating the
+# 这意味着如果阈值设置为了 150, 则它需要在岛屿上至少破坏/放置 100 个方块才可以将新的方块数量更新至数据库.
+# 如果服务器被关闭且方块数量有变, 那么插件将会无视上述限制将更新后的数量保存至数据库. 
+block-counts-save-threshold: 100

@@ -1,0 +1,1131 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                  插件作者 Ome_R                   ##
+##                                                  ##
+######################################################
+
+title: '&l岛屿升级'
+previous-menu: true
+
+pattern:
+  - '$ $ $ $ $ $ $ $ $'
+  - '% % @ % # % ^ % %'
+  - '% % % ! % + % % %'
+  - '% % * % ~ % & % %'
+  - '$ $ $ $ $ $ $ $ $'
+
+items:
+  '$':
+    type: STAINED_GLASS_PANE
+    data: 9
+    name: '&f'
+    
+  '%':
+    type: STAINED_GLASS_PANE
+    data: 11
+    name: '&f'
+
+sounds:
+  '@':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2
+
+upgrades:
+  hoppers-limit:
+    item: '@'
+    '1':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: HOPPER
+        name: '&d&l漏斗增量 &a(可用)'
+        lore:
+          - '&7'
+          - '&d下一等级: &e2'
+          - '&7'
+          - '&7购买该升级将会提升'
+          - '&7岛屿内可放置的漏斗数量.'
+          - '&7'
+          - '&d数量: &f16 个漏斗'
+          - '&d价格: &f$1,000,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: HOPPER
+        name: '&d&l漏斗增量 &c(不可用)'
+        lore:
+          - '&7'
+          - '&d下一等级: &e2'
+          - '&7'
+          - '&7购买该升级将会提升'
+          - '&7岛屿内可放置的漏斗数量.'
+          - '&7'
+          - '&d数量: &f16 个漏斗'
+          - '&d价格: &f$1,000,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '2':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: HOPPER
+        name: '&d&l漏斗增量 &a(可用)'
+        lore:
+          - '&7'
+          - '&d下一等级: &e3'
+          - '&7'
+          - '&7购买该升级将会提升'
+          - '&7岛屿内可放置的漏斗数量.'
+          - '&7'
+          - '&d数量: &f32 个漏斗'
+          - '&d价格: &f$3,000,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: HOPPER
+        name: '&d&l漏斗增量 &c(不可用)'
+        lore:
+          - '&7'
+          - '&d下一等级: &e3'
+          - '&7'
+          - '&7购买该升级将会提升'
+          - '&7岛屿内可放置的漏斗数量.'
+          - '&7'
+          - '&d数量: &f32 个漏斗'
+          - '&d价格: &f$3,000,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '3':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: HOPPER
+        name: '&d&l漏斗增量 &a(可用)'
+        lore:
+          - '&7'
+          - '&d下一等级: &e4'
+          - '&7'
+          - '&7购买该升级将会提升'
+          - '&7岛屿内可放置的漏斗数量.'
+          - '&7'
+          - '&d数量: &f64 个漏斗'
+          - '&d价格: &f$9,000,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: HOPPER
+        name: '&d&l漏斗增量 &c(不可用)'
+        lore:
+          - '&7'
+          - '&d下一等级: &e2'
+          - '&7'
+          - '&7购买该升级将会提升'
+          - '&7岛屿内可放置的漏斗数量.'
+          - '&7'
+          - '&d数量: &f64 个漏斗'
+          - '&d价格: &f$9,000,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '4':
+      has-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: HOPPER
+        name: '&c&l最大等级'
+        lore:
+          - '&7你已到达漏斗增量功能的最大等级!'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: HOPPER
+        name: '&c&l最大等级'
+        lore:
+          - '&7你已到达漏斗增量功能的最大等级!'
+  crop-growth:
+    item: '#'
+    '1':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: DIAMOND_HOE
+        name: '&e&l作物生长速率 &a(可用)'
+        lore:
+          - '&7'
+          - '&e下一等级: 2'
+          - '&7'
+          - '&7购买该升级可提升'
+          - '&7岛屿内的作物生长速度.'
+          - '&7'
+          - '&e生长速度: &fx2 倍'
+          - '&e价格: &f$100,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: DIAMOND_HOE
+        name: '&e&l作物生长速率 &c(不可用)'
+        lore:
+          - '&7'
+          - '&e下一等级: 2'
+          - '&7'
+          - '&7购买该升级可提升'
+          - '&7岛屿内的作物生长速度.'
+          - '&7'
+          - '&e生长速度: &fx2 倍'
+          - '&e价格: &f$100,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '2':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: DIAMOND_HOE
+        name: '&e&l作物生长速率 &a(可用)'
+        lore:
+          - '&7'
+          - '&e下一等级: 3'
+          - '&7'
+          - '&7购买该升级可提升'
+          - '&7岛屿内的作物生长速度.'
+          - '&7'
+          - '&e生长速度: &fx3 倍'
+          - '&e价格: &f$500,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: DIAMOND_HOE
+        name: '&e&l作物生长速率 &c(不可用)'
+        lore:
+          - '&7'
+          - '&e下一等级: 3'
+          - '&7'
+          - '&7购买该升级可提升'
+          - '&7岛屿内的作物生长速度.'
+          - '&7'
+          - '&e生长速度: &fx3 倍'
+          - '&e价格: &f$500,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '3':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: DIAMOND_HOE
+        name: '&e&l作物生长速率 &a(可用)'
+        lore:
+          - '&7'
+          - '&e下一等级: 4'
+          - '&7'
+          - '&7购买该升级可提升'
+          - '&7岛屿内的作物生长速度.'
+          - '&7'
+          - '&e生长速度: &fx4 倍'
+          - '&e价格: &f$1,000,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: DIAMOND_HOE
+        name: '&e&l作物生长速率 &c(不可用)'
+        lore:
+          - '&7'
+          - '&e下一等级: 4'
+          - '&7'
+          - '&7购买该升级可提升'
+          - '&7岛屿内的作物生长速度.'
+          - '&7'
+          - '&e生长速度: &fx4 倍'
+          - '&e价格: &f$1,000,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '4':
+      has-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: DIAMOND_HOE
+        name: '&c&l最大等级'
+        lore:
+          - '&7你已到达作物生长速率功能的最大等级!'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: DIAMOND_HOE
+        name: '&c&l最大等级'
+        lore:
+          - '&7你已到达作物生长速率功能的最大等级!'
+  spawner-rates:
+    item: '^'
+    '1':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: MOB_SPAWNER
+        name: '&b&l刷怪笼增速 &a(可用)'
+        lore:
+          - '&7'
+          - '&b下一等级: &e2'
+          - '&7'
+          - '&7购买该升级可提升岛屿'
+          - '&7刷怪笼的生成速度.'
+          - '&7'
+          - '&b刷怪速度: &fx2 倍'
+          - '&b价格: &f$500,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: MOB_SPAWNER
+        name: '&b&l刷怪笼增速 &c(不可用)'
+        lore:
+          - '&7'
+          - '&b下一等级: &e2'
+          - '&7'
+          - '&7购买该升级可提升岛屿'
+          - '&7刷怪笼的生成速度.'
+          - '&7'
+          - '&b刷怪速度: &fx2 倍'
+          - '&b价格: &f$500,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '2':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: MOB_SPAWNER
+        name: '&b&l刷怪笼增速 &a(可用)'
+        lore:
+          - '&7'
+          - '&b下一等级: &e3'
+          - '&7'
+          - '&7购买该升级可提升岛屿'
+          - '&7刷怪笼的生成速度.'
+          - '&7'
+          - '&b刷怪速度: &fx3 倍'
+          - '&b价格: &f$1,000,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: MOB_SPAWNER
+        name: '&b&l刷怪笼增速 &c(不可用)'
+        lore:
+          - '&7'
+          - '&b下一等级: &e3'
+          - '&7'
+          - '&7购买该升级可提升岛屿'
+          - '&7刷怪笼的生成速度.'
+          - '&7'
+          - '&b刷怪速度: &fx3 倍'
+          - '&b价格: &f$1,000,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '3':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: MOB_SPAWNER
+        name: '&b&l刷怪笼增速 &a(可用)'
+        lore:
+          - '&7'
+          - '&b下一等级: &e4'
+          - '&7'
+          - '&7购买该升级可提升岛屿'
+          - '&7刷怪笼的生成速度.'
+          - '&7'
+          - '&b刷怪速度: &fx4 倍'
+          - '&b价格: &f$2,500,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: MOB_SPAWNER
+        name: '&b&l刷怪笼增速 &c(不可用)'
+        lore:
+          - '&7'
+          - '&b下一等级: &e4'
+          - '&7'
+          - '&7购买该升级可提升岛屿'
+          - '&7刷怪笼的生成速度.'
+          - '&7'
+          - '&b刷怪速度: &fx4 倍'
+          - '&b价格: &f$2,500,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '4':
+      has-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: MOB_SPAWNER
+        name: '&c&l最大等级'
+        lore:
+          - '&7你已经到达了刷怪笼增速功能的最大等级!'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: MOB_SPAWNER
+        name: '&c&l最大等级'
+        lore:
+          - '&7你已经到达了刷怪笼增速功能的最大等级!'
+  mob-drops:
+    item: '*'
+    '1':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: ROTTEN_FLESH
+        name: '&4&l翻倍掉落 &a(可用)'
+        lore:
+          - '&7'
+          - '&4下一等级: &e2'
+          - '&7'
+          - '&7购买该升级后可增加生物的掉落物.'
+          - '&7'
+          - '&4数量: &fx2 倍掉落'
+          - '&4价格: &f$1,000,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: ROTTEN_FLESH
+        name: '&4&l翻倍掉落 &c(不可用)'
+        lore:
+          - '&7'
+          - '&4下一等级: &e2'
+          - '&7'
+          - '&7购买该升级后可增加生物的掉落物.'
+          - '&7'
+          - '&4数量: &fx2 倍掉落'
+          - '&4价格: &f$1,000,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '2':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: ROTTEN_FLESH
+        name: '&4&l翻倍掉落 &a(可用)'
+        lore:
+          - '&7'
+          - '&4下一等级: &e3'
+          - '&7'
+          - '&7购买该升级后可增加生物的掉落物.'
+          - '&7'
+          - '&4数量: &fx3 倍掉落'
+          - '&4价格: &f$2,000,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: ROTTEN_FLESH
+        name: '&4&l翻倍掉落 &c(不可用)'
+        lore:
+          - '&7'
+          - '&4下一等级: &e3'
+          - '&7'
+          - '&7购买该升级后可增加生物的掉落物.'
+          - '&7'
+          - '&4数量: &fx3 倍掉落'
+          - '&4价格: &f$2,000,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '3':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: ROTTEN_FLESH
+        name: '&4&l翻倍掉落 &a(可用)'
+        lore:
+          - '&7'
+          - '&4下一等级: &e4'
+          - '&7'
+          - '&7购买该升级后可增加生物的掉落物.'
+          - '&7'
+          - '&4数量: &fx5 倍掉落'
+          - '&4价格: &f$5,000,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: ROTTEN_FLESH
+        name: '&4&l翻倍掉落 &c(不可用)'
+        lore:
+          - '&7'
+          - '&4下一等级: &e4'
+          - '&7'
+          - '&7购买该升级后可增加生物的掉落物.'
+          - '&7'
+          - '&4数量: &fx5 倍掉落'
+          - '&4价格: &f$5,000,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '4':
+      has-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: ROTTEN_FLESH
+        name: '&c&l最大等级'
+        lore:
+          - '&7你已到达翻倍掉落功能的最大等级!'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: ROTTEN_FLESH
+        name: '&c&l最大等级'
+        lore:
+          - '&7你已到达翻倍掉落功能的最大等级!'
+  members-limit:
+    item: '~'
+    '1':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: SKULL_ITEM
+        data: 3
+        name: '&2&l成员数量 &a(可用)'
+        lore:
+          - '&7'
+          - '&2下一等级: &e2'
+          - '&7'
+          - '&7升级这个功能可以提升岛屿'
+          - '&7可容纳的最大成员数量.'
+          - '&7'
+          - '&2数量: &f8 成员数'
+          - '&2价格: &f$100,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: SKULL_ITEM
+        data: 3
+        name: '&2&l成员数量 &c(不可用)'
+        lore:
+          - '&7'
+          - '&2下一等级: &e2'
+          - '&7'
+          - '&7升级这个功能可以提升岛屿'
+          - '&7可容纳的最大成员数量.'
+          - '&7'
+          - '&2数量: &f8 成员数'
+          - '&2价格: &f$100,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '2':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: SKULL_ITEM
+        data: 3
+        name: '&2&l成员数量 &a(可用)'
+        lore:
+          - '&7'
+          - '&2下一等级: &e3'
+          - '&7'
+          - '&7升级这个功能可以提升岛屿'
+          - '&7可容纳的最大成员数量.'
+          - '&7'
+          - '&2数量: &f16 成员数'
+          - '&2价格: &f$300,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: SKULL_ITEM
+        data: 3
+        name: '&2&l成员数量 &c(不可用)'
+        lore:
+          - '&7'
+          - '&2下一等级: &e3'
+          - '&7'
+          - '&7升级这个功能可以提升岛屿'
+          - '&7可容纳的最大成员数量.'
+          - '&7'
+          - '&2数量: &f16 成员数'
+          - '&2价格: &f$300,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '3':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: SKULL_ITEM
+        data: 3
+        name: '&2&l成员数量 &a(可用)'
+        lore:
+          - '&7'
+          - '&2下一等级: &e4'
+          - '&7'
+          - '&7升级这个功能可以提升岛屿'
+          - '&7可容纳的最大成员数量.'
+          - '&7'
+          - '&2数量: &f32 成员数'
+          - '&2价格: &f$500,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: SKULL_ITEM
+        data: 3
+        name: '&2&l成员数量 &c(不可用)'
+        lore:
+          - '&7'
+          - '&2下一等级: &e4'
+          - '&7'
+          - '&7升级这个功能可以提升岛屿'
+          - '&7可容纳的最大成员数量.'
+          - '&7'
+          - '&2数量: &f32 成员数'
+          - '&2价格: &f$500,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '4':
+      has-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: SKULL_ITEM
+        data: 3
+        name: '&c&l最大等级'
+        lore:
+          - '&7你已到达成员数量上限提升功能的最大等级!'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: SKULL_ITEM
+        data: 3
+        name: '&c&l最大等级'
+        lore:
+          - '&7你已到达成员数量上限提升功能的最大等级!'
+  border-size:
+    item: '!'
+    '1':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: BARRIER
+        name: '&9&l边界大小 &a(可用)'
+        lore:
+          - '&7'
+          - '&9下一等级: &e2'
+          - '&7'
+          - '&7购买该功能升级'
+          - '&7可提升岛屿的边界大小.'
+          - '&7'
+          - '&9半径: &f50 格方块'
+          - '&9价格: &f$30,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: BARRIER
+        name: '&9&l边界大小 &c(不可用)'
+        lore:
+          - '&7'
+          - '&9下一等级: &e2'
+          - '&7'
+          - '&7购买该功能升级'
+          - '&7可提升岛屿的边界大小.'
+          - '&7'
+          - '&9半径: &f50 格方块'
+          - '&9价格: &f$30,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '2':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: BARRIER
+        name: '&9&l边界大小 &a(可用)'
+        lore:
+          - '&7'
+          - '&9下一等级: &e3'
+          - '&7'
+          - '&7购买该功能升级'
+          - '&7可提升岛屿的边界大小.'
+          - '&7'
+          - '&9半径: &f75 格方块'
+          - '&9价格: &f$80,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: BARRIER
+        name: '&9&l边界大小 &c(不可用)'
+        lore:
+          - '&7'
+          - '&9下一等级: &e3'
+          - '&7'
+          - '&7购买该功能升级'
+          - '&7可提升岛屿的边界大小.'
+          - '&7'
+          - '&9半径: &f75 格方块'
+          - '&9价格: &f$80,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '3':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: BARRIER
+        name: '&9&l边界大小 &a(可用)'
+        lore:
+          - '&7'
+          - '&9下一等级: &e4'
+          - '&7'
+          - '&7购买该功能升级'
+          - '&7可提升岛屿的边界大小.'
+          - '&7'
+          - '&9半径: &f125 格方块'
+          - '&9价格: &f$150,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: BARRIER
+        name: '&9&l边界大小 &c(不可用)'
+        lore:
+          - '&7'
+          - '&9下一等级: &e4'
+          - '&7'
+          - '&7购买该功能升级'
+          - '&7可提升岛屿的边界大小.'
+          - '&7'
+          - '&9半径: &f125 格方块'
+          - '&9价格: &f$150,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '4':
+      has-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: BARRIER
+        name: '&c&l最大等级'
+        lore:
+          - '&7你已到达边界大小功能的最大等级!'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: BARRIER
+        name: '&c&l最大等级'
+        lore:
+          - '&7你已到达边界大小功能的最大等级!'
+  generator-几率:
+    item: '+'
+    '1':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: COBBLESTONE
+        name: '&3&l刷石机增强 &a(可用)'
+        lore:
+          - '&7'
+          - '&3下一等级: &e2'
+          - '&7'
+          - '&7购买该升级可使岛屿中的'
+          - '&7刷石机产生矿物的几率提升.'
+          - '&7'
+          - '&3几率:'
+          - ' &7 - &f92% 石头'
+          - ' &7 - &f5% 煤矿石'
+          - ' &7 - &f3% 红石矿石'
+          - '&7'
+          - '&3价格: &f$25,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: COBBLESTONE
+        name: '&3&l刷石机增强 &c(不可用)'
+        lore:
+          - '&7'
+          - '&3下一等级: &e2'
+          - '&7'
+          - '&7购买该升级可使岛屿中的'
+          - '&7刷石机产生矿物的几率提升.'
+          - '&7'
+          - '&3几率:'
+          - ' &7 - &f92% 石头'
+          - ' &7 - &f5% 煤矿石'
+          - ' &7 - &f3% 红石矿石'
+          - '&7'
+          - '&3价格: &f$25,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '2':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: COBBLESTONE
+        name: '&3&l刷石机增强 &a(可用)'
+        lore:
+          - '&7'
+          - '&3下一等级: &e3'
+          - '&7'
+          - '&7购买该升级可使岛屿中的'
+          - '&7刷石机产生矿物的几率提升.'
+          - '&7'
+          - '&3几率:'
+          - ' &7 - &f80% 石头'
+          - ' &7 - &f8% 煤矿石'
+          - ' &7 - &f6% 红石矿石'
+          - ' &7 - &f4% 青金石矿石'
+          - ' &7 - &f2% 铁矿石'
+          - '&7'
+          - '&3价格: &f$75,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: COBBLESTONE
+        name: '&3&l刷石机增强 &c(不可用)'
+        lore:
+          - '&7'
+          - '&3下一等级: &e3'
+          - '&7'
+          - '&7购买该升级可使岛屿中的'
+          - '&7刷石机产生矿物的几率提升.'
+          - '&7'
+          - '&3几率:'
+          - ' &7 - &f80% 石头'
+          - ' &7 - &f8% 煤矿石'
+          - ' &7 - &f6% 红石矿石'
+          - ' &7 - &f4% 青金石矿石'
+          - ' &7 - &f2% 铁矿石'
+          - '&7'
+          - '&3价格: &f$75,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '3':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: COBBLESTONE
+        name: '&3&l刷石机增强 &a(可用)'
+        lore:
+          - '&7'
+          - '&3下一等级: &e4'
+          - '&7'
+          - '&7购买该升级可使岛屿中的'
+          - '&7刷石机产生矿物的几率提升.'
+          - '&7'
+          - '&3几率:'
+          - ' &7 - &f65% 石头'
+          - ' &7 - &f10% 煤矿石'
+          - ' &7 - &f9% 红石矿石'
+          - ' &7 - &f6% 青金石矿石'
+          - ' &7 - &f4% 铁矿石'
+          - ' &7 - &f3% 金矿石'
+          - ' &7 - &f2% 钻石矿石'
+          - ' &7 - &f1% 绿宝石矿石'
+          - '&7'
+          - '&3价格: &f$150,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: COBBLESTONE
+        name: '&3&l刷石机增强 &c(不可用)'
+        lore:
+          - '&7'
+          - '&3下一等级: &e4'
+          - '&7'
+          - '&7购买该升级可使岛屿中的'
+          - '&7刷石机产生矿物的几率提升.'
+          - '&7'
+          - '&3几率:'
+          - ' &7 - &f65% 石头'
+          - ' &7 - &f10% 煤矿石'
+          - ' &7 - &f9% 红石矿石'
+          - ' &7 - &f6% 青金石矿石'
+          - ' &7 - &f4% 铁矿石'
+          - ' &7 - &f3% 金矿石'
+          - ' &7 - &f2% 钻石矿石'
+          - ' &7 - &f1% 绿宝石矿石'
+          - '&7'
+          - '&3价格: &f$150,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '4':
+      has-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: COBBLESTONE
+        name: '&c&l最大等级'
+        lore:
+          - '&7你已达到刷石机增强功能的最大等级!'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: COBBLESTONE
+        name: '&c&l最大等级'
+        lore:
+          - '&7你已达到刷石机增强功能的最大等级!'
+  minecarts-limit:
+    item: '&'
+    '1':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: MINECART
+        name: '&d&l矿车增量 &a(可用)'
+        lore:
+          - '&7'
+          - '&d下一等级: &e2'
+          - '&7'
+          - '&7购买该升级可提升'
+          - '&7岛屿内的最大矿车数量.'
+          - '&7'
+          - '&d数量: &f8个矿车'
+          - '&d价格: &f$1,000,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: MINECART
+        name: '&d&l矿车增量 &c(不可用)'
+        lore:
+          - '&7'
+          - '&d下一等级: &e2'
+          - '&7'
+          - '&7购买该升级可提升'
+          - '&7岛屿内的最大矿车数量.'
+          - '&7'
+          - '&d数量: &f8个矿车'
+          - '&d价格: &f$1,000,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '2':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: MINECART
+        name: '&d&l矿车增量 &a(可用)'
+        lore:
+          - '&7'
+          - '&d下一等级: &e3'
+          - '&7'
+          - '&7购买该升级可提升'
+          - '&7岛屿内的最大矿车数量.'
+          - '&7'
+          - '&d数量: &f16个矿车'
+          - '&d价格: &f$3,000,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: MINECART
+        name: '&d&l矿车增量 &c(不可用)'
+        lore:
+          - '&7'
+          - '&d下一等级: &e3'
+          - '&7'
+          - '&7购买该升级可提升'
+          - '&7岛屿内的最大矿车数量.'
+          - '&7'
+          - '&d数量: &f16个矿车'
+          - '&d价格: &f$3,000,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '3':
+      has-next-level:
+        sound:
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          volume: 0.2
+          pitch: 0.2
+        type: MINECART
+        name: '&d&l矿车增量 &a(可用)'
+        lore:
+          - '&7'
+          - '&d下一等级: &e4'
+          - '&7'
+          - '&7购买该升级可提升'
+          - '&7岛屿内的最大矿车数量.'
+          - '&7'
+          - '&d数量: &f32个矿车'
+          - '&d价格: &f$9,000,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: MINECART
+        name: '&d&l矿车增量 &c(不可用)'
+        lore:
+          - '&7'
+          - '&d下一等级: &e4'
+          - '&7'
+          - '&7购买该升级可提升'
+          - '&7岛屿内的最大矿车数量.'
+          - '&7'
+          - '&d数量: &f32个矿车'
+          - '&d价格: &f$9,000,000'
+          - '&7'
+          - '&a鼠标左键点击购买升级.'
+    '4':
+      has-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: MINECART
+        name: '&c&l最大等级'
+        lore:
+          - '&7你已达到矿车增量功能的最大等级!'
+      no-next-level:
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
+        type: MINECART
+        name: '&c&l最大等级'
+        lore:
+          - '&7你已达到矿车增量功能的最大等级!'

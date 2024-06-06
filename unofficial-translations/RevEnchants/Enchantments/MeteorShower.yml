@@ -1,0 +1,38 @@
+# [
+#  the plugin is not responsible for your options Minecraft has limitation, 
+#  recommended  MaxMeteor 4, 
+#  recommended  Radius 1 to 2, 
+#  if you get any warnWhenSettingExcessiveVelocity set to false in , 
+#  paper.yml if you are using paper spigot]
+
+Settings:
+  Enabled: true
+  InGui: true
+  Name: 陨星
+  Colour: '&7'
+  Slot: 47
+  MaxLevel: 10
+  MaxMeteor: 4
+  MinMeteor: 2
+  MeteorVelocity: 4
+  MeteorSpawn+Y: 50
+  MeteorDelay: 4
+  Radius: 1
+  Currency: RevToken
+  Cost: 1000
+  Increase-Cost-by: 1000
+  Chance: 1
+  Increase-Chance-by: 0.1
+  Requirement:
+    Enabled: false
+    Number: 5
+    Placeholder: '%RevEnchants_Tool_Flag_Level%'
+  Description: '&7在挖掘时触发流星雨'
+  Book:
+    ==: org.bukkit.inventory.ItemStack
+    v: 3700
+    type: LEGACY_BOOK
+  Message:
+    Enabled: true
+    Bar: true
+    Format: '&7陨星破坏了 %Amount_FormattedA% 个方块'

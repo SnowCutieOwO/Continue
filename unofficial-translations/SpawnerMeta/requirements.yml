@@ -1,0 +1,522 @@
+# 在这个文件中你可以修改所有的刷怪笼生成要求:
+# # 光照等级
+#     (天空或光源方块的光照强度)
+# # 环境种类
+#     (生成对应实体所需的方块种类)
+# # 地面种类
+#     (生成对应实体所需的方块种类)
+#
+# 光照等级范围必须在 [0 - 15] 之间
+# 格式:
+#   5-10 (从 5 到 10 级的光照等级)
+#   -8 (从 0 到 8 级的光照等级)
+#   9+ (从 9 到 15 级的光照等级)
+#   11 (仅 11 级光照等级)
+#
+# 环境和地面要求可单独设置
+# 也可多条设置:
+# # environment: 'WATER' (单项设置)
+# # ground: (多项设置)
+#   - 'STONE'
+#   - 'GRASS_BLOCK'
+#   - 'DIRT'
+#   - ...
+#
+# 内渐变蓝:
+# # SOLID (任意固体方块)
+# # AIR (空气和其他可被左键瞬间破坏的方块)
+#
+# 格式:
+#   'STONE' (包括该种类)
+#   '~STONE' (不包括该种类)
+#
+# 选项 'check-daylight' 决定插件检查当前时间
+# 若此项启用, 插件将会将白天光照等级固定在 15, 而晚上固定在 0
+# 允许那些需要低于 15 级光照等级的实体生成。
+# 如若禁用, 则它会一直返回 15 级光照等级, 即使是在夜晚也是如此
+# 这会允许被动生物在晚上也能刷新.
+#
+# 需要注意的是, 生成环境选项通常必须为非固体方块
+# (如空气 AIR 和水 WATER...), 否则生成的实体就会
+# 在固体方块中生成 (如石头 STONE, 泥土 DIRT...)
+#
+
+Requirements:
+  ALLAY:
+    light: ''
+    environment: AIR
+    ground: ''
+    check-daylight: false
+  AXOLOTL:
+    light: ''
+    environment: WATER
+    ground: ''
+    check-daylight: false
+  BAT:
+    light: '-3'
+    environment: AIR
+    ground: ''
+    check-daylight: false
+  BEE:
+    light: 9+
+    environment: AIR
+    ground: ''
+    check-daylight: false
+  BLAZE:
+    light: '-11'
+    environment: AIR
+    ground: ''
+    check-daylight: false
+  CAMEL:
+    light: 9+
+    environment: AIR
+    ground:
+    - SAND
+    - RED_SAND
+    check-daylight: false
+  CAT:
+    light: 9+
+    environment: AIR
+    ground: SOLID
+    check-daylight: false
+  CAVE_SPIDER:
+    light: '0'
+    environment: AIR
+    ground: SOLID
+    check-daylight: true
+  CHICKEN:
+    light: 9+
+    environment: AIR
+    ground: GRASS_BLOCK
+    check-daylight: false
+  COD:
+    light: ''
+    environment: WATER
+    ground: ''
+    check-daylight: false
+  COW:
+    light: 9+
+    environment: AIR
+    ground: GRASS_BLOCK
+    check-daylight: false
+  CREEPER:
+    light: '0'
+    environment: AIR
+    ground: SOLID
+    check-daylight: true
+  DOLPHIN:
+    light: ''
+    environment: WATER
+    ground: ''
+    check-daylight: false
+  DONKEY:
+    light: 9+
+    environment: AIR
+    ground: GRASS_BLOCK
+    check-daylight: false
+  DROWNED:
+    light: '0'
+    environment: WATER
+    ground: ''
+    check-daylight: true
+  ELDER_GUARDIAN:
+    light: '0'
+    environment: WATER
+    ground: ''
+    check-daylight: true
+  ENDER_DRAGON:
+    light: ''
+    environment: AIR
+    ground: ''
+    check-daylight: false
+  ENDERMAN:
+    light: '0'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  ENDERMITE:
+    light: '0'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  EVOKER:
+    light: '0'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  FOX:
+    light: 9+
+    environment: AIR
+    ground:
+    - GRASS_BLOCK
+    - SNOW_BLOCK
+    - PODZOL
+    check-daylight: false
+  FROG:
+    light: 9+
+    environment: AIR
+    ground: SOLID
+    check-daylight: false
+  GHAST:
+    light: ''
+    environment: AIR
+    ground: ''
+    check-daylight: false
+  GIANT:
+    light: '0'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  GLOW_SQUID:
+    light: ''
+    environment: WATER
+    ground: ''
+    check-daylight: false
+  GOAT:
+    light: 9+
+    environment: AIR
+    ground:
+    - STONE
+    - ANDESITE
+    - DIORITE
+    - GRANITE
+    - SNOW
+    - SNOW_BLOCK
+    check-daylight: false
+  GUARDIAN:
+    light: '0'
+    environment: WATER
+    ground: ''
+    check-daylight: true
+  HOGLIN:
+    light: '-11'
+    environment: AIR
+    ground:
+    - SOLID
+    - ~NETHER_WART_BLOCK
+    - ~SHROOMLIGHT
+    check-daylight: false
+  HORSE:
+    light: 9+
+    environment: AIR
+    ground: GRASS_BLOCK
+    check-daylight: false
+  HUSK:
+    light: '0'
+    environment: AIR
+    ground:
+    - SAND
+    - RED_SAND
+    check-daylight: true
+  ILLUSIONER:
+    light: '0'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  IRON_GOLEM:
+    light: ''
+    environment: AIR
+    ground: ''
+    check-daylight: false
+  LLAMA:
+    light: 7+
+    environment: AIR
+    ground: GRASS_BLOCK
+    check-daylight: false
+  MAGMA_CUBE:
+    light: ''
+    environment: AIR
+    ground: ''
+    check-daylight: false
+  MULE:
+    light: 9+
+    environment: AIR
+    ground: GRASS_BLOCK
+    check-daylight: false
+  MUSHROOM_COW:
+    light: 9+
+    environment: AIR
+    ground: MYCELIUM
+    check-daylight: false
+  OCELOT:
+    light: 9+
+    environment: AIR
+    ground: GRASS_BLOCK
+    check-daylight: false
+  PANDA:
+    light: 9+
+    environment: AIR
+    ground: GRASS_BLOCK
+    check-daylight: false
+  PARROT:
+    light: 9+
+    environment: AIR
+    ground: ''
+    check-daylight: false
+  PHANTOM:
+    light: '0'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  PIG:
+    light: 9+
+    environment: AIR
+    ground: GRASS_BLOCK
+    check-daylight: false
+  PIGLIN:
+    light: '-11'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  PIGLIN_BRUTE:
+    light: '0'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  PILLAGER:
+    light: '-8'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  POLAR_BEAR:
+    light: 7+
+    environment: AIR
+    ground:
+    - GRASS_BLOCK
+    - ICE
+    - BLUE_ICE
+    check-daylight: false
+  PUFFERFISH:
+    light: ''
+    environment: WATER
+    ground: ''
+    check-daylight: false
+  RABBIT:
+    light: 9+
+    environment: AIR
+    ground:
+    - GRASS_BLOCK
+    - SAND
+    - RED_SAND
+    - SNOW_BLOCK
+    check-daylight: false
+  RAVAGER:
+    light: '0'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  SALMON:
+    light: ''
+    environment: WATER
+    ground: ''
+    check-daylight: false
+  SHEEP:
+    light: 9+
+    environment: AIR
+    ground: GRASS_BLOCK
+    check-daylight: false
+  SHULKER:
+    light: '0'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  SILVERFISH:
+    light: '0'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  SKELETON:
+    light: '0'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  SKELETON_HORSE:
+    light: ''
+    environment: AIR
+    ground: SOLID
+    check-daylight: false
+  SLIME:
+    light: '-7'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  SNIFFER:
+    light: 9+
+    environment: AIR
+    ground: GRASS_BLOCK
+    check-daylight: false
+  SNOWMAN:
+    light: ''
+    environment: AIR
+    ground: ''
+    check-daylight: false
+  SPIDER:
+    light: '0'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  SQUID:
+    light: ''
+    environment: WATER
+    ground: ''
+    check-daylight: false
+  STRAY:
+    light: '0'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  STRIDER:
+    light: ''
+    environment: AIR
+    ground: LAVA
+    check-daylight: false
+  TADPOLE:
+    light: ''
+    environment: WATER
+    ground: ''
+    check-daylight: false
+  TRADER_LLAMA:
+    light: 7+
+    environment: AIR
+    ground: SOLID
+    check-daylight: false
+  TROPICAL_FISH:
+    light: ''
+    environment: WATER
+    ground: ''
+    check-daylight: false
+  TURTLE:
+    light: 9+
+    environment: AIR
+    ground: SAND
+    check-daylight: false
+  VEX:
+    light: '0'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  VILLAGER:
+    light: 9+
+    environment: AIR
+    ground: SOLID
+    check-daylight: false
+  VINDICATOR:
+    light: '0'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  WANDERING_TRADER:
+    light: 7+
+    environment: AIR
+    ground: SOLID
+    check-daylight: false
+  WARDEN:
+    light: '0'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  WITCH:
+    light: '0'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  WITHER:
+    light: '0'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  WITHER_SKELETON:
+    light: '-7'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  WOLF:
+    light: 7+
+    environment: AIR
+    ground: GRASS_BLOCK
+    check-daylight: false
+  ZOGLIN:
+    light: ''
+    environment: AIR
+    ground: ''
+    check-daylight: false
+  ZOMBIE:
+    light: '0'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  ZOMBIE_HORSE:
+    light: ''
+    environment: AIR
+    ground: ''
+    check-daylight: false
+  ZOMBIE_VILLAGER:
+    light: '0'
+    environment: AIR
+    ground: SOLID
+    check-daylight: true
+  ZOMBIFIED_PIGLIN:
+    light: '-11'
+    environment: AIR
+    ground: ''
+    check-daylight: true
+  ARMOR_STAND:
+    light: ''
+    environment: AIR
+    ground: ''
+    check-daylight: false
+  BOAT:
+    light: ''
+    environment: AIR
+    ground: ''
+    check-daylight: false
+  CHEST_BOAT:
+    light: ''
+    environment: AIR
+    ground: ''
+    check-daylight: false
+  EXPERIENCE_BOTTLE:
+    light: ''
+    environment: AIR
+    ground: ''
+    check-daylight: false
+  EXPERIENCE_ORB:
+    light: ''
+    environment: AIR
+    ground: ''
+    check-daylight: false
+  MINECART:
+    light: ''
+    environment: AIR
+    ground: ''
+    check-daylight: false
+  MINECART_CHEST:
+    light: ''
+    environment: AIR
+    ground: ''
+    check-daylight: false
+  MINECART_COMMAND:
+    light: ''
+    environment: AIR
+    ground: ''
+    check-daylight: false
+  MINECART_FURNACE:
+    light: ''
+    environment: AIR
+    ground: ''
+    check-daylight: false
+  MINECART_HOPPER:
+    light: ''
+    environment: AIR
+    ground: ''
+    check-daylight: false
+  MINECART_SPAWNER:
+    light: ''
+    environment: AIR
+    ground: ''
+    check-daylight: false
+  MINECART_TNT:
+    light: ''
+    environment: AIR
+    ground: ''
+    check-daylight: false

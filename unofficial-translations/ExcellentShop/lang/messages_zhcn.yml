@@ -1,0 +1,897 @@
+# ExcellentShop v4.6.3
+# Updated on 2023/9/15
+
+# 在这里可设置配置文件中所需使用的自定义变量.
+# 左侧为变量名称, 右侧则为替换的值.
+Placeholders:
+  '%red%': '#fd5e5e'
+  '%green%': '#aefd5e'
+  '%gray%': '#d4d9d8'
+Command:
+  Currency:
+    Desc: 管理插件货币.
+    Usage: '[页码]'
+    Give:
+      Desc: 给予特定货币至玩家.
+      Usage: <货币种类> <玩家名称> <货币数量>
+      Done: '成功给予了 #aefd5ex%amount% %currency_name%#d4d9d8 至玩家 #aefd5e%player_name%#d4d9d8.'
+    Take:
+      Desc: 从玩家处拿走特定货币.
+      Usage: <货币种类> <玩家名称> <货币数量>
+      Done: '成功拿走了 #aefd5ex%amount% %currency_name%#d4d9d8 从玩家 #aefd5e%player_name%#d4d9d8.'
+    Create:
+      Desc: 以手上物品创建或替换一种货币.
+      Usage: <货币名称>
+      Done:
+        New: '成功以物品 #aefd5e%item% #d4d9d8创建新货币 #aefd5e%currency_id%#d4d9d8.'
+        Replace: '成功将货币 #aefd5e%currency_id%#d4d9d8 的物品替换为了 #aefd5e%item%#d4d9d8.'
+      Error:
+        Exist: '货币 &c%currency_id%#d4d9d8 已存在且不为实体货币种类.'
+    Error:
+      NoItem: '#fd5e5e你必须手持物品才可以这么做!'
+Module:
+  Cmd:
+    Reload: '模块 #aefd5e%module% #d4d9d8已重载!'
+Shop:
+  Product:
+    Error:
+      Unbuyable: '<! sound:"ENTITY_VILLAGER_NO" !>#fd5e5e&l抱歉 #d4d9d8该物品此时不可购买!'
+      Unsellable: '<! sound:"ENTITY_VILLAGER_NO" !>#fd5e5e&l抱歉 #d4d9d8该物品此时不可出售!'
+      OutOfStock: '<! sound:"ENTITY_VILLAGER_NO" !>#fd5e5e&l抱歉 #d4d9d8该物品已售罄!'
+      OutOfSpace: '<! sound:"ENTITY_VILLAGER_NO" !>#fd5e5e&l抱歉 #d4d9d8商店空间不足!'
+      OutOfFunds: '<! sound:"ENTITY_VILLAGER_NO" !>#fd5e5e&l抱歉 #d4d9d8商店资金不足!'
+      FullStock: '<! sound:"ENTITY_VILLAGER_NO" !>#fd5e5e&l抱歉 #d4d9d8商店收购物品空间不足!'
+      FullInventory: '<! sound:"ENTITY_VILLAGER_NO" !>#fd5e5e&l抱歉 #d4d9d8购买前请先清理背包!'
+      TooExpensive:
+      - <! type:"titles:15:60:15" sound:"BLOCK_ANVIL_PLACE" !>
+      - '#fd5e5e&l过于昂贵! '
+      - '#d4d9d8你需要: #fd5e5e%price%#d4d9d8!'
+      NotEnoughItems:
+      - <! type:"titles:15:60:15" sound:"BLOCK_ANVIL_PLACE" !>
+      - '#fd5e5e&l物品不足! '
+      - '#d4d9d8你需要: #fd5e5ex%amount% %item%#d4d9d8!'
+Error:
+  Currency:
+    Invalid: '&c无效货币!'
+Editor:
+  Generic:
+    Enter:
+      Name: '#d4d9d8输入 #aefd5e[名称]'
+      Amount: '#d4d9d8输入 #aefd5e[数量]'
+      Day: '#d4d9d8输入 #aefd5e[英文格式天数]'
+      Time: '#d4d9d8输入 #aefd5e[时:分:秒]'
+      Seconds: '#d4d9d8输入 #aefd5e[秒数]'
+  Product:
+    Enter:
+      Price: '#d4d9d8输入 #aefd5e[价格]'
+      Currency: '#d4d9d8输入 #aefd5e[货币名称]'
+TradeType:
+  BUY: 购买
+  SELL: 出售
+PriceType:
+  FLAT: 扁平化
+  FLOAT: 浮点数
+  DYNAMIC: 动态
+VirtualShop:
+  Command:
+    Editor:
+      Desc: 打开虚拟商店编辑器.
+    Open:
+      Desc: 打开指定商店.
+      Usage: '[玩家名称]'
+    Menu:
+      Desc: 打开主菜单.
+      Usage: '[玩家名称]'
+    Shop:
+      Desc: 打开指定商店或主菜单.
+      Usage: '[商店 ID]'
+    SellMenu:
+      Desc: 打开出售界面.
+      Usage: ''
+    SellAll:
+      Desc: 出售背包中的所有物品.
+      Usage: ''
+  Shop:
+    Error:
+      BadWorld: '#fd5e5e你不能在该世界中使用商店!'
+      BadGamemode: '#fd5e5e当前游戏模式不可使用商店!'
+      Invalid: '#fd5e5e商店不存在!'
+  Product:
+    Purchase:
+      Sell:
+      - <! type:"titles:15:60:15" sound:"ENTITY_EXPERIENCE_ORB_PICKUP" !>
+      - '#aefd5e&l成功出售! '
+      - '#d4d9d8你出售了 #aefd5ex%amount% %item%#d4d9d8, 并获得了 #aefd5e%price%'
+      Buy:
+      - <! type:"titles:15:60:15" sound:"ENTITY_EXPERIENCE_ORB_PICKUP" !>
+      - '#aefd5e&l购买成功!'
+      - ' #d4d9d8你购买了 #aefd5ex%amount% %item%#d4d9d8, 并花费了 #aefd5e%price%'
+  SellMenu:
+    SaleResult:
+    - <! prefix:"false" sound:"ENTITY_EXPERIENCE_ORB_PICKUP" !>
+    - '&a&l物品已出售:'
+    - '&7x%amount% %item%: &f%price%'
+  Editor:
+    Create:
+      Error:
+        Exist: '#fd5e5e已存在 ID 相同的商店!'
+    Enter:
+      Id: '#d4d9d8输入 #aefd5e[商店 ID]'
+      Description: '#d4d9d8输入 #aefd5e[秒数]'
+      NpcId: '#d4d9d8输入 #aefd5e[NPC ID]'
+      Title: '#d4d9d8输入 #aefd5e[标题]'
+      Command: '#d4d9d8输入 #aefd5e[命令]'
+      Chance: '#d4d9d8输入 #aefd5e[几率]'
+      Slots: '#d4d9d8输入 #aefd5e[槽位] -> [如1,2,5等]'
+      Rank: '#d4d9d8输入 #aefd5e[等级名称]'
+    Shop:
+      Icon:
+        Name: '#fdf35e&l图标'
+        Lore:
+        - '#d4d9d8设置商店在 GUI 界面中使用的图标样式.'
+        - ''
+        - '#fdba5e&l注意:'
+        - '#fdba5e▪ #d4d9d8#fdba5e显示名称#d4d9d8 和 #fdba5e描述#d4d9d8 会在这里使用, 默认的物品描述和名称不会使用.'
+        - ''
+        - '#aefd5e&l操作:'
+        - '#aefd5e▪ #d4d9d8拖拽物品: #aefd5e替换物品'
+        - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e复制物品'
+      Rotation:
+        Type:
+          Name: '#fdf35e&l切换: 类型'
+          Lore:
+          - '#d4d9d8设置商店旋转类型.'
+          - '#d4d9d8'
+          - '#d4d9d8#fdf35e间隔: #d4d9d8每 X 分钟切换一次.'
+          - '#d4d9d8#fdf35e固定: #d4d9d8在指定时间严格切换.'
+          - ''
+          - '#fdf35e&l当前:'
+          - '#fdf35e▪ #d4d9d8类型 #fdf35e%shop_rotation_type%'
+          - ''
+          - '#aefd5e&l操作:'
+          - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e切换'
+        Interval:
+          Name: '#fdf35e&l切换: 间隔'
+          Lore:
+          - '#d4d9d8设置商店物品切换的间隔, 单位为秒.'
+          - ''
+          - '#fdf35e&l当前:'
+          - '#fdf35e▪ #d4d9d8间隔: #fdf35e%shop_rotation_interval%'
+          - ''
+          - '#aefd5e&l操作:'
+          - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e修改'
+          - '#aefd5e▪ #d4d9d8键盘[Q/丢弃]键: #aefd5e强制切换'
+        Times:
+          Name: '#fdf35e&l切换: 定时'
+          Lore:
+          - '#d4d9d8在这里你可以设置每日或每周的切换时间点.'
+          - ''
+          - '#aefd5e&l操作:'
+          - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e设置'
+        Products:
+          Name: '#fdf35e&l切换: 物品'
+          Lore:
+          - '#d4d9d8设置切换中出现的物品及其位置.'
+          - ''
+          - '#fdf35e&l当前:'
+          - '#fdf35e▪ #d4d9d8最小数量: #fdf35e%shop_rotation_min_products%'
+          - '#fdf35e▪ #d4d9d8最大数量: #fdf35e%shop_rotation_max_products%'
+          - '#fdf35e▪ #d4d9d8切换槽位: #fdf35e%shop_rotation_product_slots%'
+          - ''
+          - '#aefd5e&l操作:'
+          - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e修改最小数量'
+          - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e修改最大数量'
+          - '#aefd5e▪ #d4d9d8键盘[Q/丢弃]键: #aefd5e修改槽位'
+    Product:
+      Object:
+        Static:
+          Name: '#fdf35e&l%product_preview_name%'
+          Lore:
+          - '#d4d9d8你可以将这个物品取出或放入其他槽位'
+          - '#d4d9d8或者直接将其放在背包以便放入下一页甚至是其他商店'
+          - '#d4d9d8所有商店中的物品设置都会被 #aefd5e保存#d4d9d8!'
+          - ''
+          - '#d4d9d8#fdf35e&l当前价格:'
+          - '#fdf35e▪ #d4d9d8购买: #fdf35e%product_price_buy%'
+          - '#fdf35e▪ #d4d9d8出售: #fdf35e%product_price_sell%'
+          - ''
+          - '#aefd5e&l操作:'
+          - '#aefd5e▪ #d4d9d8Shift+鼠标左键: #aefd5e编辑'
+          - '#aefd5e▪ #d4d9d8Shift+鼠标右键: #aefd5e删除#fd5e5e (不可撤销)'
+        Rotating:
+          Name: '#fdf35e&l%product_preview_name%'
+          Lore:
+          - '#fdf35e&l当前:'
+          - '#fdf35e▪ #d4d9d8切换几率: #fdf35e%product_rotation_chance%%'
+          - '#fdf35e▪ #d4d9d8购买价格: #fdf35e%product_price_buy%'
+          - '#fdf35e▪ #d4d9d8出售价格: #fdf35e%product_price_sell%'
+          - ''
+          - '#aefd5e&l操作:'
+          - '#aefd5e▪ #d4d9d8Shift+鼠标左键: #aefd5e编辑'
+          - '#aefd5e▪ #d4d9d8Shift+鼠标右键: #aefd5e删除#fd5e5e (不可撤销)'
+      FreeSlot:
+        Name: '#fdf35e&l#aefd5e&l空格'
+        Lore:
+        - '#aefd5e&l操作:'
+        - '#aefd5e▪ #d4d9d8拖拽物品: #aefd5e添加物品'
+        - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e添加命令'
+      ReservedSlot:
+        Name: '#fdf35e&l#fd5e5e&l保留格'
+        Lore:
+        - '#d4d9d8这个格子被其他商品占用.'
+      PriceManager:
+        Name: '#fdf35e&l价格管理'
+        Lore:
+        - '#fdf35e&l当前:'
+        - '#fdf35e▪ #d4d9d8使用货币: #fdf35e%product_currency%'
+        - '#fdf35e▪ #d4d9d8购买价格: #fdf35e%product_price_buy%'
+        - '#fdf35e▪ #d4d9d8出售价格: #fdf35e%product_price_sell%'
+        - ''
+        - '#d4d9d8设置该物品的价格和使用货币.'
+        - ''
+        - '#aefd5e&l操作:'
+        - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e修改价格'
+        - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e修改货币'
+        - '#aefd5e▪ #d4d9d8键盘[Q/丢弃]键: #aefd5e刷新价格'
+      Rotation:
+        Chance:
+          Name: '#fdf35e&l切换几率'
+          Lore:
+          - '#d4d9d8决定该物品将会在下次刷新时出现的几率.'
+          - ''
+          - '#fdf35e&l当前:'
+          - '#fdf35e▪ #d4d9d8几率: #fdf35e%product_rotation_chance%%'
+          - ''
+          - '#aefd5e&l操作:'
+          - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e修改'
+        DayTimes:
+          Name: '#fdf35e&l%name%'
+          Lore:
+          - '#d4d9d8%time%'
+          - ''
+          - '#aefd5e&l操作:'
+          - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e添加时间'
+          - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e清除时间'
+      RespectItemMeta:
+        Name: '#fdf35e&l保留物品元数据'
+        Lore:
+        - '#fdf35e&l当前:'
+        - '#fdf35e▪ #d4d9d8是否启用: #fdf35e%product_item_meta_enabled%'
+        - ''
+        - '#d4d9d8设置商店是否保留#fdf35e实际物品#d4d9d8的元数据'
+        - '#d4d9d8这表示玩家可以出售大致相似的物品.'
+        - ''
+        - '#fdba5e&l注意:'
+        - '#fdba5e▪ #d4d9d8若出售的是自定义物品, 请启用该项!'
+        - ''
+        - '#aefd5e&l操作:'
+        - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e切换'
+      Allowed_Ranks:
+        Name: '#fdf35e&l允许等级'
+        Lore:
+        - '#d4d9d8允许交互该商品的等级(权限组).'
+        - ''
+        - '#fdf35e&l当前:'
+        - '#d4d9d8%product_allowed_ranks%'
+        - ''
+        - '#aefd5e&l操作:'
+        - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e添加等级'
+        - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e清除列表'
+VirtualShopType:
+  STATIC: 固定
+  ROTATING: 切换
+VirtualEditorType:
+  Editor:
+    SHOP_CREATE:
+      Name: '#fdf35e&l创建商店'
+      Lore:
+      - '#d4d9d8创建新的统计或旋转商店.'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e创建固定商店'
+      - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e创建刷新商店'
+    SHOP_OBJECT:
+      Name: '#fdf35e&l%shop_name%'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8种类: #fdf35e%shop_type%'
+      - '#fdf35e▪ #d4d9d8操作: #fdf35e%shop_pages%'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e编辑'
+      - '#aefd5e▪ #d4d9d8Shift+鼠标右键: #aefd5e删除#fd5e5e (不可撤销)'
+    SHOP_CHANGE_NAME:
+      Name: '#fdf35e&l显示名称'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8名称: #fdf35e%shop_name%'
+      - ''
+      - '#d4d9d8设置商店显示名称.'
+      - '#d4d9d8通常用于 GUI 界面和消息文本.'
+      - ''
+      - '#fdba5e&l注意:'
+      - '#fdba5e▪ #d4d9d8这#fdba5e不是#d4d9d8商店 GUI 界面的标题!'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e修改'
+    SHOP_CHANGE_DESCRIPTION:
+      Name: '#fdf35e&l商店描述'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#d4d9d8%shop_description%'
+      - ''
+      - '#d4d9d8设置商店描述.'
+      - '#d4d9d8一般在商店的主菜单使用.'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e添加一行'
+      - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e清空内容'
+    SHOP_CHANGE_PAGES:
+      Name: '#fdf35e&l页码数量'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8数量: #fdf35e%shop_pages%'
+      - ''
+      - '#d4d9d8设置商店页码.'
+      - ''
+      - '#fdba5e&l注意:'
+      - '#fdba5e▪ #d4d9d8不要忘了在 #fdf35e页面编辑器#d4d9d8 中添加页面物品!'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e+1 页'
+      - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e-1 页'
+    SHOP_CHANGE_PERMISSION:
+      Name: '#fdf35e&l权限需求'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8是否启用: #fdf35e%shop_permission_required%'
+      - '#fdf35e▪ #d4d9d8权限节点: #fdf35e%shop_permission_node%'
+      - ''
+      - '#d4d9d8设置玩家浏览该商店是否需要权限.'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e切换'
+    SHOP_CHANGE_TRANS操作:
+      Name: '#fdf35e&l交易设置'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8购买: #fdf35e%shop_buy_allowed%'
+      - '#fdf35e▪ #d4d9d8出售: #fdf35e%shop_sell_allowed%'
+      - ''
+      - '#d4d9d8设置 #fdf35e购买#d4d9d8 和/或 #fdf35e出售#d4d9d8 在商店中的启用状态.'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e切换购买'
+      - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e切换出售'
+    SHOP_CHANGE_CITIZENS_ID:
+      Name: '#fdf35e&l绑定 NPC'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8NPC ID: #fdf35e%shop_npc_ids%'
+      - ''
+      - '#d4d9d8与该商店页面绑定的 NPC 列表.'
+      - '#d4d9d8点击这些 NPC 可打开商店页面.'
+      - ''
+      - '#fd5e5e&l警告:'
+      - '#fd5e5e▪ #d4d9d8你必须安装 #fd5e5eCitizens #d4d9d8插件才可使用该功能!'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e添加 ID'
+      - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e清除列表'
+    SHOP_CHANGE_VIEW_DESIGN:
+      Name: '#fdf35e&l页面编辑器'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8标题: #fdf35e%shop_view_title%'
+      - '#fdf35e▪ #d4d9d8大小: #fdf35e%shop_view_size%'
+      - ''
+      - '#d4d9d8设置商店 GUI 界面的 #fdf35e标题#d4d9d8 & #fdf35e大小#d4d9d8.'
+      - '#d4d9d8在这里你可以设置商店的自定义布局'
+      - '#d4d9d8只需简单地将物品放置在商店中并按下 #fdf35eESC#d4d9d8 即可保存.'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5打开编辑器'
+      - '#aefd5e▪ #d4d9d8Shift+鼠标左键: #aefd5e修改标题'
+      - '#aefd5e▪ #d4d9d8Shift+鼠标右键: #aefd5e修改大小'
+    SHOP_CHANGE_DISCOUNTS:
+      Name: '#fdf35e&l折扣'
+      Lore:
+      - '#d4d9d8在这里创建并管理商店折扣!'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e进入'
+    SHOP_CHANGE_PRODUCTS:
+      Name: '#fdf35e&l商店物品'
+      Lore:
+      - '#d4d9dd在这里创建并管理商店物品!'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e进入'
+      - '#aefd5e▪ #d4d9d8键盘[Q/丢弃]键: #aefd5e重置并更新物品价格'
+      - '#aefd5e▪ #d4d9d8键盘[F/切换副手]键: #aefd5e重置所有库存和限制'
+    PRODUCT_CHANGE_ITEM:
+      Name: '#fdf35e&l实际物品'
+      Lore:
+      - '#d4d9d8设置出售/购买的实际物品.'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8拖拽物品: #aefd5e替换物品'
+      - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e复制物品'
+    PRODUCT_CHANGE_PREVIEW:
+      Name: '#fdf35e&l预览物品'
+      Lore:
+      - '#d4d9d8设置商店 GUI 界面内的物品预览样式.'
+      - ''
+      - '#fdba5e&l注意:'
+      - '#fdba5e▪ #d4d9d8为取得最好效果, 请预先设置物品的名称和描述.'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8拖拽物品: #aefd5e替换物品'
+      - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e复制物品'
+    PRODUCT_CHANGE_COMMANDS:
+      Name: '#fdf35e&l命令'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#d4d9d8%product_commands%'
+      - ''
+      - '#d4d9d8购买该物品时所执行的命令.'
+      - ''
+      - '#fdba5e&l注意:'
+      - '#fdba5e▪ #d4d9d8可使用 #fdba5e%player_name%#d4d9d8 代表玩家名称.'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e添加命令'
+      - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e清理列表'
+    PRODUCT_CHANGE_DISCOUNT:
+      Name: '#fdf35e&l允许折扣'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8是否启用: #fdf35e%product_discount_allowed%'
+      - ''
+      - '#d4d9d8设置该物品的价格是否'
+      - '#d4d9d8可以被商店的折扣影响.'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e切换'
+    PRODUCT_CHANGE_STOCK_GLOBAL:
+      Name: '#fdf35e&l全局库存'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8购买间隔: #fdf35e%product_stock_global_buy_amount_initial%'
+      - '#fdf35e▪ #d4d9d8购买自动补货: #fdf35e%product_stock_global_buy_restock_time%'
+      - '#fdf35e▪ #d4d9d8出售间隔: #fdf35e%product_stock_global_sell_amount_initial%'
+      - '#fdf35e▪ #d4d9d8出售自动补货: #fdf35e%product_stock_global_sell_restock_time%'
+      - ''
+      - '#d4d9d8设置同时面向#fdf35e所有#d4d9d8玩家的库存数量'
+      - '#d4d9d8每次交易后均会改变剩余物品的数量.'
+      - ''
+      - '#fdba5e&l注意:'
+      - '#fdba5e▪ #d4d9d8-1 表示 = #fdba5e间隔不限制'
+      - '#fdba5e▪ #d4d9d8-1 表示 = #fdba5e永不#d4d9d8补货.'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e修改购买间隔'
+      - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e修改购买库存'
+      - '#aefd5e▪ #d4d9d8Shift+鼠标左键: #aefd5e修改出售间隔'
+      - '#aefd5e▪ #d4d9d8Shift+鼠标右键: #aefd5e修改出售间隔'
+      - '#aefd5e▪ #d4d9d8键盘[Q/丢弃]键: #aefd5e禁用全部设置'
+    PRODUCT_CHANGE_STOCK_PLAYER:
+      Name: '#fdf35e&l玩家库存'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8购买间隔: #fdf35e%product_stock_global_buy_amount_initial%'
+      - '#fdf35e▪ #d4d9d8购买自动补货: #fdf35e%product_stock_global_buy_restock_time%'
+      - '#fdf35e▪ #d4d9d8出售间隔: #fdf35e%product_stock_global_sell_amount_initial%'
+      - '#fdf35e▪ #d4d9d8出售自动补货: #fdf35e%product_stock_global_sell_restock_time%'
+      - ''
+      - '#d4d9d8设置同时面向#fdf35e每个#d4d9d8玩家的库存数量'
+      - '#d4d9d8每次交易后均会改变剩余物品的数量.'
+      - ''
+      - '#fdba5e&l注意:'
+      - '#fdba5e▪ #d4d9d8-1 表示 = #fdba5e间隔不限制'
+      - '#fdba5e▪ #d4d9d8-1 表示 = #fdba5e永不#d4d9d8补货.'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e修改购买间隔'
+      - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e修改购买库存'
+      - '#aefd5e▪ #d4d9d8Shift+鼠标左键: #aefd5e修改出售间隔'
+      - '#aefd5e▪ #d4d9d8Shift+鼠标右键: #aefd5e修改出售间隔'
+      - '#aefd5e▪ #d4d9d8键盘[Q/丢弃]键: #aefd5e禁用全部设置'
+    PRODUCT_CHANGE_PRICE_TYPE:
+      Name: '#fdf35e&l价格种类'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8当前: #fdf35e%product_price_type%'
+      - ''
+      - '#d4d9d8设置物品的购买货币种类.'
+      - '#d4d9d8不同种类会有不同的设置.'
+      - ''
+      - '#fd5e5e&l警告:'
+      - '#fd5e5e▪ #d4d9d8修改后, 之前的设置将会 #fd5e5e全部丢失#d4d9d8!'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e切换'
+    PRODUCT_CHANGE_PRICE_FLAT_BUY:
+      Name: '#fdf35e&l购买价格'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8当前: #fdf35e%product_price_buy%'
+      - ''
+      - '#d4d9d8设置物品的购买价格.'
+      - ''
+      - '#fdba5e&l注意:'
+      - '#fdba5e▪ #d4d9d8设置为负数可禁止玩家购买该物品.'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e修改'
+      - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e禁用'
+    PRODUCT_CHANGE_PRICE_FLAT_SELL:
+      Name: '#fdf35e&l出售价格'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8当前: #fdf35e%product_price_sell%'
+      - ''
+      - '#d4d9d8设置物品的出售价格.'
+      - ''
+      - '#fdba5e&l注意:'
+      - '#fdba5e▪ #d4d9d8设置为负数会使得物品无法出售.'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e修改'
+      - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5eDisable'
+    PRODUCT_CHANGE_PRICE_FLOAT_BUY:
+      Name: '#fdf35e&l购买价格'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8Min: #fdf35e%product_pricer_buy_min%'
+      - '#fdf35e▪ #d4d9d8Max: #fdf35e%product_pricer_buy_max%'
+      - ''
+      - '#d4d9d8设置物品的购买价格弹性.'
+      - '#d4d9d8最终定价会在此范围内.'
+      - ''
+      - '#fdba5e&l注意:'
+      - '#fdba5e▪ #d4d9d8设置为负数可禁止玩家购买该物品.'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e修改 Min'
+      - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e修改 Max'
+    PRODUCT_CHANGE_PRICE_FLOAT_SELL:
+      Name: '#fdf35e&l出售价格'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8最小值: #fdf35e%product_pricer_sell_min%'
+      - '#fdf35e▪ #d4d9d8最大值: #fdf35e%product_pricer_sell_max%'
+      - ''
+      - '#d4d9d8设置物品的出售价格弹性.'
+      - '#d4d9d8最终定价会在此范围内.'
+      - ''
+      - '#fdba5e&l注意:'
+      - '#fdba5e▪ #d4d9d8设置为负数会使得物品无法出售.'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e修改最小值'
+      - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e修改最大值'
+    PRODUCT_CHANGE_PRICE_FLOAT_REFRESH:
+      Name: '#fdf35e&l刷新设置'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8天数: #fdf35e%product_pricer_float_refresh_days%'
+      - '#fdf35e▪ #d4d9d8时间: #fdf35e%product_pricer_float_refresh_times%'
+      - ''
+      - '#d4d9d8设置商品刷新价格的条件.'
+      - '#d4d9d8商品会在刷新前保持价格不变.'
+      - ''
+      - '#fd5e5e&l警告:'
+      - '#fd5e5e▪ #d4d9d8你需要设置至少一个 #fd5e5ed天数#d4d9d8 和 #fd5e5e时间点#d4d9d8!'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8Lift-Click: #aefd5e添加天数'
+      - '#aefd5e▪ #d4d9d8Shift+鼠标左键: #aefd5e清除天数'
+      - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e添加时间'
+      - '#aefd5e▪ #d4d9d8Shift+鼠标右键: #aefd5e清除时间'
+    PRODUCT_CHANGE_PRICE_DYNAMIC_BUY:
+      Name: '#fdf35e&l购买价格弹性'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8Min: #fdf35e%product_pricer_buy_min%'
+      - '#fdf35e▪ #d4d9d8Max: #fdf35e%product_pricer_buy_max%'
+      - ''
+      - '#d4d9d8设置商店物品的购买价格弹性.'
+      - '#d4d9d8最终定价会在该范围之内.'
+      - ''
+      - '#fdba5e&l注意:'
+      - '#fdba5e▪ #d4d9d8负数会使得物品无法购买.'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e修改最小值'
+      - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e修改最大值'
+    PRODUCT_CHANGE_PRICE_DYNAMIC_SELL:
+      Name: '#fdf35e&l出售价格弹性'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8最小值: #fdf35e%product_pricer_sell_min%'
+      - '#fdf35e▪ #d4d9d8最大值: #fdf35e%product_pricer_sell_max%'
+      - ''
+      - '#d4d9d8设置商店物品的出售价格弹性.'
+      - '#d4d9d8最终定价会在该范围之内.'
+      - ''
+      - '#fdba5e&l注意:'
+      - '#fdba5e▪ #d4d9d8负数会使得物品无法出售.'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e修改最小值'
+      - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e修改最大值'
+    PRODUCT_CHANGE_PRICE_DYNAMIC_INITIAL:
+      Name: '#fdf35e&l初始价格'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8购买: #fdf35e%product_pricer_dynamic_initial_buy%'
+      - '#fdf35e▪ #d4d9d8出售: #fdf35e%product_pricer_dynamic_initial_sell%'
+      - ''
+      - '#d4d9d8设置物品的初始价格.'
+      - '#d4d9d8这些价格会被用作默认/起始值.'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e修改购买价格'
+      - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e修改出售价格'
+    PRODUCT_CHANGE_PRICE_DYNAMIC_STEP:
+      Name: '#fdf35e&l动态定价'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8购买: #fdf35e%product_pricer_dynamic_step_buy%'
+      - '#fdf35e▪ #d4d9d8出售: #fdf35e%product_pricer_dynamic_step_sell%'
+      - ''
+      - '#d4d9d8动态定价允许商品根据供需情况决定价格.'
+      - ''
+      - '#fdba5e&l注意:'
+      - '#fdba5e▪ #d4d9d8买得更多意味着价格更高.'
+      - '#fdba5e▪ #d4d9d8卖得更多意味着价格更低'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e修改购买价格'
+      - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e修改出售价格'
+    DISCOUNT_CREATE:
+      Name: '#fdf35e&l创建折扣'
+      Lore:
+      - '#d4d9d8创建一个新的折扣.'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e创建'
+    DISCOUNT_OBJECT:
+      Name: '#fdf35e&l折扣'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8数量: #fdf35e%discount_amount%'
+      - '#fdf35e▪ #d4d9d8天数: #fdf35e%discount_days%'
+      - '#fdf35e▪ #d4d9d8次数: #fdf35e%discount_times%'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e编辑'
+      - '#aefd5e▪ #d4d9d8Shift+鼠标右键: #aefd5e删除 #fd5e5e(不可撤销)'
+    DISCOUNT_CHANGE_DISCOUNT:
+      Name: '#fdf35e&l折扣比率'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8折扣比率: #fdf35e%discount_amount%%'
+      - ''
+      - '#d4d9d8设置折扣比例(百分比).'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e修改'
+    DISCOUNT_CHANGE_DURATION:
+      Name: '#fdf35e&l持续时间'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8持续时间: #fdf35e%discount_duration%'
+      - ''
+      - '#d4d9d8设置折扣的持续时间.'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e修改'
+    DISCOUNT_CHANGE_DAY:
+      Name: '#fdf35e&l激活天数'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8天数: #fdf35e%discount_days%'
+      - ''
+      - '#d4d9d8商店折扣的激活天数列表.'
+      - ''
+      - '#fdba5e&l注意:'
+      - '#fdba5e▪ #d4d9d8至少需要设置一个 #fdba5e天数#d4d9d8 和 #fdba5e时间点#d4d9d8!'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5eAdd Day'
+      - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e清理列表'
+    DISCOUNT_CHANGE_TIME:
+      Name: '#fdf35e&l激活时间'
+      Lore:
+      - '#fdf35e&l当前:'
+      - '#fdf35e▪ #d4d9d8天数: #fdf35e%discount_times%'
+      - ''
+      - '#d4d9d8商店折扣的激活时间列表.'
+      - ''
+      - '#fdba5e&l注意:'
+      - '#fdba5e▪ #d4d9d8至少需要设置一个 #fdba5e天数#d4d9d8 和 #fdba5e时间点#d4d9d8!'
+      - ''
+      - '#aefd5e&l操作:'
+      - '#aefd5e▪ #d4d9d8鼠标左键: #aefd5e添加时间'
+      - '#aefd5e▪ #d4d9d8鼠标右键: #aefd5e清理列表'
+ChestShop:
+  Command:
+    List:
+      Desc: 列出你的商店.
+    Create:
+      Desc: 以准星所在的箱子方块为基础创建一个商店.
+      Usage: '[种类]'
+    Search:
+      Desc: 搜索含有特定物品的商店.
+      Usage: <物品名>
+    Remove:
+      Desc: 移除准星瞄准的箱子方块对应的商店.
+  Shop:
+    Error:
+      NotOwner: '&c你不是店主!'
+    Errpr:
+      Currency:
+        Invalid: '&c货币无效或非法!'
+    Creation:
+      Info:
+        Done:
+        - '{message: ~type: TITLES; ~fadeIn: 10; ~stay: 80; ~fadeOut: 10; ~sound: BLOCK_NOTE_BLOCK_BELL;}#aefd5e&l商店已创建!'
+        - '#d4d9d8使用 #aefd5eShift+鼠标左键 #d4d9d8来进入 #aefd5e编辑模式#d4d9d8.'
+      Error:
+        AlreadyShop: 该方块已是商店!
+        NotEmpty: 请先清空箱子.
+        NotAChest: 所指方块非箱子!
+        BadLocation: 此处不可创建商店!
+        LimitReached: 创建数量已达上限! 你不能再创建更多了.
+        BadArea: 你只能在你自己的区域中创建商店!
+        NotEnoughFunds: 你没钱了!
+        TypePermission: 你没有创建该类上帝那所需的权限!
+    Removal:
+      Info:
+        Done: '{message: ~type: TITLES; ~fadeIn: 10; ~stay: 80; ~fadeOut: 10; ~sound: ENTITY_GENERIC_EXPLODE;}&c&lShop Removed.'
+      Error:
+        NotAShop: 该方块不是商店!
+    Trade:
+      Buy:
+        Info:
+          User: '{message: ~prefix: false;}&e你花费了 &6%price% &e从玩家 &6%shop_owner%&e 的商店 &6%shop_name%&e 处购买了 &6%amount% &e个&6 %item%&e.'
+          Owner: '{message: ~prefix: false;}&6%player% &e从你的商店 &6%shop_name% &e处花费 &6%price% &e购买了 %amount%&e 个 &6%item%.'
+      Sell:
+        Info:
+          User: '{message: ~prefix: false;}&e你花费了 &6%price% &e在玩家 &6%shop_owner%&e 的商店 &6%shop_name%&e 处出售了 &6%amount% &e个&6 %item%&e.'
+          Owner: '{message: ~prefix: false;}&6%player% &e从你的商店 &6%shop_name% &e处出售了 %amount%&e 个 &6%item%, 获得 &6%prize%&e.'
+    Bank:
+      Error:
+        InvalidCurrency:
+        - '{message: ~type: TITLES; ~fadeIn: 10; ~stay: 80; ~fadeOut: 10;}'
+        - '&c&l操作失败!'
+        - '#d4d9d8货币无效或非法!'
+      Deposit:
+        Success:
+        - '{message: ~type: TITLES; ~fadeIn: 10; ~stay: 80; ~fadeOut: 10;}'
+        - '#aefd5e&l存入成功!'
+        - '#d4d9d8你存入了 #aefd5e%amount% #d4d9d8至商店银库!'
+        Error:
+          NotEnough:
+          - '{message: ~type: TITLES; ~fadeIn: 10; ~stay: 80; ~fadeOut: 10;}'
+          - '&c&l存入失败!'
+          - '#d4d9d8你没有足够的钱!'
+      Withdraw:
+        Success:
+        - '{message: ~type: TITLES; ~fadeIn: 10; ~stay: 80; ~fadeOut: 10;}'
+        - '#aefd5e&l成功取出!'
+        - '#d4d9d8你从商店银库取出了 #aefd5e%amount% #d4d9d8k!'
+        NotEnough:
+        - '{message: ~type: TITLES; ~fadeIn: 10; ~stay: 80; ~fadeOut: 10;}'
+        - '&c&l取出失败!'
+        - '#d4d9d8你没有足够的钱!'
+  Product:
+    Error:
+      BadItem: 物品不可交易!
+  ShopList:
+    Info:
+      Switch: '全球商店状态: %state%#d4d9d8.'
+  Editor:
+    Enter:
+      Name: '#d4d9d8输入商店名称...'
+    Tip:
+      Product:
+        Currency:
+        - '#d4d9d8'
+        - '&b&l选择货币 #d4d9d8(点击)&b&l:'
+        - '&2▸ {json: ~showText: #d4d9d8点击选择; ~runCommand: %currency_id% ;}#aefd5e%currency_name% #d4d9d8(&f%currency_id%#d4d9d8){end-json}'
+        - '#d4d9d8'
+      Bank:
+        Exchange: '#d4d9d8输入货币种类与数量...'
+        Currency:
+        - '#d4d9d8'
+        - '&b&l选择货币 #d4d9d8(点击)&b&l:'
+        - '&2▸ {json: ~showText: #d4d9d8点击选择; ~suggestCommand: %currency_id% ;}#aefd5e%currency_name% #d4d9d8(&f%currency_id%#d4d9d8){end-json}'
+        - '#d4d9d8'
+        - '&b&l小提示:'
+        - '&2▸ #aefd5e使用 &2''-1''#aefd5e 来全部取出/存入.'
+        - '#d4d9d8'
+        - '&b&l例子:'
+        - '&2▸ #aefd5evault 500'
+        - '#d4d9d8'
+    Bank:
+      InvalidSyntax: '#d4d9d8格式错误! 请输入 &c<货币种类> <货币数量>'
+    Error:
+      Negative: '#d4d9d8数字必须为正!'
+      ProductLeft: '&c你必须先将物品全部拿出箱子!'
+AuctionSortType:
+  NAME: 名称
+  MATERIAL: 材料
+  SELLER: 卖家
+  NEWEST: 最新
+  OLDEST: 最老
+  MOST_EXPENSIVE: 最贵
+  LEAST_EXPENSIVE: 最便宜
+ChestShopType:
+  PLAYER: 玩家
+  ADMIN: 管理员
+Auction:
+  Command:
+    Open:
+      Desc: 打开竞拍界面.
+    Sell:
+      Desc: 在竞拍界面中加入物品.
+      Usage: <价格>
+    Expired:
+      Desc: 列出所有过期物品.
+      Usage: '[玩家名称]'
+    History:
+      Desc: 列出你的购买记录.
+      Usage: '[玩家名称]'
+    Selling:
+      Desc: 列出你正在出售的商品.
+      Usage: '[玩家名称]'
+    Unclaimed:
+      Desc: 列出你尚未领取的商品.
+      Usage: '[玩家名称]'
+  Listing:
+    Add:
+      Success:
+        Info: '#d4d9d8你成功将 #aefd5e%listing_item_amount% #d4d9d8个 %listing_item_name%#d4d9d8 添加至竞拍, 起拍价为 #aefd5e%listing_price%#d4d9d8. 收取税款: &c%tax%#d4d9d8.'
+        Announce: '#d4d9d8玩家 #aefd5e%player_display_name% #d4d9d8将 #aefd5e%listing_item_amount% 个 {json: ~showItem: %listing_item_value%;}#aefd5e%listing_item_name%{end-json} #d4d9d8添加至竞拍, 起拍价为 &e%listing_price%#d4d9d8!'
+      Error:
+        BadItem: '{message: ~sound: ENTITY_VILLAGER_NO;}&e%item% &c物品不可参与竞拍!'
+        Limit: '{message: ~sound: ENTITY_VILLAGER_NO;}&c你不能添加多余 &e%amount% &c的商品至竞拍!'
+        Price:
+          Tax: '{message: ~sound: ENTITY_VILLAGER_NO;}&c你无法支付 &e%tax%% &c的价格税: &e%amount%&c!'
+          Currency:
+            Min: '{message: ~sound: ENTITY_VILLAGER_NO;}&c使用货币 &e%currency_name% 时的起拍价&c不可以小于 &e%amount%&c!'
+            Max: '{message: ~sound: ENTITY_VILLAGER_NO;}&c使用货币 &e%currency_name% 时的起拍价&c不可有大于 &e%amount%&c!'
+          Negative: '{message: ~sound: ENTITY_VILLAGER_NO;}&c起拍价不可以为负数!'
+          Material:
+            Min: '{message: ~sound: ENTITY_VILLAGER_NO;}&c参与竞拍的物品 &e%item%&c 不能小于 &e%amount%&c!'
+            Max: '{message: ~sound: ENTITY_VILLAGER_NO;}&c参与竞拍的物品 &e%item%&c 不能大于 &e%amount%&c!'
+        DisabledGamemode: '{message: ~sound: ENTITY_VILLAGER_NO;}&c该模式下不可添加物品!'
+    Buy:
+      Success:
+        Info:
+        - '{message: ~prefix: false; ~type: TITLES; ~fadeIn: 20; ~stay: 50; ~fadeOut: 20; ~sound: ENTITY_PLAYER_LEVELUP;}#aefd5e&l购买成功!'
+        - '#d4d9d8你花费了 #aefd5e%listing_price%#d4d9d8 从 #aefd5e%listing_seller% #d4d9d8购买了 #aefd5e%listing_item_amount% #d4d9d8个 &6%listing_item_name% #aefd5e%listing_seller%#d4d9d8!'
+      Error:
+        NotEnoughFunds:
+        - '{message: ~prefix: false; ~type: TITLES; ~fadeIn: 20; ~stay: 50; ~fadeOut: 20; ~sound: BLOCK_ANVIL_PLACE;}&c&l购买失败!'
+        - '#d4d9d8余额: &c%balance% &8| #d4d9d8购买价格: &c%listing_price%'
+  Notify:
+    Listing:
+      Unclaimed:
+      - '{message: ~prefix: false;}'
+      - '&8&m-------------&8&l[ &e&l拍卖提醒 &8&l]&8&m-------------'
+      - '#d4d9d8     你有 &e%amount% 个尚未领取的奖励#d4d9d8!'
+      - '#d4d9d8                 {json: ~showText: #d4d9d8点击领取!; ~runCommand: /ah unclaimed;}#aefd5e&l点击此处打开菜单领取!{end-json}'
+      - '&8&m-----------------------------------------'
+      Expired:
+      - '{message: ~prefix: false;}'
+      - '&8&m-------------&8&l[ &e&l拍卖提醒 &8&l]&8&m-------------'
+      - '#d4d9d8     你有 &e%amount% 个过期的物品!'
+      - '#d4d9d8           {json: ~showText: #d4d9d8点击领取!; ~runCommand: /ah expired;}#aefd5e&l点击此处打开菜单取回!{end-json}'
+      - '&8&m-----------------------------------------'
+      Claim: '#d4d9d8你成功通过 #aefd5e%listing_item_name%#d4d9d8 获得了 #aefd5e%listing_price%#d4d9d8!'
+  Error:
+    DisabledWorld: '&c该世界拍卖不可用!'

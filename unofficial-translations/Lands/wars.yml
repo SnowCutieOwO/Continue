@@ -1,0 +1,254 @@
+# 插件维基 (配置文件): https://github.com/Angeschossen/Lands/wiki/Wars-Config
+# 面向玩家的解释: https://github.com/Angeschossen/Lands/wiki/Wars
+
+# 是否启用战争?
+# 注意: 该选项的修改需要重启服务器才可生效.
+enabled: true
+
+# 是否只允许国与国之间发生战争, 而不允许土地之间的战争?
+only-nations: false
+
+# 战争相关设置
+declaration:
+  # 设置土地要想发动或参与战争所需最少的信任玩家数量.
+  min-players:
+    # 设置攻击方所需要的最少玩家数量.
+    attacker: 0
+    # 设置防守方发起战争所需要的最少受信任玩家数量.
+    defender_3: 0
+  # "from" 和 "to" 决定了每天能发起战争的时间段.
+  # 最小值: 0 (凌晨 00:00)
+  # 最大值: 23 (晚上 11:00)
+  # 将任一选项设置为 -1 表示不作限制.
+  send-time:
+    from: -1
+    to: -1
+  # 你想要给防守方多久的战前准备时间?
+  # 注意: 默认的时间单位为秒.
+  # 默认设置为一天
+  preparation_time: 1d
+  # 是否允许攻击方向至少一名玩家在线的土地或国家发起战争?
+  online: false
+  # 是否向全服发送公告消息.
+  # 你可以在语言文件中编辑对应的消息.
+  broadcast: true
+  # 战争请求是否需要双方均同意才可正式开始?
+  # 若启用, 防守方需要在战前同意进攻方的请求. 他们需要使用命令 /lads declare <攻击方> 来接受战争请求
+  # 他们也可以使用命令 /wars deny 来拒绝战争请求
+  # 注意: 该选项的修改需要重启服务器才可生效.
+  mutual:
+    enabled_2: false
+    # 是否在超时后自动删除敌方未接受的战争请求?
+    # 可以将该值设置为 0 来禁用此功能.
+    declaration-timeout_time: 5d
+  min-balance:
+    # 设置进攻方发起战争所需的最小银行存款数量.
+    attacker_2: 5000
+    # 设置防守方直接对战进攻方所需的最小银行存款数量.
+    # 只要这片土地不属于存款数量高于他们国家, 他们仍然可以参与这场战争.
+    defender_2: 0
+  min-age:
+    # 设置进攻方土地或国家创立的最小时间.
+    attacker_time: 0d
+    # 设置防守方土地或国家创立的最小时间.
+    defender_time: 0d
+
+# 配置分数
+points:
+  # 每次击杀所获分数
+  kill: 1
+  # 占领区域获得分数.
+  capture-block:
+    # 成功夺旗所获分数.
+    capture: 5
+    # 成功破坏敌方旗帜所获分数.
+    break: 3
+    # 成功摧毁此份旗帜所获分数.
+    explode: 5
+  # 要想一方获得胜利, 需要至少获得多少点分数?
+  # 计算公式: <参战双方队友人数最少的一方人数> * 配置项 towin.per_player 的值
+  towin:
+    per-player: 5
+    # 设置所需分数的最小值. 在计算结果比该值小时使用这里设置的值.
+    min_2: 100
+
+# 敌方在土地边界放置信标时, 即会自动产生一个旗帜.
+# 进攻方需要在一定的时间内守在旗帜附近的地区以防止其被摧毁, 此即夺旗战.
+capture:
+  enabled_3: true
+  # 争夺据点必须自行合成. 玩家可通过命令 /war menu 在其中查看配方.
+  recipe_list:
+    - 'AIR,RED_STAINED_GLASS_PANE,AIR'
+    - 'AIR,BEACON,AIR'
+    - 'IRON_BLOCK,IRON_BLOCK,IRON_BLOCK'
+  # 设置一个团队可放置的最大争夺据点数.
+  max: 3
+  # 团队放置旗帜的间隔实时间.
+  place-cooldown_time: 10m
+  # 设置会被旗帜影响的区块半径. 入侵者在进入占领区域即会开始夺旗战.
+  # 如果设置为 1, 那么只有旗帜所放置的区块才会受到影响.
+  # 注意: 该设置不应大于服务器的可视距离.
+  radius: 1
+  # 是否将已夺取的区域重置为未占领状态?
+  unclaim: true
+  # 是否将已夺取的区域归入敌方土地?
+  claim: false
+  # 若要夺取该区块, 入侵者需要在旗帜附近坚守该时间才可成功.
+  hold_time: 10m
+  # 在任意一方的玩家处于区域内的情况下, 每隔一段时间生成一个烟花.
+  firework_time: 30s
+  # 是否在旗帜被破坏的时候掉落旗帜物品本身?
+  drop: false
+  # 限制旗帜可放置的 Y 轴高度.
+  y:
+    min: 30
+    max_2: 127
+
+sounds:
+  capture:
+    place_sound: 'BLOCK_BELL_USE'
+
+
+# 战争信息的显示间隔. 这个消息会在战争进行的时候发送. 提醒刚上线还不知道土地在参与战争的玩家非常有效.
+status-interval_time: 15m
+
+# 设置战争持续的最长时间. 当时间截止时, 击杀数最多的一方获胜. 如果双方击杀数相等则视作平局, 且双方均不会收到奖励.
+# 默认: 1.5 天
+war-timeout_time: 36h
+
+# 是否将参与战争的玩家从网页地图上隐去?
+# 注意: 该功能尚不兼容 BlueMap 插件.
+hide-player: false
+
+# Lands 是否要让处于战争中的玩家头顶多出一行状态标签?
+# 如果你正在使用计分板或 TAB 插件, 推荐使用变量 %rel_lands_war_relation% 显示玩家的状态.
+# 注意: 只有同时处于一场战争中的玩家, 才会看见这些标签.
+nametag: true
+
+# 在这里你可以填写玩家参战时禁止执行的命令.
+cmd-blacklist_list: [ ]
+
+# 在这里你可以启用战争中的自然标志.
+# 有效土地标志列表: https://github.com/Angeschossen/Lands/wiki/Land-Flags
+land-flags_list: [ ]
+
+
+# 防守方战败的事件
+surrender:
+  # 贡品设置
+  tribute:
+    # 如果你禁用此项, 参战方在没有要求缴纳贡品的情况下也可以投降.
+    force: true
+
+    # 最大贡品设置（消息文件译为“上贡”）
+    max:
+      # 进攻方可设置的最大贡品数额.
+      # 进攻方设置的贡品会在防守方自愿投降后给予进攻方.
+      #
+      # 使用 % 符号指定防守方指定比例的土地.
+      # 使用整数表示贡品所包含的游戏币.
+      # 如果你禁用了银行, 那么钱款将会从土地拥有者处支出.
+      defender: 75%
+      # 如果攻击方无条件投降, 进攻方将需要按比例给防守方缴纳贡品, 钱的数量将会在这个变量中显示.
+      #
+      # 使用 % 符号指定进攻方指定比例的土地.
+      # 使用整数表示贡品所包含的游戏币.
+      # 如果你禁用了银行, 那么钱款将会从土地拥有者处支出.
+      # 提示: 你可以将其设置为 0 来禁用它.
+      attacker: 5000
+
+# 战争设置, 可在游戏内通过玩家修改.
+# 请注意他们在修改对应设置时也需要一定的权限. 可在插件维基中找到相关描述.
+settings:
+  # 允许队友相互击杀. 友方击杀不计入总击杀统计.
+  friendly_fire:
+    default_2: true
+
+shield:
+  # 设置土地的战争保护相关内容.
+  # 如果战争保护启用, 其他土地就不能进攻这块土地.
+  activation:
+    # 是否对新创建的土地给予战争保护?
+    # 设置为 0 可禁用该项.
+    shield_creation_time: 1d
+
+    # 是否为投降后的土地设置战争保护?
+    # 若你想要禁用该功能, 将下方的值设置为 0 即可.
+    shield_surrender_time: 4d
+
+    # 是否为参战后的土地设置战争保护?
+    # 若你想要禁用该功能, 将下方的值设置为 0 即可.
+    shield_end_time: 7d
+
+# 战争开始之后的相关配置.
+start:
+  # 是否向全服发送公告?
+  # 你可以在消息文本中编辑公告的内容.
+  broadcast_2: true
+
+# 战争一方取胜之后的相关配置.
+end:
+  # 当一方土地胜利或战败时执行命令.
+  # 可用内建变量:
+  # {winner} - 胜利一方的名称. 不包含空格.
+  # {winner_name} - 胜利一方的名称. 可能包含空格.
+  # {winner_owner} - 胜方土地拥有者.
+  # {loser} - 战败一方的名称. 不包含空格.
+  # {loser_name} - 胜利一方的名称. 可能包含空格.
+  # {loser_owner} - 战败土地拥有者.
+  # 将对应选项设置为 [] 可禁用设置.
+  winner:
+    winner-cmds_list: [ ]
+
+  loser:
+    loser-cmds_list: [ ]
+
+  # 战争结束后, 战败一方将会向进攻者支付指定数量的钱款.
+  # 设置奖励模式.
+  # 使用 % 符号来指定战败者所需支付其存款的比例.
+  # 使用数字来设置钱款总数. 如果战败一方没有足够的钱, 他们会尽可能支付所有的余额.
+  # 如果你禁用了银行功能, 那么钱款将直接从土地的拥有者账户中扣除.
+  robbery: 75%
+
+
+# 入侵意味着敌方正尝试占领对手的区域. 他们能在对应土地中能做的事, 例如打开箱子, 取决于 "role-settings_list", "block-place_list" 和 "block-break_list" 的设置.
+# If you want to limit what they're able to do, edit "role-settings_list", "block-place_list" and "block-break_list" in this section.
+# 如果你想要限制他们能做的事情, 请编辑本部分 "role-settings_list", "block-place_list" 和 "block-break_list" 的设置.
+invading:
+  # 限制敌方在对方区域中能做的是 (可在下方的 "flags" 区域编辑).
+  restrictions:
+    # 设置允许进攻方在敌方区域中交互时, 防守方要求的在线玩家人数.
+    # 如果参战的是国家: 这些值将会应用在被入侵的土地上, 而不是整个国家 (众多土地的集合).
+    # 该选项也会影响到夺旗战.
+    # 注意: 若你需要在防守方无人在线的时候以掠夺者代替之, 请将该选项设置为 0.
+    # 注意: 该选项的修改需要重启服务器才可生效.
+    min-players: 1
+    # 设置防守方最后一位玩家登出后进攻方仍可继续攻击的时间长度.
+    cooldown_logging_time: 1m
+
+  # 对入侵者的限制.
+  flags:
+    # (仅战时) 允许玩家在敌方土地中做的事情.
+    # 可用行为名称: https://github.com/Angeschossen/Lands/wiki/Roles-and-their-Flags#action-flags
+    # 注意: 将 BLOCK_PLACE 或 BLOCK_BREAK 添加至此列表将会允许入侵者破坏、放置所有方块. 如果你需要指定方块, 请使用下方的列表设置.
+    # 注意: 战时, 进攻方和防守方均在对方土地中拥有访客职位.
+    role-flags_list:
+      - ITEM_PICKUP
+      - ATTACK_PLAYER
+      - LAND_ENTER
+
+    # 在土地参与战争的时候允许放置方块的列表.
+    # 注意: 仅在 BLOCK_PLACE 不在上述的 role-settings_list 中的时候有效.
+    # Values: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+    block-place_list:
+      - LADDER
+      - VINE
+      - SCAFFOLDING
+
+    # 在土地参与战争的时候允许破坏方块的列表.
+    # 注意: 仅在 BLOCK_BREAK 不在上述的 role-settings_list 中的时候有效.
+    # 可用值的列表: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+    block-break_list:
+      - LADDER
+      - VINE
+      - SCAFFOLDING
