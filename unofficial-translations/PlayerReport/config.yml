@@ -2,76 +2,76 @@ messages:
     Prefix: '&8(&b!&8) &3&l»'
     Header: '  &f&m+----&3&m----&f&m----&3&m----&f&m----&3&m----&f&m----&3&m----&f&m----&3&m----+'
     Footer: '  &f&m+----&3&m----&f&m----&3&m----&f&m----&3&m----&f&m----&3&m----&f&m----&3&m----+'
-    Note: '%prefix% &f若要清除所有举报, 请输入命令 &e/reports clear&f.'
-    Reports-Cleared: '%prefix% &f所有举报已被&a成功&f清除.'
-    Args-Error: '%prefix% &f抱歉, 但是该子命令不存在.'
-    No-Permission: '%prefix% &f抱歉, 但是你没有权限这么做.'
-    Reloaded: '%prefix% &f你已&a成功&f重载配置文件.'
-    Reported-Format: '%prefix% &c%player% &f被玩家 &a%reporter% &f以 &a%reason%&f 的理由举报了.'
+    Note: '%prefix% &f若要清理所有举报, 请输入命令 &e/reports clear&f.'
+    Reports-Cleared: '%prefix% &f所有举报都已被 &a成功 &f清除.'
+    Args-Error: '%prefix% &f抱歉，但该子命令不存在.'
+    No-Permission: '%prefix% &f抱歉，但你没有权限这么做.'
+    Reloaded: '%prefix% &f你已&a成功&f重载了配置文件.'
+    Reported-Format: '%prefix% &c%player% &f被玩家 &a%reporter% &f举报, 理由为 &a%reason%&f.'
     Report-Submitted: '%prefix% &a%player% &f提交了一个举报. &8(&e/reports&8)'
     Click-To-Info: '&7(点击打开举报界面)'
-    Reports-Empty: '%prefix% &f抱歉, 但现在还没有举报.'
-    Specify-Reason: '%prefix% &f请提供举报理由.'
-    Confirm: '%prefix% &f请再次输入命令 &e/reports clear &f来确认本操作.'
-    Cant-Report-Yourself: '%prefix% &f抱歉, 但你不能举报自己.'
-    Cant-Report-That-Player: '%prefix% &f抱歉, 但是你不能举报玩家 %player%.'
-    Max-Reports-Reached: '%prefix% &f抱歉, 但是你不能一次性提交超过 %max% 条举报.'
-    Nothing-To-Clear: '%prefix% &f抱歉, 但是没有待清除的举报.'
-    Please-Wait: '%prefix% &f抱歉, 但是你必须再等待 &c%cooldown%s&f.'
+    Reports-Empty: '%prefix% &f抱歉，但没有待处理的举报.'
+    Specify-Reason: '%prefix% &f请指定举报理由.'
+    Confirm: '%prefix% &f请再次输入命令 &e/reports clear &f来确认操作.'
+    Cant-Report-Yourself: '%prefix% &f抱歉，但你不能举报你自己.'
+    Cant-Report-That-Player: '%prefix% &f抱歉，但你不能举报玩家 %player%.'
+    Max-Reports-Reached: '%prefix% &f抱歉，但你一次最多只能提交 %max% 个举报.'
+    Nothing-To-Clear: '%prefix% &f抱歉，但这里没有待清理的举报.'
+    Please-Wait: '%prefix% &f抱歉，但你必须再等待 &c%cooldown% 秒&f.'
     Report-Usage: '%prefix% &e/report (玩家名称) (举报理由)'
-    Teleport-Message: '%prefix% &f你已传送至玩家 &a%player%&f 附近.'
-    Player-Has-To-Be-Online: '%prefix% &f抱歉, 但你不能举报玩家 &c%player%&f, 因为他们不在线.'
-    Claim-GUI-Not-Set-Up: '%prefix% &f抱歉, 但是该玩家未获得举报奖励, 因为他们不在线且你尚未设置举报奖励领取界面. &8(&e/reports setupclaimgui)'
-    On-ClaimGUI-Open-Note: '%prefix% &f在这里放置为举报成功的玩家提供的奖励, 以便他们下次上线时领取.'
-    Claim-GUI-Saved: '%prefix% &f&b领取界面&f已被保存.'
-    Report-Is-Already-Complete: '%prefix% &f抱歉, 但是该举报已被标记为&a处理完毕&f.'
-    Report-Must-Be-Complete-To-Delete: '%prefix% &f抱歉, 但是举报必须在标记为 ''&a处理完毕&f'' 之后才可删除.'
-    Nothing-To-Claim: '%prefix% &f抱歉, 但是你没有待领取的物品.'
-    Report-Is-Not-Complete: '%prefix% &f抱歉, 但是举报必须标记为&a处理完毕&f后才可删除.'
-    Not-In-The-Image-Proof-URL-Whitelist: '%prefix% &f抱歉, 但链接 &e%link% &c不是&f受支持的网站. 当前支持网站&8: &fImgur, PrntScr, Gyazo, Ibb & Pasteboard.'
-    No-Image-Attached: '%prefix% &f抱歉, 但是该举报没有附带图片.'
-    Proof-Added: '%prefix% &f你已成功将证据图片加入至举报.'
-    Added-URL-To-Whitelist: '%prefix% &f你&a添加了&f链接&e%link% &f至白名单.'
-    Canceled-Providing-Proof-Image: '%prefix% &f你撤销了举报. 你必须提供证据链接, 以防止造假.'
-    Your-Report-Was-Denied: '%prefix% &f你提交的举报已被&c拒绝&f.'
+    Teleport-Message: '%prefix% &f你已传送至玩家 &a%player%&f.'
+    Player-Has-To-Be-Online: '%prefix% &f抱歉，但你不能举报玩家 &c%player% &f因为他们不在线.'
+    Claim-GUI-Not-Set-Up: '%prefix% &f抱歉，但该玩家没有收到举报奖励，且你未设置举报界面。&8(&e/reports setupclaimgui)'
+    On-ClaimGUI-Open-Note: '%prefix% &f请在此放置离线玩家举报受理完毕的发放奖励.'
+    Claim-GUI-Saved: '%prefix% &f&b领取界面 &f已被保存.'
+    Report-Is-Already-Complete: '%prefix% &f抱歉，但该举报已被标注为 &a处理完毕&f.'
+    Report-Must-Be-Complete-To-Delete: '%prefix% &f抱歉，但举报在标注为''&a处理完毕&f'' 前不可以删除.'
+    Nothing-To-Claim: '%prefix% &f抱歉，但你没有可领取的奖励。.'
+    Report-Is-Not-Complete: '%prefix% &f抱歉，但举报必须标注为 &a处理完毕 &f才可删除.'
+    Not-In-The-Image-Proof-URL-Whitelist: '%prefix% &f抱歉，但链接 &e%link% &f&c不支持&f作为图片的提供链接. 支持的网站有&8: &fImgur, PrntScr, Gyazo, Ibb & Pasteboard.'
+    No-Image-Attached: '%prefix% &f抱歉，但该举报没有额外的图片证据.'
+    Proof-Added: '%prefix% &f你已为举报添加图片的举报证据.'
+    Added-URL-To-Whitelist: '%prefix% &f你 &a添加了 &f网站 &e%link% &f至证据链接白名单.'
+    Canceled-Providing-Proof-Image: '%prefix% &f你已取消该举报. 你需要提供图片证据.'
+    Your-Report-Was-Denied: '%prefix% &f你最近提交的举报已被 &c拒绝&f.'
     Link-Format: '%prefix% &e%link%'
     Provide-Image-Proof:
-    - '%prefix% &f请在聊天栏中输入图片或其他证据的链接.'
-    - '%prefix% &f你可以输入 cancel 来取消操作.'
+    - '%prefix% &f请在聊天栏中输入图片证据的链接.'
+    - '%prefix% &f你可以输入 ''cancel'' 取消本次举报.'
     Player-Reported:
     - ''
     - '%header%'
-    - '  %prefix% &f你成功举报了玩家 &c%player%&f.'
-    - '  &f理由 &3&l» &b%reason%&f.'
+    - '  %prefix% &f你 &a成功 &f举报了玩家 &c%player%&f.'
+    - '  &f举报理由 &e&l» &b%reason%&f.'
     - '%footer%'
     - ''
-    You-Have-Report-Rewards: '%prefix% &b&l嘿! &f你收到了举报奖励! &e/reports claim'
+    You-Have-Report-Rewards: '%prefix% &b&l注意! &f你的举报已被处理并获得了奖励! &e输入命令 /reports claim 打开界面!'
 settings:
     Inform-Operators: true
     Max-Reports-Per-Player: 3
-    # 被标记为 '处理完毕' 的举报不参与计数.
-    Command-Format: ' &3&l» &e%command% &3&l» &f%usage%'
-    Require-Reported-Player-To-Be-Online: true
-    Save-Reporters-Location: false
-    # 若要在 'Player-Commands' 中使用内建变量 %reporter%, 则必须开启该项
+    # 标记为 '已完成' 的举报不会计入
+    Command-Format: ' &e&l» &e%command% &e&l» &f%usage%'
+    Require-Reported-Player-To-Be-Online: false
+    Save-Reporters-Location: true
+    # 若要在 'Player-Commands' 部分使用变量 %reporter%, 你需要启用该设置
     Tell-Players-They-Have-Rewards-In-Their-ClaimGUI: true
-    Perform-Commands-On-Report: false
+    Perform-Commands-On-Report: true
     Commands-Upon-Reports:
-    - 'staffchat %reporter% 举报了玩家 %reported%, 理由为 %reason%'
+    - 'staffchat %reporter% 举报了玩家 %reported%，理由为 %reason%'
     Use-Header-&-Footer: true
     Require-Image-Proof-Link-Before-Report-Creation: false
     Tell-Reporter-Their-Report-Was-Denied: true
-    # 举报者在他们在线的时候只会收到一条举报被拒绝的消息.
+    # 举报者只会在他们在线的时候收到举报不成立的消息.
     Open-Reports-GUI-Sound:
-        Enabled: false
+        Enabled: true
         Sound: BLOCK_CHEST_OPEN
     Open-Claim-GUI-Sound:
-        Enabled: false
+        Enabled: true
         Sound: BLOCK_CHEST_OPEN
     Clear-Reports-Timer: 3
     Submit-Report-Timer: 60
     # 计时器单位为秒
-    Reports-Must-Be-Confirmed-To-Delete: false
+    Reports-Must-Be-Confirmed-To-Delete: true
     Remove-Reports:
         Click-Type: RIGHT
     Change-Status:
@@ -80,17 +80,17 @@ settings:
         Click-Type: DROP
     # RIGHT, LEFT, SHIFT_LEFT, SHIFT_RIGHT, MIDDLE, DROP, DOUBLE_CLICK, NUMBER_KEY
     Statuses:
-        New: '&f待处理'
+        New: '&f新的'
         WIP: '&e正在处理'
-        Complete: '&a处理完毕'
+        Complete: '&a完成'
     Give-Reporter-Rewards-On-Report-Complete:
         Enabled: true
         Reporter-Is-Online:
-        - 'give %reporter% paper 1 name:&f感谢举报! lore:&f你的举报我们已受理.|&f感谢你支持我们的服务器!'
-        - 'give %reporter% diamond_block 1 name:&c❤'
+        - 'give %reporter% paper 1 name:&f感谢举报! lore:&f我们已处理你提交的举报.|&f感谢你维护本服务器的社区环境!'
+        - 'give %reporter% diamond_block name:&c❤'
         Reporter-Is-Offline:
-        - 'mail send %reporter% 你的举报我们已受理. 感谢你支持我们的服务器! 请检查你的举报收件箱! /reports claim'
-        # 离线玩家可通过命令 /reports setupclaimgui 获取奖励
+        - 'mail send %reporter% 我们已收到你的举报，管理员会妥善处理. 感谢游玩服务器! 请检查你的邮箱! /reports claim'
+        # 离线玩家可以通过预先设置的 /reports setupclaimgui 命令打开界面领取物品
     Image-Proof-URL-Whitelist:
         - 'imgur.com'
         - 'i.imgur.com'
@@ -101,38 +101,35 @@ settings:
         - 'ibb.co'
         - 'pasteboard.co'
 sounds:
-    Enabled: false
+    Enabled: true
     Report-Submitted: ENTITY_PLAYER_LEVELUP
     Player-Reported-Notification: BLOCK_ANVIL_FALL
 GUI:
-    Name: '&cReports'
+    Name: '&c举报'
     Size: 54
     Default-Item:
         Player-Commands:
         - 'teleport %player%'
-        # 这里是举报的默认格式
-        # 注意: 需要启用 "Save-Reporters-Location" 设置项. (!默认禁用!)
-        # - 'teleport %reporter%
+        # 这里是传送至举报提交地点的命令.
+        # 注意：需要启用 "Save-Reporters-Location" 设置项. (!默认禁用!)
+        # - 'teleport %reporter%'
         Material: PAPER
         Name: '&a%reported%'
         Lore:
         - ''
-        - ' &e» &f当前状态 &6» %status%'
+        - ' &e&l» &f状态 &e&l» %status%'
         - ''
-        - ' &e» &f提交玩家 &6» &b%reporter%'
-        - ' &e» &f举报玩家 &6» &c%reported%'
+        - ' &e&l» &f提交日期 &e&l» &b%reporter%'
+        - ' &e&l» &f举报玩家 &e&l» &c%reported%'
         - ''
-        - '&7(左键点击传送至 %reported%)'
-        - '&7(右键点击删除该举报)'
-        - '&7(中键点击修改状态)'
-        - '&7(键盘 Q 键查看证据)'
+        - ' &e&l» &f举报理由 &e&l» &b%reason%'
         - ''
-        - ' &e» &f举报理由 &6»'
-        - ''
-        Report-Reason-Color: '&b'
-        # 举报理由会在下面列出. (因有关漏洞而不再是内建变量)
+        - '&7(左键点击 传送至玩家 %reported%)'
+        - '&7(右键点击 删除该举报)'
+        - '&7(中键点击 更新举报状态)'
+        - '&7(键盘 Q 键 查看举报证据图片)'
 ClaimGUI:
-    Name: '&b领取界面'
+    Name: '&b奖励领取界面'
     Size: 27
     Players-View:
         Name: '&f你的举报奖励'
