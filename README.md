@@ -1,6 +1,6 @@
 # 续 - Continue
 
-## 介绍 Introduction
+## 介绍
 
 > 前言：因为 MCBBS 爆炸了，所以有些东西得放到这里来。
 > 
@@ -9,22 +9,16 @@
 > *我在做梦，一个长达十年的梦里有我长达六年的梦。*
 
 
-个人翻译文件(与其他内容)的备份处.
+个人翻译文件（包括非官方简中和正文译文）的备份处.
 
-Personal translated files (and other stuffs) database.
 
-## 目录 Catalogue
+## 目录
 
 标斜体的维基条目为正在搬运的内容。
 
-Names in Italian are the contents carrying to here.
+### 已翻译的维基
 
-> **注：** 如果你在阅读中发现字体显示不正确，请尝试安装 [`JetBrains Mono`](https://www.jetbrains.com/lp/mono/) 和 [`HarmonyOS Sans`](https://developer.harmonyos.com/cn/design/resource) 字体。    
-> 本维基使用了这两种字体用于美化界面。
-
-### 已翻译的维基 Translated Wikis
-
-![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-225509-84f5bb)
+![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-15-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-225509-84f5bb)
 （最后更新：2024/5/13）
 
 - [AureliumSkills](https://snowcutieowo.github.io/AureliumSkills)
@@ -49,97 +43,127 @@ Names in Italian are the contents carrying to here.
 - *RedShop*
 - *EconomyShopGUI*
 
-### 参与翻译的插件 Translated Plugins
+### 参与翻译的插件
 
 > 标“内置(Initial)”的插件名称表明简体中文已内置在这些插件的语言文件中。
 
 > 部分无法提交为简体中文的配置文件存储在本仓库的 `unofficial-translations` 文件夹下，有需要可自行存取。
 
-![img](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-100245-ebfd93)（最后更新：2024/6/6）
+![img](https://img.shields.io/badge/%E7%8E%B0%E5%AD%98%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E6%95%B0-86-93fdf9) ![img](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-100245-ebfd93)（最后更新：2024/6/6）
 
-- [LiteFish](https://github.com/Azlagor322/LiteFish/blob/main/lang/zh_CN.json) (Initial)
-- Authme
-- GlobalMarketChest (Initial)
-- Slabbo
-- Lands
-- EconomyShopGUI
-- DecentHolograms (Initial)
-- ExcellentShop (Initial)
-- [ExcellentCrates](https://github.com/nulli0n/ExcellentCrates-spigot/blob/master/src/main/resources/lang/messages_zhcn.yml) (Initial)
-- OpeNLogin (Initial)
-- Vulcan
-- InteractiveBoard
-- DynamicShop 3
-- [AureliumSkills (AuraSkills)](https://crowdin.com/project/aureliumskills/zh-CN) (Initial)
-- Economobs (Initial)
-- MoneyHunter
-- [PlayerAuctions](https://www.pixelbbs.cn/forum.php?mod=viewthread&action=printable&tid=2462)
-- [PlayerWarps](https://www.pixelbbs.cn/t-2511-1-1.html)
-- Towny Advanced
-- StackMobs
-- [SuperiorSkyBlock 2](https://github.com/BG-Software-LLC/SuperiorSkyblock2/blob/master/src/main/resources/lang/zh-CN.yml) (Initial)
-- [The Gold Economy](https://github.com/ConfusedAlex/GoldEconomy/blob/master/src/main/resources/messages_zh_CN.properties) (Initial)
-- UpgradableHoppers
-- UltimateStacker
-- WildStacker
-- Bedwars1058
-- ChatItem
-- Dungeons (Initial)
-- LevelledMobs (Initial)
-- CombatPlus
-- PocketHorses (Initial)
-- Seasons (Initial)
-- Waypoints (Initial)
-- Wuufu's Waypoints
-- [BlockLocker](https://www.pixelbbs.cn/forum.php?mod=viewthread&action=printable&tid=2576) (Initial)
-- CataMines (Initial)
-- AuctionMaster
-- VillagerMarket (Initial)
-- MythicDungeons
-- SlotMachine (Initial)
-- XClaim (Initial)
-- RPGChat
-- SuperLobbyDeluxe
-- PlayerOptions
-- DragonSlayer
-- LuckyBlock NTD (Initial)
-- AdvancedTeleport (Initial)
-- ProRPGItems (Initial)
-- CharacterDialogue
-- Tweakin
-- DeathTotems/DeathWarden
-- SimpleClans (Initial)
-- GeekHolograms (Initial)
-- BossLand
-- SternalBoard
-- xCommands
-- ResourceWorld
-- AureliumMobs (Initial)
-- AetherBank
-- LocketteX (Initial)
-- The Best Ranks
-- Battle Drones
-- Reforging
-- FearFeeling (Initial)
-- SignIt (Initial)
-- PunchEffects
-- RedNameDrop (Initial)
-- EpicShop (Initial)
-- Supper Forge (Initial)
-- FastClearLag (Initial)
-- CaptainsEnchants
-- DynamicFarming
-- Keys
-- Time In a Bottle
-- BkTeleport
-- HoloTeleport
-- GadgetsMenu
-- Kizuki Anticheat
-- GK Anticheat
-- [CCTV Camera](https://github.com/Tanguygab/CCTV/blob/master/src/main/resources/languages/zh_CN.yml) (Initial)
-- [Shopkeeper](https://github.com/Shopkeepers/Language-Files/blob/v2.19.0/lang/language-zh_CN.yml) (Initial)
-- ZMusic
-- ItemFliter (Initial)
-- CustomCrafting
-- EpicCraftingsPlus
-- [StarGate](https://crowdin.com/project/stargate-bukkit/zh-CN) (Initial)
+- A：
+  - AdvancedTeleport (Initial)
+  - AetherBank
+  - Authme
+  - AuctionMaster
+  - AureliumMobs (AuraMobs)
+  - [AureliumSkills (AuraSkills)](https://crowdin.com/project/aureliumskills/zh-CN) (Initial)
+- B：
+  - Battle Drones
+  - Bedwars1058
+  - [BlockLocker](https://www.pixelbbs.cn/forum.php?mod=viewthread&action=printable&tid=2576) (Initial)
+  - BkTeleport
+  - BossLand
+- C：
+  - CaptainsEnchants
+  - CataMines
+  - [CCTV Camera](https://github.com/Tanguygab/CCTV/blob/master/src/main/resources/languages/zh_CN.yml) (Initial)
+  - ChatItem
+  - CharacterDialogue
+  - CombatPlus
+  - [CustomCrafting](https://github.com/WolfyScript/CustomCrafting/blob/master/src/main/resources/lang/zh_CN.json)
+- D：
+  - DeathTotems (DeathWarden)
+  - DecentHolograms (Initial)
+  - DragonSlayer
+  - DynamicFarming
+  - DynamicShop 3
+- E：
+  - Economobs (Initial)
+  - EconomyShopGUI
+  - EpicCraftingsPlus
+  - EpicShop
+  - [ExcellentCrates](https://github.com/nulli0n/ExcellentCrates-spigot/blob/master/src/main/resources/lang/messages_zhcn.yml) (Initial)
+  - ExcellentShop (Initial)
+- F：
+  - FastClearLag (Initial)
+  - FearFeeling
+- G：
+  - GadgetsMenu
+  - GeekHolograms
+  - GK Anticheat
+  - GlobalMarketChest (Initial)
+- H：
+  - HoloTeleport
+- I：
+  - InteractiveBoard
+  - ItemFliter (Initial)
+- J：
+  - *None yet. ;)*
+- K：
+  - Keys
+  - Kizuki Anticheat
+- L：
+  - Lands
+  - LevelledMobs
+  - [LiteFish](https://github.com/Azlagor322/LiteFish/blob/main/lang/zh_CN.json) (Initial)
+  - LocketteX
+  - [LuckyBlock NTD](https://danirod12.github.io/ntd-wiki/docs/luckyblock/languages/) (Initial)
+- M：
+  - MoneyHunter
+  - MythicDungeons
+- N：
+  - *None yet. ;)*
+- O：
+  - [OpeNLogin](https://github.com/nickuc/OpeNLogin/blob/master/openlogin-common/src/main/resources/com/nickuc/openlogin/config/lang/messages_cn.yml) (Initial)
+- P：
+  - [PlayerAuctions](https://www.pixelbbs.cn/forum.php?mod=viewthread&action=printable&tid=2462)
+  - [PlayerWarps](https://www.pixelbbs.cn/t-2511-1-1.html)
+  - PlayerOptions
+  - PocketHorses
+  - ProRPGItems (Divinity)
+  - PunchEffects
+- Q：
+  - *None yet. ;)*
+- R：
+  - RedNameDrop (Initial)
+  - [Reforging](https://github.com/areggalstyan/reforging/blob/master/src/main/resources/languages/zh-cn.json) (Initial)
+  - ResourceWorld
+  - RPGChat
+- S：
+  - SignIt (Initial)
+  - [SimpleClans](https://crowdin.com/project/simpleclans/zh-CN) (Initial)
+  - Seasons
+  - [Shopkeeper](https://github.com/Shopkeepers/Language-Files/blob/v2.19.0/lang/language-zh_CN.yml) (Initial)
+  - Slabbo
+  - [SlotMachine](https://crowdin.com/project/slot-machine/zh-CN) (Initial)
+  - StackMobs
+  - [StarGate](https://crowdin.com/project/stargate-bukkit/zh-CN) (Initial)
+  - SternalBoard
+  - [SuperiorSkyBlock 2](https://github.com/BG-Software-LLC/SuperiorSkyblock2/blob/master/src/main/resources/lang/zh-CN.yml) (Initial)
+  - SuperLobbyDeluxe
+  - Supper Forge (Initial)
+- T：
+  - Time In a Bottle
+  - The Best Ranks
+  - TheDungeons
+  - [The Gold Economy](https://github.com/ConfusedAlex/GoldEconomy/blob/master/src/main/resources/messages_zh_CN.properties) (Initial)
+  - Towny Advanced
+  - Tweakin
+- U：
+  - UltimateStacker
+  - UpgradableHoppers
+- V：
+  - [VillagerMarket](https://github.com/Bestem0r/VillagerMarket/blob/master/src/main/resources/zh_CN.yml) (Initial)
+  - Vulcan
+- W：
+  - [Waypoints](https://github.com/Sytm/waypoints/blob/v4/master/waypoints/src/main/resources/lang/zh-simplified.yml) (Initial)
+  - WildStacker
+  - Wuufu's Waypoints
+- X：
+  - [XClaim](https://github.com/WasabiThumb/xclaim/blob/master/src/main/resources/lang/zh.json) (Initial)
+  - xCommands
+- Y：
+  - *None yet. ;)*
+- Z：
+  - ZMusic
