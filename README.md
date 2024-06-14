@@ -18,8 +18,8 @@
 
 ### 已翻译的维基
 
-![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-15-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-225509-84f5bb)
-（最后更新：2024/5/13）
+![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-16-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-234350-84f5bb)
+（最后更新：2024/6/14）
 
 - [AureliumSkills](https://snowcutieowo.github.io/AureliumSkills)
   * 感谢万恶的 ~~MDWiki~~ Docsify（擦汗）
@@ -39,6 +39,8 @@
 - [ExcellentEnchants](https:snowcutieowo.github.io/ExcellentEnchants)
 - [Codex](https://snowcutieowo.github.io/Codex)
 - [DecentHolograms](https://snowcutieowo.github.io/DecentHolograms)
+- [LibreLogin](https//:snowcutieowo.github.io/LibreLogin)
+  * 配置文本的翻译算作维基内容，故不计入第二部分的配置总字数。
 - *HelpChat*
 - *RedShop*
 - *EconomyShopGUI*
@@ -49,7 +51,7 @@
 
 > 部分无法提交为简体中文的配置文件存储在本仓库的 `unofficial-translations` 文件夹下，有需要可自行存取。
 
-![img](https://img.shields.io/badge/%E7%8E%B0%E5%AD%98%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E6%95%B0-86-93fdf9) ![img](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-100245-ebfd93)（最后更新：2024/6/6）
+![img](https://img.shields.io/badge/%E7%8E%B0%E5%AD%98%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E6%95%B0-87-93fdf9) ![img](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-100245-ebfd93)（最后更新：2024/6/6）
 
 - A：
   - AdvancedTeleport (Initial)
@@ -106,6 +108,7 @@
 - L：
   - Lands
   - LevelledMobs
+  - LibreLogin
   - [LiteFish](https://github.com/Azlagor322/LiteFish/blob/main/lang/zh_CN.json) (Initial)
   - LocketteX
   - [LuckyBlock NTD](https://danirod12.github.io/ntd-wiki/docs/luckyblock/languages/) (Initial)
