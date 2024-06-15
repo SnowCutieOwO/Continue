@@ -39,7 +39,7 @@
 - [ExcellentEnchants](https:snowcutieowo.github.io/ExcellentEnchants)
 - [Codex](https://snowcutieowo.github.io/Codex)
 - [DecentHolograms](https://snowcutieowo.github.io/DecentHolograms)
-- [LibreLogin](https//:snowcutieowo.github.io/LibreLogin)
+- [LibreLogin](https://snowcutieowo.github.io/LibreLogin)
   * 配置文本的翻译算作维基内容，故不计入第二部分的配置总字数。
 - *HelpChat*
 - *RedShop*
