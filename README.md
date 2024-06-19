@@ -99,7 +99,7 @@
   - HoloTeleport
 - I：
   - InteractiveBoard
-  - ItemFliter (Initial)
+  - [ItemFliter](https://github.com/pustinek/ItemFilter/blob/master/src/main/resources/languages/ZHCN.yml) (Initial)
 - J：
   - *None yet. ;)*
 - K：
