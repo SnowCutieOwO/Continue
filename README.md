@@ -128,7 +128,7 @@
   - ProRPGItems (Divinity)
   - PunchEffects
 - Q：
-  - *None yet. ;)*
+  - [QuickShop-Hikari-Documents](https://crowdin.com/project/quickshop-hikari-documents/zh-CN)
 - R：
   - RedNameDrop (Initial)
   - [Reforging](https://github.com/areggalstyan/reforging/blob/master/src/main/resources/languages/zh-cn.json) (Initial)
