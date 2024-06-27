@@ -51,7 +51,7 @@
 
 > 部分无法提交为简体中文的配置文件存储在本仓库的 `unofficial-translations` 文件夹下，有需要可自行存取。
 
-![img](https://img.shields.io/badge/%E7%8E%B0%E5%AD%98%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E6%95%B0-87-93fdf9) ![img](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-101204-ebfd93)（最后更新：2024/6/25）
+![img](https://img.shields.io/badge/%E7%8E%B0%E5%AD%98%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E6%95%B0-87-93fdf9) ![img](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-101706-ebfd93)（最后更新：2024/6/27）
 
 - A：
   - AdvancedTeleport (Initial)
@@ -101,7 +101,7 @@
   - InteractiveBoard
   - [ItemFliter](https://github.com/pustinek/ItemFilter/blob/master/src/main/resources/languages/ZHCN.yml) (Initial)
 - J：
-  - *None yet. ;)*
+  - [JClans](https://github.com/TheJCN/JClans/blob/main/src/main/resources/zh_cn.yml) (Initial)
 - K：
   - Keys
   - Kizuki Anticheat
