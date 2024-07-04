@@ -51,7 +51,7 @@
 
 > 部分无法提交为简体中文的配置文件存储在本仓库的 `unofficial-translations` 文件夹下，有需要可自行存取。
 
-![img](https://img.shields.io/badge/%E7%8E%B0%E5%AD%98%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E6%95%B0-87-93fdf9) ![img](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-102330-ebfd93)（最后更新：2024/6/29）
+![img](https://img.shields.io/badge/%E7%8E%B0%E5%AD%98%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E6%95%B0-87-93fdf9) ![img](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-102627-ebfd93)（最后更新：2024/7/4）
 
 - A：
   - AdvancedTeleport (Initial)
@@ -143,6 +143,7 @@
   - [Shopkeeper](https://github.com/Shopkeepers/Language-Files/blob/v2.19.0/lang/language-zh_CN.yml) (Initial)
   - Slabbo
   - [SlotMachine](https://crowdin.com/project/slot-machine/zh-CN) (Initial)
+  - sRTP
   - StackMobs
   - [StarGate](https://crowdin.com/project/stargate-bukkit/zh-CN) (Initial)
   - SternalBoard

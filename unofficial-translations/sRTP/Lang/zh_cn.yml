@@ -1,0 +1,54 @@
+messages:
+  no-permission-reload:
+    - '&a[sRTP] &c你没有权限重载本插件。'
+  reloading-start:
+    - '&a[sRTP] &c插件正在重载，请稍等...'
+  reloading-process:
+    - '&a[sRTP] &6插件正在重载，请稍等...'
+  successfully-reload:
+    - '&a[sRTP] &a插件重载完毕，耗时 %mc% ms'
+  no-permission:
+    - '&a[sRTP] &c你没有权限使用该命令。'
+  cooldownMessage:
+    - '&a[sRTP] &c你需要等待 &6%time% &c秒才可再次使用该命令。'
+  teleport-damaged-cancel:
+    - '&a[sRTP] &c传送时受到伤害，待处理的传送请求已取消。'
+  teleport-cancel:
+    - '&a[sRTP] &c待处理的传送请求已取消。'
+  teleported:
+    - '&a[sRTP] &f你已被传送至 &aX: %x% Z: %z%。'
+  loading:
+    - '&a[sRTP] &6正在搜寻合适的位置...'
+  locationNotFound:
+    - '&a[sRTP] &c无法找到合适的传送位置!'
+  newVersionMessage:
+    - '&a[sRTP] &4新版本 &6%new-CommandVersion% &4可用! &8你当前使用的版本为 &6%old-CommandVersion%. &1可以在如下链接下载到新版本：&6%new-CommandVersion%: &fhttps://www.spigotmc.org/resources/srtp-random-teleportation-around-the-world.117613/history'
+  boss-bar: '&b将在 &6%time% &b秒内传送'
+  CheckingVersion:
+    - '&a[sRTP] &6正在检查版本更新...'
+  Latest-Version-Message:
+    - '&a[sRTP] &a插件已是最新版: &6%latest-CommandVersion%'
+  Error-Checking-Version-Message:
+    - '&a[sRTP] &c检查更新时遇到错误: %error%'
+  teleportation-in-progress:
+    - '&a[sRTP] &c你已经发起了随机传送请求！'
+  no-searching:
+    - '&a[sRTP] &6你尚未发起随机传送请求。'
+  End-teleport:
+    - '&a[sRTP] &6末地随机传送功能尚未启用。'
+  titleMessage: "&a传送完毕！"
+  subtitleMessage: "&e你已传送到了新的位置。"
+  noplayerservenear:
+    - '&a[sRTP] &6服务器上没有合适的玩家可以使用 /rtp near 命令。'
+  noplayerworldnear:
+    - '&a[sRTP] &6世界 &4%world% &6中没有合适的玩家可以使用 /rtp near 命令。'
+  commandhelp:
+    - ' '
+    - '&c插件命令列表：'
+    - ' '
+    - '&a/rtp - &6发起随机传送。'
+    - '&a/rtp world <世界名称> - &6在指定世界中随机传送。'
+    - '&a/rtp near - &6传送至邻近玩家。'
+    - '&a/rtp version - &6检查新版本。'
+    - '&a/rtp reload - &6重载插件。'
+    - ' '
