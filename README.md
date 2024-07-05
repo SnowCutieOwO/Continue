@@ -3,8 +3,6 @@
 ## 介绍
 
 > 前言：因为 MCBBS 爆炸了，所以有些东西得放到这里来。
-> 
-> 大部分文件都是 BBCODE 格式的，晚些时间会换成 markdown 格式的。
 
 > *我在做梦，一个长达十年的梦里有我长达六年的梦。*
 
@@ -14,19 +12,33 @@
 
 ## 目录
 
-标斜体的维基条目为正在搬运的内容。
+> [!NOTE]
+> 标斜体的条目为低优先级内容。
+
+### 正在进行的翻译
+
+**维基：**
+
+* Oraxen
+* *HelpChat*
+* *RedShop*
+* *EconomyShopGUI*
 
 ### 已翻译的维基
 
 ![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-16-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-234350-84f5bb)
 （最后更新：2024/6/14）
 
+> [!NOTE]
+> 本维基一开始使用 MDWiki 搭建，后选择了[自行魔改的 Docsify](https://github.com/SnowCutieOwO/Docsify-Template)。
+
+> [!NOTE]
+> 本维基在 Vercel.app 上也有托管，详见描述部分链接。
+
 - [AureliumSkills](https://snowcutieowo.github.io/AureliumSkills)
-  * 感谢万恶的 ~~MDWiki~~ Docsify（擦汗）
 - [CommandTimer](https://snowcutieowo.github.io/CommandTimer)
 - [PlayerPoints](https://snowcutieowo.github.io/PlayerPoints)
 - [Spark](https://snowcutieowo.github.io/spark)
-  * 感谢万恶的 Docsify ~~和 Vercel.app 网站托管~~（擦汗）
 - [UltimateShop 简体中文维基重汉化](https://blog.imc.re/wiki/usznv3/1/1.1)
   * 完整版 Wiki 已由原作者 pqguanfang 自行迁移并修改格式转载至其网站，后续更新由对方团队负责。
 - [Fallback Server](https://snowcutieowo.github.io/FallbackServer)
@@ -41,9 +53,6 @@
 - [DecentHolograms](https://snowcutieowo.github.io/DecentHolograms)
 - [LibreLogin](https://snowcutieowo.github.io/LibreLogin)
   * 配置文本的翻译算作维基内容，故不计入第二部分的配置总字数。
-- *HelpChat*
-- *RedShop*
-- *EconomyShopGUI*
 
 ### 参与翻译的插件
 
