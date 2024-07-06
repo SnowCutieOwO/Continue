@@ -62,7 +62,7 @@
 > [!NOTE]
 > 部分无法提交为简体中文的配置文件存储在本仓库的 `unofficial-translations` 文件夹下，有需要可自行存取。
 
-![img](https://img.shields.io/badge/%E7%8E%B0%E5%AD%98%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E6%95%B0-87-93fdf9) ![img](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-102627-ebfd93)（最后更新：2024/7/4）
+![img](https://img.shields.io/badge/%E7%8E%B0%E5%AD%98%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E6%95%B0-87-93fdf9) ![img](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-103380-ebfd93)（最后更新：2024/7/7）
 
 - A：
   - AdvancedTeleport (Initial)
@@ -99,6 +99,7 @@
   - [ExcellentCrates](https://github.com/nulli0n/ExcellentCrates-spigot/blob/master/src/main/resources/lang/messages_zhcn.yml) (Initial)
   - ExcellentShop (Initial)
 - F：
+  - [FAuction](https://github.com/Florianpal1/FAuction/blob/V1.5.X/src/main/resources/lang_zhcn.yml) (Initial)
   - FastClearLag (Initial)
   - FearFeeling
 - G：
