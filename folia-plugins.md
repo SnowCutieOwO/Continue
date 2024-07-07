@@ -6,7 +6,7 @@
 
 此为 Continue Project 的一部分，注意。
 
-![img](https://img.shields.io/badge/%E6%94%B6%E5%BD%95%E6%8F%92%E4%BB%B6%E6%95%B0-103-93fdf9)
+![img](https://img.shields.io/badge/%E6%94%B6%E5%BD%95%E6%8F%92%E4%BB%B6%E6%95%B0-111-93fdf9)
 
 > [!NOTE]
 > 注意：仅在 Github 开放 API 代码的不视作开源。
@@ -15,6 +15,7 @@
 |---|---|---|---|
 |Advanced Drawers|[Kzics](https://www.spigotmc.org/resources/authors/kzics.1679634/)|[Github](https://github.com/Kzics/Drawer) [SpigotMC](https://www.spigotmc.org/resources/ore-drawer-advanceddrawers-1-19-1-20-4.115075/)|免费、开源、活跃|
 |AdvancedKits|[extremall](https://www.spigotmc.org/resources/authors/extremall.53979/)|[Github (API Only)](https://github.com/extremall-dev/AdvancedKitsAPI) [SpigotMC](https://www.spigotmc.org/resources/advancedkits.90054/)|付费、闭源、活跃|
+|AnimatedGolemSpawn|[LOOHP](https://www.spigotmc.org/resources/authors/loohp.184802/)|[Github](https://gist.github.com/LOOHP/ef4d73122fe13f5767cf61ea4aa5ef83) [SpigotMC](https://www.spigotmc.org/resources/animatedirongolemspawn-oneclass-better-than-spawning-out-of-nowhere-right.106692/)|免费、开源、活跃|
 |Animated Nicknames|[Cocolennon](https://www.spigotmc.org/resources/authors/cocolennon.550329/)|[SpigotMC](https://www.spigotmc.org/resources/animated-nicknames-now-supports-folia.111356/)|付费、闭源、活跃|
 |AntiHealthIndicator|[ImBram](https://www.spigotmc.org/resources/authors/imbram.939440/)|[SpigotMC](https://www.spigotmc.org/resources/antihealthindicator.114851/)|免费、开源、活跃|
 |AuthmeFolia (Fork)|[cavallium](https://github.com/cavallium/)|[Github](https://github.com/cavallium/AuthMeFolia)|免费、开源|
@@ -30,8 +31,10 @@
 |BetterBoard|[HSGamer](https://www.spigotmc.org/resources/authors/hsgamer.248240/)|[Github](https://github.com/HSGamer/BetterBoard) [SpigotMC](https://www.spigotmc.org/resources/betterboard.96393/)|免费、开源、活跃|
 |BetterEconomy|[HSGamer](https://www.spigotmc.org/resources/authors/hsgamer.248240/)|[Github](https://github.com/HSGamer/BetterEconomy/) [SpigotMC](https://www.spigotmc.org/resources/bettereconomy.96690/)|免费、开源、活跃|
 |Better Farming|[Angeschossen](https://www.spigotmc.org/resources/authors/angeschossen.315463/)|[SpigotMC](https://www.spigotmc.org/resources/better-farming-%E2%AD%95-auto-farm-plugin-crops-and-trees-%E2%9C%85-automated-grow-plant-harvest-gui-1-21-support.67627/)|付费、闭源、活跃|
+|BetterGUI|[HSGamer](https://www.spigotmc.org/resources/authors/hsgamer.248240/)|[Github](https://github.com/BetterGUI-MC/BetterGUI) [SpigotMC](https://www.spigotmc.org/resources/bettergui.75620/)|免费、开源、活跃|
 |BetterRTP|[RonanCraft](https://www.spigotmc.org/resources/authors/ronancraft.13025/)|[Github](https://github.com/RonanPlugins/BetterRTP) [SpigotMC](https://www.spigotmc.org/resources/betterrtp-random-wild-teleport.36081/)|免费、开源。活跃|
 |BoostedAudio|[SuperMax_8](https://www.spigotmc.org/resources/authors/supermax_8.479560/)|[SpigotMC (Free)](https://www.spigotmc.org/resources/boostedaudio-free-%E2%9C%A8proximity-voice-chat-and-music.112747/) [SpigotMC (Premium)](https://www.spigotmc.org/resources/boostedaudio-%E2%9C%A8proximity-voice-chat-and-music.112942/)|免费/付费、闭源、活跃|
+|BlueMap Residence|[https://www.spigotmc.org/resources/authors/czmixer.816135/](CZMixer)|[SpigotMC](https://www.spigotmc.org/resources/bluemap-residence.107389/)|免费|
 |BreweryX (Fork)|[Jsinco](https://www.spigotmc.org/resources/authors/jsinco.1107891/)|[Github](https://github.com/Jsinco/BreweryX) [SpigotMC](https://www.spigotmc.org/resources/breweryx.114777/)|免费、开源、活跃|
 |CBounty|[lolkd005](https://www.spigotmc.org/resources/authors/lolkd005.1264324/)|[Github](https://gitlab.com/lolkd005/cbounty) [SpigotMC](https://www.spigotmc.org/resources/cbounty-ultimate-bounty-plugin-1-18-x-1-20-4-%E2%9C%85.116501/)|免费、开源、活跃|
 |CCode|[lolkd005](https://www.spigotmc.org/resources/authors/lolkd005.1264324/)|[Github](https://gitlab.com/lolkd005/ccode) [SpigotMC](https://www.spigotmc.org/resources/ccode-digital-voucher-plugin-1-18-x-1-20-4-%E2%9C%85.116606/)|免费、开源、活跃|
@@ -43,8 +46,11 @@
 |CReports|[lolkd005](https://www.spigotmc.org/resources/authors/lolkd005.1264324/)|[Github](https://gitlab.com/lolkd005/creports) [SpigotMC](https://www.spigotmc.org/resources/creports-ultimate-report-plugin-1-18-x-1-20-4-%E2%9C%85.117713/)|免费、开源、活跃|
 |Dexlue Void World|[STN-Studios](https://www.spigotmc.org/resources/authors/stn-studios.471800/)|[SpigotMC](https://www.spigotmc.org/resources/deluxe-void-world-empty-world-generator.86993/)|付费、闭源、活跃|
 |DOptimizer|[kervand](https://www.spigotmc.org/resources/authors/kervand.1487814/)|[Github](https://github.com/devoirr/DOptimizer) [SpigotMC](https://www.spigotmc.org/resources/doptimizer.116302/)|免费、开源、活跃|
+|EditableSigns|[LOOHP](https://www.spigotmc.org/resources/authors/loohp.184802/)|[Github](https://gist.github.com/LOOHP/550f861ab4ad219cf74dc18c214ba530) [SpigotMC](https://www.spigotmc.org/resources/editablesigns-legacy-oneclass-edit-signs-without-having-to-break-it-and-place-it-again.93850/)|免费、开源|
 |Essentials-Folia (Fork)|[JRoy](https://github.com/JRoy)|[Github](https://github.com/Euphillya/Essentials-Folia)|免费、开源、活跃|
+|Ez Chest Shop|[ItzAmirreza](https://www.spigotmc.org/resources/authors/itzamirreza.821811/)|[Github](https://github.com/ItzAmirreza/EzChestShop) [SpigotMC](https://www.spigotmc.org/resources/ez-chest-shop-a-different-player-shop-plugin.90411/)|免费、开源|
 |EzManhunt|[gamingisart](https://www.spigotmc.org/resources/authors/gamingisart.1240641/)|[SpigotMC](https://www.spigotmc.org/resources/ezmanhunt-1-14-x-1-21-x-2nd-gen-folia-support.103298/)|免费、活跃|
+|FallingSnow|[LOOHP](https://www.spigotmc.org/resources/authors/loohp.184802/)|[Github](https://gist.github.com/LOOHP/d2f04878803e7ae4867d167b347abbf6) [SpigotMC](https://www.spigotmc.org/resources/fallingsnow-oneclass-modify-snow-layers-to-become-falling-blocks.92367/)|免费、开源、活跃|
 |FileCleaner|[JasonHorkles](https://www.spigotmc.org/resources/authors/jasonhorkles.339646/)|[Github](https://github.com/SilverstoneMC/FileCleaner) [SpigotMC](https://www.spigotmc.org/resources/filecleaner-automatically-delete-old-files.93372/)|免费、开源、活跃|
 |Filtering Hoppers|[Cocolennon](https://www.spigotmc.org/resources/authors/cocolennon.550329/)|[Github](https://github.com/Cocolennon/FilteringHoppers) [SpigotMC](https://www.spigotmc.org/resources/filtering-hoppers-now-supports-folia.111606/)|免费、开源、活跃|
 |GEmote|[Gecolay](https://www.spigotmc.org/resources/authors/gecolay.335428/)|[Github](https://github.com/Gecolay/GEmote) [SpigotMC](https://www.spigotmc.org/resources/gemote-modern-lightweight-particle-emote-plugin-1-13-1-21.114073/)|免费、开源、活跃| 
@@ -55,6 +61,7 @@
 |Guilds|[Leo18bernese](https://www.spigotmc.org/resources/authors/leo18bernese.1071954/)|[SpigotMC](https://www.spigotmc.org/resources/guilds-%E2%9C%85-ultimate-guild-system-1-8-1-21.110931/)|付费、闭源、活跃|
 |HeadDrop|[RRS](https://www.spigotmc.org/resources/authors/rrs.877587/)|[SpigotMC (Premium)](https://www.spigotmc.org/resources/%E2%9C%85-headdrop-premium-1-16-1-21-fully-customizable.111758/) [SpigotMC (Free)](https://www.spigotmc.org/resources/%E2%9C%85-headdrop-free-1-16-1-21-fully-customizable.99976/)|免费/付费、闭源、活跃|
 |IAnnounce|[gamingisart](https://www.spigotmc.org/resources/authors/gamingisart.1240641/)|[SpigotMC](https://www.spigotmc.org/resources/iannounce-1-8-1-21-folia-support.117553/)|免费、活跃|
+|InteractiveBoard|[Joiubaxas](https://www.spigotmc.org/resources/authors/joiubaxas.268839/)|[SpigotMC](https://www.spigotmc.org/resources/interactiveboard.77114/)|付费、闭源、活跃|
 |JustLootIt|[Lauriichan](https://www.spigotmc.org/resources/authors/lauriichan.333814/)|[Github](https://github.com/Lauriichan/JustLootIt) [SpigotMC](https://www.spigotmc.org/resources/justlootit-unique-loot-for-everyone.116493/)|免费、开源、活跃|
 |Jobs Reborn|[Zrips](https://www.spigotmc.org/resources/authors/zrips.24572/)|[SpigotMC](https://www.spigotmc.org/resources/jobs-reborn.4216/)|免费、闭源、活跃|
 |Knockbackinator|[frafol](https://www.spigotmc.org/resources/authors/frafol.713765/)|[Github](https://github.com/frafol/Knockbackinator) [SpigotMC](https://www.spigotmc.org/resources/%E2%9C%A8-knockbackinator-%E2%80%A2-fun-knockback-stick-game-for-lobby-servers.110166/)|免费、开源、活跃|
@@ -64,6 +71,7 @@
 |Lucky Pouches|[NikV2](https://www.spigotmc.org/resources/authors/nikv2.726795/)|[Github (API Only)](https://github.com/NikV2/LuckyPouchesAPI) [SpigotMC](https://www.spigotmc.org/resources/%E2%98%91%EF%B8%8F-lucky-pouches-%E2%98%91%EF%B8%8F-reward-your-players-in-a-unique-way-%E2%8B%99.112073/)|付费、闭源、活跃|
 |Lite Sign In|[TRCStudioDean](https://www.spigotmc.org/resources/authors/trcstudiodean.532261/)|[SpigotMC](https://www.spigotmc.org/resources/lite-sign-in-1-7-1-21-sign-in-rewards-chest-gui-leaderboard-mysql-sqlite.79584/)|免费、开源、活跃|
 |LightAntiCheat|[Vekster](https://www.spigotmc.org/resources/authors/vekster.776526/)|[Github](https://github.com/tiredvekster/LightAntiCheat) [SpigotMC](https://www.spigotmc.org/resources/lightanticheat-1-8-1-21-geyser-folia-support.112053/)|免费、开源、活跃|
+|MCEEW|[Amiya233](https://www.spigotmc.org/resources/authors/amiya233.691959/)|[Github](https://github.com/TenkyuChimata/MCEEW) [SpigotMC](https://www.spigotmc.org/resources/mceew-earthquake-early-warning.104549/)|免费、开源、活跃|
 |Motel/Hotel|[RickyLaChow](https://www.spigotmc.org/resources/authors/rickylachow.462796/)|[SpigotMC](https://www.spigotmc.org/resources/motels-hotels-reworking-user-and-admin-experience.114110/)|付费、闭源、活跃|
 |mcMMO|[nossr50](https://www.spigotmc.org/resources/authors/nossr50.480136/)|[Github](https://github.com/mcMMO-Dev/mcMMO) [SpigotMC](https://www.spigotmc.org/resources/official-mcmmo-original-author-returns.64348/)|付费、开源、活跃|
 |Placeholder-Folia (Fork)|[Folia-Inquisitors](https://github.com/Folia-Inquisitors/)|[Github](https://github.com/Folia-Inquisitors/PlaceholderAPI-Folia)|免费、开源、活跃|
