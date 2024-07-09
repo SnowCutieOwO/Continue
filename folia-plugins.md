@@ -6,7 +6,7 @@
 
 此为 Continue Project 的一部分，注意。
 
-![img](https://img.shields.io/badge/%E6%94%B6%E5%BD%95%E6%8F%92%E4%BB%B6%E6%95%B0-111-93fdf9)
+![img](https://img.shields.io/badge/%E6%94%B6%E5%BD%95%E6%8F%92%E4%BB%B6%E6%95%B0-150-93fdf9)
 
 > [!NOTE]
 > 注意：仅在 Github 开放 API 代码的不视作开源。
@@ -39,7 +39,7 @@
 |BetterGUI|[HSGamer](https://www.spigotmc.org/resources/authors/hsgamer.248240/)|[Github](https://github.com/BetterGUI-MC/BetterGUI) [SpigotMC](https://www.spigotmc.org/resources/bettergui.75620/)|免费、开源、活跃|
 |BetterRTP|[RonanCraft](https://www.spigotmc.org/resources/authors/ronancraft.13025/)|[Github](https://github.com/RonanPlugins/BetterRTP) [SpigotMC](https://www.spigotmc.org/resources/betterrtp-random-wild-teleport.36081/)|免费、开源。活跃|
 |BoostedAudio|[SuperMax_8](https://www.spigotmc.org/resources/authors/supermax_8.479560/)|[SpigotMC (Free)](https://www.spigotmc.org/resources/boostedaudio-free-%E2%9C%A8proximity-voice-chat-and-music.112747/) [SpigotMC (Premium)](https://www.spigotmc.org/resources/boostedaudio-%E2%9C%A8proximity-voice-chat-and-music.112942/)|免费/付费、闭源、活跃|
-|BlueMap Residence|[https://www.spigotmc.org/resources/authors/czmixer.816135/](CZMixer)|[SpigotMC](https://www.spigotmc.org/resources/bluemap-residence.107389/)|免费|
+|BlueMap Residence|[CZMixer](https://www.spigotmc.org/resources/authors/czmixer.816135/)|[SpigotMC](https://www.spigotmc.org/resources/bluemap-residence.107389/)|免费|
 |BreweryX (Fork)|[Jsinco](https://www.spigotmc.org/resources/authors/jsinco.1107891/)|[Github](https://github.com/Jsinco/BreweryX) [SpigotMC](https://www.spigotmc.org/resources/breweryx.114777/)|免费、开源、活跃|
 |BukkitGreenText|[ssterling](https://www.spigotmc.org/resources/authors/ssterling.544960/)|[GitLab](https://gitlab.com/ssterling/bukkitgreentext) [SpigotMC](https://www.spigotmc.org/resources/bukkitgreentext.55295/)|免费、开源、活跃|
 |CBounty|[lolkd005](https://www.spigotmc.org/resources/authors/lolkd005.1264324/)|[Github](https://gitlab.com/lolkd005/cbounty) [SpigotMC](https://www.spigotmc.org/resources/cbounty-ultimate-bounty-plugin-1-18-x-1-20-4-%E2%9C%85.116501/)|免费、开源、活跃|
