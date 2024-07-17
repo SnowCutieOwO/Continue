@@ -132,6 +132,7 @@
 - N：
   - *None yet. ;)*
 - O：
+  - ObsidianToLava
   - [OpeNLogin](https://github.com/nickuc/OpeNLogin/blob/master/openlogin-common/src/main/resources/com/nickuc/openlogin/config/lang/messages_cn.yml) (Initial)
 - P：
   - [PlayerAuctions](https://www.pixelbbs.cn/forum.php?mod=viewthread&action=printable&tid=2462)
