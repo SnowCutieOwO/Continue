@@ -1,0 +1,65 @@
+# [SimpleRTP]
+
+# 内建变量 $distance$ 显示你随机传送后与原位置的距离
+# 内建变量 $x $y $z 显示传送后的坐标
+# 可在此使用诸如 &#000000 的 Hex 彩色字
+Teleport-Message:
+  Before: '&8[&fRTP&8] &7> 正在寻找安全位置随机传送!'
+  After: '&8[&fRTP&8] &7> 你已被传送至 $distance$ 格开外! 当前位置为 x: $x y: $y z: $z'
+
+# 内建变量 $time$ 显示冷却剩余时间. $minutes$ 表示显示分钟. $seconds$ 表示显示秒.
+Cooldown-Messages:
+  Cooldown-Active:
+    Message: '&8[&fRTP&8] &7> &c你需要等待 $time$ 秒才可再次传送!'
+  Cooldown-Ended:
+    Enabled: true
+    Message: '&8[&fRTP&8] &7> &e冷却时间结束! 你现在可以使用命令 &7/rtp &e进行随机传送了'
+
+# 单位为秒的冷却时间。
+Cooldown-Time:
+  Enabled: true
+  Seconds: 30
+
+# 是否在玩家移动时取消传送请求。
+# 输入命令后玩家需在原地站定不动的时间长度。
+Cancel-On-Move:
+  Enabled: false
+  Seconds: 3
+  Message: '&8[&fRTP&8] &c传送请求已取消. 请站在原地不要移动!'
+
+# 在黑名单世界中不能使用随机传送功能。
+Teleportation:
+  worlds:
+    blacklist:
+      enabled: true
+      blocked-worlds:
+      - "world_the_end"
+
+Invalid-World: '&c你不能在这个世界中使用随机传送.'
+
+# 以原位置为中心，传送的最大范围与最小范围.
+MaxRadius: 5000
+MinRadius: -5000
+
+# 主世界的 Y 轴最低值
+OffsetYLevel: 65.0
+
+# 传送后玩家有 1 秒的无敌时间
+Invincible:
+  Enabled: false
+
+# 可用粒子效果列表: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
+Particles:
+  Enabled: true
+  Effect: PORTAL
+
+# 传送时给予的效果
+Potion-Effect:
+  Enabled: true
+  Effect: BLINDNESS
+  Duration: 40
+
+Force-Teleport:
+  Notify-Player-Before:
+    Enabled: true
+    Message: "&8[&fRTP&8] &e管理员强制随机传送了你!"

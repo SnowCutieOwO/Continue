@@ -88,6 +88,7 @@
 - D：
   - DeathTotems (DeathWarden)
   - DecentHolograms (Initial)
+  - Don't Kill Friends
   - DragonSlayer
   - DynamicFarming
   - DynamicShop 3
@@ -152,6 +153,7 @@
 - S：
   - SignIt (Initial)
   - [SimpleClans](https://crowdin.com/project/simpleclans/zh-CN) (Initial)
+  - SimpleRTP
   - Seasons
   - [Shopkeeper](https://github.com/Shopkeepers/Language-Files/blob/v2.19.0/lang/language-zh_CN.yml) (Initial)
   - Slabbo
