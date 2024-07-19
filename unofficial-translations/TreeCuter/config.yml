@@ -1,0 +1,138 @@
+#-------------------------------------------------#
+#   _______             _____      _              #
+#  |__   __|           / ____|    | |             #
+#     | |_ __ ___  ___| |    _   _| |_ ___ _ __   #
+#     | | '__/ _ \/ _ \ |   | | | | __/ _ \ '__|  #
+#     | | | |  __/  __/ |___| |_| | ||  __/ |     #
+#     |_|_|  \___|\___|\_____\__,_|\__\___|_|     #
+#                                                 #
+#-------------------------------------------------#
+
+# TreeCuter 插件作者 Norbit4
+
+# github: https://github.com/Norbit4
+# wiki: https://n0rbit.gitbook.io/english/free-resource/treecuter
+
+# 如果你喜欢本插件, 请给我评分, 感谢! <3
+
+#---------------------------------------#
+#              [主配置文件]              #
+#---------------------------------------#
+
+messages:
+  permission: '&c&l» &7你没有权限使用这个命令!'
+  console: '&c&l» &7只有玩家才可以使用这个命令!'
+  help:
+    - '&8[&m------------------------------------------------]'
+    - ''
+    - ' &8&l» &8/&atreecuter reload &8- &7重载本插件!'
+    - ' &8&l» &8/&atreecuter get &8- &7获取砍树工具!'
+    - ' &8&l» &8/&atreecuter toggle &8- &7启用/禁用连锁砍树!'
+    - ''
+    - '&8[&m------------------------------------------------]'
+  reload:
+    start: '&e&l» &7正在重载插件...'
+    end: '&a&l» &7插件已重载!'
+  tool:
+    get: '&a&l» &7你已获得砍树工具!'
+    disabled: '&c&l» &7该功能已被禁用! 请在配置文本中启用!'
+  toggle:
+    enable: '&a&l» &7成功开启自动砍树功能!'
+    disable: '&c&l» &7成功关闭自动砍树功能!'
+
+# 若为 true, 只有拥有特定权限的玩家才可以使用砍树功能
+use-permissions: false
+permission: 'treecuter.use'
+
+# 单次连锁最大方块数量
+# 只对那些巨大的自定义树木有效！
+max-blocks: 100
+# 单次连锁最小方块数量
+min-blocks: 4
+
+# 若为 true，玩家必须按住 shift 键才可以触发砍树
+shift-mining: true # true <- 推荐
+
+# 在玩家砍树时给予挖掘疲劳效果
+# 仅在 shift-mining 项启用时有效!
+mining-effect:
+  enable: true # true <- 推荐
+  default-level: 2
+
+# 若为 true, 被连锁到的方块会发光
+
+# [!]                                                                                             [!]
+# [!] 发光 - 仅支持 PAPER 或其分支的这些版本: 1.17.1, 1.18.2, 1.19.4, 1.20.2, 1.20.4, 1.20.5, 1.20.6 [!]
+# [!]                                                                                             [!]                                                                                    [!]
+
+glowing-blocks: true
+# 可用颜色: black, dark_blue, dark_green, dark_aqua, dark_red, dark_purple, gold, gray,
+#         dark_gray, blue, green, aqua, red, magenta, light_purple, yellow, white
+glowing-color: 'red'
+
+# [!]                                                                                             [!]
+# [!] 发光 - 仅支持 PAPER 或其分支的这些版本: 1.17.1, 1.18.2, 1.19.4, 1.20.2, 1.20.4, 1.20.5, 1.20.6 [!]
+# [!]                                                                                             [!]
+
+# 连锁后方块自动进入玩家背包
+items-to-inventory: false
+
+# 自动种植掉落在地的树苗
+auto-plant: false
+
+custom-tool:
+  enable: false
+  # 材料名称支持 ItemsAdder, 在你使用来自 ItemsAdder 的物品时, 你必须使用 'ia:<ID>' 而非 'MATERIAL' 的格式
+  # 示例: 'ia:example_item_id'
+  material: 'NETHERITE_AXE'
+  name: '&c&lGOD AXE'
+
+# 禁用插件功能的世界
+block-worlds:
+  - 'example_world'
+
+accept-tools:
+  - 'WOODEN_AXE'
+  - 'STONE_AXE'
+  - 'IRON_AXE'
+  - 'GOLDEN_AXE'
+  - 'DIAMOND_AXE'
+  - 'NETHERITE_AXE'
+
+accept-wood-blocks:
+  - 'OAK_LOG'
+  - 'SPRUCE_LOG'
+  - 'BIRCH_LOG'
+  - 'JUNGLE_LOG'
+  - 'ACACIA_LOG'
+  - 'DARK_OAK_LOG'
+  - 'MANGROVE_LOG'
+  - 'MANGROVE_ROOTS'
+  - 'CHERRY_LOG'
+  - 'OAK_WOOD'
+  - 'SPRUCE_WOOD'
+  - 'BIRCH_WOOD'
+  - 'JUNGLE_WOOD'
+  - 'ACACIA_WOOD'
+  - 'DARK_OAK_WOOD'
+  - 'MANGROVE_WOOD'
+  - 'CHERRY_WOOD'
+
+auto-plant-saplings:
+  - 'OAK_SAPLING'
+  - 'SPRUCE_SAPLING'
+  - 'BIRCH_SAPLING'
+  - 'JUNGLE_SAPLING'
+  - 'ACACIA_SAPLING'
+  - 'DARK_OAK_SAPLING'
+  - 'MANGROVE_PROPAGULE'
+  - 'CHERRY_SAPLING'
+
+sapling-ground-materials:
+  - 'DIRT'
+  - 'GRASS_BLOCK'
+  - 'MUD'
+  - 'MOSS_BLOCK'
+  - 'PODZOL'
+  - 'MYCELIUM'
+  - 'COARSE_DIRT'
