@@ -23,7 +23,7 @@
 |AntiHealthIndicator|[ImBram](https://www.spigotmc.org/resources/authors/imbram.939440/)|[SpigotMC](https://www.spigotmc.org/resources/antihealthindicator.114851/)|免费、开源、活跃|
 |AuthmeFolia (Fork)|[cavallium](https://github.com/cavallium/)|[Github](https://github.com/cavallium/AuthMeFolia)|免费、开源|
 |AuthmeReReloaded (Fork)|[HAHAWTH](https://github.com/HaHaWTH/)|[Github](https://github.com/HaHaWTH/AuthMeReReloaded) [SpigotMC](https://www.spigotmc.org/resources/authme-rereloaded-%E2%AD%90-a-reliable-stable-fork-of-authme-login-1-8-1-21-folia-supported.114010/)|免费、开源、活跃|
-|AuthmeVelocity (Fork)|[]()|[Github]() [Modrinth](https://modrinth.com/plugin/authmevelocity) [Hangar]()
+|AuthmeVelocity (Fork)|[4drain3d](https://modrinth.com/user/4drian3d)|[Github](https://github.com/4drian3d/AuthMeVelocity/) [Modrinth](https://modrinth.com/plugin/authmevelocity) [Hangar](https://hangar.papermc.io/4drian3d/AuthMeVelocity)|免费、开源、活跃|
 |AutoMessageSystem|[Xyness](https://www.spigotmc.org/resources/authors/xyness.168533/)|[Github](https://github.com/Xyness/AutoMessageSystem) [SpigotMC](https://www.spigotmc.org/resources/automessagesystem-%E2%9C%85-1-20-1-21-optimized-%E2%9A%99%EF%B8%8F-folia-supported-%E2%9A%A1.117742/)|免费、开源、活跃|
 |AutoTreeChop|[MilkTeaCat](https://www.spigotmc.org/resources/authors/milkteacat.1405723/)|[Github](https://github.com/milkteamc/AutoTreeChop) [SpigotMC](https://www.spigotmc.org/resources/%E2%9C%A8autotreechop-%E2%9A%A1-effortless-tree-harvesting-%E2%9A%A1.113071/)|免费、开源、活跃|
 |AxEnvoys|[Artillex-Studios](https://www.spigotmc.org/resources/authors/artillex-studios.1840427/)|[Github](https://github.com/Artillex-Studios/AxEnvoys/) [SpigotMC](https://www.spigotmc.org/resources/axenvoys-supply-crates-from-the-sky.111411/)|免费、开源、活跃|
