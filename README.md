@@ -19,15 +19,14 @@
 
 **维基：**
 
-* Oraxen
 * *HelpChat*
 * *RedShop*
 * *EconomyShopGUI*
 
 ### 已翻译的维基
 
-![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-16-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-234350-84f5bb)
-（最后更新：2024/6/14）
+![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-16-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-260926-84f5bb)
+（最后更新：2024/7/25）
 
 > [!NOTE]
 > 本维基一开始使用 MDWiki 搭建，后选择了[自行魔改的 Docsify](https://github.com/SnowCutieOwO/Docsify-Template)。
@@ -36,23 +35,24 @@
 > 本维基在 Vercel.app 上也有托管，详见描述部分链接。
 
 - [AureliumSkills](https://snowcutieowo.github.io/AureliumSkills)
+- [Codex](https://snowcutieowo.github.io/Codex)
 - [CommandTimer](https://snowcutieowo.github.io/CommandTimer)
+- [DecentHolograms](https://snowcutieowo.github.io/DecentHolograms)
+- [ExcellentCrates](https://snowcutieowo.github.io/ExcellentCrates)
+- [ExcellentEnchants](https:snowcutieowo.github.io/ExcellentEnchants)
+- [Fallback Server](https://snowcutieowo.github.io/FallbackServer)
+- [HuskHomes](https://snowcutieowo.github.io/HuskHomes)
+- [HuskSync](https://snowcutieowo.github.io/HuskSync)
+- [LibreLogin](https://snowcutieowo.github.io/LibreLogin)
+  * 配置文本的翻译算作维基内容，故不计入第二部分的配置总字数。
+- [LuckPerms](https://snowcutieowo.github.io/LuckPerms)
+- [Oraxen](https://snowcutieowo.github.io/Oraxen)
 - [PlayerPoints](https://snowcutieowo.github.io/PlayerPoints)
 - [Spark](https://snowcutieowo.github.io/spark)
 - [UltimateShop 简体中文维基重汉化](https://blog.imc.re/wiki/usznv3/1/1.1)
   * 完整版 Wiki 已由原作者 pqguanfang 自行迁移并修改格式转载至其网站，后续更新由对方团队负责。
-- [Fallback Server](https://snowcutieowo.github.io/FallbackServer)
 - [WorldEdit](https://snowcutieowo.github.io/WorldEdit)
 - [WorldGuard](https://snowcutieowo.github.io/WorldGuard)
-- [LuckPerms](https://snowcutieowo.github.io/LuckPerms)
-- [HuskSync](https://snowcutieowo.github.io/HuskSync)
-- [HuskHomes](https://snowcutieowo.github.io/HuskHomes)
-- [ExcellentCrates](https://snowcutieowo.github.io/ExcellentCrates)
-- [ExcellentEnchants](https:snowcutieowo.github.io/ExcellentEnchants)
-- [Codex](https://snowcutieowo.github.io/Codex)
-- [DecentHolograms](https://snowcutieowo.github.io/DecentHolograms)
-- [LibreLogin](https://snowcutieowo.github.io/LibreLogin)
-  * 配置文本的翻译算作维基内容，故不计入第二部分的配置总字数。
 
 ### 参与翻译的插件
 
