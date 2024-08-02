@@ -32,6 +32,7 @@
 |AxTrade|[Artillex-Studios](https://www.spigotmc.org/resources/authors/artillex-studios.1840427/)|[Github](https://github.com/Artillex-Studios/AxTrade) [SpigotMC](https://www.spigotmc.org/resources/axtrade-the-ultimate-trade-plugin.116826/)|免费、开源、活跃|
 |AxVaults|[Artillex-Studios](https://www.spigotmc.org/resources/authors/artillex-studios.1840427/)|[Github](https://github.com/Artillex-Studios/AxVaults) [SpigotMC](https://www.spigotmc.org/resources/axvaults-the-ultimate-vaults-plugin.114764/)|免费、开源、活跃|
 |Backuper|[DVDishka](https://github.com/DVDishka/)|[Github](https://github.com/DVDishka/Backuper)|免费、开源、活跃|
+|banco|[U8092](https://modrinth.com/user/U8092)|[Github](https://github.com/myth-MC/banco) [Modrinth](https://modrinth.com/plugin/banco)|免费、开源、活跃|
 |BattlePass Ultimate|[RickyLaChow](https://www.spigotmc.org/resources/authors/rickylachow.462796/)|[SpigotMC (Free)](https://www.spigotmc.org/resources/battlepass-ultimate-free-version.112633/) [SpigotMC (Premium)](https://www.spigotmc.org/resources/battlepass-ultimate-premium-recoding-in-progress.112327/)|免费/付费、开源、活跃|
 |BBeeChecker|[Bonn2](https://www.spigotmc.org/resources/authors/bonn2.264674/)|[Github](https://github.com/bonn2/BBeeChecker) [SpigotMC](https://www.spigotmc.org/resources/bbeechecker-1-15.73560/)|免费、开源、活跃|
 |BetterBoard|[HSGamer](https://www.spigotmc.org/resources/authors/hsgamer.248240/)|[Github](https://github.com/HSGamer/BetterBoard) [SpigotMC](https://www.spigotmc.org/resources/betterboard.96393/)|免费、开源、活跃|
