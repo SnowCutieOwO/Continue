@@ -72,6 +72,7 @@
   - AureliumMobs (AuraMobs)
   - [AureliumSkills (AuraSkills)](https://crowdin.com/project/aureliumskills/zh-CN) (Initial)
 - B：
+  - [banco](https://github.com/myth-MC/banco/blob/dev/0.4.2/common/src/main/resources/i10n_zh_CN.properties) (Initial) 
   - Battle Drones
   - Bedwars1058
   - [BlockLocker](https://www.pixelbbs.cn/forum.php?mod=viewthread&action=printable&tid=2576) (Initial)
