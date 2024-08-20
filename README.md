@@ -62,7 +62,7 @@
 > [!NOTE]
 > 部分无法提交为简体中文的配置文件存储在本仓库的 `unofficial-translations` 文件夹下，有需要可自行存取。
 
-![img](https://img.shields.io/badge/%E7%8E%B0%E5%AD%98%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E6%95%B0-87-93fdf9) ![img](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-103559-ebfd93)（最后更新：2024/8/2）
+![img](https://img.shields.io/badge/%E7%8E%B0%E5%AD%98%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E6%95%B0-87-93fdf9) ![img](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-104092-ebfd93)（最后更新：2024/8/20）
 
 - A：
   - AdvancedTeleport (Initial)
@@ -131,9 +131,10 @@
 - M：
   - [MapRights](https://github.com/Oscar0159/MapRights/blob/main/src/main/resources/lang/zh_CN.yml) (Initial)
   - MoneyHunter
+  - [MultiWarp](https://github.com/Dev7ex/MultiWarp/blob/main/multiwarp-bukkit/src/main/resources/language/zh_CN.json) (Initial)
   - MythicDungeons
 - N：
-  - *None yet. ;)*
+  - [NotCredits](https://github.com/NotMarra/NotCredits/blob/main/src/main/resources/lang/zhcn.yml) (Initial)
 - O：
   - ObsidianToLava
   - [OpeNLogin](https://github.com/nickuc/OpeNLogin/blob/master/openlogin-common/src/main/resources/com/nickuc/openlogin/config/lang/messages_cn.yml) (Initial)
