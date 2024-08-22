@@ -6,7 +6,7 @@
 
 此为 Continue Project 的一部分，注意。
 
-![img](https://img.shields.io/badge/%E6%94%B6%E5%BD%95%E6%8F%92%E4%BB%B6%E6%95%B0-163-93fdf9)
+![img](https://img.shields.io/badge/%E6%94%B6%E5%BD%95%E6%8F%92%E4%BB%B6%E6%95%B0-188-93fdf9)
 
 > [!NOTE]
 > 注意：仅在 Github 开放 API 代码的不视作开源。
