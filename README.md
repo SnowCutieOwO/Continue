@@ -62,7 +62,7 @@
 > [!NOTE]
 > 部分无法提交为简体中文的配置文件存储在本仓库的 `unofficial-translations` 文件夹下，有需要可自行存取。
 
-![img](https://img.shields.io/badge/%E7%8E%B0%E5%AD%98%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E6%95%B0-87-93fdf9) ![img](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-104341-ebfd93)（最后更新：2024/8/21）
+![img](https://img.shields.io/badge/%E7%8E%B0%E5%AD%98%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E6%95%B0-87-93fdf9) ![img](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-106261-ebfd93)（最后更新：2024/8/24）
 
 - A：
   - AdvancedTeleport (Initial)
@@ -71,6 +71,8 @@
   - AuctionMaster
   - AureliumMobs (AuraMobs)
   - [AureliumSkills (AuraSkills)](https://crowdin.com/project/aureliumskills/zh-CN) (Initial)
+  - [AuroraLevels](https://github.com/AuroraNetworkStudios/AuroraLevels/blob/main/src/main/resources/messages_zhcn.yml) (Initial)
+  - [AuroraQuests](https://github.com/AuroraNetworkStudios/AuroraQuests/blob/main/src/main/resources/messages_zhcn.yml) (Initial)
 - B：
   - [banco](https://github.com/myth-MC/banco/blob/dev/0.4.2/common/src/main/resources/i10n_zh_CN.properties) (Initial) 
   - Battle Drones
@@ -89,7 +91,7 @@
   - [CustomCrafting](https://github.com/WolfyScript/CustomCrafting/blob/master/src/main/resources/lang/zh_CN.json)
 - D：
   - DeathTotems (DeathWarden)
-  - DecentHolograms (Initial)
+  - DecentHolograms
   - Don't Kill Friends
   - DragonSlayer
   - DynamicFarming
@@ -125,6 +127,7 @@
   - LevelledMobs
   - LibreLogin
   - [LightFly](https://github.com/JaimeH-Q/LightFly/blob/main/src/main/resources/lang/zh_cn.yml) (Initial)
+  - [LiteEco](https://github.com/EncryptSL/LiteEco/blob/main/src/main/resources/locale/zh_cn.yml) (Initial)
   - [LiteFish](https://github.com/Azlagor322/LiteFish/blob/main/lang/zh_CN.json) (Initial)
   - LocketteX
   - [LuckyBlock NTD](https://danirod12.github.io/ntd-wiki/docs/luckyblock/languages/) (Initial)
@@ -133,6 +136,7 @@
   - [MapRights](https://github.com/Oscar0159/MapRights/blob/main/src/main/resources/lang/zh_CN.yml) (Initial)
   - MoneyHunter
   - [MultiWarp](https://github.com/Dev7ex/MultiWarp/blob/main/multiwarp-bukkit/src/main/resources/language/zh_CN.json) (Initial)
+  - [MultiWorld](https://github.com/Dev7ex/MultiWorld/blob/master/multiworld-bukkit/src/main/resources/language/zh_CN.json) (Initial)
   - MythicDungeons
 - N：
   - [NotCredits](https://github.com/NotMarra/NotCredits/blob/main/src/main/resources/lang/zhcn.yml) (Initial)
