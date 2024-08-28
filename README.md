@@ -166,7 +166,7 @@
   - [Shopkeeper](https://github.com/Shopkeepers/Language-Files/blob/v2.19.0/lang/language-zh_CN.yml) (Initial)
   - Slabbo
   - [SlotMachine](https://crowdin.com/project/slot-machine/zh-CN) (Initial)
-  - sRTP
+  - [sRandomTP](https://github.com/snezhok69/sRandomRTP/blob/master/src/main/resources/Lang/zh_cn.yml) (Initial)
   - StackMobs
   - [StarGate](https://crowdin.com/project/stargate-bukkit/zh-CN) (Initial)
   - SternalBoard
