@@ -62,7 +62,7 @@
 > [!NOTE]
 > 部分无法提交为简体中文的配置文件存储在本仓库的 `unofficial-translations` 文件夹下，有需要可自行存取。
 
-![img](https://img.shields.io/badge/%E7%8E%B0%E5%AD%98%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E6%95%B0-87-93fdf9) ![img](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-106261-ebfd93)（最后更新：2024/8/24）
+![img](https://img.shields.io/badge/%E7%8E%B0%E5%AD%98%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E6%95%B0-87-93fdf9) ![img](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-108611-ebfd93)（最后更新：2024/8/31）
 
 - A：
   - AdvancedTeleport (Initial)
@@ -133,7 +133,9 @@
   - [LuckyBlock NTD](https://danirod12.github.io/ntd-wiki/docs/luckyblock/languages/) (Initial)
   - [LuckyWheel](https://github.com/djessy5001/luckywheel/blob/main/src/main/resources/messages_zhcn.yml) (Initial)
 - M：
+  - [MagnesifyDungeons](https://github.com/hacimertgokhan/MagnesifyDungeons/blob/master/src/main/resources/locale/locale_zhcn.yml) (Initial)
   - [MapRights](https://github.com/Oscar0159/MapRights/blob/main/src/main/resources/lang/zh_CN.yml) (Initial)
+  - [MineBank](https://github.com/Guayand0/Minecraft-Plugin-MineBank/tree/main/Translations/ZHCN) (Initial)
   - MoneyHunter
   - [MultiWarp](https://github.com/Dev7ex/MultiWarp/blob/main/multiwarp-bukkit/src/main/resources/language/zh_CN.json) (Initial)
   - [MultiWorld](https://github.com/Dev7ex/MultiWorld/blob/master/multiworld-bukkit/src/main/resources/language/zh_CN.json) (Initial)
