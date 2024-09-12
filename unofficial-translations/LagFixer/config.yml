@@ -1,0 +1,286 @@
+main:
+  prefix: '&8[&e&l⚡&8] '
+  prefix_hover: true # LagFixer 版本信息悬浮内容
+  threads: 1 # LagFixer 尚不支持多线程
+  monitor_interval: 5 # tps, mspt, cpu 与其他数据的更新间隔
+  map_interval: 3 # /lagfixer map 中地图显示器的更新间隔 (推荐设置为 2 倍 monitor_interval 的值)
+  errors_reporter: true # 自动将 LagFixer 产生的错误与 Spark 分析报告一并上传至插件开发者
+  updater: true
+  warnings: false # 是否警告使用旧方法
+  bStats: true # 优化数据收集, 于 https://bstats.org/plugin/bukkit/LagFixer/19292 可见
+  command:
+    permission: lagfixer.command
+    aliases:
+    - lf
+    - antilag
+    - lag
+modules:
+  CustomAi: # 需要重启才可应用改动
+    enabled: true
+    worlds: # 输入 '*' 表示为所有世界启用
+      - '*'
+    values:
+      collides: true # 当此项为 false 时弓射出的箭无效
+      silent: true # 禁用音效数据包的发送, 可在密集养殖时提升服务器运行速度
+      async: true
+      force_load: false # 该项负责在插件重载时覆盖自定义生物 AI 
+      click_event: true # 在玩家点击实体时显示信息 (由开发者禁用)
+      
+      # 被替换 AI 及寻路方式的生物列表
+      entities:
+        animals: true
+        monsters: true
+        villagers: true
+        tameable: false # 包括宠物: 狼、马、猫、羊驼、鹦鹉等 (设置为 true 可能会引起问题)
+        birds: false # 飞行实体, 如: 蜜蜂、鹦鹉等
+        others: true
+      
+      # 忽略的实体列表, 完整实体名称可在此处查阅: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
+      # 填入 [] 表示不使用该项设置
+      blacklist:
+      - WOLF
+      - MOOSHROOM
+      - IRON_GOLEM
+      
+      pathfinder:
+        # 保持使用 mobchip 寻路方式, 仅对 1.17+ 服务器有效 (尚未测试)
+        mobchip: false
+        
+        # 只对实体使用对应的寻路方法
+        typeA:
+          enabled: true
+          whitelist: # 非开发者请勿修改
+            - AttackableTarget
+            - HurtByTarget
+            - Attack
+            - BowShoot
+            - Swell
+            - EatTile
+            - FishSchool
+        # - AvoidTarget
+        # - RestrictSun
+        # - FleeSun
+
+                # 如果实体出现非预期的闲逛行为, 请禁用该项
+        typeB:
+          enabled: false
+          blacklist: # 非开发者请勿修改
+            - Random
+            - LookAt
+            - Panic
+            - AvoidTarget
+            - MoveTowards
+        # - Float
+        # - FollowParent
+        # - MoveThroughVillage
+
+                # 清除所有寻路方式 (不推荐)
+        typeC:
+          enabled: false
+      
+      animals:
+        tempt:
+          enabled: true
+          range: 5.0 # 玩家搜寻范围
+          speed: 1.25 # 行走速度
+          cooldown: 30 # 玩家搜寻冷却, 单位为刻
+          villagers: true # 村民会试图跟随手中持有绿宝石的玩家
+          trigger_both_hands: true # false = 仅主手持有可触发
+          event: false # 调用 EntityTargetEvent 时显示理由为: Tempt
+          teleport: false # 不推荐
+        breed:
+          enabled: true
+          range: 5.0 # 配偶搜索范围
+          speed: 1.0 # 行走速度
+          event: false # 调用 EntityTargetEvent 时显示理由为: Custom
+          teleport: false # 不推荐
+        panic:
+          enabled: true
+          rangeFromPlayer: 7 # 激活敌人所需距离
+          speed: 1.95
+          cooldown: 15
+  
+  CustomVehicles:
+    enabled: true
+    worlds: # 输入 '*' 表示为所有世界启用
+      - world
+      - world_the_end
+      - world_nether
+    values:
+      minecart:
+        enabled: true
+        remove_chest: false # 移除原版世界生成的任意矿车, 对正在重生成区块的服务器可能有帮助
+        silent: true # 禁用音效数据包的发送, 可在密集养殖时提升服务器运行速度
+        max_speed: 8 # 默认矿车的最大速度为 8
+        physics: true # 当值设置为 "false" 时, 载具实体可在其下方块不为铁轨时掉出世界, 可能会在未来修复
+        culling: false
+        collides: false
+      boat:
+        enabled: true
+        silent: true # 禁用音效数据包的发送, 可在密集养殖时提升服务器运行速度
+        max_speed: 8 # 默认矿车的最大速度为 8
+        physics: true # 当值设置为 "false" 时, 载具实体可在其下方块不为水时掉出世界, 可能会在未来修复
+        culling: false
+        collides: false
+  
+  LagMonitor:
+    enabled: true
+    worlds: # 输入 '*' 表示为所有世界启用
+      - world
+      - world_the_end
+      - world_nether
+    values:
+      needed_mspt: 75 # 触发如下设置所需的服务器 mspt
+      during_lags:
+        simulation_distance: 2 # 该值只能为 2-32, 请将值保持为低于核心配置同名设置的值
+        view_distance: 2 # 该值只能为 2-32, 请将值保持为低于核心配置同名设置的值
+        disable:
+          entity_spawn: true
+          tick_hopper: true
+          redstone: false
+          projectiles: false
+          leaves_decay: true
+          mobai: false
+          liquid_flow: true
+          random_tick_speed: true
+          view_distance: false
+          simulation_distance: true
+  
+  ConsoleFilter:
+    enabled: false
+    values:
+      logs_limit: 10 # 在 "/logs" 下限制的日志条目数, 设置为 -1 表示禁用该功能
+      filter:
+        enabled: false
+        save_filtered: true
+        error_filtering: false
+        patterns:
+        - ^<(([A-Za-z0-9_]{3,16}))> (.{0,})
+        - ^/([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})\:([0-9]{1,5}) lost
+          connection
+        - Reached end of stream for /([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})$
+        - '([A-Za-z0-9_]{3,16}) issued server command: /(.{0,})'
+        - Read timed out
+        - ^.*logged in with entity id ([0-9]{0,}) at.*$
+        - '([A-Za-z0-9_]{3,16}) lost connection: Disconnected'
+        - ^(§e)([A-Za-z0-9_]{3,16}) left the game.
+        - Connection reset
+        - 'CONSOLE: Forcing save\.\..*'
+        - 'CONSOLE: Save complete\..*'
+  
+  RedstoneLimiter:
+    enabled: true
+    worlds: # 输入 '*' 表示为所有世界启用
+      - '*'
+    values:
+      alerts: true
+      ticks_limit: # 单区块每秒的刻数
+        redstone: 1100
+        piston: 50 # 推动的方块数量
+      break_block: # 插件是否在检测后破坏方块
+        redstone: false
+        piston: false
+      piston:
+        push_blacklist: # 可填入的材料名称列表: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+          - SAND
+          - RED_SAND
+          - GRAVEL
+      click_cooldown: 1500 # 拉杆、按钮。红石火把等的点击冷却.
+  
+  EntityLimiter:
+    enabled: true
+    worlds: # 输入 '*' 表示为所有世界启用
+      - '*'
+    values:
+      alerts: false
+      perchunk:
+        enabled: true
+        creatures: 15 # 单区块的生物与敌对生物数量限制 (设置为 -1 表示禁用)
+        items: 25 # 单区块玩家丢弃的物品数量限制 (设置为 -1 表示禁用)
+        vehicles: 3 # 单区块矿车与船的数量限制 (设置为 -1 表示禁用)
+        projectiles: 5 # 单区块的弹射物限制 (设置为 -1 表示禁用)
+        tiles: 10 # 由开发者禁用
+        reasons: # 完整理由列表: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html
+          - DEFAULT
+          - EGG
+          - NATURAL
+          - SPAWNER
+          - SPAWNER_EGG
+          - COMMAND
+      perworld: # 选项由 spigot 核心配置控制
+        enabled: true
+        monsters: 70
+        animals: 10
+        water_animals: 5
+        water_ambient: 20
+        water_underground_creature: 5 # 仅 1.17+ 服务器
+        axolotls: 5 # 仅 1.18+ 服务器
+        ambient: 15
+  
+  WorldCleaner:
+    enabled: true
+    worlds: # 输入 '*' 表示为所有世界启用
+      - world
+      - world_the_end
+      - world_nether
+    values:
+      interval: 240 # 单位为秒, 执行清理垃圾功能的时间间隔
+      alerts: true # 可在 lang.yml 中找到相关消息
+      
+      # 命令 /lagfixer clear 物品
+      items:
+        enabled: true
+        disable_item_despawn: false # true = 插件会禁用物品的自然消失, 改为交由清理物品功能执行
+        time_lived: 10000 # 单位为毫秒, 物品自然消失的时间 (设置为 -1 表示禁用)
+        blacklist: # 无视的物品, 可用材料名称列表: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+          - BEACON
+        abyss: # 深渊即为垃圾桶, 玩家可以通过 /abyss 命令打开
+          enabled: false
+          alerts: true # 可在 lang.yml 中找到相关信息
+          permission: lagfixer.abyss # 设置为空表示无需权限
+          size: 54
+          item_despawn: true # true = 插件将会检测 ItemDespawnEvent 并将对应物品添加至垃圾桶
+          close: 30 # 关闭垃圾桶且禁止玩家通过命令打开的时间
+          blacklist: # 无法被垃圾桶清理的物品, 完整材料名称列表: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+            - BEDROCK
+            - BEACON
+      
+      # 命令 /lagfixer clear 功能
+      creatures:
+        enabled: true
+        named: false # 是否清理命名实体
+        drop_items: false # false = 击杀实体后不产生掉落物, true = 击杀实体后产生掉落物
+        babies: false # true = 击杀幼年实体, 对非白名单生物同样有效
+        list: # 定时清理的生物列表, 完整实体名称列表: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
+          - BAT
+          - ZOMBIE
+          - SKELETON
+          - SLIME
+          - CREEPER
+          - SPIDER
+          - PHANTOM
+          - SQUID
+      
+      # 命令 /lagfixer clear 弹射物 (如箭、雪球等) 即将推出
+      projectiles:
+        enabled: true
+        blacklist: # 无视的实体, 完整实体名称列表: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
+          - ENDER_PEARL
+          - EXPERIENCE_BOTTLE
+          - FIREBALL
+          - POTION
+          - WITHER_SKULL
+  #  - EGG
+  #  - SNOWBALL
+  #  - ARROW
+
+    # 由 -> https://modrinth.com/plugin/fast-leaf-decay 启发 (我自行优化并加入了一些内容)
+  InstantLeafDecay:
+    enabled: true
+    worlds: # 输入 '*' 表示为所有世界启用
+      - world
+      - world_nether
+    values:
+      drop_items: true # 树叶消失时是否掉落物品
+      tree_distance: 7 # 树叶距离树干多远才会消失
+      leaves_decay: true # 若禁用此项, 树叶将永远不会自然消失
