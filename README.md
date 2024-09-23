@@ -25,8 +25,8 @@
 
 ### 已翻译的维基
 
-![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-16-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-260926-84f5bb)
-（最后更新：2024/7/25）
+![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-16-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-264149-84f5bb)
+（最后更新：2024/9/23）
 
 > [!NOTE]
 > 本维基一开始使用 MDWiki 搭建，后选择了[自行魔改的 Docsify](https://github.com/SnowCutieOwO/Docsify-Template)。
@@ -62,7 +62,7 @@
 > [!NOTE]
 > 部分无法提交为简体中文的配置文件存储在本仓库的 `unofficial-translations` 文件夹下，有需要可自行存取。
 
-![img](https://img.shields.io/badge/%E7%8E%B0%E5%AD%98%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E6%95%B0-87-93fdf9) ![img](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-110132-ebfd93)（最后更新：2024/9/12）
+![img](https://img.shields.io/badge/%E7%8E%B0%E5%AD%98%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E6%95%B0-87-93fdf9) ![img](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-110259-ebfd93)（最后更新：2024/9/23）
 
 - A：
   - AdvancedTeleport (Initial)
@@ -153,6 +153,7 @@
   - PocketHorses
   - [ProdigyCape](https://github.com/corentingosselin/ProdigyCape/blob/main/Common/src/main/resources/languages/zh_CN.json) (Initial)
   - ProRPGItems (Divinity)
+  - Prison
   - PunchEffects
 - Q：
   - [QuickShop-Hikari-Documents](https://crowdin.com/project/quickshop-hikari-documents/zh-CN)
@@ -185,6 +186,7 @@
   - Towny Advanced
   - Tweakin
 - U：
+  - [UltimateBlood](https://github.com/andrewyernau/ultimateblood/blob/main/src/main/resources/lang/zhcn.yml) (Initial)
   - UltimateStacker
   - UpgradableHoppers
 - V：
