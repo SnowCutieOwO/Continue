@@ -19,9 +19,11 @@
 
 **维基：**
 
-* *HelpChat*
-* *RedShop*
-* *EconomyShopGUI*
+* [Shopkeepers](https://github.com/Shopkeepers/Shopkeepers-Wiki/wiki/)
+* [HuskClaims](https://william278.net/docs/huskclaims)
+* [*HelpChat (Plugin Wiki)*](https://wiki.helpch.at/)
+* [*RedShop*](https://foresttech.gitbook.io/redshop)
+* [*EconomyShopGUI*](https://wiki.gpplugins.com/economyshopgui)
 
 ### 已翻译的维基
 
@@ -62,7 +64,7 @@
 > [!NOTE]
 > 部分无法提交为简体中文的配置文件存储在本仓库的 `unofficial-translations` 文件夹下，有需要可自行存取。
 
-![img](https://img.shields.io/badge/%E7%8E%B0%E5%AD%98%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E6%95%B0-87-93fdf9) ![img](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-110259-ebfd93)（最后更新：2024/9/23）
+![img](https://img.shields.io/badge/%E7%8E%B0%E5%AD%98%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E6%95%B0-90-93fdf9) ![img](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-113202-ebfd93)（最后更新：2024/10/23）
 
 - A：
   - AdvancedTeleport (Initial)
@@ -104,6 +106,7 @@
   - [ExcellentCrates](https://github.com/nulli0n/ExcellentCrates-spigot/blob/master/src/main/resources/lang/messages_zhcn.yml) (Initial)
   - ExcellentShop (Initial)
 - F：
+  - [FancyHomes](https://github.com/Banarnia-Services/FancyHomes/blob/main/src/main/resources/lang/zhcn.yml) (Initial)
   - [FAuction](https://github.com/Florianpal1/FAuction/blob/V1.5.X/src/main/resources/lang_zhcn.yml) (Initial)
   - FastClearLag (Initial)
   - FearFeeling
@@ -114,6 +117,7 @@
   - GlobalMarketChest (Initial)
 - H：
   - HoloTeleport
+  - [HuskClaims](https://github.com/WiIIiam278/HuskClaims/blob/master/common/src/main/resources/locales/zh-cn.yml) (Initial)
 - I：
   - InteractiveBoard
   - [ItemFliter](https://github.com/pustinek/ItemFilter/blob/master/src/main/resources/languages/ZHCN.yml) (Initial)
@@ -147,6 +151,7 @@
   - ObsidianToLava
   - [OpeNLogin](https://github.com/nickuc/OpeNLogin/blob/master/openlogin-common/src/main/resources/com/nickuc/openlogin/config/lang/messages_cn.yml) (Initial)
 - P：
+  - [PickMeUp](https://github.com/eldoriarpg/PickMeUp/blob/master/src/main/resources/messages_zh_CN.properties) (Initial)
   - [PlayerAuctions](https://www.pixelbbs.cn/forum.php?mod=viewthread&action=printable&tid=2462)
   - [PlayerWarps](https://www.pixelbbs.cn/t-2511-1-1.html)
   - PlayerOptions
