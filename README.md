@@ -19,8 +19,9 @@
 
 **维基：**
 
-* [Shopkeepers](https://github.com/Shopkeepers/Shopkeepers-Wiki/wiki/)
-* [HuskClaims](https://william278.net/docs/huskclaims)
+* [PlaceholderAPI](https://wiki.placeholderapi.com/) (0/12)
+* [Shopkeepers](https://github.com/Shopkeepers/Shopkeepers-Wiki/wiki/) (6/23)
+* [HuskClaims](https://william278.net/docs/huskclaims) (3/19)
 * [*HelpChat (Plugin Wiki)*](https://wiki.helpch.at/)
 * [*RedShop*](https://foresttech.gitbook.io/redshop)
 * [*EconomyShopGUI*](https://wiki.gpplugins.com/economyshopgui)
