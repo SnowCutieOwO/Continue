@@ -19,9 +19,10 @@
 
 **维基：**
 
-* [PlaceholderAPI](https://wiki.placeholderapi.com/) (0/12)
-* [Shopkeepers](https://github.com/Shopkeepers/Shopkeepers-Wiki/wiki/) (6/23)
-* [HuskClaims](https://william278.net/docs/huskclaims) (3/19)
+* [PlaceholderAPI](https://wiki.placeholderapi.com/) (Rework) (0/12) 
+* [Shopkeepers](https://github.com/Shopkeepers/Shopkeepers-Wiki/wiki/) (Rework) (7/23)
+* [ajLeaderboards](https://wiki.ajg0702.us/ajLeaderboards/) (Rework) (0/13)
+* [HuskClaims](https://william278.net/docs/huskclaims) (Rework) (3/19)
 * [*HelpChat (Plugin Wiki)*](https://wiki.helpch.at/)
 * [*RedShop*](https://foresttech.gitbook.io/redshop)
 * [*EconomyShopGUI*](https://wiki.gpplugins.com/economyshopgui)
