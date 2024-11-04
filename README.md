@@ -21,7 +21,6 @@
 
 * [PlaceholderAPI](https://wiki.placeholderapi.com/) (Rework) (0/12) 
 * [Shopkeepers](https://github.com/Shopkeepers/Shopkeepers-Wiki/wiki/) (Rework) (11/23)
-* [ajLeaderboards](https://wiki.ajg0702.us/ajLeaderboards/) (Rework) (7/13)
 * [HuskClaims](https://william278.net/docs/huskclaims) (3/19)
 * [*HelpChat (Plugin Wiki)*](https://wiki.helpch.at/)
 * [*RedShop*](https://foresttech.gitbook.io/redshop)
@@ -29,8 +28,8 @@
 
 ### 已翻译的维基
 
-![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-16-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-264149-84f5bb)
-（最后更新：2024/9/23）
+![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-16-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-270547-84f5bb)
+（最后更新：2024/11/4）
 
 > [!NOTE]
 > 本维基一开始使用 MDWiki 搭建，后选择了[自行魔改的 Docsify](https://github.com/SnowCutieOwO/Docsify-Template)。
@@ -38,6 +37,7 @@
 > [!NOTE]
 > 本维基在 Vercel.app 上也有托管，详见描述部分链接。
 
+- [ajLeaderboards](https://snowcutieowo.github.io/ajLeaderboards)
 - [AureliumSkills](https://snowcutieowo.github.io/AureliumSkills)
 - [Codex](https://snowcutieowo.github.io/Codex)
 - [CommandTimer](https://snowcutieowo.github.io/CommandTimer)
