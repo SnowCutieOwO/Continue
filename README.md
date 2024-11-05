@@ -28,7 +28,7 @@
 
 ### 已翻译的维基
 
-![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-16-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-270547-84f5bb)
+![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-16-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-258753-84f5bb)
 （最后更新：2024/11/4）
 
 > [!NOTE]
@@ -53,7 +53,7 @@
 - [Oraxen](https://snowcutieowo.github.io/Oraxen)
 - [PlayerPoints](https://snowcutieowo.github.io/PlayerPoints)
 - [Spark](https://snowcutieowo.github.io/spark)
-- [UltimateShop 简体中文维基重汉化](https://blog.imc.re/wiki/usznv3/1/1.1)
+- [UltimateShop 简体中文维基重汉化](https://blog.imc.re/wiki/usznv3/1/1.1)（共 12658 字）
   * 完整版 Wiki 已由原作者 pqguanfang 自行迁移并修改格式转载至其网站，后续更新由对方团队负责。
 - [WorldEdit](https://snowcutieowo.github.io/WorldEdit)
 - [WorldGuard](https://snowcutieowo.github.io/WorldGuard)
