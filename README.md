@@ -22,9 +22,9 @@
 * [PlaceholderAPI](https://wiki.placeholderapi.com/) (Rework) (0/12) 
 * [HuskClaims](https://william278.net/docs/huskclaims) (3/19)
 * [*AuraSkills*](https://wiki.aurelium.dev/auraskills) (Rework)
-* [*HelpChat (Plugin Wiki)*](https://wiki.helpch.at/)
-* [*RedShop*](https://foresttech.gitbook.io/redshop)
-* [*EconomyShopGUI*](https://wiki.gpplugins.com/economyshopgui)
+* [*HelpChat (Plugin Wiki)*](https://wiki.helpch.at/) (Rework)
+* [*RedShop*](https://foresttech.gitbook.io/redshop) (Rework)
+* [*EconomyShopGUI*](https://wiki.gpplugins.com/economyshopgui) (Rework)
 
 ### 已翻译的维基
 
