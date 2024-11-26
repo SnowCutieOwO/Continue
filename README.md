@@ -87,6 +87,7 @@
   - BossLand
 - C：
   - CaptainsEnchants
+  - [Cannons](https://github.com/Intybyte/Cannons/blob/1.21/cannons-bukkit/src/main/resources/localization/localization_zhcn.yml) (Initial)
   - CataMines
   - [CCTV Camera](https://github.com/Tanguygab/CCTV/blob/master/src/main/resources/languages/zh_CN.yml) (Initial)
   - ChatItem
@@ -97,7 +98,7 @@
 - D：
   - DeathTotems (DeathWarden)
   - DecentHolograms
-  - [DeluxeTeleport](https://github.com/MiniPixesoj/DeluxeTeleport/blob/main/src/main/resources/lang/zh-CN/messages.yml)
+  - [DeluxeTeleport](https://github.com/MiniPixesoj/DeluxeTeleport/blob/main/src/main/resources/lang/zh-CN/messages.yml) (Initial)
   - Don't Kill Friends
   - DragonSlayer
   - DynamicFarming
