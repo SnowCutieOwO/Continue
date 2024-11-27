@@ -1,0 +1,1854 @@
+Prefix: <italic><bold>UltraComestics >
+No-Permission: <bold><red>你没有权限！
+Cosmetic-Disabled: <prefix> <bold><red>这个装饰品已被禁用！
+Invalid-Gadget: <prefix> <bold><red>无效的小工具！
+Invalid-Pet: <prefix> <bold><red>无效宠物！
+Invalid-Mount: <prefix> <bold><red>无效的载具！
+Invalid-Effect: <prefix> <bold><red>无效的效果！
+Invalid-Morph: <prefix> <bold><red>无效伪装！
+Invalid-Hat: <prefix> <bold><red>无效头饰！
+Invalid-Suit: <prefix> <bold><red>无效衣装！
+Invalid-Emote: <prefix> <bold><red>无效表情！
+Invalid-Menu: <prefix> <bold><red>无效菜单！
+Ammo: '<gray>你的可使用次数: </gray><yellow><ammo>'
+Purchase: <bold><green>购买
+Cancel: <bold><red>取消
+Buy-Ammo-Description: <bold><yellow>购买 <amount> <gadgetname> 次使用次数 </yellow></bold><bold><yellow>需要花费 $<price>
+Buy-Cosmetic-Description: <bold><yellow>购买 <gadgetname> </yellow></bold><bold><yellow>需花费 $<price>
+Right-Click-Buy-Ammo: <gray>右键即可购买使用次数
+Click-To-Purchase: <yellow>右键即可花费 $<price> </yellow><yellow>来购买
+Not-Enough-Money: <prefix> <bold><red>你没有足够的金钱！
+Successful-Purchase: <prefix> <bold><green>购买成功！
+Buy-Treasure-Key: <bold>购买一把宝藏钥匙
+Treasure-Keys: <bold><gray>宝藏钥匙
+Treasure-Chests: <bold><gold>宝藏箱
+Dont-Have-Key: <bold><dark_red>你需要一把钥匙！
+Click-Open-Chest: <green>点击以打开一个箱子
+Click-Buy-Key: <green>点击以购买一把钥匙
+左键点击-Open-Chest: <green>左键点击以打开一个箱子
+Right-Click-Simple: <green>右键即可获得装饰品
+Your-Keys: '<italic><gray>你的钥匙数: </gray></italic><bold><white><keys>'
+Buy-Treasure-Key-ItemName: <bold><yellow>1把 </yellow></bold><bold><gray>宝藏钥匙 </gray></bold><bold><yellow>需要花费 $<price>
+You-Won-Treasure-Chests: '<prefix> <bold><white>你赢得了: <name>!'
+Treasure-Chest-Occupied: <prefix> <bold><red>所有宝藏点都已被占用，请稍等并重试。
+No-Ammo: <prefix> <bold><red>你没有在此小道具上可用的使用次数
+Cannot-Sell-Item: <prefix> <bold><red>You cannot sell this item!
+Structure-Chests-Disabled: <prefix> <bold><red>Structure chests are disabled!
+Clear:
+  Cosmetics: <bold><red>清除所有装饰品
+  Gadgets: <bold><red>清除当前使用的小道具
+  Pets: <bold><red>清除当前宠物
+  Mounts: <bold><red>清除当前载具
+  Particle-Effects: <bold><red>清除当前效果
+  Morphs: <bold><red>清除当前伪装
+  Hats: <bold><red>清除当前头饰
+  Suits: <bold><red>清除当前衣装
+  Emotes: <bold><red>清除当前表情
+  Projectile-Effects: <bold><red>清除当前弹射物效果
+  Death-Effects: <bold><red>清除当前死亡效果
+Menu:
+  Purchase-Rename:
+    Button:
+      Showcase: <bold><red>重命名宠物到 </red></bold><bold><white><name> </white></bold><bold><red>需要花费 </red></bold><bold><yellow>$<price>
+    Title: <bold>重命名宠物
+  Purchase-Cosmetic:
+    Title: <bold>Purchase <cosmetic>
+  Rename-Pet:
+    Button:
+      Name: '<bold><red>点击以重命名: <petname>'
+    Placeholder: 宠物名
+    Title: 重命名宠物
+  Main:
+    Title: <bold>主菜单
+    Button:
+      Name: <bold><red>主菜单
+  Pets:
+    Title: <bold>宠物
+    Button:
+      Name: <bold><green>宠物
+      Lore: '<gray>Unlocked: </gray><white><unlocked>'
+      Tooltip-Equip: <bold><aqua>生成
+      Tooltip-Unequip: <bold><red>取消生成
+  Gadgets:
+    Title: <bold>小道具
+    Button:
+      Name: <bold><blue>小道具
+      Lore: '<gray>Unlocked: </gray><white><unlocked>'
+      Tooltip-Equip: <bold><aqua>激活
+      Tooltip-Unequip: <bold><red>取消激活
+  Mounts:
+    Title: <bold>载具
+    Button:
+      Name: <bold><gold>载具
+      Lore: '<gray>Unlocked: </gray><white><unlocked>'
+      Tooltip-Equip: <bold><aqua>生成
+      Tooltip-Unequip: <bold><red>取消生成
+  Morphs:
+    Title: <bold>伪装
+    Button:
+      Name: <bold><dark_green>伪装
+      Lore: '<gray>Unlocked: </gray><white><unlocked>'
+      Tooltip-Equip: <bold><aqua>伪装成
+      Tooltip-Unequip: <bold><red>取消伪装 从
+  Hats:
+    Title: <bold>头饰
+    Button:
+      Name: <bold><light_purple>头饰
+      Lore: '<gray>Unlocked: </gray><white><unlocked>'
+      Tooltip-Equip: <bold><aqua>装备
+      Tooltip-Unequip: <bold><red>取消装备
+  Particle-Effects:
+    Title: <bold>粒子效果
+    Button:
+      Name: <bold><aqua>粒子效果
+      Lore: '<gray>Unlocked: </gray><white><unlocked>'
+      Tooltip-Equip: <bold><aqua>召唤
+      Tooltip-Unequip: <bold><red>取消召唤
+  Suits:
+    Title: <bold>衣装
+    Button:
+      Name: <bold><dark_aqua>衣装
+      Lore: '<gray>Unlocked: </gray><white><unlocked>'
+      Tooltip-Equip: <bold><aqua>装备
+      Tooltip-Unequip: <bold><red>取消装备
+  Emotes:
+    Title: <bold>表情
+    Button:
+      Name: <bold><yellow>表情
+      Lore: '<gray>Unlocked: </gray><white><unlocked>'
+      Tooltip-Equip: <bold><aqua>装备
+      Tooltip-Unequip: <bold><red>取消装备
+  Projectile-Effects:
+    Title: <bold>Projectile Effects
+    Button:
+      Name: <bold><dark_purple>Projectile Effects
+      Lore: '<gray>Unlocked: </gray><white><unlocked>'
+      Tooltip-Equip: <bold><aqua>装备
+      Tooltip-Unequip: <bold><red>取消装备
+  Death-Effects:
+    Title: <bold>Death Effects
+    Button:
+      Name: <bold><red>Death Effects
+      Lore: '<gray>Unlocked: </gray><white><unlocked>'
+      Tooltip-Equip: <bold><aqua>装备
+      Tooltip-Unequip: <bold><red>取消装备
+  Buy-Ammo:
+    Title: <bold>购买使用次数
+  Misc:
+    Button:
+      Previous-Page: <bold><red>上一页
+      Next-Page: <bold><green>下一页
+  Disabled-Button: <red>DISABLED
+Chest-Location:
+  Not-Enough-Space: <prefix> <bold><red>这里没有足够的空间来召唤宝藏箱！
+  Region-Disabled: <prefix> <bold><red>你不能在这里打开一个宝藏箱！
+  Invalid: <prefix> <bold><red>这不是一个可用地点
+  In-Air: <prefix> <bold><red>该地点不在地面上！
+  In-Ground: <prefix> <bold><red>该地点在地下！
+  Suggestion: <prefix> <green>你指的是 <location>?
+  Dismount-First: <prefix> <bold><red>你必须先从载具上下来才能打开箱子
+  Too-Close-To-Entity: <prefix> <bold><red>你太靠近其他实体了!
+Active-Pet-Needed: <bold><red>你需要召唤一只宠物才能重命名它
+Treasure-Chests-Loot:
+  Ammo: |-
+    <blue>子弹
+    <ammo> <cosmetic>
+  Money: |-
+    <yellow>钱
+    <bold><yellow>$<money>
+  Nothing: <bold><red>空
+  Pets: |-
+    <green>宠物
+    <cosmetic>
+  Mounts: |-
+    <gold>坐骑
+    <cosmetic>
+  Particle-Effects: |-
+    <aqua>粒子效果
+    <cosmetic>
+  Morphs: |-
+    <dark_green>变形
+    <cosmetic>
+  Hats: |-
+    <light_purple>帽子
+    <cosmetic>
+  Gadgets: |-
+    <blue>小道具
+    <cosmetic>
+  Suits: |-
+    <dark_aqua>套装
+    <cosmetic>
+  Emotes: |-
+    <yellow>表情
+    <cosmetic>
+  Death-Effects: |-
+    <red>死亡效果
+    <cosmetic>
+  Projectile-Effects: |-
+    <dark_purple>弹射物轨迹
+    <cosmetic>
+Treasure-Chests-Loot-Messages:
+  Ammo: <prefix> <bold><gold><name> 发现了 <cosmetic> <ammo> 子弹
+  Money: <prefix> <bold><gold><name> 发现了 $<money>
+  Pets: <prefix> <bold><gold><name> 发现了稀有的 <cosmetic>
+  Mounts: <prefix> <bold><gold><name> 发现了稀有的 <cosmetic>
+  Particle-Effects: <prefix> <bold><gold><name> 发现了传奇的 <cosmetic>
+  Morphs: <prefix> <bold><gold><name> 发现了传奇的 <cosmetic>
+  Hats: <prefix> <bold><gold><name> 发现罕见的 <cosmetic>
+  Gadgets: <prefix> <bold><gold><name> 发现了小道具 <cosmetic>
+  Suits: <prefix> <bold><gold><name> 发现了稀有的 <cosmetic>
+  Emotes: <prefix> <bold><gold><name> 发现了稀有的 <cosmetic>
+  Death-Effects: <prefix> <bold><gold><name> 发现了稀有的 <cosmetic>
+  Projectile-Effects: <prefix> <bold><gold><name> 发现了稀有的 <cosmetic>
+Permission-Lore:
+  Showroom: '<gray>权限: </gray><gold>在试衣间内可用'
+  Permission-No: '<gray>权限: </gray><bold><dark_red>否!'
+  Permission-Yes: '<gray>权限: </gray><bold><green>是!'
+Disable-Gadgets: <bold><red>关闭小道具
+Disable-Gadgets-Lore: <red>禁用小工具及它们的效果对您的影响
+Enable-Gadgets: <bold><green>启用小道具
+Enable-Gadgets-Lore: <red>启用小工具及它们的效果对您的影响
+Disable-Third-Person-View: <bold><red>禁用伪装的第三人视图
+Enable-Third-Person-View: <bold><green>启用伪装的第三人视图
+Disable-Filter-By-Owned: <bold><red>改为向所有人展示
+Enable-Filter-By-Owned: <bold><red>将筛选器改为已拥有的
+Disable-Treasure-Notification: <bold><red>宝藏通知关闭
+Enable-Treasure-Notification: <bold><red>宝藏通知开启
+Gadgets-Enabled-Needed: <prefix> <bold><red>你需要启用小道具！
+Gadgets:
+  Equip: <prefix> <blue>你装配了 <gadgetname>
+  Unequip: <prefix> <blue>你去下了 <gadgetname>
+  Countdown-Message: <prefix> <bold><red>你不能在 </red></bold><bold><red><time></red></bold><bold><red> 秒内使用 <gadgetname>！
+  PaintballGun:
+    name: <bold><aqua>颜料彩弹枪
+    Description: biu biu biu!!!
+  BatBlaster:
+    name: <bold><gray>蝙蝠冲击波
+    Description: |-
+      发射一波又一波的蝙蝠
+      对付你不喜欢的人!
+  MelonThrower:
+    name: <bold><green>西瓜投手
+    Wait-For-Finish: <prefix> <bold><red>先等你之前发射的西瓜爆炸吧！
+    Description: 奇怪的乐趣！
+  EtherealPearl:
+    name: <bold><dark_purple>空灵珍珠
+    Description: |-
+      坐在你专属的空灵珍珠上
+      遨游天际！
+  FleshHook:
+    name: <bold><gray>肉钩
+    Description: |-
+      通过向他们投掷钩子
+      把他们拉到你身边
+      来结交新的朋友!
+  DiscoBall:
+    name: <bold><light_purple>迪斯科灯球
+    Already-Active: <bold><red>已经有一个在使用中的迪斯科灯球了！
+    Not-Space-Above: <bold><red>你的头上没有足够的空间！
+    Description: 舞蹈吧！
+  ColorBomb:
+    name: <bold><light_purple>颜料炸弹
+    Description: 一个多彩的炸弹！
+  Chickenator:
+    name: <bold><white>鸡爪
+    Description: 1.发射! 2.嘣! 3.肯德基!
+  PortalGun:
+    name: <bold><red>传送门 </red></bold><bold><blue>枪
+    No-Block-Range: <prefix> <bold><red>所指的方向内没有方块！
+    Different-Worlds: <prefix> <bold><red>传送没都必须在同一个世界内！
+    Description: 蛋糕就是个谎言！
+  BlizzardBlaster:
+    name: <bold><aqua>暴风雪冲击波
+    Description: 让其下雪吧!
+  ThorHammer:
+    name: <bold><white>雷神之锤
+    Description: 获得真正的喵喵锤!
+  SmashDown:
+    name: <bold><red>向下砸
+    Description: 他的名字是......约翰-塞纳（John Cena）！
+  ExplosiveSheep:
+    name: <bold><dark_red>会爆炸的羊
+    Already-Active: <bold><red>已经召唤过一只爆炸羊了！
+    Description: |-
+      你确定它该像那样
+      闪烁吗?
+  AntiGravity:
+    name: <bold><light_purple>反重力
+    Description: |-
+      不喜欢重力？
+      那这就是为你量身定制的！
+  Tsunami:
+    name: <bold><blue>海啸
+    Description: |-
+      海啸!
+      逃命啊!
+  Rocket:
+    name: <bold><dark_red>火箭
+    Not-Enough-Space: <prefix> <bold><red>你头上的空间不足！
+    Not-On-Ground: <prefix> <bold><red>你必须站在地上！
+    Takeoff: <bold><dark_red>起飞!!
+    LaunchAborted: <bold><red>发射取消!
+    Description: 休斯顿，我们遇到了一个问题...
+  BlackHole:
+    name: <bold><dark_blue>黑洞
+    Description: 你不该被它抓住!
+  TNT:
+    name: <bold><dark_red>T</dark_red></bold><bold><white>N</white></bold><bold><dark_red>T
+    Description: |-
+      把一些人炸起来!
+      嘣!
+  FunGun:
+    name: <bold><gold>趣枪
+    Description: 哇！这把枪好好玩！
+  Parachute:
+    name: <bold><white>降落伞
+    Description: 杰罗尼姆噢！
+  QuakeGun:
+    name: <bold><dark_purple>地震 </dark_purple></bold><bold><light_purple>枪
+    Description: |-
+      获得一把真正的轨道枪
+      并打击玩家和生物！
+  GhostParty:
+    name: <bold><white>鬼魂派对
+    Description: |-
+      你要叫谁？
+      幽灵破坏者！
+  Firework:
+    name: <bold><red>烟花
+    Description: |-
+      想庆祝?
+      放朵烟花吧!
+  ChristmasTree:
+    name: <bold><dark_green>圣诞树
+    Click-On-Block: <prefix> <bold><red>请对准方块点击！
+    Description: |-
+      这里有一颗
+      圣诞树给你!
+  FreezeCannon:
+    name: <bold><aqua>冷冻炮
+    Description: 把地板变成溜冰场！
+  Snowball:
+    name: <bold><white>雪球
+    Description: |-
+      过节了! 扔个雪球!
+  PartyPopper:
+    name: <bold><yellow>礼花
+    Description: |-
+      通过向空中喷洒五彩纸屑
+      来庆祝!
+  Trampoline:
+    name: <bold><blue>蹦床
+    Description: |-
+      建造一个蹦床，
+      并用它将你和你的朋友
+      送入空中！
+  Gadget-Ready-ActionBar: <gadgetname> <bold><white>已就绪！
+  Lore: <blue>小道具
+Mounts:
+  DruggedHorse:
+    menu-name: <bold><dark_green>嗑药的马
+    entity-displayname: <bold><playername>的嗑药马
+    Description: 这太过分了！
+  InfernalHorror:
+    menu-name: <bold><dark_red>地狱恐惧
+    entity-displayname: <bold><playername>的地狱恐惧
+    Description: 这个载具直接来自... 地狱!
+  GlacialSteed:
+    menu-name: <bold><aqua>冰川骏马
+    entity-displayname: <bold><playername>的冰川骏马
+    Description: 这个载具来自北极
+  WalkingDead:
+    menu-name: <bold><dark_green>行走死亡
+    entity-displayname: <bold><playername>的行走死亡
+    Description: 呜...
+  MountOfFire:
+    menu-name: <bold><red>火之坐骑
+    entity-displayname: <bold><playername>的火之载具
+    Description: 冥王的坐骑！
+  MountOfWater:
+    menu-name: <bold><blue>水之坐骑
+    entity-displayname: <bold><playername>的水之坐骑
+    Description: 波塞冬坐骑！
+  EcologistHorse:
+    menu-name: <bold><green>生态马
+    entity-displayname: <bold><playername>的生态马
+    Description: 成为一名生态学家！
+  NyanSheep:
+    menu-name: <bold><dark_red>咩咩</dark_red></bold><bold><gold>羊
+    entity-displayname: <bold><playername>的咩咩羊
+    Description: |-
+      <bold><dark_red>咩 </dark_red></bold><bold><gold>咩 </gold></bold><bold><yellow>咩
+      <bold><green>咩 </green></bold><bold><dark_aqua>咩 </dark_aqua></bold><bold><blue>咩
+  Snake:
+    menu-name: <bold><gold>蛇
+    entity-displayname: <bold><playername>的蛇
+    Description: 小心！它可能会咬人...
+  Dragon:
+    menu-name: <bold><dark_purple>龙
+    entity-displayname: <bold><playername>的龙
+    Description: 成为一个龙骑士！
+  HypeCart:
+    menu-name: <bold><gray>超级车
+    entity-displayname: <bold><playername>的超级车
+    Description: |-
+      想开F1赛车？
+      现在你可以了！
+  Slime:
+    menu-name: <bold><green>史莱姆
+    entity-displayname: <bold><playername>的史莱姆
+    Description: 啪嗒！啪嗒！
+  Spider:
+    menu-name: <bold><dark_gray>蜘蛛
+    entity-displayname: <bold><playername>的蜘蛛
+    Description: 你就是蜘蛛骑士！
+  Rudolph:
+    menu-name: <bold><white>鲁道</white></bold><bold><dark_red>夫
+    entity-displayname: <bold><playername>的鲁道夫
+    Description: |-
+      没有驯鹿鲁道夫的圣诞节
+      会是什么样的?
+  MoltenSnake:
+    menu-name: <bold><red>熔蛇
+    entity-displayname: <bold><playername>的熔蛇
+    Description: |-
+      在地球的深处，
+      存在着一种神话般的熔蛇
+      它将永远为你服务
+  Strider:
+    menu-name: <bold><red>炽足兽
+    entity-displayname: <bold><playername>的炽足兽
+    Description: |-
+      神秘的立方体生物
+      可以直接在岩浆上行走
+    Held-Item-Lore: Strider food on a stick!
+  Horse:
+    menu-name: <bold><gray>马
+    entity-displayname: <bold><playername>的马
+    Description: 你的第一匹标准马
+  Donkey:
+    menu-name: <bold><dark_gray>驴
+    entity-displayname: <bold><playername>的驴
+    Description: 年轻人的第一个lv（驴）！
+  Mule:
+    menu-name: <bold><dark_gray>骡子
+    entity-displayname: <bold><playername>的骡子
+    Description: 你的第一匹国标骡子
+  Pig:
+    menu-name: <bold><light_purple>猪
+    entity-displayname: <bold><playername>的小猪猪
+    Description: 呼噜!
+    Held-Item-Lore: 棍上猪食!
+  SlimeSnake:
+    menu-name: <bold><red>粘粘蛇
+    entity-displayname: <bold><playername> 的粘粘蛇
+    Description: |-
+      这种蛇来自于“隐秘的粘液沼泽”
+      它会一直跟着你.
+  Camel:
+    menu-name: <bold><gold>骆驼
+    entity-displayname: <bold><playername> 的骆驼
+    Description: 一头标准的每日骆驼
+  Equip: <prefix> <blue>你召唤了 <mountname>
+  Unequip: <prefix> <blue>你收回了 <mountname>
+  Cant-Spawn: <prefix> <bold><red>怪物不能在这里生成！
+  Not-Enough-Room: <prefix> <bold><red>这里的空间不足以召唤一个坐骑
+Particle-Effects:
+  Equip: <prefix> <blue>你召唤了 <effectname>
+  Unequip: <prefix> <blue>你取消召唤了 <effectname>
+  RainCloud:
+    name: <bold><blue>雨云
+    Description: |-
+      天气预报告诉我
+      他在下雨.
+  SnowCloud:
+    name: <bold><white>雪云
+    Description: |-
+      天气预报告诉我
+      他在下雪.
+  BloodHelix:
+    name: <bold><dark_red>血色螺旋体
+    Description: |-
+      古老的传说说这种魔法
+      赋予其使用者的血液以力量。
+      赋予他们神的力量。
+  FrostLord:
+    name: <bold><aqua>冰霜领主
+    Description: 我是全能的 冰霜领主!
+  FlameRings:
+    name: <bold><red>火焰环
+    Description: 小心！它们很烫！
+  GreenSparks:
+    name: <bold><green>绿色火花
+    Description: 小小的、绿色的火花!
+  InLove:
+    name: <bold><red>坠入爱河
+    Description: 天哪我坠入爱河了！
+  FrozenWalk:
+    name: <bold><aqua>冰霜行者
+    Description: 我的脚好冷！
+  Enchanted:
+    name: <bold><gray>附魔
+    Description: 成为一个万能的附魔者！
+  Music:
+    name: <bold><blue>音乐
+    Description: 很多音乐！
+  Inferno:
+    name: <bold><dark_red>地狱
+    Description: 圣诞老人他自己创造了这个效果！
+  AngelWings:
+    name: <bold><white>天使之翼
+    Description: 成为一个天使吧！
+  RainbowWings:
+    name: <bold><rainbow>彩虹</rainbow> <white>之翼
+    Description: 五颜六色的翅膀!
+  SuperHero:
+    name: <bold><dark_red>超级英雄
+    Description: 成为一个超人吧！
+  SantaHat:
+    name: <bold><dark_red>圣诞老人 </dark_red></bold><bold><white>的帽子
+    Description: 成为一个圣诞老人！
+  CrushedCandyCane:
+    name: <bold><dark_red>粉碎的 </dark_red></bold><bold><white>糖果 </white></bold><bold><dark_red>棍
+    Description: |-
+      没有糖! 先放放吃多蛀牙这回事吧!
+  EnderAura:
+    name: <bold><light_purple>末影光环
+    Description: |-
+      这些神秘的粒子附着在
+      最富传奇色彩的玩家身上!
+  FlameFairy:
+    name: <bold><gold>火焰精灵
+    Description: 嘿！！
+  MagicalRods:
+    name: <bold><dark_gray>魔杖
+    Description: 也许这些魔杖能保护你！
+  FireWaves:
+    name: <bold><yellow>火浪
+    Description: 有人说这些火浪起到了保护作用...
+  CursedHalo:
+    name: <bold><dark_purple>诅咒光环
+    Description: |-
+      戴上它的人会遭受厄运的诅咒.
+  VolcanicHalo:
+    name: <bold><red>熔岩光环
+    Description: |-
+      永恒之火编织的炽热光环.
+  CursedFootprints:
+    name: <bold><dark_purple>诅咒足迹
+    Description: |-
+      会在身后留下一串散发黑暗能量的脚印.
+  SpringFootprints:
+    name: <bold><green>春日足迹
+    Description: |-
+      会在身后留下一片绿意盎然的脚印.
+  ShadowFootprints:
+    name: <bold><gray>影之足迹
+    Description: |-
+      会在身后留下一片烟雾.
+  Notes:
+    name: <bold><gold>音符
+    Description: 在头上盘旋的音符.
+  Hearts:
+    name: <bold><red>爱心
+    Description: 在头上冒泡的爱心.
+  EnderFootprints:
+    name: <bold><light_purple>末影足迹
+    Description: |-
+      会在身后留下一片龙息脚印.
+  ArcaneFlame:
+    name: <bold><aqua>神秘火焰
+    Description: 会在你的头顶冒出蓝光.
+  DivineHalo:
+    name: <bold><yellow>神性光环
+    Description: |-
+      由柔光织成的美妙光环.
+  SnowFootprints:
+    name: <bold><white>雪地足迹
+    Description: |-
+      会在身后留下一片雪花.
+Pets:
+  Piggy:
+    menu-name: <bold><light_purple>猪仔
+    entity-displayname: <bold><playername>的猪仔
+    Description: 呼噜! 呼噜!
+  Sheep:
+    menu-name: <bold><white>羊
+    entity-displayname: <bold><playername>的羊
+    Description: 咩，咩
+  EasterBunny:
+    menu-name: <bold><gold>复活节兔
+    entity-displayname: <bold><playername>的复活节兔
+    Description: 到复活节了吗
+  Cow:
+    menu-name: <bold><red>牛
+    entity-displayname: <bold><playername>的牛
+    Description: 哞!
+  Kitty:
+    menu-name: <bold><blue>Kitty猫
+    entity-displayname: <bold><playername>的Kitty猫
+    Description: 喵~
+  Dog:
+    menu-name: <bold><gray>狗
+    entity-displayname: <bold><playername>的狗
+    Description: 汪！
+  Chick:
+    menu-name: <bold><yellow>鸡
+    entity-displayname: <bold><playername>的鸡
+    Description: 咯咯哒！
+  Wither:
+    menu-name: <bold><dark_gray>凋零
+    entity-displayname: <bold><playername>的凋零
+    Description: 为我小心......
+  Pumpling:
+    menu-name: <bold><gold>小南瓜
+    entity-displayname: <bold><playername>的小南瓜
+    Description: 只是一个漂浮的小南瓜
+  ChristmasElf:
+    menu-name: <bold><green>圣诞精灵
+    entity-displayname: <bold><playername>的圣诞精灵
+    Description: 我可以给你做礼物！
+  Mooshroom:
+    menu-name: <bold><dark_red>哞菇
+    entity-displayname: <bold><playername>的哞菇
+    Description: 哞!
+  IronGolem:
+    menu-name: <bold><gray>铁傀儡
+    entity-displayname: <bold><playername>的铁傀儡
+    Description: 我喜欢花
+  Snowman:
+    menu-name: <bold><white>雪人
+    entity-displayname: <bold><playername>的雪人
+    Description: biu biu biu
+  Villager:
+    menu-name: <bold><green>村民
+    entity-displayname: <bold><playername>的村民
+    Description: 哼哼哼哼哼哼
+  Bat:
+    menu-name: <bold><dark_gray>蝙蝠
+    entity-displayname: <bold><playername>的蝙蝠
+    Description: 我喜欢黑暗的地方
+  PolarBear:
+    menu-name: <bold><aqua>北极熊
+    entity-displayname: <bold><playername>的北极熊
+    Description: 我更倾向于冷的地方
+  Llama:
+    menu-name: <bold><gray>羊驼
+    entity-displayname: <bold><playername>的羊驼
+    Description: 需要我带些什么吗？
+  Parrot:
+    menu-name: <bold><green>鹦鹉
+    entity-displayname: <bold><playername>的鹦鹉
+    Description: Polly想要饼干吗？
+  Vex:
+    menu-name: <bold><gray>恼鬼
+    entity-displayname: <bold><playername>的恼鬼
+    Description: 吁~~~~~！
+  Panda:
+    menu-name: <bold><green>熊猫
+    entity-displayname: <bold><playername>的熊猫
+    Description: 喜欢竹子！
+  Fox:
+    menu-name: <bold><light_purple>狐狸
+    entity-displayname: <bold><playername>的狐狸
+    Description: 狐狸说什么了？
+  Axolotl:
+    menu-name: <bold><dark_purple>美西螈
+    entity-displayname: <bold><playername>的美西螈
+    Description: 好可爱！
+  Piglin:
+    menu-name: <bold><gold>黄金商人
+    entity-displayname: <bold><playername>的黄金商人
+    Description: 与黄金交易！
+  Slime:
+    menu-name: <bold><green>史莱姆
+    entity-displayname: <bold><playername>的史莱姆
+    Description: 压扁...
+  Bee:
+    menu-name: <bold><yellow>蜜蜂
+    entity-displayname: <bold><playername>的蜜蜂
+    Description: '*嗞* *嗞*'
+  Goat:
+    menu-name: <bold><white>山羊
+    entity-displayname: <bold><playername>的山羊
+    Description: 叭！
+  Silverfish:
+    menu-name: <bold><gray>蠹虫
+    entity-displayname: <bold><playername>的蠹虫
+    Description: 潜伏在墙中...
+  Horse:
+    menu-name: <bold><green>马
+    entity-displayname: <bold><playername>的马
+    Description: '*咴*'
+  Blaze:
+    menu-name: <bold><red>烈焰
+    entity-displayname: <bold><playername>的烈焰
+    Description: 会飞且很烫！
+  Creeper:
+    menu-name: <bold><green>苦力怕
+    entity-displayname: <bold><playername>的苦力怕
+    Description: 喜欢炸掉你最爱的东西...
+  Enderman:
+    menu-name: <bold><dark_purple>末影人
+    entity-displayname: <bold><playername>的末影人
+    Description: 别看着它，不然他会追杀你！
+  Skeleton:
+    menu-name: <bold><white>骷髅
+    entity-displayname: <bold><playername>的骷髅
+    Description: 小心，它会尝试向你射箭！
+  Zombie:
+    menu-name: <bold><dark_green>僵尸
+    entity-displayname: <bold><playername>的僵尸
+    Description: 快！把你的村民藏起来！
+  Frog:
+    menu-name: <bold><dark_green>青蛙
+    entity-displayname: <bold><playername>的青蛙
+    Description: 不喜欢萤火虫
+  Warden:
+    menu-name: <bold><dark_aqua>坚守者
+    entity-displayname: <bold><playername>的坚守者
+    Description: Minecraft中最恐怖的怪物！
+  Allay:
+    menu-name: <bold><green>轻灵
+    entity-displayname: <bold><playername>的轻灵
+    Description: 一个新的朋友！
+  Cod:
+    menu-name: <bold><gray>鳕鱼
+    entity-displayname: <bold><playername>的鳕鱼
+    Description: 它们不是陆地生物！
+  Donkey:
+    menu-name: <bold><gray>驴
+    entity-displayname: <bold><playername>的驴
+    Description: 可以帮你带着所有物品！
+  GlowSquid:
+    menu-name: <bold><dark_aqua>发光鱿鱼
+    entity-displayname: <bold><playername>的发光鱿鱼
+    Description: 它会发光耶！
+  Mule:
+    menu-name: <bold><gray>骡子
+    entity-displayname: <bold><playername>的骡子
+    Description: 差不多就是个驴！
+  Pufferfish:
+    menu-name: <bold><yellow>河豚
+    entity-displayname: <bold><playername>的河豚
+    Description: 这玩意可碰不得
+  Ocelot:
+    menu-name: <bold><yellow>豹猫
+    entity-displayname: <bold><playername>的豹猫
+    Description: 小心...它们很害羞哒！
+  Salmon:
+    menu-name: <bold><red>鲑鱼
+    entity-displayname: <bold><playername>的鲑鱼
+    Description: 这玩意可好吃了！
+  SkeletonHorse:
+    menu-name: <bold><white>骷髅马
+    entity-displayname: <bold><playername>的骷髅马
+    Description: 小心雷电骑士！
+  Squid:
+    menu-name: <bold><black>鱿鱼
+    entity-displayname: <bold><playername>的鱿鱼
+    Description: 不要吓到它们，不然水要变黑！
+  Strider:
+    menu-name: <bold><red>炽足兽
+    entity-displayname: <bold><playername>的炽足兽
+    Description: 岩浆行者！
+  Tadpole:
+    menu-name: <bold><dark_gray>蝌蚪
+    entity-displayname: <bold><playername>的蝌蚪
+    Description: 它会长成大青蛙的！
+  TropicalFish:
+    menu-name: <bold><yellow>热带鱼
+    entity-displayname: <bold><playername>的热带鱼
+    Description: 一个多彩的鱼！
+  Turtle:
+    menu-name: <bold><dark_green>海龟
+    entity-displayname: <bold><playername>的海龟
+    Description: 它们有些能活到150岁！
+  WanderingTrader:
+    menu-name: <bold><dark_blue>流浪商人
+    entity-displayname: <bold><playername>的流浪商人
+    Description: 流浪并出售他的好东西！
+  CaveSpider:
+    menu-name: <bold><dark_green>洞穴蜘蛛
+    entity-displayname: <bold><playername>的洞穴蜘蛛
+    Description: 蜘蛛，但是带毒！
+  Dolphin:
+    menu-name: <bold><aqua>海豚
+    entity-displayname: <bold><playername>的海豚
+    Description: 海洋里最开心的生物！
+  Spider:
+    menu-name: <bold><dark_gray>蜘蛛
+    entity-displayname: <bold><playername>的蜘蛛
+    Description: 你最好的邻家蜘蛛!
+  ZombifiedPiglin:
+    menu-name: <bold><light_purple>僵尸猪灵
+    entity-displayname: <bold><playername> 的僵尸猪灵
+    Description: 轻轻碰一下, 就会穷追不舍!
+  Drowned:
+    menu-name: <bold><dark_aqua>溺尸
+    entity-displayname: <bold><playername> 的溺尸
+    Description: 水下僵尸!
+  ElderGuardian:
+    menu-name: <bold><dark_aqua>远古守卫者
+    entity-displayname: <bold><playername> 的远古守卫者
+    Description: 曾经守护神殿!
+  Endermite:
+    menu-name: <bold><dark_purple>末影螨
+    entity-displayname: <bold><playername> 的末影螨
+    Description: 会吸引末影人!
+  Evoker:
+    menu-name: <bold><gray>唤魔者
+    entity-displayname: <bold><playername> 的唤魔者
+    Description: 靠召唤恼鬼度日!
+  Ghast:
+    menu-name: <bold><white>恶魂
+    entity-displayname: <bold><playername> 的恶魂
+    Description: '*EOE 尖叫*'
+  Guardian:
+    menu-name: <bold><dark_aqua>守卫者
+    entity-displayname: <bold><playername> 守卫者
+    Description: 痛恨鱿鱼!
+  Hoglin:
+    menu-name: <bold><red>疣猪兽
+    entity-displayname: <bold><playername> 的疣猪兽
+    Description: 长得奇形怪状, 脾气还超差.
+  Husk:
+    menu-name: <bold><yellow>尸壳
+    entity-displayname: <bold><playername> 的尸壳
+    Description: 这就是我们说的流沙僵尸.
+  MagmaCube:
+    menu-name: <bold><dark_red>岩浆史莱姆
+    entity-displayname: <bold><playername> 的岩浆史莱姆
+    Description: 超烫!
+  Phantom:
+    menu-name: <bold><dark_blue>幻翼
+    entity-displayname: <bold><playername> 的幻翼
+    Description: 再不睡觉就把你抓走!
+  PiglinBrute:
+    menu-name: <bold><gold>猪灵蛮兵
+    entity-displayname: <bold><playername> 的猪灵蛮兵
+    Description: 为了国王!
+  Pillager:
+    menu-name: <bold><gray>灾厄村民
+    entity-displayname: <bold><playername> 的灾厄村民
+    Description: 喜欢烧杀掳掠!
+  Ravager:
+    menu-name: <bold><dark_gray>劫掠兽
+    entity-displayname: <bold><playername> 的劫掠兽
+    Description: 灾厄村民的最佳坐骑!
+  Shulker:
+    menu-name: <bold><dark_purple>潜影贝
+    entity-displayname: <bold><playername> 潜影贝
+    Description: 喜欢藏起来!
+  Stray:
+    menu-name: <bold><dark_gray>流浪者
+    entity-displayname: <bold><playername> 的流浪者
+    Description: 冷冰冰的嘟嘟哒嘟嘟哒!
+  Vindicator:
+    menu-name: <bold><gray>卫道士
+    entity-displayname: <bold><playername> 的卫道士
+    Description: 我的斧子未尝不利, 吃我一斧!
+  Witch:
+    menu-name: <bold><dark_purple>女巫
+    entity-displayname: <bold><playername> 的女巫
+    Description: 最爱黑猫!
+  WitherSkeleton:
+    menu-name: <bold><dark_gray>凋零骷髅
+    entity-displayname: <bold><playername> 的凋灵骷髅
+    Description: 需要手捧一杯星巴克咖啡.
+  Zoglin:
+    menu-name: <bold><red>僵尸猪灵
+    entity-displayname: <bold><playername> 的僵尸猪灵
+    Description: 僵尸化的猪灵!
+  ZombieVillager:
+    menu-name: <bold><dark_green>僵尸村民
+    entity-displayname: <bold><playername> 的僵尸村民
+    Description: 村民最可怕的噩梦!
+  ZombieHorse:
+    menu-name: <bold><dark_green>僵尸马
+    entity-displayname: <bold><playername> 僵尸马
+    Description: 原版最难找到的马匹!
+  Illusioner:
+    menu-name: <bold><dark_blue>幻术师
+    entity-displayname: <bold><playername> 的幻术师
+    Description: 只能用命令生成!
+  Sniffer:
+    menu-name: <bold><green>嗅探兽
+    entity-displayname: <bold><playername> 的嗅探兽
+    Description: 爱闻陶罐的尘土味!
+  Equip: <prefix> <blue>你召唤了 <petname>
+  Unequip: <prefix> <blue>你收回了 <petname>
+  Armadillo:
+    menu-name: <bold><gold>犰狳
+    entity-displayname: <bold><playername> 的犰狳
+    Description: "别吓我,\n不然我会缩成一团!"
+Morphs:
+  Blaze:
+    name: <bold><gold>烈焰
+    skill: '<yellow>潜行</yellow><gray> 即可: </gray><green>起飞'
+    Description: 上面有点烫...
+  Chicken:
+    name: <bold><white>鸡
+    skill: '<yellow>潜行</yellow><gray> 即可: </gray><green>下蛋'
+    Description: 你干嘛!
+  Slime:
+    name: <bold><green>史莱姆
+    skill: '<yellow>潜行</yellow><gray> 即可: </gray><green>蹦蹦跳跳'
+    Description: 弹弹弹!
+  Pig:
+    name: <bold><light_purple>猪
+    skill: '<yellow>碰撞</yellow><gray> 即可: </gray><green>弹起玩家'
+    Description: 拿稳你的胡萝卜!
+  Enderman:
+    name: <bold><dark_purple>末影人
+    skill: '<yellow>二段跳</yellow><gray> 即可:</gray><green>传送'
+    Description: |-
+      在这里, 在这里, 你找不找我...
+  Bat:
+    name: <bold><dark_gray>蝙蝠
+    skill: '<yellow>二段跳</yellow><gray> 即可:</gray><green>扇动翅膀'
+    Description: 变成蝙蝠!
+  Creeper:
+    name: <bold><green>苦力怕
+    skill: '<yellow>潜行</yellow><gray> 即可: </gray><green>引爆'
+    charging: '<bold><green>充能中: <chargelevel>/100'
+    release-to-explode: <bold><white>释放即爆炸！
+    Description: 都让开, 要炸了——!
+  Snowman:
+    name: <bold><white>雪人
+    skill: '<yellow>左键点击</yellow><gray> 即可 </gray><green>发射雪球'
+    Description: 嘿, 我是奥拉夫!
+  Equip: <prefix> <blue>你伪装成了 <morphname>
+  Unequip: <prefix> <blue>你解除了 <morphname> 伪装
+  WitherSkeleton:
+    name: <bold><dark_gray>凋零骷髅
+    skill: '<yellow>潜行</yellow><gray> 即可发射: </gray><green>骨头炸弹'
+    Description: |-
+      来自地狱,
+      嘟嘟哒嘟嘟哒!
+  ElderGuardian:
+    name: <bold><dark_gray>远古守卫者
+    skill: '<yellow>左键点击</yellow><gray> 发射: </gray><green>激光'
+    Description: 再水就成老东西了!
+  Cow:
+    name: <bold><dark_gray>牛
+    skill: '<yellow>左键点击</yellow><gray> 即可: </gray><green>哞~'
+    Description: 哞!
+  Sheep:
+    name: <bold><white>羊
+    skill: '<yellow>左键点击</yellow><gray> 即可: </gray><green>改变颜色'
+    Description: 咩，咩
+  Mooshroom:
+    name: <bold><red>哞菇
+    skill: '<yellow>潜行</yellow><gray> 即可: </gray><green>扔出蘑菇煲'
+    Description: 哞!
+  Villager:
+    name: <bold><green>村民
+    skill: '<yellow>左键点击</yellow><gray> 即可: </gray><green>扔出绿宝石'
+    Description: 哼哼哼哼哼哼
+  Witch:
+    name: <bold><dark_purple>女巫
+    skill: '<yellow>左键点击</yellow><gray> 即可: </gray><green>扔出药水'
+    Description: 木哈哈哈哈!
+  PolarBear:
+    name: <bold><white>北极熊
+    skill: '<yellow>左键点击</yellow><gray> 即可召唤: </gray><green>召唤暴风雪'
+    Description: 还是冷地方自在!
+  Llama:
+    name: <bold><dark_aqua>羊驼
+    skill: '<yellow>左键点击</yellow><gray> 即可: </gray><green>吐口水'
+    Description: 需要我带些什么吗？
+  Parrot:
+    name: <bold><green>鹦鹉
+    skill: '<yellow>扇动翅膀</yellow><gray> 即可:</gray><green> 二段跳'
+    Description: Polly 想要饼干吗？
+  Allay:
+    name: <bold><green>悦灵
+    skill: '<yellow>扇动翅膀</yellow><gray> 即可:</gray><green> 二段跳'
+    Description: 一个新的朋友！
+  Axolotl:
+    name: <bold><dark_purple>美西螈
+    skill: <yellow>左键点击</yellow><gray> 发出可爱的声音
+    Description: 好可爱！
+  Bee:
+    name: <bold><yellow>蜜蜂
+    skill: '<yellow>扇动翅膀</yellow><gray> 即可:</gray><green>二段跳'
+    Description: '*嗡* *嗡*'
+  Cat:
+    name: <bold><yellow>猫
+    skill: '<yellow>左键点击</yellow><gray></gray><green>猫叫'
+    Description: 可爱的小猫猫!
+  CaveSpider:
+    name: <bold><yellow>洞穴蜘蛛
+    skill: '<yellow>左键点击</yellow><gray></gray><green>*功能尚未实现*'
+    Description: 蜘蛛，但是带毒！
+  Cod:
+    name: <bold><yellow>鳕鱼
+    skill: '<yellow>左键点击</yellow><gray></gray><green>*功能尚未实现*'
+    Description: 它们不是陆地生物！
+  Dolphin:
+    name: <bold><yellow>海豚
+    skill: '<yellow>左键点击</yellow><gray></gray><green>*功能尚未实现*'
+    Description: 海洋里最开心的生物！
+  Donkey:
+    name: <bold><gray>驴
+    skill: '<yellow>左键点击</yellow><gray></gray><green>*功能尚未实现*'
+    Description: 可以帮你带着所有物品！
+  Drowned:
+    name: <bold><dark_aqua>溺尸
+    skill: '<yellow>左键点击</yellow><gray></gray><green>*功能尚未实现*'
+    Description: 水下僵尸!
+  Endermite:
+    name: <bold><dark_purple>末影螨
+    skill: '<yellow>左键点击</yellow><gray></gray><green>*功能尚未实现*'
+    Description: 吸引末影人!
+  Evoker:
+    name: <bold><gray>唤魔者
+    skill: '<yellow>左键点击</yellow><gray></gray><green>*功能尚未实现*'
+    Description: 以召唤恼鬼度日!
+  Frog:
+    name: <bold><dark_green>青蛙
+    skill: '<yellow>左键点击</yellow><gray></gray><green>*功能尚未实现*'
+    Description: 不喜欢萤火虫
+  Fox:
+    name: <bold><light_purple>狐狸
+    skill: '<yellow>左键点击</yellow><gray></gray><green>*功能尚未实现*'
+    Description: (歌词) What does the fox say?
+  GlowSquid:
+    name: <bold><dark_aqua>发光鱿鱼
+    skill: '<yellow>左键点击</yellow><gray></gray><green>*功能尚未实现*'
+    Description: 它会发光耶！
+  Goat:
+    name: <bold><white>山羊
+    skill: '<yellow>左键点击</yellow><gray></gray><green>*功能尚未实现*'
+    Description: 叭！
+  Guardian:
+    name: <bold><dark_aqua>守卫者
+    skill: '<yellow>左键点击</yellow><gray></gray><green>*功能尚未实现*'
+    Description: 痛恨鱿鱼!
+  Wolf:
+    name: <bold><gray>狼
+    Description: 汪！
+  IronGolem:
+    name: <bold><gray>铁傀儡
+    Description: 痛恨僵尸!
+  Wither:
+    name: <bold><dark_gray>凋零
+    Description: 为我小心......
+  Skeleton:
+    name: <bold><gray>骷髅
+    Description: 射箭不错!
+  Zombie:
+    name: <bold><dark_green>僵尸
+    Description: 脑子!!!
+  Squid:
+    name: <bold><light_purple>鱿鱼
+    Description: 噗，噗！
+  Spider:
+    name: <bold><dark_gray>蜘蛛
+    Description: 嘶嘶...
+  Ghast:
+    name: <bold><white>恶魂
+    Description: '*EOE 尖叫*'
+  MagmaCube:
+    name: <bold><red>岩浆史莱姆
+    Description: 烫烫的!
+  Horse:
+    name: <bold><green>马
+    Description: '*咴*'
+  Warden:
+    name: <bold><dark_aqua>监守者
+    Description: 安静点...
+  Tadpole:
+    name: <bold><dark_gray>蝌蚪
+    Description: 它会长成大青蛙的！
+  Piglin:
+    name: <bold><gold>猪灵
+    Description: 有金子就好说!
+  Strider:
+    name: <bold><red>流浪者
+    Description: 我讨厌水!
+  Hoglin:
+    name: <bold><red>疣猪兽
+    Description: 不仅奇形怪状, 脾气还很差.
+  PiglinBrute:
+    name: <bold><gold>猪灵蛮兵
+    Description: 为了国王!
+  Zoglin:
+    name: <bold><red>僵尸疣猪兽
+    Description: 僵尸化的疣猪兽!
+  ZombifiedPiglin:
+    name: <bold><light_purple>僵尸猪灵
+    Description: 碰一下, 就会穷追不舍!
+  Panda:
+    name: <bold><green>熊猫
+    Description: 啃竹子!
+  Ocelot:
+    name: <bold><yellow>豹猫
+    Description: 丛林之王
+  WanderingTrader:
+    name: <bold><dark_blue>流浪商人
+    Description: 流浪并出售他的好东西！
+  Pillager:
+    name: <bold><gray>灾厄村民
+    Description: 喜欢烧杀掳掠!
+  Ravager:
+    name: <bold><dark_gray>劫掠兽
+    Description: 灾厄村民的最佳坐骑!
+  Pufferfish:
+    name: <bold><yellow>河豚
+    Description: 这玩意可碰不得
+  Salmon:
+    name: <bold><red>鲑鱼
+    Description: 这玩意可好吃了！
+  TropicalFish:
+    name: <bold><yellow>热带鱼
+    Description: 一个多彩的鱼！
+  Turtle:
+    name: <bold><green>海龟
+    Description: 走慢点, 耐心点.
+  Phantom:
+    name: <bold><dark_blue>幻翼
+    Description: 再不睡觉就钻你被窝!
+  Illusioner:
+    name: <bold><dark_blue>幻术师
+    Description: 只能使用命令生成!
+  Vex:
+    name: <bold><gray>恼鬼
+    Description: 吁~~~~~！
+  Vindicator:
+    name: <bold><gray>卫道士
+    Description: 别小看它们的力气!
+  Mule:
+    name: <bold><dark_gray>骡子
+    Description: 你的第一匹国标骡子
+  SkeletonHorse:
+    name: <bold><white>骷髅马
+    Description: 小心雷电骑士！
+  ZombieHorse:
+    name: <bold><dark_green>僵尸马
+    Description: 原版最难找到的马匹!
+  Shulker:
+    name: <bold><dark_purple>潜影盒
+    Description: 喜欢躲藏!
+  Sniffer:
+    name: <bold><green>嗅探兽
+    Description: '*闻闻 闻闻*'
+Hats:
+  Equip: <prefix> <blue>你装备了 <hatname> </blue><blue>头饰!
+  Unequip: <prefix> <blue>你取下了 <hatname> </blue><blue>头饰！
+  Astronaut:
+    Name: <bold><gray>宇航员
+    Description: 休斯顿，我们遇到了个问题
+  Scared:
+    Name: <bold><dark_red>惊吓
+    Description: 天呐，那个吓到我了！
+  Angel:
+    Name: <bold><white>天使
+    Description: 当你从天堂掉下来时受伤了吗？
+  Embarassed:
+    Name: <bold><gray>尴尬
+    Description: 我对此有点尴尬。
+  Kissy:
+    Name: <bold><red>亲亲
+    Description: 想要一个亲亲吗？
+  Sad:
+    Name: <bold><blue>悲伤
+    Description: 我很伤心。
+  Cool:
+    Name: <bold><gold>酷
+    Description: 我是一个很酷的家伙。
+  Surprised:
+    Name: <bold><dark_red>惊喜
+    Description: 哇，没想到啊！
+  Dead:
+    Name: <bold><dark_gray>死
+    Description: 需要补给
+  Crying:
+    Name: <bold><blue>哭
+    Description: 我每时每刻都在哭
+  BigSmile:
+    Name: <bold><gold>巨型史莱姆
+    Description: 因为我真的很开心！
+  Wink:
+    Name: <bold><yellow>眨眼
+    Description: 你知道我的意思 ;)
+  Derp:
+    Name: <bold><dark_aqua>得瑟
+    Description: 得瑟得瑟到处得瑟
+  Smile:
+    Name: <bold><yellow>微笑
+    Description: 因为我开心
+  Iron:
+    Name: <bold><gray>铁
+    Description: 跟铁一样坚硬！
+  Gold:
+    Name: <bold><yellow>金
+    Description: 我的宝贝！
+  Diamond:
+    Name: <bold><aqua>钻石
+    Description: 这真的很结实！
+  CommandBlock:
+    Name: <bold><gray>命令方块
+    Description: 用它来统治世界吧！
+  Music:
+    Name: <bold><blue>音乐
+    Description: 你真是个音乐家
+  Squid:
+    Name: <bold><dark_aqua>鱿鱼
+    Description: 噗，噗！
+  GlowSquid:
+    Name: <bold><aqua>荧光鱿鱼
+    Description: 点亮整片海!
+  Chicken:
+    Name: <bold><white>鸡
+    Description: 咯咯咯哒！
+  Blaze:
+    Name: <bold><gold>火焰
+    Description: 小心火焰！
+  Piston:
+    Name: <bold><gray>活塞
+    Description: 你有红石吗？
+  Sheep:
+    Name: <bold><white>羊
+    Description: 咩，咩
+  Pig:
+    Name: <bold><light_purple>猪
+    Description: 哼！哼！
+  Cow:
+    Name: <bold><green>Cow
+    Description: 哞!
+  Mooshroom:
+    Name: <bold><red>红色蘑菇牛
+    Description: 哞!
+  BrownMooshroom:
+    Name: <bold><aqua>棕色蘑菇牛
+    Description: 哞!
+  Moobloom:
+    Name: <bold><yellow>哞花
+    Description: 相当少见的牛!
+  ChestnutHorse:
+    Name: <bold><dark_green>栗色马
+    Description: 别忘了鞍!
+  Golem:
+    Name: <bold><gray>铁傀儡
+    Description: 我是你的保安。
+  CopperGolem:
+    Name: <bold><gold>铜傀儡
+    Description: 百分之百伪黄金!
+  Enderman:
+    Name: <bold><dark_purple>末影人
+    Description: 我在这，现在我又在这！
+  EndermanKing:
+    Name: <bold><light_purple>末影之王
+    Description: 统领末影大军!
+  Slime:
+    Name: <bold><green>史莱姆
+    Description: 黏糊糊的
+  Creeper:
+    Name: <bold><dark_green>苦力怕
+    Description: 吓走他们!
+  Skeleton:
+    Name: <bold><gray>骷髅
+    Description: 擅长射箭!
+  Zombie:
+    Name: <bold><dark_green>僵尸
+    Description: 脑子!!!
+  Drowned:
+    Name: <bold><dark_aqua>溺尸
+    Description: 水下僵尸
+  Strider:
+    Name: <bold><red>流浪者
+    Description: 我讨厌水!
+  WitherSkeleton:
+    Name: <bold><gray>凋零骷髅
+    Description: 下界堡垒守护者
+  Ghast:
+    Name: <bold><white>恶魂
+    Description: '*EOE 尖叫*'
+  Warden:
+    Name: <bold><dark_aqua>坚守者
+    Description: 安静些...
+  Witch:
+    Name: <bold><dark_purple>女巫
+    Description: 试试我最新的药水!
+  Guardian:
+    Name: <bold><dark_aqua>守卫者
+    Description: 守卫海底神殿!
+  ShepherdVillager:
+    Name: <bold><yellow>牧羊人村民
+    Description: 孤独的牧羊者
+  FletcherVillager:
+    Name: <bold><green>制箭师村民
+    Description: 我会做箭.
+  LibrarianVillager:
+    Name: <bold><gold>图书管理员村民
+    Description: 知识就是力量.
+  Bee:
+    Name: <bold><yellow>蜜蜂
+    Description: 小心!
+  Fox:
+    Name: <bold><gold>狐狸
+    Description: 跑得快, 小机灵!
+  SnowFox:
+    Name: <bold><white>雪狐
+    Description: 雪地就是我的家.
+  Ocelot:
+    Name: <bold><yellow>豹猫
+    Description: 丛林之王
+  Frog:
+    Name: <bold><dark_green>青蛙
+    Description: 抓虫子, 然后吞掉.
+  AxolotlPink:
+    Name: <bold><light_purple>粉色美西螈
+    Description: 最萌捕食者
+  AxolotlBlue:
+    Name: <bold><blue>蓝色美西螈
+    Description: 最萌捕食者
+  Turtle:
+    Name: <bold><green>海龟
+    Description: 耐心点, 慢慢走.
+  Clownfish:
+    Name: <bold><gold>小丑鱼
+    Description: 你找到它了!
+  BlackCat:
+    Name: <bold><dark_green>黑猫
+    Description: 女巫的宠物.
+  Allay:
+    Name: <bold><aqua>悦灵
+    Description: 小帮手
+  Bat:
+    Name: <bold><dark_purple>蝙蝠
+    Description: 享受夜生活.
+  Glare:
+    Name: <bold><dark_green>怒目怪
+    Description: 讨厌黑暗.
+  Rana:
+    Name: <bold><green>拉娜
+    Description: 青蛙帽子!
+  MCD-Steve:
+    Name: <bold><blue>史蒂夫
+    Description: 梦的开始
+  MCD-Alex:
+    Name: <bold><gold>艾丽克斯
+    Description: 好基友
+  MCD-QuestGiver:
+    Name: <bold><dark_purple>任务官
+    Description: 我有要事相求.
+  MCD-LuxuryMerchant:
+    Name: <bold><gold>奢华商人
+    Description: 我卖宝石.
+  MCD-Necromancer:
+    Name: <bold><aqua>死灵法师
+    Description: 不死崛起!
+  MCD-NamelessOne:
+    Name: <bold><dark_green>无名之人
+    Description: 强大的死灵法师
+  MCD-StrayKnight:
+    Name: <bold><gray>流浪之王
+    Description: 孤独的领袖...
+  MCD-AncientGuardian:
+    Name: <bold><dark_purple>远古守卫者
+    Description: 最年长的守卫者
+  MCD-KeyGolem:
+    Name: <bold><gold>钥匙傀儡
+    Description: 解锁每扇门!
+  MCD-ArchIllager:
+    Name: <bold><dark_aqua>奇厄教主
+    Description: 灾厄村民帝国的领导者
+  MCD-SunkenSkeleton:
+    Name: <bold><dark_green>沉溺骷髅
+    Description: 水下骷髅
+  MCD-TheWildfire:
+    Name: <bold><dark_red>野火
+    Description: 漂浮领袖
+  Mario:
+    Name: <bold><dark_red>马里奥
+    Description: 是——我！马里奥！
+  Luigi:
+    Name: <bold><dark_green>路吉
+    Description: 路吉时间到！
+  Batman:
+    Name: <bold><dark_gray>蝙蝠侠
+    Description: 我是蝙蝠侠！
+  Chest:
+    Name: <bold><gold>箱子
+    Description: 打开，和关上
+  Skull:
+    Name: <bold><white>头颅
+    Description: 谁现在没头了？
+  JackOLantern:
+    Name: <bold><gold>杰克-O'-灯笼
+    Description: 一个小小的南瓜
+  Ghost:
+    Name: <bold><white>鬼魂
+    Description: 对你来说太吓人了
+  ScaryClown:
+    Name: <bold><dark_red>可怕的小丑
+    Description: 希望你不会害怕小丑
+  Santa:
+    Name: <bold><dark_red>圣诞老人
+    Description: 吼吼吼！圣诞快乐！
+  Snowman:
+    Name: <bold><white>雪人
+    Description: 我没有头骨, 也没有骨头...
+  Present:
+    Name: <bold><red>礼物
+    Description: 来自圣诞老人，给你！
+  Elf:
+    Name: <bold><green>精灵
+    Description: 我为圣诞老人工作！
+  Bedrock:
+    Name: <bold><dark_gray>基岩
+    Description: 无法破坏！
+  RedCrewmate:
+    Name: <bold><dark_red>红船员
+    Description: 红衣可疑！
+  BlueCrewmate:
+    Name: <bold><dark_blue>蓝船员
+    Description: 蓝衣可疑！
+  GreenCrewmate:
+    Name: <bold><dark_green>绿船员
+    Description: 绿衣可疑！
+  CyanCrewmate:
+    Name: <bold><aqua>青船员
+    Description: 青衣可疑！
+  LimeCrewmate:
+    Name: <bold><green>浅绿色
+    Description: 浅绿可疑！
+  YellowCrewmate:
+    Name: <bold><yellow>黄船员
+    Description: 黄衣可疑！
+  OrangeCrewmate:
+    Name: <bold><gold>橙船员
+    Description: 橙衣可疑!
+  PurpleCrewmate:
+    Name: <bold><dark_purple>紫船员
+    Description: 紫衣可疑！
+  BlackCrewmate:
+    Name: <bold><black>黑船员
+    Description: 黑衣可疑！
+  WhiteCrewmate:
+    Name: <bold><white>白船员
+    Description: 白衣可疑！
+  PinkCrewmate:
+    Name: <bold><light_purple>粉船员
+    Description: 粉衣可疑！
+  BrownCrewmate:
+    Name: <bold><dark_gray>棕船员
+    Description: 棕衣可疑！
+  FrogPrince:
+    Name: <bold><dark_green>青蛙公主
+    Description: 亲我!
+  Notch:
+    Name: <bold><white>Notch
+    Description: 梦的开始
+  KitsuneMask:
+    Name: <bold><red>狐狸面具
+    Description: 白狐面具
+  Goblin:
+    Name: <bold><blue>哥布林
+    Description: 噢!
+  Unicorn:
+    Name: <bold><light_purple>独角兽
+    Description: 阳光彩虹小白马!
+  Ogre:
+    Name: <bold><dark_green>独眼巨人
+    Description: 我饿了.
+  GreenDragon:
+    Name: <bold><green>绿龙
+    Description: 成为一条龙.
+  GigaChad:
+    Name: <bold><gray>查德
+    Description: 西格玛男人!
+  Anubis:
+    Name: <bold><gold>阿努比斯
+    Description: 古埃及的神
+  Bread:
+    Name: <bold><white>面包
+    Description: 现烤
+  Cheese:
+    Name: <bold><yellow>奶酪
+    Description: 说茄子（Cheese）！
+  Pancakes:
+    Name: <bold><white>煎饼
+    Description: 有糖浆更好！
+  Cake:
+    Name: <bold><red>蛋糕
+    Description: 嗯，蛋糕。
+  Cookie:
+    Name: <bold><gold>曲奇
+    Description: 里面有巧克力碎！
+  CandyCane:
+    Name: <bold><red>糖果 </red></bold><bold><white>手杖
+    Description: 对牙有点不友好
+  Chocolate:
+    Name: <bold><green>巧克力
+    Description: 别把这个拿来喂狗！
+  WhiteChocolate:
+    Name: <bold><white>白巧克力
+    Description: 多了点丝滑
+  Apple:
+    Name: <bold><dark_red>苹果
+    Description: 不是苹果公司
+  Melon:
+    Name: <bold><green>西瓜
+    Description: 别把这个往你头上砸
+  CarvedPumpkin:
+    Name: <bold><gold>雕刻南瓜
+    Description: 谁关掉了这个？
+  Strawberry:
+    Name: <bold><red>草莓
+    Description: 他们长在树上吗？
+  Coconut:
+    Name: <bold><white>椰子
+    Description: 乐园
+  Taco:
+    Name: <bold><yellow>塔可
+    Description: 我们去整点塔可！
+  Bacon:
+    Name: <bold><white>培根
+    Description: 所有东西跟培根一起都会变得更好。
+  Fries:
+    Name: <bold><gold>薯条
+    Description: 汉堡最好的朋友
+  Hamburger:
+    Name: <bold><gold>汉堡
+    Description: 经典的快餐！
+  Popcorn:
+    Name: <bold><gold>爆米花
+    Description: 经典的电影零食！
+  WhiteDonut:
+    Name: <bold><white>白色甜甜圈
+    Description: 像个甜甜圈，但是是白色的！
+  PinkDonut:
+    Name: <bold><light_purple>粉色甜甜圈
+    Description: 家人的最爱
+  ChocolateDonut:
+    Name: <bold><green>巧克力甜甜圈
+    Description: 一个更好的甜甜圈！
+  Pie:
+    Name: <bold><dark_red>派
+    Description: 我喜欢派
+  A:
+    Name: <bold><gold>A
+    Description: 字母表中的第一个字母！
+  B:
+    Name: <bold><dark_red>B
+    Description: 字母表中的第二个字母！
+  C:
+    Name: <bold><dark_green>C
+    Description: 字母表中的第三个字母！
+  D:
+    Name: <bold><aqua>D
+    Description: 字母表中的第四个字母！
+  E:
+    Name: <bold><yellow>E
+    Description: 字母表中的第五个字母！
+  F:
+    Name: <bold><dark_purple>F
+    Description: 字母表中的第六个字母！
+  G:
+    Name: <bold><light_purple>G
+    Description: 字母表中的第七个字母！
+  H:
+    Name: <bold><green>H
+    Description: 字母表中的第八个字母！
+  I:
+    Name: <bold><gold>I
+    Description: 字母表中的第九个字母！
+  J:
+    Name: <bold><dark_red>J
+    Description: 字母表中的第十个字母！
+  K:
+    Name: <bold><dark_green>K
+    Description: 字母表中的第十一个字母！
+  L:
+    Name: <bold><aqua>L
+    Description: 字母表中的第十二个字母！
+  M:
+    Name: <bold><yellow>M
+    Description: 字母表中的第十三个字母！
+  N:
+    Name: <bold><dark_purple>N
+    Description: 字母表中的第十四个字母！
+  O:
+    Name: <bold><light_purple>O
+    Description: 字母表中的第十五个字母！
+  P:
+    Name: <bold><green>P
+    Description: 字母表中的第十六个字母！
+  Q:
+    Name: <bold><gold>Q
+    Description: 字母表中的第十七个字母！
+  R:
+    Name: <bold><dark_red>R
+    Description: 字母表中的第十八个字母！
+  S:
+    Name: <bold><dark_green>S
+    Description: 字母表中的第十九个字母！
+  T:
+    Name: <bold><aqua>T
+    Description: 字母表中的第二十个字母！
+  U:
+    Name: <bold><yellow>U
+    Description: 字母表中的第二十一个字母！
+  V:
+    Name: <bold><dark_purple>V
+    Description: 字母表中的第二十二个字母！
+  W:
+    Name: <bold><light_purple>W
+    Description: 字母表中的第二十三个字母！
+  X:
+    Name: <bold><green>X
+    Description: 字母表中的第二十四个字母！
+  Y:
+    Name: <bold><gold>Y
+    Description: 字母表中的第二十五个字母！
+  Z:
+    Name: <bold><dark_red>Z
+    Description: 字母表中的第二十六个字母！
+Suits:
+  Rave:
+    whole-equip: <bold><white>全 </white></bold><bold><aqua>套</aqua></bold><bold><green>狂</green></bold><bold><yellow>欢</yellow></bold><bold><gold>服 </gold></bold><bold><white>衣装
+    helmet-name: <bold><aqua>狂</aqua></bold><bold><green>欢</green></bold><bold><yellow>节 </yellow></bold><bold><white>头盔
+    chestplate-name: <bold><aqua>狂</aqua></bold><bold><green>欢</green></bold><bold><yellow>节 </yellow></bold><bold><white>衣服
+    leggings-name: <bold><aqua>狂</aqua></bold><bold><green>欢</green></bold><bold><yellow>节 </yellow></bold><bold><white>裤子
+    boots-name: <bold><aqua>狂</aqua></bold><bold><green>欢</green></bold><bold><yellow>节 </yellow></bold><bold><white>靴子
+    Description: 这惊人的颜色！
+  Astronaut:
+    whole-equip: <bold><white>全套 </white></bold><bold><white>宇航员 </white></bold><bold><white>制服
+    helmet-name: <bold><white>宇航员 </white></bold><bold><white>头盔
+    chestplate-name: <bold><white>宇航员 </white></bold><bold><white>衣服
+    leggings-name: <bold><white>宇航员 </white></bold><bold><white>裤子
+    boots-name: <bold><white>宇航员 </white></bold><bold><white>靴子
+    Description: 休斯顿？
+  Diamond:
+    whole-equip: <bold><white>全套 </white></bold><bold><aqua>钻石 </aqua></bold><bold><white>衣装
+    helmet-name: <bold><aqua>钻石 </aqua></bold><bold><white>头盔
+    chestplate-name: <bold><aqua>钻石 </aqua></bold><bold><white>衣服
+    leggings-name: <bold><aqua>钻石 </aqua></bold><bold><white>裤子
+    boots-name: <bold><aqua>钻石 </aqua></bold><bold><white>靴子
+    Description: |-
+      穿着这套惊人的衣服
+      展示你的挖掘技能!
+  Santa:
+    whole-equip: <bold><white>全套 </white></bold><bold><dark_red>圣诞老人 </dark_red></bold><bold><white>衣装
+    helmet-name: <bold><dark_red>圣诞老人 </dark_red></bold><bold><white>帽子
+    chestplate-name: <bold><dark_red>圣诞老人 </dark_red></bold><bold><white>衣服
+    leggings-name: <bold><dark_red>圣诞老人 </dark_red></bold><bold><white>裤子
+    boots-name: <bold><dark_red>圣诞老人 </dark_red></bold><bold><white>靴子
+    Description: 成为圣诞老人并送出礼物！
+  Frozen:
+    whole-equip: <bold><white>全套 </white></bold><bold><aqua>冰霜 </aqua></bold><bold><white>衣装
+    helmet-name: <bold><aqua>冰霜 </aqua></bold><bold><white>头盔
+    chestplate-name: <bold><aqua>冰霜 </aqua></bold><bold><white>衣服
+    leggings-name: <bold><aqua>冰霜 </aqua></bold><bold><white>裤子
+    boots-name: <bold><aqua>冰霜 </aqua></bold><bold><white>靴子
+    Description: |-
+      这套衣服属于
+      冰霜之地的主人!
+  Cursed:
+    whole-equip: <bold><white>全套</white><dark_purple>诅咒</dark_purple><white>套装
+    helmet-name: <bold><dark_purple>诅咒 </dark_purple><white>头盔
+    chestplate-name: <bold><dark_purple>诅咒 </dark_purple><white>胸甲
+    leggings-name: <bold><dark_purple>诅咒 </dark_purple><white>护腿
+    boots-name: <bold><dark_purple>诅咒 </dark_purple><white>靴子
+    Description: Mysterious and spooky.
+  Slime:
+    whole-equip: <bold><white>全套</white><green>史莱姆</green><white>套装
+    helmet-name: <bold><green>史莱姆 </green><white>头盔
+    chestplate-name: <bold><green>史莱姆 </green><white>胸甲
+    leggings-name: <bold><green>史莱姆 </green><white>护腿
+    boots-name: <bold><green>史莱姆 </green><white>靴子
+    Description: |-
+      黏糊糊的套装.
+      史莱姆很喜欢它们!
+  Equip: <prefix> <blue>你穿上了 <suitname>!
+  Unequip: <prefix> <blue>你脱下了 <suitname>!
+  Suit-Part-Lore: <blue>衣装部分
+  Whole-Equip-Lore: <italic><gray>穿上全套衣服
+  Must-Remove: [ ]
+Emotes:
+  Equip: <prefix> <blue>你使用了 <emotename>
+  Unequip: <prefix> <blue>你卸下了 <emotename>
+  Cry:
+    Name: <bold><blue>哭
+    Description: 你真的很伤心吗? :(
+  Angry:
+    Name: <bold><red>生气
+    Description: 向其他玩家展示你的愤怒
+  Happy:
+    Name: <bold><yellow>开心
+    Description: 别发愁，开心点！
+  Cheeky:
+    Name: <bold><gold>厚脸皮
+    Description: 你喜欢厚脸皮？那这个表情是你的！
+  Love:
+    Name: <bold><dark_red>爱
+    Description: 你有一双漂亮的眼睛，你知道吗？
+  DealWithIt:
+    Name: <bold><gray>处理一下
+    Description: 你想炫耀吗？那这个表情就是问你准备的！
+  Cool:
+    Name: <bold><blue>酷
+    Description: 保持酷，兄弟！
+  Surprised:
+    Name: <bold><gold>惊喜的
+    Description: 噢天呐!!!
+  Wink:
+    Name: <bold><green>眨眼
+    Description: 快乐吗？让别人知道你只是在开玩笑
+  RaiseEyebrows:
+    Name: <bold><dark_aqua>抬眉
+    Description: 很惊讶?
+  ScaryCandle:
+    Name: <bold><dark_purple>恐怖蜡烛
+    Description: 万圣节快乐!
+  GlowingPumpkin:
+    Name: <bold><gold>发光南瓜
+    Description: 呼呼呼!
+  LovestruckAllay:
+    Name: <bold><aqua>丘比特悦灵
+    Description: 坠入爱河了吗?
+Projectile-Effects:
+  Equip: <prefix> <blue>你装备了 <projectile-effectname>
+  Unequip: <prefix> <blue>你不再装备 <projectile-effectname>
+  Rainbow:
+    name: <bold><rainbow>彩虹
+    Description: 彩色粒子
+  Christmas:
+    name: <bold><dark_red>圣</dark_red><white>诞
+    Description: 圣诞快乐!
+  RedstoneHelix:
+    name: <bold><dark_red>红石螺旋
+    Description: 旋转的红色粒子
+  FlameHelix:
+    name: <bold><red>火焰螺旋
+    Description: 旋转的火焰
+  CursedHelix:
+    name: <bold><dark_purple>诅咒螺旋
+    Description: 旋转的紫色粒子
+  SoulFireHelix:
+    name: <bold><aqua>魂火螺旋
+    Description: 旋转的蓝色粒子
+  Spark:
+    name: <bold><white>闪烁
+    Description: 白色的小星星
+  Redstone:
+    name: <bold><dark_red>红石
+    Description: 小片红色的云朵
+  Flame:
+    name: <bold><red>火焰
+    Description: 一朵小火焰
+  Water:
+    name: <bold><blue>水
+    Description: 蓝色水滴
+  Witch:
+    name: <bold><dark_purple>女巫
+    Description: 紫色十字
+  Emerald:
+    name: <bold><dark_green>绿宝石
+    Description: 绿色的星光
+  Note:
+    name: <bold><yellow>音符
+    Description: 五彩音符
+  Love:
+    name: <bold><light_purple>爱心
+    Description: 红心
+  Lava:
+    name: <bold><dark_red>岩浆
+    Description: 熔岩泡泡
+  Snow:
+    name: <bold><white>雪花
+    Description: 雪球的粒子效果
+  Slime:
+    name: <bold><green>史莱姆
+    Description: 粘液球的粒子效果
+  Crit:
+    name: <bold><gray>暴击
+    Description: 亮棕色的十字
+  MagicCrit:
+    name: <bold><dark_aqua>魔法暴击
+    Description: 青色的星星
+  Explosion:
+    name: <bold><dark_red>爆炸
+    Description: 轰!
+  Cloud:
+    name: <bold><white>云朵
+    Description: 白云
+  Smoke:
+    name: <bold><gray>烟
+    Description: 小片灰云
+  Portal:
+    name: <bold><dark_purple>传送门
+    Description: 小片紫云
+  DragonBreath:
+    name: <bold><light_purple>龙息
+    Description: 小片紫云
+  SquidInk:
+    name: <bold><blue>鱿鱼墨水
+    Description: 黑云
+  SoulFireFlame:
+    name: <bold><aqua>灵魂之火
+    Description: 小朵青色的火焰
+  Snowflake:
+    name: <bold><white>雪片
+    Description: 小片白云
+  GlowSquid:
+    name: <bold><dark_aqua>发光鱿鱼
+    Description: 闪烁星光
+  GlowSquidInk:
+    name: <bold><dark_aqua>发光鱿鱼墨水
+    Description: 水色的云
+  Scrape:
+    name: <bold><dark_green>刮削
+    Description: 星星粒子
+  WaxOff:
+    name: <bold><white>刮蜡
+    Description: 白色星星
+  WaxOn:
+    name: <bold><gold>涂蜡
+    Description: 橙色星星
+  SculkSoul:
+    name: <bold><aqua>幽匿灵魂
+    Description: 青色的灵魂
+Death-Effects:
+  Equip: <prefix> <blue>你装备了 <death-effectname>
+  Unequip: <prefix> <blue>你不再装备 <death-effectname>
+  Explosion:
+    name: <bold><dark_red>爆炸
+    Description: 轰!
+  Firework:
+    name: <bold><gray>烟花火箭
+    Description: |-
+      恭喜!
+      你... 死了?
+  Lightning:
+    name: <bold><white>闪电
+    Description: '⚡ 轰隆!'
+Enabled-SelfMorphView: <prefix> <blue>你启用了第一人称伪装视角
+Disabled-SelfMorphView: <prefix> <blue>你禁用了第一人称伪装视角
+Enabled-Gadgets: <prefix> <blue>您启用了小工具！
+Disabled-Gadgets: <prefix> <blue>你禁用了小道具！
+Not-Allowed-From-Console: <bold><red>这不能从控制台执行！
+World-Disabled: <prefix> <bold><red>装饰品在这个世界已被禁用！
+Region-Disabled: <prefix> <bold><red>装饰品在这个区域已被禁用！
+Region-Disabled-Category: <prefix> <bold><red><category> 的装饰品在这个区域已被禁用！
+Disabled-Command-Message: <prefix> <bold><red>当你佩戴装饰品时你不能使用该指令！
+Not-Allowed-In-Vanish: <prefix> <bold><red>你在隐身时不能使用装饰品！
+Too-Long: 太长, 请重试
+Cannot-Disable-Gadgets: <prefix> <bold><red>你不能禁用小道具.
+Must-Remove:
+  Hats: <prefix> <bold><red>你需要先移除您的头盔才能佩戴头饰！
+  Suits:
+    HELMET: <prefix> <bold><red>你必须移除你的头盔才能穿上衣装头盔！
+    CHESTPLATE: <prefix> <bold><red>你必须移除你的胸甲才能穿上衣装胸甲
+    LEGGINGS: <prefix> <bold><red>你必须移除你的护腿才能穿上衣装裤子！
+    BOOTS: <prefix> <bold><red>你必须移除你的靴子才能穿上衣装靴子！
+  Emotes: <prefix> <bold><red>你需要先移除您的头盔才能使用表情！
+  Gadgets: <prefix> <bold><red>你必须先清除快捷栏 <slot> 才可装备小道具!
+  Mounts: <prefix> <bold><red>你必须先清除快捷栏 <slot> 才可装备该坐骑!
+Use-Rename-Pet-Command: <prefix> <red>请输入命令 <yellow>/uc rename</yellow> 重命名实体
+Commands-Disabled-During-Chest: <prefix> <bold><red>打开箱子时你不能使用命令!
+No-Buy-Key-Permission: <prefix> <red><bold>你没有权限购买宝藏钥匙!
