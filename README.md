@@ -12,10 +12,10 @@
 
 ## 目录
 
+### 正在进行的翻译
+
 > [!NOTE]
 > 标斜体的条目为低优先级内容。
-
-### 正在进行的翻译
 
 **维基：**
 
@@ -32,10 +32,13 @@
 （最后更新：2024/11/22）
 
 > [!NOTE]
-> 本维基一开始使用 MDWiki 搭建，后选择了[自行魔改的 Docsify](https://github.com/SnowCutieOwO/Docsify-Template)。
+> 本维基一开始使用 MDWiki 和[自行魔改的 Docsify](https://github.com/SnowCutieOwO/Docsify-Template)，后选择了 VitePress。
 
 > [!NOTE]
 > 本维基在 Vercel.app 上也有托管，详见描述部分链接。
+
+> [!IMPORTANT]
+> 后端维基的存储内容可能会在将来合并至主仓库中，敬请期待。
 
 - [ajLeaderboards](https://snowcutieowo.github.io/ajLeaderboards/README)
 - [AureliumSkills](https://snowcutieowo.github.io/AureliumSkills/README)
