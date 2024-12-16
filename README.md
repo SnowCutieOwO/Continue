@@ -19,6 +19,7 @@
 
 **维基：**
 
+* [UltimateShop](https://ultimateshop.superiormc.cn/) (Rework)
 * [PlaceholderAPI](https://wiki.placeholderapi.com/) (Rework) (0/12) 
 * [HuskClaims](https://william278.net/docs/huskclaims) (3/19)
 * [CoreProtect](https://docs.coreprotect.net/)
@@ -59,7 +60,7 @@
 - [Shopkeepers](https://snowcutieowo.github.io/Shopkeepers/README)
 - [Spark](https://snowcutieowo.github.io/spark/README)
 - [UltimateShop 简体中文维基重汉化](https://blog.imc.re/wiki/usznv3/1/1.1)（共 12658 字）
-  * 完整版 Wiki 已由原作者 pqguanfang 自行迁移并修改格式转载至其网站，后续更新由对方团队负责。
+  * 完整版维基原本由我翻译，经过交涉后同意迁回此处继续维护。
 - [WorldEdit](https://snowcutieowo.github.io/WorldEdit/README)
 - [WorldGuard](https://snowcutieowo.github.io/WorldGuard/README)
 
