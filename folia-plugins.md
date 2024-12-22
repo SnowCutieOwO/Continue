@@ -137,7 +137,7 @@
 |Panilla|[ds58](https://www.spigotmc.org/resources/authors/ds58.5600/)|[Github](https://github.com/ds58/Panilla) [SpigotMC](https://www.spigotmc.org/resources/panilla-prevent-hacked-items.65694/)|付费、开源、活跃|
 |PAPIProxyBridge|[William278](https://www.spigotmc.org/resources/authors/william278.254534/)|[Github](https://github.com/WiIIiam278/PAPIProxyBridge) [SpigotMC](https://www.spigotmc.org/resources/papiproxybridge.108415/)|免费、开源、活跃|
 |Pl3xMap|[granny](https://modrinth.com/user/granny)|[Github](https://github.com/granny/Pl3xMap) [SpigotMC](https://www.spigotmc.org/resources/pl3xmap.109697/) [Modrinth]()|免费、开源、活跃|
-|Placeholder-Folia (Fork)|[Folia-Inquisitors](https://github.com/Folia-Inquisitors/)|[Github](https://github.com/Folia-Inquisitors/PlaceholderAPI-Folia)|免费、开源、活跃|
+|PlaceholderAPI-Folia (Fork)|[Folia-Inquisitors](https://github.com/Folia-Inquisitors/)|[Github](https://github.com/Folia-Inquisitors/PlaceholderAPI-Folia)|免费、开源、活跃|
 |Plasmo Voice|[kpids](https://modrinth.com/user/kpids)|[Github](https://modrinth.com/plugin/plasmo-voice) [Modrinth](https://modrinth.com/plugin/plasmo-voice)|免费、开源、活跃|
 |PlayerBountiesPlus|[TechnicallyCoded](https://www.spigotmc.org/resources/authors/technicallycoded.268933/)|[Github](https://github.com/TechnicallyCoded/PlayerBountiesPlus) [SpigotMC](https://www.spigotmc.org/resources/player-bounties-plus-1-13-1-21-x.108637/)|免费、开源、活跃|
 |PlayerGUIAdvanced|[Loving11sh](https://www.spigotmc.org/resources/authors/loving11ish.696491/)|[Github](https://github.com/Loving11ish/PlayerGUIAdvanced/tree/master) [SpigotMC](https://www.spigotmc.org/resources/playerguiadvanced-1-20-4-support.74596/)|免费、开源、活跃|
