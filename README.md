@@ -21,7 +21,6 @@
 
 * [UltimateShop](https://ultimateshop.superiormc.cn/) (Rework)
 * [PlaceholderAPI](https://wiki.placeholderapi.com/) (Rework) (0/12) 
-* [HuskClaims](https://william278.net/docs/huskclaims) (3/19)
 * [CoreProtect](https://docs.coreprotect.net/)
 * [*AuraSkills*](https://wiki.aurelium.dev/auraskills) (Rework)
 * [*HelpChat (Plugin Wiki)*](https://wiki.helpch.at/) (Rework)
