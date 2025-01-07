@@ -20,12 +20,10 @@
 **维基：**
 
 * [UltimateShop](https://ultimateshop.superiormc.cn/) (Rework)
-* [PlaceholderAPI](https://wiki.placeholderapi.com/) (Rework) (0/12) 
 * [CoreProtect](https://docs.coreprotect.net/)
 * [*AuraSkills*](https://wiki.aurelium.dev/auraskills) (Rework)
 * [*HelpChat (Plugin Wiki)*](https://wiki.helpch.at/) (Rework)
 * [*RedShop*](https://foresttech.gitbook.io/redshop) (Rework)
-* [*EconomyShopGUI*](https://wiki.gpplugins.com/economyshopgui) (Rework)
 
 ### 已翻译的维基
 
@@ -41,27 +39,28 @@
 > [!IMPORTANT]
 > 后端维基的存储内容可能会在将来合并至主仓库中，敬请期待。
 
-- [ajLeaderboards](https://snowcutieowo.github.io/ajLeaderboards/README)
-- [AureliumSkills](https://snowcutieowo.github.io/AureliumSkills/README)
-- [Codex](https://snowcutieowo.github.io/Codex/README)
-- [CommandTimer](https://snowcutieowo.github.io/CommandTimer/README)
-- [DecentHolograms](https://snowcutieowo.github.io/DecentHolograms/README)
-- [ExcellentCrates](https://snowcutieowo.github.io/ExcellentCrates/README)
-- [ExcellentEnchants](https:snowcutieowo.github.io/ExcellentEnchants/README)
-- [Fallback Server](https://snowcutieowo.github.io/FallbackServer/README)
-- [HuskHomes](https://snowcutieowo.github.io/HuskHomes/README)
-- [HuskSync](https://snowcutieowo.github.io/HuskSync/README)
-- [LibreLogin](https://snowcutieowo.github.io/LibreLogin/README)
+- [ajLeaderboards](https://snowcutieowo.github.io/ajLeaderboards)
+- [AureliumSkills](https://snowcutieowo.github.io/AureliumSkills)
+- [Codex](https://snowcutieowo.github.io/Codex)
+- [CommandTimer](https://snowcutieowo.github.io/CommandTimer)
+- [DecentHolograms](https://snowcutieowo.github.io/DecentHolograms)
+- [ExcellentCrates](https://snowcutieowo.github.io/ExcellentCrates)
+- [ExcellentEnchants](https:snowcutieowo.github.io/ExcellentEnchants)
+- [Fallback Server](https://snowcutieowo.github.io/FallbackServer)
+- [HuskHomes](https://snowcutieowo.github.io/HuskHomes)
+- [HuskSync](https://snowcutieowo.github.io/HuskSync)
+- [LibreLogin](https://snowcutieowo.github.io/LibreLogin)
   * 配置文本的翻译算作维基内容，故不计入第二部分的配置总字数。
-- [LuckPerms](https://snowcutieowo.github.io/LuckPerms/README)
-- [Oraxen](https://snowcutieowo.github.io/Oraxen/README)
-- [PlayerPoints](https://snowcutieowo.github.io/PlayerPoints/README)
-- [Shopkeepers](https://snowcutieowo.github.io/Shopkeepers/README)
-- [Spark](https://snowcutieowo.github.io/spark/README)
+- [LuckPerms](https://snowcutieowo.github.io/LuckPerms)
+- [Oraxen](https://snowcutieowo.github.io/Oraxen)
+- [PlaceholderAPI](https://snowcutieowo.github.io/PlaceholderAPI)
+- [PlayerPoints](https://snowcutieowo.github.io/PlayerPoints)
+- [Shopkeepers](https://snowcutieowo.github.io/Shopkeepers)
+- [Spark](https://snowcutieowo.github.io/spark)
 - [UltimateShop 简体中文维基重汉化](https://blog.imc.re/wiki/usznv3/1/1.1)（共 12658 字）
   * 完整版维基原本由我翻译，经过交涉后同意迁回此处继续维护。
-- [WorldEdit](https://snowcutieowo.github.io/WorldEdit/README)
-- [WorldGuard](https://snowcutieowo.github.io/WorldGuard/README)
+- [WorldEdit](https://snowcutieowo.github.io/WorldEdit)
+- [WorldGuard](https://snowcutieowo.github.io/WorldGuard)
 
 ### 参与翻译的插件
 
