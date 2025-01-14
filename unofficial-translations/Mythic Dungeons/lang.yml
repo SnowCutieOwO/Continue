@@ -80,7 +80,7 @@ commands:
     not-in-dungeon: '&c该玩家尚未处于地牢中!'
   status:
     # $1 = 正在运行的地牢副本总数.
-    total-instances: '&e当前正在运行数: $1'
+    total-instances: '&e当前正在运行副本数: $1'
     # $1 = 参与地牢副本的所有玩家数量.
     total-players: '&e参与副本的玩家数: $1'
     # $1 = 特定地牢副本数量.
@@ -312,7 +312,7 @@ instance:
       uses-remaining: '&a你可以再使用该复活器 &6$1 &a次.'
       # $1 = 受施救的玩家名称.
       not-in-dungeon: '&c尝试解救 &6$1&c, 但他已经离开了地牢!'
-      not-dead: '&cThis player isn''t dead!'
+      not-dead: '&c该玩家尚未死亡!'
       # $1 = 被复活的玩家名称.
       revived: '&a&l$1 &a成功复活!!'
 
