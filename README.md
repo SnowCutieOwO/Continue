@@ -27,8 +27,8 @@
 
 ### 已翻译的维基
 
-![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-20-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-333310-84f5bb)
-（最后更新：2025/1/16）
+![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-20-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-356866-84f5bb)
+（最后更新：2025/1/20）
 
 > [!NOTE]
 > 本维基一开始使用 MDWiki 和[自行魔改的 Docsify](https://github.com/SnowCutieOwO/Docsify-Template)，后选择了 VitePress。
@@ -57,7 +57,7 @@
 - [PlayerPoints](https://snowcutieowo.github.io/PlayerPoints)
 - [Shopkeepers](https://snowcutieowo.github.io/Shopkeepers)
 - [Spark](https://snowcutieowo.github.io/spark)
-- [UltimateShop 简体中文维基重汉化](https://blog.imc.re/wiki/usznv3/1/1.1)（共 12658 字）
+- [UltimateShop 简体中文维基重汉化](https://snowcutieowo.github.io/UltimateShop)
   * 完整版维基原本由我翻译，经过交涉后同意迁回此处继续维护。
 - [WorldEdit](https://snowcutieowo.github.io/WorldEdit)
 - [WorldGuard](https://snowcutieowo.github.io/WorldGuard)
