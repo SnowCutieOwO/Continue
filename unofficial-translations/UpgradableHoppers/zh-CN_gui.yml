@@ -280,8 +280,8 @@ physical:
     - '&7通过该物品你可以放置'
     - '&7一个更好的漏斗.'
     - ''
-    - '&8> &7Stats'
-    - '  &7Owner:&2 {owner}'
+    - '&8> &7属性'
+    - '  &7拥有者:&2 {owner}'
     - '  &7收集数量:&a {transfer} &7个物品'
     - '  &7收集范围:&a {suction}'
     - '  &7最大连接数:&a {links} &7个'
@@ -289,8 +289,8 @@ physical:
     name: '&a{type}'
     material: HOPPER
 common_sounds:
-  # Play a sound when the item is set in the menu.
+  # 在菜单中设置物品后播放的音效.
   set:
-    # Each item starting with [item_type]_failure_<name> will have this sound set.
-    # You can still override the "sound_set" for any item in their sections.
+    # 每个带有 [物品类型]_failure_<名称> 会播放一次这个声音.
+    # 仍旧可以在各自的 "sound_set" 部分配置下覆盖这个默认音效.
     failure: ENTITY_VILLAGER_NO
