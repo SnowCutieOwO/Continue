@@ -1,0 +1,296 @@
+# 在此可编辑所有菜单文本.
+#
+# 若你遇到任何问题:
+# Discord 聊天群组: https://discord.gg/B4MAJVk
+#
+# 插件维基: https://github.com/Angeschossen/General/wiki/Messages
+
+general:
+  filter:
+    blacklist: '&8黑名单'
+    whitelist: '&f白名单'
+  previous: 前一页
+  max: '&c最大等级'
+  unlimited: '&a无限制'
+  wYes: '&a是'
+  now: '&a现在'
+  destination: '&a{block}&8, &7世界:&2 {world}&8, &7X:&2 {x}&8, &7Y:&2 {y}&8, &7Z:&2
+    {z}'
+  wNo: '&c否'
+  disabled: '&c禁用'
+  none: '&c无'
+  enabled: '&a启用'
+  others: 其他
+common:
+  items:
+    default:
+      child_failure_page_previous:
+        name: '&4&l无前一页'
+      child_failure_page_next:
+        name: '&4&l无后一页'
+      refresh_page_previous:
+        lore:
+        - '&8✖ &7回到上一页:&3 {previous}'
+        name: '&c&l前一页'
+        material: ARROW
+        slots: 38
+      back:
+        lore:
+        - '&8✖ &7返回至'
+        - '   &7{back}.'
+        name: '&c&l返回'
+        material: RED_STAINED_GLASS_PANE
+        slots: 37
+      refresh_page_next:
+        lore:
+        - '&8✖ &7进入下一页:&3 {next}'
+        name: '&a&l下一页'
+        material: ARROW
+        slots: 44
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        slots: 1-45
+  size: 45
+  entries: 10-36
+gui:
+  list_filter:
+    title: '&7连接过滤'
+    items:
+      default:
+        child_failure_copy_none:
+          lore:
+          - '&c你没有复制任何过滤器.'
+          name: '&4&l无过滤'
+        entry_object:
+          lore:
+          - '&8✖ &7删除该物品.'
+          name: '&6&l{item}'
+          material: INHERIT
+        child_success_copy:
+          lore:
+          - '&7你现在可以将该过滤粘贴至其他的过滤菜单.'
+          name: '&a&l复制过滤'
+        whitelist:
+          lore:
+          - '&8✖ &7切换过滤模式.'
+          - ''
+          - '   &8• &8&l黑名单:'
+          - '      &7拒绝列表中的物品.'
+          - ''
+          - '   &8• &f&l白名单:'
+          - '      &7只接受列表中的物品.'
+          name: '&6&l当前模式: {enabled}'
+          material: HOPPER
+          slots: 40
+        strict:
+          lore:
+          - '&8✖ &7切换严格过滤.'
+          - ''
+          - '   &8• &7&lI若被启用:'
+          - '     &7过滤器将会检查物品名称, lore'
+          - '     &7附魔等 NBT 内容.'
+          - ''
+          - '   &8• &7例如, 要筛选特定种类的药水效果'
+          - '       &7那么就需要启用该选项.'
+          name: '&6&l严格过滤: {enabled}'
+          material: OAK_DOOR
+          slots: 41
+        refresh_copy_paste:
+          lore:
+          - '&8✖ &b鼠标左键'
+          - '   &7将剪贴板中的过滤器粘贴至此.'
+          - '&8✖ &9鼠标右键'
+          - '   &7复制该过滤, 连同过滤模式和严格过滤设定'
+          - '   &7至其他连接.'
+          name: '&6&l复制过滤与模式'
+          material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTRjMjhmZmI5MDYzZTYzMDM3YzdjOWMzYTk5OTc1MzMzMjU0OTQ2ZGRmYTAwMTg5OTYxNTE3NDBhNWM2Njg0MiJ9fX0=
+          slots: 42
+  hopper_main:
+    title: '&8{type}'
+    items:
+      default:
+        child_failure_cost:
+          lore:
+          - '&7你需要&c {cost} &7枚硬币这么做.'
+          name: '&4&l金币不足'
+        child_failure_max:
+          lore:
+          - '&c该漏斗已升到最高等级'
+          name: '&4&l已满级'
+        child_failure_perm:
+          lore:
+          - '&7你没有升级该漏斗的权限.'
+          name: '&4&l不可升级'
+        refresh_upgrade_links_amount:
+          lore:
+          - '&8✖ &7升级漏斗的最大连接数.'
+          - ''
+          - '   &8• &7当前数量: {value}'
+          - ''
+          - '   &8• &7下一等级:&a {value_next}'
+          - '     &7花费:&c {cost}'
+          name: '&6&l连接数量'
+          material: CHEST
+          slots: 11
+        upgrade_link_distance:
+          lore:
+          - '&8✖ &7升级漏斗最大连接范围.'
+          - ''
+          - '   &8• &7当前范围: {value}'
+          - ''
+          - '   &8• &7下一等级:&a {value_next}'
+          - '     &7花费:&c {cost}'
+          name: '&6&l最大连接距离'
+          material: COMPASS
+          slots: 14
+        linking:
+          lore:
+          - '&8✖ &b鼠标左键'
+          - '   &7为此漏斗创建一个连接.'
+          - ''
+          - '&8✖ &9鼠标右键'
+          - '   &7为此漏斗移除一个连接.'
+          name: '&6&l容器连接 &8(&7{amount}&8/&c{max}&8)'
+          material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjBiZmMyNTc3ZjZlMjZjNmM2ZjczNjVjMmM0MDc2YmNjZWU2NTMxMjQ5ODkzODJjZTkzYmNhNGZjOWUzOWIifX19
+          slots: 29
+        toggle-suction:
+          lore:
+          - '&8✖ &7切换收集模式.'
+          - ''
+          - '   &8• &7&n若禁用:'
+          - '       &7漏斗将会像原版那样工作.'
+          name: '&6&l收集模式: {enabled}'
+          material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWMyZmYyNDRkZmM5ZGQzYTJjZWY2MzExMmU3NTAyZGM2MzY3YjBkMDIxMzI5NTAzNDdiMmI0NzlhNzIzNjZkZCJ9fX0=
+          slots: 31
+        filter-delete:
+          lore:
+          - '&8✖ &c删除不匹配任何连接中过滤器的物品?'
+          name: '&6&l删除物品: {enabled}'
+          material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmI3OGZhNWRlZmU3MmRlYmNkOWM3NmFiOWY0ZTExNDI1MDQ3OWJiOWI0NGY0Mjg4N2JiZjZmNzM4NjEyYiJ9fX0=
+          slots: 32
+        links:
+          lore:
+          - '&8✖ &7编辑容器与漏斗之间的连接.'
+          name: '&6&l连接'
+          material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNThiYzhmYTcxNmNhZGQwMDRiODI4Y2IyN2NjMGY2ZjZhZGUzYmU0MTUxMTY4OGNhOWVjZWZmZDE2NDdmYjkifX19
+          slots: 30
+        upgrade_suction_radius:
+          lore:
+          - '&8✖ &7升级收集范围.'
+          - '   &7漏斗会收集半径内的一切物品.'
+          - ''
+          - '   &8• &7当前范围: {value}'
+          - ''
+          - '   &8• &7下一等级:&a {value_next}'
+          - '     &7花费:&c {cost}'
+          name: '&6&l收集范围'
+          material: BEACON
+          slots: 13
+        upgrade_transfer_amount:
+          lore:
+          - '&8✖ &7升级漏斗每次循环运送的物品数量.'
+          - ''
+          - '   &8• &7当前数量: {value}'
+          - ''
+          - '   &8• &7下一等级:&a {value_next}'
+          - '     &7花费:&c {cost}'
+          name: '&6&l收集数量'
+          material: HOPPER
+          slots: 12
+        upgrade_suction_radius_chunk:
+          lore:
+          - '&8✖ &7升级区块收集范围.'
+          - '   &7漏斗收集一定区块范围内的所有物品.'
+          - ''
+          - '   &8• &7当前范围: {value}'
+          - ''
+          - '   &8• &7下一等级:&a {value_next}'
+          - '     &7花费:&c {cost}'
+          name: '&6&l收集范围'
+          material: BEACON
+          slots: 13
+  list_player_list:
+    title: '&8升级漏斗'
+    items:
+      default:
+        child_failure_unloaded:
+          lore:
+          - '&c未加载区域内的漏斗不可以打开菜单.'
+          name: '&4&l漏斗未加载'
+        child_failure_cost:
+          lore:
+          - '&7你需要&c {cost} &7来这么做.'
+          name: '&4&l金币不足'
+        child_failure_permission:
+          lore:
+          - '&7你没有权限这么做.'
+          name: '&4&l权限不足'
+        entry_object:
+          lore:
+          - '&8✖ &7打开漏斗菜单.'
+          - ''
+          - '&8✖ &9鼠标右键'
+          - '   &7消耗&c {cost}&7 并传送至漏斗附近.'
+          - '&8✖ &3Q键'
+          - '   &7移除该漏斗.'
+          - '    &8• &c若区域未加载, 删除的漏斗不能返还.'
+          name: '&6&l世界: {world} X: {x} Y: {y} Z: {z}'
+          material: HOPPER
+  list_links:
+    title: '&8Links'
+    items:
+      default:
+        entry_object:
+          lore:
+          - '&8✖ &7管理过滤器.'
+          - ''
+          - '&8✖ &9鼠标右键'
+          - '   &7重命名漏斗'
+          - '&8✖ &eQ 键'
+          - '   &7解除连接'
+          - ''
+          - '&7&l若启用顺序排序:'
+          - ' &8✖ &bSHIFT + 鼠标左键'
+          - '    &7降序优先级'
+          - ' &8✖ &9SHIFT + 鼠标右键'
+          - '    &7升序优先级'
+          - ''
+          - ' &8• &7信息:'
+          - '   &7种类: {type}'
+          - '   &7所处世界: {world}'
+          - '   &7X: {x} Y: {y} Z: {z}'
+          name: '&6&l{name}'
+          material: INHERIT
+        refresh_insert_by_order:
+          lore:
+          - '&8✖ &7以连接顺序插入物品?'
+          - ''
+          - '   &8• &7&l若启用:'
+          - '     &7物品总是会被发送到第一个经过滤器过滤接受该物品的容器.'
+          - '     &7并不是在所有对漏斗的连接中都是以均衡的数量发送的物品.'
+          name: '&6&l插入顺序: {status}'
+          material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzFiYzJiY2ZiMmJkMzc1OWU2YjFlODZmYzdhNzk1ODVlMTEyN2RkMzU3ZmMyMDI4OTNmOWRlMjQxYmM5ZTUzMCJ9fX0=
+          slots: 41
+physical:
+  currency:
+    name: ''
+    material: GOLD_INGOT
+  hopper:
+    lore:
+    - '&7通过该物品你可以放置'
+    - '&7一个更好的漏斗.'
+    - ''
+    - '&8> &7Stats'
+    - '  &7Owner:&2 {owner}'
+    - '  &7收集数量:&a {transfer} &7个物品'
+    - '  &7收集范围:&a {suction}'
+    - '  &7最大连接数:&a {links} &7个'
+    - '  &7最大距离:&a {distance} &7格'
+    name: '&a{type}'
+    material: HOPPER
+common_sounds:
+  # Play a sound when the item is set in the menu.
+  set:
+    # Each item starting with [item_type]_failure_<name> will have this sound set.
+    # You can still override the "sound_set" for any item in their sections.
+    failure: ENTITY_VILLAGER_NO

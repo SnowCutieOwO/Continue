@@ -1,0 +1,49 @@
+# 在所有消息前显示的文本
+prefix: '&8[&6HYPER&eCURRENCIES&8] &r'
+# 控制台尝试执行玩家命令时显示的消息.
+console-sender: '&c仅玩家可执行此命令.'
+# 玩家输入命令中包含无效数量的消息.
+invalid-amount: '&c无效数量.'
+# 玩家输入命令中包含无效货币类型的消息.
+invalid-currency: '&c无效货币种类.'
+# 玩家输入命令中指定了无效玩家名称的消息.
+invalid-player: '&c无效玩家.'
+# 玩家输入的内容既不匹配任意货币名称, 也不是玩家名称.
+not-currency-nor-player: '&c{TEXT} 既不是有效的货币名称, 也不是有效的玩家名称.'
+
+# 输入命令 /bal 后显示的内容.
+bal-list: '&e当前经济:'
+# 输入命令 /bal 后显示的货币类型及其数量.
+bal-list-bal: '&6{CURRENCY}: &e{BALANCE}."'
+# 输入命令 /bal <货币类型> 后显示的消息.
+bal-specific: '&6你的 {CURRENCY}: &e{BALANCE}.'
+# 输入命令 /bal <玩家名称> 后显示的消息.
+bal-other-list: "&e{PLAYER} 的经济:"
+# 输入命令 /bal <玩家名称> <货币类型> 后显示的消息.
+bal-other-specific: "&e{PLAYER} 的 {CURRENCY}: &6{BALANCE}"
+# 输入 /bal 命令中的参数无效时显示的消息.
+bal-invalid: '&c参数不正确. 请使用: /bal [玩家或货币名] [玩家名].'
+
+# 输入命令 /baltop 后显示的内容.
+baltop-1: '&e持有货币 &6{CURRENCY} &e排名前 &6{PAGE} &e的玩家&e.'
+# 输入命令 /baltop 后显示的货币类型及其数量.
+baltop-2: '&e{RANK}: &6{PLAYER} &7- &e{BALANCE} {CURRENCY}'
+# 输入 /baltop 命令中的参数无效时显示的消息.
+baltop-invalid: '&c参数不正确. 请使用: /baltop <货币种类>.'
+# 输入货币类型不支持参与排行榜时显示的消息.
+baltop-no-support: "&c指定货币类型不支持排行榜功能."
+
+# 输入命令 /pay 命令中的参数无效时显示的消息.
+pay-invalid: '&c参数不正确. 请使用: /pay <玩家名> <数量> <货币种类>.'
+# 玩家所选货币禁止转账时显示的消息.
+pay-disabled: '&c该种货币禁止转账.'
+# 转账数目过小时显示的消息.
+pay-too-low: '&c数值过小 (最小值: {MIN}).'
+# 玩家没有足够的货币时显示的消息.
+pay-broke: '&c你的余额不足.'
+# 对方账户不足以容纳货币数量时显示的消息.
+pay-max: "&c对方不能容纳这笔钱."
+# 当成功向其他玩家转账时发送的消息.
+pay-transaction: '&a你向玩家 {PLAYER} 支付了 {AMOUNT} {CURRENCY}.'
+# 当其他玩家向你转账时发送的消息.
+paid: '&a{PLAYER} 支付给你了 {AMOUNT} {CURRENCY}.'

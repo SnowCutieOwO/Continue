@@ -1,0 +1,127 @@
+General:
+  # 请勿修改此项! 该项用于区分地牢版本.
+  Version: 1
+  DisplayName: "&b示例地牢"
+  # 地牢开始时是否显示地牢名称.
+  ShowTitleOnStart: false
+  Lobby:
+    Enabled: false
+  Gamemode: SURVIVAL
+  # 玩家的默认复活次数. 设置为 0 表示无限.
+  PlayerLives: 0
+  # 是否将不可复活玩家置入观察者模式. 若设置为 false ,玩家复活次数耗尽后将直接离开地牢.
+  # 注意: 观察者不可使用观察者菜单离开本场游戏.
+  DeadPlayersSpectate: true
+  # 进入地牢时是否不清理玩家背包.
+  KeepInventoryOnEnter: true
+  # 进入地牢时是否保持玩家当前生命值.
+  # (若设置为 false 将会在进入地牢后立即回满血量, 退出后恢复原血量.)
+  KeepHealthOnEnter: false
+  # 进入地牢时是否保留玩家当前饥饿值.
+  # (若设置为 false 将会在进入地牢后立即回满饥饿值, 退出后恢复原饥饿值.)
+  KeepFoodOnEnter: false
+  # 进入地牢时是否保留玩家当前药水效果.
+  # (若设置为 false 将会在进入地牢后立即清除现有的药水效果.)
+  KeepPotionEffectsOnEnter: false
+  # 是否踢出离开游戏的玩家.
+  KickOfflinePlayers: true
+  # 正式踢出地牢的延时(玩家在该时间内重新加入不算作离开地牢),单位为秒.
+  KickOfflinePlayersDelay: 300
+  # 保留的最大备份数量.
+  MaxBackups: 7
+  # 该地牢最大的副本数量.
+  MaxInstances: 5
+
+  # 若设置为 'true', 每当玩家收到奖励, 奖励物品会直接发送到奖励背包.
+  # 当地牢完成后这些物品就会被发送至玩家背包.
+  GiveLootAfterCompletion: false
+  # 道具池冷却使得玩家不能重复选择最近已获取的道具池物品.
+  # 奖励功能可单独设置, 或使用在该区域内提供的默认功能.
+  LootCooldown:
+    Enabled: false
+    # 冷却指定为单个箱子还是全局生效. !!当前不可用!!
+    PerReward: true
+    # 设置玩家可再次获取该宝箱的时间间隔.
+    # 保留词为 HOURLY 每小时, DAILY 每天, WEEKLY 每周, 以及 MONTHLY 每月可快速设置冷却时间.
+    CooldownType: DAILY
+    # 若种类设置为了 TIMER, 该值就是玩家获取箱子的冷却间隔, 单位为分.
+    # 否则就是设置一天内的第几个小时重置冷却.
+    CooldownTime: 0
+    # 若种类设置为了 WEEKLY, 下方的值将会决定一星期中的哪一天重置冷却.
+    # "Sunday 星期日" 为 1, "Monday 星期一" 为 2, "Tuesday 星期二" 为 3, 以此类推.
+    # 若种类设置为了 MONTHLY, 下方的值将会决定在一个月的第几天重置冷却.
+    # 若种类设置为了 TIMER, 则请勿对此项做出任何改动.
+    ResetDay: 1
+
+  # 进入冷却限制玩家游玩该地牢的事件.
+  # 注意: 在其中一方已经游玩地牢的情况下, 这会阻止结伴游玩的玩家!
+  #    设置项 "LootCooldown" 需被使用而不是无视.
+  AccessCooldown:
+    Enabled: false
+    # 设置计时器可防止玩家多次重复进入该副本.
+    # 保留词为 HOURLY 每小时, DAILY 每天, WEEKLY 每周, 以及 MONTHLY 每月可快速设置冷却时间.
+    CooldownType: DAILY
+    # 若种类设置为了 TIMER, 该值就是玩家获取箱子的冷却间隔, 单位为分.
+    # 否则就是设置一天内的第几个小时重置冷却.
+    CooldownTime: 0
+    # 若种类设置为了 WEEKLY, 下方的值将会决定一星期中的哪一天重置冷却.
+    # "Sunday 星期日" 为 1, "Monday 星期一" 为 2, "Tuesday 星期二" 为 3, 以此类推.
+    # 若种类设置为了 MONTHLY, 下方的值将会决定在一个月的第几天重置冷却.
+    # 若种类设置为了 TIMER, 则请勿对此项做出任何改动.
+    ResetDay: 1
+Requirements:
+  # 玩家进入地牢的所需权限.
+  Permissions: []
+  MinPartySize: 1
+  MaxPartySize: 4
+  # 玩家进行此地牢的前置地牢. 注意: "完成" 意味着 "完成地牢功能组件" 在对应的地牢中使用.
+  DungeonsComplete: []
+  # 需要先安装 vault 以及任意一款经济插件, 安装后该项可设置进入地牢花费的金币数量.
+  Cost: 0
+#  ClassLevel: 1
+AccessKeys:
+  # 进入地牢是否消耗钥匙.
+  Consume: true
+  # 有效钥匙物品的 ItemStack 序列. 注意: 不推荐直接从此处添加物品. 请在游戏内使用命令 `/md addkey <dungeon>`.
+  # 支持 MM 物品, 默认最新版 (基于命名空间).
+  KeyItems: []
+Rules:
+  SpawnMobs: false
+  SpawnAnimals: false
+  SpawnMonsters: false
+  AllowBreakBlocks: false
+  AllowPlaceBlocks: false
+  AllowEnderpearl: false
+  AllowChorusFruit: false
+  AllowBucket: false
+  PreventPlantGrowth: true
+  PvP: false
+  HideDeathMessages: false
+  AllowedCommands:
+    - party
+    - dparty
+    - p
+    - dungeon leave
+    - md leave
+    - leave
+  # 封禁的原版物品. (需为有效的 Spigot 材料名.)
+  BannedItems: []
+  # 地牢内封禁的物品. (最好使用命令 /md banitem command 添加封禁物品, 而不是编辑这个列表.)
+  CustomBannedItems: []
+  # 决定被封禁的物品是否可以在地牢内被捡起.
+  AllowPickupBannedItems: false
+  # 决定被封禁的物品是否可以在地牢内被合成.
+  AllowCraftBannedItems: false
+  # 决定被封禁的物品是否可以在地牢内被丢弃或放置.
+  AllowStorageBannedItems: false
+  # 允许在地牢内放置的方块名称, 无视上述 "AllowPlaceBlocks" 规则.
+  # 删除符号 [] 并按下方注释的格式添加物品即可, 下同.
+  BlockPlaceWhitelist: []
+  # - DIAMOND_ORE
+  # - GOLD_ORE
+  # 允许在地牢内破坏的方块名称, 无视上述 "AllowBreakBlocks" 规则.
+  BlockBreakWhitelist: []
+  # 禁止在地牢内放置的方块名称, 无视上述 "AllowPlaceBlocks" 规则.
+  BlockPlaceBlacklist: []
+  # 禁止在地牢内破坏的方块名称, 无视上述 "AllowBreakBlocks" 规则.
+  BlockBreakBlacklist: []
