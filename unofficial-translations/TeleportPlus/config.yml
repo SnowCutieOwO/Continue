@@ -1,0 +1,99 @@
+# 消息前缀
+Prefix Chat: '&6[&eTP&a+&6]&r'
+
+# 默认语言
+Default Language: en_US
+
+# 传送费用相关设置
+# PayOnTPCancelled 设置为 true 表示收费, 无论是否传送成功.
+# false 表示只在传送成功后收费.
+# 该功能必须安装 Vault 及依赖 Vault 的经济插件才会生效!
+# 玩家传送后会触发无敌, 若需要禁用, 将其设置为 0 即可.
+# 范围内的宠物也会和你一起传送.
+# 敌对生物设置 = 附近存在敌人时传送延迟会增加
+Teleport:
+  Fee:
+    Cost: 0
+    PayOnTPCancelled: true
+  God Mode:
+    Duration: 2
+  Pet:
+    Enable: true
+    Radius: 5
+  Delay:
+    Default: 5
+    VIP: 4
+    VVIP: 3
+
+# 经济设置
+# 该功能必须安装 Vault 及依赖 Vault 的经济插件才会生效!
+Economy:
+  Enable: false
+
+# 数据库设置
+Database:
+  Type: SQLite
+
+  # MySQL 设置
+  MySQL:
+    Host: yourhost
+    Port: yourport
+    Database: yourdatabase
+    User: youruser
+    Password: yourpassword
+
+# 传送粒子特效
+# 传送模型可填入的值: [Triple Circle, Halo]
+Particle:
+  Enable: true
+  Model: Triple Circle
+  Custom Color:
+    Enable: false
+    R: 219
+    G: 255
+    B: 255
+
+# 悬浮字文本
+# 必须安装 HolographicDisplays
+Hologram:
+  Enable: false
+
+# Action Bar
+Action Bar:
+  Enable: true
+
+# 标题文本
+Title:
+  Enable: true
+  Duration:
+    FadeIn: 0
+    FadeOut: 0
+
+# 家
+# 类型可为: [JSON,GUI]
+Home:
+  Type: GUI
+
+# 传送请求有效期, 单位为秒
+Request:
+  Timeout: 120
+  JSON: true
+
+# 地标
+# 类型可为: [JSON,GUI]
+Warp:
+  Type: GUI
+
+# 是否允许 /back 返回死亡位置
+Dead:
+  Save Location: true
+
+# 声音效果
+# 音量值为浮点数
+# 只需配置对应版本的 Minecraft 音效
+Sound Effect:
+  Enable: true
+  1,8 Sound: minecraft:portal.travel
+  1,9+ Sound: minecraft:block.portal.travel
+  Volume: 1.0
+  Pitch: 1.0
