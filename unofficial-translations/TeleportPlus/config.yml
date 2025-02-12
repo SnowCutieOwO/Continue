@@ -43,7 +43,7 @@ Database:
     Password: yourpassword
 
 # 传送粒子特效
-# 传送模型可填入的值: [Triple Circle, Halo]
+# 传送模型可填入的值 [Triple Circle, Halo]
 Particle:
   Enable: true
   Model: Triple Circle
@@ -70,7 +70,7 @@ Title:
     FadeOut: 0
 
 # 家
-# 类型可为: [JSON,GUI]
+# 类型可为 [JSON,GUI]
 Home:
   Type: GUI
 
@@ -80,7 +80,7 @@ Request:
   JSON: true
 
 # 地标
-# 类型可为: [JSON,GUI]
+# 类型可为 [JSON,GUI]
 Warp:
   Type: GUI
 
