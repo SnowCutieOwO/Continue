@@ -69,7 +69,5 @@
 > [!NOTE]
 > 由于插件配置的特殊性，适用于维基的计数工具并不能在此直接使用，因此字数统计可能略有偏差。
 
-![img](https://img.shields.io/badge/%E7%8E%B0%E5%AD%98%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E6%95%B0-119-93fdf9) ![img](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-122125-ebfd93)（最后更新：2025/2/12）
-
 > [!NOTE]
 > 这里的内容已经移动至维基中，[点此](https://snowcutieowo.github.io/common/translation-index)可查看最新版本。
