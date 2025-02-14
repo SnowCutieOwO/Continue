@@ -19,7 +19,9 @@
 
 **维基：**
 
-* [*AuraSkills*](https://wiki.aurelium.dev/auraskills) (Rework)
+* [SuperiorSkyBlock 2](https://wiki.bg-software.com/superiorskyblock/overview)
+* [AuraSkills](https://wiki.aurelium.dev/auraskills)
+
 * [*HelpChat (Plugin Wiki)*](https://wiki.helpch.at/) (Rework)
 * [*RedShop*](https://foresttech.gitbook.io/redshop) (Rework)
 
