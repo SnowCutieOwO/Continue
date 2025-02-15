@@ -561,7 +561,7 @@ upgrades:
           type: ENTITY_EXPERIENCE_ORB_PICKUP
           volume: 0.2
           pitch: 0.2
-        type: SKULL_ITEM
+        type: PLAYER_HEAD
         data: 3
         name: '&2&l成员数量 &a(可用)'
         lore:
