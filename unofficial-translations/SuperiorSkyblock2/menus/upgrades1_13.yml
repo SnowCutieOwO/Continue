@@ -303,7 +303,7 @@ upgrades:
           type: ENTITY_EXPERIENCE_ORB_PICKUP
           volume: 0.2
           pitch: 0.2
-        type: MOB_SPAWNER
+        type: SPAWNER
         name: '&b&l刷怪笼增速 &a(可用)'
         lore:
           - '&7'
@@ -321,7 +321,7 @@ upgrades:
           type: BLOCK_ANVIL_PLACE
           volume: 0.2
           pitch: 0.2
-        type: MOB_SPAWNER
+        type: SPAWNER
         name: '&b&l刷怪笼增速 &c(不可用)'
         lore:
           - '&7'
@@ -340,7 +340,7 @@ upgrades:
           type: ENTITY_EXPERIENCE_ORB_PICKUP
           volume: 0.2
           pitch: 0.2
-        type: MOB_SPAWNER
+        type: SPAWNER
         name: '&b&l刷怪笼增速 &a(可用)'
         lore:
           - '&7'
@@ -358,7 +358,7 @@ upgrades:
           type: BLOCK_ANVIL_PLACE
           volume: 0.2
           pitch: 0.2
-        type: MOB_SPAWNER
+        type: SPAWNER
         name: '&b&l刷怪笼增速 &c(不可用)'
         lore:
           - '&7'
@@ -377,7 +377,7 @@ upgrades:
           type: ENTITY_EXPERIENCE_ORB_PICKUP
           volume: 0.2
           pitch: 0.2
-        type: MOB_SPAWNER
+        type: SPAWNER
         name: '&b&l刷怪笼增速 &a(可用)'
         lore:
           - '&7'
@@ -395,7 +395,7 @@ upgrades:
           type: BLOCK_ANVIL_PLACE
           volume: 0.2
           pitch: 0.2
-        type: MOB_SPAWNER
+        type: SPAWNER
         name: '&b&l刷怪笼增速 &c(不可用)'
         lore:
           - '&7'
@@ -414,7 +414,7 @@ upgrades:
           type: BLOCK_ANVIL_PLACE
           volume: 0.2
           pitch: 0.2
-        type: MOB_SPAWNER
+        type: SPAWNER
         name: '&c&l最大等级'
         lore:
           - '&7你已经到达了刷怪笼增速功能的最大等级!'
@@ -423,7 +423,7 @@ upgrades:
           type: BLOCK_ANVIL_PLACE
           volume: 0.2
           pitch: 0.2
-        type: MOB_SPAWNER
+        type: SPAWNER
         name: '&c&l最大等级'
         lore:
           - '&7你已经到达了刷怪笼增速功能的最大等级!'
