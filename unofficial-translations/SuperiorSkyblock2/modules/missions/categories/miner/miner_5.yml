@@ -43,7 +43,7 @@ required-blocks:
 icons:
   not-completed:
     type: PAPER
-    name: '&a农夫 V'
+    name: '&a矿工 V'
     lore:
       - '&7是时候让新装备出场了.'
       - '&7挖掘 32 块钻石矿石.'
