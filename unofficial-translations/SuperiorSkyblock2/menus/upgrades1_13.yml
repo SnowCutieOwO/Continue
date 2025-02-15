@@ -825,7 +825,7 @@ upgrades:
         name: '&c&l最大等级'
         lore:
           - '&7你已到达边界大小功能的最大等级!'
-  generator-几率:
+  generator-rates:
     item: '+'
     '1':
       has-next-level:
