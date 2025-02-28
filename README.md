@@ -33,9 +33,6 @@
 > [!NOTE]
 > 本维基一开始使用 MDWiki 和[自行魔改的 Docsify](https://github.com/SnowCutieOwO/Docsify-Template)，后选择了 VitePress。
 
-> [!IMPORTANT]
-> 后端维基的存储内容可能会在将来合并至主仓库中，敬请期待。
-
 - [ajLeaderboards](https://snowcutieowo.github.io/ajLeaderboards)
 - [AureliumSkills](https://snowcutieowo.github.io/AureliumSkills)
 - [Codex](https://snowcutieowo.github.io/Codex)

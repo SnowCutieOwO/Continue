@@ -1,0 +1,841 @@
+# 配置文件
+
+默认配置足以让你开箱即用。如果你需要调整，配置中的注释应该会帮到你。
+
+部分情况下，例如插件更新配置时可能缺少注释。你可以在本页面找到**默认配置**（章节末尾），标准格式写就且无任何缺失。另外，你还可以在[这里](https://github.com/Shopkeepers/Shopkeepers/blob/master/modules/main/src/main/resources/config.yml)找到最新的配置文件。
+
+## 物品数据
+
+该部分描述了物品在配置文件中的定义方式。
+
+这部分配置使用的物品格式来源于 [Bukkit 的物品序列化](https://github.com/Shopkeepers/Shopkeepers-Wiki/wiki/Item-Serialization)（Bukkit/Spigot 插件用于从配置文件读写物品数据的 YAML 文件格式，例如本插件的 `save.yml`）。
+
+若想要配置更易于读懂和编辑，你需要调整一些内容：
+
+* 物品的元数据（Bukkit 物品序列化数据中位于 `meta` 部分的内容）与它的类型设置处于同级/同一部分下。这些内容包括：
+    * 物品的显示名称、描述、携带附魔等。
+* 任何你不使用或插件能够代为生成并存储的（普通）数据均可省略。例如：
+    * 物品的数量（`amount`）；
+    * 物品的版本（`v`）；
+    * 数据类型 ID：`==: org.bukkit.inventory.ItemStack` 和 `==: ItemMeta`
+      需要注意的是，对于其他更深且带有这些相似特征的数据不可以被省略（如 `==: org.bukkit.attribute.AttributeModifier` 为属性修饰符，而 `==: Pattern` 则为旗帜图案，等等）；
+    * 物品的元数据 ID（`meta-type` ID）；
+* 物品名称与描述支持以 `&`（而非原版的 `§`）开头的彩色字符。例如，`&a` 表示淡绿色。见[维基“格式化代码”](https://zh.minecraft.wiki/w/%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%BB%A3%E7%A0%81)章节了解 Minecraft 现版本中可以使用的所有样式与颜色。
+
+  但是，Minecraft 曾经多次将旧版本的这种格式转化为新的 json 表达式。这可能导致在某个版本中创建的物品不能在另一个版本中使用。因此，除了使用旧版的颜色代码，我们建议使用新版的 json 格式来定义文本样式。见[维基“文本组件”](https://zh.minecraft.wiki/w/%E6%96%87%E6%9C%AC%E7%BB%84%E4%BB%B6)章节了解更多。
+
+  示例：旧格式为 `display-name: '&aShopkeeper'`，而新格式则为 `display-name: '{"text":"Shopkeeper","italic":false,"color":"green"}'`
+
+* 若要指定不带特殊数据的物品，你可以使用更简洁的表达方式。例如：
+```YAML
+shop-creation-item: VILLAGER_SPAWN_EGG
+```
+而不是
+```YAML
+shop-creation-item:
+  type: VILLAGER_SPAWN_EGG
+```
+
+需要注意的是，YAML 格式**对缩进敏感**。如果你的配置文件出现了问题，请确保你使用的是**空格而不是（按 TAB 键出现的）制表符空格**，之后再寻求一些 YAML 格式检查网站的帮助，例如 [YAMLChecker](https://yamlchecker.com/)。
+
+另外也请确保你没有写错配置的键名。
+
+### 常见拼写错误
+
+* `enchantments`，而非正确的 `enchants`
+* `display name`，而非正确的 `display-name`
+* `damage`，而非正确的 `Damage`
+
+## 示例配置文件
+
+```YAML
+currency-item:
+  type: EMERALD
+  display-name: '{"text":"珍奇宝石","italic":false,"color":"green"}'
+  lore:
+  - '{"text":"看起来很珍贵."}'
+  - '{"text":"也许能卖个好价钱."}'
+  enchants:
+    DURABILITY: 1
+  ItemFlags:
+  - HIDE_ENCHANTS
+```
+
+## `/shopkeepers yaml` 命令
+
+`/shopkeepers yaml` [命令](commands.md)可以用于输出手中物品的 Bukkit 序列化的 YAML 格式数据，以及配置文件中使用的物品数据。输出也会记录在控制台中，方便复制，因为在游戏中这些内容通常都过长而难以浏览。
+
+## 物品匹配
+
+在检查游戏内物品是否与配置文件中要求的物品相符时，我们只会检查它包含的指定数据。这意味着检查的物品**不会**完全相同，而是物品**能否包含额外数据**而仍然符合要求。例如，在指定如下数据时：
+
+```YAML
+shop-creation-item:
+  type: VILLAGER_SPAWN_EGG
+  display-name: '{"text":"Shopkeeper","italic":false,"color":"green"}'
+```
+
+任何以 `{"text":"Shopkeeper","italic":false,"color":"green"}` 为名称的物品都可以用于创建商店，即便实际使用的物品包含额外的数据，例如自定义名称或附魔。
+
+另外也需注意指定列表的数据（如物品描述）必须完全匹配（不能包含额外描述），而诸如附魔内容则允许拥有配置文本不要求的附魔。
+
+其他方面的限制（因实现的应用较为简单），例如不支持要求物品**不包含**某个数据。例如，不能指定物品不包含特殊显示名称，或者不包含任何描述或附魔。下述两种配置都会允许玩家通过村民刷怪蛋而无视物品上的名称。
+
+```YAML
+shop-creation-item:
+  type: VILLAGER_SPAWN_EGG
+```
+
+```YAML
+shop-creation-item:
+  type: VILLAGER_SPAWN_EGG
+  display-name: ''
+```
+
+需要注意的是，对于 `shop-creation-item`，默认情况下我们使用的匹配方法略有差异。原因请见下文。
+
+## 商店创建物品
+
+`shop-creation-item` 用于创建[玩家商店](creating-shops.setup-player-shop.md)。默认情况下，我们不实际使用物品的匹配机制来检查物品是否满足要求，而是通过判断物品是否包含 `shopkeepers:shop_creation_item` 自定义标签来决定是否能够创建商店。这允许管理员修改创建商店的物品，而不会使先前留在玩家手中的失效。
+
+这个行为通过下文的配置控制，你可以在默认配置中的注释中找到有关描述。
+
+```YAML
+add-shop-creation-item-tag: true
+identify-shop-creation-item-by-tag: true
+```
+
+## 默认配置
+
+```YAML
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# Shopkeepers Config
+# Wiki: https://github.com/Shopkeepers/Shopkeepers-Wiki/wiki/Configuration
+# The wiki also explains how item data gets specified inside the config.
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# Determines the required config migrations. Do not edit manually!
+config-version: 9
+# The initial debugging state of the plugin.
+debug: false
+# Additional debugging options.
+# - 'log-all-events': Logs all events.
+# - 'print-listeners': Prints the registered listeners for the first call of
+#    each event.
+# - 'shopkeeper-activation': Enables debugging output related to shopkeeper
+#    activation.
+# - 'regular-tick-activities': Enables debug output for regular shopkeeper
+#    activities and behaviors that would otherwise cause debug spam when being
+#    enabled by default. This includes for example the activity of teleporting
+#    shopkeepers back into place, updating their location when they are mobile
+#    and moved around, or behaviors such as the playing of sound effects.
+# - 'visualize-shopkeeper-ticks': Visualizes the ticking activities of
+#    shopkeepers in-game.
+# - 'commands': Enables additional commands related debugging output.
+# - 'owner-name-updates': Logs information when updating stored shop owner
+#    names.
+# - 'item-migrations': Logs whenever a shopkeeper performs item migrations
+#    (e.g. for trade offers).
+# - 'item-updates': Logs whenever items are updated via the UpdateItemEvent.
+# - 'item-conversions': Logs whenever we explicitly convert items to Spigot's
+#    data format. Note that this does not log when items get implicitly
+#    converted, which may happen under various circumstances.
+# - 'empty-trades': Logs detailed item information for the selected trade and
+#    the items in the input slots whenever a player clicks an empty trading
+#    result slot.
+# - 'text-components': Logs additional debug output whenever component-based
+#    text is sent.
+debug-options: []
+# Whether to report anonymous usage statistics to https://bStats.org
+# All reported information can be found here:
+# https://bstats.org/plugin/bukkit/Shopkeepers
+enable-metrics: true
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# Messages
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# Find community translations at https://github.com/Shopkeepers/Language-Files
+# Wiki: https://github.com/Shopkeepers/Shopkeepers-Wiki/wiki/Language-Files
+language: en-default
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# Shopkeeper Data
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# Whether to immediately save all shopkeeper data whenever a shopkeeper is
+# edited. If disabled, the shopkeeper data is saved in 5 minute intervals and
+# when the plugin is shut down.
+# If you have a large server with many players and/or many shopkeepers, it
+# might be a good idea to disable this for performance reasons.
+save-instantly: true
+
+# Enables the automatic conversion of items inside the inventories of players
+# and shop containers whenever a player opens a shopkeeper UI (e.g. trading,
+# editor, hiring, etc.) The items are converted to conform to Spigot's internal
+# data format.
+# This setting helps with issues related to items that have been created on
+# previous Spigot versions or via some Minecraft mechanism (e.g. give command,
+# loot tables, etc.) no longer getting accepted when trading with shopkeepers.
+# In order for the items to get reliably accepted during trades, their data has
+# to match the internal format that Spigot uses when a plugin would create the
+# same items via the Spigot API. Spigot occasionally makes changes to this
+# internal data format. Any previously created items, or newly created items
+# that don't conform to this new format, may cause trading and item stacking
+# issues then.
+# This setting is intended to help with the portion of the issue affecting
+# shopkeeper trades. This setting will not reliably help you prevent item
+# stacking related issues!
+# Enabling this setting comes with a performance impact! Try to avoid using
+# this option and search for alternative solutions instead (e.g. stick to
+# Spigot's data format when creating items via Minecraft mechanisms). Try to
+# only keep this setting enabled for as long as required (e.g. until you assume
+# that most of your players' legacy items got converted by now).
+convert-player-items: false
+# If 'convert-player-items' is enabled, this setting toggles whether the
+# 'convert-player-items-exceptions' setting acts as black- or whitelist.
+# If enabled, all items inside the checked inventories will be converted except
+# those that match the items specified by 'convert-player-items-exceptions'.
+# If disabled, only items that match the items specified by
+# 'convert-player-items-exceptions' get converted.
+convert-all-player-items: true
+# Black- or whitelist of items affected by the 'convert-player-items' setting.
+convert-player-items-exceptions: []
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# Plugin Compatibility
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# During start-up, the plugin performs some basic checks to verify that certain
+# aspects of the server implementation work as expected. For example, one of
+# the tested aspects is that the comparison of item stacks works correctly,
+# which is quite essential for an item-based trading plugin such as
+# Shopkeepers. If any of these tests fail, the plugin disables itself to avoid
+# problems that can otherwise arise later.
+# However, even if one of this tests fails, the plugin might still be usable to
+# some degree. For example, an issue with the item stack comparisons might only
+# affect specific kinds of item stacks.
+# If you want to take the risk and try running the plugin anyway, even though a
+# potential problem has been detected, you can enable this setting. However, do
+# not expect any support when you subsequently encounter problems while this
+# setting is enabled, or has been enabled in the past.
+ignore-failed-server-assumption-tests: false
+
+# If enabled, Shopkeepers tries to bypass other plugins that deny mob spawning
+# (e.g. land protection plugins).
+bypass-spawn-blocking: true
+# If enabled, Shopkeepers takes into account whether other plugins deny
+# interaction with the shopkeepers.
+check-shop-interaction-result: false
+
+# If enabled, players will only be able to place shopkeepers where they have
+# permission from WorldGuard to build or where the 'allow-shop' flag is set.
+enable-world-guard-restrictions: false
+# If enabled (additionally to the enable-world-guard-restrictions setting),
+# players will only be able to place shopkeepers in regions where the
+# 'allow-shop' flag is set, but nowhere else. However, players will still
+# require container access to set up shops. And in case they can't place
+# containers in the affected region, shop containers need to be pre-setup by
+# someone else and the require-container-recently-placed setting needs to be
+# disabled.
+require-world-guard-allow-shop-flag: false
+# Whether to register the allow-shop flag with WorldGuard (if no other plugin
+# has registered it yet). Usually there should be no need to disable this.
+# Changing this setting has no effect until the next server restart or full
+# server reload!
+register-world-guard-allow-shop-flag: true
+
+# If enabled, players will only be able to place shopkeepers in places that
+# have been designated as commercial areas by Towny.
+enable-towny-restrictions: false
+
+# If enabled, players are only able to place shopkeepers in places where no
+# other plugin denies them to interact with blocks.
+check-spawn-location-interaction-result: false
+
+# In order to guard against unnoticed changes to a player's currently open
+# inventory, the Shopkeepers plugin verifies that the open inventory still
+# matches the expected type of inventory before it handles inventory
+# interactions. This setting disables this verification.
+# It is usually recommended keeping this verification enabled. However, when
+# the Shopkeepers plugin is used on certain types of modded servers (such as
+# variants of Cauldron and its successors), a known issue is that these types
+# of servers sometimes report that the currently open inventory is of a type
+# different to what it actually is. The result of this verification is then
+# that for example the trading inventory is closed when a player tries to
+# trade.
+# Even though modded servers are not officially supported and may break the
+# plugin in various other unexpected ways, disabling the inventory verification
+# via this setting may help resolve this particular known incompatibility.
+disable-inventory-verification: false
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# Shop Creation and Removal
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# The item that is used to create player shops.
+# Use the '/shopkeeper give' command to give yourself this item in-game.
+shop-creation-item:
+  type: VILLAGER_SPAWN_EGG
+  display-name: '{"text":"Shopkeeper","italic":false,"color":"green"}'
+
+# Whether to add a custom NBT tag to newly created shop creation items, e.g.
+# when created via the '/shopkeeper give' command.
+# Tag: 'PublicBukkitValues: {"shopkeepers:shop_creation_item": 1b}'
+# In combination with 'identify-shop-creation-item-by-tag', this provides
+# several benefits, such as being able to change the 'shop-creation-item' in
+# the future without breaking any existing shop creation items in the world
+# (e.g. in chests, player inventories, trades, third-party plugin data, etc.).
+# By default, this and 'identify-shop-creation-item-by-tag' are enabled for new
+# configurations, but disabled for backwards compatibility reasons for servers
+# that migrated from a config-version of 5 or lower.
+add-shop-creation-item-tag: true
+# Whether to identify the shop creation item by the custom NBT tag added via
+# 'add-shop-creation-item-tag'.
+# This is a separate setting in order to help server owners with the migration
+# process: Server owners can enable 'add-shop-creation-item-tag' very early to
+# already add the tag to all newly created shop creation items, but separately
+# enable 'identify-shop-creation-item-by-tag' later, once they expect or
+# verified that the old shop creation item is no longer in use.
+# Unfortunately, the Shopkeepers plugin provides no built-in solution to
+# automatically migrate all occurrences of the old shop creation item in the
+# world or plugin data.
+identify-shop-creation-item-by-tag: true
+
+# Whether to prevent normal usage of the shop creation item. Players with the
+# bypass permission (usually admins) can bypass this.
+prevent-shop-creation-item-regular-usage: true
+# By default, the shop type is selected by right-clicking while holding the
+# shop creation item in hand, and the shop object type is selected by sneaking
+# and right-clicking. If this setting is enabled, these controls are inverted.
+invert-shop-type-and-object-type-selection: false
+# Whether deleting (or destroying) a player shopkeeper returns (drops) the
+# shop creation item.
+deleting-player-shop-returns-creation-item: false
+
+# Whether to allow creating player shops with the /shopkeeper command.
+create-player-shop-with-command: false
+
+# Whether the selected container must have been recently placed by the player
+# who is attempting to create the shopkeeper.
+require-container-recently-placed: true
+# The maximum distance a player shopkeeper can be placed from its backing
+# container. This cannot be set to a value greater than 50.
+max-container-distance: 15
+# The default maximum number of shops a player can have. Set to -1 to disable
+# this limit.
+max-shops-per-player: -1
+# A list of permission nodes that can be used to set the maximum number of
+# shops a specific player or group of players can have. Use the permission node
+# pattern 'shopkeeper.maxshops.<count>' to use this feature. The permission
+# node 'shopkeeper.maxshops.unlimited' indicates no limit. These permission
+# nodes can only be used to increase the default limit, not decrease it.
+max-shops-perm-options: 5,15,25
+
+# Whether to protect player shop containers from being accessed or broken. It
+# is usually recommended keeping this enabled.
+protect-containers: true
+# Whether to prevent item movements from and to protected shop containers (via
+# hoppers, droppers, etc.). If you disable this, you and your players will have
+# to somehow else protect their shop container from unauthorized players who may
+# maliciously insert or extract items. This can be rather tricky even for land
+# protection plugins, because items can also be extracted via hopper minecarts.
+# Your land protection plugin would need to prevent other players from placing
+# or pushing those minecarts into a protected region.
+# Item movement will always be allowed if the container protection is disabled.
+prevent-item-movement: true
+# Whether to delete player shopkeepers when their container is broken.
+delete-shopkeeper-on-break-container: false
+
+# If enabled (set to a value greater than 0), Shopkeepers will check for and
+# remove the shops of inactive players once every plugin start. This setting
+# determines how many days ago a player's last login has to be in order for the
+# player to be considered inactive.
+player-shopkeeper-inactive-days: 0
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# Shop (Object) Types
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# A list of mob types that can be used for shopkeepers. Adding new mob types to
+# the defaults here is unsupported, as some mob types might not properly work
+# and can cause all kinds of issues.
+enabled-living-shops:
+- VILLAGER
+- ALLAY
+- ARMADILLO
+- AXOLOTL
+- BEE
+- BLAZE
+- BOGGED
+- BREEZE
+- CAMEL
+- CAT
+- CAVE_SPIDER
+- CHICKEN
+- COD
+- COW
+- CREEPER
+- DOLPHIN
+- DONKEY
+- DROWNED
+- ENDERMAN
+- EVOKER
+- FOX
+- FROG
+- GHAST
+- GIANT
+- GLOW_SQUID
+- GOAT
+- HOGLIN
+- HORSE
+- HUSK
+- ILLUSIONER
+- IRON_GOLEM
+- LLAMA
+- MAGMA_CUBE
+- MOOSHROOM
+- MULE
+- OCELOT
+- PANDA
+- PARROT
+- PHANTOM
+- PIG
+- PIGLIN
+- PIGLIN_BRUTE
+- PILLAGER
+- POLAR_BEAR
+- PUFFERFISH
+- RABBIT
+- RAVAGER
+- SALMON
+- SHEEP
+- SHULKER
+- SILVERFISH
+- SKELETON
+- SKELETON_HORSE
+- SLIME
+- SNIFFER
+- SNOW_GOLEM
+- SPIDER
+- SQUID
+- STRAY
+- STRIDER
+- TADPOLE
+- TRADER_LLAMA
+- TROPICAL_FISH
+- TURTLE
+- VEX
+- VINDICATOR
+- WANDERING_TRADER
+- WARDEN
+- WITCH
+- WITHER_SKELETON
+- WOLF
+- ZOGLIN
+- ZOMBIE
+- ZOMBIE_HORSE
+- ZOMBIE_VILLAGER
+- ZOMBIFIED_PIGLIN
+
+# Whether shopkeeper mobs shall not be affected by gravity.
+disable-gravity: false
+# The range in chunks around players in which shopkeeper mobs will be affected
+# by gravity. Setting this too high may have a negative impact on performance.
+# And setting it below the server's entity tracking range will result in
+# players being able to see mobs floating in mid-air until they get close
+# enough. A value of 0 will limit the gravity to mobs within chunks that
+# contain a player. This has no effect if gravity is disabled.
+gravity-chunk-range: 4
+
+# The number of Minecraft ticks between behavior updates of shopkeeper mobs.
+# This controls the rate at which we update the gravity and AI of shopkeeper
+# mobs. Values above 1 indicate a reduced tick rate and result in a less
+# smooth, less reactive, and possibly slower behavior in comparison to the
+# behavior of mobs in vanilla Minecraft.
+# In order to compensate for a reduced tick rate some activities may be scaled
+# accordingly. This ensures, for example, that mobs still rotate their head at
+# the same speed towards nearby players, or that mobs still fall at the same
+# speed when being affected by gravity.
+# Consequently, a reduced tick rate is less performance-intensive in total, but
+# may on the other hand be slightly more performance-intensive per individual
+# behavior update.
+# Values above 3 are clearly noticeable and offer little additional benefit.
+mob-behavior-tick-period: 3
+
+# Whether shulker shopkeepers shall peek when a player is nearby.
+shulker-peek-if-player-nearby: true
+# A value between 0.0 and 1.0 that defines how much the shulker opens when it
+# peeks.
+shulker-peek-height: 0.3
+
+# Whether mob shopkeepers make sounds.
+silence-living-shop-entities: true
+
+# Whether to show nameplates of mob shopkeepers.
+show-nameplates: true
+# Whether to always show nameplates. If disabled, nameplates will only be shown
+# when looking directly at the shopkeeper.
+always-show-nameplates: false
+
+# Whether to allow the creation of Citizens NPC shopkeepers. Requires the
+# plugin Citizens.
+enable-citizen-shops: true
+# The entity type of newly created Citizens NPC shopkeepers.
+default-citizen-npc-type: 'PLAYER'
+# Whether to set the Citizens NPC owner of player-owned NPC shopkeepers. If
+# disabled, the Shopkeepers plugin will automatically remove the Citizens NPC
+# owners of player shopkeepers again.
+# By enabling this setting, and configuring the Citizens command permissions
+# for your players accordingly, you can allow shop owners to use the commands
+# of the Citizens plugin to edit the Citizens NPCs of their NPC shopkeepers.
+set-citizen-npc-owner-of-player-shops: false
+# Whether to make shopkeeper Citizens NPCs pushable by fluids (true), unpushable by fluids (false),
+# or not modify their current behavior ("undefined").
+citizen-npc-fluid-pushable: false
+# Whether to cancel interactions with Citizen shopkeeper NPCs.
+# The default behavior is to cancel all interactions with shopkeeper shop objects (mobs, signs,
+# citizen NPCs, etc.) in order to prevent any usual interaction behaviors to take place (e.g.
+# villagers opening their vanilla trading interface instead of the shopkeeper trading interface).
+# However, Citizen NPCs can be configured to trigger certain actions when they are interacted with,
+# such as executing attached commands. By disabling this setting, the usual NPC actions are still
+# triggered in addition to the shopkeeper specific behavior of opening the trading or editor UI.
+# However, be aware that this can result in additional unintentional behaviors to be triggered as
+# well. For example, when interacting with a villager NPC, by default the Citizens plugin prevents
+# the villager's normal trading interface to open, but other vanilla actions such as incrementing
+# the player's 'talked-to-villager' statistic may still take place. So if you disable this setting,
+# you will have to make sure that the resulting interaction behavior is what you intend it to be.
+cancel-citizen-npc-interactions: true
+# Whether to immediately save all Citizens NPCs whenever the Shopkeepers plugin
+# modifies a Citizens NPC. If disabled, the Citizens plugin handles the saving
+# of the Citizens NPCs as usual: They are saved when the Citizens plugin shuts
+# down, periodically as configured in the Citizens config, and when manually
+# triggered via command by a player.
+save-citizen-npcs-instantly: false
+# Whether shopkeeper snapshots shall save and restore Citizens NPC data.
+# Warning: When you disable this setting, the Shopkeepers plugin automatically
+# deletes all NPC data that was previously saved by shopkeeper snapshots.
+snapshots-save-citizen-npc-data: true
+# Whether to automatically delete all invalid Citizen shopkeepers during plugin
+# startup. This includes for example Citizen shopkeepers that are attached to
+# the same Citizen NPC as another shopkeeper, or any shopkeepers for which the
+# corresponding Citizen NPC is missing (this can for example occur if the NPC
+# has been deleted while the Shopkeepers plugin was disabled).
+# In previous versions, this has been the default behavior. However, because it
+# is risky to automatically delete shopkeepers, especially since the detection
+# of invalid shopkeepers can potentially go wrong, this functionality is now
+# offered via this setting and disabled by default. In either case, the plugin
+# will log warnings whenever it detects invalid Citizen shopkeepers.
+# Alternatively, the command '/shopkeepers cleanupCitizenShopkeepers' can also
+# be used to manually delete these invalid shopkeepers when they are detected.
+delete-invalid-citizen-shopkeepers: false
+
+# Whether to allow the creation of sign shops.
+enable-sign-shops: true
+# Whether to allow the creation of sign posts (instead of only wall signs).
+enable-sign-post-shops: true
+# Whether to allow the creation of hanging sign shops.
+enable-hanging-sign-shops: true
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# Naming
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# A regular expression used to validate shopkeeper names. For detailed
+# information on regular expressions the following documentations are helpful:
+# * https://docs.oracle.com/javase/9/docs/api/java/util/regex/Pattern.html
+# * http://www.regular-expressions.info/tutorial.html
+# Here are a few examples:
+# * "[A-Za-z0-9 ]{3,25}": The default. Allows the letters A to Z, in both upper
+# and lower case, and the digits 0 to 9. The name has to consist of at least 3
+# characters and can be maximal 25 characters long.
+# * "[A-Za-z0-9&§# ]{3,25}": Same as the default, but allows using color codes.
+# * "[\\p{L}0-9 ]{3,25}": Same as the default, but allows any letters to be
+# used, regardless of the language. If you encounter errors when the config is
+# loaded, make sure that your config file is encoded as UTF-8.
+# * ".*": Matches everything.
+# * Adding "(?i)" at the front enables case insensitive matching.
+# * "(?=X)": The name has to match "X" (X can be another embedded expression),
+# but the name is not consumed and has to also match the following expressions.
+# * "(?!.*X).*": The name is not allowed to contain anything that matches "X".
+# * "(?i)(?=[a-z0-9 ]{3,25})(?!.*bitch|dick|ass).*": Filters bad words.
+name-regex: "[A-Za-z0-9 ]{3,25}"
+# Whether player shops get named via item. This will hide the naming option
+# from the editor menu.
+naming-of-player-shops-via-item: false
+# Whether shop owners are allowed to rename their Citizens NPC shopkeepers. By
+# default, those shopkeepers will be named after the player who owns the shop.
+allow-renaming-of-player-npc-shops: false
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# Editor Menu
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# Placeholder items to use inside the editors for empty trades, and for empty
+# slots of partially set up trades. The display name and lore of these items
+# (unless they are set to AIR by default) are specified inside the language
+# file.
+# In combination with their display name and lore, these items must not match
+# any items that players are able to set up trades with.
+selling-empty-trade-result-item: GRAY_STAINED_GLASS_PANE
+selling-empty-trade-item1: GRAY_STAINED_GLASS_PANE
+selling-empty-trade-item2: GRAY_STAINED_GLASS_PANE
+selling-empty-item1: BARRIER
+selling-empty-item2: BARRIER
+
+buying-empty-trade-result-item: GRAY_STAINED_GLASS_PANE
+buying-empty-trade-item1: GRAY_STAINED_GLASS_PANE
+buying-empty-trade-item2: AIR
+buying-empty-result-item: BARRIER
+buying-empty-item2: AIR
+
+trading-empty-trade-result-item: GRAY_STAINED_GLASS_PANE
+trading-empty-trade-item1: GRAY_STAINED_GLASS_PANE
+trading-empty-trade-item2: GRAY_STAINED_GLASS_PANE
+trading-empty-result-item: BARRIER
+trading-empty-item1: BARRIER
+trading-empty-item2: BARRIER
+
+book-empty-trade-result-item: GRAY_STAINED_GLASS_PANE
+book-empty-trade-item1: GRAY_STAINED_GLASS_PANE
+book-empty-trade-item2: GRAY_STAINED_GLASS_PANE
+book-empty-item1: BARRIER
+book-empty-item2: BARRIER
+
+# The number of pages that can be filled with trades. The maximum is 10.
+max-trades-pages: 5
+
+# The items used for the buttons and icons in the trades page row.
+# The display name and lore of these items get set via the corresponding
+# messages and can therefore not be defined here.
+previous-page-item: WRITABLE_BOOK
+next-page-item: WRITABLE_BOOK
+current-page-item: WRITABLE_BOOK
+trade-setup-item: PAPER
+
+# The item that players can rename and then use as a substitute for items they
+# don't have yet when they set up their trade offers or mob equipment.
+# Set this to AIR to disable the use of placeholder items.
+placeholder-item: PAPER
+
+# The item used for the set-name button, and the naming item (if enabled).
+name-item: NAME_TAG
+
+# Whether to enable the equipment editor for all mobs and all equipment slots.
+# By default, the equipment can only be edited for mobs and slots that are known, at least for
+# certain items, to visually affect the mob. Enabling this setting can for example be useful for
+# testing purposes, e.g. when new mobs are added to the game, or when existing mobs start to support
+# additional equipment slots.
+# Certain shop objects, such as for example horses (armor) or llamas (carpet), provide dedicated
+# editor buttons to edit certain equipment. This setting also enables the equipment editor for these
+# mobs and slots. Any non-empty equipment specified via the equipment editor overrides the equipment
+# of these dedicated editor buttons.
+enable-all-equipment-editor-slots: false
+
+# Whether to allow shop owners to move their shops.
+enable-moving-of-player-shops: true
+# The item used for the move button.
+move-item: ENDER_PEARL
+
+# Whether the editor menu of player shops contains an option to open the shop's
+# container.
+enable-container-option-on-player-shop: true
+# The item used for the 'open container' editor button.
+container-item: CHEST
+
+# The item used for the trade notifications editor button in player shops.
+trade-notifications-item: BELL
+
+# The item used for the delete button.
+delete-item: BONE
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# Non-Shopkeeper Villagers
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# Whether to prevent trading with non-shopkeeper villagers.
+disable-other-villagers: false
+# Whether to block regular non-shopkeeper villagers from spawning. Villagers
+# spawned by plugins, spawn eggs, mob spawners or by curing zombie villagers
+# are however not affected by this.
+block-villager-spawns: false
+# Whether to prevent curing of zombie villagers.
+disable-zombie-villager-curing: false
+# Whether non-shopkeeper villagers can be hired.
+hire-other-villagers: false
+
+# Whether to prevent trading with non-shopkeeper wandering traders.
+disable-wandering-traders: false
+# Whether to block non-shopkeeper wandering traders and trader llamas from
+# spawning. Wandering traders and trader llamas spawned by plugins, spawn eggs
+# or mob spawners are however not affected by this.
+block-wandering-trader-spawns: false
+# Whether non-shopkeeper wandering traders can be hired.
+hire-wandering-traders: false
+
+# Whether regular villagers can be edited by sneaking and right-clicking.
+edit-regular-villagers: false
+# Whether regular wandering traders can be edited by sneaking and
+# right-clicking.
+edit-regular-wandering-traders: false
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# Hiring
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# The item to use for the hire button in player shopkeepers that are for sale,
+# and for the hire-cost when hiring non-shopkeeper villagers.
+hire-item: EMERALD
+# The amount of hire-cost items it costs to hire a non-shopkeeper villager.
+hire-other-villagers-costs: 1
+# Whether hiring a player shopkeeper also requires the permission to create
+# player shopkeepers of that type.
+hire-require-creation-permission: true
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# Trading
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# Whether to prevent players from trading with their own shopkeepers. Keeping
+# this enabled is recommended.
+prevent-trading-with-own-shop: true
+# With this enabled player shopkeepers don't trade while their owner is online.
+# This might be useful for role-playing servers that want to force players to
+# trade with each other directly while they are online.
+prevent-trading-while-owner-is-online: false
+# In some situations, Minecraft allows the trading of items even if they do not
+# fully match (e.g. villagers accept items with additional metadata). With this
+# setting enabled, the Shopkeepers plugin will always check that the traded
+# items fully match before allowing the trade to take place.
+use-strict-item-comparison: false
+
+# Whether to increment Minecraft's talked-to-villager and traded-with-villager
+# statistics whenever a player opens the trading menu and trades with a
+# shopkeeper.
+increment-villager-statistics: false
+# Whether to mimic Minecraft's normal villager trading sounds whenever a player
+# trades with a villager shopkeeper. This only applies to villager shopkeepers
+# and ignores the 'silence-living-shop-entities' setting.
+simulate-villager-trading-sounds: true
+# Whether to simulate villager ambient sounds for villager shopkeepers. This
+# ignores the 'silence-living-shop-entities' setting.
+simulate-villager-ambient-sounds: false
+# Whether to mimic Minecraft's normal wandering trader trading sounds whenever
+# a player trades with a wandering trader shopkeeper. This only applies to
+# wandering trader shopkeepers and ignores the 'silence-living-shop-entities'
+# setting.
+simulate-wandering-trader-trading-sounds: true
+# Whether to simulate wandering trader ambient sounds for wandering trader
+# shopkeepers. This ignores the 'silence-living-shop-entities' setting.
+simulate-wandering-trader-ambient-sounds: false
+# Whether to play the simulated trading sounds of villager and wandering trader
+# shopkeepers only to the trading player, instead of broadcasting them to all
+# nearby players as it is the case in vanilla Minecraft. This does not affect
+# the simulated ambient sounds.
+simulate-trading-sounds-only-for-the-trading-player: true
+
+# This sound effect is played to players when they trigger a successful trade.
+trade-succeeded-sound:
+  sound: 'minecraft:ui.button.click'
+  pitch: 2.0
+  volume: 0.3
+# This sound effect is played to players when their trade attempt fails for any
+# reason.
+trade-failed-sound:
+  sound: 'minecraft:block.barrel.close'
+  pitch: 2.0
+  volume: 0.5
+
+# The percentage of items (0-100) that are removed from the items that shop
+# owners receive in trades in their shops.
+# Be careful: Depending on the configuration, shop owners may end up not
+# receiving any items!
+tax-rate: 0
+# Whether to round up instead of down when calculating the tax of a player shop
+# transaction.
+tax-round-up: false
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# Trade Notifications
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# Whether to inform players with the required trade notification permission
+# ('shopkeeper.trade-notifications.admin' for admin shop trade notifications
+# and 'shopkeeper.trade-notifications.player' for player shop trade
+# notifications) about trades that take place. If a player would also receive a
+# trade notification because trade notifications for shop owners are enabled,
+# they will only receive the shop owner specific trade notification.
+notify-players-about-trades: false
+# This sound effect is played when a player receives a trade notification. Set
+# this to an empty String to disable the sound effect.
+trade-notification-sound: ""
+
+# Whether to inform shop owners about trades that take place in their shops.
+notify-shop-owners-about-trades: true
+# This sound effect is played when a shop owner receives a trade notification.
+# Set this to an empty String to disable the sound effect.
+shop-owner-trade-notification-sound:
+  sound: 'minecraft:entity.experience_orb.pickup'
+  volume: 0.25
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# Trade Log
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# The storage type to use for the trade log.
+# - 'DISABLED': Disables the logging of trades.
+# - 'SQLITE': Logs all trades to an SQLite database inside the plugin folder.
+# - 'CSV': Logs all trades to daily CSV files inside the plugin folder.
+trade-log-storage: 'DISABLED'
+
+# Players can trigger many equal trades in quick succession. For example, when
+# players trade by shift clicking the result slot, they can trigger up to 64
+# individual trades at once with a single click. And even when not shift
+# clicking, they can quickly trigger a considerable number of trades.
+# In order to represent the logged trades more compactly, we merge successive
+# trades that happen over a certain period of time if they involve the same
+# player, the same shopkeeper, and the same items. This setting specifies the
+# maximum duration in ticks during which successive equal trades are merged.
+# Setting this to a value of 0 disables the merging of trades. Setting this to
+# a value of 1 will only merge trades that are triggered by the same inventory
+# action (e.g. by the same shift click).
+# It is recommended to not set this value to something longer than a few
+# seconds: The longer the chosen duration, the greater the difference between
+# the logged timestamps and shopkeeper states may be to the actual timestamps
+# and shopkeeper states at which the merged trades took place.
+trade-log-merge-duration-ticks: 300
+# The merging of trades is aborted prematurely if the time gap to the previous
+# trade is longer than this duration in ticks. This setting can be used in
+# combination with a larger value for 'trade-log-merge-duration-ticks' to limit
+# the maximum waiting time for a subsequent trade.
+# Setting this to a value of 0, or a value greater than or equal to
+# 'trade-log-merge-duration-ticks' will cause this setting to have no effect.
+# Setting this to something too low for trades to realistically be manually
+# triggered (such as only a few ticks) will make the chosen
+# 'trade-log-merge-duration-ticks' effectively pointless. For performance
+# reasons, the actual duration may dynamically vary by several ticks.
+trade-log-next-merge-timeout-ticks: 100
+
+# Whether to also log the metadata of items. This includes, for example, their
+# display name, lore, enchantments, etc. This data will be logged in Spigot's
+# YAML format. Enabling this setting can, however, noticeably increase the
+# storage space requirements.
+log-item-metadata: false
+
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+# Currencies
+# *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+# The currency item that is used in player shops.
+currency-item: EMERALD
+
+# A second, higher-value currency item that is used in the second trading slot
+# of player shops. Set this to 'AIR' to disable the second currency.
+high-currency-item: EMERALD_BLOCK
+
+# The value of the second currency, based on the first currency.
+high-currency-value: 9
+# The second currency will only be used if an item's cost is greater than this
+# value.
+high-currency-min-cost: 20
+```
