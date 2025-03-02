@@ -99,6 +99,21 @@ export default defineConfig({
   lang: 'zh-Hans',
   title: "Continue Project",
   description: "插件维基译文仓库",
+  head: [
+    [
+      'script',
+      {},
+      `
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?0dc05fd6e64cff9d5680877b4e642a6a";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      `
+    ],
+  ],
   markdown: {
     container: {
       tipLabel: '提示',
