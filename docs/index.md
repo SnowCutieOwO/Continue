@@ -40,6 +40,8 @@ features:
 
 - - -
 
+![img](https://badges.toozhao.com/badges/01JNB2M7H70XT0Q54NCCKSWT9G/green.svg)
+
 此为 [SnowCutieOwO/Continue](https://www.github.com/SnowCutieOwO/Continue) 仓库的配套维基链接。  
 本维基先前使用了[自行魔改的 Docsify](https://www.github.com/SnowCutieOwO/Docsify-Template)，后选用了 VitePress。
 
