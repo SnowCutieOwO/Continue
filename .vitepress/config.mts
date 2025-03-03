@@ -99,6 +99,7 @@ export default defineConfig({
   lang: 'zh-Hans',
   title: "Continue Project",
   description: "插件维基译文仓库",
+  cleanUrls: true,
   head: [
     [
       'script',
