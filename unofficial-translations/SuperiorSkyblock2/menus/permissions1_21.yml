@@ -409,21 +409,21 @@ permissions:
     display-menu: true
     permission-enabled:
       type: CHORUS_FRUIT
-      name: '&6允许使用紫颂果'
+      name: '&6允许吃紫颂果'
       lore:
-        - '&7允许在岛屿上使用紫颂果.'
+        - '&7允许在岛屿上吃紫颂果.'
         - '&7目前 &a启用&7.'
     permission-disabled:
       type: CHORUS_FRUIT
-      name: '&6允许使用紫颂果'
+      name: '&6允许吃紫颂果'
       lore:
-        - '&7允许在岛屿上使用紫颂果.'
+        - '&7允许在岛屿上吃紫颂果.'
         - '&7目前 &c禁用&7.'
     role-permission:
       type: CHORUS_FRUIT
-      name: '&6允许使用紫颂果'
+      name: '&6允许吃紫颂果'
       lore:
-        - '&7允许在岛屿上使用紫颂果.'
+        - '&7允许在岛屿上吃紫颂果.'
         - '&7职位: &e{}&7.'
         - ''
         - '{0}'
@@ -2276,6 +2276,39 @@ permissions:
       name: '&6村民交易'
       lore:
         - '&7允许与岛屿内的村民进行交易.'
+        - '&7职位: &e{}&7.'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  wind_charge:
+    display-menu: true
+    permission-enabled:
+      type: WIND_CHARGE
+      name: '&6使用风弹'
+      lore:
+        - '&7允许在岛屿内使用风蛋.'
+        - '&7目前 &a启用&7.'
+    permission-disabled:
+      type: WIND_CHARGE
+      name: '&6使用风弹'
+      lore:
+        - '&7允许在岛屿内使用风蛋.'
+        - '&7目前 &c禁用&7.'
+    role-permission:
+      type: WIND_CHARGE
+      name: '&6使用风弹'
+      lore:
+        - '&7允许在岛屿内使用风蛋.'
         - '&7职位: &e{}&7.'
         - ''
         - '{0}'

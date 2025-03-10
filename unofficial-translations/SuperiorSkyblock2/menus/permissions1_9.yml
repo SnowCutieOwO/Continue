@@ -1,7 +1,7 @@
 ######################################################
 ##                                                  ##
 ##                SuperiorSkyblock 2                ##
-##                  插件作者 Ome_R                   ##
+##                Developed by Ome_R                ##
 ##                                                  ##
 ######################################################
 
@@ -27,7 +27,8 @@ messages:
 
 items:
   '$':
-    type: CYAN_STAINED_GLASS_PANE
+    type: STAINED_GLASS_PANE
+    data: 3
     name: '&f'
   '%':
     type: PAPER
@@ -61,39 +62,6 @@ permissions:
       name: '&6All'
       lore:
         - '&7允许完全控制岛屿.'
-        - '&7职位: &e{}&7.'
-        - ''
-        - '{0}'
-    has-access:
-      sound:
-        type: ENTITY_EXPERIENCE_ORB_PICKUP
-        volume: 0.2
-        pitch: 0.2
-    no-access:
-      sound:
-        type: BLOCK_ANVIL_PLACE
-        volume: 0.2
-        pitch: 0.2
-
-  animal_breed:
-    display-menu: true
-    permission-enabled:
-      type: WHEAT
-      name: '&6动物繁殖'
-      lore:
-        - '&7能够让岛屿上的动物繁殖.'
-        - '&7当前 &a启用&7.'
-    permission-disabled:
-      name: '&6动物繁殖'
-      type: WHEAT
-      lore:
-        - '&7能够让岛屿上的动物繁殖.'
-        - '&7当前 &c禁用&7.'
-    role-permission:
-      name: '&6动物繁殖'
-      type: WHEAT
-      lore:
-        - '&7能够让岛屿上的动物繁殖.'
         - '&7职位: &e{}&7.'
         - ''
         - '{0}'
@@ -177,19 +145,22 @@ permissions:
   animal_spawn:
     display-menu: true
     permission-enabled:
-      type: CHICKEN_SPAWN_EGG
+      type: MONSTER_EGG
+      data: 93
       name: '&6动物生成'
       lore:
         - '&7允许动物在岛屿内生成.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: CHICKEN_SPAWN_EGG
+      type: MONSTER_EGG
+      data: 93
       name: '&6动物生成'
       lore:
         - '&7允许动物在岛屿内生成.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: CHICKEN_SPAWN_EGG
+      type: MONSTER_EGG
+      data: 93
       name: '&6动物生成'
       lore:
         - '&7允许动物在岛屿内生成.'
@@ -210,19 +181,19 @@ permissions:
   ban_member:
     display-menu: true
     permission-enabled:
-      type: SKELETON_SKULL
+      type: SKULL_ITEM
       name: '&6封禁成员'
       lore:
         - '&7允许封禁岛屿上的成员.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: SKELETON_SKULL
+      type: SKULL_ITEM
       name: '&6封禁成员'
       lore:
         - '&7允许封禁岛屿上的成员.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: SKELETON_SKULL
+      type: SKULL_ITEM
       name: '&6封禁成员'
       lore:
         - '&7允许封禁岛屿上的成员.'
@@ -259,39 +230,6 @@ permissions:
       name: '&6破坏'
       lore:
         - '&7允许破坏岛屿上的方块.'
-        - '&7职位: &e{}&7.'
-        - ''
-        - '{0}'
-    has-access:
-      sound:
-        type: ENTITY_EXPERIENCE_ORB_PICKUP
-        volume: 0.2
-        pitch: 0.2
-    no-access:
-      sound:
-        type: BLOCK_ANVIL_PLACE
-        volume: 0.2
-        pitch: 0.2
-
-  brush:
-    display-menu: true
-    permission-enabled:
-      type: BRUSH
-      name: '&6允许使用刷子'
-      lore:
-        - '&7允许在岛屿用刷子刷可疑的方块.'
-        - '&7当前 &a启用&7.'
-    permission-disabled:
-      type: BRUSH
-      name: '&6允许使用刷子'
-      lore:
-        - '&7允许在岛屿用刷子刷可疑的方块.'
-        - '&7当前 &c禁用&7.'
-    role-permission:
-      type: BRUSH
-      name: '&6允许使用刷子'
-      lore:
-        - '&7允许用刷子刷可疑的方块.'
         - '&7职位: &e{}&7.'
         - ''
         - '{0}'
@@ -672,19 +610,22 @@ permissions:
   discord_show:
     display-menu: true
     permission-enabled:
-      type: LIGHT_BLUE_TERRACOTTA
+      type: STAINED_CLAY
+      data: 3
       name: '&6显示 Discord 联系方式'
       lore:
         - '&7允许查看岛屿的 Discord 邀请链接.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: LIGHT_BLUE_TERRACOTTA
+      type: STAINED_CLAY
+      data: 3
       name: '&6显示 Discord 联系方式'
       lore:
         - '&7允许查看岛屿的 Discord 邀请链接.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: LIGHT_BLUE_TERRACOTTA
+      type: STAINED_CLAY
+      data: 3
       name: '&6显示 Discord 联系方式'
       lore:
         - '&7允许查看岛屿的 Discord 邀请链接.'
@@ -837,19 +778,19 @@ permissions:
   farm_tramping:
     display-menu: true
     permission-enabled:
-      type: FARMLAND
+      type: SOIL
       name: '&6踩踏耕地'
       lore:
-        - '&7允许踩踏岛屿内的耕地.'
+        - '&7允许踩踏岛屿内的更低.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: FARMLAND
+      type: SOIL
       name: '&6踩踏耕地'
       lore:
         - '&7允许踩踏岛屿内的耕地.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: FARMLAND
+      type: SOIL
       name: '&6踩踏耕地'
       lore:
         - '&7允许踩踏岛屿内的耕地.'
@@ -870,19 +811,22 @@ permissions:
   fertilize:
     display-menu: true
     permission-enabled:
-      type: BONE_MEAL
+      type: INK_SACK
+      data: 15
       name: '&6施肥'
       lore:
         - '&7允许在岛屿内使用骨粉.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: BONE_MEAL
+      type: INK_SACK
+      data: 15
       name: '&6施肥'
       lore:
         - '&7允许在岛屿内使用骨粉.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: BONE_MEAL
+      type: INK_SACK
+      data: 15
       name: '&6施肥'
       lore:
         - '&7允许在岛屿内使用骨粉.'
@@ -969,19 +913,22 @@ permissions:
   horse_interact:
     display-menu: true
     permission-enabled:
-      type: HORSE_SPAWN_EGG
+      type: MONSTER_EGG
+      entity: HORSE
       name: '&6与马互动'
       lore:
         - '&7允许与岛屿内的马进行互动.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: HORSE_SPAWN_EGG
+      type: MONSTER_EGG
+      entity: HORSE
       name: '&6与马互动'
       lore:
         - '&7允许与岛屿内的马进行互动.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: HORSE_SPAWN_EGG
+      type: MONSTER_EGG
+      entity: HORSE
       name: '&6与马互动'
       lore:
         - '&7允许与岛屿内的马进行互动.'
@@ -1002,19 +949,22 @@ permissions:
   ignite_creeper:
     display-menu: true
     permission-enabled:
-      type: CREEPER_SPAWN_EGG
+      type: MONSTER_EGG
+      entity: CREEPER
       name: '&6点燃苦力怕'
       lore:
         - '&7允许使用打火石点燃岛屿内的苦力怕.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: CREEPER_SPAWN_EGG
+      type: MONSTER_EGG
+      entity: CREEPER
       name: '&6点燃苦力怕'
       lore:
         - '&7允许使用打火石点燃岛屿内的苦力怕.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: CREEPER_SPAWN_EGG
+      type: MONSTER_EGG
+      entity: CREEPER
       name: '&6点燃苦力怕'
       lore:
         - '&7允许使用打火石点燃岛屿内的苦力怕.'
@@ -1035,19 +985,19 @@ permissions:
   interact:
     display-menu: true
     permission-enabled:
-      type: PISTON
+      type: PISTON_BASE
       name: '&6交互'
       lore:
         - '&7允许与岛屿内的方块交互.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: PISTON
+      type: PISTON_BASE
       name: '&6交互'
       lore:
         - '&7允许与岛屿内的方块交互.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: PISTON
+      type: PISTON_BASE
       name: '&6交互'
       lore:
         - '&7允许与岛屿内的方块交互.'
@@ -1068,20 +1018,22 @@ permissions:
   invite_member:
     display-menu: true
     permission-enabled:
-      type: PLAYER_HEAD
+      type: SKULL_ITEM
       data: 3
       name: '&6邀请玩家'
       lore:
         - '&7允许将玩家邀请至岛屿.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: PLAYER_HEAD
+      type: SKULL_ITEM
+      data: 3
       name: '&6邀请玩家'
       lore:
         - '&7允许将玩家邀请至岛屿.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: PLAYER_HEAD
+      type: SKULL_ITEM
+      data: 3
       name: '&6邀请玩家'
       lore:
         - '&7允许将玩家邀请至岛屿.'
@@ -1168,19 +1120,19 @@ permissions:
   kick_member:
     display-menu: true
     permission-enabled:
-      type: SKELETON_SKULL
+      type: SKULL_ITEM
       name: '&6踢出玩家'
       lore:
         - '&7踢出岛屿内的成员.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: SKELETON_SKULL
+      type: SKULL_ITEM
       name: '&6踢出玩家'
       lore:
         - '&7踢出岛屿内的成员.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: SKELETON_SKULL
+      type: SKULL_ITEM
       name: '&6踢出玩家'
       lore:
         - '&7踢出岛屿内的成员.'
@@ -1201,19 +1153,19 @@ permissions:
   leash:
     display-menu: true
     permission-enabled:
-      type: LEAD
+      type: LEASH
       name: '&6使用拴绳'
       lore:
         - '&7允许使用拴绳拴住岛屿上的动物.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: LEAD
+      type: LEASH
       name: '&6使用拴绳'
       lore:
         - '&7允许使用拴绳拴住岛屿上的动物.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: LEAD
+      type: LEASH
       name: '&6使用拴绳'
       lore:
         - '&7允许使用拴绳拴住岛屿上的动物.'
@@ -1234,19 +1186,22 @@ permissions:
   monster_damage:
     display-menu: true
     permission-enabled:
-      type: ZOMBIE_HEAD
+      type: SKULL_ITEM
+      data: 2
       name: '&6攻击怪物'
       lore:
         - '&7允许攻击岛屿内的怪物.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: ZOMBIE_HEAD
+      type: SKULL_ITEM
+      data: 2
       name: '&6攻击怪物'
       lore:
         - '&7允许攻击岛屿内的怪物.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: ZOMBIE_HEAD
+      type: SKULL_ITEM
+      data: 2
       name: '&6攻击怪物'
       lore:
         - '&7允许攻击岛屿内的怪物.'
@@ -1267,19 +1222,19 @@ permissions:
   minecart_damage:
     display-menu: true
     permission-enabled:
-      type: TNT_MINECART
+      type: EXPLOSIVE_MINECART
       name: '&6破坏矿车'
       lore:
         - '&7允许破坏岛屿内的矿车.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: TNT_MINECART
+      type: EXPLOSIVE_MINECART
       name: '&6破坏矿车'
       lore:
         - '&7允许破坏岛屿内的矿车.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: TNT_MINECART
+      type: EXPLOSIVE_MINECART
       name: '&6破坏矿车'
       lore:
         - '&7允许破坏岛屿内的矿车.'
@@ -1333,55 +1288,22 @@ permissions:
   minecart_open:
     display-menu: true
     permission-enabled:
-      type: CHEST_MINECART
+      type: STORAGE_MINECART
       name: '&6矿车交互'
       lore:
         - '&7允许打开岛屿内的矿车.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: CHEST_MINECART
+      type: STORAGE_MINECART
       name: '&6矿车交互'
       lore:
         - '&7允许打开岛屿内的矿车.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: CHEST_MINECART
+      type: STORAGE_MINECART
       name: '&6矿车交互'
       lore:
         - '&7允许打开岛屿内的矿车.'
-        - '&7职位: &e{}&7.'
-        - ''
-        - '{0}'
-    has-access:
-      sound:
-        type: ENTITY_EXPERIENCE_ORB_PICKUP
-        volume: 0.2
-        pitch: 0.2
-    no-access:
-      sound:
-        type: BLOCK_ANVIL_PLACE
-        volume: 0.2
-        pitch: 0.2
-
-  minecart_place:
-    display-menu: true
-    permission-enabled:
-      type: MINECART
-      name: '&6矿车放置'
-      lore:
-        - '&7允许在岛屿内放置矿车.'
-        - '&7当前 &a启用&7.'
-    permission-disabled:
-      type: MINECART
-      name: '&6矿车放置'
-      lore:
-        - '&7允许在岛屿内放置矿车.'
-        - '&7当前 &c禁用&7.'
-    role-permission:
-      type: MINECART
-      name: '&6矿车放置'
-      lore:
-        - '&7允许在岛屿内放置矿车.'
         - '&7职位: &e{}&7.'
         - ''
         - '{0}'
@@ -1399,19 +1321,22 @@ permissions:
   monster_spawn:
     display-menu: true
     permission-enabled:
-      type: CAVE_SPIDER_SPAWN_EGG
+      type: MONSTER_EGG
+      data: 59
       name: '&6怪物生成'
       lore:
         - '&7允许岛屿内的怪物生成.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: CAVE_SPIDER_SPAWN_EGG
+      type: MONSTER_EGG
+      data: 59
       name: '&6怪物生成'
       lore:
         - '&7允许岛屿内的怪物生成.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: CAVE_SPIDER_SPAWN_EGG
+      type: MONSTER_EGG
+      data: 59
       name: '&6怪物生成'
       lore:
         - '&7允许岛屿内的怪物生成.'
@@ -1465,19 +1390,19 @@ permissions:
   open_island:
     display-menu: true
     permission-enabled:
-      type: REDSTONE_TORCH
+      type: REDSTONE_TORCH_ON
       name: '&6开放岛屿'
       lore:
         - '&7允许将岛屿设置为对外开放.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: REDSTONE_TORCH
+      type: REDSTONE_TORCH_ON
       name: '&6开放岛屿'
       lore:
         - '&7允许将岛屿设置为对外开放.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: REDSTONE_TORCH
+      type: REDSTONE_TORCH_ON
       name: '&6开放岛屿'
       lore:
         - '&7允许将岛屿设置为对外开放.'
@@ -1531,55 +1456,25 @@ permissions:
   paypal_show:
     display-menu: true
     permission-enabled:
-      type: BLUE_WOOL
+      type: WOOL
+      data: 11
       name: '&6Paypal 显示'
       lore:
         - '&7允许显示岛屿的 Paypal 链接.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: BLUE_WOOL
+      type: WOOL
+      data: 11
       name: '&6Paypal 显示'
       lore:
         - '&7允许显示岛屿的 Paypal 链接.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: BLUE_WOOL
+      type: WOOL
+      data: 11
       name: '&6Paypal 显示'
       lore:
         - '&7允许显示岛屿的 Paypal 链接.'
-        - '&7职位: &e{}&7.'
-        - ''
-        - '{0}'
-    has-access:
-      sound:
-        type: ENTITY_EXPERIENCE_ORB_PICKUP
-        volume: 0.2
-        pitch: 0.2
-    no-access:
-      sound:
-        type: BLOCK_ANVIL_PLACE
-        volume: 0.2
-        pitch: 0.2
-
-  pickup_axolotl:
-    display-menu: true
-    permission-enabled:
-      type: AXOLOTL_SPAWN_EGG
-      name: '&6装美西螈'
-      lore:
-        - '&7允许在岛屿上使用桶装起美西螈.'
-        - '&7当前 &a启用&7.'
-    permission-disabled:
-      type: AXOLOTL_SPAWN_EGG
-      name: '&6装美西螈'
-      lore:
-        - '&7允许在岛屿上使用桶装起美西螈.'
-        - '&7当前 &c禁用&7.'
-    role-permission:
-      type: AXOLOTL_SPAWN_EGG
-      name: '&6装美西螈'
-      lore:
-        - '&7允许在岛屿上使用桶装起美西螈.'
         - '&7职位: &e{}&7.'
         - ''
         - '{0}'
@@ -1613,72 +1508,6 @@ permissions:
       name: '&6拾取掉落物'
       lore:
         - '&7允许捡起岛屿中的掉落物.'
-        - '&7职位: &e{}&7.'
-        - ''
-        - '{0}'
-    has-access:
-      sound:
-        type: ENTITY_EXPERIENCE_ORB_PICKUP
-        volume: 0.2
-        pitch: 0.2
-    no-access:
-      sound:
-        type: BLOCK_ANVIL_PLACE
-        volume: 0.2
-        pitch: 0.2
-
-  pickup_fish:
-    display-menu: true
-    permission-enabled:
-      type: COD
-      name: '&6捡鱼'
-      lore:
-        - '&7允许用桶装起岛屿上的鱼.'
-        - '&7当前 &a启用&7.'
-    permission-disabled:
-      type: COD
-      name: '&6捡鱼'
-      lore:
-        - '&7允许用桶装起岛屿上的鱼.'
-        - '&7当前 &c禁用&7.'
-    role-permission:
-      type: COD
-      name: '&6捡鱼'
-      lore:
-        - '&7允许用桶装起岛屿上的鱼.'
-        - '&7职位: &e{}&7.'
-        - ''
-        - '{0}'
-    has-access:
-      sound:
-        type: ENTITY_EXPERIENCE_ORB_PICKUP
-        volume: 0.2
-        pitch: 0.2
-    no-access:
-      sound:
-        type: BLOCK_ANVIL_PLACE
-        volume: 0.2
-        pitch: 0.2
-
-  pickup_lectern_book:
-    display-menu: true
-    permission-enabled:
-      type: LECTERN
-      name: '&6取出书本'
-      lore:
-        - '&7允许取出岛屿上讲台的书本.'
-        - '&7当前 &a启用&7.'
-    permission-disabled:
-      type: LECTERN
-      name: '&6取出书本'
-      lore:
-        - '&7允许取出岛屿上讲台的书本.'
-        - '&7当前 &c禁用&7.'
-    role-permission:
-      type: LECTERN
-      name: '&6取出书本'
-      lore:
-        - '&7允许取出岛屿上讲台的书本.'
         - '&7职位: &e{}&7.'
         - ''
         - '{0}'
@@ -1795,7 +1624,7 @@ permissions:
   set_biome:
     display-menu: true
     permission-enabled:
-      type: GRASS_BLOCK
+      type: GRASS
       name: '&6设置生物群系'
       lore:
         - '&7允许更换岛屿的生物群系.'
@@ -1828,19 +1657,22 @@ permissions:
   set_discord:
     display-menu: true
     permission-enabled:
-      type: LIGHT_BLUE_TERRACOTTA
+      type: STAINED_CLAY
+      data: 3
       name: '&6设置 Discord'
       lore:
         - '&7允许修改岛屿的 Discord 联系方式.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: LIGHT_BLUE_TERRACOTTA
+      type: STAINED_CLAY
+      data: 3
       name: '&6设置 Discord'
       lore:
         - '&7允许修改岛屿的 Discord 联系方式.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: LIGHT_BLUE_TERRACOTTA
+      type: STAINED_CLAY
+      data: 3
       name: '&6设置 Discord'
       lore:
         - '&7允许修改岛屿的 Discord 联系方式.'
@@ -1861,19 +1693,19 @@ permissions:
   set_home:
     display-menu: true
     permission-enabled:
-      type: RED_BED
+      type: BED
       name: '&6设置家传送点'
       lore:
         - '&7允许设置岛屿的家传送点.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: RED_BED
+      type: BED
       name: '&6设置家传送点'
       lore:
         - '&7允许设置岛屿的家传送点.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: RED_BED
+      type: BED
       name: '&6设置家传送点'
       lore:
         - '&7允许设置岛屿的家传送点.'
@@ -1894,19 +1726,22 @@ permissions:
   set_paypal:
     display-menu: true
     permission-enabled:
-      type: BLUE_WOOL
+      type: WOOL
+      data: 11
       name: '&6设置 Paypal 链接'
       lore:
         - '&7允许设置岛屿的 Paypal 链接.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: BLUE_WOOL
+      type: WOOL
+      data: 11
       name: '&6设置 Paypal 链接'
       lore:
         - '&7允许设置岛屿的 Paypal 链接.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: BLUE_WOOL
+      type: WOOL
+      data: 11
       name: '&6设置 Paypal 链接'
       lore:
         - '&7允许设置岛屿的 Paypal 链接.'
@@ -1927,19 +1762,19 @@ permissions:
   set_permission:
     display-menu: true
     permission-enabled:
-      type: REPEATER
+      type: DIODE
       name: '&6分配权限'
       lore:
         - '&7允许为岛屿成员设置各自的权限.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: REPEATER
+      type: DIODE
       name: '&6分配权限'
       lore:
         - '&7允许为岛屿成员设置各自的权限.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: REPEATER
+      type: DIODE
       name: '&6分配权限'
       lore:
         - '&7允许为岛屿成员设置各自的权限.'
@@ -2026,19 +1861,19 @@ permissions:
   set_warp:
     display-menu: true
     permission-enabled:
-      type: ENDER_EYE
+      type: EYE_OF_ENDER
       name: '&6设置传送点'
       lore:
         - '&7允许设置岛屿传送点.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: ENDER_EYE
+      type: EYE_OF_ENDER
       name: '&6设置传送点'
       lore:
         - '&7允许设置岛屿传送点.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: ENDER_EYE
+      type: EYE_OF_ENDER
       name: '&6设置传送点'
       lore:
         - '&7允许设置岛屿传送点.'
@@ -2092,19 +1927,19 @@ permissions:
   sign_interact:
     display-menu: true
     permission-enabled:
-      type: OAK_SIGN
+      type: SIGN
       name: '&6告示牌交互'
       lore:
         - '&7允许与岛屿上的告示牌交互.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: OAK_SIGN
+      type: SIGN
       name: '&6告示牌交互'
       lore:
         - '&7允许与岛屿上的告示牌交互.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: OAK_SIGN
+      type: SIGN
       name: '&6告示牌交互'
       lore:
         - '&7允许与岛屿上的告示牌交互.'
@@ -2125,55 +1960,22 @@ permissions:
   spawner_break:
     display-menu: true
     permission-enabled:
-      type: SPAWNER
+      type: MOB_SPAWNER
       name: '&6破坏刷怪笼'
       lore:
         - '&7允许挖掘岛屿上的刷怪笼.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: SPAWNER
+      type: MOB_SPAWNER
       name: '&6破坏刷怪笼'
       lore:
         - '&7允许挖掘岛屿上的刷怪笼.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: SPAWNER
+      type: MOB_SPAWNER
       name: '&6破坏刷怪笼'
       lore:
         - '&7允许挖掘岛屿上的刷怪笼.'
-        - '&7职位: &e{}&7.'
-        - ''
-        - '{0}'
-    has-access:
-      sound:
-        type: ENTITY_EXPERIENCE_ORB_PICKUP
-        volume: 0.2
-        pitch: 0.2
-    no-access:
-      sound:
-        type: BLOCK_ANVIL_PLACE
-        volume: 0.2
-        pitch: 0.2
-
-  turtle_egg_tramping:
-    display-menu: true
-    permission-enabled:
-      type: TURTLE_EGG
-      name: '&6海龟蛋破坏'
-      lore:
-        - '&7允许踩踏岛屿内的海龟蛋.'
-        - '&7当前 &a启用&7.'
-    permission-disabled:
-      type: TURTLE_EGG
-      name: '&6海龟蛋破坏'
-      lore:
-        - '&7允许踩踏岛屿内的海龟蛋.'
-        - '&7当前 &c禁用&7.'
-    role-permission:
-      type: TURTLE_EGG
-      name: '&6海龟蛋破坏'
-      lore:
-        - '&7允许踩踏岛屿内的海龟蛋.'
         - '&7职位: &e{}&7.'
         - ''
         - '{0}'
@@ -2257,21 +2059,24 @@ permissions:
   villager_trading:
     display-menu: true
     permission-enabled:
-      type: PLAYER_HEAD
+      type: SKULL_ITEM
+      data: 3
       skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDFiODMwZWI0MDgyYWNlYzgzNmJjODM1ZTQwYTExMjgyYmI1MTE5MzMxNWY5MTE4NDMzN2U4ZDM1NTU1ODMifX19'
       name: '&6村民交易'
       lore:
         - '&7允许与岛屿内的村民进行交易.'
         - '&7当前 &a启用&7.'
     permission-disabled:
-      type: PLAYER_HEAD
+      type: SKULL_ITEM
+      data: 3
       skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDFiODMwZWI0MDgyYWNlYzgzNmJjODM1ZTQwYTExMjgyYmI1MTE5MzMxNWY5MTE4NDMzN2U4ZDM1NTU1ODMifX19'
       name: '&6村民交易'
       lore:
         - '&7允许与岛屿内的村民进行交易.'
         - '&7当前 &c禁用&7.'
     role-permission:
-      type: PLAYER_HEAD
+      type: SKULL_ITEM
+      data: 3
       skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDFiODMwZWI0MDgyYWNlYzgzNmJjODM1ZTQwYTExMjgyYmI1MTE5MzMxNWY5MTE4NDMzN2U4ZDM1NTU1ODMifX19'
       name: '&6村民交易'
       lore:
