@@ -23,7 +23,7 @@ rewards:
     - 'eco give %player% 1000'
     - 'is admin rankup %player% generator-rates'
     - 'is admin msg %player% &e&lMiner | &7成功完成了任务 矿工 I!'
-    - 'is admin msg %player% &e&lMiner | &7N你现在已经熟悉刷石机了, 试着挖些铁矿吧.'
+    - 'is admin msg %player% &e&lMiner | &7你现在已经熟悉刷石机了, 试着挖些铁矿吧.'
     - 'is admin msg %player% &e&lMiner | &7&o关于更多的任务信息, 请输入命令 /is missions 查看'
 
 # 完成任务所需要挖掘的方块种类及其数量.
