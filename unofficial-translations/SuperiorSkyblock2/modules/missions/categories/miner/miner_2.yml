@@ -24,7 +24,7 @@ rewards:
     - 'is admin rankup %player% generator-rates'
     - 'is admin msg %player% &e&l矿工 | &7成功完成了任务 矿工 II!'
     - 'is admin msg %player% &e&l矿工 | &7我喜欢铁, 给我再挖点来可以吗?'
-    - 'is admin msg %player% &e&l矿工 | &7&o关于更多的任务信息, 请输入命令 /is missions 查看'
+    - 'is admin msg %player% &e&l矿工 | &7&o有关任务的更多信息, 请输入命令 /is missions 查看'
 
 # 完成任务所需要的前置任务.
 required-missions:

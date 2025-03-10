@@ -23,7 +23,7 @@ rewards:
     - 'eco give %player% 25000'
     - 'is admin msg %player% &e&l矿工 | &7成功完成任务 矿工 III!'
     - 'is admin msg %player% &e&l矿工 | &7让我们更进一步吧!'
-    - 'is admin msg %player% &e&l矿工 | &7&o关于更多的任务信息, 请输入命令 /is missions 查看'
+    - 'is admin msg %player% &e&l矿工 | &7&o有关任务的更多信息, 请输入命令 /is missions 查看'
 
 # 完成任务所需要的前置任务.
 required-missions:
