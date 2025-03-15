@@ -19,6 +19,7 @@
 
 **维基：**
 
+* [FastAsyncWorldEdit](https://intellectualsites.gitbook.io/fastasyncworldedit) (Rework)
 * [AuraSkills](https://wiki.aurelium.dev/auraskills) (Rework)
 
 * [*HelpChat (Plugin Wiki)*](https://wiki.helpch.at/) (Rework)
