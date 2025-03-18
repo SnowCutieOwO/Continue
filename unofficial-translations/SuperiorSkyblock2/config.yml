@@ -56,7 +56,7 @@ default-values:
 
   # 设置岛屿的默认实体限制.
   # 可通过管理员命令 /is admin setentitylimit 修改.
-  # You can find a list of entities here: https://bg-software.com/entities/
+  # 你可以在这里找到完整实体列表: https://bg-software.com/entities/
   entity-limits:
     MINECART: 4
 
