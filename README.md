@@ -20,15 +20,16 @@
 **维基：**
 
 * [FastAsyncWorldEdit](https://intellectualsites.gitbook.io/fastasyncworldedit) (Rework)
-* [AuraSkills](https://wiki.aurelium.dev/auraskills) (Rework)
+* [MythicLib](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/home)
+* [Slate](https://wiki.aurelium.dev/slate)
 
 * [*HelpChat (Plugin Wiki)*](https://wiki.helpch.at/) (Rework)
 * [*RedShop*](https://foresttech.gitbook.io/redshop) (Rework)
 
 ### 已翻译的维基
 
-![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-21-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-363200-84f5bb)
-（最后更新：2025/3/12）
+![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-21-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-400982-84f5bb)
+（最后更新：2025/4/10）
 
 28726
 
@@ -36,6 +37,7 @@
 > 本维基一开始使用 MDWiki 和[自行魔改的 Docsify](https://github.com/SnowCutieOwO/Docsify-Template)，后选择了 VitePress。
 
 - [ajLeaderboards](https://snowcutieowo.github.io/ajLeaderboards)
+- [AuraSkills](https://snowcutieowo.github.io/AuraSkills)
 - [AureliumSkills](https://snowcutieowo.github.io/AureliumSkills)
 - [Codex](https://snowcutieowo.github.io/Codex)
 - [CommandTimer](https://snowcutieowo.github.io/CommandTimer)
