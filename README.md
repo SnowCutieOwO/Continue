@@ -19,7 +19,6 @@
 
 **维基：**
 
-* [FastAsyncWorldEdit](https://intellectualsites.gitbook.io/fastasyncworldedit) (Rework)
 * [MythicLib](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/home)
 * [Slate](https://wiki.aurelium.dev/slate)
 
@@ -28,8 +27,8 @@
 
 ### 已翻译的维基
 
-![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-21-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-400982-84f5bb)
-（最后更新：2025/4/10）
+![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-24-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-412904-84f5bb)
+（最后更新：2025/4/30）
 
 28726
 
@@ -46,6 +45,7 @@
 - [ExcellentCrates](https://snowcutieowo.github.io/ExcellentCrates)
 - [ExcellentEnchants](https:snowcutieowo.github.io/ExcellentEnchants)
 - [Fallback Server](https://snowcutieowo.github.io/FallbackServer)
+- [FastAsyncWorldEdit](https://snowcutieowo.gitub.io/FastAsyncWorldEdit)
 - [HuskHomes](https://snowcutieowo.github.io/HuskHomes)
 - [HuskSync](https://snowcutieowo.github.io/HuskSync)
 - [LibreLogin](https://snowcutieowo.github.io/LibreLogin)
@@ -57,7 +57,7 @@
 - [Shopkeepers](https://snowcutieowo.github.io/Shopkeepers)
 - [Spark](https://snowcutieowo.github.io/spark)
 - [SuperiorSkyBlock2](https://snowcutieowo.github.io/SuperiorSkyblock2)
-- [UltimateShop 简体中文维基重汉化](https://snowcutieowo.github.io/UltimateShop)
+- [UltimateShop](https://snowcutieowo.github.io/UltimateShop)（简体中文维基重汉化）
   * 完整版维基原本由我翻译，经过交涉后同意迁回此处继续维护。
 - [WorldEdit](https://snowcutieowo.github.io/WorldEdit)
 - [WorldGuard](https://snowcutieowo.github.io/WorldGuard)
