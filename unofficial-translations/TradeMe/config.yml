@@ -1,0 +1,263 @@
+# 拥有 trademe.versioncheck 权限的玩家会在上线时收到更新消息，该项可负责开关此功能
+ShowNewVersion: true
+DataBase:
+  # 使用 MySQL 或 SQLite
+  # 可填参数：mysql 或 sqlite
+  DataBaseType: sqlite
+  # 如果选择 SQLite 则可能出现不稳定的情况
+  # 通常填入 localhost 或 127.0.0.1
+  mysqlHost: localhost
+  # 默认端口号为 3306
+  mysqlPort: 3306
+  # 数据库表名
+  mysqlDatabase: trademe
+  # 数据库用户名，通常为 root
+  mysqlUsername: root
+  # 你的 MySQL 数据库密码, 请尽可能复杂
+  mysqlPassword: realystrongone
+# 使用的语言文件
+Language: EN
+#  
+# 该设置可允许全局禁用指定模式的交易
+# 你也可以通过诸如 trademe.moneytrade 或 trademe.exptrade 等的权限控制玩家可使用的交易类型
+TradeModes:
+  ItemTrade: true
+  ExpTrade: true
+  ResidenceTrade: true
+  GriefPreventionTrade: true
+  PlayerPointsTrade: true
+  TokenManagerTrade: true
+  MyPetTrade: true
+  KingdomsTrade: true
+  McMMOTrade: true
+  BeastTokensTrade: true
+  MoneyTrade: true
+  JobsTrade: true
+  JobsPointsTrade: true
+  MMOCoreSkillPointsTrade: true
+  MMOCoreAttributesTrade: true
+#  
+# 显示的交易类型顺序排列
+# 不包含在列表中的模式将会显示在末尾
+# 有效选项：Exp, Residence, GriefPrevention, PlayerPoints, TokenManager, MyPet, Kingdoms, McMMO, BeastTokens, Money, Jobs, JobsPoints, MMOCoreSkillPoints, MMOCoreAttributes
+TradeOrder:
+- Exp
+- Residence
+- GriefPrevention
+- PlayerPoints
+- TokenManager
+- MyPet
+- Kingdoms
+- McMMO
+- BeastTokens
+- Money
+- Jobs
+- JobsPoints
+- MMOCoreSkillPoints
+- MMOCoreAttributes
+#  
+# 接受交易的有效时间，单位为秒
+AcceptDelay: 15
+#  
+# 是否显示同意/拒绝交易的消息提示
+# 该选项只会隐藏按钮，交易状态的消息仍然会显示
+# 若你需要完全禁用消息，则请将该选项禁用的同时还需将语言文件的 gotOffer 设置为空字符串 ''
+ConfirmMessage: true
+#  
+# 计时器结束的时间，单位为秒
+Confirm: 3
+#  
+# 玩家战斗结束后几秒才可以开始发起交易
+NonCombat: 10
+#  
+# 若你需要检测可能的物品复制或执行物品是否在交易前后数量相同的检查，请启用该选项
+# 拥有 trademe.exploitwarning 权限的玩家将会在检测到潜在复制情况时被提醒
+Exploiting:
+  Check: true
+  # 交易日志的最长保存时间，单位为时
+  # 需要注意的是，日志清理只在插件初始化时执行。
+  KeepFor: 720
+  TradeCencelations:
+    #  
+    # 在交易过程中，如果玩家移动则取消交易
+    OnMove: true
+    # 在交易过程中，如果玩家受伤则取消交易
+    OnDamaged: true
+GriefPrevention:
+  #  
+  # 决定玩家交易后需要保留的最少方块数量
+  MinLeftBlocks: 100
+#  
+# 设置为 true 时，玩家可以蹲下右键其他玩家发起交易
+ShiftRightClick: false
+#  
+# 锁定快捷栏并防止玩家交易其内物品
+LockQuickBar: false
+#  
+# 防止跨游戏模式交换
+NoTradeBetweenGameModes: true
+#  
+# 允许同 IP 地址下的玩家进行交易
+SameIpTrades: false
+#  
+# 若设置为 true，每组玩家进行的每种交易模式都会被检查是否包含指定权限
+# 例如，玩家需要拥有 trademe.moneytrade.[组别] 才可以与指定组别进行交易
+# 在本示例中，假设玩家甲处于 Newbie 组，而玩家乙处于 Advanced 组
+# 则玩家甲需要拥有 trademe.moneytrade.advanced 权限，而玩家乙需要拥有 trademe.moneytrade.newbie 权限才可互相使用金钱交易。
+# 部分可能用到的权限节点：trademe.moneytrade.[组别], trademe.exptrade.[组别], trademe.mcmmotrade.[组别], trademe.jobstrade.[组别], trademe.residencetrade.[组别]
+TradeGroups: false
+#  
+# 该设置为 true 时忽略距离限制
+BetweenWorlds: true
+#  
+# 交易时使用的声音及其音调
+# 请按格式输入音效名称及可选的音量与音高，格式为：'音效名称:音量:音高'，示例：'BLOCK_SAND_STEP:0.25:2'
+Sounds:
+  clickUp: BLOCK.NETHER_WOOD_BUTTON.CLICK_ON:0.3:0.5
+  clickDown: BLOCK.LEVER.CLICK:0.3:0.1
+  switchMode: ENTITY.PLAYER.BURP:0.3:3.0
+  switchSameMode: ENTITY.CHICKEN.EGG:0.3:1.0
+  fullInventory: ENTITY.SHULKER.HURT:0.3:1.0
+  selectMode: ENTITY.CHICKEN.EGG:0.3:3.0
+  confirmTrade: BLOCK.NOTE_BLOCK.GUITAR:0.3:2.0
+  confirmBothTrade: ENTITY.PLAYER.LEVELUP:0.5:1.0
+  cancelTrade: BLOCK.LODESTONE.FALL:0.3:2.0
+  counter: ENTITY.ITEM.PICKUP:0.3:1.0
+  finishedTrade: ITEM.TRIDENT.THUNDER:0.2:1.0
+#  
+# 如果安装了诸如 Multiverse 等世界管理插件，这里可设置分离交易的世界组
+WorldGroups:
+  Group1:
+  - World
+  - World_nether
+  - World_the_end
+  Group2:
+  - ''
+  Group3:
+  - ''
+  Group4:
+  - ''
+  Group5:
+  - ''
+# 玩家交易的最大距离，需要将上述 BetweenWorlds 设置为 false 才可使该选项生效
+# 若不需要限制，则请将其设置为 0
+Distance: 0
+Logging:
+  # 设置为 true 时，所有交易都会被记录至数据库，显示交易双方及其时间点
+  # 若你不需要记录这些信息，并避免产生额外的数据库，则你可以将其禁用
+  Use: true
+  LogEveryTrade:
+    # 启用后我们会记录玩家每一次交易，便于后续追踪
+    Use: true
+    # 保持交易日志的时间，单位为时
+    # 需要注意的是，日志只会在插件初始化时清理一次
+    KeepFor: 72
+AutoPurge:
+  Use: false
+  # 设置交易信息在数据库中保留的时间，单位为分
+  # 43200 = 30 天
+  # 20160 = 14 天
+  # 10080 = 7 天
+  # 1440 = 24 小时
+  TimeRange: 43200
+Residence:
+  # 是否使用领地最大限制
+  # 设置为 false 时玩家可以拥有超出其配置中上限的领地
+  UseMaxLimit: true
+Regions:
+  # 玩家可以在哪些区域内交易
+  WorldGuard:
+    Allow:
+      Use: false
+      List:
+      - testRegion
+      - testRegion2
+    Deny:
+      use: false
+      List:
+      - testRegion3
+      - testRegion4
+  # 玩家可以在哪些领地内交易
+  Residence:
+    Allow:
+      Use: false
+      List:
+      - testResidence
+      - testResidence2
+    Deny:
+      use: false
+      List:
+      - testResidence3
+      - testResidence4
+BlockedWorlds:
+- testWorld
+- testWorld_nether
+# 禁止交易的物品 ID
+BlockedItems:
+- '137'
+- '166'
+# 禁止交易的物品描述
+# 可以是其中一段且不带颜色代码的描述
+BlockedLore:
+- One line of lore
+- second line
+- color code not necessary
+- '禁止交易'
+# List of item NBT to be blocked from trade
+# 禁止交易的物品 NBT
+# 请提供指向实际 NBT 的路径，如 `display.Name`，注意大小写。这只会检查已存在的 NBT，并不会比较它的值 
+BlockedNBT: []
+# 玩家允许拥有的最大等级，MCMMO 的默认配置值为 1000
+McMMO:
+  MaxLvl: 1000
+Numbers:
+  ShortNames:
+    # 启用后会自动缩写较大数值，如将 1234567 缩写为 1m 或 1.23m
+    Enabled: false
+    # 启用后数字会显示两位小数，如 1.23m 而非 1m
+    Show2Numbers: true
+    '1000': k
+    '1000000': m
+    '1000000000': b
+    '1000000000000': t
+Amounts:
+  Exp:
+    '1': 1.0
+    '2': 100.0
+    '3': 10000.0
+    '4': 1000000.0
+Taxes:
+  # 交易税收
+  Exp:
+    Fixed:
+      # 交易时固定收取的经验值数量
+      Use: false
+      Amount: 100
+    Percentage:
+      # 交易时按百分比收取的经验值数量
+      # 10.0 表示其中 10% 用作税
+      Use: false
+      Amount: 10
+Buttons:
+  Confirm:
+    # 确认按钮的材料名称
+    Accepted: GREEN_STAINED_GLASS_PANE
+    NotAccepted: RED_STAINED_GLASS_PANE
+  Counter:
+    'On': LIME_STAINED_GLASS_PANE
+    'Off': BLACK_STAINED_GLASS_PANE
+  # 物品交易禁用时显示的填充物品
+  NoItemTrade: GRAY_STAINED_GLASS_PANE
+  # 填充空格时显示的物品
+  EmptySlots: GRAY_STAINED_GLASS_PANE
+  TradeModes:
+    Exp:
+      1Amount: BUCKET
+      2Amount: MILK_BUCKET
+      3Amount: WATER_BUCKET
+      4Amount: LAVA_BUCKET
+      Offered: EXPERIENCE_BOTTLE
+      Sub:
+        NA:
+          OfferOff: GLASS_BOTTLE
+          OfferOn: EXPERIENCE_BOTTLE
