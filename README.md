@@ -19,6 +19,8 @@
 
 **维基：**
 
+* [TownyAdvanced](https://github.com/TownyAdvanced/Towny/wiki) (Rework)
+* [Dynmap](https://github.com/webbukkit/dynmap/wiki) (Rework)
 * [MythicLib](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/home)
 * [Slate](https://wiki.aurelium.dev/slate)
 
