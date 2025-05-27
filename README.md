@@ -22,7 +22,6 @@
 * [TownyAdvanced](https://github.com/TownyAdvanced/Towny/wiki) (Rework)
 * [Dynmap](https://github.com/webbukkit/dynmap/wiki) (Rework)
 * [Terra](https://terra.polydev.org/)
-* [MythicLib](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/home)
 * [Slate](https://wiki.aurelium.dev/slate)
 
 * [*HelpChat (Plugin Wiki)*](https://wiki.helpch.at/) (Rework)
