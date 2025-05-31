@@ -29,8 +29,8 @@
 
 ### 已翻译的维基
 
-![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-24-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-415233-84f5bb)
-（最后更新：2025/5/11）
+![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-24-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-432204-84f5bb)
+（最后更新：2025/5/31）
 
 > [!NOTE]
 > 本维基一开始使用 MDWiki 和[自行魔改的 Docsify](https://github.com/SnowCutieOwO/Docsify-Template)，后选择了 VitePress。
