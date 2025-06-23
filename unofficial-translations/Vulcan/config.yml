@@ -215,11 +215,6 @@ freeze:
   # 在玩家被冻结时尝试登出执行的命令列表
   logged-out-while-frozen-commands: []
 
-# 菜单界面选项
-gui:
-  # 在 /vulcan gui 主菜单界面中的标题. 不支持彩色代码. /vulcan reload 命令不会重新读取标题, 因为该部分内容仅在插件初始化时读取.
-  title: 'Vulcan 反作弊'
-
 # 是否启用幽灵方块修复. 踩在这类方块上的玩家会被强制回弹, 幽灵方块也会自动修复.
 ghost-blocks-fix:
   # 是否启用幽灵方块修复.
@@ -335,6 +330,7 @@ messages:
   jday-remove-syntax: '%prefix% &c正确命令格式: /jday remove (玩家名称)'
   punishlogs-syntax: '%prefix% &c正确命令格式: /punishlogs (玩家名称)'
   sent-test-alert: '%prefix% &a成功发送测试警告!'
+  description-command-syntax: '%prefix% &c正确格式: /vulcan description (检查名称) '
 
 # 命令配置选项
 commands:
@@ -344,7 +340,6 @@ commands:
     - "&cVulcan 反作弊检测 v%version% by &cfrep (.frap)"
     - "&r"
     - "&c/vulcan help &8- &7打开该帮助菜单"
-    - "&c/vulcan menu &8| &c/vulcan gui &8- &7打开 Vulcan 的菜单界面"
     - "&c/vulcan profile &8 - &7浏览玩家的 Vulcan 档案."
     - "&c/vulcan ban (玩家名称) &8- &7通过 Vulcan 封禁指定玩家."
     - "&c/vulcan reload &8- &7重载所有文件."
@@ -388,6 +383,7 @@ commands:
     - "&7客户端类型: &c%client-brand%"
     - "&7敏感度: &c%sensitivity%%"
     - "&7最近 CPS: &c%cps% CPS"
+    - "&7移动速度: &c%move-speed%"
     - ""
     - "&7总触发次数 (&c%total-violations%&7):"
     - " &8» &7战斗类: &c%combat-violations%"
@@ -451,6 +447,7 @@ commands:
     list-format: " &8- &7%name%"
   punishlogs:
     header-footer: '&7&m---»--*--&r&7[ 玩家 &c%player% &7的惩罚记录 ]&7&m--*--«---'
+  description: "%prefix% &7&c%check%&7 的相关描述: %description%"
 
 punishment-statistics-broadcast:
   # Vulcan 是否向所有玩家公告惩罚作弊者的有关消息.
@@ -465,140 +462,121 @@ punishment-statistics-broadcast:
 
 # 部分单独设置
 settings:
-  # Whether or not alerts will automatically be enabled on-join for players who have the permission "vulcan.alerts"
+  # 警告是否自动为拥有权限 "vulcan.alerts" 的玩家在上线时开启
   toggle-alerts-on-join: true
-  # Whether or not the severity placeholder should be based off of per-check violations or the total violations of the player
+  # 触发程度变量基于玩家单次检查还是总检查情况显示
   per-check-severities: true
-  # Whether or not cinematic mode will be checked for certain aim checks. This isn't really a big deal and can be
-  # left disabled as this will pretty much NEVER happen unless done intentionally. Enabling this will slow
-  # detection speeds for certain checks.
+  # 是否在某些瞄准检查中确认玩家是否开启电影视角. 事实上这问题不大, 除非故意为之否则不太可能发生. 启用这个选项将会减缓检查速度.
   cinematic: false
   # This is just here in case I forget to remove a debug message when I post an update. If I forget to remove a debug
-  # message and you see [Vulcan Debug] on your server, disable this (it won't effect you if this is enabled or disabled
-  # unless I forget to remove a debug message, but if you see [Vulcan Debug] in chat, then set this to false and reload).
+  # 防止我在更新插件时忘记删掉调试信息. 如果你在服务器里看到了 [Vulcan Debug] 消息, 请禁用这个设置 (除非我忘记删掉调试信息, 否则这个选项不会对你有任何影响, 但如果你在服务器里看到了 [Vulcan Debug] 开头的消息, 请将此设置关闭并重启服务器).
   debug: true
-  # Whether or not 'A new update is available!' message will be set on join for players with 'vulcan.admin' permission
+  # 是否为拥有 'vulcan.admin' 权限的玩家在上线时推送“有更新可用!”的消息
   check-for-updates: true
-  # A setting for PacketEvents, we may ask you to change this if you're having issues injecting. If everything is working
-  # fine, don't touch this.
+  # PacketEvents 相关设置, 遇到注入相关问题时我们可能会要求你打开这个. 正常情况下请勿调整此项.
   inject-early: true
-  # This is the time (in ticks - 20 ticks per second - default value is 80 (4 seconds)) of how long players should be exempt from certain
-  # checks after velocity gets applied to them via another plugin or something (such as Launchpads, crate plugins, etc etc).
+  # 玩家被其他插件或因素施加速度(如跳板插件的跳板, 宝箱插件对无钥匙玩家的反弹等)时, 插件在多久(单位为刻 - 20 刻为 1 秒 - 默认值为 80 (4秒))之内忽略玩家对速度相关的检查
   max-velocity-ticks: 50
-  # This is the max file size (in KB) before the violations.txt should be zipped and put into the logs folder
+  # 达到这个大小(单位为 KB)的 violations.txt 会被压缩并放入 logs 文件夹
   max-logs-file-size: 7500
-  # If you have a bungee network and want to have a specific server name for punishment/alert messages, etc
+  # 如果你正在运行 Bungee 群组, 这可以让某个服务器收到处罚/警告等消息
   server-name: 'Default'
-  # Whether or not alert messages should be sent on the main thread or asynchronously. If your server is on bungee, it is recommended to keep this
-  # disabled as sending large chat component messages with so much info (hover, click commands, etc) like the alert commands can
-  # sometimes cause people to be kicked for 'The server you were on has went down' or something.
+  # 警告消息是否在主线程或异步发送. 如果你正在运行 Bungee 群组服, 推荐将其禁用, 因为诸如警告命令这样带有大量内容(如悬浮提示框、点击触发命令等)的聊天组件消息有些时候会导致玩家被踢出, 显示“你所处的服务器已经关闭”之类的内容.
   # TLDR:
-  # - Bungeecord Networks: leave this FALSE
-  # - Single servers: set this to TRUE to save some performance
+  # 太长不读:
+  # - Bungee 群组服: 将该设置保持为 FALSE
+  # - 单服: 设置为 TRUE 可节省性能
   async-alerts: false
-  # Whether or not the API should be enabled. If you want to hook into Vulcan and do anything fancy, then enable this, however
-  # the majority of people will never use this and disabling it allows for less runnables and more performance as the events dont
-  # need to be called at all (they are also forced to be called sync, so this is a win win performance gain)
+  # 是否启用插件 API. 如果你想要对接本插件并做些花里胡哨的事, 那么就可以启用这个功能. 但是大部分人一般用不到这个, 将其保持禁用可以减少运行事件数量 (它们也会强制异步调用, 因此这个性能改进是双向的)
   enable-api: false
-  # Whether or not the update checker should be enabled
+  # 是否启用更新检查
   update-checker: true
-  # The delay in milliseconds (1000ms = 1 second)
+  # 延迟, 单位为毫秒 (1000ms = 1秒)
   punishment-delay: 10000
-  # Whether or not Vulcan should automatically ignore Bedrock players using Floodgate's API.
+  # 是否忽略使用 Floodgate API 连接至服务器的基岩版玩家.
   ignore-floodgate: true
-  # This is highly highly recommended to keep false as it can be spoofed by the client, however, if you're using Geyser and
-  # for whatever reason can't get Floodgate to work, then enable this. If you have floodgate-bukkit on your server
-  # and Geyser is working fine, then don't touch this.
+  # 非常非常推荐将这个选项保持为 false, 因为客户端可能会伪装其类型, 但如果你在用 Geyser 且没有安装 Floodgate, 那么你可以启用这个. 如果你的服务器上安装了 floodgate-bukkit 且安装了 Geyser, 那么不要碰这个,
   ignore-flags-geyser-client-brand: false
-  # How long we should wait for everything to initialize before players start being checked (in milliseconds). Default
-  # value is 2500ms.
+  # 玩家开始受到检查之前的初始化时间 (单位为毫秒). 默认值为 2500 (毫秒).
   join-check-wait-time: 2500
-  # Whether or not players with UUID's starting with '000000' should be ignored and not flagged - used for exemptions of
-  # Geyser players if all else fails.
+  # 是否忽略并取消标记 UUID 以 '000000' 开头的玩家 - 适用于检测 Geyser 基岩版玩家的最后手段.
   ignore-geyser-uuids: true
-  # Whether or not we should ignore flags for players whose usernames start with a certain character/string of characters
+  # 是否忽略并取消标记某些特定字符开头的玩家名称
   ignore-geyser-prefixes: true
-  # The string to be ignored - all players names who start with a * will not be flagged (case sensitive if not symbols)
+  # 忽略的字符串 - 所有以 * 开头的玩家都不会被标记 (非字符的情况下大小写敏感)
   ignore-geyser-prefix: "*"
-  # The max violation (violations above this won't be sent)
+  # 最大检测触发次数 (不会发送大于这个次数的警告)
   max-alert-violation: 250
-  # How long should people be exempt from checks when they were in /fly (default = 40 ticks, 2 seconds)
+  # 玩家处于飞行状态下时排除检查的时间长度 (默认 = 40 刻, 即 2 秒)
   flight-cooldown: 40
-  # What the /vulcan top command should display if there aren't enough users for it to sort
-  top-command-unresolved: "Unresolved"
-  # Whether or not players who are in the judgement day queue should be able to be banned again.
+  # /vulcan top 命令在没有玩家的位置显示的内容
+  top-command-unresolved: "未解析"
+  # 处于审判日模式下的玩家能否再次被封禁.
   ignore-if-in-judgement-day: false
-  # Whether or not players who join with Vivecraft should be ignored. Be careful with this as it can be spoofed.
+  # 是否忽略使用 Vivecraft 加入的玩家. 谨慎开启, 客户端有可能利用这个功能骗过反作弊.
   ignore-vivecraft: false
-  # Scaffolding are really broken blocks, whether or not we should be more lenient for them for certain checks.
+  # 脚手架真的是漏洞百出的方块, 在对其检查时是否允许宽松判定.
   lenient-scaffolding: true
-  # Whether or not bStats should be loaded
+  # 是否启用 bStats
   bstats: true
-  # Whether or not Vulcan should account for entity collisions
+  # 插件是否负责处理实体碰撞
   entity-collision: true
-  # Whether or not Vulcan should hook into mcMMO if it is available.
+  # 是否与 mcMMO 进行对接.
   hook-mcmmo: true
-  # Whether or not Vulcan should hook into MythicMobs if it is available.
+  # 是否与 MythicMobs 进行对接.
   hook-mythicmobs: true
-  # Whether or not Vulcan should hook into GSit if it is available
+  # 是否与 GSit 进行对接.
   hook-gsit: true
-  # Whether or not Vulcan should hook with Brewery if available
+  # 是否与 Brewery 进行对接.
   hook-brewery: true
-  # Whether or not Vulcan should ignore alerts for violations which are greater than the max violations threshold
+  # 是否忽略超出最大警告数的消息
   ignore-alerts-over-max-violations: false
-  # The amount greater than the max violations that should be ignored (example, 3 would mean that if the max violations
-  # was set to 10, alerts greater than VL 13 would be ignored)
+  # 忽略的最大警告消息数量(例如 3 表示最大次数设置为 10 时, 忽略大于 13 次的警告消息)
   ignore-alerts-over-max-violations-amount: 3
-  # Whether or not Vulcan should warn you if you may be using an incompatible spigot fork.
+  # 是否在检测到服务端核心为不兼容的 spigot 分支时发出警告.
   incompatability-manager: true
-  # Whether or not Vulcan should send plugin messages
+  # 是否允许本插件发送插件消息
   plugin-messaging: true
-  # Whether or not Vulcan should setback players when they are lower than their last onGround position (this can lead to
-  # things such as anti-voids, so not particularly recommended if you have something like a SkyWars/BedWars server)
+  # 是否允许插件将玩家拉回上一次着陆位置 (可能会导致虚空回弹, 如果你开的是起床/空战, 不是非常建议开启此项)
   dont-setback-lower-positions: false
-  # Minimum ticks existed before a player is chcked, similar to join-check-wait-time above
+  # 在玩家检查之后的最小刻数, 作用与上述的 join-check-wait-time 类似
   min-ticks-existed: 3
-  # Whether or not we should calculate the distance between the player and WorldBorder to prevent false flags in the
-  # Velocity checks. Only needed on very specific servers.
+  # 是否计算玩家与世界边界的距离, 防止速度相关检查出现误报. 只需要在一部分服务器上开启.
   velocity-world-border: false
-  # Whether or not Vulcan should account for having 10 kabillion entities in one place that launches you very fast and could
-  # 'false' some checks. Will not matter on 99% of servers
+  # 插件是否检测实体挤压弹射, 这通常会导致某些误报. 大部分服务器不会受到影响.
   entity-cram-fix-enabled: false
-  # The amount of entities that should be accounted for
+  # 检测挤压的实体数量
   entity-cram-entities-amount: 10
-  # How long the checks should be exempted for if the above entities are encountered
+  # 上述实体被计数时排除检查的时间
   entity-cram-exempt-ticks: 30
-  # Whether or not extra leniency is added to movement checking for players wearing elytras due to very high occurences of
-  # desync. Disable this at your own risk, defaulted to true and still highly experimental.
-  lenient-elytra-handling: true
-  # Still experimenting with this, don't touch unless instructed
+  # 支持属性修饰符识别
   handle-attributes: false
 
   ######################################################################################################################
-  # Discord WEBHOOK Configuration                                                                                      #
+  # Discord 网页对接配置                                                                                    #
   ######################################################################################################################
 discord-webhook:
-  # The section for the Discord Webhook alerts
+  # Discord 网页对接警告部分配置
   alerts:
-    # Whether or not Discord Webhook Alerts should be enabled
+    # 是否启用 Discord 网页对接警告功能
     enabled: false
-    # Paste the URL to your webhook here. For how to create a webhook, please see https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks
+    # 将你的网页对接链接黏贴至此. 创建网页对接相关教程请见 https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks
     url: 'insert-webhook-url-here'
-    # The avatar for the webhook
+    # 网页对接的头像
     avatar: 'https://i.imgur.com/JPG1Kwk.png'
-    # Thumbnail for the webhook
+    # 网页对接缩略图
     thumbnail: 'http://cravatar.eu/avatar/%name%/64.png'
-    # Colors for the webhook (use a website like https://www.rapidtables.com/web/color/RGB_Color.html to pick colors)
+    # 网页对接的颜色 (可使用诸如 https://www.rapidtables.com/web/color/RGB_Color.html 的网站帮助你选择颜色)
     color-r: 252
     color-g: 140
     color-b: 3
-    # Username of the webhook
+    # 网页对接的用户名称
     username: 'Vulcan'
-    # Title of the webhook
+    # 网页对接的消息标题
     title: 'Vulcan 警告'
-    # Description of the webhook
+    # 网页对接的描述内容
     description: '**%player%** 未能通过项目 %check% %dev%(%type% 类)%dev% 的检查 [%vl%/%max-vl%]'
-    # Content will send text outside of the embed, so you can tag roles or people for example.
+    # 内容消息将会显示在内嵌消息之外, 你可以在这里提醒管理员.
     content: ''
     information-field: false
     client-version-field: true
@@ -608,7 +586,7 @@ discord-webhook:
     location-field: true
     ping-tps-field: true
   punishments:
-    # Same settings and explanations as above
+    # 部分设置和解释已经在上文提及, 此不作赘述.
     enabled: false
     url: 'insert-webhook-url-here'
     avatar: 'https://i.imgur.com/JPG1Kwk.png'
@@ -633,43 +611,33 @@ discord-webhook:
 # punishable: 达到最大触发等级时是否执行惩罚
 # broadcast-punishment: 是否公示惩戒 (内容可在上文找到)
 # max-violations: 最大检查等级上限; 当到达该等级时, punishment-commands 中的命令将会被执行 (若上文 punishable 被设置为 true 的话)
-# alert-interval: How often alerts for this check will be sent, for example, 2 will only send alerts for VL 2, 4, 6, 8, 3 will send alerts
-#                 for violations 3, 6, 9, 12, etc. If you want to reduce the spam in the chat, then you can use this.
-# dont-alert-until: This will make it so that only alerts greater than this value are sent. For example, if you set this to 6,
-#                   then only alerts 6 and higher would be sent (anything less than that is still logged, but not sent to staff)
-# maximum-ping: 100000 is the default value and your ping can't go higher than this without being kicked for KeepAlive timeout.
-#               You won't really ever need to change this as ping doesn't really effect any checks and this can open the possibility
-#               of bypasses with ping spoof, however, the option is here nonetheless.
-# minimum-tps: If the TPS is lower than this value, the check won't fire.
+# alert-interval: 该检查的警告间隔发送等级, 例如, 2 只会在第 2, 4, 6, 8 等次数的触发时提醒, 而 3 则会在第
+#                 3, 6, 9, 12 等次数的触发时提醒. 如果你不想让警报消息刷屏, 那么你就可以设置这个选项.
+# dont-alert-until: 大于这个次数的警报才会显示在聊天栏. 例如, 如果这个设置的值是 6,
+#                   那么只有第六次和之后的警报会在聊天栏显示 (未发送的部分警告仍然会被记录, 但不会发送给管理员)
+# maximum-ping: 100000 为默认值, 你的延迟一般情况下不能在 KeepAlive 超时时保持这么大.
+#               一般情况下延迟不会影响检查, 而且调整这个设置有可能会导致客户端利用延迟欺骗功能作弊, 但这都取决于你.
+# minimum-tps: TPS 低于此值的情况下不启用这个检查.
 #
 # buffer:
-# max: Buffer is how many times the player needs to 'fail' the check in order to actually alert. This is basically how
-#         sensitive the check is. I recommend keeping these as default, but if you want the anticheat to be a little more
-#         sensitive or less sensitive you can play with them a little. Don't set them too low or too high or else there will be
-#         too many false flags or it just won't flag at all.
-# multiple: This is what the buffer gets multiplied by after an alert is sent. For example, if you set it to 1, then it wouldn't
-#           do anything since (1 * x) is just x. You can also change this if you want alerts to happen slower, for example
-#           setting it to 0 would make it so when a player reaches the max buffer of 5 for example, their buffer is set to 0
-#           instead of 2.5 (as it would be if the multiple was .5 and not 0.
-# decay: How much the buffer should decay if the player doesn't fail the check. Again, don't really touch this if you don't
-#        know what you're doing as you can cause checks to either not flag at all or false positive a lot. You need to have a
-#        balanced ratio of increasing buffers and decaying the buffer. What we mean by this is that having the decay as 1
-#        and increasing the buffer by 1 isn't really balanced as you can just cheat for a tick and then not do anything and
-#        you will bypass. On the other hand, a buffer decay of .1 against an increase of one is much more balanced as it ensures
-#        that people who constantly fail the checks will continue to alert and be punished yet any little errors will be
-#        filtered out and not alert.
+# max: Buffer 用于决定玩家在触发实际警告之前需要未通过检查多少次. 可以说就是检查的敏感度. 
+#      我推荐将其保持默认, 但如果你需要让反作弊更为敏感, 那么你就可以对其进行略微调整.
+#      不要将这个值设置得过低或过高, 否则会出现误报或完全不检测的情况.
+# multiple: Buffer 在发出警告后乘以的值. 例如, 如果值是 1, 那么在触发警报后这个设置什么都不会做.
+#           你也可以利用这个设置降低提醒频率, 比如将其设置为 0 可以使得玩家在达到最大检测次数时将 buffer 设置为 0
+# decay: 玩家通过检查后 Buffer 衰退的值. 再次强调, 自行修改后果自负, 可能会导致完全不触发检查或大量误报.
+#        调整好 buffer 和衰退比例非常重要. 我们所说的平衡不是将这个值设置为 1 然后将 Buffer 的值增加 1, 这样你在作弊的时候只需作弊 1 刻再等待一小会就可以绕过. 另外, .1 的 Buffer 衰退相比先前 1 的值合理许多, 它可以确保那些总是无法通过检查的人被正确地标记为作弊, 并受到惩罚, 误报的玩家则会被过滤, 且不会被记入检测日志里.
 # hotbar-shuffle:
-# enabled: Whether or not this feature will be enabled. For me.frep.vulcan.spigot.check.impl.combat checks, if the player is failing the check, this will
-#          shuffle around the item in their hand. Funny to watch as they try to frantically figure out what's going on
-# minimum-vl-to-shuffle: The minimum violations that a player has to be at in order for this feature to function.
-# shuffle-every: Interval at which this feature will be executed.
+# enabled: 是否启用该功能. 对 me.frep.vulcan.spigot.check.impl.combat 等检查类型来说, 触发它们会导致玩家的物品栏被打乱. 看着他们狼狈整理物品栏的样子真的很好笑.
+# minimum-vl-to-shuffle: 触发打乱物品栏效果所需的最小触发次数.
+# shuffle-every: 触发效果的间隔.
 #
 # random-rotation:
-# enabled: Whether or not this feature will be enabled. When players fail me.frep.vulcan.spigot.check.impl.combat checks, their head will be thrown around
-#          to random locations. Again, pretty funny to watch.
-# minimum-vl-to-randomly-rotate: Minimum violations which the player needs to be at in order for this feature to work.
-# rotate-every: Interval at which this will be executed.
-# For any questions on configuration, please join our Discord or send me on a pm! https://discord.gg/SCNuwUG | frap#0002
+# enabled: 是否启用该功能, 对 me.frep.vulcan.spigot.check.impl.combat 等检查类型来说, 触发它们会导致玩家的视角扭转到随机为止. 和上述功能一样有趣.
+# minimum-vl-to-randomly-rotate: 触发随机扭转视角效果所需的最小触发次数.
+# rotate-every: 触发效果的间隔.
+#
+# 如果对配置有任何疑问, 请加入我们的 Discord 群组服或向我发送私聊! https://discord.gg/SCNuwUG | frap#0002
 ########################################################################################################################
 checks:
   combat:
@@ -2222,8 +2190,8 @@ checks:
           multiple: .25
           decay: .15
       c:
-        enabled: false
-        punishable: false
+        enabled: true
+        punishable: true
         discord-alert-interval: 1
         setback: false
         min-vl-to-setback: 1
@@ -2907,6 +2875,24 @@ checks:
         # 该检查是否对存疑的幽灵方块生效 - 启用该项会让这些检查更倾向于绕过某个通过站在幽灵方块上从而伪造 onGround 参数实现飞行的作弊模块, 若你启用该项
         # 请确保在 ghost-blocks-fix 部分配置中启用了针对幽灵方块交互的回弹
         ignore-ghost-blocks: true
+      f:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 5
+        setback: false
+        min-vl-to-setback: 1
+        broadcast-punishment: false
+        max-violations: 30
+        alert-interval: 2
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] 不公平优势'
+        buffer:
+          max: 2
+          multiple: .4
+          decay: .04
     vclip:
       a:
         enabled: true
@@ -3798,6 +3784,22 @@ checks:
           - 'kick %player% &c[Vulcan] 不公平优势'
         buffer:
           max: 10
+          multiple: .25
+          decay: .05
+      8:
+        enabled: true
+        punishable: true
+        discord-alert-interval: 1
+        broadcast-punishment: false
+        max-violations: 10
+        alert-interval: 1
+        dont-alert-until: 1
+        maximum-ping: 100000
+        minimum-tps: 19.0
+        punishment-commands:
+          - 'kick %player% &c[Vulcan] Unfair Advantage'
+        buffer:
+          max: 5
           multiple: .25
           decay: .05
     inventory:
