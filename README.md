@@ -35,34 +35,34 @@
 > [!NOTE]
 > 本维基一开始使用 MDWiki 和[自行魔改的 Docsify](https://github.com/SnowCutieOwO/Docsify-Template)，后选择了 VitePress。
 
-- [ajLeaderboards](https://snowcutieowo.github.io/ajLeaderboards)
-- [AuraSkills](https://snowcutieowo.github.io/AuraSkills)
-- [AureliumSkills](https://snowcutieowo.github.io/AureliumSkills)
-- [Codex](https://snowcutieowo.github.io/Codex)
-- [CommandTimer](https://snowcutieowo.github.io/CommandTimer)
-- [CoreProtect](https://snowcutieowo.github.io/CoreProtect)
-- [DecentHolograms](https://snowcutieowo.github.io/DecentHolograms)
-- [ExcellentCrates](https://snowcutieowo.github.io/ExcellentCrates)
-- [ExcellentEnchants](https:snowcutieowo.github.io/ExcellentEnchants)
-- [Fallback Server](https://snowcutieowo.github.io/FallbackServer)
-- [FastAsyncWorldEdit](https://snowcutieowo.gitub.io/FastAsyncWorldEdit)
-- [HuskHomes](https://snowcutieowo.github.io/HuskHomes)
-- [HuskSync](https://snowcutieowo.github.io/HuskSync)
-- [LibreLogin](https://snowcutieowo.github.io/LibreLogin)
+- [ajLeaderboards](https://continue-project.netlify.app/ajLeaderboards)
+- [AuraSkills](https://continue-project.netlify.app/AuraSkills)
+- [AureliumSkills](https://continue-project.netlify.app/AureliumSkills)
+- [Codex](https://continue-project.netlify.app/Codex)
+- [CommandTimer](https://continue-project.netlify.app/CommandTimer)
+- [CoreProtect](https://continue-project.netlify.app/CoreProtect)
+- [DecentHolograms](https://continue-project.netlify.app/DecentHolograms)
+- [ExcellentCrates](https://continue-project.netlify.app/ExcellentCrates)
+- [ExcellentEnchants](https:continue-project.netlify.app/ExcellentEnchants)
+- [Fallback Server](https://continue-project.netlify.app/FallbackServer)
+- [FastAsyncWorldEdit](https://continue-project.netlify.app/FastAsyncWorldEdit)
+- [HuskHomes](https://continue-project.netlify.app/HuskHomes)
+- [HuskSync](https://continue-project.netlify.app/HuskSync)
+- [LibreLogin](https://continue-project.netlify.app/LibreLogin)
   * 配置文本的翻译算作维基内容，故不计入第二部分的配置总字数。
-- [LuckPerms](https://snowcutieowo.github.io/LuckPerms)
-- [Oraxen](https://snowcutieowo.github.io/Oraxen)
-- [PlaceholderAPI](https://snowcutieowo.github.io/PlaceholderAPI)
-- [PlayerPoints](https://snowcutieowo.github.io/PlayerPoints)
-- [Shopkeepers](https://snowcutieowo.github.io/Shopkeepers)
-- [Spark](https://snowcutieowo.github.io/spark)
-- [SuperiorSkyBlock2](https://snowcutieowo.github.io/SuperiorSkyblock2)
-- [UltimateShop](https://snowcutieowo.github.io/UltimateShop)（简体中文维基重汉化）
+- [LuckPerms](https://continue-project.netlify.app/LuckPerms)
+- [Oraxen](https://continue-project.netlify.app/Oraxen)
+- [PlaceholderAPI](https://continue-project.netlify.app/PlaceholderAPI)
+- [PlayerPoints](https://continue-project.netlify.app/PlayerPoints)
+- [Shopkeepers](https://continue-project.netlify.app/Shopkeepers)
+- [Spark](https://continue-project.netlify.app/spark)
+- [SuperiorSkyBlock2](https://continue-project.netlify.app/SuperiorSkyblock2)
+- [UltimateShop](https://continue-project.netlify.app/UltimateShop)（简体中文维基重汉化）
   * 完整版维基原本由我翻译，经过交涉后同意迁回此处继续维护。
-- [WorldEdit](https://snowcutieowo.github.io/WorldEdit)
-- [WorldGuard](https://snowcutieowo.github.io/WorldGuard)
+- [WorldEdit](https://continue-project.netlify.app/WorldEdit)
+- [WorldGuard](https://continue-project.netlify.app/WorldGuard)
 
-### 参与翻译的插件
+### 参与翻译的插件&模组
 
 > [!NOTE]
 > 标“内置(Initial)”的插件名称表明简体中文已内置在这些插件的语言文件中。
@@ -74,4 +74,4 @@
 > 由于插件配置的特殊性，适用于维基的计数工具并不能在此直接使用，因此字数统计可能略有偏差。
 
 > [!NOTE]
-> 这里的内容已经移动至维基中，[点此](https://snowcutieowo.github.io/common/translation-index)可查看最新版本。
+> 这里的内容已经移动至维基中，[点此](https://continue-project.netlify.app/common/translation-index)可查看最新版本。
