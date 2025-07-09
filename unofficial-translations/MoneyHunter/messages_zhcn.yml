@@ -1,0 +1,237 @@
+Command:
+  Stats:
+    Desc: '显示你的统计数据。'
+    Usage: '[玩家]'
+    Display:
+    - '{message: ~prefix: false;}'
+    - '&6&m                  &6&l[ &e&l我的工作进度 &6&l]&6&m                  &6'
+    - '&7'
+    - '&6        将鼠标放在文字上可浏览更多内容!'
+    - '&7'
+    - '&6▸ {json: ~showText: %job_description%; ~runCommand: /mh info %job_id%;}%job_name%{end-json}    &6当前等级:
+      &e%job_level%,    &6当前经验: &e%job_exp%&7/&e%job_exp_max%'
+    - '&6&m                                                        &6'
+  Info:
+    Usage: <职业名称>
+    Desc: '浏览指定工作的相关信息。'
+    Display:
+    - '{message: ~prefix: false;}'
+    - '&6&m                    &6&l[ &e&l职业 &7- &e&l%job_name% &6&l]&6&m                    &6'
+    - '&7'
+    - '&6&l职业描述:'
+    - '&7%job_description%'
+    - '&7'
+    - '&a&l职业进度:'
+    - '&2▸ &a当前经验: &f%job_exp%&7/&f%job_exp_max%'
+    - '&2▸ &a当前等级: &f%job_level%&7/&f%job_level_max%'
+    - '&2▸ &a金币翻倍: &fx%job_money_modifier%'
+    - '&7'
+    - '&e&l可供完成的内容:'
+    - '&6▸ &e{json: ~showText: &7点击查看全部内容!; ~runCommand: /mh objectives
+      %job_id%;}&e&l[浏览]{end-json}'
+    - '&7'
+    - '&d&l职业增强:'
+    - '&5▸ &d%booster_type%: &5经验: &7+%booster_exp_modifier_percent%%&7, &5金币:
+      &7+%booster_money_modifier_percent%%&7, &5剩余时间: &7%booster_time_left%'
+    - '&6&m                                                              &6'
+  Booster:
+    Desc: '管理职业加速器。'
+    Personal:
+      Desc: '管理自己的职业加速器。'
+      Give:
+        Desc: '为玩家添加或升级职业加速器。'
+        Usage: '<玩家> <加速器名称> <职业名称> <金币翻倍倍率> <经验翻倍倍率> <持续时间-分钟>'
+        Done: '为玩家 &f%player%&7 添加 &fx%booster_money_modifier% 倍金币翻倍&7, &fx%booster_exp_modifier%
+          倍经验翻倍 &7的职业加速器，可持续 &f%booster_time_left%&7. 适用于下列职业:
+          &f%booster_jobs%&7.'
+      Remove:
+        Desc: '移除玩家现有的职业加速器'
+        Usage: '<玩家> <加速器 ID>'
+        Error:
+          Nothing: 玩家 &c%player%&7 没有名为 &c%booster_id%&7 的职业加速器.
+        Done: 成功地为玩家 &f%player%&7 移除了职业加速器 &f%booster_id% &7.
+    Global:
+      Desc: '管理全局职业加速器。'
+      Create:
+        Desc: '创建或升级职业加速器。'
+        Usage: '<加速器名称> <加速器适用的职业名称> <金币翻倍倍率> <经验翻倍倍率> <持续时间-分钟>'
+        Done: '为全局添加了 &fx%booster_money_modifier% 倍金币翻倍&7, &fx%booster_exp_modifier%
+          倍经验翻倍 &7的职业加速器，可持续 &f%booster_time_left%&7. 适用于下列职业: &f%booster_jobs%&7.'
+      Remove:
+        Desc: '删除职业加速器。'
+        Usage: '<加速器 ID>'
+        Error:
+          Nothing: '不存在 ID 为 &c%booster_id%&7 的职业加速器.'
+        Done: '成功移除了 ID 为 &f%booster_id% &7职业加速器.'
+  Exp:
+    Desc: '管理玩家职业经验。'
+    Add:
+      Desc: '增加玩家的职业经验。'
+      Usage: '<玩家> <职业名称> <数量> [使用加速器]'
+      Done: '&7成功为玩家 &a%player% &7增加了 &a%amount% &7点 &a%job_name% &7职业经验&7.'
+    Take:
+      Desc: '减少玩家的职业经验。'
+      Usage: '<玩家> <职业名称> <数量>'
+      Done: '&7成功为玩家 &a%player% &减少了 &a%amount% &7点 &a%job_name% &7职业经验&7.'
+    Set:
+      Desc: '设置玩家的职业经验。'
+      Usage: '<玩家> <职业名称> <数量>'
+      Done: '&7成功将玩家 &e%player%&7 的 &e%job_name% &7职业经验设置为了 &e%amount% &7.'
+  Level:
+    Desc: '管理玩家职业等级。'
+    Add:
+      Desc: '增加玩家的职业等级。'
+      Usage: '<玩家> <职业名称> <数量>'
+      Done: '&7成功为玩家 &a%player% &7增加了 &a%amount% &7点 &a%job_name% &7职业等级&7.'
+    Take:
+      Desc: '减少玩家的职业等级。'
+      Usage: '<玩家> <职业名称> <数量>'
+      Done: '&7成功为玩家 &a%player% &减少了 &a%amount% &7点 &a%job_name% &7职业等级&7.'
+    Set:
+      Desc: '设置玩家的职业等级。'
+      Usage: '<玩家> <职业名称> <数量>'
+      Done: '&7成功将玩家 &e%player%&7 的 &e%job_name% &7职业等级设置为了 &e%amount% &7.'
+  Reset:
+    Desc: '重置玩家的职业进度。'
+    Usage: '<职业 ID> [玩家]'
+    Done: '&7成功为玩家 &f%player%&7 重置了职业 &f%job_name% &7的所有进度.'
+  Jobs:
+    Desc: '浏览所有职业。'
+  Objectives:
+    Usage: '<职业名称>'
+    Desc: '查看职业任务。'
+  Drop:
+    Usage: '<货币种类> (<数量> or <最小值>:<最大值>) <世界名称> <x坐标> <y坐标> <z坐标>'
+    Desc: 在特定世界的特定位置生成可拾起的金币。
+    Done: 成功在世界 &f%world%&7 的 &f%x%&7, &f%y%&7, &f%z%&7 掉落了 &a%money% &7枚金币.
+  Sound:
+    Desc: '切换金币捡拾音效。'
+    Done: '{message: ~sound: UI_BUTTON_CLICK;}&7金币捡拾音效: &e%state%&7.'
+  Leaderboard:
+    Desc: '查看或管理排行榜。'
+    Hologram:
+      Desc: '管理全息排行榜。'
+      Add:
+        Usage: '<排行榜种类> <职业 ID>'
+        Desc: '创建全息排行榜。'
+        Done: '成功创建了全息排行榜!'
+      Remove:
+        Desc: '移除最近的全息排行榜。'
+        Done: '若有，则移除距离最近的全息排行榜。'
+    List:
+      Usage: '<排行榜种类> <职业 ID>'
+      Desc: '浏览有关职业的详细信息。'
+      Format:
+      - '{message: ~prefix: false;}'
+      - '&6&m                  &6&l[ &e&l%job% &7- &e&l%type% &6&l]&6&m                  &6'
+      - '&7'
+      - '&6        点击玩家名称可浏览玩家数据!'
+      - '&7'
+      - '&6#%position% {json: ~showText: &b点击浏览玩家信息!; ~runCommand:
+        /mh stats %name%;}&e%name%{end-json}    &6积分: &e%score%'
+      - '&6&m                                                             &6'
+Booster:
+  Global:
+    Notify:
+    - '{message: ~prefix: false;}'
+    - '&6&m                    &6&l[ &e&l职业加速器r &6&l]&6&m                    &6'
+    - '&7'
+    - '&e    当前有这些职业加速器正在生效:'
+    - '&6        (鼠标移至上方可浏览详细信息)'
+    - '&7'
+    - '&6  ▸ {json: ~showText: &7加速器名称: &f%booster_id%|&7适用职业: &f%booster_jobs%;}&e%booster_type%
+      加速器{end-json} &7: &2经验翻倍: &a+%booster_exp_modifier_percent%%&7, &2金币翻倍:
+      &a+%booster_money_modifier_percent%%&7, &2剩余时间: &a%booster_time_left%'
+    - '&7'
+    - '&6&m                                                                &6'
+  Personal:
+    Notify:
+    - '{message: ~prefix: false;}'
+    - '&6&m                    &6&l[ &e&l职业加速器 &6&l]&6&m                    &6'
+    - '&7'
+    - '&a&l       你收到了 %booster_type% 职业加速器!'
+    - '&7'
+    - '&2▸ &a适用职业: &f%booster_jobs%'
+    - '&2▸ &a经验翻倍: &f+%booster_exp_modifier_percent%%'
+    - '&2▸ &a金币翻倍: &f+%booster_money_modifier_percent%%'
+    - '&2▸ &a剩余时间: &f%booster_time_left%'
+    - '&7'
+    - '&6&m                                                                &6'
+Currency:
+  Error:
+    Invalid: '&c无效货币!'
+Jobs:
+  State:
+    Change:
+      Error:
+        Nothing: '{message: ~sound: ENTITY_VILLAGER_NO;}&c该职业的状态不可修改!'
+        Limit:
+        - '{message: ~type: TITLES; ~fadeIn: 10; ~stay: 60; ~fadeOut: 20; ~sound:
+          BLOCK_ANVIL_PLACE;}'
+        - '&c&l状态未改变!'
+        - '&7你已有 &c%jobs_have%&7/&c%jobs_limit% 个 &f%job_state%&7 的职业!'
+        Level:
+        - '{message: ~type: TITLES; ~fadeIn: 10; ~stay: 60; ~fadeOut: 20; ~sound:
+          BLOCK_ANVIL_PLACE;}'
+        - '&c&l状态未改变!'
+        - '&f%job_level%&7 已升到最大等级. 当前状态为 &f%job_state%&7!'
+      Success:
+      - '{message: ~type: TITLES; ~fadeIn: 10; ~stay: 60; ~fadeOut: 20; ~sound: UI_BUTTON_CLICK;}'
+      - '&a&l状态已改变!'
+      - '&f%job_name%&7 当前为 &f%job_state%&7!'
+  Reset:
+    Success:
+    - '{message: ~type: TITLES; ~fadeIn: 10; ~stay: 60; ~fadeOut: 20; ~sound: ENTITY_ZOMBIE_BREAK_WOODEN_DOOR;}'
+    - '&e&l职业重置完毕!'
+    - '&7职业&f %job_name%&7 所有的进度与等级已重置!'
+  Leveling:
+    Exp:
+      Gain: '{message: ~prefix: false; ~type: ACTION_BAR;}&e&l%job_name%: &6+%exp%
+        经验值.'
+      Lose: '&c你失去了职业 &4%job_name% 的 &4%exp% &c点经验.'
+    Level:
+      Up:
+      - '{message: ~prefix: false; ~sound: ENTITY_PLAYER_LEVELUP;}'
+      - '&6&m                      &6&l[ &e&l你升级了! &6&l]&6&m                      &6'
+      - '&6    你的职业 &e&l%job_name% &6的等级已提升到了 &e&l%job_level%&6!'
+      - '&6&m                                                               &6'
+      Down:
+      - '{message: ~prefix: false; ~sound: ENTITY_IRON_GOLEM_DEATH;}'
+      - '&4&m                        &4&l[ &c&l你降级了! &4&l]&4&m                        &4'
+      - '&c    你的职业 &4&l%job_name% &c的等级已降低到了 &4&l%job_level%&c!'
+      - '&c        请小心那些会减低职业经验值的行为.'
+      - '&4&m                                                                       &4'
+Job:
+  Error:
+    InvalidJob: '&c无效职业!'
+  Objectives:
+    Limits:
+      Notify:
+      - '{message: ~prefix: false;}'
+      - '&4&m                    &4&l[ &c&lJob Daily Limit &4&l]&4&m                    &6'
+      - '&7'
+      - '&c你已经达到了职业 &e%job_name% &c中通过 &e%objective_name% &c获得 &e%limit_type% &c的每日限制!'
+      - '&c你将不会在之后的游戏中通过 &e%objective_name% &c获得 &e%limit_type% &c直到下一天.'
+      - '&7'
+      - '&4&m                                                                &6'
+Money:
+  Pickup: '{message: ~type: ACTION_BAR;}&2*** &a你捡起了 &f%money%&a 枚金币! 当前余额:
+    &f%balance% &2***'
+  Lost: '{message: ~type: ACTION_BAR;}&4*** &c你失去了 &f%money%&c! 枚金币! 当前余额: &f%balance%
+    &4***'
+JobState:
+  PRIMARY: '初级'
+  SECONDARY: '次级'
+  INACTIVE: '未激活'
+JobType:
+  KILL_ENTITY: '击杀生物'
+  KILL_MYTHIC: '击杀 MM 怪物'
+  BLOCK_BREAK: '挖掘方块'
+  FISHING: '钓鱼'
+LeaderboardType:
+  TOP_LEVEL: '最高等级'
+  DAILY_EXP: '每日经验'
+  DAILY_MONEY: '每日金币'
+ObjectiveLimitType:
+  EXP: '经验'
+  MONEY: '金币'

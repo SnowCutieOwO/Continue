@@ -1,0 +1,212 @@
+# 注意: 使用 paper 及其分支核心的服主若要插件正常运行, 你需要将 paper 核心的服务端配置 "hopper.disable-move-event" 禁用.
+# 全局设定
+general:
+  # 默认语言: 英语 (美国) - 不需要下载.
+  # 可在我们的 Discord 聊天群组获取最新的文件: https://discord.gg/B4MAJVk
+  # 若要获取除英语以外的翻译, 请在我们的 Dicord 聊天群组中使用命令 /translations.
+  language: 'en-US'
+  # 允许放置升级漏斗的世界.
+  worlds_list:
+    - 'world'
+
+  # 设置经济单位的显示格式.
+  # 设置教程: https://docs.oracle.com/javase/7/docs/api/java/text/DecimalFormat.html
+  # 注意: 该设置的应用需要重启服务器或重载插件.
+  eco-format:
+    normal: '$#,##0.00'
+    # 该短格式表示经济单位数值小于 1000 时不使用分隔.
+    # 若大于 1000, 那么将会返回三位分隔的数字
+    # 该格式仅在部分消息文本中使用.
+    short: '${value}k'
+
+
+# 数据库设置
+database:
+  # MySQL
+  mysql:
+    # 若不希望使用本地存储, 请将该选项启用
+    # 推荐使用 MySQL, 可一定程度上提升性能
+    # 若你没有 MySQL 服务器, 请不要启用该项.
+    enabled: false
+    ip-address: 'localhost'
+    port: '3306'
+    database: 'upgradeablehoppers'
+    # 强烈推荐设置与其他插件不同的表前缀.
+    table-prefix: 'hoppers'
+    user: 'minecraft'
+    password: 'password'
+
+
+command:
+  # 玩家输入 /Hopper get 命令是否需要再次确认?
+  get-confirm: false
+  # 为 /UpgradeableHoppers 命令设置别称
+  # 注意: 设置后需要重启服务器才可生效.
+  alias:
+    upgradeablehoppers_list:
+      - hopper
+      - hoppers
+      - h
+      - uhopper
+      - uhoppers
+      - uh
+
+
+# 漏斗设置
+hopper:
+  # 只允许漏斗拥有者将其放置.
+  only-owner: true
+  # 命令 /Hopper get 下的物品设置
+  item:
+    # 是否在玩家已经到达放置上限时允许其购买漏斗?
+    # 命令: /Hoppers get [数量]
+    over-max: true
+
+  # 限制原版的非升级漏斗.
+  vanilla:
+    # 是否允许合成普通漏斗?
+    crafting: true
+    # 是否允许放置普通漏斗?
+    placing: true
+    # 是否要将普通漏斗(或其他插件的漏斗)转化为本插件的漏斗?
+    convert: false
+
+  # 设置默认漏斗内容
+  # 所有设置可在此浏览:
+  # https://github.com/Angeschossen/UpgradeableHoppersAPI/blob/master/src/main/java/me/angeschossen/upgradeablehoppers/api/enums/Setting.java
+  default-settings_list:
+    - SUCTION_ENABLED
+
+  # 传送至命令 /Hopper list 内显示的漏斗
+  # 对应权限 uhoppers.teleport
+  teleportation:
+    # 设置传送收费价格.
+    cost_2: 200
+
+  # 是否只允许任何拥有 uhoppers.upgrade 权限的玩家升级漏斗?
+  upgrade-perm: false
+
+
+# 注意: 设置后需要重启服务器才可生效.
+optimization:
+  redstone:
+    # 是否在被红石充能时停止转移物品?
+    pause-on-signal: true
+    # 是否在物品转移时改变输出红石信号的强度?
+    # 同时影响连接容器及漏斗本身.
+    update-signal:
+      enabled_2: true
+      # 若禁用, 红石信号只会在开关时输出. 即只在容器填满 -> 清空或空 -> 满时发出一次红石信号.
+      # 这可以提升服务器性能, 但会导致无法通过红石灯显示容量.
+      precise: false
+
+  # levels.yml 内的转移数量设置是否也对漏斗上方的容器生效?
+  item-pull-amount: true
+
+  # 如果物品不能被添加至指定容器连接, 是否将其置入冷却?
+  # 物品会被加入下个可用的连接. 这也会考虑顺序插入功能.
+  # 这会让服务器拥有更快的转移速度 (如 10 刻). 这也可以防止反复检查箱子是否已满.
+  # 对漏斗同样生效.
+  full-cooldown: true
+
+
+# 全局传送设置
+# 命令传送设置可以在各自的配置下找到.
+teleport:
+  # 全局传送价格. 部分功能的单独价格会覆盖该选项.
+  costs: 0
+  # 对首次加入服务器的玩家设置限免.
+  # 你可以在这里设置时间段. 示例: 1d = 加入的玩家在 23 小时内均不需要支付任何传送费用.
+  first-join_time: 0h
+  # 等待时间
+  # 时间单位: 秒
+  wait: 3
+
+
+
+# 连接 / 目的地设置
+link:
+  # 是否在点击菜单内的安置连接物品按钮后显示目的地?
+  visualization: true
+  # 是否默认启用白名单?
+  whitelist: false
+  # 是否默认启用严格过滤?
+  strict: false
+
+  type:
+    furnace:
+      # 设置可在熔炉内熔炼的额外方块.
+      # 如来自数据包的方块.
+      smelt_list: []
+
+# 声音配置
+# 格式: 音效:音量:音高
+# 音量与音高可选. 它们可以更详细地控制声音.
+# 若要禁用声音: 将其设置为 '' 即可.
+sounds:
+  # 被 Lands 插件传送发出的声音.
+  # 可将声音设置为 '' 禁用.
+  teleport:
+    teleported_sound: 'ENTITY_ENDERMAN_TELEPORT'
+    countdown_sound: 'BLOCK_LEVER_CLICK'
+
+# 保护设置
+protection:
+  # 是否保护升级漏斗?
+  # 注意: 若禁用, 任何玩家都可以破坏、打开菜单以及升级漏斗.
+  enabled_3: true
+  # 是否允许 TNT 爆炸破坏漏斗? 物品会掉落在地.
+  anti-explosive: true
+  # 支持插件: Lands (https://www.spigotmc.org/resources/53313), SuperiorSkyblock2, BentoBox, PlotSquared, WorldGuard
+  # 是否允许区域内的受信任玩家编辑漏斗?
+  allow-region-members: false
+
+# 经济设置
+economy:
+  # 在这里你可以设置使用的经济类型.
+  # 最顶上的优先级最高.
+  # 若没有可用经济, 则插件默认使用物品.
+  type:
+    # 是否启用基于 vault 的经济?
+    vault: true
+    # 设置物品经济的代表物品.
+    default: 'DIAMOND'
+    # 是否允许经验等级作为货币?
+    exp-levels: false
+
+
+# 第三方插件联动
+integration:
+  # Lands (https://www.spigotmc.org/resources/53313)
+  lands:
+    # 是否只允许玩家在占领区内放置漏斗?
+    # 可防止玩家在野区放置漏斗.
+    only-land: false
+
+  # 若你启用了第三方堆叠插件, 请将其启用以确保 UpradeableHoppers 能正确读取物品数量.
+  # 当前支持: WildStacker, RoseStacker, zItemStacker
+  # 你的插件没有列出? 第三方开发者可以通过这个方法实现 ItemStacker 读取: https://github.com/Angeschossen/UpgradeableHoppersAPI/blob/25dc754a635908de161685d0fa0f9795d2f65bab/src/main/java/me/angeschossen/upgradeablehoppers/api/UpgradeableHoppersAPI.java#L28
+  item-stacker: 'default'
+  # 经济类型
+  # 若没有可用经济, 则插件默认使用物品.
+  # 注意: 修改这些选项之后, 你可能同样需要修改本插件配置中的 "eco-format" 设置.
+  economy:
+    vault:
+      # 需要安装任意支持 vault 的经济插件.
+      enabled_10: true
+      # 服务器银行账户名称. 所有收取的费用都会流向此处.
+      server-bank: ''
+    # 玩家经验值
+    exp:
+      enabled_15: false
+    # 物品经济会在其他经济插件不可用时使用.
+    # 经济的代表物品可以在界面语言文件中的 "currency" 处配置.
+    items:
+      # 若启用, 只有相同名称及描述的物品才会算作货币.
+      # 而非只是同类型或包含相同模型数据的物品.
+      strict_2: false
+
+# 配制记录
+logging:
+  # 在提交漏洞反馈时可能会要求你开启此项.
+  debug: false

@@ -1,0 +1,84 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                Developed by Ome_R                ##
+##                                                  ##
+######################################################
+
+title: '&l岛屿排行榜'
+previous-menu: true
+
+pattern:
+  - '~ ~ ~ ~ ~ ~ ~ ~ ~'
+  - '@ % @ @ @ # @ @ @'
+  - '@ * @ @ # # # @ @'
+  - '@ ^ @ # # # # # @'
+  - '@ & @ @ @ $ @ @ @'
+  - '~ ~ ! ~ - ~ + ~ ~'
+
+slots: '#'
+previous-page: '!'
+current-page: '-'
+next-page: '+'
+
+player-island: '$'
+sort-glow-when-selected: true
+
+items:
+  '#':
+    island:
+      type: PLAYER_HEAD
+      name: '&e&l[!] 岛屿: &6&n{0}&7 (#{1})'
+      lore:
+        - '&7'
+        - '&6&l* &e&l岛屿登记 &7{2}'
+        - '&7'
+        - '&6&l* &e&l排名 &7#{1}'
+        - '&6&l* &e&l价值 &7${3}'
+        - '&6&l* &e&l评分 {8} &7({9})'
+        - '&6&l* &e&l玩家 &7{10}'
+        - '&7'
+        - '&6&l* &e&l成员:'
+        - '{4}:&f  - &7{}'
+        - '&7'
+        - '&7&o(( &f&o鼠标左键 &7&o浏览物品. ))'
+        - '&7&o(( &f&o鼠标右键 &7&o传送至该岛屿. ))'
+    no-island:
+      type: PLAYER_HEAD
+      name: '&c无效岛屿'
+  '%':
+    type: DIAMOND
+    sorting-type: 'WORTH'
+    name: '&6按价值排序'
+  '*':
+    type: GOLD_INGOT
+    sorting-type: 'LEVEL'
+    name: '&6按等级排序'
+  '^':
+    type: EMERALD
+    sorting-type: 'RATING'
+    name: '&6按评分排序'
+  '&':
+    type: PLAYER_HEAD
+    sorting-type: 'PLAYERS'
+    name: '&6按玩家排序'
+  '!':
+    type: PAPER
+    name: '{0}上一页'
+  '-':
+    type: SUNFLOWER
+    name: '&a当前页'
+    lore:
+      - '&7第 {0} 页'
+  '+':
+    type: PAPER
+    name: '{0}下一页'
+  '~':
+    type: BLACK_STAINED_GLASS_PANE
+    name: '&f'
+
+sounds:
+  '@':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2

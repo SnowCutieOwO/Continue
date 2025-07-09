@@ -1,0 +1,11 @@
+Name: '&a&l绿宝石宝箱钥匙'
+Virtual: false
+Item:
+  Material: TRIPWIRE_HOOK
+  Amount: 1
+  Durability: 0
+  Name: '&a&l绿宝石宝箱钥匙'
+  Lore:
+    - '&7使用这个钥匙来开启 &a&l绿宝石宝箱'
+  Item_Flags: [ ]
+  Unbreakable: false

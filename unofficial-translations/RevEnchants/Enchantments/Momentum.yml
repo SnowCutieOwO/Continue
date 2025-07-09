@@ -1,0 +1,30 @@
+Settings:
+  Enabled: true
+  InGui: true
+  Name: 动能
+  Colour: '&7'
+  MultiBreak: true
+  MultiBreakMaxSuccess: 1000
+  Slot: 39
+  MaxLevel: 10
+  Currency: RevToken
+  Cost: 1000
+  Increase-Cost-by: 1000
+  Chance: 5
+  Increase-Chance-by: 1
+  Momentum:
+    Need: 1000
+    Add: 1
+    Seconds: 5
+    ResetOnPlayerQuit: true
+    DoubleEnergy: true
+    DoubleCurrency: RevToken/Vault/RevCoin
+  Requirement:
+    Enabled: false
+    Number: 5
+    Placeholder: '%RevEnchants_Tool_Flag_Level%'
+  Description: '&7在动能到达 100% 时获取双倍代币与原能'
+  Book:
+    ==: org.bukkit.inventory.ItemStack
+    v: 3700
+    type: LEGACY_BOOK

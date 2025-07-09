@@ -1,0 +1,53 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                  插件作者 Ome_R                   ##
+##                                                  ##
+######################################################
+
+title: '&l岛屿仓库'
+previous-menu: true
+
+pattern:
+  - '# # # # # # # # #'
+  - '# $ @ @ @ @ @ $ #'
+  - '# $ @ @ @ @ @ $ #'
+  - '# $ @ @ @ @ @ $ #'
+  - '# $ @ @ @ @ @ $ #'
+  - '# # % # * # ^ # #'
+
+slots: '@'
+previous-page: '%'
+current-page: '*'
+next-page: '^'
+
+items:
+  '@':
+    valid-page:
+      type: STORAGE_MINECART
+      name: '&e第 {0} 页'
+      lore:
+        - '&e大小: &7{1}'
+    invalid-page:
+      type: MINECART
+      name: '&f '
+  '%':
+    type: PAPER
+    name: '{0}上一页'
+  '*':
+    type: DOUBLE_PLANT
+    name: '&a下一页'
+    lore:
+      - '&7第 {0} 页'
+  '^':
+    type: PAPER
+    name: '{0}下一页'
+  '#':
+    type: RAILS
+    name: '&f '
+
+sounds:
+  '@':
+    type: BLOCK_CHEST_OPEN
+    volume: 0.8
+    pitch: 1

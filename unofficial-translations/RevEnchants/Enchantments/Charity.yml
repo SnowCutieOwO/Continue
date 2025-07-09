@@ -1,0 +1,33 @@
+Settings:
+  Enabled: true
+  InGui: true
+  Name: 散财
+  Colour: '&7'
+  Slot: 11
+  MaxLevel: 100
+  Max: 10
+  Min: 1
+  GiveCurrency: Vault
+  GiveCurrency-Increase-by-Lvl: 0
+  MultiBreak: true
+  MultiBreakMaxSuccess: 1000
+  EnchantNeeded: false
+  Currency: RevToken
+  Cost: 1000
+  Increase-Cost-by: 1000
+  Chance: 1
+  Increase-Chance-by: 0.01
+  Requirement:
+    Enabled: false
+    Number: 5
+    Placeholder: '%RevEnchants_Tool_Flag_Level%'
+  Description: '&7概率获取更多钱并将它们送给在线的所有玩家%nl%获取几率随等级而提升'
+  Book:
+    ==: org.bukkit.inventory.ItemStack
+    v: 3700
+    type: LEGACY_BOOK
+  Message:
+    Enabled: true
+    Bar: true
+    '1': '&7你获得了散财效果给予的 %amount% $'
+    '2': '&7%from player% 通过散财效果给予了你 %amount% $'

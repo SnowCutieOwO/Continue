@@ -1,0 +1,8 @@
+# 自定义本插件的前缀
+prefix: '&6[&bCata&aMines&6] &7'
+
+# 是否接收新版本可用的提示?
+announceUpdate: true
+
+# 目前支持的语言: EN, CUSTOM, ES, CN
+language: EN

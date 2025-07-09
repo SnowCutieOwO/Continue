@@ -1,0 +1,21 @@
+Settings:
+  Enabled: true
+  InGui: true
+  Real: false
+  Name: 耐久
+  Colour: '&7'
+  Slot: 29
+  MaxLevel: 100
+  Increase-by-level: 1000
+  Currency: Vault
+  Cost: 1000
+  Increase-Cost-by: 1000
+  Requirement:
+    Enabled: false
+    Number: 5
+    Placeholder: '%RevEnchants_Tool_Flag_Level%'
+  Description: '&7提升镐子耐久'
+  Book:
+    ==: org.bukkit.inventory.ItemStack
+    v: 3700
+    type: LEGACY_BOOK

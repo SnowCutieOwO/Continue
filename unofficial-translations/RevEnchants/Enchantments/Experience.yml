@@ -1,0 +1,29 @@
+Settings:
+  Enabled: true
+  InGui: true
+  Name: 经验
+  Colour: '&7'
+  Slot: 34
+  MaxLevel: 1000
+  Max: 10
+  Min: 1
+  MultiBreak: true
+  MultiBreakMaxSuccess: 1000
+  Currency: RevToken
+  Cost: 1000
+  Increase-Cost-by: 1000
+  Chance: 3
+  Increase-Chance-by: 0.01
+  Requirement:
+    Enabled: false
+    Number: 5
+    Placeholder: '%RevEnchants_Tool_Flag_Level%'
+  Description: '&7概率在挖掘时获得更多经验%nl%获取几率随等级提升而提升'
+  Book:
+    ==: org.bukkit.inventory.ItemStack
+    v: 3700
+    type: LEGACY_BOOK
+  Message:
+    Enabled: true
+    Bar: true
+    Format: '&7经验 %Amount_FormattedA%'

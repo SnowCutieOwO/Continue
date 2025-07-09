@@ -1,0 +1,107 @@
+# 若要阻止消息出现，将对应文本修改为 'none' 即可
+# 一些名称不可通过该功能禁止, 例如天气名称, 因为插件必须需要此类关键词
+
+weathers:
+    name:
+        beautiful: '&a舒适'
+        breezy: '&7微风'
+        chilly: '&9霜冻'
+        rainy: '&9下雨'
+        scorching: '&e灼热'
+        hot: '&e火热'
+        warm: '&e温暖'
+        cold: '&9寒冷'
+        stormy: '&c大风'
+        freezing: '&9寒冻'
+        snowy: '&7下雪'
+        night: '&7凉爽'
+    on-trigger:
+        beautiful: "&a阳光明媚，绿草葱郁，天气很是&e宜人"
+        breezy: "&7凉凉的微风拂过你的皮肤，有点&2凉爽"
+        chilly: "&3霜冻闪耀在你的周围，身体快要冻僵了，&b好冷！"
+        rainy: "&3大雨倾盆而下，地面泥泞不堪，现在正在&9下雨"
+        scorching: "&e太阳近乎要烤焦你的皮肤，地面像是烧热的铁板，这是&6灼热的一天"
+        hot: "&e今天会很热，注意抹点防晒霜！"
+        warm: "&e当你奔跑在林间时，温暖的风拥抱着你，这是个&6温暖的一天"
+        cold: "&3今天的水很冷"
+        stormy: "&c刮大风了...仿佛众神暴怒...坚持住！"
+        freezing: "&3水面结起了一层冰，你感到很冷，冷得要命。"
+        snowy: "&7仿佛白色的巨毯覆盖了整个世界，天空中飘来雪花...下雪了"
+        night: "&7太阳的余晖在山头落尽，万籁俱寂...邪恶的存在开始寻找你的踪迹！"
+
+seasons:
+    name:
+        spring: '&e春'
+        summer: '&6夏'
+        autumn: '&2秋'
+        winter: '&9冬'
+    on-trigger:
+        spring: "&a太阳升起，花香扑鼻，你脚下仿佛就有着有一个春天...！"
+        summer: "&e今天感觉比其他日子要暖和得许多，甚至可能太热了...原来是夏天到了！"
+        autumn: "&6一阵凉风轻拂着从树上落下的树叶，秋天来了！"
+        winter: "&b片片雪花飘落，世界变得寒冷，是时候让冬天留下印记了..."
+
+effects:
+    on-trigger:
+        devastation: "&c心跳迅速，你的腿正在颤抖，你发现自己的伤口难以愈合！"
+        feels-good: "&a微风在你的皮肤上轻轻拂过，穿着盔甲会失去这种美妙的体感..."
+        fluffy-coat: "&a你的衣服给了你抵挡严寒的力量！"
+        frostbite: "&c这个地方正在结冰，如果不穿上护甲，你会被冻住的！"
+        hold-onto-your-hat: "&7小心你的帽子，调皮的风在四处游荡..."
+        hot-sand: "&e在这么烫的沙地上行走一定对脚很不好！"
+        icy: "&9当水变成冰时，冷汗会顺着你的背流下来"
+        primitive-heating: "&9在这么冷的天气里能随身携带一个暖源就太好了！"
+        revitalized: "&a今天天气是如此令人愉悦！"
+        soldering-iron: "&e附近的铁制品开始滋滋作响，还是不要拿起来为妙..."
+        strong-current: "&9水流湍急，几乎要把你冲倒！"
+        sweating: "&e这绝对不是一个适合全副武装的日子......"
+        the-shivers: "&c水面上结满了冰，摸起来冷得要命......"
+        wet-mud: "&7泥泞粘在你的靴子上，在这种天气里很难走动..."
+        warming-stew: "&7你的胃开始抱怨，是时候该吃点东西了..."
+        wind-in-your-boots: "&7你感到今天的风仿佛助你而行！"
+    on-give:
+        feels-good: "&a没有护甲的阻挡，太阳给了你能量，感觉好极了！"
+        fluffy-coat: "&a你的护甲给你一种温暖，让你感觉更为强壮"
+        hold-onto-your-hat: "&e你的帽子刚刚被吹掉了，小心点！"
+        primitive-heating: "&a背包中的热源温暖了你的身体，让你能够抵御外界的严寒"
+        revitalized: "&a这个世界上的阳光明媚而和煦，心情好极了！"
+        icy: "&c桶里的水冻上了..."
+        soldering-iron: "&c你手上的铁制品烫伤了你的手，快放下它！"
+        strong-current: "&c强烈的疼痛冲击着你的意识，你的每一寸肌肤都在抵抗着这可怕的暴风雨..."
+        sweating: "&c汗水从你的额头滴下来，今天太热了，不适合穿护甲..."
+        the-shivers: "&c冰冷的水几乎要将你冻成棒冰，再不走就来不及了！"
+        warming-stew: "&a真是及时，美食奇迹般地让你的伤口快速愈合了..."
+        wet-mud: "&e湿乎乎的泥粘在你的靴子上，哦不...真是难走。"
+        wind-in-your-boots: "&a你感觉到一股风在你的靴子里，冲向前去！"
+    on-remove:
+        feels-good: "&e当你离开这个世界的时候，充满活力的阳光渐渐消失了..."
+        fluffy-coat: "&c没有护甲，你的身体再次感到寒冷，不再抵抗"
+        primitive-heating: "&e你的身体不再温暖，它的抵抗力消失了..."
+        revitalized: "&e当阳光不再照耀肌肤时，活力和能量也渐渐散去..."
+        strong-current: "&a糟糕的天气慢慢消失，终于恢复如常..."
+        sweating: "&a终于凉快了不少，你擦额头上的汗..."
+
+command:
+    effects-list-title: "&7天气 &e%weather%, &7对应效果:"
+    effects-list-element: "&6&l%effect%: &7%description%"
+    season-info:
+        - "%season-color%当前世界季节: %season%"
+        - "&7当前天气为 &2%weather%"
+        - "&e今天是 %day% 月 %max-days% 日 &7(&c服务器内&7)"
+    season-info-footer: "&7若要查看此天气的影响，请使用命令 &e/seasons effects"
+    list-help:
+        - "&7当前可查看的设置选项: %options%"
+        - "&e用法：&e/season list <选项>"
+    list-error: "&c没有该类型的列表可用！"
+    permission-denied: '&c你没有这么做的权限!'
+    all-effects-disabled: '&c服务器管理员已禁用所有效果!'
+    barren-world: '&c这个世界满是荒芜与虚无... 这里没有任何季节.'
+    force-day: '&7时间已被强制设置为了 &b第 %day% 天'
+    force-weather: '&7天气已被强制切换为了 %weather%'
+    force-season: '&7季节已被强制切换为了 %season%'
+
+misc:
+    prefix: '&e&l季节系统&7∙ &r'
+    catastrophic-alert: '&c&l灾难性天气警报 - 请谨慎出行'
+    weather-change: '&7天气已修改'
+    season-change: '&7季节已修改'

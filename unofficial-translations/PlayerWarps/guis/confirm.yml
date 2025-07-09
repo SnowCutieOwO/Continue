@@ -1,0 +1,98 @@
+# PlayerWarps by Olzie-12
+# https://www.spigotmc.org/resources/66692/
+# We also have a discord server for help: https://olziedev.com/discord or check docs https://docs.olziedev.com/projects/playerwarps
+# Also if you find any bugs be happy to report them I will fix them :)
+# Made with love
+
+confirm:
+  # Should you enable a category gui meaning players will have to sort their warp into a category?
+  enabled: false
+  # What is the name of the gui? 
+  name: "confirm"
+  # The title of the gui (Can use color codes)
+  title: "&b&lConfirm Teleport"
+  # What is the size of this GUI? (multiples of 9 can only go up to 54)
+  size: 27
+  # What are the actions when this menu is opened up?
+  open-actions: []
+  # What are the actions when this menu is closed?
+  close-actions: []
+  # Where should the warp icon the player is warping to be?
+  slot-warping: 13
+  # Should the previous menu that was opened be opened when this menu is closed?
+  open-previous: true
+
+  icon:
+    # This is the name of the skull in the gui.
+    name: "&b[warp_display]"
+    # What is the lore of the icon shown in the menu?
+    lore:
+      - "&bLocation: &d[world], [location]"
+      - "&bVisits: &d[visits]"
+      - "&bDescription: "
+      - "&d[desc]"
+      - "&bTime Created: &d[date]"
+      - "&bCategory: &d[category]"
+      - "&bRates: &d[rates]"
+      - "&bRates Average: &d[rates_average]"
+      - "&bTeleport Cost: &d[cost]"
+      - "&bPassword: &d[password]"
+    # Should the item appear with the glowing effect?
+    glowing: false
+
+  clickable-items:
+    accept:
+      # If you wish to disable any of these please set them the material to "AIR"
+      name: "&aConfirm teleport"
+      # this is the material of the next page item. valid material names: https://javadocs.olziedev.com/spigot/latest/org/bukkit/Material.html
+      material: LIME_WOOL
+      data: 5
+      lore:
+        - "&dClick&b to teleport to &d[warp_display]&b for &d[cost]&b!"
+      amount: 1
+      slot: 11
+      glowing: false
+      # These only work if the skull is a SKULL_ITEM and the data is 3!
+      #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWE0ZjY4YzhmYjI3OWU1MGFiNzg2ZjlmYTU0Yzg4Y2E0ZWNmZTFlYjVmZDVmMGMzOGM1NGM5YjFjNzIwM2Q3YSJ9fX0= - Skull texture
+      #owner: Next - Skull owner
+    deny:
+      name: "&cDeny teleport"
+      material: RED_WOOL
+      data: 14
+      lore:
+        - "&cClick to cancel this teleport."
+      amount: 1
+      slot: 15
+      glowing: false
+
+  items:
+    # What are the items that are placed into the GUI to make it more pretty?
+    1:
+      # This is the name of the item.
+      name: " "
+      # This is the item material.
+      material: LIGHT_BLUE_STAINED_GLASS_PANE
+      # This is the data item
+      data: 3
+      # You can add lores!
+      # example of what you can do:
+      # lore:
+      #   - "&bThis is a pane."
+      slot: [0, 2, 4, 6, 8, 18, 20, 22, 24, 26]
+      # What is the stack amount?
+      amount: 1
+      # commands that will be executed on click.
+      # [server] means the command is executed as the console
+      # [player] means the command is executed as the player
+      # commands:
+      #   - "[server] msg %player% you clicked this item!"
+      glowing: false
+      # These only work if the skull is a SKULL_ITEM and the data is 3!
+      #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTZmOGFmYjI3YmFmYzc3YzJiODI1OTljMmY3YjhmMWY2ODMxMGU2YWE5MDRmMDUxYjA3YWIxYzJiNmIifX19 - Skull texture
+      #owner: Glass - Skull owner
+    2:
+      name: " "
+      material: MAGENTA_STAINED_GLASS_PANE
+      data: 2
+      slot: [1, 3, 5, 7, 9, 17, 19, 21, 23, 25]
+      amount: 1

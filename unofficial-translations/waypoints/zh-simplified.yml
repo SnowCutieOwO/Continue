@@ -1,0 +1,488 @@
+prefix: "&b&lWaypoints &e&l>&r"
+scriptPrefix: "&b&lWaypoints&aScript &e&l>&r"
+
+worlds:
+  world: "主世界"
+  world_nether: "地狱"
+  world_the_end: "末地"
+
+command:
+  notAPlayer: "$[prefix] &c你必须是玩家才可执行此命令."
+
+  script:
+    help:
+      header: "$[scriptPrefix] &7&n帮助界面"
+      deselectWaypoint: "&7 - &e/${label} deselectWaypoint <玩家名称> &7&l|&r&7 为玩家删除选择的路径点"
+      selectWaypoint: "&7 - &e/${label} selectWaypoint <玩家名称> <Waypoint-UUID> &7&l|&r&7 为玩家设置一个将要去到的路径点"
+      temporaryWaypoint: "&7 - &e/${label} temporaryWaypoint <玩家名称> <X> <Y> <Z> [光柱颜色] &7&l|&r&7 为玩家创建临时路径点"
+      uuid: "&7 - &e/${label} uuid <名称> &7&l|&r&7 通过关键词搜索路径点并返回其 UUID"
+
+    selectWaypoint:
+      # uuid: ID of the waypoint that could not be found
+      waypointNotFound: "$[scriptPrefix] &c找不到 UUID 为 &e${uuid}&c 的路径点."
+
+    temporaryWaypoint:
+      beaconColorNotFound: "$[scriptPrefix] &c所提供的信标颜色不存在."
+
+    uuid:
+      noMatch: "$[scriptPrefix] &指定关键词没有对应搜索结果."
+      header: "$[scriptPrefix] &7路径点: (点击可将 UUID 复制至剪贴板)"
+      result: "&7 - 名称: &e${name}&7 文件夹: &e${folder}"
+
+  help:
+    header: "$[prefix] &7&n帮助界面"
+    gui: "&7 - &e/${label} &7&l|&r&7 打开路径点 GUI"
+    help: "&7 - &e/${label} help &7&l|&r&7 显示该帮助界面"
+    select: "&7 - &e/${label} select <路径点名称> &7&l|&r&7 选中路径点"
+    deselect: "&7 - &e/${label} deselect &7&l|&r&7 取消选择当前选中的路径点"
+    teleport: "&7 - &e/${label} teleport <路径点名称> &7&l|&r&7 传送至对应路径点"
+    set:
+      private: "&7 - &e/${label} set <路径点名称> &7&l|&r&7 创建一个新的路径点"
+      public: "&7 - &e/${label} setPublic <路径点名称> &7&l|&r&7 创建一个新的公开路径点"
+      permission: "&7 - &e/${label} setPermission <Permission> <路径点名称> &7&l|&r&7 创建一个新的权限路径点"
+      temporary: "&7 - &e/${label} setTemporary <X> <Y> <Z> &7&l|&r&7 标记一个未保存的路径点"
+    other: "&7 - &e/${label} other <Name|UUID> &7&l|&r&7 查看其他玩家的路径点"
+    statistics: "&7 - &e/${label} statistics &7&l|&r&7 查看数据库统计信息"
+    import: "&7 - &e/${label} import &7&l|&r&7 从 Waypoints V2 版本导入路径点数据"
+    reload: "&7 - &e/${label} reload &7&l|&r&7 重载配置文件"
+
+  search:
+    prefix:
+      public: "开放"
+      permission: "权限"
+    notFound:
+      waypoint: "$[prefix] &c对应关键词没有搜索结果."
+
+  select:
+    selected: "$[prefix] &7路径点 &e${name} &7已被选中."
+
+  deselect:
+    done: "$[prefix] &7已取消选择当前路径点."
+
+  other:
+    playerNoWaypoints: "$[prefix] &c指定玩家无现有路径点."
+
+  statistics:
+    # dbFileSize: Size of the database in SI Units
+    # totalWaypoints: Total amount of waypoints
+    # privateWaypoints: Amount of private waypoints
+    # deathWaypoints: Amount of death waypoints
+    # publicWaypoints: Amount of public waypoints
+    # permissionWaypoints: Amount of permission waypoints
+    # totalFolders: Total amount of folders
+    # privateFolders: Amount of private folders
+    # publicFolders: Amount of public folders
+    # permissionFolders: Amount of permission folders
+    message: |
+      $[prefix] &7数据库统计
+      &7文件大小: &e${dbFileSize}
+
+      &7总路径点数: &e${totalWaypoints}
+      &7私有路径点数: &e${privateWaypoints}
+      &7死亡路径点数: &e${deathWaypoints}
+      &7公开路径点数: &e${publicWaypoints}
+      &7权限路径点数: &e${permissionWaypoints}
+
+      &7总路径点组数: &e${totalFolders}
+      &7私有路径点组数: &e${privateFolders}
+      &7公开路径点组数: &e${publicFolders}
+      &7权限路径点组数: &e${permissionFolders}
+
+  reload:
+    finished: "$[prefix] &7配置文件已成功重载."
+
+text:
+  duration:
+    second: "秒"
+    seconds: "秒"
+
+    minute: "分"
+    minutes: "分"
+
+    hour: "时"
+    hours: "时"
+
+    day: "天"
+    days: "天"
+
+  worldNotFound: "未知"
+
+  distance:
+    otherWorld: "未知"
+
+  sortOptions:
+    type_ascending: "种类"
+    type_descending: "种类 (降序)"
+    name_ascending: "名称"
+    name_descending: "名称 (降序)"
+    created_ascending: "创建时间"
+    created_descending: "创建时间 (降序)"
+
+  beaconColors:
+    clear: "&7无颜色"
+    light_gray: "&7淡灰"
+    gray: "&7灰"
+    pink: "&7粉"
+    lime: "&7黄绿"
+    yellow: "&7黄"
+    light_blue: "&7淡蓝"
+    magenta: "&7品红"
+    orange: "&7橙"
+    white: "&7白"
+    black: "&7黑"
+    red: "&7红"
+    green: "&7绿"
+    brown: "&7棕"
+    blue: "&7蓝"
+    cyan: "&7青"
+    purple: "&7紫"
+
+message:
+  waypoint:
+    create:
+#      worldUnavailable: "$[prefix] &cIn world you are in waypoints are unavailable."
+      coordinates:
+        outOfBounds: "$[prefix] &c创建路径点的位置过远."
+        invalidFormat: |
+          $[prefix] &c指定坐标需为以下格式:
+          &a102/35/-238
+    limitReached:
+      private: "$[prefix] &c你不能再创建更多的路径点了."
+    nameDuplicate:
+      private: "$[prefix] &c私有路径点不允许重名."
+      public: "$[prefix] &c公开路径点不允许重名."
+      permission: "$[prefix] &c权限路径点不允许重名."
+    setSuccess:
+      private: "$[prefix] &7路径点已成功创建."
+      public: "$[prefix] &7公开路径点已成功创建."
+      permission: "$[prefix] &7权限路径点已成功创建."
+    # name: Name of the waypoint
+    getUuid: "$[prefix] &7点击此消息可获取路径点 &e${name} &7的 UUID."
+    newIconInvalid: "$[prefix] &c尝试用作路径点图标的物品未在允许列表内."
+
+  folder:
+    limitReached:
+      private: "$[prefix] &c你不能再创建更多的路径点组了."
+    nameDuplicate:
+      private: "$[prefix] &c私有路径点组不允许重名."
+      public: "$[prefix] &c公开路径点组不允许重名."
+      permission: "$[prefix] &c权限路径点组不允许重名."
+    createSuccess:
+      private: "$[prefix] &7私有路径点组已成功创建."
+      public: "$[prefix] &7公开路径点组已成功创建."
+      permission: "$[prefix] &7权限路径点组已成功创建."
+    newIconInvalid: "$[prefix] &c尝试用作路径点组图标的物品未在允许列表内."
+
+  teleport:
+    # remainingCooldown: Time left until player can teleport again
+    onCooldown: "$[prefix] &c你仍需等待 &e${remainingCooldown}&c 秒后才可以再次传送."
+    notAllowed: "$[prefix] &c你不能传送至该路径点."
+    notEnough:
+      # currentLevel: Level of the player
+      # requiredLevel: Level required for teleportation
+      xp: |
+        $[prefix] &c你没有足够的等级用于传送.
+        &c需要等级: &e${requiredLevel}
+      # currentBalance: Vault balance of the player
+      # requiredBalance: Vault balance required for teleportation
+      balance: |
+        $[prefix] &c你没有足够的钱用于传送.
+        &c需要金币: &a${requiredBalance}
+    standStill:
+      # duration: Amount of time the player needs to stand still
+      notice: "$[prefix] &7你需要在 &e${duration}&7 秒内保持禁止."
+      moved: "$[prefix] &c传送过程中出现移动, 传送请求已取消."
+
+  tracking:
+    playerNoLongerOnline: "$[prefix] &c玩家不在线."
+    trackableRequired: "$[prefix] &c若要追踪其他玩家, 你自己必须取消隐身状态."
+    notification: "$[prefix] &7玩家 &e${name}&7 正在追踪你."
+
+pointers:
+  actionBar:
+    # current: Translated name of the world the player is in
+    # correct: Translated name of the world the waypoint is in
+    wrongWorld: "&c你当前位于世界 &a${current}&c, 但路径点在世界 &a${correct}"
+    # distance3D: Distance to the waypoint in blocks
+    # heightDifference: Height difference between player and waypoint. Positive when to high, negative when to low
+    distance: "&7你距离你的目的地还有 &e${distance3D}&7 格远"
+
+  hologram:
+    # Set the text of the floating hologram here.
+    # name: Name of the waypoint
+    # createdAt: Date at which the waypoint was created
+    # world: World where the waypoint is located at
+    # x, y, z: Coordinates of the waypoint
+    # blockX, blockY, blockZ: Coordinates of the block nearest to the waypoint
+    private: "&5${name} (${distance}m)"
+    death: "&c死亡位置 ${createdAt} (${distance}m)"
+    public: "&b${name} (${distance}m)"
+    permission: "&d${name} (${distance}m)"
+    temporary: "&5临时路径点 (${distance}m)"
+    playerTracking: "&9${name} &r&9(${distance}m)"
+
+integrations:
+  maps:
+    label: "公开路径点"
+
+inventory:
+  title:
+    self: "&8你的路径点"
+    # name: Name of the other player
+    other: "&8玩家 &9${name} &8的路径点"
+
+  general:
+    previous:
+      displayName: "&e前一页"
+      description: ""
+    next:
+      displayName: "&e后一页"
+      description: ""
+    back:
+      displayName: "&e返回"
+      description: ""
+
+  background:
+    private:
+      displayName: "&0-"
+      description: ""
+    death:
+      displayName: "&0-"
+      description: ""
+    public:
+      displayName: "&0-"
+      description: ""
+    permission:
+      displayName: "&0-"
+      description: ""
+
+  overview:
+    # selectionList: The list showing available and the active options
+    cycleSort:
+      displayName: "&e排序选择"
+      description: "\n${selectionList}"
+      activeColor: "&6"
+      inactiveColor: "&7"
+
+    toggleGlobals:
+      visible:
+        displayName: "&e全局路径点可见"
+        description: "&7点击隐藏"
+      hidden:
+        displayName: "&e全局路径点隐藏"
+        description: "&7点击显示"
+
+    deselect:
+      displayName: "&e取消选择路径点"
+      description: "&7导航消息将不再提醒"
+    setWaypoint:
+      displayName: "&e创建一个新的路径点"
+      description: |
+        &7路径点将会创建在当前的路径点组内
+        
+        &7若按下 &eshift+左键&7, 你可使用坐标创建路径点, 例如:
+        &a102/35/-238
+    createFolder:
+      displayName: "&e创建新路径点组"
+      description: ""
+
+  # amount: Amount of waypoints in this global folder visible for the player
+  listing:
+    public:
+      displayName: "&b公开路径点"
+      description: "&7数量: &6${amount}"
+    permission:
+      displayName: "&d权限路径点"
+      description: "&7你可见的: &6${amount}"
+    tracking:
+      displayName: "&a玩家"
+      description: "&7追踪其他玩家"
+
+  waypoint:
+    # name: Name of the waypoint
+    # createdAt: Date at which the waypoint was created
+    # world: World where the waypoint is located at
+    # x, y, z: Coordinates of the waypoint
+    # blockX, blockY, blockZ: Coordinates of the block nearest to the waypoint
+    # distance: Distance in blocks to the player
+    icon:
+      description: &waypointDescription |
+        &7世界: &6${world}
+        &7X: &6${blockX}
+        &7Y: &6${blockY}
+        &7Z: &6${blockZ}
+        &7距离: &6${distance}
+
+        &7创建时间: &6${createdAt}
+
+      private:
+        displayName: "&5${name}"
+        description: *waypointDescription
+      death:
+        displayName: "&c死亡位置 ${createdAt}"
+        description: |
+          &7世界: &6${world}
+          &7X: &6${blockX}
+          &7Y: &6${blockY}
+          &7Z: &6${blockZ}
+          &7距离: &6${distance}
+      public:
+        displayName: "&b${name}"
+        description: *waypointDescription
+      permission:
+        displayName: "&d${name}"
+        description: *waypointDescription
+
+    select:
+      displayName: "&e选择路径点"
+      description: "&7点击设置该路径点为你的目的地"
+    delete:
+      displayName: "&4删除路径点"
+      description: ""
+      question:
+        displayName: "&7你真的要删除路径点 &e${name} &7吗?"
+        description: ""
+      confirm:
+        displayName: "&c是的, 删除 &e${name}&c!"
+        description: ""
+      cancel:
+        displayName: "&a不是, 不要删除 &e${name}&a."
+        description: ""
+    rename:
+      displayName: "&e重命名路径点"
+      description: ""
+    moveToFolder:
+      displayName: "&e将路径点移动至路径点组"
+      description: |
+        &7将路径点移动至路径点组内, 或移出路径点组
+    teleport:
+      displayName: "&e传送至该路径点"
+      # paymentNotice: A payment notice informing the player how much the teleportation will cost him, or if it is free nothing
+      description: "${paymentNotice}"
+      # levels: The amount of levels required for teleportation
+      xpLevel: "&7你需要 &e${levels}&7 级来传送至该路径点."
+      # balance: The amount of balance required for teleportation
+      balance: "&7你需要 &e${balance}&7 金币来传送至该路径点."
+    selectBeaconColor:
+      displayName: "&e修改信标颜色"
+      description: ""
+    getUuid:
+      displayName: "&e获取路径点 UUID"
+      description: "&7向聊天栏发送该路径点的 UUID"
+    editPermission:
+      displayName: "&e修改所需权限"
+      description: "&7当前所需权限为 &e${permission}"
+    make:
+      public:
+        displayName: "&e修改为公开路径点"
+        description: ""
+        question:
+          displayName: "&7你确定要开放路径点 &e${name}&7 吗?"
+          description: ""
+        confirm:
+          displayName: "&c是的, 我要开放路径点 &e${name}&c!"
+          description: ""
+        cancel:
+          displayName: "&a不是, 我不想开放路径点 &e${name}&a."
+          description: ""
+      permission:
+        displayName: "&e修改为权限路径点"
+        description: ""
+        question:
+          displayName: "&7你确定要将路径点 &e${name}&7 修改为权限路径点吗?"
+          description: ""
+        confirm:
+          displayName: "&c是的, 我要将路径点 &e${name}&c 修改为权限路径点!"
+          description: ""
+        cancel:
+          displayName: "&a不是, 我不想将路径点 &e${name}&a 修改为权限路径点."
+          description: ""
+    changeMapIcon:
+      displayName: "&e修改卫星地图上的显示图标"
+      description: ""
+
+    create:
+      enterName: "在此输入名称"
+      enterCoordinates: "在此输入坐标"
+      enterPermission: "在此输入权限"
+
+  folder:
+    # name: Name of the folder
+    # createdAt: Date at which the folder was created
+    # amount: Amount of waypoints visible to the player
+    icon:
+      private:
+        displayName: "&5${name}"
+        description: "&7路径点组中的路径点数: &6${amount}"
+      death:
+        displayName: "&cDeaths"
+        description: "&7路径点组中的路径点数: &6${amount}"
+      public:
+        displayName: "&b${name}"
+        description: "&7路径点组中的路径点数: &6${amount}"
+      permission:
+        displayName: "&d${name}"
+        description: "&7路径点组中的路径点数: &6${amount}"
+
+    delete:
+      displayName: "&4删除路径点组"
+      description: ""
+      question:
+        displayName: "&7你真的要删除路径点组 &e${name} &7吗?"
+        description: ""
+      confirm:
+        displayName: "&c是, 删除路径点组 &e${name}&c!"
+        description: ""
+      cancel:
+        displayName: "&a否, 不要删除路径点组 &e${name}&a."
+        description: ""
+    rename:
+      displayName: "&e重命名路径点组"
+      description: ""
+
+    create:
+      enterName: "在此输入名称"
+
+  selectFolder:
+    noFolder:
+      displayName: "&e无路径点组"
+      description: "&7将此路径点移动至根目录下"
+
+  selectBeaconColor:
+    moveLeft:
+      displayName: "&e移动至左侧"
+      description: ""
+    moveRight:
+      displayName: "&e移动至右侧"
+      description: ""
+
+  confirm:
+    background:
+      displayName: "&0-"
+      description: ""
+
+  tracking:
+    background:
+      displayName: "&0-"
+      description: ""
+    trackable:
+      enabled:
+        displayName: "&7自身可见"
+        description: "&7其他玩家可追踪你"
+      disabled:
+        displayName: "&7自身隐藏"
+        description: "&7其他玩家不可追踪你"
+    refresh:
+      displayName: "&7更新玩家列表"
+      description: ""
+
+    # name: Name of the player
+    # world: World where the player is located at
+    # x, y, z: Coordinates of the player
+    # blockX, blockY, blockZ: Coordinates of the block nearest to the player
+    # distance: Distance in blocks to the player
+    player:
+      displayName: "&a${name}"
+      description: |
+        &7世界: &6${world}
+        &7距离: &6${distance}

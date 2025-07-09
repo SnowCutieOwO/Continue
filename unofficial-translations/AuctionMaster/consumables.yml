@@ -1,0 +1,17 @@
+consumables-menu-item: '260'
+consumables-menu-name: '&c消耗品'
+consumables-menu-lore:
+  - '&8分类'
+  - ''
+  - '&7示例:'
+  - '&8■ &7药水'
+  - '&8■ &7食物'
+  - '&8■ &7书本'
+
+# 若你需要将特定的物品归于这个分类
+# 请将它们的名字写在这里
+custom-item-names:
+  - '&e&l示例&6&l物品'
+
+custom-item-ids:
+  - '2266'

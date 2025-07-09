@@ -1,0 +1,59 @@
+# 菜单配置教程: http://77.222.60.131:8080/plugin/engine/config/menuConfig
+# 可使用 'Job' 和 'Objective' 相关变量: http://77.222.60.131:8080/plugin/moneyhunters/other/placeholders
+
+Title: '&l工作目标'
+Size: 54
+
+Objectives:
+  Format:
+    Limits:
+    - '&7'
+    - '&d&l限制:'
+    - '&d▸ &7你今天获得了 &d%user_limit_money_earned%&7/&d%objective_limit_money% 金币&7.'
+    - '&d▸ &7你今天获得了 &d%user_limit_exp_earned%&7/&d%objective_limit_exp% 经验值&7.'
+    Locked:
+      Material: 'RED_STAINED_GLASS_PANE'
+      Name: '&c&l已锁定任务 &8&m%objective_name%'
+      Lore:
+      - '&7将职业 &c%job_name%&7 等级提升至 &c&l%objective_unlock_level%&7'
+      - '&7来解锁该任务!'
+    Unlocked:
+      Material: 'LIME_STAINED_GLASS_PANE'
+      Name: '&e&l%objective_name%'
+      Lore:
+      - '&c%objective_chance%%&7 的几率从该任务中'
+      - '&7获得经验与金币.'
+      - '&7'
+      - '&e&l经验与金币获取情况:'
+      - '&6▸ &e金币: &f%objective_money_min% &7- &f%objective_money_max%'
+      - '&6▸ &e经验: &f%objective_exp_min% &7- &f%objective_exp_max%'
+      - '%limits%'
+  Slots: '0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44'
+
+Content:
+  prev_page:
+    Display:
+      default:
+        Item:
+          Material: 'ARROW'
+          Name: '&e&l前一页'
+    Type: PAGE_PREVIOUS
+    Slots: 45
+
+  next_page:
+    Display:
+      default:
+        Item:
+          Material: 'ARROW'
+          Name: '&e&l后一页'
+    Type: PAGE_NEXT
+    Slots: 53
+
+  return:
+    Display:
+      default:
+        Item:
+          Material: 'IRON_DOOR'
+          Name: '&f&l返回'
+    Type: RETURN
+    Slots: 49

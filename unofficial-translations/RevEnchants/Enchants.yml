@@ -1,0 +1,14 @@
+Settings:
+  Enabled: true
+  Start: 2
+  Max: 9
+  Slots:
+    Name: '&c+ 附魔槽位'
+    Glow: true
+    Item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3700
+      type: LEGACY_NETHER_STAR
+    Lore:
+    - ' '
+    - '&1拖动至此添加新槽位'

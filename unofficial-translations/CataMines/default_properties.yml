@@ -1,0 +1,20 @@
+# 在这里你可以设置矿场的部分默认设置.
+# %cm% = 前缀 | %mine% = 矿场名称 | %seconds% = 重置剩余时间
+# %formattedtime% = hours, hour, minutes, minute, seconds, second | %time% = seconds, second
+# %formattedseconds% = 剩余时间, 按 hh:mm:ss 如: 1:05:16 的格式标准化
+
+Default-Warn-Message: '%cm% &b%mine% &7将会在 &a%formattedseconds% &7%formattedtime% 后重置.'
+Default-Reset-Message: '%cm% &b%mine% &7已被&a重置&7.'
+Default-Hotbar-Message-TIME: '&a%formattedseconds%'
+Default-Hotbar-Message-PERCENTAGE: '&e%remainingblocksper% &f| &d%resetpercentage%'
+Default-Hotbar-Message-TIME_PERCENTAGE: '&e%remainingblocksper% &f| &a%formattedseconds%
+  &f| &d%resetpercentage%'
+
+Tool-Too-Weak: "你的工具过于低级, 不可参与本次挖掘!"
+
+Default-Warn-Seconds:
+- 600
+- 300
+- 60
+- 20
+- 5

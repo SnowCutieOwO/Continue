@@ -1,0 +1,115 @@
+Settings:
+  Enabled: true
+  Title: '&c附魔颜色'
+  Rows: 6
+  Empty-slots:
+    Enabled: true
+    Item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3700
+      type: LEGACY_STAINED_GLASS_PANE
+  Enchant:
+    slot: 4
+    Lore:
+    - ' '
+    - '&1点此选择其他附魔'
+  Slots:
+    '1':
+      Name: '&0黑色'
+      Lore:
+      - ' '
+      - '&1点此选择该颜色'
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3700
+        type: LEGACY_WOOL
+      Slot: 18
+      Colour: '&0'
+    '2':
+      Name: '&1深蓝'
+      Lore:
+      - ' '
+      - '&1点此选择该颜色'
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3700
+        type: LEGACY_WOOL
+      Slot: 19
+      Colour: '&1'
+    '3':
+      Name: '&2深绿'
+      Lore:
+      - ' '
+      - '&1点此选择该颜色'
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3700
+        type: LEGACY_WOOL
+      Slot: 20
+      Colour: '&2'
+    '4':
+      Name: '&3青色'
+      Lore:
+      - ' '
+      - '&1点此选择该颜色'
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3700
+        type: LEGACY_WOOL
+      Slot: 21
+      Colour: '&3'
+    '5':
+      Name: '&4深红'
+      Lore:
+      - ' '
+      - '&1点此选择该颜色'
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3700
+        type: LEGACY_WOOL
+      Slot: 22
+      Colour: '&4'
+    '6':
+      Name: '&5品红'
+      Lore:
+      - ' '
+      - '&1点此选择该颜色'
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3700
+        type: LEGACY_WOOL
+      Slot: 23
+      Colour: '&5'
+    '7':
+      Name: '&6暗黄'
+      Lore:
+      - ' '
+      - '&1点此选择该颜色'
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3700
+        type: LEGACY_WOOL
+      Slot: 24
+      Colour: '&6'
+    '8':
+      Name: '&7淡灰'
+      Lore:
+      - ' '
+      - '&1点此选择该颜色'
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3700
+        type: LEGACY_WOOL
+      Slot: 25
+      Colour: '&7'
+    '9':
+      Name: '&8深灰'
+      Lore:
+      - ' '
+      - '&1点此选择该颜色'
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3700
+        type: LEGACY_WOOL
+      Slot: 26
+      Colour: '&8'

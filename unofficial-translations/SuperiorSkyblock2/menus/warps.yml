@@ -1,0 +1,57 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                  插件作者 Ome_R                   ##
+##                                                  ##
+######################################################
+
+title: '&l岛屿传送'
+previous-menu: true
+
+pattern:
+  - '@ @ @ @ @ @ @ @ @'
+  - '@ @ @ @ @ @ @ @ @'
+  - '@ @ @ @ @ @ @ @ @'
+  - '@ @ @ @ @ @ @ @ @'
+  - '$ $ $ $ $ $ $ $ $'
+  - '# # % # * # ^ # #'
+
+slots: '@'
+previous-page: '%'
+current-page: '*'
+next-page: '^'
+
+# 该描述会加在岛屿传送点图标的描述之后.
+edit-lore:
+  - '&f '
+  - '&f '
+  - '&7&o(( &f&o鼠标左键 &7&o传送至该位置. ))'
+  - '&7&o(( &f&o鼠标右键 &7&o编辑该传送点. ))'
+
+items:
+  '@':
+    type: BOOK
+    name: '&e{0} {2}'
+    lore:
+      - '&7位于 {1}.'
+  '%':
+    type: PAPER
+    name: '{0}上一页'
+  '*':
+    type: DOUBLE_PLANT
+    name: '&a当前页'
+    lore:
+      - '&7第 {0} 页'
+  '^':
+    type: PAPER
+    name: '{0}下一页'
+  '$':
+    type: STAINED_GLASS_PANE
+    data: 15
+    name: '&f'
+
+sounds:
+  '@':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2

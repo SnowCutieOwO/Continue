@@ -1,0 +1,168 @@
+# PlayerAuctions 插件作者 Olzie-12
+# https://www.spigotmc.org/resources/83073
+# 我们也有可以提供帮助的 Discord 聊天群组: https://olziedev.com/discord 和插件维基 https://docs.olziedev.com/projects/playerauctions
+# 如果你找到任何 BUG, 我很乐意第一时间修复它们 :)
+# 为爱发电
+
+confirm:
+  # 是否启用该界面?
+  enabled: true
+  # 该界面的名称是什么?
+  name: "confirm"
+  # 该界面的显示标题是什么? (可以使用彩色代码)
+  title: "&b&l确认购买"
+  # 界面的大小? (填入 9 的倍数, 最大为 54)
+  size: 27
+  # 打开该界面的时候执行哪些额外的操作?
+  open-actions: []
+  # 关闭该界面的时候执行哪些额外的操作?
+  close-actions: []
+  # 玩家所购买的物品显示在哪一格?
+  slot-buying: 13
+  # 物品的默认数量应当是多少?
+  # 若该数量大于拍卖中的物品数量, 那么购买数量会变为拍卖中的物品数量.
+  default-amount: 64
+  # 关闭此菜单时是否显示之前的一个界面?
+  open-previous: true
+  # 物品数量是否在不足时不显示对应按钮. 例如, 你在购买一个物品时不会显示增加数量的按钮.
+  # 你也可以在物品数量的位置附近放一个物品, 这样它就会在物品数量不足时显示.
+  show-needed-amount-items: false
+
+  # 通过界面输入数量.
+  enter:
+    # 是否使用该功能?
+    enabled: true
+    # 告示牌中的内容是什么?
+    # 内建变量 %search% 用于返回玩家输入的关键词, 请确保它所在的那一行没有额外的文本.
+    # 若这些内容中不包含变量, 那么插件会假定第一行就是玩家输入的关键词. 颜色代码在这里不会正常工作.
+    lines:
+      - "%search%"
+      - "----------------"
+      - "请输入数量."
+      - "----------------"
+    item:
+      material: OAK_SIGN
+      data: 0
+      name: "&b输入数量"
+      lore:
+        - "&e点击&b 输入竞拍数量."
+      slot: 22
+      amount: 1
+      glowing: false
+
+  clickable-items:
+    accept:
+      # 若你希望禁用这些物品, 你可以将 material: 项设置为 "AIR"
+      name: "&a确认购买"
+      # 此即为确认购买物品按钮所代表的物品. 有效的材料名称可在这里查询: https://javadocs.olziedev.com/spigot/latest/org/bukkit/Material.htmlial
+      material: LIME_WOOL
+      data: 5
+      lore:
+        - "&e点击&b确认花费 &e[price]&b 购买 &e[amount]&b 个物品!"
+      slot: 11
+      amount: 1
+      glowing: false
+      # 仅在头颅种类为 PLAYER_HEAD 且数据值为 3 时有效!
+      #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWE0ZjY4YzhmYjI3OWU1MGFiNzg2ZjlmYTU0Yzg4Y2E0ZWNmZTFlYjVmZDVmMGMzOGM1NGM5YjFjNzIwM2Q3YSJ9fX0= - 头颅材质
+      #owner: Next - 头颅拥有者
+    deny:
+      name: "&c取消交易"
+      material: RED_WOOL
+      data: 14
+      lore:
+        - "&c点击取消本次交易."
+      slot: 15
+      amount: 1
+      glowing: false
+    add-1:
+      name: "&a添加 1 个"
+      material: LIME_STAINED_GLASS_PANE
+      data: 5
+      lore:
+        - "&a点击添加 1 个."
+        - " "
+        - "&b当前数量: &e[amount] 个"
+      slot: 0
+      amount: 1
+      glowing: false
+    add-32:
+      name: "&a添加 32 个"
+      material: LIME_STAINED_GLASS_PANE
+      data: 5
+      lore:
+        - "&a点击添加 32 个."
+        - " "
+        - "&b当前数量: &e[amount] 个"
+      slot: 9
+      amount: 32
+      glowing: false
+    add-64:
+      name: "&a添加 64 个"
+      material: LIME_STAINED_GLASS_PANE
+      data: 5
+      lore:
+        - "&a点击添加 64 个."
+        - " "
+        - "&b当前数量: &e[amount] 个"
+      slot: 18
+      amount: 64
+      glowing: false
+    remove-1:
+      name: "&c减少 1 个"
+      material: RED_STAINED_GLASS_PANE
+      data: 14
+      lore:
+        - "&c点击减少 1 个."
+        - " "
+        - "&b当前数量: &e[amount] 个"
+      slot: 8
+      amount: 1
+      glowing: false
+    remove-32:
+      name: "&c减少 32 个"
+      material: RED_STAINED_GLASS_PANE
+      data: 14
+      lore:
+        - "&c点击减少 32 个."
+        - " "
+        - "&b当前数量: &e[amount] 个"
+      slot: 17
+      amount: 32
+      glowing: false
+    remove-64:
+      name: "&c减少 64 个"
+      material: RED_STAINED_GLASS_PANE
+      data: 14
+      lore:
+        - "&c点击减少 64 个."
+        - " "
+        - "&b当前数量: &e[amount] 个"
+      slot: 26
+      amount: 64
+      glowing: false
+
+  items:
+    # 在菜单界面中的物品样式
+    1:
+      # 此为物品名称.
+      name: " "
+      # 此为物品材料名称
+      material: AIR
+      # 此为物品数据值
+      data: 0
+      # 你可以添加物品描述!
+      # 示例配置:
+      # lore:
+      #   - "&b这是一个玻璃板."
+      slot: 0
+      # 此为物品数量
+      amount: 1
+      # 点击时执行的命令.
+      # [server] 表示这条命令会以控制台身份执行
+      # [player] 表示这条命令会以玩家身份执行
+      # commands:
+      #   - "[server] msg %player% 你点击了这个物品!"
+      glowing: false
+      # 仅在头颅种类为 PLAYER_HEAD 且数据值为 3 时有效!
+      #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTZmOGFmYjI3YmFmYzc3YzJiODI1OTljMmY3YjhmMWY2ODMxMGU2YWE5MDRmMDUxYjA3YWIxYzJiNmIifX19 - 头颅材质
+      #owner: Glass - 头颅对应玩家名称

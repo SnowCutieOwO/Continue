@@ -1,0 +1,67 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                  插件作者 Ome_R                   ##
+##                                                  ##
+######################################################
+
+# 使用的任务文件名称
+mission-file: IslandMissions
+
+# 任务在达到条件时是否自动并领取奖励.
+auto-reward: true
+ 
+# 是否在完成任务后重置玩家的方块计数?
+reset-after-finish: true
+
+# 完成任务时给予的奖励.
+rewards:
+  commands:
+    - 'eco give %player% 25000'
+    - 'is admin msg %player% &e&l探索 | &7成功完成了任务 下界探索者!'
+    - 'is admin msg %player% &e&l探索 | &7你准备好面对真正的挑战了吗?'
+    - 'is admin msg %player% &e&l探索 | &7&o关于下一个任务的更多信息, 请输入命令 /is missions 查看'
+
+# 将会触发该任务的事件名称.
+events:
+  - IslandSchematicPasteEvent
+
+# 需要完成该任务的条件.
+success-check: 'event.getSchematic().endsWith("_nether")'
+
+# 菜单中使用的图标.
+icons:
+  not-completed:
+    type: PAPER
+    name: '&a下界探索者'
+    lore:
+      - '&7前往下界.'
+      - ''
+      - '&6任务奖励:'
+      - '&8 - &7$25,000'
+      - ''
+      - '&c&l ✘ &7尚未完成'
+  can-complete:
+    type: PAPER
+    name: '&a下界探索者'
+    lore:
+      - '&7前往下界.'
+      - ''
+      - '&6任务奖励:'
+      - '&8 - &7$25,000'
+      - ''
+      - '&a&l ✔ &7点击领取任务奖励.'
+    enchants:
+      DURABILITY: 1
+    flags:
+      - HIDE_ENCHANTS
+  completed:
+    type: MAP
+    name: '&a下界探索者'
+    lore:
+      - '&7前往下界.'
+      - ''
+      - '&6任务奖励:'
+      - '&8 - &7$25,000'
+      - ''
+      - '&a&l ✔ &7奖励已领取.'

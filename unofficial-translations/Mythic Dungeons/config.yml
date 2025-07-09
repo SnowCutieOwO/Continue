@@ -1,0 +1,26 @@
+General:
+  # 决定该插件使用的队伍系统. 默认为插件自带的 DungeonParties.
+  PartyPlugin: DungeonParties
+  # 服务器上可运行的最大副本数量.
+  MaxInstances: 10
+  # 编辑模式下的地牢自动保存间隔. 0 表示禁用保存. (不推荐)
+  AutoSaveInterval: 300
+  # 建造功能的绑定物品. 必须为合法的原版物品名称.
+  # 在使用其他同样使用羽毛为编辑工具的插件例如 goPaint 时非常重要
+  FunctionBuilderItem: FEATHER
+  # 命令 `/md stuck` 是否击杀玩家.
+  StuckKillsPlayer: false
+  # 是否仅允许队伍领袖发起地牢进发请求.
+  LeaderOnlyQueue: true
+  # 是否要求队伍所有成员都确认准备才进入地牢.
+  # 注意: 该检查在地牢副本不排队时使用.
+  ReadyCheckOnCommand: true
+  # 是否要求队伍所有成员排队完毕后都确认准备才进入地牢.
+  ReadyCheckInQueue: true
+  # 等待所有玩家准备就绪的检查时间 (从地牢开放时间点起计).
+  ReadyCheckTime: 45
+  PartyFinder:
+    # 是否自动广播招募消息.
+    AutoBroadcast: true
+    # 每条招募信息发送的间隔.
+    ListingBroadcastPeriod: 5

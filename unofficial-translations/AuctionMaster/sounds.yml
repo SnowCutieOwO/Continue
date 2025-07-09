@@ -1,0 +1,94 @@
+# 使用 'none' 表示不使用声音
+# 完整声音列表 - https://helpch.at/docs/version/index.html?org/bukkit/Sound.html
+# 将上方 version 字段替换为你的服务器版本
+# 示例用法(1.8.8): https://helpch.at/docs/1.8.8/index.html?org/bukkit/Sound.html
+#ah-command: 'ORB_PICKUP"
+
+#---------命令音效---------------
+# 执行命令 /ah 的声音
+ah-command: 'none'
+# 执行命令 /ah <玩家> 的声音 
+ah-player: 'none'
+#执行命令 /ah delivery 的声音 
+ah-delivery-command: 'none'
+
+#---------全局声音---------------
+# 点击 NPC 的声音
+ah-npc-click: 'none'
+# 点击返回物品的声音
+go-back-click: 'none'
+# 点击下一页物品的声音
+next-page-click: 'none'
+# 点击上一页物品的声音
+previous-page-click: 'none'
+# 关闭界面的声音
+close-menu-click: 'none'
+# 点击领取所有物品的声音
+claim-all-click: 'none'
+# 点击领取硬币物品的声音
+claim-money: 'none'
+# 点击领取物品按钮的声音
+claim-item: 'none'
+
+#---------递送音效--------------
+# 收到递送物品的声音
+ah-delivery-got: 'none'
+# 领取递送物品的声音
+ah-delivery-claimed: 'none'
+# 没有递送物品可领取的声音
+ah-no-delivery: 'none'
+
+#---------主菜单声音-------------
+# 主菜单拍卖浏览界面的声音
+auction-browser-click: 'none'
+# 在浏览竞拍时有玩家出价的声音
+view-bids-has-click: 'none'
+# 在浏览竞拍时没有玩家竞价的声音
+view-bids-no-has-click: 'none'
+# 主菜单界面点击自己发起的竞拍的音效
+own-auctions-click: 'none'
+# 点击主菜单打开递送菜单的音效
+delivery-menu-click: 'none'
+
+#--------竞拍浏览界面声音-------
+# 拍卖浏览界面点击分类的声音
+category-click: 'none'
+# 拍卖浏览界面点击过滤按钮的声音
+sort-item-click: 'none'
+# 拍卖浏览界面点击搜索物品的声音
+search-item-click: 'none'
+
+#-------竞拍创建界面声音--------
+# 背包调整物品点击的声音
+inventory-item-click: 'none'
+# 时长调整按钮点击的声音
+duration-item-click: 'none'
+# 开始竞拍物品的声音
+starting-bid-item-click: 'none'
+# 选择竞拍中物品的声音
+create-auction-item-click: 'none'
+# 确定取消竞拍的声音
+auction-cancel: 'none'
+# 确定竞拍的声音
+auction-confirm: 'none'
+
+#-------时长菜单的声音----------
+# 自定义时长物品的点击音效
+custom-duration-click: 'none'
+# 点击不同时长物品的声音
+1-hour: 'none'
+6-hours: 'none'
+12-hours: 'none'
+24-hours: 'none'
+2-days: 'none'
+
+#-------拍卖浏览声音-----------
+# 打开浏览菜单的声音
+auction-view-menu-open: 'none'
+# 提交竞价的声音
+auction-submit-bid: 'none'
+# 竞价价格编辑的声音
+bid-editor-click: 'none'
+# 提示最高竞价被超越的声音
+# 该声音也会向竞拍发起者发送
+outbid: 'none'

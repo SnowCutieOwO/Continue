@@ -1,0 +1,107 @@
+# 在这里你可以编辑刷怪笼的升级设置.
+# 你可以按喜好添加数量不限的等级设置.
+# 若要禁用某个等级, 只需将其在菜单物品中隐藏 (https://github.com/Angeschossen/General/wiki/GUI-Menus#disable-items)
+# 并在这里设置你的默认等级. 若要寻求帮助可访问我们的 Discord 聊天群组: https://discord.gg/B4MAJVk
+
+# 生成间隔 - 越低越好
+# 这就是单位为秒的间隔, 决定了刷怪笼生成下一个实体的时间
+# 时间单位: 秒
+spawn_interval:
+  1:
+    value: 60
+    cost: 0
+  2:
+    value: 55
+    cost: 1000.0
+  3:
+    value: 50
+    cost: 2000.0
+  4:
+    value: 45
+    cost: 3000.0
+  5:
+    value: 40
+    cost: 4000.0
+  6:
+    value: 35
+    cost: 5000.0
+  7:
+    value: 30
+    cost: 6000.0
+  8:
+    value: 25
+    cost: 7500.0
+  9:
+    value: 20
+    cost: 12000.0
+  10:
+    value: 15
+    cost: 17500.0
+  11:
+    value: 10
+    cost: 20000.0
+
+# 生成数量
+# 设置每次刷怪笼会尝试生成多少个实体.
+# 注意: 该等级类型默认禁用. 你可以在你的界面语言文件里将对应物品下的 display 项设置为 true 启用.
+spawn_amount:
+  1:
+    value: 3
+    cost: 0
+  2:
+    value: 4
+    cost: 5000.0
+  3:
+    value: 5
+    cost: 9000.0
+
+# 间隔数量
+# 设置每个间隔内最多生成的实体数量.
+# 生成时间可在 config.yml 中设置.
+period_amount:
+  1:
+    value: 30
+    cost: 0
+  2:
+    value: 50
+    cost: 5000.0
+  3:
+    value: 80
+    cost: 8000.0
+  4:
+    value: 120
+    cost: 1000.0
+
+# 激活范围 - 越大越好
+# 玩家能够使刷怪笼激活的最大距离 (正方形).
+# 该设置决定了玩家要激活刷怪笼所需的最小距离.
+# 注意: 该升级在 entities.yml 中启用 "no-conditions" 的实体种类下默认无效.
+player_range:
+  1:
+    value: 16
+    cost: 0
+  2:
+    value: 25
+    cost: 500.0
+  3:
+    value: 30
+    cost: 5000.0
+  4:
+    value: 35
+    cost: 2500.0
+
+# 邻近最大实体数量
+# 设置允许在刷怪笼范围内的最大邻近实体数量.
+nearby_entities:
+  1:
+    value: 8
+    cost: 0
+  2:
+    value: 12
+    cost: 5000.0
+  3:
+    value: 15
+    cost: 7500.0
+  4:
+    value: 20
+    cost: 9000.0

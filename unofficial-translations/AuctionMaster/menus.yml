@@ -1,0 +1,77 @@
+main-menu:
+  size: 36
+  close-menu-slot: 31
+  browsing-menu-slot: 11
+  view-bids-menu-slot: 13
+  manage-auctions-menu-slot: 15
+  delivery-menu-slot: 32
+create-auction-menu:
+  size: 54
+  preview-item-slot: 13
+  create-auction-button-slot: 29
+  starting-bid-slot: 31
+  duration-slot: 33
+  go-back-slot: 49
+  switch-type-slot: 48
+duration-select-menu:
+  size: 36
+  first-item:
+    hours: 1
+    material: '159:14'
+    slot: 10
+  second-item:
+    hours: 6
+    material: '159:6'
+    slot: 11
+  third-item:
+    hours: 12
+    material: '159:1'
+    slot: 12
+  forth-item:
+    hours: 24
+    material: '159:4'
+    slot: 13
+  fifth-item:
+    hours: 48
+    material: '159:0'
+    slot: 14
+  custom-time-item-slot: 16
+  custom-time-item-material: '347'
+  go-back-slot: 31
+create-auction-confirm-menu:
+  size: 27
+  confirm-item-slot: 11
+  cancel-item-slot: 15
+browsing-menu:
+  # 默认打开哪一个菜单分类
+  # 可用选项: weapons, armor, tools, consumables, blocks, others, global
+  default-category: 'weapons'
+  # 使用 1 到 6 的数字表示普通分类
+  # 确保没有设置两个相同值的格子
+  # 设置为 -1 禁用该分类
+  weapons-slot: 1
+  armor-slot: 2
+  tools-slot: 3
+  consumables-slot: 4
+  blocks-slot: 5
+  others-slot: 6
+  # 此处可填入 0 到 53 的整数
+  # 它可以是任何位置
+  # 但请不要将它放在任何竞拍物品会出现的地方
+  global-slot: 50
+  go-back-slot: 49
+  search-slot: 48
+  bin-filter-slot: 51
+  sort-filter-slot: 52
+  previous-page-slot: 46
+  next-page-slot: 53
+view-auction-menu:
+  size: 54
+  auction-display-slot: 13
+  place-bid-slot: 29
+  buy-it-now-slot: 31
+  bid-amount-change-slot: 31
+  end-own-auction-slot: 40
+  bid-history-slot: 33
+  go-back-slot: 49
+  admin-view-slot: 22

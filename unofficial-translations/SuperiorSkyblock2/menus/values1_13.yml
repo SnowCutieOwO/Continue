@@ -1,0 +1,232 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                  插件作者 Ome_R                   ##
+##                                                  ##
+######################################################
+
+title: '{0} &n${1}'
+previous-menu: true
+
+pattern:
+  - '& & & & & & & & &'
+  - '% $ A B C D E F %'
+  - '% % G H I J K L %'
+  - '% * M N O P Q R %'
+  - '% % S T U V W X %'
+  - '& & & & & & & & &'
+
+items:
+  '&':
+    type: BLACK_STAINED_GLASS_PANE
+    name: '&f'
+  '$':
+    type: SPAWNER
+    name: '&e&l刷怪笼 ->'
+  '*':
+    type: WRITABLE_BOOK
+    name: '&e&l物品 ->'
+  'A':
+    block: SPAWNER:IRON_GOLEM
+    type: PLAYER_HEAD
+    skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODkwOTFkNzllYTBmNTllZjdlZjk0ZDdiYmE2ZTVmMTdmMmY3ZDQ1NzJjNDRmOTBmNzZjNDgxOWE3MTQifX19'
+    name: '&e&l[!] &7铁傀儡刷怪笼'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'
+  'B':
+    block: SPAWNER:BLAZE
+    type: PLAYER_HEAD
+    skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjc4ZWYyZTRjZjJjNDFhMmQxNGJmZGU5Y2FmZjEwMjE5ZjViMWJmNWIzNWE0OWViNTFjNjQ2Nzg4MmNiNWYwIn19fQ=='
+    name: '&e&l[!] &7烈焰人刷怪笼'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'
+  'C':
+    block: SPAWNER:SPIDER
+    type: PLAYER_HEAD
+    skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDE2NDVkZmQ3N2QwOTkyMzEwN2IzNDk2ZTk0ZWViNWMzMDMyOWY5N2VmYzk2ZWQ3NmUyMjZlOTgyMjQifX19'
+    name: '&e&l[!] &7蜘蛛刷怪笼'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'
+  'D':
+    block: SPAWNER:COW
+    type: PLAYER_HEAD
+    skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWQ2YzZlZGE5NDJmN2Y1ZjcxYzMxNjFjNzMwNmY0YWVkMzA3ZDgyODk1ZjlkMmIwN2FiNDUyNTcxOGVkYzUifX19'
+    name: '&e&l[!] &7牛刷怪笼'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'
+  'E':
+    block: SPAWNER:ZOMBIE
+    type: PLAYER_HEAD
+    skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTZmYzg1NGJiODRjZjRiNzY5NzI5Nzk3M2UwMmI3OWJjMTA2OTg0NjBiNTFhNjM5YzYwZTVlNDE3NzM0ZTExIn19fQ=='
+    name: '&e&l[!] &7僵尸刷怪笼'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'
+  'F':
+    block: SPAWNER:SKELETON
+    type: PLAYER_HEAD
+    skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzAxMjY4ZTljNDkyZGExZjBkODgyNzFjYjQ5MmE0YjMwMjM5NWY1MTVhN2JiZjc3ZjRhMjBiOTVmYzAyZWIyIn19fQ=='
+    name: '&e&l[!] &7骷髅刷怪笼'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'
+  'G':
+    block: SPAWNER:CREEPER
+    type: PLAYER_HEAD
+    skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjQyNTQ4MzhjMzNlYTIyN2ZmY2EyMjNkZGRhYWJmZTBiMDIxNWY3MGRhNjQ5ZTk0NDQ3N2Y0NDM3MGNhNjk1MiJ9fX0='
+    name: '&e&l[!] &7苦力怕刷怪笼'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'
+  'H':
+    block: SPAWNER:ZOMBIFIED_PIGLIN
+    type: PLAYER_HEAD
+    skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2VhYmFlY2M1ZmFlNWE4YTQ5Yzg4NjNmZjQ4MzFhYWEyODQxOThmMWEyMzk4ODkwYzc2NWUwYThkZTE4ZGE4YyJ9fX0='
+    name: '&e&l[!] &7僵尸猪灵刷怪笼'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'
+  'I':
+    block: SPAWNER:GHAST
+    type: PLAYER_HEAD
+    skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGI2YTcyMTM4ZDY5ZmJiZDJmZWEzZmEyNTFjYWJkODcxNTJlNGYxYzk3ZTVmOTg2YmY2ODU1NzFkYjNjYzAifX19'
+    name: '&e&l[!] &7恶魂刷怪笼'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'
+  'J':
+    block: SPAWNER:SLIME
+    type: PLAYER_HEAD
+    skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTZhZDIwZmMyZDU3OWJlMjUwZDNkYjY1OWM4MzJkYTJiNDc4YTczYTY5OGI3ZWExMGQxOGM5MTYyZTRkOWI1In19fQ=='
+    name: '&e&l[!] &7史莱姆刷怪笼'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'
+  'K':
+    block: SPAWNER:GUARDIAN
+    type: PLAYER_HEAD
+    skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGZiNjc1Y2I1YTdlM2ZkMjVlMjlkYTgyNThmMjRmYzAyMGIzZmE5NTAzNjJiOGJjOGViMjUyZTU2ZTc0In19fQ=='
+    name: '&e&l[!] &7守卫者刷怪笼'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'
+  'L':
+    block: SPAWNER:SQUID
+    type: PLAYER_HEAD
+    skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMDE0MzNiZTI0MjM2NmFmMTI2ZGE0MzRiODczNWRmMWViNWIzY2IyY2VkZTM5MTQ1OTc0ZTljNDgzNjA3YmFjIn19fQ=='
+    name: '&e&l[!] &7鱿鱼刷怪笼'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'
+  'M':
+    block: HOPPER
+    type: HOPPER
+    name: '&e&l[!] &7漏斗'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'
+  'N':
+    block: BEACON
+    type: BEACON
+    name: '&e&l[!] &7信标'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'
+  'O':
+    block: IRON_BLOCK
+    type: IRON_BLOCK
+    name: '&e&l[!] &7铁块'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'
+  'P':
+    block: GOLD_BLOCK
+    type: GOLD_BLOCK
+    name: '&e&l[!] &7金块'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'
+  'Q':
+    block: DIAMOND_BLOCK
+    type: DIAMOND_BLOCK
+    name: '&e&l[!] &7钻石块'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'
+  'R':
+    block: EMERALD_BLOCK
+    type: EMERALD_BLOCK
+    name: '&e&l[!] &7绿宝石块'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'
+  'S':
+    block: BEDROCK
+    type: BEDROCK
+    name: '&e&l[!] &7基岩'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'
+  'T':
+    block: ENDER_CHEST
+    type: ENDER_CHEST
+    name: '&e&l[!] &7末影箱'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'
+  'U':
+    block: DRAGON_EGG
+    type: DRAGON_EGG
+    name: '&e&l[!] &7龙蛋'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'
+  'V':
+    block: CHEST
+    type: CHEST
+    name: '&e&l[!] &7箱子'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'
+  'W':
+    block: TRAPPED_CHEST
+    type: TRAPPED_CHEST
+    name: '&e&l[!] &7陷阱箱'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'
+  'X':
+    block: ENCHANTING_TABLE
+    type: ENCHANTING_TABLE
+    name: '&e&l[!] &7附魔台'
+    lore:
+      - '&6&l* &e&l数量: &f{0}'
+      - '&6&l* &e&l价值: &f${1}'
+      - '&6&l* &e&l等级: &f${2}'

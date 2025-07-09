@@ -1,0 +1,43 @@
+Settings:
+  Enabled: true
+  Start: 2
+  Max: 6
+  Title: '&c碎片'
+  Rows: 6
+  Locked:
+    Item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3700
+      type: LEGACY_STAINED_GLASS_PANE
+    Glow: true
+    Name: '&c&l已锁定槽位'
+    Lore:
+    - ' '
+    - ' '
+  Empty:
+    Lore:
+    - ' '
+    - '&1升级工具可解锁更多槽位'
+    Item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3700
+      type: LEGACY_STAINED_GLASS_PANE
+    Glow: false
+    Name: ' '
+  SlotsListInGui:
+  - 11
+  - 13
+  - 15
+  - 38
+  - 40
+  - 42
+  Slots:
+    Name: '&c+ 碎片槽位'
+    Glow: true
+    Item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3700
+      type: LEGACY_NETHER_STAR
+    Lore:
+    - ' '
+    - '&1将物品拖放至此可增加新槽位'

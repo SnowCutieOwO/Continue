@@ -1,0 +1,690 @@
+# 在该文件中你可以修改本插件大部分的设置.
+# 若要重载此文件, 请输入命令 /sm update configuration
+
+Debug-errors: true
+Events:
+  # 是否取消实体生成事件.
+  cancel-spawning-event: true
+  # 是否为每个实体触发实体生成事件.
+  # 对某些插件很有用.
+  send-spawner-event: false
+  # 是否取消刷怪笼破坏事件.
+  # 对那些注册刷怪笼位置的插件很有用.
+  cancel-break-event: true
+Items:
+  # 通过命令 /spawnerdrops 获得剩余掉落物的时间
+  #   .
+  # 仅在 drop-on-ground 项被禁用时可用.
+  taking-ticks: 1200
+  # 提醒玩家收集物品的时间间隔
+  taking-remind-ticks: 600
+  # 在这个地方你可以任意编辑物品的描述
+  # 可以直接在配置中直接删除
+  #   也可在末尾加上符号 '!' 来禁用
+  #   
+  #   例如 'INFO' -> 'INFO!'
+  layout:
+    # 可用关键词:
+    #   HEADER, RANGE, DELAY, AMOUNT
+    #   CHARGES, SPAWNABLE, INFO
+    spawner-item:
+    - '!'
+    - HEADER
+    - RANGE
+    - DELAY
+    - AMOUNT
+    - '!'
+    - CHARGES
+    - SPAWNABLE
+    - '!'
+    - INFO
+    upgrades:
+      # 可用关键词:
+      #   EMPTY, SWITCHING, LOCATION, STACK
+      #   WARNING, SPAWNABLE, INFO
+      stat-item:
+      - EMPTY
+      - SWITCHING
+      - '!'
+      - LOCATION
+      - STACK
+      - SPAWNABLE
+      - '!'
+      - WARNING
+      - '!'
+      - INFO
+      # 可用关键词:
+      #   HELP, INFO, CURRENT, NEXT, PRICE
+      upgrade-item:
+      - HELP
+      - '!'
+      - INFO
+      - '!'
+      - CURRENT
+      - '!'
+      - NEXT
+      - '!'
+      - PRICE
+      # 可用关键词:
+      #   HELP, INFO, CURRENT
+      disabled-upgrade-item:
+      - HELP
+      - '!'
+      - INFO
+      - '!'
+      - CURRENT
+Miscellaneous:
+  explosions:
+    # TNT 爆炸的破坏选项.
+    TNT:
+      break-spawners: true
+      drop-spawners: true
+      break-natural-spawners: true
+      drop-natural-spawners: true
+    # 苦力怕爆炸的破坏选项.
+    CREEPERS:
+      break-spawners: true
+      drop-spawners: true
+      break-natural-spawners: true
+      drop-natural-spawners: true
+    # 火球爆炸的破坏选项.
+    FIREBALLS:
+      break-spawners: true
+      drop-spawners: true
+      break-natural-spawners: true
+      drop-natural-spawners: true
+    # 末地水晶爆炸的破坏选项.
+    END_CRYSTALS:
+      break-spawners: true
+      drop-spawners: true
+      break-natural-spawners: true
+      drop-natural-spawners: true
+Spawner-view:
+  # 是否启用刷怪笼预览功能.
+  # 若启用, 所有玩家都可使用命令 /spawnerview 浏览刷怪笼
+  enabled: true
+  # 不能预览的刷怪笼实体列表.
+  ignore-entities:
+  - ARMOR_STAND
+  - BOAT
+  - EXPERIENCE_BOTTLE
+  - EXPERIENCE_ORB
+  - MINECART
+  - MINECART_CHEST
+  - MINECART_COMMAND
+  - MINECART_FURNACE
+  - MINECART_HOPPER
+  - MINECART_SPAWNER
+  - MINECART_TNT
+Commands:
+  spawner-view:
+    # 刷怪笼预览的命令标签.
+    label: spawnerview
+    # 该命令的别称.
+    aliases: []
+  spawner-shop:
+    # 刷怪笼商店的命令标签.
+    label: spawnershop
+    # 该命令的别称.
+    aliases: []
+  spawner-drops:
+    # 刷怪笼掉落的命令标签.
+    label: spawnerdrops
+    # 该命令的别称.
+    aliases: []
+  spawner-locations:
+    # 刷怪笼位置查询的命令标签.
+    label: spawnerlocations
+    # 该命令的别称.
+    aliases: []
+  spawner-trust:
+    # 刷怪笼添加玩家白名单的命令标签.
+    label: spawnertrust
+    # 该命令的别称.
+    aliases: []
+# 价格种类:
+#   EXPERIENCE - 经验点数
+#   LEVELS - 经验等级
+#   ECONOMY - vault 的经济单位
+#   MATERIAL - 物品
+# 物品格式 (仅在交易类型设置为 MATERIAL 时才有效):
+# item:
+#   material: <物品的材料名>
+#   name: <物品的名称> (检查物品名称, 可选)
+#   model: <物品的模型> (检查物品的自定义模型数据, 可选)
+Prices:
+  # 升级所用货币种类.
+  upgrades:
+    price-type: EXPERIENCE
+    item:
+      material: GOLD_INGOT
+  # 充能所用货币种类.
+  charges:
+    price-type: EXPERIENCE
+    item:
+      material: GOLD_INGOT
+  # 商店所用货币种类.
+  shop:
+    price-type: EXPERIENCE
+    item:
+      material: GOLD_INGOT
+  # 放置刷怪笼扣费所用货币种类.
+  placing:
+    price-type: EXPERIENCE
+    item:
+      material: GOLD_INGOT
+  # 堆叠刷怪笼扣费所用货币种类.
+  stacking:
+    price-type: EXPERIENCE
+    item:
+      material: GOLD_INGOT
+  # 破坏刷怪笼扣费所用货币种类.
+  breaking:
+    price-type: EXPERIENCE
+    item:
+      material: GOLD_INGOT
+  # 修改刷怪笼种类扣费所用货币种类.
+  changing:
+    price-type: EXPERIENCE
+    item:
+      material: GOLD_INGOT
+  format:
+    # 若设置为 true,
+    #   插件将会启用分隔符.
+    # 如: 1000 -> 1,000
+    use-delimiter: false
+    # 超过一千的数字中每三位数字会使用一个分隔符
+    # 分隔符可为任何字符, 甚至是空格.
+    delimiter: ','
+    # 数字是否会显示为单位数字.
+    # 仅显示开头的两位数字,
+    #   这意味着数字 1234 会显示为 1.2k, 
+    #   其他位的数字会被四舍五入.
+    # 1 000 -> 1k
+    # 2 500 000 -> 2.5m
+    # ...
+    use-abbreviations: false
+    # 数字所使用的缩写.
+    # 列表位置分别显示:
+    # - 千 (1000)
+    # - 百万 (1000000)
+    # - 十亿 (100000000)
+    # - 兆 (1*10^12)
+    # - ...
+    # 你可自由修改并拓展列表.
+    # 注意, 需要按数字大小排定顺序.
+    abbreviations:
+    - k
+    - m
+    - b
+    - t
+Modifiers:
+  holograms:
+    regular:
+      # 是否启用刷怪笼悬浮字.
+      # 悬浮字会在刷怪笼附近显示, 显示其实体数量和堆叠数量
+      enabled: false
+      # 是否在自然生成的刷怪笼上显示信息.
+      show-natural: false
+      # 悬浮字的显示半径.
+      radius: 32
+    warning:
+      # 警告悬浮字是否启用.
+      # 在刷怪笼不能产生任何实体时显示悬浮字警告
+      enabled: true
+      # 警告悬浮字的显示半径.
+      radius: 32
+    # 悬浮字的高度.
+    height: 0
+  upgrade-interface:
+    # 是否启用升级界面 (GUI).
+    # 若禁用, 玩家将不能打开升级界面.
+    enabled: true
+  upgrades:
+    upgradeable:
+      # 默认刷怪笼升级.
+      # 对于指定实体:
+      #   <实体名称>:
+      #     range: <true/false>
+      #     delay: <true/false>
+      #     amount: <true/false>
+      # 将 <实体名称> 替换为指定实体名称,
+      # 任何未设置的升级数值都会使用默认的数值.
+      DEFAULT:
+        range: true
+        delay: true
+        amount: true
+    levels:
+      # 默认刷怪笼的升级幅度.
+      # 对于指定实体:
+      #   <实体名称>:
+      #     range: <等级>
+      #     delay: <等级>
+      #     amount: <等级>
+      # 将 <实体名称> 替换为指定实体名称,
+      # 任何未设置的升级数值都会使用默认的数值.
+      DEFAULT:
+        range: 5
+        delay: 5
+        amount: 5
+    prices:
+      # 默认刷怪笼升级价格基数.
+      # 对于指定实体:
+      #   <实体名称>:
+      #     range: <价格>
+      #     delay: <价格>
+      #     amount: <价格>
+      # 将 <实体名称> 替换为指定实体名称,
+      # 任何未设置的升级数值都会使用默认的数值.
+      DEFAULT:
+        range: 100
+        delay: 100
+        amount: 100
+    price-increase:
+      # 默认的刷怪笼升级价格增幅.
+      # 对于指定实体:
+      #   <实体名称>:
+      #     range: <增幅>
+      #     delay: <增幅>
+      #     amount: <增幅>
+      # 将 <实体名称> 替换为指定实体名称,
+      # 任何未设置的升级数值都会使用默认的数值.
+      DEFAULT:
+        range: 50
+        delay: 50
+        amount: 50
+    # 升级价格的计算方式.
+    # ADDITION - 直接将增幅值加在基数上.
+    #   [ 价格 + 增幅数值 * 等级 ]
+    # MULTIPLICATION - 将基数乘以增幅数值.
+    #   增幅值为百分比 (100 = 100%)
+    #   [ 价格 * 增幅值 ^ 等级 ]
+    price-increase-type: ADDITION
+  charges:
+    # 是否启用刷怪笼充能功能.
+    # 充能决定了刷怪笼一定时间内可生成多少次,
+    # 可在游戏内购买刷怪笼充能.
+    enabled: false
+    # 充能不相同的刷怪笼是否可以堆叠.
+    # 如果设置为 true, 玩家将可以堆叠充能不相同的刷怪笼.
+    # 例如, 如果一个刷怪笼有 10 点充能, 另一个有 8 点
+    #   则堆叠后的刷怪笼有 9 点充能
+    #   (每个刷怪都有 9 点充能以保持平衡).
+    # 在充能平分后不为整数时, 玩家可能会额外失去充能
+    allow-stacking: false
+    # 自然生成的刷怪笼是否在没有充能的时候仍可以生成.
+    ignore-natural: true
+    buy-amount:
+      # 玩家在商店界面左键点击购买的充能数量.
+      first: 16
+      # 玩家在商店界面右键点击购买的充能数量.
+      second: 128
+    prices:
+      # 每点充能的价格.
+      # 对于指定实体:
+      #   <实体名称>: <价格>
+      # 将 <实体名称> 替换为指定的实体名称.
+      DEFAULT: 2
+  changing:
+    # 修改刷怪笼种类的功能是否启用.
+    # 若要修改, 玩家需要 shift+鼠标右键 且手持刷怪蛋 点击刷怪笼来替换
+    enabled: false
+    # 默认的更换花费.
+    use-price: false
+    prices:
+      # 默认的更换价格.
+      # 对于指定实体:
+      #   <实体名称>: <价格>
+      # 将 <实体名称> 替换为指定的实体名称.
+      DEFAULT: 100
+    # 默认的修改材料种类.
+    # 对于指定实体:
+    #   <实体名称>: <材料名称>
+    # 将 <实体名称> 替换为指定实体名称.
+    material-type:
+      EXAMPLE: IRON_INGOT
+    deny:
+      # 当刷怪笼中的实体为下列列表时
+      # 可以修改刷怪笼的种类.
+      from: []
+      # 下列实体不能放入刷怪笼中
+      to: []
+  placing:
+    # 是否允许刷怪笼放置.
+    enabled: true
+    # 放置刷怪笼是否扣费.
+    use-price: false
+    prices:
+      # 默认的放置价格.
+      # 对于指定实体:
+      #   <实体名称>: <价格>
+      # 将 <实体名称> 替换为指定的实体名称.
+      DEFAULT: 100
+  breaking:
+    # 刷怪笼是否不可破坏.
+    # 只有拥有对应权限的玩家才可破坏刷怪笼
+    #   (spawnermeta.unbreakable.bypass) - 默认此权限不会给予任何玩家.
+    unbreakable: false
+    # 是否忽略刷怪笼的破坏权限.
+    #   (spawnermeta.break)
+    # 注意, 该功能可能在未来会被移除,
+    # 请使用'unbreakable' 项.
+    ignore-permission: false
+    # 破坏刷怪笼是否扣费.
+    use-price: false
+    prices:
+      # 默认破坏刷怪笼的扣费数量.
+      # 对于指定实体:
+      #   <实体名称>: <价格>
+      # 将 <实体名称> 替换为指定的实体名称.
+      DEFAULT: 100
+    # 破坏后掉落刷怪笼的几率.
+    dropping-chance: 100
+    # 修改生物种类时刷怪笼损坏几率.
+    # 几率修改选项能够影响下列刷怪笼
+    # 自然生成、非自然生成(玩家放置, 包括自己拥有的和其他玩家拥有的)刷怪笼
+    # 每个值必须在它们之前有 '+', '-', '*' 或 '/'
+    # 符号.
+    # (例如. '+20', '-12.5', '*1.5', '/2'...)
+    chance-changing:
+      # 损坏几率在玩家破坏自己的刷怪笼后会如何变动
+      owned: '+0'
+      # 损坏几率在玩家破坏其他玩家的刷怪笼后会如何变动.
+      not-owned: '+0'
+      # 损坏几率在玩家破坏自然生成的刷怪笼后会如何变动.
+      natural: '+0'
+    # 刷怪笼是否直接掉落还是进入玩家背包.
+    drop-on-ground: true
+    silk-requirement:
+      # 挖掘刷怪笼时是否要求工具上带有精准采集附魔.
+      enabled: true
+      # 所需要的精准采集最小等级.
+      level: 1
+      # 刷怪笼的拥有者是否可以通过带有精准采集的工具破坏刷怪笼.
+      break-owned: true
+      # 自然生成的刷怪笼是否可以通过带有精准采集的工具破坏刷怪笼.
+      break-natural: true
+      # 使用不带有精准采集附魔的工具挖掘刷怪笼时是否不掉落任何东西.
+      destroy-on-fail: true
+    # 是否损失工具耐久.
+    enable-durability: false
+    # 玩家破坏刷怪笼后工具减少的耐久值.
+    durability-to-remove: 1
+    # 通过权限控制特殊掉落.
+    # 格式:
+    #   chance-permissions:
+    #     <名称>: <几率>
+    # 将 <名称> 替换为指定的权限名称.
+    # 对应权限格式为
+    #   [ spawnermeta.breaking.permission.<名称> ]
+    chance-permissions:
+      # 这是一个示例权限, 在游戏中并不会生效.
+      # 拥有权限的玩家 (spawnermeta.breaking.permission.example)
+      # 拥有 100% 破坏刷怪笼的几率.
+      example: 100
+    # 破坏刷怪笼失败的玩家获得的经验值.
+    xp-on-failure: 20
+    # 若玩家破坏刷怪笼失败, 则插件会在聊天栏中提醒刷怪笼的拥有者.
+    show-owner: false
+  # 生成后不会发出声音的实体.
+  silent-entities:
+  - ENDER_DRAGON
+  - WITHER
+  # 实体是否对玩家产生仇恨.
+  # 设置为 false 后实体将失去攻击玩家的能力.
+  entity-target: true
+  # 实体是否允许移动.
+  # 设置为 false 后实体将不能移动.
+  entity-movement: true
+  # 实体 AI 刷新间隔.
+  # 若启用此项, 相关数值将从服务器核心
+  # 文件中直接读取相关值: nerf-spawner-mobs.
+  check-spawner-nerf: true
+  # 是否生成幼年实体.
+  # 设置为 false 后刷怪笼不再产生幼年实体.
+  spawn-babies: true
+  # 生成的实体是否携带装备.
+  # 设置为 false 后出生实体将不会携带任何物品, 也不会掉落它们.
+  spawn-with-equipment: true
+  # 已存在的实体是否可以修改.
+  # 例如, WildStacker 的实体.
+  modify-stacked-entities: true
+  # 限制一次生成的最大实体数量.
+  # 此项可用于防止状况外的服务器卡顿和崩溃.
+  safety-limit: 128
+  chunk-limits:
+    # 是否启用按区块限制实体数量的功能.
+    # 当启用后, 每个区块都会限制所容纳的刷怪笼数量.
+    enabled: false
+    # 每个区块的刷怪笼数量上限.
+    spawner-limit: 16
+    # 在刷怪笼停止刷新前区块内实体的最大数量.
+    # 保持默认值 0 不变表示不作限制.
+    entities-in-chuck: 0
+  players:
+    # 玩家拥有的刷怪笼设置.
+    # 当玩家放置刷怪笼后, 对应刷怪笼上就会记录玩家的 ID.
+    owned:
+      # 设置为 true 表示刷怪笼只会有玩家在附近的时候产生实体
+      # 否则刷怪笼将不会产生实体, 直到有玩家经过该刷怪笼附近
+      spawn-if-online: false
+      # 是否对玩家刷怪笼进行实体限制.
+      # 若设置为 false, 玩家只能放置固定数量的刷怪笼.
+      ignore-limit: true
+      # 每个玩家可放置的刷怪笼数量上限.
+      spawner-limit: 16
+      # 玩家是否可以破坏其他玩家拥有的刷怪笼.
+      can-break: true
+      # 玩家是否可对堆叠其他玩家拥有的刷怪笼.
+      can-stack: true
+      # 玩家是否可以修改其他玩家拥有的刷怪笼.
+      can-change: true
+      # 玩家是否可以打开其他玩家拥有的刷怪笼.
+      can-open: true
+      # 玩家是否可以升级其他玩家拥有的刷怪笼.
+      can-upgrade: true
+      # 按权限设置自定义数量可以按如下格式配置.
+      # 格式:
+      #   limit-permissions:
+      #     <名称>: <限制>
+      # 将 <名称> 替换为指定的权限名称.
+      #   [ spawnermeta.ownership.permission.<名称> ]
+      limit-permissions:
+        # 这只是一个示例权限, 不在游戏内生效.
+        # 拥有权限 (spawnermeta.ownership.permission.example) 的玩家能够放置最多 32 个刷怪笼.
+        example: 32
+    natural:
+      # 玩家是否可以破坏自然生成的刷怪笼.
+      can-break: true
+      # 玩家是否可以堆叠自然生成的刷怪笼.
+      can-stack: true
+      # 玩家是否可以change自然生成的刷怪笼.
+      can-change: true
+      # 玩家是否可以open自然生成的刷怪笼.
+      can-open: true
+      # 玩家是否可以upgrade自然生成的刷怪笼.
+      can-upgrade: true
+    trusted:
+      # 白名单内的玩家是否可以破坏拥有者的刷怪笼.
+      can-break: true
+      # 白名单内的玩家是否可以堆叠拥有者的刷怪笼.
+      can-stack: true
+      # 白名单内的玩家是否可以 change 拥有者的刷怪笼.
+      can-change: true
+      # 白名单内的玩家是否可以 open 拥有者的刷怪笼.
+      can-open: true
+      # 白名单内的玩家是否可以 upgrade 拥有者的刷怪笼.
+      can-upgrade: true
+  spawnable:
+    # 是否启用刷怪笼实体数量限制.
+    # 若设置为 true, 每个刷怪笼都有其生成上限.
+    # 当这个数量到达 0 时刷怪笼就会直接损坏.
+    enabled: false
+    entity-amount:
+      # 默认可生成的实体数量.
+      # 对于指定实体:
+      #   <实体名称>: <amount>
+      # 将 <实体名称> 替换为指定的实体名称.
+      DEFAULT: 5000
+  stacking:
+    # 是否启用刷怪笼堆叠机制.
+    # 若要堆叠刷怪笼, 玩家必须手持相同种类的刷怪笼并按住 shift+鼠标右键
+    enabled: false
+    # 堆叠刷怪笼是否扣费.
+    use-price: false
+    # 每次堆叠的间隔.
+    ticks-per: 5
+    prices:
+      # 默认的堆叠价格.
+      # 对于指定实体:
+      #   <实体名称>: <价格>
+      # 将 <实体名称> 替换为指定的实体名称.
+      DEFAULT: 100
+    # 是否无视堆叠限制.
+    ignore-limit: true
+    when-nearby:
+      # 当该项设置为 true 时, 相邻放置的刷怪笼会自行堆叠.
+      enabled: false
+      # 相同种类刷怪笼堆叠的搜索半径.
+      # 建议值: [1; 16]
+      radius: 8
+      # 被堆叠的刷怪笼是否显示粒子效果.
+      particles: true
+    # 按权限限制刷怪笼的堆叠数量可通过如下配置实现.
+    # 格式:
+    #   limit-permissions:
+    #     <名称>: <限制数量>
+    # 将 <名称> 替换为指定的权限名称.
+    #   [ spawnermeta.stacking.permission.<名称> ]
+    limit-permissions:
+      # 这是一个示例权限, 不会在游戏内起作用.
+      # 拥有权限的玩家 (spawnermeta.stacking.permission.example) 可以堆叠最多 32 个刷怪笼.
+      example: 32
+    # 这些内容仅在 limit-permissions 设置项启用时有效.
+    affected-by-permissions:
+      # 堆叠限制是否不包括自然生成的刷怪笼.
+      natural: true
+      # 堆叠限制是否不包括自己拥有的刷怪笼.
+      owned: true
+      # 堆叠限制是否不包括其他玩家拥有的刷怪笼.
+      not-owned: false
+    spawner-limit:
+      # 自然生成的刷怪笼的堆叠限制.
+      natural: 16
+      # 非自然生成的刷怪笼的堆叠限制.
+      owned: 16
+      not-owned: 16
+Spawners:
+  # 刷怪笼的默认属性, 及其升级后的属性增幅.
+  #   range - 玩家能够使刷怪笼保持激活的最小距离 (单位为格)
+  #   delay - 生成间隔 (单位为刻) (1 秒 = 20 刻)
+  #   amount - 一次生成的实体数量
+  values:
+    # 默认的刷怪笼升级数值.
+    # 对于指定实体:
+    #   <实体名称>:
+    #     range: <值>
+    #     delay: <值>
+    #     amount: <值>
+    # 将 <实体名称> 替换为指定的实体名称, 任何未设置的值都会使用默认的配置.
+    DEFAULT:
+      range: 16
+      delay: 500
+      amount: 4
+  value-increase:
+    # 默认的刷怪笼升级增幅值.
+    # 对于指定实体:
+    #   <实体名称>:
+    #     range: <值>
+    #     delay: <值> (should be negative)
+    #     amount: <值>
+    # 将 <实体名称> 替换为指定的实体名称, 任何未设置的值都会使用默认的配置.
+    DEFAULT:
+      range: 4
+      delay: -75
+      amount: 1
+  # 刷怪笼生成方式.
+  #   SINGLE - 在指定位置生成实体.
+  #   SPREAD - 在刷怪笼附近生成实体.
+  spawning-type: SPREAD
+  # 每个刷怪笼探测的时间间隔.
+  # 注意! 此为主间隔, 意味着其他所有设置项
+  #   例如 'checking-interval'
+  #   和 'validation-interval' 都依赖于该项的设置.
+  # 推荐值: [1-5]
+  ticking-interval: 1
+  # 检查刷怪笼生成条件和悬浮字更新周期
+  # 值越小, 对服务器性能影响就越大
+  # 注意! 这个间隔只会按每个刷怪笼的时间间隔计算
+  # 这意味着总时间长度为:
+  #     'ticking-interval' * 'validation-interval'
+  # 推荐值: [20-200]
+  #   (在 'ticking-interval' 值较大的时候不建议将该项设置为更大的值)
+  validation-interval: 100
+  # 验证有效刷怪笼的时间周期,
+  # 较高值可提升服务器性能, 但刷怪笼失效的概率会增加.
+  # 注意! 这个间隔只会按每个刷怪笼的时间间隔计算
+  # 这意味着总时间长度为:
+  #     'ticking-interval' * 'checking-interval'
+  # 推荐值: [1-20]
+  #   (但在 'ticking-interval' 值较大的时候不建议将该项设置为更大的值)
+  checking-interval: 1
+  # 是否启用刷怪笼切换机制.
+  # 若要启用或禁用刷怪笼替换功能或为不在线的玩家设置
+  # 玩家必须在刷怪笼设置界面中进行相应设置
+  switching: false
+  empty:
+    # 是否启用空白刷怪笼.
+    # 空白刷怪笼可在任何时候用刷怪蛋放入刷怪笼
+    # 当被破坏后会掉落刷怪笼和刷怪蛋本身
+    enabled: false
+    destroy-eggs:
+      # 是否在玩家替换拥有刷怪蛋的空表刷怪蛋中破坏刷怪蛋.
+      when-removing: false
+      # 是否在玩家破坏拥有刷怪蛋的空白刷怪笼中破坏刷怪蛋.
+      when-breaking: false
+    # 在刷怪笼被破坏后是否保留其中的刷怪蛋.
+    store-eggs-inside: false
+    # 从空白刷怪笼中移除刷怪蛋时要求玩家二次验证.
+    # 在
+    #   destroy-eggs:
+    #     when-removing: 设置为 true 时相当有效
+    egg-removing-verify: false
+  # 禁用的刷怪笼实体.
+  # 玩家将不能放置、破坏、修改、交互刷怪笼或进行其他的操作.
+  # 被禁用的刷怪笼不会产生任何实体.
+  disabled-spawners: []
+  # 是否在生成实体的时候播放粒子效果.
+  spawning-particles: true
+  # 是否禁用物品刷怪笼.
+  disable-item-spawners: false
+  # 刷怪笼是否可通过铁砧重命名.
+  allow-renaming: true
+  nearby-entities:
+    # 是否在生成实体数量到达上限时
+    # 停止产生实体.
+    limit: 8
+    # 若设置为 ture, 则在即将到达上限时
+    # 刷怪笼尝试生成的实体数量不会超出上限
+    # 如: 如果刷怪笼一次生成量为 4 且生成限制为 8,
+    #   邻近限制数量为 6, 下次刷怪笼生成的数量就会被降低为 2.
+    reduce: false
+  # 是否在生成的时候就击杀实体.
+  kill-entities-on-spawn: false
+  # 被击杀的实体是否掉落经验球.
+  # 仅在 kill-entities-on-spawn 设置为 true 时有效.
+  drop-xp-when-instant-kill: true
+  # 设置刷怪笼被激活所需要的红石信号. [0-15]
+  # 设置为 0 来忽略该设置.
+  required-redstone-power: 0
+  # 刷怪笼生成的史莱姆和岩浆史莱姆大小.
+  # 若值为零, 则生成的史莱姆大小将会随机决定 (1, 2 或 4).
+  default-slime-size: 0
+  spawning-radius:
+    # 水平 (x 和 z 轴) 实体生成半径.
+    horizontal: 3
+    # 垂直 (y 轴) 实体生成半径.
+    vertical: 3
+# 配置文件的版本.
+# 不应修改此项.
+Configuration-version: 6

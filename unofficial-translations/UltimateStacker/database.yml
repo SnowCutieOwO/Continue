@@ -1,0 +1,18 @@
+Connection Settings:
+  # 支持使用: MARIADB, MYSQL, H2
+  # 默认使用: H2
+  Type: H2
+  # 远程数据库域名
+  Hostname: localhost
+  # 远程数据库端口
+  Port: 3306
+  # 数据库登录所使用的用户名
+  Username: username
+  # 数据库登录所使用的密码
+  Password: password
+  # 数据库的名称
+  Database: database
+  # 数据库最大连接数量
+  Pool Size: 5
+  # 是否使用 SSL
+  Use SSL: false

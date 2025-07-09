@@ -1,0 +1,1441 @@
+[index]
+[#1]介绍
+[#2]欢迎
+[#3]主配置
+*[#4]消息配置
+*[#5]奖励配置
+*[#6]战利品配置
+[#7]经验来源
+[#8]技能设置
+[#9]菜单
+*[#10]菜单格式变动
+[#11]经验条件
+*[#12]属性词条
+*[#13]生命值相关
+[#14]魔法能力
+[#15]经验翻倍
+[#16]条件
+[#17]命令列表
+[#18]权限列表
+[#19]变量集群
+[#20]FAQ
+[#21]不兼容内容
+[#22]!翻译信息
+[/index]
+[postbg]2.jpg[/postbg]
+【前言】
+2022/11/26 21:09
+因为原贴和插件已经存在了很大的区别，故我需要单独开贴翻译 Wiki 来为此插件的用户提供更好的使用体验。
+我觉得压力也很大。
+今天上线看到 AureliumSkills 已经把自己的英文维基做的很完善了，那就来顺势翻译一波。
+顺便同步一些必要的资料，因为这个插件帖已经很久没有更了。
+Crowdin 的汉化也是如此。
+
+维基地址：[url=https://wiki.aurelium.dev/]https://wiki.aurelium.dev/[/url]
+原贴地址：[url=https://www.spigotmc.org/resources/aurelium-skills-advanced-skills-stats-abilities-and-more.81069/]https://www.spigotmc.org/resourc ... ies-and-more.81069/[/url]
+
+【目录】
+[table=60%,LightGrey]
+[tr][td]Welcome 欢迎界面
+[b][color=Grey]Configuation 配置文件[/color][/b]
+   Main Config 主配置
+     MySQL 数据库配置
+   Messages 消息配置
+   Rewards 奖励配置
+   Loot 战利品配置
+   Sources 经验获取源配置
+   Abilities 技能配置
+   Menus 菜单配置
+      Menu Format Changes
+   XP Requirements 经验要求配置
+[b][color=Grey]Gameplay 游戏体验[/color][/b]
+   Stats 属性
+      Stat Modifiers 属性翻倍
+      Health 生命值
+   Mana Abilities 魔法技能
+   Multipliers 增幅
+   Requirements 限制
+[b][color=Grey]Usage 插件用法[/color][/b]
+   Commands 命令
+   Permissions 权限
+   Placeholders 变量
+[b][color=Grey]Other 其他[/color][/b]
+   FAQs 常被问到的问题
+   Incompatibilities 不兼容内容[/td][/tr]
+[/table]
+[page]
+[size=5][b]欢迎[/b][/size]
+[color=Grey]欢迎你来到 Aurelium Skills 的插件维基！[/color][hr][quote]Here you will find documentation on how to set up, configure, and use the plugin. Navigate pages using the sidebar on the left (top left icon on mobile). Please note that not everything about the plugin is covered, and some information may be out of date. [/quote]
+在这里你可以找到关于本插件的一些帮助信息，例如如何启安装、修改或是使用本插件。寻找特定的内容请在左侧的侧边栏内浏览（手机版位于左上角的图标中）。请留意，关于插件的一切信息，本维基不一定全部覆盖，其中的一些信息也可能过时。
+[quote]If you are new to the plugin or are looking to download it, visit the SpigotMC Page.
+If you have any other questions, please join the Discord server and ask in the support channel. There you can also give suggestions, report bugs, get notified about updates and announcments, and access developmental builds.[/quote]
+若你是初次使用本插件，并且正在寻找它的下载途径，点击[url=https://www.spigotmc.org/resources/81069/]这里[/url]来访问本插件在 SpigotMC 上的资源介绍页。
+若你有任何想问的其他问题，你可以加入我们的 [url=https://discord.gg/Bh2EZfB]Discord 服务器[/url] 并在 支持 子频道内询问相关事宜。你也可以在这个服务器里给出建议以及提交漏洞，获悉有关插件的公告与更新，甚至是获取插件的最新开发版构建。
+[page]
+[postbg]2.jpg[/postbg][b][size=5]主配置[/size][/b]
+[color=Grey]配置文本（[font=Consolas]config.yml[/font]）的相关教程[/color][hr]
+这是本插件的配置文件详解，它（[font=Consolas]config.yml[/font]）位于你服务器中的 [font=Consolas]plugins/AureliumSkills[/font]。
+本配置文件最后更新对照版本: Beta 1.2.6
+[size=4][b]全局设置[/b][/size][hr]
+[b][size=3]MySQL 数据库设置[/size][/b]
+[font=Consolas]mysql:[/font][list]
+[*][font=Consolas]enabled[/font] - 是否启用该模块以使用数据库同步数据（需要重启服务器）
+[*][font=Consolas]host[/font] - MySQL 地址
+[*][font=Consolas]port[/font] - 端口号（必须是数值）
+[*][font=Consolas]database[/font] - 数据库名称（必须已经创建）
+[*][font=Consolas]username[/font] - MySQL 用户名
+[*][font=Consolas]password[/font] - MySQL 密码
+[*][font=Consolas]load-delay[/font] - 玩家加入后载入数据的延迟时间， 对多服务器使用统一数据库时很有帮助
+[*][font=Consolas]always-load-on-join[/font] - 若设置为 true， 玩家加入时总是加载数据库的内容， 无论其此前是否已被载入服务器缓存中
+[*][font=Consolas]ssl[/font] - 是否启用 SSL 加密
+[/list]
+[b][size=3]消息配置[/size][/b]
+[font=Consolas]default-language[/font] - 玩家使用的默认语言; 必须有对应的消息文件（例如：此项为 en 时需要有名为 messages_en.yml 的文件存在）[list]
+[*][font=Consolas]try-detect-client-language[/font] - 若设置为 [font=Consolas]true[/font]，插件会尝试使用客户端使用的语言，前提是此语言有效且存在对应的文件. 此选项仅适用于没有使用指令选择语言的玩家，或者在服务器突然重启后丢失已选择语言设置的玩家。若客户端使用了Aurelium Skills没有的语言文件，则默认使用 [font=Consolas]default-language[/font] 项设置的语言。 若设置为 [font=Consolas]false[/font]，所有未设置语言的玩家都将使用 [font=Consolas]default-language[/font] 项设置的语言作为自己的默认语言。
+[*][font=Consolas]languages[/font] - 可供玩家使用指令 [font=Consolas]/skills lang <语言>[/font] 切换的语言文件列表； 须有对应的语言文档与之对应，可以在此处设置自定义语言。
+[/list]
+[b][size=3]Action Bar[/size][/b]
+[font=Consolas]action-bar[/font]:[list]
+[*][font=Consolas]enabled[/font] - 是否启用/禁用此功能（若要显示 ActionBar 内容则必须启用此模块; 设置为 false 会禁用任意的 ActionBar 消息显示）
+[*][font=Consolas]idle[/font] - 决定无操作时 ActionBar 显示的内容（并不是收集经验时显示的那一部分！）. 若你想要 ActionBar 一直显示消息，那么你需要启用这个模块。
+[*][font=Consolas]ability[/font] - 决定准备或触发技能时 ActionBar 显示的内容（准备/取消准备， 激活技能时显示的消息， 等等。）。 若设置为 [font=Consolas]false[/font]， 技能消息将只会通过聊天栏发出。
+[*]
+[*][font=Consolas]xp[/font] - 决定获得技能经验时的 ActionBar 消息（并不是满级显示的消息）
+[*][font=Consolas]maxed[/font] - 决定满级技能收集经验时的 ActionBar 消息
+[*][font=Consolas]update-period[/font] - ActionBar 更新时间，单位为 刻(ticks， 20 ticks = 1秒）（若 ActionBar 造成服务器卡顿，尝试增加这个值）
+[*][font=Consolas]round-xp[/font] - 若启用，当前经验值将会被四舍五入为整数.
+[*][font=Consolas]placeholder-api[/font] - 是否在 ActionBar 内启用 PlaceholderAPI 从而允许使用变量，若要启用你需要先安装 PlaceholderAPI。
+[/list]
+[b][size=3]Boss Bar[/size][/b]
+[font=Consolas]boss-bar:[/font][list]
+[*][font=Consolas]enabled[/font] - 是否启用 BossBar 用于显示经验收集进度
+[*][font=Consolas]mode[/font] - 可被设置为 [font=Consolas]single/multi[/font] 两个值。当设置为 singles，本插件最多将只占用一个 BossBar 用于显示收集经验显示，而 multi 则会占用多个 BossBar
+[*][font=Consolas]stay-time[/font] - BossBar 显示完毕后停留的时间
+[*][font=Consolas]update-every[/font] - 连续收集经验时 BossBar 的显示刷新间隔，若出现卡顿问题，请尝试将该值提高
+[*][font=Consolas]round-xp[/font] - 是否在 BossBar 上显示四舍五入后的经验值
+[*][font=Consolas]format[/font] - BossBar 的信息显示格式
+[list]
+[*][font=Consolas]Format:'[技能名] [颜色] [BossBar 样式]'[/font]
+[*][size=0px]- [/size]可用的颜色有 BLUE（蓝）， GREEN（绿）， PINK （粉）， PURPLE（紫）， WHITE（白）， RED（红） 和 YELLOW（黄）
+[*][size=0px]- [/size]可用的 BossBar 样式有 SOLID（无分隔）， SEGMENTED_6（分隔最多）， SEGMENTED_10（分隔较多）， SEGMENTED_12（分隔较少）， SEGMENTED_20（分隔最少）
+[/list][font=Consolas]base-mana[/font] - 玩家尚未收集智慧经验时初始魔法值上限
+[font=Consolas]enable-roman-numerals[/font] - 显示等级时使用罗马数字而非阿拉伯数字
+[/list]
+[b][size=3]伤害显示[/size][/b]
+[font=Consolas]damage-holograms[/font] - 是否启用本模块（需安装 HolographicDisplays）[list]
+[*][font=Consolas]damage-holograms-scaling[/font] - 是否根据 health.hp-indicator-scaling 选项修改显示的攻击力数值
+[*][font=Consolas]damage-holograms-decimal[/font]:
+[list]
+[*][font=Consolas]display-when-less-than:[/font] - 小于特定值时在伤害显示中显示小数
+[*][font=Consolas]decimal-max-amount[/font] - 显示的小数最大位数
+[/list][*][font=Consolas]damage-holograms-offset:[/font]
+[*][font=Consolas]x[/font] - X 轴偏移量
+[*][font=Consolas]y[/font] - Y 轴偏移量
+[*][font=Consolas]z[/font] - Z 轴偏移量
+[/list]
+[font=Consolas]random:[/font][list]
+[*][font=Consolas]enabled[/font] - 是否启用随机位置攻击显示
+[*][font=Consolas]x-min[/font] - 最小 X 轴偏移量
+[*][font=Consolas]x-max[/font] - 最大 X 轴偏移量
+[*][font=Consolas]y-min[/font] - 最小 Y 轴偏移量
+[*][font=Consolas]y-max[/font] - 最大 Y 轴偏移量
+[*][font=Consolas]z-min[/font] - 最小 Z 轴偏移量
+[*][font=Consolas]z-max[/font] - 最大 Z 轴偏移量
+[/list]
+[b][size=3]排行榜[/size][/b][list]
+[*][font=Consolas]update-period[/font] - 排行榜刷新时间，单位为刻
+[*][font=Consolas]update-delay[/font] - 在服务器开启多少时间后排行榜会被立刻刷新，单位为刻（不包括开启初的排行榜内容刷新）
+[/list]
+[b][size=3]游戏体验[/size][/b]
+[font=Consolas]enable-skill-commands[/font] - 技能名称是否被用于做成命令以打开各自的子菜单，例如 /farming 或 /mining （重启后有效）
+[font=Consolas]check-block-replace[/font] - 被玩家重复放置的方块是否可以再次获得经验；。默认应当保持为 true，除非你在使用过程中出现了兼容性问题。
+
+[size=3][b]世界与区域[/b][/size]
+[font=Consolas]blocked-check-block-replace-worlds[/font] - 在该列表中的世界不会被插件检测重复放置，这意味着玩家可以在这些世界中重复放置并破坏方块来获得对应的技能经验。
+[font=Consolas]blocked-check-block-replace-regions[/font] - 在该列表中的 WorldGuard 区域中不会被插件检测重复放置 （该功能需要 1.13+ 版本）
+[font=Consolas]blocked-worlds[/font] - 在该列表世界中的玩家将不能通过正常方式获取技能经验。
+[font=Consolas]blocked-regions[/font] - 在该列表 WorldGuard 区域中的玩家将不能通过正常方式获取技能经验。
+[font=Consolas]disabled-worlds[/font] - 插件的大部分功能在该列表中的世界将会被禁用，包括但不限于属性/技能/收集经验/ActionBar信息显示（菜单和其他命令仍然可用）
+[font=Consolas]disable-in-creative-mode[/font] - 是否禁用玩家在创造模式下的经验获取
+
+[size=3][b]自动保存[/b][/size]
+[font=Consolas]auto-save:[/font][list]
+[*][font=Consolas]enabled[/font] - 是否定时保存，或只是在玩家退出的时候保存他们的数据？当你正在遭受因服务器崩溃而导致的经验与技能数据丢失问题时这个选项很有效。
+[*][font=Consolas]interval-ticks[/font] - 自动保存间隔（单位为刻）
+[/list]
+
+[b][size=3]经济[/size][/b]
+[font=Consolas]skill-money-rewards:[/font][list]
+[*][font=Consolas]enabled[/font] - 玩家在升级时是否可以获得金币奖励 （需要安装 Vault）
+[*][font=Consolas]base[/font] - 在第二级时玩家获得的金币基数
+[*][font=Consolas]multiplier[/font] - 倍率 （获得的金币数 = 基数 + 倍数 * 等级的平方）
+[/list]
+[b][size=3]升级提醒[/size][/b]
+[font=Consolas]leveler:[/font][list]
+[*][font=Consolas]title:[/font]
+[list]
+[*][font=Consolas]enabled[/font] - 当玩家升级时是否启用标题提醒
+[*][font=Consolas]fade-in[/font] - 淡入时间，单位为刻
+[*][font=Consolas]stay[/font] - 标题文字保持显示的时间
+[*][font=Consolas]fade-out[/font] - 淡出时间，单位为刻
+[/list][*][font=Consolas]sound:[/font]
+[list]
+[*][font=Consolas]enabled[/font] - 当玩家升级时是否启用音效提醒
+[*][font=Consolas]type[/font] - 声音种类（必须为有效声音名称）
+[*][font=Consolas]category[/font] - 声音的子种类
+[*][font=Consolas]volume[/font] - 声音的音量
+[*][font=Consolas]pitch[/font] - 声音的音调
+[*][font=Consolas]double-check-delay[/font] - 对于一次收集到大量经验而升级的检查延迟，单位为刻 （数值越小代表越快）
+[/list]
+[/list]
+
+[b][size=3]倍率[/size][/b]
+[font=Consolas]modifier:[/font][list]
+[*][font=Consolas]armor:[/font]
+[list]
+[*][font=Consolas]equip-blocked-materials[/font] - *右键装备时不会获得装备原版属性的物品列表；当你需要只获得盔甲上的属性而不需要原版的防御数值等属性的时候，你就可以将他们添加至这个地方。
+[/list][*][font=Consolas]item:[/font]
+[list]
+[*][font=Consolas]check-period[/font] - 检查玩家手中的物品是否有属性提升的lore间隔，单位为刻。当服务器出现卡顿时考虑提升该值。
+[*][font=Consolas]enable-off-hand[/font] - 物品属性是否在扶手持有时生效。
+[/list][*][font=Consolas]auto-convert-from-legacy[/font] - 旧的属性 NBT 格式是否要在新版本环境下被自动转换。当你的所有物品已被转换并可以正确工作或服务器出现性能问题时，你可以将该项禁用。
+[/list]
+
+[b][size=4]条件限制[/size][/b]
+[font=Consolas]requirement:[/font][list]
+[*][font=Consolas]enabled[/font] - 决定装备的条件限制模块是否启用。若你没有用到这一块功能，关闭该模块将会提升服务器性能。
+[*][font=Consolas]item:[/font]
+[list]
+[*][font=Consolas]prevent-tool-use[/font] - 玩家没有达到工具的使用条件时是否阻止玩家使用该工具破坏方块。
+[*][font=Consolas]prevent-weapon-use[/font] - 玩家没有达到武器的使用条件时是否阻止玩家使用该武器攻击其他实体。
+[*][font=Consolas]prevent-block-place[/font] - 玩家没有达到物品的使用条件时是否阻止玩家放置该物品。
+[*][font=Consolas]global[/font] - 决定默认添加至物品的条件限制。 格式为：[font=Consolas]'[材料名称] [技能名称]:[技能等级] [技能名称]:[技能等级] ...'[/font]
+[/list][*][font=Consolas]armor:[/font]
+[list]
+[*][font=Consolas]prevent-armor-equip[/font] - 当玩家未达到盔甲的使用条件时是否禁止玩家装备物品。
+[*][font=Consolas]global[/font] - 决定盔甲限制是否同时应用到该种类的所有物品树上。格式为：[font=Consolas]'[材料名称] [技能名称]:[技能等级] [技能名称]:[技能等级] ...'[/font]
+[/list]
+[/list]
+
+[b][size=3]暴击[/size][/b]
+[font=Consolas]critical:[/font][list]
+[*][font=Consolas]base-multiplier[/font] - 基础的暴击伤害倍率
+[*][font=Consolas]enabled[/font] - 在此列表中的物品允许产生暴击伤害。（空手表示为“empty fist”，“other” 项为持有不在列表的物品）
+[/list]
+
+[b][size=3]菜单[/size][/b]
+[font=Consolas]menus:[/font][list]
+[*][font=Consolas]placeholder-api[/font] - 是否在菜单中允许使用 PlaceholderAPI 的变量
+[/list]
+
+[b][size=3]杂项[/size][/b]
+[font=Consolas]check-for=updates[/font] - 是否允许插件在服务器启动后检查更新，并提醒拥有权限 [font=Consolas]aureliumskills.checkupdates[/font] 的玩家？
+[font=Consolas]automatic-backups:[/font][list]
+[*][font=Consolas]enabled[/font] - 是否在服务器关闭时启用自动保存
+[*][font=Consolas]minimum-interval-hours[/font] - 单次保存的最小间隔，单位为小时。在距离上一次保存一定时间以后，才会创建一个新备份，前提是时间超过这里设定的值。
+[/list]
+[size=4][b]技能设定[/b][/size]
+[b][size=3]通用技能选项[/size][/b][list]
+[*][font=Consolas]enabled[/font] - 该技能是否启用。被禁用的技能在菜单中不可见，也无法升级。技能的对应能力和魔法能力在禁用时也不可用。
+[*][font=Consolas]max-level[/font] - 该技能可升到的最大等级。
+[*][font=Consolas]check-cancelled[/font] - 影响大多数技能。检查方块的破坏事件是否被取消 （仅在出现兼容性问题时禁用）
+[*][font=Consolas]check-multiplier-permissions[/font] - 是否在玩家收集经验时检查经验倍率权限。若你不需要用到倍率权限，将此项关闭可提升服务器性能。
+[/list]
+[b][size=3]箭术与战斗选项[/size][/b][list]
+[*][font=Consolas]damage-based[/font] - 基于玩家造成的伤害而不是击杀的实体给予玩家对应的经验。 警告：这仍然引用 sources_config.yml 中的值，用于计算每点原版伤害所获得的经验值。若你想要玩家升级的效率保持在正常水平，你必须降低并衡量在 source_config.yml 中的箭术和战斗经验对应值。
+[*][font=Consolas]spawner-multiplier[/font] - 用于修改从刷怪笼生成的生物所获经验的选项。设置为0可禁止刷怪笼中的生物产生技能经验；设置为1 表示与普通生物无异（当然默认值也是这么设置的）。收集的经验是原本该种生物应获得的经验乘以这个选项的倍率所得到的最终值。
+[/list]
+[b][size=3]防御选项[/size][/b][list]
+[*][font=Consolas]max[/font] - 单次可收集经验的最大值
+[*][font=Consolas]min[/font] - 单次需要达到收集经验的最小伤害值
+[*][font=Consolas]allow-shield-blocking[/font] - 持盾阻挡攻击时是否仍可以获得经验（默认值为 false）
+[/list]
+[b][size=3]探索选项[/size][/b]
+[list]
+[*][font=Consolas]xp-gain-period[/font] - 获得经验的时间间隔，单位为刻（译者注：20刻=1秒）
+[/list]
+[b][size=3]炼药经验[/size][/b]
+[list]
+[*][font=Consolas]give-xp-on-takout[/font] - 是否在将制作完毕的药水拿出炼药台时获得经验
+[*][font=Consolas]give-xp-on-potion-combat[/font] - 在战斗中使用喷溅型/滞留型药水是否可以获得炼药经验（与炼药相应的经验设置同步）
+[/list]
+[b][size=3]治愈选项[/size][/b]
+[font=Consolas]exclude-negative-potions[/font] - 负面药水不增加治愈经验
+[b][size=3]锻造选项[/size][/b]
+[list]
+[*][font=Consolas]blocked-grindstone-enchants[/font] - 一些与磨石交互时不会获得经验的附魔。在阻止通过诅咒附魔刷取经验时非常有效。
+[/list]
+[b][size=3]属性设置[/size][/b]
+[size=3][b]生命值[/b][/size]
+[font=Consolas]health:[/font][list]
+[*][font=Consolas]modifier[/font] - 每个生命等级应换算为多少点原版生命值（2 = 1 原版心）。该值默认为 0.5，意味着每个生命等级会为玩家提供 0.5 生命值（原版四分之一心）该设置不会被 [font=Consolas]hp-indicator-scaling[/font] 选项所影响。
+[*][font=Consolas]health-scaling[/font] - 若启用，插件将在玩家生命值足够多时压缩血量（完全不会影响到实际生命）最多显示两排心。（该选项用于防止过多的生命值遮挡屏幕，意味着高血量上限下的一颗心实际血量不等同于低血量下的一颗心实际血量）
+[*][font=Consolas]hp-indicator-scaling[/font] - 实际血量值会被乘以这个数值并显示在 ActionBar 和菜单等地方（仅做显示，不影响实际生命值）
+[*][font=Consolas]update-delay[/font] - 切换世界时血量刷新的间隔，单位为刻（若遇到插件兼容性问题，请将其设置为0）
+[*][font=Consolas]force-base-health[/font] - 若启用，基础生命值将在每次刷新被重置为20点（仅在遇到插件兼容性问题时启用）
+[*][font=Consolas]hearts[/font] - 该功能用于修改不同范围血量显示的生命值。键为显示生命的数量，值为实际血量的范围。
+例如，当这里有两条值 '12': 29 和 '13': 37，这意味着血量上限在 29（含） 至 37（含） 的玩家的屏幕上将会显示 12 颗心
+这个值不是显示在 ActionBar 处的值。若要找到 ActionBar 处生命值的修改方式，你需要找到 [font=Consolas]health.hp-indicator-scaling[/font] 选项并将其修改（该值默认为 5）。
+这支持低于 10 颗或高于 20 颗心的生命值，只需按格式在配置文本下添加即可。
+键名不应重复，否则较高数字的键会覆盖较低数字的键。
+这些选项不会修改你实际的血量值。
+仅在 [font=Consolas]health.health-scaling[/font] 一项设置为 true 时有效。
+[*][font=Consolas]keep-full-on-increase[/font] - 满血玩家在生命属性上升时保持满血。意味着玩家不需要在生命属性提升后补血。
+[/list]
+[b][size=3]力量[/size][/b]
+[font=Consolas]strength:[/font][list]
+[*][font=Consolas]modifier[/font] - 每点力量等级可提升多少原版攻击力 （2 = 1 点原版攻击力）若 use-percent 设置为了 true， 则计算公式为 [font=Consolas]最终伤害 = 原伤害 *（1 +（力量等级 * 攻击倍率）/ 100）[/font]
+[*][font=Consolas]hand-damage[/font] - 是否将该属性应用在诸如物品、空手等非武器上
+[*][font=Consolas]bow-damage[/font] - 是否将该属性应用在弓上
+[*][font=Consolas]display-damage-with-health-scaling[/font] - 属性菜单中显示的伤害值是否受到 health.hp-indicator-scaling 影响
+[*][font=Consolas]use-percent[/font] - 力量增加的伤害值是否以百分比计算，而非简单的数值添加。这会使基础伤害的作用更加突出，所以等待武器冷却结束或使用更好的武器显得更加重要，若该内容设置为 true，那么推荐的倍率值为 0.63。
+[/list]
+[b][size=3]韧性[/size][/b]
+[font=Consolas]toughness:[/font][list]
+[*][font=Consolas]new-modifier[/font] - 控制韧性减免伤害的比例（见[url=https://github.com/Archy-X/AureliumSkills/wiki/Stats-Information-and-Calculations]属性信息与计算[/url]一章）
+[/list]
+[b][size=3]再生[/size][/b]
+[font=Consolas]regeneration:[/font]
+[list]
+[*][font=Consolas]custom-regen-mechanics[/font] - 自定义的新再生机制是否启用（允许控制血量回复频率但不完全像原版那样）
+[*][font=Consolas]base-regen[/font] - 当再生等级为 0 时，基础的生命再生间隔
+[*][font=Consolas]saturated-modifier[/font] - 有饱和时每级再生可额外提供多少回复的血量
+[*][font=Consolas]hunger-full-modifier[/font] - 当玩家饱食度满但没有饱和药水效果时每点再生等级为玩家提供多少生命回复值
+[*][font=Consolas]hunger-almost-full-modifier[/font] - 当玩家饱食度大于 14 小于 20 点时每点再生等级为玩家提供多少生命回复值
+[/list]
+[font=Consolas]custom-regen-options:[/font]
+[list]
+[*][font=Consolas]saturated-delay[/font] - 当 [font=Consolas]custom-regen-mechanics[/font] 启用时，玩家有饱和药水效果时玩家的再生速率为多快？单位为刻。
+[*][font=Consolas]hunger-delay[/font] - 当 [font=Consolas]custom-regen-mechanics[/font] 启用时，玩家没有饱和药水效果时玩家的再生速率为多快？单位为刻。
+[*][font=Consolas]mana-modifier[/font] - 每点智慧等级可提供多少额外的魔力回复
+[*][font=Consolas]base-mana-regen[/font] - 当再生等级为 0 时，基础的魔力再生间隔
+[/list]
+[b][size=3]幸运[/size][/b]
+[font=Consolas]luck:[/font]
+[list]
+[*][font=Consolas]modifier[/font] - 每点幸运等级可增加多少点原版幸运属性
+[*][font=Consolas]double-drop-enabled[/font] - 幸运双倍掉落功能是否启用
+[*][font=Consolas]double-drop-modifier[/font] - 每点幸运等级可提升多少双倍爆率
+[*][font=Consolas]double-drop-percent-max[/font] - 双倍爆率的上限
+[/list]
+[b][size=3]智慧[/size][/b]
+[font=Consolas]wisdom:[/font]
+[list]
+[*][font=Consolas]anvil-cost-modifier[/font] - 每点智慧等级提供的铁砧经验减免
+[*][font=Consolas]experience-modifier[/font] - 每点智慧等级提供的经验翻倍倍率
+[*][font=Consolas]allow-over-max-mana[/font] - 智慧属性下降时是否保留高于上限的魔力值
+[*][font=Consolas]max-mana-per-wisdom[/font] - 每点智慧等级能增加多少魔力上限
+[/list]
+[page]
+[b][size=5]消息配置[/size][/b]
+[color=Gray]消息文本的配置教程。[/color]
+
+本教程用于使用与翻译本插件的消息文件。大部分内容均可翻译，例如命令，菜单和聊天消息。
+消息文本可在 [font=Consloas]messages[/font] 文件夹下找到。每份文件均对应一种语言。玩家可通过命令 [font=Consloas]/skills lang [语言][/font] 选择他们自己的语言。
+[size=4][b]全局信息[/b][/size]
+[b][size=3]重要信息[/size][/b]
+[list]
+[*][b]你必须在配置文本 config.yml 的[/b] “languages” 一项中通过增加语言词条[b]来定义你所需要使用的语言[/b]。该内容是一个包含两个字母的语言文件，通常与你的文件名称相匹配；
+[*]若要修改默认语言，请到配置文本 config.yml 中修改 “default-language” 一项；
+[*][b]请勿修改消息文本内的任何变量！[/b] 变量应以英文花括号，即 “{” 和 “}” 包括。（例如：{变量}）；
+[*]请勿在菜单“menus”区域删除原本的换行符（“\n”），除非你的 menus.yml 格式需要你这么做；
+[*][b]无论如何不要修改 file_version 项[/b]；
+[*]当命名你的文件时，它应当以 messages_[语言].yml  的格式被保存。 [语言] 处所填内容应为两个字母的 Java 语言代码或带有国家名称的语言，例如 messages_pt-BR.yml
+[/list]
+[b]重要的 YAML 格式提示[/b]
+[list]
+[*][b]请不要使用 TAB 键制表符！[/b]这个字符应以缩进的空格代替。
+（译者注：大部分文本编辑器软件提供了这个选项，所以除非你在使用记事本，否则这一条可以无视。）
+[*]若你的消息文本中包含了 “&”，“{” 或 “}”，[b]应将消息文本以英文单引号括起。[/b]（例如：'消息文本'）如有疑问，也请将该字符串以单引号括起。
+（译者注：YAML 中 & 为锚点保留词，{} 指代字典格式；以单引号包裹的字符串会自动解析里面的字符，双引号则不会。）
+[/list]
+[b][size=3]全局提示[/size][/b]
+[list]
+[*]当菜单物品在屏幕上显示不全或看起来格格不入时，请善用换行；
+[*]单位变量符可在整个配置文件中使用，并可在 “units” 区域修改。若要在消息文本中使用单位变量，请使用诸如 “{mana_unit}”，“{hp_unit}”，“{xp_unit}”等；
+[*]内建 {值} 变量不包括百分号 “%”；
+[*]若你正在着手创建一个新语言，请参考这里的[url=https://github.com/Archy-X/AureliumSkills/blob/master/src/main/resources/messages_template.yml]模板[/url]；
+[*]查阅创建的[url=https://github.com/Archy-X/AureliumSkills/blob/master/src/main/resources/messages_en.yml]英语原文[/url]以确保格式和变量正确。
+[/list]
+[size=4]创建官方翻译的教程[/size]
+这是一个指导你创建公开翻译文件的教程。在这里的翻译文件需要遵守特定的准则和规则才可被接受，否则将会被打回，直到作者修改使其合乎相关的规定。
+强烈推荐你在我们的 [url=https://crowdin.com/project/aureliumskills]Crowdin 翻译托管站[/url]上进行翻译工作。它使文本编辑，协同翻译，上传下载语言文件等变得更加方便。开始翻译只需要你创建一个账号！若你没有在列表上见到你的语言，你可以在[url=https://discord.gg/Bh2EZfB]本插件的 Discord 聊天群组[/url]中联系 Archy 也就是本插件的作者，来添加这门语言。这里也有一个供你上传已翻译的文本的选项（所以就不用从头开始将翻译同步）和下载翻译的选项（于是就不需要等待插件更新），在语言文件右侧的三个点展开的下拉式菜单中找到这些选项。
+（译者注：血的教训。这三个按钮请各位翻译工作者务必多多运用。）
+[size=3]翻译守则[/size]
+[list=1]
+[*]请勿修改或删除任何的彩色字符，使所有的消息文本与原英语文件 messages_en.yml 保持一致；
+[*]不要在菜单区域中添加或删除额外的换行符；
+[*]不要删除默认消息文本中的任何变量符；
+[*]尝试保持翻译的达意。翻译不应干扰对原文本名称与描述的理解；
+[*]不要修改属性符号或颜色；
+[*]不要删除文件中的任何一项内容。文本中的每一条字符串都应在你的翻译文件中出现；
+[*]不要修改 action bar 消息，升级标题或格式；
+[*]当能力，技能和属性描述的翻译文本过长时可酌情使用换行符（\n）。若可能，请尽可能调整文本长短使其到最佳效果。我（译者注：作者本人）就喜欢在文本太长的时候换个行；
+[*]请使用在 Github 上找到的最新的文本来进行翻译；
+（译者注：使用 Crowdin 汉化的用户可无视此条，翻译计划添加新内容的消息会自动发送至你账号的绑定邮箱，非常方便。）
+[*]不要重复翻译已存在的语言，若需要更新，请在原文件基础上着手翻译；
+[*]尽可能保持格式上的一致，例如标点符号，颜色和大小写。你也可能需要移动彩色字符的位置，以使这些文本的格式匹配上下文的语境和原文本；
+[*]文件须以正确格式的语言代码命名（如果错了的话也没关系，作者本人会帮忙编辑）。
+[/list]
+[page]
+[postbg]2.jpg[/postbg][b][size=5]奖励配置[/size][/b]
+[color=Grey]指导创建自定义奖励的教程。[/color]
+
+[b][size=4]介绍[/size][/b]
+奖励是玩家升级技能后以执行操作或给予物品等为内容的操作。这里有许多不同种类的奖励，包括但不限于属性增减、执行命令、修改权限、给予物品或经济货币。奖励也支持在菜单和聊天栏中的消息自定义。
+
+[b][size=4]YAML 格式[/size][/b]
+正确地配置奖励需要你预先学习一些 YAML 的语法结构，技术上一般称作映射列表。这些就是包含着多个元素的列表，与 JSON 中的数组相似。映射列表通常如下方格式般定义：
+[code]patterns:
+  - type: stat # 列表中的第一个元素开始标志
+    stat: strength
+    value: 1
+  - type: stat # 列表中的第二个元素开始标志
+    stat: health
+    value: 1.5[/code]
+[quote][b][color=Red]！[/color][/b]注意横杠符号之间的缩进。在这个示例中，正常的一个缩进是两个空格。所以，在你映射列表中的各个值（如type、stat、value）相比较它们的开头，应当有共计四个空格的缩进。[/quote]
+[b][size=4]文件结构[/size][/b]
+奖励是存储在 [font=Consolas]AureliumSkils/rewards[/font] 文件夹下的可修改配置，它们的名称对应了它将会修改的各个技能名称（例如，farming.yml 表示它只会控制农耕技能的相关奖励）。这里也有一个 [font=Consolas]global.yml[/font] 用以控制所有技能的奖励内容，因此添加进这个文件中的所有奖励将会对所有技能生效。默认情况下，你会看见每个技能有各自的示例配置。每个文件都被分成两大区域，分别是 [font=Consolas]patterns[/font] 与[font=Consolas]levels[/font]。
+
+[b][size=3]固定（Patterns）区域[/size][/b]
+固定区域是设置正常技能升级时常会重复出现的奖励内容。每一个在该部分的奖励配置都应该有一部分包含 [font=Consolas]start[/font]、[font=Consolas]interval[/font] 和 [font=Consolas]stop[/font] 值的元素。固定模式可使用所有种类的奖励。
+初始值（[font=Consolas]start[/font]）是该固定奖励初次出现时玩家到达的等级；这个值至少应为2，因为玩家进入服务器后第一次升级只可能是从1级开始升级。若该值未被指定，那么它将默认为2。
+
+间隔（[font=Consolas]interval[/font]）是两个固定奖励之间的等级差距；当该值设定为 2 时，表示每两级能领取到该固定奖励（2、4、6、...级）。该内容的默认值为 1。
+
+停止值（[font=Consolas]stop[/font]）是指该固定奖励出现时玩家升级后等级的最大值，但需要注意，在初始值和间隔影响下，玩家能领取到该固定奖励的等级并不一定等于停止值。这个值只是简单地定义了不大于该等级的玩家可以领取到这个区间的固定奖励。在留空时，该值与 config.yml 下各自技能的 [font=Consolas]max-level[/font] 值相同。
+
+[b][size=3]指定等级（Levels）区域[/size][/b]
+该区域设置到达特定等级时的奖励内容。你必须按下列各式先定义一个到达对应等级触发的区域，然后才能开始填入奖励内容。设置如下文所示：
+[code]levels:
+  5:
+    - type: command
+      executor: console
+      command: say hi[/code]
+该命令奖励将会在玩家升到 5 级时触发并执行。
+
+[b][size=4]奖励种类[/size][/b]
+每一种奖励都必须有决定它种类的 [font=Consolas]type[/font] 值。每种不同的奖励配置都有各自需配置的值，且每个值均是可选的。
+
+[b][size=3]属性奖励（[font=Consolas]stat[/font]）[/size][/b]
+属性奖励允许在玩家升级后给予本插件的属性，包括生命（health）、力量（strength）、幸运（luck）、智慧（wisdom）以及韧性（toughness）。菜单和升级发送的聊天栏信息由插件自动处理。
+键名：
+[list]
+[*][font=Consolas]stat[/font] - 奖励增加等级的属性名称，请使用诸如 strength 的英文原名（必需）
+[*][font=Consolas]value[/font] - 增加属性等级的值，默认为 1 （可选）
+[/list]
+示例：
+[code]- type: stat
+  stat: strength
+  value: 1[/code]
+[quote][b][color=Blue]！[/color][/b][b]是否想要移除默认的属性奖励？[/b]你可以将固定奖励部分设置为诸如 [font=Consolas]patterns: [][/font] 的格式来禁用默认的奖励内容。但在这种情况下你可能需要编辑消息文件里的文本，使得在没有属性奖励的情况下不出现多余的空格。[/quote]
+[size=3][b]命令奖励（[font=Consolas]command[/font]）[/b][/size]
+命令奖励允许你以控制台或玩家的身份执行命令。
+键名：
+[list]
+[*][font=Consolas]command[/font] - 需要执行的命令内容；不需要命令开头的斜杠。（必需）
+[list]
+[*]支持的内建变量：
+[list]
+[*]{player} - 返回玩家名称
+[*]{level} - 返回玩家升到的等级
+[*]{skill} - 返回玩家升级的技能名称
+[*]所有 PlaceholderAPI 变量（需安装 PlaceholderAPI 插件）均支持解析。内建变量先于 PlaceholderAPI 解析，因此你可以将二者结合使用。
+[/list][*]使用 “&” 符号的颜色代码是允许的，但不要使用带转义符的颜色代码符“\&”。
+[/list][*][font=Consolas]executor[/font] - 决定命令的执行方，可以为控制台（[font=Consolas]console[/font]）或玩家（[font=Consolas]player[/font]）。若使用玩家身份执行命令则不能绕过权限检查。默认为控制台身份。（可选）
+[*][font=Consolas]revert_command[/font] - 反转命令允许玩家因管理员而失去技能等级时触发相关的命令，可使用的变量与上方相同。（可选）
+[*][font=Consolas]revert_executor[/font] - 反转命令的执行方。（可选）
+[/list]
+示例：
+[code]- type: command
+  executor: console
+  command: say leveled up!
+  revert_executor: console
+  revert_command: say removed level up[/code]
+
+[b][size=3]权限奖励（[font=Consolas]permission[/font]）[/size][/b]
+权限奖励会将特定的权限节点发放给玩家。当需要给玩家权限时，你更应该使用该模块，而非插件的命令模块，因为直接的命令会在权限回收等方面出现许多问题，相对地，权限奖励发放模块则不会有。例如：1. 玩家失去等级时将权限回收；2. 添加权限奖励时会对已经达到该等级的玩家补发（在玩家加入后才可自动补发，对不在线玩家无效）。
+
+该模块仅在你以 [url=https://www.spigotmc.org/resources/luckperms.28140]LuckPerms[/url] 为权限管理插件时有效。
+
+键名：
+[list]
+[*][font=Consolas]permission[/font] - 所操作的权限节点（必需）
+[*][font=Consolas]value[/font] - 权限节点的设定值，填入 [font=Consolas]true[/font] 或 [font=Consolas]false[/font]，默认为 [font=Consolas]true[/font]（可选）
+[/list]
+示例：
+[code]- type: permission
+  permission: some.permission.node
+  value: true[/code]
+[b][size=3]物品奖励（[font=Consolas]item[/font]）[/size][/b]
+物品奖励将特定物品发放给玩家，通过键值与注册内容系统而支持大部分的物品。奖励物品必须在游戏内手持该物品，并使用命令 [font=Consolas]/skills item register [命名][/font] 来注册。物品也可使用命令 [font=Consolas]/skills item unregister [命名][/font] 来解除注册。当玩家背包满时，插件将会提醒玩家，并将未领取的物品发放至玩家的临时库存。他们随后可使用 [font=Consolas]/skills claimitems[/font] 命令来领取这些物品。服务器重启后这些临时物品不会丢失。
+键名：
+[list]
+[*][font=Consolas]key[/font] - 使用命令 [font=Consolas]/skills item register [命名][/font] 注册的物品命名（必需）
+[*][font=Consolas]amount[/font] - 给予该物品的数量，可超过最大堆叠值。若超过，多余的物品会按组堆叠发放给玩家，当玩家背包满时，物品将会发送至玩家的临时库存，给予物品的默认值为注册该物品时手持的物品数量。（可选）
+[/list]
+示例：
+[code]- type: item
+  key: some_item_key
+  amount: 24[/code]
+
+[b][size=3]货币奖励（[font=Consolas]money[/font]）[/size][/b]
+
+该模块简单地在玩家升级时为他们发放一定数量依赖 Vault 接口的货币。
+键名：
+[list]
+[*][font=Consolas]amount[/font] - 给予货币数量
+[/list]
+示例：
+[code]- type: money
+  amount: 1000[/code]
+
+若你不使用 Vault 或有其他的经济（译者注：例如点券），你可以使用命令奖励来正常给予货币奖励。你也可以使用 PlaceholderAPI 的 Math 变量拓展，通过计算按等级的应发放货币量来给予玩家对应数量的货币。下面是一个例子：
+[code]- type: command
+  executor: console
+  command: eco give {player} %math_{level}*2+100%[/code]
+
+[b][size=4]消息文本[/size][/b]
+命令、权限以及物品奖励均支持在菜单或聊天栏中插入自定义提示文本。[font=Consolas]menu_message[/font] 键即是在升级进度菜单中显示的文本内容（可通过点击任意技能或输入命令 /skills menu 打开）。这将会在 “奖励：” 一栏下的奖励之后出现。[font=Consolas]chat_message[/font] 键即是在玩家升级后聊天栏中出现的提示文本。若要求二者输出的内容相同，可将这两个值合并为 [font=Consolas]message[/font] 项并填入内容。
+
+消息文本的值可以是一条字符串（也就是你输入的内容），也可以是在消息配置中的一条消息文本。插件将优先解析字符串是否匹配了消息配置中的内容，若没有匹配到对应的文本，则将其按原样输出。消息文本同样支持彩色代码 “&”。
+
+注意：消息文本默认不带换行符，若要每个奖励单独一行显示，你必须在这些文本的开头加上换行符 “\n”。
+设置了菜单和聊天栏消息的示例:
+[code]- type: permission
+  permission: some.permission.node
+  value: true 
+  menu_message: \n  Some message in the menu
+  chat_message: \n  Some message in chat[/code]
+在 menu_message 和 chat_message 相同的情况下使用 message 参数简写的示例：
+[code]- type: command
+  executor: console
+  command: say leveled up!
+  message: \n  Both a menu and chat message[/code]
+[b][size=3]默认和自动处理的奖励消息[/size][/b]
+物品奖励按消息配置中 rewards.item 下的物品名显示物品的名称。若物品没有展示名称，则默认不显示消息。
+
+属性奖励的相关消息通常由插件自动处理，因为它总是在菜单中使用消息配置的 [font=Consolas]menus.level_progression_menu.rewards_entry[/font] 项，而在聊天栏中使用消息配置的 [font=Consolas]leveler.stat_level[/font] 项。若要修改属性奖励的信息，则你应修改这两条消息配置中的文本。
+
+货币奖励也通常由插件处理，它总是在菜单中使用消息配置 [font=Consolas]menus.level_progression_menu.money_reward[/font] 项，在聊天栏中使用消息配置的 [font=Consolas]leveler.money_reward[/font] 项。所有特定等级的特定数量货币奖励将会叠加为单条信息，包括配置文本下的旧版设置 [font=Consolas]skill-money-rewards[/font] 项所设置的货币奖励。
+
+[size=4][b]更多内容[/b][/size]
+仍然困惑或格式不起作用？试着浏览一下[url=https://github.com/Archy-X/AureliumSkills/blob/master/bukkit/src/main/resources/rewards/example_rewards.yml]本插件的示例奖励配置文件[/url]吧。
+[page]
+[size=5][b]战利品配置[/b][/size]
+[color=Grey]指导配置战利品的教程。[/color]
+
+[b]该教程为 Beta 1.2.0 或更高版本设计，若你正在使用旧版本，请参考本插件的[url=https://github.com/Archy-X/AureliumSkills/wiki/Loot-Tables]旧版本维基[/url]。[/b]
+
+[size=4][b]文件结构[/b][/size]
+掉落表在文件夹中被按技能名称分为多个文件。掉落表文件的名称对应了它们所属的技能。默认区块下，loot 文件夹下应当有采集和钓鱼的掉落表文件。你可以自行添加诸如挖矿或锻造技能的掉落表，格式也可参考示例配置中的内容。
+
+[size=4][b]道具池[/b][/size]
+道具池池是战利品的列表，每个掉落表可拥有多个道具池。在默认的采集和钓鱼掉落表文件中，有稀有（[font=Consolas]rare[/font]）和史诗（[font=Consolas]epic[/font]）道具池。你也可以在文件中自行添加数量不限的道具池。
+
+道具池的相关设定位于掉落文件中的 pool 区域。每个道具池必须在配置文件中有一个不重复的名称。在采集和钓鱼掉落表中，稀有与史诗道具池是保留名称，各自与其技能能力挂钩，因此不建议删除这些内容。
+
+键名：
+[list]
+[*][font=Consolas]base_chance[/font] - 选中该道具池的裸概率（无任何提升概率技能影响的值）（1 = 1%几率）（默认为1）
+[*][font=Consolas]selection_priority[/font] - 该值能影响此道具池被选中的几率，更高的值意味着它会优先于权重较低的道具池被选择，从而提升被选中的概率。（默认值为1）
+[*][font=Consolas]override_vanilla_loot[/font] - 方块原版的战利品是否会被本插件的道具池替换？不影响钓鱼的原版战利品列表。（默认值为1）
+[*][font=Consolas]chance_per_luck[/font] - 所选中的道具池掉落物品概率随玩家幸运属性增加的值（0.1 表示玩家的每点幸运属性可增加该道具池 0.1% 的选择概率）（默认为0）
+[/list]
+每个道具池都有一个列表用于决定其战利品内容。该部分内容用法与上一章节提到的奖励类似。
+
+[b][size=4]掉落内容[/size][/b]
+目前，掉落内容可分为两种类型：物品掉落与命令掉落。每一个掉落内容均需要填入各自所需的值，同时你可以不限数量地增加这些掉落内容。键名在下文有所叙述：
+
+通用键名（对任意种类掉落均有效）：
+[list]
+[*][font=Consolas]type[/font] - 战利品种类，可为物品（item）或命令（command）
+[*][font=Consolas]weight[/font] - 该战利品的权重。更高的权重意味着被优先选择。（默认值为10）
+[*][font=Consolas]message[/font] - 当玩家抽取到该战利品时发送给他们的消息。该内容支持解析颜色代码和 PlaceholderAPI 变量（可选）。
+[*][font=Consolas]sources[/font] - 该战利品应用的源或标签源。匹配的源名称应当与 source_config.yml 中的对应。暂不支持自定义方块源。（可选
+[*][font=Consolas]xp[/font] - 当选中该战利品时获得的经验（默认与源值相同）。
+[/list]
+
+[b][size=3]物品战利品[/size][/b]
+
+属于该类型的额外键名列表：
+[list]
+[*][font=Consolas]material[/font] - 物品的材料名称，需为有效的 bukkit 物品材质名（无视大小写），1.12 请使用诸如 材料:值 来表示旧版本的物品。
+[*][font=Consolas]amount[/font] - 决定给予的物品数量。可使用诸如 ‘5’ 和 ‘1-5’ 的数字表示固定值或随机值（均含，即 1≤数量≤5）。（默认值为1）
+[*][font=Consolas]key[/font] - 代表通过命令 [font=Consolas]/skills item register[/font] 注册的物品 ID。若填写此项，那么上方的两项设置将会被无视。
+[*][font=Consolas]display_name[/font] - 物品的展示名，支持用 ‘&’ 而不是带转义符的 ‘\&’ 的颜色代码。（可选）
+[*][font=Consolas]lore[/font] - 物品的 lore，必须是一个列表，使用颜色代码的规则与上方的自定义名称相同。 (optional)
+[*][font=Consolas]enchantments[/font] - 物品附魔属性的列表，一行仅允许一个附魔。在附魔名称与等级之间应当使用空格分隔，例如 ‘sharpness 5’（表示锋利 V）。（可选）
+[*][font=Consolas]potion_data[/font] - 药水数据值，见下方子键名解释（可选）：
+[list]
+[*][font=Consolas]type[/font] - 药水种类，需为有效的 bukkit 药水种类名（PotionType）
+[*][font=Consolas]extended[/font] - 药水是否拥有延长效果（同原版红石粉）
+[*][font=Consolas]upgraded[/font] - 药水是否拥有升级等级（同原版萤石粉）
+[/list][*][font=Consolas]custom_effects[/font] - 药水效果列表，见下方子键名解释（可选）：
+[list]
+[*][font=Consolas]type[/font] - 效果名称，需为有效的 bukkit 药水效果名（PotionEffectType）
+[*][font=Consolas]duration[/font] - 效果的持续时间，单位为刻（20刻=1秒）
+[*][font=Consolas]amplifier[/font] - 药水效果的等级。（0 表示药水效果的 1 级）
+[/list][*][font=Consolas]glow[/font] - 设置为 true 后可使物品拥有附魔光效（可选）
+[*][font=Consolas]nbt[/font] - 设置自定义 NBT 数据的区域（可选）
+[*][font=Consolas]flags[/font] - 施加至物品的标签（可选）
+[*][font=Consolas]ignore_legacy[/font] - 若为 true 且服务器版本低于 1.13，插件将会跳过该物品的加载以避免材料名称判断问题。使用该选项的唯一理由是你需要将同一份配置文件在旧版本和新版本的服务器上同时使用，以提高编辑效率，避开低版本不存在的材料名。插件本身会自动处理高版本的材料名。（可选）
+[/list]
+
+[b]示例配置[/b]
+基础的物品掉落示例：
+[code]- type: item
+  material: iron_ingot
+  weight: 10
+  amount: 1-3[/code]
+带有自定义名称和描述及附魔的，略复杂的掉落示例：
+[code]- type: item
+  material: diamond_sword
+  weight: 5
+  amount: 1
+  display_name: '&c火焰之剑'
+  lore:
+    - '&7强力的武器。'
+    - ' '
+    - '&9品质：稀有'
+  enchantments:
+    - sharpness 5
+    - fire_aspect 2
+    - looting 3[/code]
+带有自定义效果和数据值的药水示例：
+[code]- type: item
+  material: potion
+  weight: 10
+  amount: 1
+  potion_data:
+    type: speed
+    upgraded: true
+  custom_effects:
+    - type: jump
+      duration: 1000
+      amplifier: 2
+    - type: regeneration
+      duration: 40
+      amplifier: 3[/code]
+带有隐藏附魔标签的物品，且通过NBT使用了自定义模型数据的物品示例：
+[code]- type: item
+  material: paper
+  weight: 10
+  amount: 1
+  nbt:
+    CustomModelData: 14
+  enchantments:
+    - knockback 2
+  flags:
+    - hi de_enchants[/code]
+[b][size=3]命令战利品[/size][/b]
+命令战利品会在玩家获得该掉落时立即执行，执行方身份可为玩家或控制台。
+
+属于该类型的额外键名列表：
+[list]
+[*][font=Consolas]executor[/font] - 命令的执行方，可填入控制台（console）或玩家（player）。（默认为控制台）
+[*][font=Consolas]command[/font] - 执行命令的内容，不需要以斜杠 “/” 开头。支持内建变量 {player} 以表示执行玩家，以及所有的 PlaceholderAPI 变量的解析。
+[/list]
+示例配置：
+[code]- type: command
+  weight: 10
+  executor: console
+  command: say hi[/code]
+[b][size=4]战利品的选择[/size][/b]
+插件选择战利品的机制非常简单：
+
+道具池是由玩家行为对应的技能种类决定。例如基于方块的战利品，这个方块必须能触发相应的技能（例如锻造、挖掘和采集）
+
+掉落表会随机抽取一个权重最高的道具池。道具池被选中的概率取决于道具池的裸概率和其他技能概率加成的总和。若一个道具池未被选中，则掉落表会继续随机选择其他相同或略小于该道具池权重的道具池。若没有道具池被选中，那么插件将不会进入下一步骤。
+
+最终的战利品在被选中的道具池中抽取获得。权重越高代表该战利品被选中的几率越大。
+[page]
+[b][size=5]经验来源[/size][/b]
+[color=Grey]指导配置经验来源的教程。[/color]
+
+这是一个指导你使用和配置 [font=Consolas]sources_config.yml[/font] 文件的教程。
+
+[b][size=4]基础配置[/size][/b]
+经验来源配置文件可以配置不同技能进行交互时获得的经验数量，例如挖掘方块、特定行为或击杀实体等。[font=Consolas]sources_config.yml[/font] 按技能分成了许多文件。
+
+每个经验来源的键名不应被修改。该值是对应经验来源所可以提供的默认数值（在没有任何翻倍影响的情况下）。在修改该值后，请确保输入命令 [font=Consolas]/skills reload[/font] 来使改动生效。
+[b][size=4]自定义方块[/size][/b]
+
+农耕、锻造、挖矿与采集技能支持从自定义方块（默认没有被定义经验数值的方块）获得经验。
+
+若要添加自定义方块，请在对应技能的设置中添加一个 [font=Consolas]custom:[/font] 模块。在这个自定义模块中，键名为方块名称，值为所增加的经验数值。例如：[font=Consolas]blue_concrete: 10.0[/font] 表示对应技能在挖掘蓝色混凝土时会获得 10.0 点经验。
+
+你所添加的自定义方块默认启用检查重复放置的功能，这意味着玩家不能通过重复放置方块来刷取技能经验。
+方块默认使用 1.13+ 扁平化后的 ID，在 1.12 的服务器上使用这些 ID 也可以被识别。
+
+这里是一个挖掘技能通过自定义方块获取经验的完整示例：
+[code]sources:
+  mining:
+    custom:
+      sandstone: 4.0[/code]
+[page]
+[b][size=5]技能设置[/size][/b]
+[color=Grey]指导修改能力与魔法能力的教程。[/color]
+
+[b][size=4]基本内容[/size][/b]
+能力是升级到一定程度后所拥有的额外功能或效果。每个技能都有至多五种的不同能力。若一个技能尚未包含任何能力，则该技能对应的能力尚未被添加。能力通常是被动触发的，这意味着它们不需要过多的玩家操作来激活。若要参阅主动能力，请见魔法能力章节。
+
+为了更快速地查阅你的能力等级，在技能菜单（通过 /skills 命令打开）中将鼠标指针移动到物品上即可浏览。若一个能力名称被划去并以暗灰色显示，则说明你尚未解锁该能力。若要查阅各个能力的详细描述，在主菜单中点击对应物品打开技能进度菜单，再将鼠标指针移动到其中的对应物品上即可浏览。每个等级都能显示在该等级能解锁或升级什么能力，与此同时对应能力的描述也会显示在其中。
+
+若要允许能力升级，每个能力均包含一个或两个值。该值能够决定随技能等级的提升，该能力的强度大小。该值可为一个百分比几率、百分比的额外伤害等。当在配置文本中设置百分比时，你应该使用 0-100 的整数来代表百分比。
+
+[b][size=4]使用 abilities_config.yml[/size][/b]
+abilities_config.yml 是一个在 Alpha 1.6.0 版本被添加的新文件。
+该文件被分为两块内容，能力（[font=Consolas]abilities[/font]）与魔法能力（[font=Consolas]mana_abilities[/font]）
+
+[b][size=3]能力[/size][/b]
+该部分内容的设置面向普通的被动能力。每个能力均按照其对应的技能被分为多块内容。
+
+主要参数：
+[list]
+[*][font=Consolas]enabled[/font] - 是否启用该能力。若被设置为 false，则该能力将不会显示在技能菜单中，对应的消息提醒也不会显示在游戏中。
+[*][font=Consolas]base[/font] - 玩家在 1 级时，该能力的初值。（参照上方内容以了解这里应当填入什么值）。若一个能力有两个值，第一个值会在默认的英文描述文本中显示。
+[*][font=Consolas]per_level[/font] - 每点能力等级可提升多少数值。在给定等级下，能力值计算公式为 [font=Consolas]值 = 初值 + ((能力等级 - 1) * 每等级提升数值)[/font]。
+[*][font=Consolas]unlock[/font] - 该值决定该能力的解锁等级。默认值为 2-6，具体值取决于能力自身。
+[*][font=Consolas]level_up[/font] - 能力升级所需技能等级数（每 X 级技能等级可以提升一级能力等级）若一个能力的 [font=Consolas]level_up[/font] 值被设置为 3，则每提升 3 级技能等级，该能力就会升级一次。默认最大值为 5。
+[*][font=Consolas]max_level[/font] - 能力的最大等级。设置为 0 则表示不限制该能力的最大等级。请注意，能力等级不能超过最大技能等级。该值必须小于最大技能等级，这样才能使该能力中的所有效果正常工作。但当你使用命令将玩家的能力等级设置到高于上限的值时，该功能依旧会正常运作。默认值为 0。
+[/list]
+
+其他参数：
+[list]
+[*][font=Consolas]base_2[/font] - 玩家在 1 级时，该能力的第二初值。该值会在默认的英文描述文本中显示。
+[*][font=Consolas]per_level_2[/font] - 与上述 [font=Consolas]per_level[/font] 作用相同，但该值为第二值所使用。
+[*]部分能力有各自的独立选项，其释义无需解释。
+[/list]
+
+[b][size=3]魔法能力[/size][/b]
+该部分包含了消耗魔法的主动能力。
+
+主要参数：
+[list]
+[*][font=Consolas]enabled[/font] - 是否启用该能力。若被设置为 false，则该能力将不会显示在技能菜单中，对应的消息提醒也不会显示在游戏中。
+[*][font=Consolas]base_value[/font] - 玩家在 1 级时，该能力的初值。（参照上方内容以了解这里应当填入什么值）。若一个能力有两个值，第一个值会在默认的英文描述文本中显示。
+[*][font=Consolas]value_per_level[/font] - 与普通能力的 [font=Consolas]per_level[/font] 用法相同。
+[*][font=Consolas]cooldown[/font] - 该魔法能力在 1 级时的基础冷却时间，单位为秒。可以是小数。
+[*][font=Consolas]cooldown_per_level[/font] - 每个魔法能力等级提供的冷却增加/减少。若该值为正则每级魔法能力的冷却会逐渐增加，若为负值则反之。
+[*][font=Consolas]mana_cost[/font] - 该魔法能力在 1 级时的基础魔法消耗。
+[*][font=Consolas]mana_cost_per_level[/font] - 每个魔法等级提供的魔法消耗减免。
+[*][font=Consolas]unlock[/font] - 决定魔法能力对应的解锁等级。默认为 7 级。
+[*][font=Consolas]level_up[/font] - 魔法能力升级所需技能等级数（每 X 级技能等级可以提升一级能力等级）。
+[*][font=Consolas]max_level[/font] - 最大魔力等级。与普通能力的 [font=Consolas]max_level[/font] 用法相同。
+[/list]
+
+其他参数：
+[list]
+[*]自动补种（replenish）、瞬间砍树（treecapitator）、快速挖掘（speed_mine）以及 地形平整（terraform）中独有的参数 [font=Consolas]require_sneak[/font] - 若设置为 true，玩家必须蹲下右键才可出现拾起镐子的提示。
+[*]锋利鱼钩（sharp_hook）中独有的参数 [font=Consolas]display_damage_with_scaling[/font] - 菜单中显示的伤害是否按照 hp_indicator_scaling 设定项显示。
+[*]锋利鱼钩（sharp_hook）和聚能穿射（charged_shot）中独有的参数 [font=Consolas]enable_sound[/font] - 当玩家使用锋利鱼钩（sharp_hook）和聚能穿射（charged_shot）技能时，是否为玩家播放音效。
+[*]法术吸收（absorption）中独有的参数 [font=Consolas]enable_particles[/font] - 当法术吸收（absorption）启用时，是否在吸收伤害时生成粉色的环形粒子。
+[*]自动补种（replenish）、瞬间砍树（treecapitator）、快速挖掘（speed_mine）以及 地形平整（terraform）中独有的参数 [font=Consolas]check_offhand[/font] - 若设置为 true，在副手持有可放置的物品（例如火把）时，工具将不会产生被拾起的提示。
+[*]自动补种（replenish）、瞬间砍树（treecapitator）、快速挖掘（speed_mine）以及 地形平整（terraform）中独有的参数 [font=Consolas]sneak_offhand_bypass[/font] - 若设置为 true，蹲下右键将会无视副手物品是否可放置。
+[*]聚能穿射（charged_shot）中独有的参数  [font=Consolas]enable_message[/font] - 玩家使用该技能射箭时是否发送聊天栏提示。
+[*]瞬间砍树（treecapitator）中独有的参数 [font=Consolas]max_blocks_multiplier[/font] - 破坏方块数量的比例。
+[/list]
+[page]
+[size=5][b]菜单[/b][/size]
+[color=Gray]修改和自定义个性化菜单的教程。[/color]
+
+在本插件中，菜单是向玩家在游戏内显示技能信息的界面。该界面还包括了属性菜单和技能内容、技能升级进度、能力描述。一些菜单可直接使用诸如 [font=Consolas]/skills[/font] 或 [font=Consolas]/stats[/font] 的命令开启，而有些菜单只能通过点击这些菜单中的按钮来打开。
+
+因为菜单更新显著地改变了本插件的配置格式并添加了新的内容，该章节面向使用 Beta 1.3.0 或更高版本的用户。若你还在使用低版本并已熟悉了旧版本的菜单配置格式，那么你需要参阅本维基的下一章节。
+
+[b][size=4]文件结构[/size][/b]
+负责配置菜单的文件位于插件的 [font=Consolas]AureliumSkills/menus[/font] 文件夹下。每个菜单都有其对应的文件，用以控制菜单的显示内容。
+
+[b][size=3]变量[/size][/b]
+本插件的许多文档都使用到了变量，通常以 [font=Consolas]{变量}[/font] 的形式表示。当菜单被开启时，这些变量就会被消息文本中的对应信息所替换。变量对应的文本路径通常在语言文本的 [font=Consolas]menus.common[/font] 或 [font=Consolas]menus.[menu_name][/font]，具体名称大致与变量名相似。
+
+但是，部分变量由于其更强的泛用性，而不会出现在消息文本或菜单配置区域。例如，变量 [font=Consolas]{skill}[/font] 就会被技能的名称所替代。
+
+我们非常建议对消息文件里的变量所对应的文本进行改动，这样对保持多语言支持有益。对内建变量本身的修改会使其无效化。
+
+[b][size=3]菜单键名[/size][/b]
+下列键名是菜单配置文件中处于最左侧（没有缩进）的键名（此处称菜单部分）。
+[list]
+[*][font=Consolas]title[/font] - 打开菜单时显示的标题。
+[*][font=Consolas]size[/font] - 菜单行数。只能使用 1-6 之间的数字，例如 1 代表一行九格。
+[*][font=Consolas]fill[/font] - 填充菜单空白区域的物品名称，具体内容请见菜单格式改动[注1]。
+[*][font=Consolas]items[/font] - 用于单个按钮的配置部分。
+[*][font=Consolas]templates[/font] - 自定义物品内容及多个示例的部分。
+[*][font=Consolas]options[/font] - 部分菜单文件中存在的，用以控制其他自定义设置的部分。
+[/list]
+[b][size=3]填充物品[/size][/b]
+填充（[font=Consolas]fill[/font]）区域是决定填充其他物品不使用位置内容的设置。该项通常有两个键名：
+[list]
+[*][font=Consolas]enabled[/font] - 是否启用该功能
+[*][font=Consolas]material[/font] - 填充物的材质
+[/list]
+填充物品的展示名称会被自动替换为空格，所以物品名称是不可见的。与其他物品相同格式的额外键名可以添加至此，以用来自定义其他的物品数据（见此[注1]）。
+[b][size=3]物品设置区域[/size][/b]
+物品（[font=Consolas]item[/font]）是用来配置菜单中单个物品的区域。每个子区域都包含物品的唯一ID，即它们的独特名称。在默认菜单中存在的物品名称是保留词，意味着这些名称被插件所使用，用以替换变量名称或拥有其他的功能。自定义物品可以以非保留词的 ID 命名添加，格式与其他的物品相同。见添加自定义物品章节来获取更多信息。
+
+[b][size=3]模板设置区域[/size][/b]
+模板区域用来设置包含多个相同内容的物品，例如技能菜单中显示的物品。模板物品通常有相同的描述和名称，通过其中插入的变量在不同菜单中被区分。模板中的每个内容都包含不同之处，例如技能的种类，以使每个单独的内容显示都不尽相同。下列示例配置显示了一个模板的基本结构。
+[code]templates: # 模板设置区域
+  skill: # 技能菜单模板
+    farming: # 对于农耕技能菜单，该物品的变化
+      pos: ... # 该部分仅修改农耕技能的相关物品
+      material: ...
+    foraging: # 该部分仅修改锻造技能的相关物品
+      pos: ...
+      material: ...
+    # 不会添加至所有内容的物品任意键名
+    display_name: ... # 对所有内容生效
+    lore: ... # 对所有内容生效[/code]
+鉴于模板仅对已经有定义的物品生效，自定义模板是无效的。
+[size=4][b]物品[/b][/size]
+Items refers to sections in both the items and templates sections, as most keys apply to both. There are two required keys for all items and most templates:
+物品同时指物品（[font=Consolas]items[/font]）和模板（[font=Consolas]templates[/font]）区域中的物品，大多数的键对这两者均生效。这里有两个对大多数物品和模板而言必需的键：
+[list]
+[*][font=Consolas]material[/font] - 物品材料名称，例如 [font=Consolas]dirt[/font] 或 [font=Consolas]diamond[/font]，更多细节见下。
+[*][font=Consolas]pos[/font] - 物品所处的菜单位置，可以为以逗号分隔的 [font=Consolas]行,列[/font] 值，或是单个的格子位置数字（处于 1-53 间），更多细节见下。
+[/list]
+
+[b][size=3]材料名[/size][/b]
+材料名称是大多数菜单物品和大部分模板所要求的输入的物品种类定义。在 1.13+ 的 Minecraft，物品的 ID 可通过在游戏内按下 F3+H 并查看对应物品的悬浮框得到，即下方以暗灰色 [font=Consolas]minecraft:[/font] 字样后方的内容。以大写字母开头的小写字母名称同样可被接受。
+
+在 1.12 的 Minecraft 中，部分物品有着附加值（数字），用以定义不同颜色的染色羊毛、玻璃或是不同种类的原木，该数据值以 [font=Consolas]材料:数据值[/font] 的格式加在材料名称末尾。数据值也可在游戏内使用高级工具栏查看，具体是数字 ID 后以 # 开头的一串数字。附加值为 0 的物品无需在配置文本中再次添加。
+
+在模板中，材料既可以在内容分支下定义，也可以在主物品栏目下定义。所决定材料的内容只会在游戏中对应的菜单生效，若定义在主物品栏目下，未指定内容的材料名会以此为准。
+
+[b][size=3]物品位置[/size][/b]
+位置（[font=Consolas]pos[/font]）是决定物品在菜单所处位置的值。该内容下有两种格式的参数可选：
+
+[b]行列格式[/b]
+该格式的写法通常为 [font=Consolas]行,列[/font]，例如参数 [font=Consolas]2,3[/font] 代表菜单里的第 1 行第 2 列。第一行/列从 0 开始计数。
+行范围是 0-5，而列范围则是 0-8。第 0 行是 GUI 界面中最顶端的一行，第 0 列则是 GUI 界面中最左侧的一列。
+
+[b]序号格式[/b]
+该格式是为 0-53 范围的整数，代表 GUI 中格子的序号。第 0 格在菜单的左上角，从左至右序号递增，从上至下也递增。
+
+[b]显示名称与 Lore[/b]
+[font=Consolas]display_name[/font] 参数后的内容决定了物品的显示名称，支持嵌入彩色代码和变量。
+[font=Consolas]lore[/font] 参数后的内容决定了物品的描述文本，同样支持嵌入彩色代码和变量。
+显示名称与 Lore 键也包含以 [font=Consolas]{变量}[/font] 的形式表示的内建变量。这些变量被预先嵌入文本，以配合插件展示完整功能。消息文本通常也对应消息配置文件中键名相似的内容。
+
+[b]16进制色码[/b]
+显示名称与 Lore 中也支持使用类似 [font=Consolas]�[/font] 的 [url=https://docs.adventure.kyori.net/minimessage/format.html]MiniMessage[/url] 彩色字格式。
+
+[b]物品元数据值[/b]
+这里有很多种键来定义不同种类的物品元数据。这些键位于物品设置内容，不在 [font=Consolas]material[/font]，而是与该键同级。
+
+[b]附魔[/b]
+附魔（[font=Consolas]enchantments[/font]）是按照格式排列，存有附魔顺序的一个列表，例如：
+[code]enchantments:
+  - sharpness 5
+  - unbreaking 3[/code]
+其中使用的名称即为原版游戏使用的附魔名称。
+
+[b]药水数据值[/b]
+药水数据值（[font=Consolas]potion_data[/font]）部分包含几个子键，用以决定药水的数据。如下列内容所示：
+[list]
+[*][font=Consolas]type[/font] - 药水种类名称，例如 [font=Consolas]speed[/font] 或 [font=Consolas]night_vision[/font]。种类名称需为有效的 Bukkit 药水种类名称（PotionType）（在[url=https://helpch.at/docs/1.18/org/bukkit/potion/PotionType.html]此处[/url]列出）
+[*][font=Consolas]extended[/font] - 药水是否有延长时间的效果（原版萤石效果）（默认为 false）
+[*][font=Consolas]upgraded[/font] - 药水是否有提升等级的效果（原版红石效果）（默认为 false）
+[/list]
+
+一个 [font=Consolas]potion_data[/font] 区域的示例，带有上述的三个键名：
+[code]potion_data:
+  type: night_vision
+  extended: true
+  upgraded: true[/code]
+
+[b]自定义效果[/b]
+自定义效果部分是一个包含多个元素的映射表，用于设置药水的自定义效果（与药水数据值不同）。每个在映射表中的元素均需包含三个键：
+[list]
+[*]type - 该效果使用的名称，必须是有效的 Bukkit 药水效果名称（PotionEffectType）（在[url=https://helpch.at/docs/1.18/org/bukkit/potion/PotionEffectType.html]此处[/url]列出）。
+[*]duration - 药水持续时间，单位为刻（20 刻 = 1 秒）。
+[*]amplifier - 药水效果等级，填写 0 表示药水效果为 1 级。
+[/list]
+下列是一个使用了 [font=Consolas]custom_effects[/font]，包含多个自定义效果（10 秒的抗火 I 和 30 秒的急迫 II）：
+[code]custom_effects:
+  - type: fire_resistance
+    duration: 200
+    amplifier: 0
+  - type: fast_digging
+    duration: 600
+    amplifier: 1[/code]
+
+[b]物品标签[/b]
+标签（[font=Consolas]flags[/font]）是一个添加至物品的标签列表。物品标签是一些用于隐藏特定内容使其不向玩家显示的数据。下列是一个可在物品配置中使用的有效标签列表：
+[code]flags:
+  - hi de_attributes
+  - hi de_destroys
+  - hi de_dye
+  - hi de_enchants
+  - hi de_placed_on
+  - hi de_potion_effects
+  - hi de_unbreakable[/code]
+
+[b]发光[/b]
+发光（[font=Consolas]glow[/font]）部分是一个填入布尔值的位置，当设置为 true 时，物品可在没有附魔的情况下发光。该操作与添加一个附魔并在该物品上使用 [font=Consolas]hi de_enchants[/font] 标签等价。
+
+[b]头颅数据[/b]
+头颅数据值（[font=Consolas]skull_meta[/font]）在物品为玩家头颅时可决定头颅的自定义皮肤。该部分设置需包含 [font=Consolas]uuid[/font]、[font=Consolas]base64[/font] 或 [font=Consolas]url[/font] 三个中的一个子键。
+
+[font=Consolas]uuid[/font] 是需要使用皮肤玩家的 UUID。[font=Consolas]base64[/font] 是一串材质的 base64 码。[font=Consolas]url[/font] 则是 minecraft.net 官网下对应的皮肤链接。
+
+下方是一个使用本功能的配置示例，你只需要三个子键中的一个。
+[code]skull_meta:
+  uuid: 6302a69e-9995-4f95-b2cd-d37b8ab875c9
+  base64: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjIxMTk3ZTUzYzFhYjExMmU2ODA3OWQzYzgzZmE0NzE0Yzc3YTgzZDA2MjFhMjlkNzYyZTk5ZTlmZWFhZTRkNSJ9fX0=
+  url: http://textures.minecraft.net/texture/621197e53c1ab112e68079d3c83fa4714c77a83d0621a29d762e99e9feaae4d5[/code]
+
+[b]耐久值[/b]
+耐久值（[font=Consolas]durability[/font]）用于设置物品的耐久值，可设定的值范围取决于物品的最大耐久（0 意味着物品即将损坏）。
+
+[b]NBT 数据[/b]
+使用 [font=Consolas]nbt[/font] 部分配置可将 NBT 数据添加至物品。该设置支持复杂 NBT 结构，并会自动检测输入的数据种类。
+
+[b]注册物品 ID[/b]
+注册物品 ID（[font=Consolas]key[/font]）用于指代在游戏中通过命令 [font=Consolas]/skills item register[/font] 注册的物品。在该项设置后，[font=Consolas]material[/font] 和其他数据都会无效。该设置适合对游戏中已创建的物品或过于复杂的物品使用。
+
+[b]自定义模型数据[/b]
+可在 NBT 数据区域以下方格式添加自定义模型数据：
+[code]some_item:
+  nbt:
+    CustomModelData: 123[/code]
+该内容跟随原版储存自定义模型数据的格式。
+
+[size=4][b]点击操作[/b][/size]
+点击操作可用于在玩家点击菜单物品的时候触发自定义操作。这包括了执行命令、关闭菜单、打开另一个菜单等更多操作。
+
+[size=3][b]触发种类[/b][/size]
+这里有多种插件能识别的操作类型（括号中的为配置文本实际使用的内容）：
+[list]
+[*]鼠标单击（[font=Consolas]on_click[/font]）
+[*]鼠标左键点击（[font=Consolas]on_left_click[/font]）
+[*]鼠标右键点击（[font=Consolas]on_right_click[/font]）
+[*]鼠标中键点击（[font=Consolas]on_middle_click[/font]）
+[*]键盘 Q 键（[font=Consolas]on_drop[/font]）
+[/list]
+触发操作用于命名玩家以特定动作点击时触发操作的列表名称。例如，当玩家点击菜单物品时，配置中对应 [font=Consolas]on_click[/font] 部分的内容都会被激活。
+
+[b][size=3]种类[/size][/b]
+当你创建的物品下包含了触发种类的名称，点击操作就需要以映射列表的形式添加。
+每个操作都需要预先决定种类，无论是 [font=Consolas]command[/font]（执行命令）或是 [font=Consolas]menu[/font]（打开菜单）。
+
+[b]命令[/b]
+执行命令操作时，执行方（[font=Consolas]executor[/font]，可以为控制台（[font=Consolas]console[/font]）或玩家（[font=Consolas]player[/font]））和执行命令的内容为必填项。控制台（[font=Consolas]console[/font]）身份会从后台为玩家执行命令，而玩家（[font=Consolas]player[/font]）身份则通过玩家本身执行命令（会检查玩家是否拥有相应权限，若无则不会执行）。
+执行的命令（[font=Consolas]command[/font]）内容不需要带斜杠。支持在命令参数中填入内建变量和 PlaceholderAPI 的变量。
+
+[b]菜单[/b]
+菜单操作与菜单跳转有关。你必须要在使用对应的操作前指定操作参数，如下列表所示：
+[list]
+[*]open - 打开本插件内的其他菜单。
+[*]close - 关闭当前菜单
+[*]next_page - 若可以，那么移动到菜单的下一页。
+[*]previous_page - 若可以，那么移动到菜单的上一页。
+[/list]
+开启（[font=Consolas]open[/font]）操作必须指定菜单名称（[font=Consolas]menu[/font]）值，用以表示索要打开菜单的内部名称（该名称通常以下划线代替空格的小写名称表示）
+开启（[font=Consolas]open[/font]）、下一页（[font=Consolas]next_page[/font]）和上一页（[font=Consolas]previous_page[/font]）有一个额外的 [font=Consolas]properties[/font] 内容用以设定菜单行为，该部分较为深奥，除非你深挖源代码，否则你应该不会知道这部分设置的作用。
+
+[size=3][b]示例[/b][/size]
+以鼠标单击激活的命令操作，通过控制台执行的示例：
+[code]some_item:
+  on_click:
+    - type: command
+      executor: console
+      command: say hi[/code]
+仅在鼠标右键单击时激活关闭菜单操作的示例：
+[code]some_item:
+  on_right_click:
+    - type: menu
+      action: close[/code]
+使用同一个触发器的多个单击操作（按顺序执行）示例：
+[code]some_item:
+  on_click:
+    - type: command
+      executor: player
+      command: shop
+    - type: command
+      executor: console
+      command: say Player opened shop[/code]
+
+[size=4][b]自定义菜单物品[/b][/size]
+全新的物品可通过在 [font=Consolas]items[/font] 下添加以物品名称命名的设置部分来创建。自定义物品不能为已经存在的内建物品名称。
+自定义物品的格式与其他物品完全相同（包括 material、pos、display_name、lore 等）。对这些物品设置自定义点击操作，或是插入 PlaceholderAPI 的变量都是可以的。
+[page]
+[size=5][b]菜单格式变动[/b][/size]
+[color=Gray]自 Beta 1.3.0 以来，插件菜单出现的改动一览。[/color]
+
+这是一份自 Beta 1.3.0 以来的插件菜单配置改动一览。已存在的配置文件将会自动升级，但更新后的改动必须以新格式为基础进行修改。
+
+[size=5][b]改动一览[/b][/size]
+[list]
+[*]之前的 menus.yml 被分成了多个单独的菜单配置文件，并存放在插件的菜单文件夹中；
+[list]
+[*]对已有的 menus.yml 做出的改动会被自动同步至新的文件中；
+[list]
+[*]例外：升级列表中的等级物品需要手动重置，因为新版本的更新向其加入了一些新条件。
+[/list][*]老的 menus.yml 会被重命名为 menus-OLD.yml 并且不应再在新版本的配置中使用。这只是一份确保数据不丢失的备份文件。
+[/list][*]键名 [font=Consolas]rows[/font] 被改为了 [font=Consolas]size[/font]。该键的取值范围与旧键相同（0-5）；
+[*]材料名称现在为小写名称（仍支持大写名称）；
+[*]行（[font=Consolas]row[/font]）与列（[font=Consolas]column[/font]）在新版本被 [font=Consolas]pos[/font] 替代，该键有两种格式可用：
+[list]
+[*]行列格式，该格式的写法通常为 [font=Consolas]行,列[/font]，例如参数 [font=Consolas]3,0[/font] 代表菜单里的第 4 行第 1 列。第一行/列从 0 开始计数。
+[*]序号格式，该格式是为 0-53 范围的整数，代表 GUI 中格子的序号。第 0 格在菜单的左上角，从左至右序号递增，从上至下也递增。
+[/list][*]每个在模板中的内容（每个有不同材料或位置的技能/属性）都按名称被移动到了其对应的菜单子区中。
+[list]
+[*]诸如 materials、pos，以及每个物品内容的数据被按名移动到了对应的子区域中。
+[*]下面是一个模板中的新格式内容：
+[/list]
+[code]templates:
+  skill:
+    farming: # 农耕技能设置区域的名称
+      material: diamond_hoe # 农耕技能内容的材料名称
+    foraging: # 不同于农耕技能设置区域的锻造技能设置名称
+      material: stone_axe[/code][*]物品数据设置，例如药水数据（potion_data），现在从对应区域分离并置入了物品设置（与 material、lore 等设置项同级）和模板设置下。
+[list]
+[*]材料（[font=Consolas]material[/font]）项设置现在只能填入物品材质，不能填入其他附加值。
+[*]新版本格式下的物品数据定义示例：
+[/list]
+[code]items:
+  rank: # 物品名称
+    material: paper # 仅允许材料名称
+    potion_data: # 从原本的 material 下分离
+      type: instant_heal # 部分物品数据需要额外的子参数[/code][*]诸如 1.12 等旧版本的用户，请继续使用 材料名:数据值 的格式。
+[/list]
+[page]
+[size=5][b]经验条件[/b][/size]
+[color=Gray]指导自定义经验值条件的教程。[/color]
+
+每一等级升级技能所需的经验值大小均可在插件文件夹的 [font=Consolas]xp_requirements.yml[/font] 文件中配置。
+
+[size=4][b]表达式与变量[/b][/size]
+在单独的配置区域中，例如默认的 [font=Consolas]default[/font] 配置，你可以见到一个表达式（[font=Consolas]expression[/font]），其中包括了表达式和等号，以计算最终的升级所需经验。
+这个表达式可任你修改，但必须为有效的 EvalEx 表达式，你可以在[url=https://github.com/uklimaschewski/EvalEx#supported-operators]这个页面[/url]浏览支持的计算符号和功能。[quote][b][color=Blue]！[/color][/b] 表达式的结果通常会取相差最小的整数。[/quote]
+变量也支持嵌入表达式，为了让每个等级都有不同的升级所需经验值，你必须在表达式中的某一个合适的位置插入等级变量。该变量代表的是玩家当前的下一等级。该数值从 2 开始，一直到技能等级的最大值。例如，这个表达式在 [font=Consolas]level[/font] 变量为 5 级时，表示的是玩家从 4 级升到 5 级所需的经验值。
+
+自定义变量同样可嵌入表达式，这允许你标记并组织表达式的各个结构。除了直接在表达式中使用树脂字，你还可以通过为这个数字指定命名来将它变成一个变量。在默认的示例表达式中，[font=Consolas]multiplier[/font] 和 [font=Consolas]base[/font] 都是自定义变量。
+[code]multiplier * (level - 2) ^ 2 + base[/code]
+正如你所见，[font=Consolas]multiplier[/font] 和 [font=Consolas]base[/font] 都是在下方指定了值的变量名称：
+[code]default:
+  expression: 'multiplier * (level - 2) ^ 2 + base'
+  multiplier: 100.0
+  base: 100.0[/code]
+你可以使用任何变量名，只要变量名称在下方以类似上述格式的方式定义即可嵌入表达式。
+
+[size=4][b]技能覆写[/b][/size]
+你可以通过在配置文件中添加 [font=Consolas]skill.[技能名称][/font]，来创建每个技能不同的经验值要求，同时覆盖默认的经验设定。键的名称与值应当与默认设置相同。
+这里是一个覆盖了默认炼金技能经验值的示例配置：
+[code]default:
+  expression: 'multiplier * (level - 2) ^ 2 + base'
+  multiplier: 100.0
+  base: 100.0
+skills:
+  alchemy:
+    expression: 'multiplier * (level - 2) ^ 3 + base'
+    multiplier: 20.5
+    base: 20.0[/code]
+
+[size=4][b]直接表示[/b][/size]
+除了使用等式，经验设置还允许直接使用一串包含整数的列表表示。可在 [font=Consolas]default[/font] 设置下创建一个名为 [font=Consolas]values[/font] 的列表，也可在特定技能设置区下直接创建。
+这里是一个使用了直接表示经验值列表的示例配置：
+[code]default:
+  values:
+    - 100
+    - 200
+    - 300
+    - 500
+    - 750
+    - 1250
+    - 1720[/code]
+在该列表里的第一个值表示从 1 级升到 2 级的经验值条件。
+[page]
+[size=5][b]属性词条[/b][/size]
+指导使用命令、物品和盔甲的属性词条的教程。
+
+词条能施加暂时对玩家生效的属性。它们共有三种不同类型，并且都可以使用基本的命令来添加。
+
+[size=4][b]普通词条[/b][/size]
+
+普通词条是最简单的词条。你可以使用命令来添加这一类词条。每个词条都有三个设置，一个 [font=Consolas]name[/font]、一个 [font=Consolas]stat[/font] 和 [font=Consolas]value[/font]。
+
+[font=Consolas]name[/font] 是用来标注词条的 ID。你[b]不能[/b]为同一个玩家添加多于一个的词条。
+[font=Consolas]stat[/font] 是将要添加的属性名称，你必须在这里使用正确的属性名称，例如 [font=Consolas]生命值（health）[/font]、[font=Consolas]力量（strength）[/font]、[font=Consolas]再生（regeneration）[/font]、[font=Consolas]幸运（luck）[/font]、[font=Consolas]智慧（wisdom）[/font]，以及[font=Consolas]韧性（toughness）[/font]。
+[font=Consolas]value[/font] 是决定该属性具体的数值。例如，在 [font=Consolas]value[/font] 为 [font=Consolas]50[/font] 时，该词条将会为玩家施加 +50 点的对应属性。设置为负值则会降低相应的属性。
+
+用于设置该词条的命令有：
+[list]
+[*][font=Consolas]/sk modifier add [玩家名称] [属性名称] [词条名称] [属性值] (是否静默)[/font] - 向玩家添加一个词条。
+[*][font=Consolas]/sk modifier remove [玩家名称] [词条名称] (是否静默)[/font] - 移除玩家的一个词条。
+[*][font=Consolas]/sk modifier list (玩家名称) (属性名称)[/font] - 列出玩家的所有生效词条。
+[*][font=Consolas]/sk modifier removeall (玩家名称) (属性名称) (是否静默)[/font] - 移除玩家所有的属性词条。
+[/list]
+
+[size=4][b]物品词条[/b][/size]
+
+物品词条是施加在物品上的属性，除此之外与普通词条无异。物品上的词条仅在玩家[b]手持[/b]物品时有效。添加词条的命令默认会对物品添加相关的属性名称及其数值。物品词条本身不与 Lore 产生关联，而是存储在物品的 NBT 数据中。即便如此，你还是可以通过直接修改 Lore，且它依然会生效。你可以添加多个词条，但每个词条只能对应不重复的属性种类。
+
+用于设置该词条的命令有：
+[list]
+[*][font=Consolas]/sk item modifier add [属性名称] [属性值] (是否显示描述)[/font] - 向物品添加一个属性词条。
+[*][font=Consolas]/sk item modifier remove [属性值] (是否删除描述)[/font] - 移除物品上的一个词条，以及与它关联的 Lore 描述（可选）。
+[*][font=Consolas]/sk item modifier list[/font] - 列出手持物品上的所有属性词条。
+[*][font=Consolas]/sk item modifier removeall[/font] - 移除手上物品的所有属性词条。
+[/list]
+
+[size=4][b]装备词条[/b][/size]
+
+装备词条与物品词条相似，但仅在玩家[b]装备[/b]该物品时有效。你可以在一个物品上同时设置物品词条和装备词条，并且二者可以设置同种属性。
+
+用于设置该词条的命令有：
+[list]
+[*][font=Consolas]/sk armor modifier add [属性名称] [属性值] (是否显示描述)[/font] - 向装备添加一个属性词条。
+[*][font=Consolas]/sk armor modifier remove [属性值] (是否删除描述)[/font] - 移除装备上的一个词条，以及与它关联的 Lore 描述（可选）。
+[*][font=Consolas]/sk armor modifier list[/font] - 列出手持装备上的所有属性词条。
+[*][font=Consolas]/sk item modifier removeall[/font] - 移除手上装备的所有属性词条。
+[/list]
+
+[size=4][b]NBT 词条[/b][/size]
+[quote][b][color=Red]！[/color][/b] 下列内容面向掌握了 NBT 相关知识的高级用户。[/quote]
+下列分别是物品和装备的 NBT 词条标签结构。它可以用在给予命令中，用以给予玩家已经自带属性的物品。
+[code]{AureliumSkills: {Modifiers: {[词条名称]: {[属性种类]: [属性值]}}}}[/code]
+将 [词条名称] 替换为对应的物品词条或装备词条。将 [属性种类] 替换为开头大写的属性英文名（例如：生命值属性在此处为 Health）。将 [属性值] 替换为对应的值（数字）。
+
+带有增加 100 点生命属性的物品词条完整示例：
+[code]{AureliumSkills: {Modifiers: {Item: {Health: 100}}}}[/code]
+多个词条也可用在此处：
+[code]{AureliumSkills: {Modifiers: {Item: {Health: 100, Luck: 50}}}}[/code]
+物品词条和装备词条可同时处于一个 NBT 中：
+[code]{AureliumSkills: {Modifiers: {Item: {Health: 100}, Armor: {Wisdom: 10}}}}[/code]
+[page]
+[size=5][b]生命值相关[/b][/size]
+[color=Grey]对生命值属性设置的相关介绍。[/color]
+
+生命属性提升玩家的最大生命值，通过对 GENERIC_MAX_HEALTH 属性添加修改器实现。在玩家加入（PlayerJoinEvent）、生命值属性改变或配置文本重载时生效。
+
+[size=4][b]计算[/b][/size]
+生命值基于生命属性计算：
+[font=Consolas]GENERIC_MAX_HEALTH = 20.0 + (Stat.HEALTH * health.modifier)[/font]
+Stat.HEALTH 为玩家当前拥有的生命属性点数，可在 /stats 菜单中查看。health.modifier 为配置文本中的 [font=Consolas]health.modifier[/font] 项（该值默认为 0.5）。
+
+当 [font=Consolas]health.modifier[/font] 项值为 1.0 时，意味着每点生命值属性能为玩家提供 1 点生命值上限。
+
+[size=4][b]血量压缩[/b][/size]
+若 [font=Consolas]health.health-scaling[/font] 项被设置为 true，显示在玩家屏幕上的血量将会被压缩，以防止遮挡屏幕。这意味着当玩家拥有大于 20.0 的血量时，屏幕上的一颗心将不再等于 2 点血量值。
+
+显示在屏幕上的心数量可以在配置文本（config.yml）的 [font=Consolas]health.hearts[/font] 处调整。键名为心的数量，而值则是游戏中玩家的生命值上限。例如，有两项配置为 '12': 29 和 '13': 37，那么这意味着当玩家最大生命值在 29~37（均包含）点时，屏幕上将会显示 12 颗心。
+
+该选项支持少于 10 颗心和多于 20 颗心的设置，按上述示例一般添加即可。键值需要有顺序，否则较高生命值的设置会覆盖较低生命值的设置。
+
+血量压缩显示是纯粹装饰性的，只是修改客户端的血量显示，并不影响玩家的实际血量。并且它仅会在 [font=Consolas]health.health-scaling[/font] 选项设置为 true 时压缩玩家的血量。
+
+[size=4][b]生命显示压缩[/b][/size]
+生命显示压缩的玩家的原血量值所显示在 ActionBar 上所乘以的倍数。可在配置文本的 health.hp-indicator-scaling 项修改。默认值 1 表示在 ActionBar 上显示的血量与实际血量一致。这也是装饰性的，不会影响到玩家的实际血量。
+[page]
+[size=5][b]魔法能力[/b][/size]
+[color=Grey]对魔法能力的解释与简单介绍。[/color]
+
+[size=4][b]什么是魔法能力？[/b][/size]
+
+魔法能力是一类特殊的技能，它需要消耗魔力来发动，并且需要由玩家手动触发。目前，这还只是魔法的基础用法。魔法能力默认会在技能到达七级时解锁，且每升七级就会让魔法能力升级（可在配置文件修改）。升级的正面效果包括但不限于延长激活时间/伤害数值、缩短冷却以及减少魔力消耗。（这些内容均可在 abilities_config.yml 中修改）
+
+使用魔法能力会获得魔法（Sorcery）经验值。
+
+[size=4][b]玩家如何浏览魔法能力？[/b][/size]
+魔法能力在主菜单是不可见的，直到玩家到达七级时才会显示。在解锁后，玩家可以通过将鼠标指针悬浮在物品上以浏览魔法能力的相关信息，例如名称、等级、持续时间、伤害值、冷却以及魔力消耗。玩家可以在技能进度菜单中看到他们即将解锁的魔法能力。这些物品会展示一段有关魔法技能的描述，并显示其当前等级下的持续时间/伤害值。
+
+[size=4][b]魔法能力一览[/b][/size]
+自动补种（耕作）- 在能力生效的时间内为被收割的作物自动补种。手持锄头并右键后破坏任意作物即可触发。对原版的大部分作物，例如小麦、胡萝卜、土豆、下界疣以及甜菜根均有效。
+一键砍树（锻造）- 在能力生效的时间内触发连锁砍树的效果。手持斧头并右键后挖掘木头即可触发。对原版的橡木、白桦以及一格宽的云杉效果最佳。该技能效果仍在改进，在未来的版本会使其兼容大部分的树种。
+快速挖掘（挖掘）- 在能力生效的时间内给予玩家急迫 10 级的效果。手持镐子并右键后挖掘石质方块即可触发。
+锋利鱼钩（渔技）- 左键钓鱼竿即可触发。对被鱼钩钩到的实体造成伤害。
+地形平整（采掘）- 范围挖掘四格半径内的单层方块。只能使用铲子，且破坏的方块必须相邻且为同种方块。手持铲子并右键后挖掘方块即可触发。
+聚能穿射（箭术）- 飞得越远的箭伤害值越高，过程会消耗魔力。每点魔力会为箭提供更高的伤害值。左键点击弓来开启该模式。
+法术吸收（防御）- 受伤时优先减少魔力而不是生命值。减少的魔力值为所受伤害值的两倍。触发该技能时魔力无法主动恢复。手持盾并左键后受伤即可触发。
+狂战之刃（战斗）- 在能力生效的时间内提高 % 的攻速。手持剑并右键后攻击实体来触发。
+
+[size=4][b]我如何禁用魔力？[/b][/size]
+魔力可通过下述步骤禁用：
+1. 设置 [font=Consolas]abilities_config.yml[/font] 下，[font=Consolas]mana_abilities[/font] 的 [font=Consolas]mana_cost[/font] 和 [font=Consolas]mana_cost_per_level[/font] 值为 [font=Consolas]0[/font]；
+2. 将消息文本中 [font=Consolas]action_bar[/font] 下，有关魔力的内容全部删除。你也可以考虑在配置文本 [font-Consolas]config.yml 下禁用整个 ActionBar；
+3. 重命名消息文件使其不再提醒有关魔力值的内容。例如，魔法能力可以重命名为主动能力或其他的内容。大部分菜单（[font=Consolas]menus[/font]）中的消息文本均位于本插件的消息文档中。你可能也需要在 [font=Consolas]leveler[/font] 下移除魔力相关的消耗提醒，并重命名升级消息。
+[page]
+[size=5][b]经验翻倍[/b][/size]
+[color=Grey]指导添加技能经验翻倍的教程[/color]
+
+[size=4][b]关于[/b][/size]
+翻倍是一种增加玩家经验获取数量的方式，不需要修改经验来源配置文件。
+
+翻倍是基于权限的，这意味着你可以单独为一个玩家或一个权限组添加翻倍（例如特定的等级）。如果你的权限插件支持施加临时权限，那么你甚至可以依此创建出限时翻倍的功能。
+
+[size=4][b]添加翻倍[/b][/size]
+若要添加一个翻倍，请使用你权限组插件的对应命令，按照下列的格式为玩家或权限组添加权限：
+[quote]aureliumskills.multiplier.百分比[/quote]
+将“百分比”字段替换为[b]翻倍比率的经验[/b]。例如权限节点 [font=Consolas]aureliumskills.multiplier.100[/font] 将会给予玩家 200% 也就是双倍的经验。百分比支持小数，例如给予 110.5% 翻倍的权限为 [font=Consolas]areliumskills.multiplier.10.5[/font]。
+
+[size=4][b]指定技能翻倍[/b][/size]
+翻倍也可指定技能名称。格式为 [font=Consolas]aureliumskills.multiplier.技能名.百分比[/font]。此处“技能名”技能默认的英语名称。
+例如，使农耕技能获得 1.5 倍经验翻倍的权限节点为：[font=Consolas]aureliumskills.multiplier.farming.50[/font]
+
+[size=4][b]多个翻倍[/b][/size]
+如果玩家有多个翻倍权限，这些翻倍会像只存在一个翻倍一样叠加在一起，正常运作。例如，100%（2倍）和50%（1.5倍）的经验翻倍将会变为 150%（2.5倍）的经验翻倍。
+
+若你想要多个翻倍同时基于未翻倍的基数计算，你不能简单地重复添加相同的权限，因为权限节点的要求是不能重复。但你可以将这个整数值变成诸如 100.0 的小数值，于是在权限节点上它们不相同，但在游戏中的效果是相同的。
+
+例如，[font=Consolas]aureliumskills.multiplier.100[/font] 和 [font=Consolas]aureliumskills.multiplier.100.0[/font] 是等价的。你可以在小数点后加更多数量的零，来创造类似相同效果的不重复权限节点。
+
+[size=4][b]LuckPerms 权限示例[/b][/size]
+下列示例是适用于 LuckPerms 的添加翻倍示例。若你使用了别的权限组插件，请自行寻找添加权限等与示例中相同的命令。
+向指定玩家添加双倍经验翻倍：
+[code]/lp user [玩家名] permission set aureliumskills.multiplier.100[/code]
+向 vip 权限组添加 1.5 倍经验翻倍：
+[code]/lp group vip permission set aureliumskills.multiplier.50[/code]
+向所有玩家添加 12 小时的三倍限时经验翻倍：
+[code]/lp group default permission settemp aureliumskills.multiplier.200 true 12h[/code]
+删除某个玩家的双倍经验翻倍：
+[code]/lp user [player] permission unset aureliumskills.multiplier.100[/code]
+[quote][color=Red][b]！[/b][/color]在移除翻倍时，要删除的权限节点必须与之前添加的相同。[/quote]
+[size=4][b]物品和装备翻倍[/b][/size]
+翻倍也可以添加在物品和装备上，与属性翻倍类似。物品翻倍仅在持有物品时触发翻倍效果，而装备翻倍则仅在装备该物品时触发翻倍效果。施加在物品或装备上的翻倍同样既可以是全局翻倍，又可以是指定技能的翻倍。
+可以使用下列命令为物品或装备添加翻倍：
+[list]
+[*]/skills item/armor multiplier add <目标> <值> [是否增加 Lore]
+[*]/skills item/armor multiplier remove <目标>
+[*]/skills item/armor multiplier list
+[*]/skills item/armor multiplier removeall
+[/list]
+根据你所添加的翻倍种类自行决定使用物品或装备翻倍。目标参数可为全局（global）或指定技能名称。翻倍的值与上方权限相同，均为多出的百分比。
+
+这些翻倍可直接在命令 /skills multiplier 列表中查询，该命令在玩家拥有除全局翻倍外的翻倍时，还可按技能展示指定的翻倍。
+[page]
+[size=5][b]条件[/b][/size]
+[color=Grey]添加物品和装备条件的教程。[/color]
+
+条件允许你为物品添加技能等级限制。例如你可以制作一个只有玩家挖掘等级到达 15 时才可使用的镐子。条件种类分为物品和装备。
+物品条件在玩家持有物品时检查条件，而装备条件则在玩家试图装备物品时检查条件。
+这里有两种方式来添加条件：使用命令条件或设置全局条件。
+
+[size=4][b]命令条件[/b][/size]
+使用命令只能为手持的物品施加特定的条件。若要使其正常运作，你需要将物品分发至玩家的手上。
+
+命令：
+[quote][color=Red][b]！[/b][/color] 下方的 [font=Consolas]item/armor[/font] 意味着你只能在这两个参数中二选一。[font=Consolas]item[/font] 为物品条件，而 [font=Consolas]armor[/font] 为装备条件。[/quote]
+[list]
+[*][font=Consolas]/skills item/armor requirement add <技能名称> <限制等级> [是否显示 lore][/font] - 向物品添加物品/装备限制。“技能名称”为所要限制等级的技能名称，“限制等级”为所要限制技能的等级。“是否显示 Lore” 是一个可选项，只能填入 true 或 false。该项决定对应的 lore 是否显示在物品上。当然，Lore 的显示与限制条件的工作完全分离，所以你可以任意编辑显示的 Lore 而不用担心物品上的条件失效。
+[*][font=Consolas]/skills item/armor requirement remove <技能名称> [是否移除 lore][/font] - 从手持物品中删除物品/装备条件。若“是否移除 Lore” 项参数为 true，原本与限制条件一同添加的 Lore 也会一并删除。如果你将其修改为了别的自定义 Lore，那么这个功能可能会无效。
+[*][font=Consolas]/skills item/armor requirement list[/font] - 列出手持物品上所有的物品/装备条件。
+[*][font=Consolas]/skills item/armor requirement removeall[/font] - 移除手持物品上的所有物品/装备条件。
+[/list]
+[size=4][b]全局条件[/b][/size]
+全局条件允许对指定种类的所有物品添加限制条件。若要添加全局条件，你必须向 [font=Consolas]config.yml[/font] 中的 [font=Consolas]requirement.item[/font] 或 [font=Consolas]requirement.armor[/font] 下添加一个 [font=Consolas]global[/font] 列表。
+
+添加条件的基本格式为：[font=Consolas]- 材料名称 技能名称:技能等级[/font]
+
+下面是一个全局物品限制的设置，表示了使用任意钻石剑均需要 10 级或更高的战斗技能。除此之外该示例还包括了它在配置文件中的位置：
+[code]requirement:
+  enabled: true
+  item:
+    global:
+    - DIAMOND_SWORD FIGHTING:10[/code]
+也支持对单个物品添加多个技能限制：
+[code]requirement:
+  armor:
+    global:
+    - DIAMOND_CHESTPLATE DEFENSE:10 AGILITY:4[/code]
+[quote][color=Blue][b]！[/b][/color]全局条件不支持限制自定义物品。[/quote]
+[size=4][b]NBT 标签[/b][/size]
+[quote][color=Red][b]！[/b][/color]下方的有关内容需要你掌握 NBT 结构的基础知识。[/quote]
+下面是物品/装备条件的 NBT 标签结构（不是全局条件）。它可以用在给予命令等处，这样就可以给予玩家已经有限制条件的物品。
+[code]{AureliumSkills: {Requirements: {[种类]: {[技能名称]: [限制等级]}}}}[/code]
+将 [种类] 替换为 Armor/Item，表示装备条件/物品条件。将 [技能名称] 替换为首字母大写的英文技能名称（例如战斗为 Fighting）。将 [限制等级] 替换为所要限制的技能等级。
+为物品添加农耕 10 级使用限制的示例：
+[code]{AureliumSkills: {Modifiers: {Item: {Farming: 10}}}}[/code]
+[page]
+[size=5][b]命令列表[/b][/size]
+[color=Grey]插件的命令列表。[/color]
+
+命令格式：[font=Consolas][][/font] 为必选参数，[font=Consolas]()[/font] 为可选参数。若要查询权限列表，请见权限章节。
+
+[size=4][b]技能命令[/b][/size]
+等价用法：[font=Consolas]/sk[/font]、[font=Consolas]/skills[/font]、[font=Consolas]/skill[/font]。任何 /sk 开头的命令均可被上述等价用法代替。
+[font=Consolas]/sk[/font] - 打开技能菜单
+
+[size=3][b]经验命令[/b][/size]
+[font=Consolas]/sk xp add [玩家名称] [技能名称] [经验数量] (是否静默)[/font] - 将特定数量的技能经验给予玩家。
+[font=Consolas]/sk xp set [玩家名称] [技能名称] [经验数量] (是否静默)[/font] - 将玩家特定技能的经验设置为指定值。
+[font=Consolas]/sk xp remove [玩家名称] [技能名称] [经验数量] (是否静默)[/font] - 减少玩家指定技能的经验值数量。
+
+[size=3][b]排行榜命令[/b][/size]
+[font=Consolas]/sk top (页码)[/font]
+[font=Consolas]/sk top [技能名称] (页码)[/font] - 显示指定技能的排行榜（等价用法：[font=Consolas]/skilltop[/font]）
+[font=Consolas]/sk top average (页码)[/font]
+[font=Consolas]/sk rank[/font] - 显示你的技能排行（等价用法：[font=Consolas]/skillrank[/font]）
+
+[size=3][b]技能命令[/b][/size]
+[font=Consolas]/sk skill setlevel [玩家名称] [技能名称] [技能等级][/font] - 将玩家的指定技能设置为特定等级。
+[font=Consolas]/sk skill setall [玩家名称] [技能名称][/font] - 将玩家的所有技能设置为指定等级。
+[font=Consolas]/sk skill reset [玩家名称] (技能名称)[/font] - 重置玩家的所有技能等级为 1。不填名称则默认重置所有技能。
+
+[size=3][b]翻倍命令[/b][/size]
+[font=Consolas]/sk modifier add [玩家名称] [属性名称] [翻倍命名] [翻倍比率] (是否静默) (是否叠加)[/font] - 向玩家添加特定的属性翻倍。将“是否静默”设置为 true 会使玩家不收到命令回显，设置“是否叠加”为 true 会使已存在的名称相同的翻倍倍率叠加。
+[font=Consolas]/sk modifier remove [玩家名称] [翻倍命名] (是否静默)[/font] - 将玩家的特定翻倍删除。
+[font=Consolas]/sk modifier list (玩家名称) (属性名称)[/font] - 列出玩家指定属性的翻倍。
+[font=Consolas]/sk modifier removeall (玩家名称) (属性名称) (是否静默)[/font] - 将玩家所有的翻倍移除。
+[font=Consolas]/sk item modifier add [属性名称] [翻倍比率] (是否显示 Lore)[/font] - 向手持物品添加翻倍，默认显示 Lore。
+[font=Consolas]/sk item modifier remove [属性名称] (是否移除 Lore)[/font] - 移除手持物品上的指定翻倍，默认连同 Lore 移除。
+[font=Consolas]/sk item modifier list[/font] - 列出手上物品的所有翻倍。
+[font=Consolas]/sk item modifier removeall[/font] - 移除手上物品的所有翻倍。
+[font=Consolas]/sk armor modifier add [属性名称] [翻倍比率] (是否显示 Lore)[/font] - 向手持物品添加装备翻倍，默认显示 Lore。
+[font=Consolas]/sk armor modifier remove [属性名称] (是否移除 Lore)[/font] - 移除手持物品上的指定装备翻倍，默认连同 Lore 移除。
+[font=Consolas]/sk armor modifier list[/font] - 列出手上物品的所有装备翻倍。
+[font=Consolas]/sk armor modifier removeall[/font] - 移除手上物品的所有装备翻倍。
+[size=4][b]条件命令[/b][/size]
+[font=Consolas]/sk item requirement add [技能名称] [技能等级] (是否添加 Lore)[/font] - 向手持物品添加物品条件，默认连同 Lore 添加。
+[font=Consolas]/sk item requirement remove [技能名称] (是否移除 Lore)[/font] - 移除手持物品上的指定技能等级限制，默认连同 Lore 移除。
+[font=Consolas]/sk item requirement list[/font] - 查询手上物品的条件。
+[font=Consolas]/sk item requirement removeall[/font] - 移除手上物品所有的物品条件。
+[font=Consolas]/sk armor requirement add [技能名称] [技能等级] (是否添加 Lore)[/font] - 向手持物品添加装备条件，默认连同 Lore 添加。
+[font=Consolas]/sk armor requirement remove [技能名称] (是否移除 Lore)[/font] - 移除手持物品上的指定技能等级限制，默认连同 Lore 移除。
+[font=Consolas]/sk armor requirement list[/font] - 查询手上物品的装备条件。
+[font=Consolas]/sk armor requirement removeall[/font] - 移除手上所有的装备条件。
+[size=3][b]杂项命令[/b][/size]
+[font=Consolas]/sk lang [语言名称][/font] - 切换插件对客户端的显示语言。
+[font=Consolas]/sk multiplier (玩家名称)[/font] - 显示玩家通过权限获得的翻倍名称。 
+[font=Consolas]/sk abtoggle[/font] - 切换自身 ActionBar 可见性。
+[font=Consolas]/sk help[/font] - 显示帮助页面。
+
+[size=3][b]玩家数据命令[/b][/size]
+[font=Consolas]/sk profile skills [玩家名称][/font] - 查看其他玩家的技能等级。“玩家名称”为你所要查询的玩家名称。被查询玩家不必在线。
+[font=Consolas]/sk profile stats [玩家名称][/font] - 查询其他玩家的属性等级。
+
+[size=3][b]管理员命令[/b][/size]
+[font=Consolas]/sk save[/font] - 保存全服的技能数据。
+[font=Consolas]/sk updateleaderboards[/font] - 刷新排行榜数据。
+[font=Consolas]/sk reload[/font] - 重载配置文本、消息文本、菜单、掉落表、所有 ActionBar、所有 BossBar、生命和幸运值属性。
+[font=Consolas]/sk transfer [被操作玩家] [目标玩家][/font] - 将玩家的数据复制到其他玩家上。“被操作玩家”和“目标玩家”都需要为有效的 UUID 值。该操作不可逆。进行数据转移的双方玩家不必在线。
+[font=Consolas]/sk resethealth[/font] - 移除指定玩家的所有生命与幸运属性。若你打算卸载本插件，那么这个命令将会很有用。该命令仅能通过控制台执行，且执行命令时不应有玩家在线，以使其正常运作。
+[size=3][b]备份命令[/b][/size]
+[font=Consolas]/backup save[/font] - 保存一份当前的技能数据并存至本插件的备份文件夹。
+[font=Consolas]/backup load [文件名称][/font] - 从备份文件夹的指定名称载入备份。你必须指定实际的备份名称，包括文件后缀名。这会覆盖当前的所有技能数据，所以建议在导入新数据之前做好备份。
+[size=3][b]魔法命令[/b][/size]
+[font=Consolas]/mana (玩家名称)[/font] - 查询指定玩家或自身的魔力剩余。
+[font=Consolas]/mana add [玩家名称] [数量] (允许超过上限) (是否静默)[/font] - 向玩家添加魔力。
+[font=Consolas]/mana remove [玩家名称] [数量] (是否静默)[/font] - 扣除指定玩家的魔力点数，不允许为负数，若出现此情况时多余的部分会被忽视，即当前魔力值会被扣减为 0。
+[font=Consolas]/mana set [玩家名称] [数量] (允许超过上限) (是否静默)[/font] - 将玩家的魔力设定为指定值。
+[size=3][b]属性命令[/b][/size]
+[font=Consolas]/stats[/font] - 打开属性菜单。
+[size=3][b]技能名称命令[/b][/stats]
+[font=Consolas]/[技能名称][/font] - 打开对应技能的菜单。可以在配置文本中禁用。（例如：/farming、/archery、/healing）
+[size=3][b]物品注册命令[/b][/size]
+[font=Consolas]/sk claimitems[/font] - 打开未领物品菜单，以领取尚未领取的物品。
+[font=Consolas]/sk item register [ID][/font] - 将物品注册入本插件的物品系统，使其可在配置文本中引用。
+[font=Consolas]/sk item unregister [ID][/font] - 解除指定物品的注册。
+[font=Consolas]/sk item give [玩家名称] [ID] (数量)[/font] - 将指定的注册物品发送给玩家，若玩家没有足够多背包空间，物品将自动进入玩家的未领物品库存。[/size]
+[page]
+[size=5][b]权限列表[/b][/size]
+
+最新版的权限列表可在[url=https://github.com/Archy-X/AureliumSkills/blob/master/bukkit/src/main/resources/plugin.yml]此处[/url]获取。
+
+默认值释义：
+[list]
+[*][b]true[/b] - 任何玩家默认均拥有。
+[*][b]op[/b] - 仅管理员拥有。
+[*][b]false[/b] - 无人拥有。
+[/list]
+[page]
+[size=5][b]变量集群[/b][/size]
+[color=Grey]本插件的 PlaceholderAPI 变量。[/color]
+
+下面是 AureliumSkills 目前注册的所有 PlaceholderAPI 变量，不需要下载变量拓展，插件载入后自动注册，在方括号“[]”内的表示你必须使用其他文本将其替换，例如技能名称。
+[list]
+[*][font=Consolas]%aureliumskills_power%[/font] - 综合技能等级
+[*][font=Consolas]%aureliumskills_[技能名称]%[/font] - 特定技能的等级。（例如：%aureliumskills_farming% 返回玩家农耕技能等级）
+[*][font=Consolas]%aureliumskills_[技能名称]_roman%[/font] - 返回罗马数字格式的技能等级。
+[*][font=Consolas]%aureliumskills_[属性名称]%[/font] - 特定属性的值。（例如：%aureliumskills_health% 返回玩家生命属性值）
+[*][font=Consolas]%aureliumskills_[属性名称]_int%[/font] - 特定属性的值，取整。
+[*][font=Consolas]%aureliumskills_average%[/font] - 玩家的平均技能等级
+[*][font=Consolas]%aureliumskills_average_int%[/font] - 玩家的平均技能等级，取整。
+[*][font=Consolas]%aureliumskills_average_1%[/font] - 玩家的平均技能等级，取一位小数。
+[*][font=Consolas]%aureliumskills_hp%[/font] - 玩家的生命值，取整。
+[*][font=Consolas]%aureliumskills_hp_1%[/font] - 玩家的生命值，取一位小数。
+[*][font=Consolas]%aureliumskills_hp_2%[/font] - 玩家的生命值，取两位小数。
+[*][font=Consolas]%aureliumskills_hp_max%[/font] - 玩家的最大生命值。
+[*][font=Consolas]%aureliumskills_hp_percent%[/font] - 玩家的剩余生命值百分比。
+[*][font=Consolas]%aureliumskills_mana%[/font] - 玩家的魔力值。
+[*][font=Consolas]%aureliumskills_mana_int%[/font] - 玩家的魔力值，取整。
+[*][font=Consolas]%aureliumskills_mana_max%[/font] - 玩家的最大魔力值。
+[*][font=Consolas]%aureliumskills_mana_max_int%[/font] - 玩家的最大魔力值，取整。
+[*][font=Consolas]%aureliumskills_lb_power_[排名]%[/font] - 按格式获取指定排名的玩家名称与综合技能等级。
+[*][font=Consolas]%aureliumskills_lb_power_[排名]_name%[/font] - 获取指定排名的玩家名称。
+[*][font=Consolas]%aureliumskills_lb_power_[排名]_value%[/font] - 获取指定排名的玩家综合技能等级。
+[*][font=Consolas]%aureliumskills_lb_[技能名称]_[排名]%[/font] - 按格式获取指定排名的玩家名称与指定技能等级。
+[*][font=Consolas]%aureliumskills_lb_[技能名称]_[排名]_name%[/font] - 获取指定排名的玩家名称。
+[*][font=Consolas]%aureliumskills_lb_[技能名称]_[排名]_value%[/font] - 获取指定排名的玩家指定技能等级
+[*][font=Consolas]%aureliumskills_rank%[/font] - 获取综合技能等级的排名。
+[*][font=Consolas]%aureliumskills_rank_[技能名称]%[/font] - 获取指定技能等级的排名。
+[*][font=Consolas]%aureliumskills_xp_required_formatted_[技能名称]%[/font] - 以单位格式获取玩家到达下一等级所需的经验值。（示例：5k）
+[*][font=Consolas]%aureliumskills_xp_required_[技能名称]%[/font] - 获取玩家到达下一等级所需的经验值。
+[*][font=Consolas]%aureliumskills_xp_progress_int_[技能名称]%[/font] - 获取玩家到达下一等级所需的经验值，取整。
+[*][font=Consolas]%aureliumskills_xp_progress_1_[技能名称]%[/font] - 获取玩家到达下一等级所需的经验值，取一位小数。
+[*][font=Consolas]%aureliumskills_xp_progress_[技能名称]%[/font] - 获取玩家升级进度的百分比。
+[*][font=Consolas]%aureliumskills_xp_int_[技能名称]%[/font] - 获取玩家当前技能经验值，取整。
+[*][font=Consolas]%aureliumskills_xp_formatted_[技能名称]%[/font] - 以单位格式获取玩家当前技能经验值。
+[*][font=Consolas]%aureliumskills_xp_[技能名称]%[/font] - 获取玩家当前技能经验值。
+[*][font=Consolas]%aureliumskills_multiplier%[/font] - 获取玩家权限翻倍经验的列表，取两位小数。（1 = 正常，2 = 双倍经验）
+[*][font=Consolas]%aureliumskills_multiplier_[技能名称]%[/font] - 获取玩家指定技能权限翻倍经验的列表，取两位小数。（1 = 正常，2 = 双倍经验）
+[*][font=Consolas]%aureliumskills_multiplier_percent%[/font] - 获取玩家权限翻倍经验的列表，取整。（40 = 40% 的额外经验）
+[*][font=Consolas]%aureliumskills_multiplier_percent_[技能名称]%[/font] - 获取玩家指定技能权限翻倍经验的列表，取整。（40 = 40% 的额外经验）
+[/list]
+[page]
+[size=5][b]FAQ[/b][/size]
+[color=Grey]常见问题[/color]
+
+[size=4][b]如何使 ActionBar 在屏幕上保持显示？[/b][/size]
+将配置文本中的 [font=Consolas]actoin-bar.idle[/font] 设置为 true。
+
+[size=4][b]我如何使用魔力？[/b][/size]
+见魔法能力章节。
+
+[size=4][b]为什么在打开技能菜单的时候会提示“该玩家没有存档！”？/为什么技能菜单里的物品会消失不见？[/b][/size]
+尝试重启服务器。你可能使用了不受支持且不稳定的方法重载了服务器。
+
+[size=4][b]你会支持 1.8 吗？[/b][/size]
+不能。需要重构的代码实在是太多了，并且一些功能也会被阉割。
+
+[size=4][b]插件有 API 吗？[/b][/size]
+是的，在 Github 的 README 下面能找到依赖信息。主类即为 AureliumAPI，这里包含这你所需要的 API。
+
+[size=4][b]我如何完全卸载本插件，并移除多余的生命上限？[/b][/size]
+在卸载插件之前，在服务器没有玩家的时候于控制台输入命令 [font=Consolas]/skills resethealth[/font]。之后关闭服务器并移除插件即可。
+
+[size=4][b]为什么插件在我的 Minehut 服务器上不能运作？[/b][/size]
+这是一个 Minehut 服务器软件的固有问题，我无能为力。该问题在普通的 Spigot/Paper 服务器上不会出现。你可以将诸如[url=https://pastebin.com/1ZSeFy7K]这段报错[/url]的内容发送给该提供商的开发人员，以期望修复这些问题，或者是得到一个能显示所有文件并有控制台全部权限的服务器。
+[page]
+[size=5][b]不兼容内容[/b][/size]
+[color=Grey]插件与服务端核心的冲突内容。[/color]
+
+[size=4][b]不受支持的服务端核心[/b][/size]
+使用下列服务端核心用户不会受到支持。虽然插件可能会运作，但可能会出现潜在的问题。这些服务端的方向偏离了 Spigot/Paper。
+[list]
+[*][b]CraftBukkit[/b] - ActionBar 将不会正常工作。
+[*][b]混合系服务端核心（Mohist、Magma、CatServer）[/b] - 该类服务端环境总体上不适合本插件。
+[*][b]Minehut[/b] - 存在一个问题使得命令不会工作。这是 MineHut 本身的问题，我无力修复。
+[/list]
+
+[size=4][b]不受支持的服务器模式[/b][/size]
+[list]
+[*][b]离线模式[/b] - 我们无论如何都不会支持盗版，在该情况下数据保存可能会出错。
+[/list]
+
+[size=4][b]不兼容的插件[/b][/size]
+[list]
+[*][b]LoreAttributesRecoded[/b] - 某些操作可能会使血量重置。可通过禁用此插件的血量系统来修复。
+[*][b]CustomEnchants[/b] - 某些操作可能会使血量重置。
+[/list]
+[page]
+翻译信息：
+
+作者：SnowCutieOwO
+字数：24374
+发布时间：2023/7/17
+最后校对：2023/7/17
+
+劳动成果，禁止转载

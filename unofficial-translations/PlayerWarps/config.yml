@@ -1,0 +1,901 @@
+# PlayerWarps by Olzie-12
+# https://www.spigotmc.org/resources/66692/
+# We also have a discord server for help: https://olziedev.com/discord or check docs https://docs.olziedev.com/projects/playerwarps
+# Also if you find any bugs be happy to report them I will fix them :)
+# Made with love
+
+# If you wish to remove a list completely from the configuration, don't remove it otherwise the configuration updater
+# will add it back to the config, and you'll be back to square one. To solve this, make sure you set the list to []
+# For example:
+# list: []
+
+# DO NOT TOUCH THIS!
+config-version: 212
+
+settings:
+  # What language do you want the plugin to read? The list langs are in the lang/ folder.
+  lang: en_US
+  # Very useful to tell if there are any memory leaks or if the author needs
+  # information.
+  # Current debug levels are:
+  # - NONE = No debug
+  # - MINOR = Debug for info on what the plugin is doing
+  # - MAJOR - High level of debug info (which is normally used by developers)
+  debug: NONE
+  # Notifies you if there is an update (Only people with pw.admin.update can see this when they join)
+  notify-update: true
+  # Should the plugin automatically download the latest version from spigot if your plugin version is out of date?
+  download-update: true
+  # Plugin metrics, this is very useful for the author to
+  # see information about the server. Please keep it enabled,
+  # it makes me more encouraged to make plugins like this.
+  # YOU WILL NEED TO RESTART THE SERVER!
+  metrics: true
+  # This is the main command for the plugin.
+  main-command: "pwarp"
+  # Extra aliases for the main command.
+  command-aliases:
+    - "playerwarp"
+    - "pw"
+  # What order should the warps be listed?
+  # Options:
+  # - HIGHEST_VISITS = The order will be from the warp most visits.
+  # - LOWEST_VISITS = The order will be from the warp less visits.
+  # - ALPHABETICAL = The order will be from alphabetical order.
+  # - OLDEST_DATE = The order will be when the warp was created the oldest.
+  # - NEWEST_DATE = The order will be when the warp was created the newest.
+  # - RATES = The order will be from the most rates.
+  # - RATES_AVERAGE = The order will be from the highest average rates.
+  # - RANDOM = The order will be random every x seconds.
+  # - FAVOURITE_COUNT = The order will be from the most favourites.
+  # - PURGED_HIGHEST_VISITS = The order will be from the warp most visits, but purged.
+  # - PURGED_LOWEST_VISITS = The order will be from the warp less visits, but purged.
+  order: OLDEST_DATE
+  # How should the order be displayed instead of HIGHEST_VISITS etc...
+  # Set to "" to disable that specific order when using the sort item change cycle.
+  order-name:
+    HIGHEST_VISITS: "Highest Visits"
+    LOWEST_VISITS: "Lowest Visits"
+    ALPHABETICAL: "Alphabetical"
+    OLDEST_DATE: "Oldest Date"
+    NEWEST_DATE: "Newest Date"
+    RATES: "Rates"
+    RATES_AVERAGE: "Rates Average"
+    FAVOURITE_COUNT: "Favourite Count"
+    RANDOM: "Random"
+    SERVER: "Server Warps"
+    # Only un-comment these out if you wish to take advantage of the last visits purge.
+    # This will sort the warps out on the amount of visits since the purge.
+#    PURGED_HIGHEST_VISITS: "Current Highest Visits"
+#    PURGED_LOWEST_VISITS: "Current Lowest Visits"
+
+  # How often should the random sort actually randomize?
+  order-random-time: 86400
+
+  # What should the world type look like? [world_type]
+  world-type:
+    # (If you wish for it to display the world name, just enter %world%)
+    # When the world is the end
+    end: "&dThe End"
+    # When the world is the nether
+    nether: "&cNether"
+    # When the world is the overworld
+    overworld: "%world%"
+
+  # How should the timer look like?
+  timer-display:
+    # Where there is one day
+    day: "%day%d "
+    # When there is more than one day
+    days: "%day%d "
+    # Where there is one hour
+    hour: "%hour%h "
+    # Where there is more than one hour
+    hours: "%hour%h "
+    # Where there is a minute
+    minute: "%minute%m "
+    # Where there is more than a minute
+    minutes: "%minute%m "
+    # Where there is a second
+    second: "%second%s "
+    # Where there is more than a second
+    seconds: "%second%s "
+
+  # Should offline messages be pending? If the player is offline and the plugin tries to send a message, it will send it to them when they're online again.
+  offline-message-pending: true
+
+  # if a line in the lore is empty should it be removed?
+  empty-line-removed: true
+
+  # Choose what locale the formatters should use, make sure to use language codes https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html.
+  format-locale: "en"
+
+  # How should the plugin format numbers?
+  # Should the plugin use the short number format? (1.2k instead of 1,200)
+  number-format-short: false
+  # If the above option is true, how should the format look like?
+  number-format-short-suffix: ["", "K", "M", "B", "T", "Q", "s", "S"]
+
+  # You can see the java documentation on how to use the decimal format here:
+  # https://docs.oracle.com/javase/8/docs/api/java/text/DecimalFormat.html
+  number-format: "#,###.##" # Formatting full number
+  number-format-decimal: "#,##0.00" # Formatting decimal number
+
+  # How should the plugin format dates?
+  # You can see the java documentation on how to use the simple date format here:
+  # https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html
+  date-format: "dd/MM/yyy" # Formatting dates with no time
+  date-format-time: "dd/MM/yyy HH:mm:ss" # Formatting dates with time
+  # What timezone should the plugin format dates in? If you wish to use the server timezone, leave it as ""
+  # You can see the java documentation on how to use the time zone here: https://docs.oracle.com/javase/8/docs/api/java/util/TimeZone.html
+  date-format-timezone: ""
+
+  # Instead of having pw.warp for all warps. Do you want to toggle the feature for requiring a player to have pw.warp.<name> to teleport to the warp?
+  pwarp-limit-specific: false
+
+  # Should the plugin ignore the op limit permission and focus on the actual limit permission itself.
+  pwarp-limit-op: false
+
+  # Should the plugin only limit the warp names to be the players' names?
+  # The only downfall for this is that the plugin will not change the warp name when they change their name.
+  # If you want to make sure players cant rename their warps, set the rename command to false below.
+  pwarp-only-use-names: false
+
+  # Should the plugin split different worlds and separate every single warp in each world?
+  # This will include, the warp limit (per world)
+  # This will also include warps in the menu and in commands.
+  pwarp-separate-worlds: false
+  # If the above option is true, do u want to have the separate worlds in groups?
+  # For example, world, world_nether, world_the_end will technically be in the same world
+  pauction-separate-group-worlds: true
+
+  sub-commands:
+    # If you disable any of these, it will just show the help menu.
+    desc-command: true
+    list-command: true
+    # If the open command is disabled, the only way to open the MENU is to actually type /pwarp. (Only if you have it overridden in playerwarp.yml).
+    # If you have this command disabled, and /pwarp is not overridden in the gui. No one will be able to use the GUI.
+    # If you wish to disable a GUI just turn it off in the gui.
+    open-command: true
+    # Yes,I know. Someone wanted for these to be disabled. Don't ask.
+    remove-command: true
+    set-command: true
+    teleport-command: true
+    amount-command: true
+    icon-command: true
+    category-command: true
+    rate-command: true
+    password-command: false
+    whitelist-command: false
+    lock-command: false
+    cost-command: false
+    rtp-command: false
+    reset-command: true
+    rename-command: true
+    setowner-command: true
+    ban-command: true
+    managers-command: true
+    favourite-command: true
+    info-command: true
+
+    # Here the sub command syntax's please know that you cannot have spaces in these otherwise you will break everything
+    help-command-name: "help"
+    desc-command-name: "desc"
+    list-command-name: "list"
+    open-command-name: "open"
+    remove-command-name: "remove"
+    set-command-name: "set"
+    # Please leave this empty if you wish to not have it as a sub command and just have it part of the main command.
+    teleport-command-name: ""
+    amount-command-name: "amount"
+    icon-command-name: "icon"
+    category-command-name: "category"
+    rate-command-name: "rate"
+    password-command-name: "password"
+    whitelist-command-name: "whitelist"
+    lock-command-name: "lock"
+    cost-command-name: "cost"
+    rtp-command-name: "rtp"
+    reset-command-name: "reset"
+    rename-command-name: "rename"
+    setowner-command-name: "setowner"
+    ban-command-name: "ban"
+    managers-command-name: "managers"
+    favourite-command-name: "favourite"
+    info-command-name: "info"
+
+    # Remember, you can always add command aliases, just please use this.
+    # This example is for the set command, but you can add any command.
+    # set-command-aliases:
+    #   - "create"
+
+    desc-command-syntax: "%prefix% &b/%label% %args-0% set/remove <warp> <desc>"
+    remove-command-syntax: "%prefix% &b/%label% %args-0% <warp>"
+    set-command-syntax: "%prefix% &b/%label% %args-0% <name> [owner]"
+    teleport-command-syntax: "%prefix% &b/%label% %args-0% <warp> [player]"
+    icon-command-syntax: "%prefix% &b/%label% %args-0% set/remove <warp> [material]"
+    category-command-syntax: "%prefix% &b/%label% %args-0% set/remove/list <warp> [category]"
+    rate-command-syntax: "%prefix% &b/%label% %args-0% <warp> <rate> <description>"
+    password-command-syntax: "%prefix% &b/%label% %args-0% set/remove <warp> <password>"
+    whitelist-command-syntax: "%prefix% &b/%label% %args-0% set/remove/list/enable <warp> [player]"
+    lock-command-syntax: "%prefix% &b/%label% %args-0% <warp>"
+    cost-command-syntax: "%prefix% &b/%label% %args-0% set/remove <warp> <cost>"
+    reset-command-syntax: "%prefix% &b/%label% %args-0% <warp>"
+    rename-command-syntax: "%prefix% &b/%label% %args-0% <warp> <name>"
+    setowner-command-syntax: "%prefix% &b/%label% %args-0% <warp> <player>"
+    ban-command-syntax: "%prefix% &b/%label% %args-0% set/remove/list <warp> [player] [time] [reason]"
+    managers-command-syntax: "%prefix% &b/%label% %args-0% set/remove/list <warp> [player]"
+    favourite-command-syntax: "%prefix% &b/%label% %args-0% <warp>"
+    removeall-command-syntax: "%prefix% &b/%label% %args-0% <player>"
+    addwarps-command-syntax: "%prefix% &b/%label% %args-0% <player> <amount>"
+    dbexec-command-syntax: "%prefix% &b/%label% %args-0% <query>"
+
+    # This will replace %reason% with in the no permission message, this is to avoid confusion with players adding a space
+    # as setting a wap with spaces means you're setting a warp for that player.
+    set-command-reason: "You cannot set warps with a space!"
+
+    # Here are some of the sub commands names for some commands
+    set-subcommand-name: "set"
+    remove-subcommand-name: "remove"
+    list-subcommand-name: "list"
+
+    accept-subcommand-name: "accept"
+    cancel-subcommand-name: "cancel"
+
+    enable-subcommand-name: "enable"
+    disable-subcommand-name: "disable"
+
+    # Should players also need "pw.set" to access the /pw set command?
+    # They'll also need the limit permission as well to set a warp.
+    set-command-permission: false
+    # Should players need "pw.open" to access the menu when using override-pwarp?
+    open-command-permission: false
+
+  database:
+    # When the plugin starts up, should it automatically convert the opposite database connected?
+    # Make sure to disable this once done!
+    convert: false
+    # This checks if the database connection is valid. If it's not, it will find a new connection.
+    # If the plugin is crashing your server with the stacktrace containing "com.mysql.cj.jdbc.ConnectionImpl.isValid". Then please disable this.
+    # When this is disabled, it will instead check if the connection is closed. If it is, it will find a new connection.
+    # SQLite users should not have to worry about this.
+    use-is-valid: true
+
+    sqlite:
+      backups:
+        # Should backups be enabled? I highly recommenced you keep this enabled.
+        enabled: true
+        # What are the maximum amount of backups allowed in the backup folder until the first one is deleted? Set this to -1 to keep unlimited backups
+        maximum: 10
+
+    mysql:
+      # Should MySQL be enabled?
+      enabled: false
+      # Should the connection to the database be closed periodically?
+      # If you're having issues with "No operations allowed after connection closed.". Make sure this is disabled and add autoReconnect=true in your arguments below.
+      close: false
+      # Please enter the server name on your proxy, otherwise the plugin will not be able to redirect you to that server.
+      # If you don't want to set up this database as a network, please leave this blank.
+      # If you do not have this blank, and you do want to enable cross server support. Unfortunately as of now checking if warps are safe
+      # is currently not supported!
+      server-name: ""
+      # Whats the pending warp timeout? This is recommended to be 3-4 seconds.
+      # This is for when a player teleports to a warp in a different server and if the teleport was not successful
+      # and they teleport to a different server the pending warp they tried teleporting to is still saved.
+      # This option then removed the pending warp after x amount of seconds on attempt of teleport.
+      # This is in seconds.
+      pending-warp-timeout: 3
+      # How much delay should the plugin wait before it actually teleports the player to the warp after they have been teleported to the server?
+      # By default, this is 1 second. You may add more time if you wish to then override other plugins that may teleport the player after PlayerWarps does.
+      # This is in ticks.
+      teleport-delay: 20
+
+      # If MySQL is enabled PlayerWarps needs to be connected to the MySQL database, please enter your details.
+      # I am not responsible for any leakage of these details. (If an admin accesses it etc...)
+
+      # What is the hostname?
+      hostname: "spigotmc.org"
+      # What is the port? Most database ports are 3306.
+      port: 3306
+      # What is your database name?
+      database: "PlayerWarps"
+      # What is your database username?
+      username: "root"
+      # What is your database password?
+      password: "root"
+      # Add extra arguments to your MySQL connect URL.
+      arguments: "?characterEncoding=utf8&useSSL=true"
+
+    # How often should the GUI refresh in every server? If the time is low the more lag the plugin could produce. This is in seconds.
+    refresh-time: 60
+
+  icon:
+    # Set the icon as an item in a player's hand. If this is disabled the player will need to enter the item name manually.
+    icon-set-item-in-hand: true
+    # What are the blacklisted items that players cannot set to their warp icon to?
+    blacklisted-items:
+      - "AIR"
+    # What are the hidden attributes that should be displayed?
+    hidden-attributes:
+      - "HIDE_ENCHANTS"
+      - "HIDE_ATTRIBUTES"
+      - "HIDE_UNBREAKABLE"
+      - "HIDE_DESTROYS"
+      - "HIDE_PLACED_ON"
+      - "HIDE_POTION_EFFECTS"
+
+  set:
+    # Should there be a confirmation before setting a warp?
+    confirmation: false
+    # How many seconds, should the confirmation expire. This means how many seconds they have to
+    # set to a warp. Recommended is 10
+    confirmation-expire-time: 10
+    # The amount of characters a warp name atleast needs to have.
+    min-warp-name-chars: 1
+    # The amount of characters a warp name can have.
+    max-warp-name-chars: 10
+    # Blacklist any names from anyone setting a playerwarp called that.
+    # This uses a regex pattern compiler to detect the names. 
+    # So please escape regex characters if you're using them.
+    blacklisted-names:
+      - "olzieisbad"
+    # What should represent a space in a warp name? This is mainly used for the commands.
+    # If you do not want to use a space, please use ""
+    display-space: "_"
+    # What is the cooldown in seconds for setting a warp? Set this to -1 to disable.
+    cooldown: 5
+    # Should players not be able to set warps in these worlds?
+    disabled-worlds:
+      - "world_nether"
+    # Should a warp be automatically locked by default when the player has created the warp?
+    automatically-lock: false
+
+    # What are the commands that should be executed upon setting?
+    # [server] means the command is executed as the console
+    # [player] means the command is executed as the player
+    commands: []
+
+    renting:
+      # Should renting warps be enabled?
+      enabled: false
+      # What is the price they have to pay x amount of days? If they don't have this in their bank, the warp will be removed.
+      renting-price: 500
+      # Here you can choose specific ranks that have the renting price, if you have not put a rank there the max will be above.
+      # WARNING This will not work if you're using the default Bukkit Permissions system due to vault not supporting groups.
+      # Please list the ranks from the highest to the lowest, as if your groups inherit each other than it'll find the first one on the list instead of the highest one.
+      # Depending on your permissions plugin this may be really performance heavy.
+      renting-ranks-price: {}
+#        # The rank VIP's rent will cost  $1000.
+#        vip: 1000
+#        # The rank MVP doesn't have rent.
+#        MVP: -1
+
+      # Every x days do they have to pay?
+      time: 1
+      # How much time left until they rent, to be reminded? Set to [] to disable this. (These times are in hours)
+      time-reminding: [24, 12, 6, 1]
+      # Should these players not get charged for rent Please put UUIDS otherwise it will not work.
+      # here is an uuid converter (https://mcuuid.net/), make sure to get the "full uuid" not the "trimmed uuid".
+      restricted-players:
+        - "5ca251ab-589d-4f04-8f0c-28404d0686b0"
+
+      # If a warp is in this category below then the warp will not be rented.
+      restricted-categories:
+        - ""
+
+      # If a warp is in this world below then the warp will not be rented.
+      restricted-worlds:
+        - ""
+
+      # To prevent warps from being rented, you can use a placeholder condition.
+      # This will only work if you have the PlaceholderAPI plugin installed.
+      # In this example, this will only rent warps if the warp is not locked.
+      placeholder-condition:
+        # Should the condition be checked?
+        enabled: false
+        # The placeholder to check
+        placeholder: "%pw_warp_name_%warp%_locked%"
+        # Condition can only be: ==, >, <
+        condition: "=="
+        # The value that the condition needs to be.
+        value: "false"
+
+    economy:
+      # This is how much they will need to set a warp, otherwise if they don't have that it will not set the warp and send the message
+      # in lang folder. Make sure you have an economy plugin and vault supports that economy plugin!
+      # Set this to -1 to disable.
+      set-price: 500
+      # Here you can choose specific ranks that the price they need to pay, if you have not put a rank there the payment will be the payment will be above.
+      # WARNING This will not work if you're using the default Bukkit Permissions system due to vault not supporting groups.
+      # Please list the ranks from the highest to the lowest, as if your groups inherit each other than it'll find the first one on the list instead of the highest one.
+      # Depending on your permissions plugin this may be really performance heavy.
+      set-ranks-price: {}
+#        # The rank MVP does not need to pay.
+#        MVP: -1
+#        # The rank VIP only needs to pay $1.
+#        vip: 1
+
+      items:
+        name: ""
+        material: DIAMOND
+        data: 0
+        lore: []
+        # set the amount to -1 to disable
+        amount: -1
+
+      # If you want players to be able to set a certain amount of warps for free above they actually start to pay for creating them
+      # Set this to -1 to disable or set this the amount of warps they can set for free.
+      price-free-limit: -1
+      # Here you can choose specific ranks that the price will be free, if you have not put a rank there the amount will be the amount will be above.
+      # WARNING This will not work if you're using the default Bukkit Permissions system due to vault not supporting groups.
+      # Please list the ranks from the highest to the lowest, as if your groups inherit each other than it'll find the first one on the list instead of the highest one.
+      # Depending on your permissions plugin this may be really performance heavy.
+      free-ranks-limit: {}
+#        # The rank MVP will not pay until they set 5 warps.
+#        MVP: 5
+#        # The rank VIP only needs to pay after 1 warp.
+#        vip: 1
+
+    sign:
+      # Should players be able to set warps from signs?
+      # Warning: Players cannot break the sign if they aren't the owner, so it could be used as an "annoying" block
+      # If enabled, a player will need "pw.set.sign" to create a warp from a sign.
+      enabled: false
+      # What are the needed lines for the player to put down? %warp% is where the warp name needs to be.
+      lines:
+        - "[pwarp]"
+        - "%warp%"
+      # What the lines that will look like once the player has placed down a warp sign?
+      finished-lines:
+        - "&b&lPLAYER WARP"
+        - "&d%warp_display%"
+      # What is the block off set from the sign? This is the location where the player will be teleported to.
+      # The offset takes away the x amount of blocks from the face of the sign.
+      # Keep in mind wallsigns also exist. This will only work for 1.13+ due to the new BlockData API.
+      teleport-offset: 1
+
+  remove:
+    # Should there be a confirmation before removing a warp?
+    confirmation: false
+    # How many seconds, should the confirmation expire for the warp. This means how many seconds they have to wait
+    # to remove to a warp. Recommended is 10
+    confirmation-expire-time: 10
+    # If the players' set price is bigger than 0. Should they get refunded when they remove a warp?
+    refund-player: true
+
+    # What are the commands that should be executed upon removal?
+    # [server] means the command is executed as the console
+    # [player] means the command is executed as the player
+    commands: []
+
+    # Should commands get executed if the player's warp's owner are offline for x amount of days?
+    # THIS IS NOT RECOMMEND BEING ENABLED DUE TO THIS IS RISK OF WARPS BEING DELETED!
+    purge:
+      # Should it be enabled?
+      enabled: false
+      # How many days should a player be offline for?
+      time: 30
+
+      # Should these players not get removed if they are offline for x amount of days? Please put UUIDS otherwise it will not work.
+      # here is an uuid converter (https://mcuuid.net/), make sure to get the "full uuid" not the "trimmed uuid".
+      restricted-players:
+        - "5ca251ab-589d-4f04-8f0c-28404d0686b0"
+
+      # If a warp is in this category below then the warp will not be purged.
+      restricted-categories:
+        - ""
+
+      # If a warp is in this world below then the warp will not be purged.
+      restricted-worlds:
+        - ""
+
+      # To prevent warps from being purged, you can use a placeholder condition.
+      # This will only work if you have the PlaceholderAPI plugin installed.
+      # In this example, this will only purge warps if the warp is not locked.
+      placeholder-condition:
+        # Should the condition be checked?
+        enabled: false
+        # The placeholder to check
+        placeholder: "%pw_warp_name_%warp%_locked%"
+        # Condition can only be: ==, >, <
+        condition: "=="
+        # The value that the condition needs to be.
+        value: "false"
+
+      # Commands to be executed on this purge. (Cannot use player action types)
+      commands:
+        - "[server] %cmd% remove %warp%"
+        - "[server<delay=3>] %cmd% remove %warp%" # only twice if confirmation is enabled
+
+    # Should a warp be deleted after x amount of days when it was set even though the player has logged on?
+    # THIS IS NOT RECOMMEND BEING ENABLED DUE TO THIS IS RISK OF WARPS BEING DELETED!
+    remove-days:
+      # Should it be enabled?
+      enabled: false
+      # How many days after the warp has been set should the warp be deleted?
+      time: 30
+
+      # Should these players not get removed if they are offline for x amount of days? Please put UUIDS otherwise it will not work.
+      # here is an uuid converter (https://mcuuid.net/), make sure to get the "full uuid" not the "trimmed uuid".
+      restricted-players:
+        - "5ca251ab-589d-4f04-8f0c-28404d0686b0"
+
+      # If a warp is in this category below then the warp will not be purged.
+      restricted-categories:
+        - ""
+
+      # If a warp is in this world below then the warp will not be purged.
+      restricted-worlds:
+        - ""
+
+      # To prevent warps from being purged, you can use a placeholder condition.
+      # This will only work if you have the PlaceholderAPI plugin installed.
+      # In this example, this will only purge warps if the warp is not locked.
+      placeholder-condition:
+        # Should the condition be checked?
+        enabled: false
+        # The placeholder to check
+        placeholder: "%pw_warp_name_%warp%_locked%"
+        # Condition can only be: ==, >, <
+        condition: "=="
+        # The value that the condition needs to be.
+        value: "false"
+
+      # Commands to be executed on this purge. (Cannot use player action types)
+      commands:
+        - "[server] %cmd% remove %warp%"
+        - "[server<delay=3>] pwarp remove %warp%" # only twice if confirmation is enabled
+
+    # Should the warps be deleted if the player no longer has permission to set that many.
+    # THIS IS NOT RECOMMEND BEING ENABLED DUE TO THIS IS RISK OF WARPS BEING DELETED!
+    limit-purge:
+      # Should it be enabled?
+      enabled: false
+
+    # Should the warps be completed deleted if the world no longer exists? (only works if you have MySQL disabled)
+    # If this purge is not enabled, the warp will still be saved but not loaded on startup.
+    # THIS IS NOT RECOMMEND BEING ENABLED DUE TO THIS IS RISK OF WARPS BEING DELETED!
+    world-purge:
+      # Should it be enabled?
+      enabled: false
+
+      # Should the warps in these worlds be ignored even if the world has been deleted?
+      restricted-worlds:
+        - "warp_world"
+
+  teleport:
+    # Should there be a confirmation before teleporting to a warp?
+    confirmation: false
+    # if you have confirmations enabled, and you want to choose when you want a confirmation enabled, you can use a placeholder condition.
+    # This will only work if you have the PlaceholderAPI plugin installed.
+    # In this example, this will only bring up a confirmation if the warp cost is more than 10.
+    confirm-placeholder-condition:
+      # Should the condition be checked?
+      enabled: true
+      # The placeholder to check
+      placeholder: "%pw_warp_name_%warp%_cost_raw%"
+      # Condition can only be: ==, >, <
+      condition: ">"
+      # The value that the condition needs to be.
+      value: "10"
+
+    # How many seconds, should the confirmation expire for the warp. This means how many seconds they have to wait
+    # to teleport to a warp. Recommended is 10
+    confirmation-expire-time: 10
+    # Should we enable the unsafe-block feature, meaning that a player can set a warp to trap players and kill them innocently.
+    unsafe-block: true
+    # This is how many blocks down it checks.
+    blocks-down-check: 1
+    # If the blocks-down-check hits the minimum y level, should it automatically mark the warp as unsafe?
+    # This is only if the blocks-down-check finds the minimum y level from the location.
+    # This helps prevent players from "glitching" into the void.
+    unsafe-y-level: true
+    # The plugin will check before they warp to see if the warp is unsafe, these are the blocks that get checked below the warp.
+    # Valid material names: https://javadocs.olziedev.com/spigot/latest/org/bukkit/Material.html
+    unsafe-blocks:
+      - "STATIONARY_LAVA"
+      - "AIR"
+      - "MAGMA" # This is a 1.12+ block, so this won't work for 1.11- so remove it :)
+    unsafe-blocks-air: # This is for used when checking if the warp will suffocate the player, put blocks here that will not suffocate the player.
+      - "AIR"
+      - "CAVE_AIR"
+      - "VOID_AIR"
+    # How many seconds, show the timer expire for the unsafe warp. This means how many seconds they have to click
+    # the warp again to teleport to an unsafe warp. Recommended is 3. Set to -1 to disable
+    time-expire-unsafe: 3
+    # Should the visits only be counted once per player, or be counted every time a player teleports to it. This is HIGHLY recommended as true so players cannot farm it.
+    protect-boost-visits: true
+    # If the option above is false, you can add a cooldown in seconds per player for the visits to go up again. Set to -1 to disable, meaning there won't be a cooldown.
+    visits-cooldown: 60
+    # Here you can decide if the visit count should go up or not using a placeholder condition.
+    # This will only work if you have the PlaceholderAPI plugin installed.
+    # In this example, this will only increase the visits if the player has played for more than 10 hours.
+    visits-placeholder-condition:
+      # Should the condition be checked?
+      enabled: false
+      # The placeholder to check
+      placeholder: "%statistic_hours_played%"
+      # Condition can only be: ==, >, <
+      condition: ">"
+      # The value that the condition needs to be.
+      value: "9"
+    # How many x days should the visits of all player warps be cleared? Set to -1 to disable.
+    # Put a date in the date format set in the config above and the interval in days you want the visits to reset in the following manner: "date:interval"
+    # Example: 01/01/YEAR_HERE:30 will start a purge at January 1 and reset every 30 days
+    # It will use your date formatting classified in your config at the top.
+    # Use [visits_purged] in the gui to get the purged visits, as [visits] will never change no matter the purge!
+    visits-purge: -1
+    # Should the purge completely wipe the visits of players that are stored in the database. If this is false, then if a player visits, and they visited last purge
+    # depending on your visit settings, the visit might not go up
+    visit-purge-reset: false
+    # How much time does the player need to stay still, till they get teleported to a warp? Set this to -1 to disable.
+    # You can bypass this by giving the permission 'pw.warp.delay'
+    teleport-wait: 3
+    # Should the wait bypass specific warps?
+    specific-wait: false
+    # If the above option is true, what are the names of the warps that bypass the wait?
+    specific-wait-list:
+      - ""
+    # Here you can choose specific ranks of the waiting time, if you have not put a rank there the waiting time will be above.
+    # WARNING This will not work if you're using the default Bukkit Permissions system due to vault not supporting groups.
+    # Please list the ranks from the highest to the lowest, as if your groups inherit each other than it'll find the first one on the list instead of the highest one.
+    # Depending on your permissions plugin this may be really performance heavy.
+    teleport-ranks-wait: {}
+#       # The rank MVP doesn't have a wait
+#       MVP: -1
+#       # The rank VIP only waits for 1 second.
+#       vip: 1
+    # What is the cooldown in seconds for teleporting to a warp? Set this to -1 to disable.
+    cooldown: 5
+    # Should the cooldown have specific warps listed?
+    specific-cooldown: false
+    # If the above option is true, what are the names of the warps?
+    specific-cooldown-list:
+      - ""
+    # Should the specific cooldown option be reversed? So instead of a whitelist to have a cooldown, it's a blacklist
+    reverse: false
+    # Can players only teleport to warp's that are in the same world?
+    same-world: false
+    # Should the passengers for the player be teleported too?
+    keep-passenger: false
+    # Should the vehicles the player is riding/in be teleported too?
+    keep-vehicles: false
+    # Should the passengers for the vehicle be teleported too? (only works if keep-vehicles is true)
+    keep-vehicle-passenger: false
+    # Should players not be able to teleport warps in these worlds?
+    disabled-worlds: []
+
+    # What are the commands that should be executed upon teleportation?
+    # [server] means the command is executed as the console
+    # [player] means the command is executed as the player
+    commands:
+      - "[broadcast] &d%player%&b has just teleported to the warp &d%warp_display%&b (/pwarp)!"
+
+    # When teleported to a warp and a password is prompted
+    password:
+      # The amount of characters a password atleast needs to have.
+      min-warp-pass-chars: 1
+      # The amount of characters a password can have.
+      max-warp-pass-chars: 15
+      # How much time should the password listen for the players input until it expires in seconds?
+      password-expire-time: 20
+      # Should the owner of the warp bypass the password prompt?
+      password-owner-bypass: true
+
+    # For the particles please use this! https://javadocs.olziedev.com/spigot/latest/org/bukkit/Particle.html
+    # For the sounds please use this! https://javadocs.olziedev.com/spigot/latest/org/bukkit/Sound.html
+    particles:
+      # What particle should be shown when they are teleporting to a playerwarp? Set this too none to disable.
+      # YOU WILL NEED TO CHANGE THE PARTICLE IF YOU ARE ON A DIFFERENT VERSION!
+      particle-teleport: none
+      # How many particles should there be?
+      particle-count: 2
+      # Should the player see the particle, or should everyone see the particle? This is recommended as just the player.
+      particle-only-player: true
+
+    sounds:
+      # What sound should be played when they are teleporting to a playerwarp? Set this too none to disable.
+      # YOU WILL NEED TO CHANGE THE SOUND IF YOU ARE ON A DIFFERENT VERSION!
+      sound-teleport: none
+      # What should the volume be when the sound is played?
+      volume-teleport: 1.0
+      # What should the pitch be when the sound is played?
+      pitch-teleport: 1.0
+
+    economy:
+      # This is how much they will need to teleport to a warp, otherwise if they don't have that, they won't teleport to the warp and send the message
+      # in lang folder. Make sure you have an economy plugin and vault supports that economy plugin!
+      # Set this to -1 to disable.
+      teleport-price: 5
+      # Here you can choose specific ranks that the price they need to pay, if you have not put a rank there the payment will be the payment will be above.
+      # WARNING This will not work if you're using the default Bukkit Permissions system due to vault not supporting groups.
+      # This can also cause freezing in the menu if you're using LuckPerms even with caching, not sure why but that's the current case.
+      # Please list the ranks from the highest to the lowest, as if your groups inherit each other than it'll find the first one on the list instead of the highest one.
+      # Depending on your permissions plugin this may be really performance heavy.
+      teleport-ranks-price: {}
+#        # The rank MVP does not need to pay.
+#        MVP: -1
+#        # The rank VIP only needs to pay $1.
+#        vip: 1
+
+      items:
+        name: ""
+        material: DIAMOND
+        data: 0
+        lore: []
+        # set the amount to -1 to disable
+        amount: -1
+
+      # Should the money be given to the owner of the warp?
+      give-to-owner: true
+      # If the above option is true, what is the amount that should be taken away from the cut when someone teleports. Set to -1 to ignore splitting a cut.
+      percentage-cut: -1
+      # Should the owner pay when teleporting to their warp?
+      owner-pay: false
+      # Should the owner still be charged even if you have give-to-owner true and owner-pay true?
+      # If you have give-to-owner, the owner will pay but then receive the money. This will just take away the money completely.
+      bypass-give-to-owner-pay: true
+      # Should the teleport pay only once for that warp?
+      pay-once: false
+      # If the option above is true, do you want there to be a timer until they have to pay again? Set to -1 to never pay again.
+      # In seconds.
+      pay-once-time: -1
+      # If you have the cost command enabled, do you want to be able to limit your players to set maximum warp costs? Set to -1 for unlimited.
+      max-cost: 500
+      # Here you can choose specific ranks that have the max cost, if you have not put a rank there the max will be above.
+      # WARNING This will not work if you're using the default Bukkit Permissions system due to vault not supporting groups.
+      # Please list the ranks from the highest to the lowest, as if your groups inherit each other than it'll find the first one on the list instead of the highest one.
+      # Depending on your permissions plugin this may be really performance heavy.
+      max-ranks-cost: {}
+#        # The rank MVP doesn't have a limit.
+#        MVP: -1
+#        # The rank VIP can only set a cost of $1000.
+#        vip: 1000
+
+      # if you have the cost command enabled, do you want to be able to limit your players to set the minimum warp costs? Set to -1 for no minumum.
+      min-cost: -1
+      # Here you can choose specific ranks that have the min cost, if you have not put a rank there the min will be above.
+      # WARNING This will not work if you're using the default Bukkit Permissions system due to vault not supporting groups.
+      # Please list the ranks from the highest to the lowest, as if your groups inherit each other than it'll find the first one on the list instead of the highest one.
+      # Depending on your permissions plugin this may be really performance heavy.
+      min-ranks-cost: {}
+#        # The rank MVP doesn't have a minimum.
+#        MVP: -1
+#        # The rank VIP can only set a min cost of $1000.
+#        vip: 1000
+
+    sign:
+      # Should players be able to make signs to teleport to warps?
+      # If enabled, a player will need "pw.warp.sign" to create a sign to warp from.
+      enabled: false
+      # What are the needed lines for the player to put down? %warp% is where the warp name needs to be.
+      lines:
+        - "[teleport]"
+        - "%warp%"
+      # What the lines that will look like once the player has placed down a teleport sign?
+      finished-lines:
+        - "&b&lTELEPORT WARP"
+        - "&d%warp_display%"
+
+  ban:
+    # The amount of characters a ban atleast needs to have.
+    # Set this to -1 to make reasons optional!
+    min-ban-reason-chars: -1
+    # The amount of characters a ban reason can have.
+    max-ban-reason-chars: 50
+    # The description will automatically go onto the next line if there is x amount of characters on that line
+    # How many characters should a reason be par line?
+    characters-per-line: 15
+    # Should the characters wrap long words?
+    # This means, should the world be split onto the next line and not let the word finish and then go on the next line
+    wrap-long-words: false
+
+  desc:
+    # The amount of characters a desc atleast needs to have.
+    min-warp-desc-chars: 1
+    # The amount of characters a desc can have.
+    max-warp-desc-chars: 50
+    # The description will automatically go onto the next line if there is x amount of characters on that line
+    # How many characters should a description be par line?
+    characters-per-line: 15
+    # Should the characters wrap long words?
+    # This means, should the world be split onto the next line and not let the word finish and then go on the next line
+    wrap-long-words: false
+    # What should the first line of the descriptions prefix be?
+    first-prefix: ""
+    # What is the line prefkx of tbe description? (this excluses the first line)
+    line-prefix: ""
+    # Blacklist any keywords from anyone setting a description set that.
+    # This uses a regex pattern compiler to detect the names.
+    # So please escape regex characters if you're using them.
+    blacklisted-desc:
+      - "bad"
+
+  rate:
+    # What is the maximum amount a player can rate for a warp?
+    max-rates: 5
+    # Can a player rate their own warp?
+    owner-rate: false
+    # The amount of characters a rate desc atleast needs to have.
+    min-rate-desc-chars: 1
+    # The amount of characters a rate desc can have.
+    max-rate-desc-chars: 50
+    # The description will automatically go onto the next line if there is x amount of characters on that line
+    # How many characters should a description be par line?
+    characters-per-line: 15
+    # Should the characters wrap long words?
+    # This means, should the world be split onto the next line and not let the word finish and then go on the next line
+    wrap-long-words: false
+    # What's the cooldown in seconds a player can rate a warp? Set to -1 to disable
+    rate-cooldown: -1
+    # Should a player only be able to rate a warp once?
+    rate-once: false
+    # To prevent anyone from abusing the rate system on alt accounts, you can set a specific condition for the player to be able to rate using placeholdersapi
+    # This will only work if you have the PlaceholderAPI plugin installed.
+    # In this example, the player will be able to rate if they have 50 or more in their balance.
+    placeholder-condition:
+      # Should the condition be checked?
+      enabled: false
+      # The placeholder to check
+      placeholder: "%vault_eco_balance%"
+      # Condition can only be: ==, >, <
+      condition: ">"
+      # The value that the condition needs to be.
+      value: "49"
+    # Here you can create rewards that the owner of the warp will receive.
+    rate-rewards-owner:
+      1: # the reward id, this is what the DB will save
+        required-amount: 50 # the amount of total stars
+        maximum-amount: -1 # If this is not -1, the player will only be able to get this amount of rewards. This will ignore the required-amount.
+        allowed-ratings: [ 4, 5 ] # only these ratings will work for the requirement amount. So for example either 5 stars by 10 people or 4 stars by 12/13 people.
+        commands: [] # The player may not be online when the reward is given, so make sure to use [server] as the command action. %warp% and %player% are valid placeholder.
+
+    # Here you can create rewards that the player who rated the warp will receive.
+    rate-rewards-rater:
+      1: # the reward id, this is what the DB will save
+        required-amount: 50 # The amount of total stars a player needs to rate.
+        maximum-amount: -1 # If this is not -1, the player will only be able to get this amount of rewards. This will ignore the required-amount.
+        allowed-ratings: [ 4, 5 ] # Only these ratings will work for the required amount.
+        commands: [] # Player will always be online, so you may use [player] as the command action. %warp% and %player% are valid placeholders.
+
+  reset:
+    # What is the cost for someone to re-set their warps' location. Set to -1 to disable.
+    reset-cost: -1
+
+  rename:
+    # What is the cost for someone to rename their warp. Set to -1 to disable.
+    rename-cost: -1
+
+  sponsor:
+    # What is the cooldown in seconds the player can have until have another sponsor ? (Time starts when the sponsor time expires) Set to -1 to disable
+    sponsor-cooldown: 3600
+    # How many sponsors can a player have?
+    sponsor-per-player: 1
+
+  setowner:
+    # Should there be a confirmation for the person who is receiving the warp?
+    # If this gets enabled, the syntax for the command will be changed. (You will need to change the syntax at the start of the config as well as mamagewarp.)
+    # For example, to set an owner it will now be: /pwarp setowner set <warp> <player>
+    # Then to accept the request, it'll be /pwarp setowner accept <warp>
+    # Then to cancel the request as the warp owner, it'll be /pwarp setowner cancel <warp>
+    confirmation: false
+    # How many seconds should the confirmation expire. This means how many seconds they have to
+    # accept the transfer. Recommended is 60
+    confirmation-expire-time: 60
+
+  category:
+    # Whats the maximum amount of categories a warp can have?
+    # Set to -1 to disable
+    max-categories: -1
+
+  list:
+    # How many warps should appear in one page?
+    page-length: 10
+
+  # This updates the players inventory when the player exits a menu. This is to prevent any issues with the inventory
+  # to take away any items that shouldn't be in the players inventory. This is recommended to be disabled.
+  # If you are having issues with plugins like Cosmetics, you may enable it to fix some issues. But you will not receive
+  # any support for duplicate items.
+  dangerous-ignore-update-inventory: false
+  # This is to change the priority of the chat wait action, if you have any issues with the chat wait action, you may want to change this from HIGHEST to LOWEST.
+  wait-chat-event-priority: HIGHEST

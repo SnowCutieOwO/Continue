@@ -1,0 +1,585 @@
+
+# 在这里你可以选择将部分其他插件的数据转化为本插件的数据.
+# 确保在转化后卸载这些插件!
+converters:
+  welcomewarpsigns:
+    # 若该项启用, 插件将会将 Welcome Warp Signs (https://www.spigotmc.org/resources/12256/) 的数据转化至本插件.
+    # 重启服务器才可使改动生效并开始数据转化.
+    enabled: false
+  pwarp:
+    # 若该项启用, 插件将会将 PWarp (https://www.spigotmc.org/resources/64542/) 的数据转化至本插件.
+    # 重启服务器才可使改动生效并开始数据转化.
+    enabled: false
+  playerwarps:
+    # 若该项启用, 插件将会将 PLAYERWARPS (https://www.spigotmc.org/resources/79089/) 的数据转化至本插件.
+    # 处于某些冲突, 你需要将被转化插件的文件夹 (plugins/PlayerWarps) 重命名为 "PlayerWarp"
+    # 你也需要修改插件的名称, 使用诸如 WinRAR 的压缩包软件将此插件的 .jar 文件打开, 找到 plugin.yml 并将插件的名称改为 "PlayerWarp".
+    # 重启服务器才可使改动生效并开始数据转化.
+    enabled: false
+
+# 在这部分配置中你可以设置按需配置其他支持本插件的拓展相关功能.
+expansions:
+  essentials:
+    # 是否启用 Essentials 拓展?
+    # 该拓展会为玩家在进行地标传送前记住他们最后上线的位置.
+    # 你需要安装 Essentials 才可使该变量拓展生效!
+    enabled: true
+  huskhomes:
+    # 是否启用 HuskHomes 拓展?
+    # 该拓展会为玩家在进行地标传送前记住他们最后上线的位置.
+    # 你需要安装 HuskHomes 才可使该变量拓展生效!
+    enabled: false
+
+  # 该部分配置通过 Webhook 向你的 Discord 发送提醒消息.
+  # 你可以参考 https://docs.olziedev.com/projects/playerwarps/features#discord-alerts 来学习如何配置该部分内容.
+  warpdiscord:
+    # 是否要启用 discord 挂钩拓展?
+    enabled: false
+    webhook:
+      # 根据你的选择填入对应 Discord 频道的 Webhook 的链接.
+      url: ""
+      # 弹出的内嵌式消息所归属的用户名称.
+      username: "地标传送提醒"
+      # 内嵌式消息所显示的头像.
+      avatar: "https://cdn.olziedev.com/playerwarps/images/PlayerWarpsIcon.png"
+      # 消息中的普通文本, 若你只想显示内嵌式消息, 那么请留空.
+      content: ""
+
+      # 出现在内嵌式消息中的物品缩略图.
+      thumbnail:
+        enabled: true
+        # 可以在此放入自定义缩略图, 以此匹配指定的自定义模型值物品.
+        custom-thumbnails:
+          # 若物品包含了值为 101 的自定义模型数据, 那么插件就会在内嵌式消息中使用该图片.
+          101: "https://cdn.olziedev.com/playerwarps/images/PlayerWarpsIcon.png"
+
+    # 若你正在使用离线模式, 你可以使用内建变量 [name] 来获取玩家名称.
+    author-url: "https://www.mc-heads.net/head/[uuid]/100/.png"
+
+    embeds:
+      set:
+        enabled: true
+        author: "[owner] 创建了一个名为 [warp_display] 的地标"
+        color: "#4287f5"
+        title: "地标提醒"
+        footer: "地标 ID: [id]"
+        fields:
+          Owner:
+            name: "拥有者"
+            value: "[owner]"
+            inline: true
+          blank:
+            name: ""
+            value: ""
+            inline: true
+          Name:
+            name: "名称"
+            value: "[warp_display]"
+            inline: true
+          Date:
+            name: "创建日期"
+            value: "[date]"
+            inline: true
+          blank1:
+            name: ""
+            value: ""
+            inline: true
+          Location:
+            name: "位置"
+            value: "[world], [location]"
+            inline: true
+      tp:
+        enabled: true
+        author: "[teleporter] 访问了地标 [warp_display]"
+        color: "#c90076"
+        title: "地标提醒"
+        footer: "地标 ID: [id]"
+        fields:
+          Owner:
+            name: "拥有者"
+            value: "[owner]"
+            inline: true
+          blank:
+            name: ""
+            value: ""
+            inline: true
+          Location:
+            name: "位置"
+            value: "[world], [location]"
+            inline: true
+          Date:
+            name: "创建日期"
+            value: "[date]"
+            inline: true
+          blank1:
+            name: ""
+            value: ""
+            inline: true
+          Description:
+            name: "描述"
+            value: "[desc]"
+            inline: true
+
+      remove:
+        enabled: true
+        author: "[warp_display] 已被移除!"
+        color: "#bf2a2a"
+        title: "地标提醒"
+        footer: "地标 ID: [id]"
+        fields:
+          Owner:
+            name: "拥有者"
+            value: "[owner]"
+            inline: true
+          blank:
+            name: ""
+            value: ""
+            inline: true
+          Location:
+            name: "位置"
+            value: "[world], [location]"
+            inline: true
+          Date:
+            name: "创建日期"
+            value: "[date]"
+            inline: true
+          blank1:
+            name: ""
+            value: ""
+            inline: true
+          Description:
+            name: "描述"
+            value: "[desc]"
+            inline: true
+
+# 在这里你可以选择对接哪些额外内容, 用于按需配置玩家的地标创建限制/网页地图等内容.
+addons:
+  # 是否启用额外检查以确保所有传送点均位于土地中, 或如果地标处于土地中则不对土地归属权进行限制?
+  check-all-land: true
+  plotsquared:
+    # 是否启用 PlotSquared 支持?
+    # 需要安装 PlotSquared 才可正常使用本功能!
+    enabled: false
+    # 是否在创建地皮时自动生成一个地标?
+    create: false
+    # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
+    warp-name-creation: "%player%"
+    # 是否在地皮被删除时一并删除地标?
+    delete: true
+    # 是否允许玩家在地皮内设置地标? 若关闭, 玩家可以在任意地点设置地标.
+    only-land: true
+    lang:
+      not-in-plot: "%prefix% &c抱歉, 你不能在这里设置地标, &c你必须处于地皮内!"
+      dont-own-plot: "%prefix% &c抱歉, 你不能在不属于自己的地皮上设置地标!"
+
+  worldguard:
+    # 是否启用 WorldGuard 支持? (仅在服务器安装了较新版本的 WorldGuard 时有效)
+    # 需要安装 WorldGuard 才可使该功能正常启用!
+    # 该插件会自动向 WorldGuard 注册一个名为"set-warp"的标志.
+    # 若你是第一次启用该功能, 你需要重启服务器才可让改动生效.
+    enabled: false
+    # 若设置了标志, 被设置标志的区域就允许玩家设置地标. 若区域未设置该标志, 则它的默认值是什么?
+    # 若此处设置为 false, 那么玩家默认不能在任何区域内设置地标. 这也包括 __global__ 全局区域! 所以请确保为该区域设置了允许标志 (别忘了全局区域只针对一个世界, 每个世界的全局区域标志设置是独立的)
+    # 若此处设置为 true, 那么玩家可以在未设置该标志的区域内自由设置地标.
+    # 若此处设置为 force, 那么玩家必须在指定区域内才可设置地标 - 在该处设置为 force 时, 插件会无视区域标志, 只允许玩家在区域内设置地标.
+    default: true
+    # 是否在区域被删除时一并删除地标?
+    # 出于 WorldGuard 的限制, 该设置只会在你安装了ProtectionStones 或 AdvancedRegionMarket 时生效.
+    delete: false
+    lang:
+      not-in-region: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你不在任何区域内!"
+      in-region: "%prefix% &c抱歉, 你不能在这个区域内设置地标!"
+
+  askyblock:
+    # 是否启用 ASkyBlock 支持?
+    # 需要安装 ASkyBlock 才可使该功能正常启用!
+    enabled: false
+    # 是否在创建岛屿时一并创建一个地标?
+    create: false
+    # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
+    warp-name-creation: "%player%"
+    # 是否在岛屿被删除时一并删除地标?
+    delete: true
+    # 是否允许玩家在岛屿内设置地标? 若关闭, 玩家可以在任意地点设置地标.
+    only-land: true
+    lang:
+      not-in-island: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于岛屿内!"
+      dont-own-island: "%prefix% &c抱歉, 你不能在不属于你的岛屿中设置地标."
+
+  bentobox:
+    # 是否启用 BentoBox 支持?
+    # 需要安装 BentoBox 才可使该功能正常启用!
+    enabled: false
+    # 是否在创建岛屿时一并创建一个地标?
+    create: false
+    # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
+    warp-name-creation: "%player%"
+    # 是否在岛屿被删除时一并删除地标?
+    delete: true
+    # 是否允许玩家在岛屿内设置地标? 若关闭, 玩家可以在任意地点设置地标.
+    only-land: true
+    lang:
+      not-in-island: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于岛屿内!"
+      dont-own-island: "%prefix% &c抱歉, 你不能在不属于你的岛屿中设置地标."
+
+  griefprevention:
+    # 是否启用 griefprevention 支持?
+    # 需要安装 griefprevention 才可使该功能正常启用!
+    enabled: false
+    # 是否在创建岛屿时一并创建一个地标?
+    create: false
+    # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
+    warp-name-creation: "%player%"
+    # 是否在占领区被删除时一并删除地标?
+    delete: true
+    # 是否允许玩家在占领区内设置地标? 若关闭, 玩家可以在任意地点设置地标.
+    only-land: true
+    # 这些是允许 GriefPrevention 的占领区允许玩家无视其他限制创建地标的世界.
+    allowed-worlds: []
+    lang:
+      not-in-claim: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于占领区内!"
+      dont-own-claim: "%prefix% &c抱歉, 你不能在不属于你的占领区中设置地标."
+
+  griefdefender:
+    # 是否启用 griefdefender 支持?
+    # 需要安装 griefdefender 才可使该功能正常启用!
+    enabled: false
+    # 是否在创建占领区时一并创建一个地标?
+    create: false
+    # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
+    warp-name-creation: "%player%"
+    # 是否在占领区被删除时一并删除地标?
+    delete: true
+    # 是否允许玩家在占领区内设置地标? 若关闭, 玩家可以在任意地点设置地标.
+    only-land: true
+    lang:
+      not-in-claim: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于占领区内!"
+      dont-own-claim: "%prefix% &c抱歉, 你不能在不属于你的占领区中设置地标."
+
+  fabledskyblock:
+    # 是否启用 fabledskyblock 支持?
+    # 需要安装 fabledskyblock 才可使该功能正常启用!
+    enabled: false
+    # 是否在创建岛屿时一并创建一个地标?
+    create: false
+    # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
+    warp-name-creation: "%player%"
+    # 是否在岛屿被删除时一并删除地标?
+    delete: true
+    # 是否允许玩家在岛屿内设置地标? 若关闭, 玩家可以在任意地点设置地标.
+    only-land: true
+    lang:
+      not-in-island: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于岛屿内!"
+      dont-own-island: "%prefix% &c抱歉, 你不能在不属于你的岛屿中设置地标."
+
+  iridiumskyblock:
+    # 是否启用 iridiumskyblock 支持?
+    # 需要安装 iridiumskyblock 才可使该功能正常启用!
+    enabled: false
+    # 是否在创建岛屿时一并创建一个地标?
+    create: false
+    # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
+    warp-name-creation: "%player%"
+    # 是否在岛屿被删除时一并删除地标?
+    delete: true
+    # 是否允许玩家在岛屿内设置地标? 若关闭, 玩家可以在任意地点设置地标.
+    only-land: true
+    lang:
+      not-in-island: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于岛屿内!"
+      dont-own-island: "%prefix% &c抱歉, 你不能在不属于你的岛屿中设置地标."
+
+  lands:
+    # 是否启用 lands 支持?
+    # 需要安装 lands 才可使该功能正常启用!
+    enabled: false
+    # 是否在创建土地时一并创建一个地标?
+    create: false
+    # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称 or %land%
+    warp-name-creation: "%player%"
+    # 是否在指定土地出生点后创建一个地标? (仅在上述 create 未启用时有效)
+    spawn-create: false
+    # 是否在土地被删除时一并删除地标?
+    delete: true
+    # 是否在土地出生点被删除时一并删除地标? (仅在上述 spawn-create 未启用时有效)
+    spawn-delete: false
+    # 是否允许玩家在土地内设置地标? 若关闭, 玩家可以在任意地点设置地标.
+    only-land: true
+    # 强制 PlayerWarps 允许创建地标并无视任何土地限制
+    force: false
+    lang:
+      not-in-land: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于土地内!"
+      dont-own-land: "%prefix% &c抱歉, 你不能在不属于你的土地中设置地标."
+
+  landlord:
+    # 是否启用 landlord 支持?
+    # 需要安装 landlord 才可使该功能正常启用!
+    enabled: false
+    # 是否在创建土地时一并创建一个地标?
+    create: false
+    # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
+    warp-name-creation: "%player%"
+    # 是否在土地被删除时一并删除地标?
+    delete: true
+    # 是否允许玩家在土地内设置地标? 若关闭, 玩家可以在任意地点设置地标.
+    only-land: true
+    lang:
+      not-in-land: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于土地内!"
+      dont-own-land: "%prefix% &c抱歉, 你不能在不属于你的土地中设置地标."
+
+  kindomsx:
+    # 是否启用 kingdomsx 支持?
+    # 需要安装 kingdomsx 才可使该功能正常启用!
+    enabled: false
+    # 是否在创建土地时一并创建一个地标?
+    create: false
+    # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
+    warp-name-creation: "%player%"
+    # 是否在土地被删除时一并删除地标?
+    delete: true
+    # 是否允许玩家在土地内设置地标? 若关闭, 玩家可以在任意地点设置地标.
+    only-land: true
+    lang:
+      not-in-land: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于土地内!"
+      dont-own-land: "%prefix% &c抱歉, 你不能在不属于你的土地中设置地标."
+
+  residence:
+    # 是否启用 Residence 支持?
+    # 需要安装 Residence 才可使该功能正常启用!
+    enabled: false
+    # 是否在创建土地时一并创建一个地标?
+    create: false
+    # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
+    warp-name-creation: "%player%"
+    # 是否在土地被删除时一并删除地标?
+    delete: true
+    # 是否允许玩家在土地内设置地标? 若关闭, 玩家可以在任意地点设置地标.
+    only-land: true
+    lang:
+      not-in-land: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于土地内!"
+      dont-own-land: "%prefix% &c抱歉, 你不能在不属于你的土地中设置地标."
+      not-allowed-to-tp: "%prefix% &c抱歉, 你不能传送至该传送点. &c你没有传送到那里的权限."
+
+  ultimateclaims:
+    # 是否启用 ultimateclaims 支持?
+    # 需要安装 ultimateclaims 才可使该功能正常启用!
+    enabled: false
+    # 是否在创建岛屿时一并创建一个地标?
+    create: false
+    # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
+    warp-name-creation: "%player%"
+    # 是否在占领区被删除时一并删除地标?
+    delete: true
+    # 是否允许玩家在土地内设置地标? 若关闭, 玩家可以在任意地点设置地标.
+    only-land: true
+    lang:
+      not-in-claim: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于占领区内!"
+      dont-own-claim: "%prefix% &c抱歉, 你不能在不属于你的占领区中设置地标."
+      
+  claimchunk:
+    # 是否启用 claimchunk 支持?
+    # 需要安装 claimchunk 才可使该功能正常启用!
+    enabled: false
+    # 是否在创建岛屿时一并创建一个地标?
+    # 是否允许玩家在土地内设置地标? 若关闭, 玩家可以在任意地点设置地标.
+    only-land: true
+    lang:
+      not-in-claim: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于占领区内!"
+      dont-own-claim: "%prefix% &c抱歉, 你不能在不属于你的占领区中设置地标."
+
+  xclaim:
+    # 是否启用 xclaim 支持?
+    # 需要安装 xclaim 才可使该功能正常启用!
+    enabled: false
+    # 是否在创建岛屿时一并创建一个地标?
+    # 是否允许玩家在土地内设置地标? 若关闭, 玩家可以在任意地点设置地标.
+    only-land: true
+    lang:
+      not-in-claim: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于占领区内!"
+      dont-own-claim: "%prefix% &c抱歉, 你不能在不属于你的占领区中设置地标."
+
+  crashclaims:
+    # 是否启用 crashclaims 支持?
+    # 需要安装 crashclaims 才可使该功能正常启用!
+    enabled: false
+    # 是否允许玩家在土地内设置地标? 若关闭, 玩家可以在任意地点设置地标.
+    only-land: true
+    lang:
+      not-in-claim: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于占领区内!"
+      dont-own-claim: "%prefix% &c抱歉, 你不能在不属于你的占领区中设置地标."
+
+  simpleskyblock:
+    # 是否启用 simpleskyblock 支持?
+    # 需要安装 simpleskyblock 才可使该功能正常启用!
+    enabled: false
+    # 是否允许玩家在岛屿内设置地标? 若关闭, 玩家可以在任意地点设置地标.
+    only-land: true
+    lang:
+      not-in-island: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于岛屿内!"
+      dont-own-island: "%prefix% &c抱歉, 你不能在不属于你的岛屿中设置地标."
+
+  superiorskyblock:
+    # 是否启用 superiorskyblock 支持?
+    # 需要安装 superiorskyblock 才可使该功能正常启用!
+    enabled: false
+    # 是否在创建岛屿时一并创建一个地标?
+    create: false
+    # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
+    warp-name-creation: "%player%"
+    # 是否在岛屿删除后一并删除地标?
+    delete: true
+    # 是否允许玩家在岛屿内设置地标? 若关闭, 玩家可以在任意地点设置地标.
+    only-land: true
+    lang:
+      not-in-island: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于岛屿内!"
+      dont-own-island: "%prefix% &c抱歉, 你不能在不属于你的岛屿中设置地标."
+      island-banned: "%prefix% &c抱歉, 你不能传送到这个地标, 该岛屿已将你封禁!"
+      island-locked: "%prefix% &c抱歉, 你不能传送到这个地标, 该岛屿已锁定!"
+
+  factions:
+    # 是否启用 factions 支持?
+    # 需要安装 factions 才可使该功能正常启用!
+    enabled: false
+    # 是否在公会删除后一并删除地标?
+    delete: true
+    # 是否只允许玩家在公会占地内设置地标? 若禁用, 玩家可以在任意地点设置地标.
+    only-land: true
+    lang:
+      not-in-claim: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于占领区内!"
+      dont-own-claim: "%prefix% &c抱歉, 你不能在不属于你的占领区中设置地标."
+
+  saberfactions:
+    # 是否启用 saberfactions 支持?
+    # 需要安装 saberfactions 才可使该功能正常启用!
+    enabled: false
+    # 是否在公会删除后一并删除地标?
+    delete: true
+    # 是否只允许玩家在公会占地内设置地标? 若禁用, 玩家可以在任意地点设置地标.
+    only-land: true
+    lang:
+      not-in-claim: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于占领区内!"
+      dont-own-claim: "%prefix% &c抱歉, 你不能在不属于你的占领区中设置地标."
+
+  factionsx:
+    # 是否启用 factionsx 支持?
+    # 需要安装 factionsx 才可使该功能正常启用!
+    enabled: false
+    # 是否在公会删除后一并删除地标?
+    delete: true
+    # 是否只允许玩家在公会占地内设置地标? 若禁用, 玩家可以在任意地点设置地标.
+    only-land: true
+    lang:
+      not-in-claim: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于占领区内!"
+      dont-own-claim: "%prefix% &c抱歉, 你不能在不属于你的占领区中设置地标."
+
+  factionsuuid:
+    # 是否启用 factionsuuid 支持?
+    # 需要安装 factionsuuid 才可使该功能正常启用!
+    enabled: false
+    # 是否在公会删除后一并删除地标?
+    delete: true
+    # 是否只允许玩家在公会占地内设置地标? 若禁用, 玩家可以在任意地点设置地标.
+    only-land: true
+    lang:
+      not-in-claim: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于占领区内!"
+      dont-own-claim: "%prefix% &c抱歉, 你不能在不属于你的占领区中设置地标."
+
+  towny:
+    # 是否启用 towny 支持?
+    # 需要安装 towny 才可使该功能正常启用!
+    enabled: false
+    # 是否在城镇删除后一并删除地标?
+    delete: true
+    # 是否只允许玩家在城镇占地内设置地标? 若禁用, 玩家可以在任意地点设置地标.
+    only-land: true
+    # 是否在玩家尝试传送至敌方城镇的地标时阻止传送请求?
+    cancel-enemy-teleport: false
+    lang:
+      not-in-town: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于城镇内!"
+      dont-own-town: "%prefix% &c抱歉, 你不能在不属于你的城镇中设置地标."
+      town-teleport-enemy: "%prefix% &c抱歉, 你不能传送到敌方的地标中."
+
+  civs:
+    # 是否启用 civs 支持?
+    # 需要安装 towny 才可使该功能正常启用!
+    enabled: false
+    # 是否在城镇删除后一并删除地标?
+    delete: true
+    # 是否只允许玩家在城镇占地内设置地标? 若禁用, 玩家可以在任意地点设置地标.
+    only-land: true
+    lang:
+      not-in-town: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于城镇内!"
+      dont-own-town: "%prefix% &c抱歉, 你不能在不属于你的城镇中设置地标."
+
+  husktowns:
+    # 是否启用 husktowns 支持?
+    # 需要安装 husktowns 才可使该功能正常启用!
+    enabled: false
+    # 是否在城镇创建时一并创建一个地标?
+    create: false
+    # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
+    warp-name-creation: "%player%"
+    # 是否在城镇删除后一并删除地标?
+    delete: true
+    # 是否只允许玩家在城镇占地内设置地标? 若禁用, 玩家可以在任意地点设置地标.
+    only-land: true
+    # 城镇能够设置地标需要达到几级?
+    required-level: 0
+    lang:
+      not-in-town: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于城镇内!"
+      dont-own-town: "%prefix% &c抱歉, 你不能在不属于你的城镇中设置地标."
+      not-required-level: "%prefix% &c抱歉, 你的城镇尚未达到能设置地标的等级."
+
+  dynmap:
+    # 是否启用 dynmap 支持?
+    # 需要安装 dynmap 才可使该功能正常启用!
+    enabled: false
+    # 标志的样式是什么?
+    marker-icon: star
+    # 显示层名称是什么?
+    layer-name: "PlayerWarps"
+    # 标志的描述是什么?
+    description:
+      - "拥有者: [owner]"
+      - "访问量: [visits]"
+      - "描述: [desc]"
+      - "创建时间: [date]"
+      - "分类: [category]"
+      - "评分: [rates]"
+      - "平均评分: [rates_average] ([rates_stars])"
+
+  bluemap:
+    # 是否启用 bluemap 支持?
+    # 需要安装 bluemap 才可使该功能正常启用!
+    enabled: false
+    # 显示层名称是什么?
+    layer-name: "PlayerWarps"
+    # 是否默认隐藏该显示层?
+    default-hidden: false
+
+  pl3xmap:
+    # 是否启用 pl3xmap/squaremap 支持?
+    # 需要安装 pl3xmap/squaremap 才可使该功能正常启用!
+    enabled: false
+    # 显示层名称是什么?
+    layer-name: "PlayerWarps"
+    # 标志的描述内容是什么?
+    description:
+      - "[warp_display]"
+      - " "
+      - "拥有者: [owner]"
+      - "访问量: [visits]"
+      - "描述: [desc]"
+      - "创建时间: [date]"
+      - "分类: [category]"
+      - "评分: [rates]"
+      - "平均评分: [rates_average] ([rates_stars])"
+    # 图标的大小是多少?
+    icon-size: 16
+    # x 轴锚点位于什么位置?
+    icon-x: 8
+    # z 轴锚点位于什么位置?
+    icon-z: 16
+    # 图标图片路径/链接是什么?
+    icon-link: "https://cdn.olziedev.com/playerwarps/images/warp_icon.png"
+    # 是否默认隐藏该显示层?
+    default-hidden: false

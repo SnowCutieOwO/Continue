@@ -1,0 +1,10 @@
+Settings:
+  Max: 100
+  AutoLevelUpDefault: false
+LevelUpEvent:
+  '1':
+    ShardSlots: 1
+    EnchantSlots: 1
+    Commands:
+    - bc %Player% 升级至了 %Level% 级
+    - give %Player% stone %Level%

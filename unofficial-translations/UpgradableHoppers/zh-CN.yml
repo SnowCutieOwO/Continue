@@ -1,0 +1,167 @@
+# 在此可编辑所有聊天消息.
+#
+# 若你遇到任何问题:
+# Discord 聊天群组: https://discord.gg/B4MAJVk
+#
+# 插件维基: https://github.com/Angeschossen/General/wiki/Messages
+
+general:
+  prefix:
+    normal: '&8[&9UpgradeHoppers&8] '
+    help: '&8[&9UpgradeHoppers&8] &7用法: '
+  time:
+    seconds: 秒
+    minutes: 分
+    hours: 时
+  teleportation:
+    bossbar: '&7你需要等待&5 {time} &7秒才可再次传送.'
+  command:
+    argument:
+      optional: '&8<&e{arg}&8>'
+      required: '&8[&e{arg}&8]'
+      type:
+        cmd: cmd
+        player: player
+        name: name
+        confirm: confirm
+        menu: menu
+        world: world
+        args: arguments
+        page: page
+        database: database
+        plugin: plugin
+        boolean: true | false
+        type: type
+        amount: amount
+
+help:
+  help:
+    root:
+      header: '[NoPrefix][T]&7&l&m━━&e&l<<<<&7&l&m━[H]&7点击翻到上一页.[/H][C]{cmd} {previous}[/C][/T] &9UpgradeableHoppers 命令列表
+        &7第&3 {page} &8/&3 {pages} &7页 [T]&7&l&m━&e&l>>>>&7&l&m━━[H]&7点击翻到下一页.[/H][C]{cmd} {next}[/C][/T]'
+      footer: |
+        [NoPrefix]
+        &7点击页面上的箭头翻页.
+        [T]&7&l&m━━&e&l<<<<&7&l&m━[H]&7点击翻到上一页.[/H][C]{cmd} {previous}[/C][/T] &9UpgradeableHoppers 命令列表
+        &7第&3 {page} &8/&3 {pages} &7页 [T]&7&l&m━&e&l>>>>&7&l&m━━[H]&7点击翻到下一页.[/H][C]{cmd} {next}[/C][/T]
+    sub:
+      unknown: |
+        &c子命令&4 {command} &c不存在.
+          [T]&7✖ 查阅命令: &3/{cmd} &8[CLICK][H]&7点击此处查询可用命令[/H][C]{cmd}[/C][/T]
+      header: '[NoPrefix][T]&7&l&m━━━━━&e&l<<<<&7&l&m━[H]&7点击翻到上一页.[/H][C]{cmd} {previous}[/C][/T] &9子命令 &7第&3 {page} &8/&3 {pages} &7页 [T]&7&l&m━&e&l>>>>&7&l&m━━━━━[H]&7点击翻到下一页.[/H][C]{cmd} {next}[/C][/T]'
+      footer: |
+        [NoPrefix]
+        &7点击下方箭头翻页.
+        [T]&7&l&m━━━━━&e&l<<<<&7&l&m━[H]&7点击翻到上一页.[/H][C]{cmd} {previous}[/C][/T] &9子命令 &7第&3 {page} &8/&3 {pages} &7页 [T]&7&l&m━&e&l>>>>&7&l&m━━━━━[H]&7点击翻到下一页.[/H][C]{cmd} {next}[/C][/T]
+  command:
+    upgradeablehoppers:
+      help: '[T]&e{parent} {subcmd} {args} &8- &7列出命令[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      get: '[T]&e{parent} {subcmd} {args} &8 - &7Get hopper[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      give: '[T]&e{parent} {subcmd} {args} &8 - &7Give hopper(s)[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+      list: '[T]&e{parent} {subcmd} &8- &7View your hoppers[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+      admin:
+        main: '[T]&e{parent} {subcmd} {args} &8- &7管理员命令[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+        reload: '[T]&e{parent} {subcmd} &8- &7重载配置文件[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+        import: '[T]&e{parent} {subcmd} {args} &8- &7从第三方插件导入数据[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+        migratedb: '[T]&e{parent} {subcmd} {args} &8- &7合并数据库[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+        about: '[T]&e{parent} {subcmd} &8- &7调试信息[H]&7点击执行.[/H][C]{fullcmd}[/C][/T]'
+        give: '[T]&e{parent} {subcmd} {args} &8- &7给予升级漏斗[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+        listperms: '[T]&e{parent} {subcmd} {args} &8- &7列出可用权限[H]&7点击复制.[/H][SC]{fullcmd}[/SC][/T]'
+
+upgradeablehoppers:
+  message:
+    hopper:
+      created: '#t#{type}{newline}&7成功创建了升级漏斗.'
+      deleted: '#t#{type}{newline}&c成功移除了升级漏斗.'
+      link:
+        click: '&7点击任意容器或漏斗来连接该漏斗.'
+        inventory: '&c不能连接至该方块. &7它必须是一个容器.'
+        type: '&c该种类的容器无效. &8种类: {type}'
+        origin: '&c你不能连接漏斗本身. &7请将它连接至另一个容器.'
+        world: '&c你不能跨世界连接漏斗. &7连接的双方需要在同一个世界.'
+        max-distance: '&c连接距离过大. &7这个升级漏斗的最大连接距离是 &3{distance}&7. 你可以在菜单中升级漏斗的连接范围.'
+        already: '&c该容器已被连接. &7若要浏览已被连接的容器, 请打开菜单.'
+        max: '&c你不能为该升级漏斗创建更多连接了. &7你达到了该升级漏斗可创建的最大连接数&3 {max} &7. &7你可以在菜单中升级最大连接数.'
+        untrusted: '&c你不能将漏斗连接到未受信任区域中的容器.'
+        success: '#t#&9&l漏斗连接{newline}&7已成功创建.'
+      unlink:
+        click: '&7在漏斗或容器上点击来取消连接.'
+        not-linked: '&c该容器尚未连接至升级漏斗. &7无事发生.'
+        success: '#t#&9&l漏斗连接{newline}&7已成功解除.'
+    no-access:
+      upgrade: '&c你不能升级该漏斗. &7该漏斗属于玩家&3 {owner}&7.'
+      open: '&c你不能打开该漏斗的菜单. &7该漏斗属于玩家&3 {owner}&7.'
+      delete: '&c你不能移除该漏斗. &7该漏斗属于玩家&3 {owner}&7.'
+      link: '&c你不能为此漏斗创建连接. &7该漏斗属于玩家&3{owner}&7.'
+      vanilla:
+        craft: '&c你不能合成原版漏斗. &7管理员已将该功能禁用. &7请使用命令 &8/&aHopper get &7来购买升级漏斗. 绕过权限:
+          uhoppers.bypass.vanilla.craft'
+        place: '&c你不能方式原版漏斗. &7管理员已将该功能禁用. &7请使用命令 &8/&aHopper get &7来购买升级漏斗. 绕过权限:
+          uhoppers.bypass.vanilla.place'
+    creation:
+      world: '&c你不能在该世界内放置升级漏斗. &7请联系管理员将世界&3 {world} &7添加至本插件中 config.yml 下的 worlds_list 位置'
+      owner: '&c你不能放置该升级漏斗. &7它属于玩家&3 {owner}&7.'
+      max: '&c你不能创建更多可升级的漏斗了. &7你最大的升级漏斗放置数量为&3
+        {max}&7. &8绕过权限: uhoppers.hoppers.<number>'
+      only-land: |
+        &c你不能在野地中放置漏斗. &7你需要在你自己的土地内放置漏斗.
+         [T]&7认领土地: &3/lands claim &8[CLICK][H]&7点击认领当前位置的土地.[/H][C]{fullcmd}[/C][/T]
+      untrusted: '&c你不能在这里放置漏斗. &7你在该土地中未受信任.'
+      convert-perm: '&c不能将该漏斗转化为本插件升级漏斗. &7你最多可拥有&3 {max}&7 个升级漏斗. &8绕过权限: uhoppers.hoppers.<number>'
+    teleportation:
+      already: '&c你不能发起多个传送请求. 已有正在处理的传送请求. &7请等待一段时间.'
+      started: '&7将在&5 {sec} 秒&7 内传送. 请勿移动.'
+      cmd: '&c传送过程中不能使用命令. &7请在传送完成后再等待&5
+        {sec} 秒 &7使用命令.'
+      progress: '#b#[config]color:purple,style:solid[/config]&7请等待&5 {time} &7秒.'
+      cancelled: '&c待处理的传送请求已取消. &7请不要在传送开始的&5 {sec} &7秒内移动.'
+      plugin: '&c传送请求被第三方插件取消. &7请检查你的插件列表. &7该问题不属于 Lands 插件.'
+      unsafe: |
+        &7传送目的地不安全, 传送请求已取消.
+          [T]&2✔ 强制传送: &8[CLICK][H]&7警告: 传送目的地不安全, 可能对你造成伤害.[/H][C]{cmd}[/C][/T]
+      corrected: '&7原传送目的地不安全. &7已自动将传送地点设置在了一个相对安全的位置.'
+    
+    chat-input:
+      player: '#t#&6输入玩家的新名称[newline]&7输入 cancel 来取消.'
+      rename: '#t#&6为此连接命名[newline]&7输入 cancel 来取消.'
+      name: '#t#&6在聊天栏中输入名称[newline]&7输入 cancel 来取消.'
+  command:
+    general:
+      no-permission: '&c你没有权限这么做. &8你需要权限 {permission}.'
+      cant-afford: '&c你买不起这个. &7你需要&3 {cost} &7枚金币才可购买.'
+      player-offline: '&c找不到该玩家. &7玩家&3 {player} &7不在线.'
+      invalid-number: '&c你在参数&e {argument} &c的位置输入了无效的内容.
+        &7请在此处输入有效内容.'
+      name:
+        number: '&c你不能在该名称中使用数字. 找到的数字:&3 {invalid}'
+        character: '&c你不能在名称中使用非法字符. &7只接受英文字符和数字. &7找到的无效字符:&3 {invalid}'
+        color: '&c你不能在该名称中使用彩色字符. &7若有请尝试移除.'
+        length: '&c名称过长. &7最大长度为 is&3 {max} &7个字符 &8(&7你输入的:
+          {input}&8)&7. &8包括彩色字符.'
+        empty: '&c名称无效. &7你需要输入至少一个字符, 同时不包括彩色字符.'
+      input:
+        confirm: |
+          &7请通过下方按钮确认操作 &8(&e/{input}&8)&7:
+            [T]&2✔ 确认操作 &8[CLICK][H]&7点击确认此操作.[/H][C]{fullcmd}[/C][/T]
+        number: '&c输入内容&4 {input} &c不是整数. &7参数 {pos}: {expected}'
+        player: '&c没有名为&4 {player}&c 的玩家. &7请检查拼写?'
+        offline: '&c没有名为&4 {player} &c 的玩家在线. &7请检查拼写?'
+        world: '&c没有名为&4 {input} &c的世界. &7参数 {pos}: {expected}'
+        world-disabled: '&c该功能在此世界被禁用. &8世界: {input}'
+    get:
+      type: '&c没有叫做 &4 {input} &c种类的漏斗. &7有效种类: {types}'
+      max: '&c你不能再购买&4 {amount} &c个更多的漏斗了. &7你最多只能购买&3
+        {max} &7个漏斗. &8绕过权限: uhoppers.hoppers.<number>'
+      confirm: |
+        &c请确认购买. &7购买该漏斗将需要&c {costs}&7.
+          [T]&2✔ 确认购买 &8[&7CLICK&8][H]&7点击此处确认本次购买.[/H][C]{fullcmd}[/C][/T]
+      dropped: '&7你成功购买了&3 {amount} &7个漏斗&c {cost}&7. &c背包已满, 多余漏斗已掉落至地面.'
+      success: '&7你成功购买了&3 {amount} &7个漏斗, 并花费了&c {cost}&7. 物品已发送至你的背包.'
+    give:
+      success-sender: '&7你成功给予了&3 {items} &7个漏斗至玩家&3 {player}&7.'
+      success-target: '&7你收到了&3 {items} &7个漏斗. 物品已发送至你的背包.'
+      dropped: '&7你收到了&3 {items} &7个漏斗. &c背包空间不足, 已掉落至地面。'
+    list:
+      retrieving: '&7正在检查玩家 {player} 所放置的刷怪笼坐标...'
+
+

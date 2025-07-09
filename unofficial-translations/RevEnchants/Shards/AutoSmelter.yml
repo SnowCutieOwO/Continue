@@ -1,0 +1,20 @@
+Settings:
+  Enabled: true
+  Name: '&c自动熔炼'
+  MaxLevel: 10
+  MaxStack: 10
+  Requirement:
+    Enabled: false
+    Number: 10
+    Placeholder: '%RevEnchants_Tool_Flag_Level%'
+  Description: '&7概率将你挖下的矿物自动烧制'
+  Shard:
+    Item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3700
+      type: LEGACY_PRISMARINE_SHARD
+    Glow: true
+    Name: '&c自动熔炼 + %Level%'
+    Lore:
+    - '&1独特碎片  '
+    - '&7将你的镐子的自动熔炼等级提升 %Level% 级'

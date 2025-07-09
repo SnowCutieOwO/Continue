@@ -1,0 +1,60 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                  插件作者 Ome_R                   ##
+##                                                  ##
+######################################################
+
+title: '&l分类: {0}'
+previous-menu: true
+
+pattern:
+  - '@ @ @ @ @ @ @ @ @'
+  - '@ ! @ @ @ @ @ ~ @'
+  - '@ @ @ @ ^ @ @ @ @'
+  - '@ $ @ @ @ @ @ % @'
+  - '@ @ @ @ @ @ @ @ @'
+
+icon-type: '!'
+icon-rename: '~'
+icon-relore: '$'
+icon-confirm: '%'
+icon-slots: '^'
+
+items:
+  '!':
+    type: DIAMOND
+    name: '&6设置类型'
+    lore:
+      - '&f '
+      - '&f '
+      - '&7&o(( &f&o鼠标单击 &7&o来编辑物品类型. ))'
+  '~':
+    type: ANVIL
+    name: '&6设置名称'
+    lore:
+      - '&f '
+      - '&f '
+      - '&7&o(( &f&o鼠标单击 &7&o来编辑物品类型. ))'
+  '$':
+    type: PAPER
+    name: '&6设置描述'
+    lore:
+      - '&f '
+      - '&f '
+      - '&7&o(( &f&o鼠标单击 &7&o来编辑物品描述. ))'
+  '%':
+    type: EMERALD
+    name: '&6确认修改'
+    lore:
+      - '&f '
+      - '&f '
+      - '&7&o(( &f&o鼠标单击 &7&o来保存上述改动. ))'
+  '^':
+    type: STONE
+
+sounds:
+  '%':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2

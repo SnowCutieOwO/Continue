@@ -1,0 +1,142 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                  插件作者 Ome_R                   ##
+##                                                  ##
+######################################################
+
+title: '&l岛屿银行'
+previous-menu: true
+
+pattern:
+  - '= - @ @ @ @ @ - ='
+  - '- @ ! @ @ @ % @ -'
+  - '@ # @ @ * @ @ ^ @'
+  - '- @ $ @ @ @ & @ -'
+  - '= - @ @ ~ @ @ - ='
+
+logs: '~'
+
+items:
+  '!':
+    type: STAINED_GLASS_PANE
+    data: 5
+    name: '&a存入一半'
+    lore:
+      - '&7将你账户中一半的存款存入金库.'
+    bank-action:
+      deposit: 50.0
+  '#':
+    type: STAINED_GLASS_PANE
+    data: 5
+    name: '&a存入'
+    lore:
+      - '&7将账户中的存款存入金库.'
+    bank-action:
+      deposit: 0.0
+  '$':
+    type: STAINED_GLASS_PANE
+    data: 5
+    name: '&a存入所有'
+    lore:
+      - '&7将你账户中的所有存款存入金库.'
+    bank-action:
+      deposit: 100.0
+  '%':
+    type: STAINED_GLASS_PANE
+    data: 14
+    name: '&a取出一半'
+    lore:
+      - '&7将金库中的一半存款取出.'
+    bank-action:
+      withdraw: 50.0
+  '^':
+    type: STAINED_GLASS_PANE
+    data: 14
+    name: '&a取出'
+    lore:
+      - '&7将金库中的存款取出.'
+    bank-action:
+      withdraw: 0.0
+  '&':
+    type: STAINED_GLASS_PANE
+    data: 14
+    name: '&a取出所有'
+    lore:
+      - '&7将金库中的所有存款取出.'
+    bank-action:
+      withdraw: 100.0
+  '*':
+    type: PAPER
+    name: '&6余额'
+    lore:
+      - '&7金库存款剩余 $%superior_island_bank_format%'
+  '=':
+    type: EMERALD_BLOCK
+    name: '&f '
+  '-':
+    type: EMERALD
+    name: '&f '
+  '~':
+    type: EXP_BOTTLE
+    name: '&6交易记录'
+
+sounds:
+  '!':
+    success-sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+    fail-sound:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2
+  '#':
+    success-sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+    fail-sound:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2
+  '$':
+    success-sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+    fail-sound:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2
+  '%':
+    success-sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+    fail-sound:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2
+  '^':
+    success-sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+    fail-sound:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2
+  '&':
+    success-sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+    fail-sound:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2
+  '~':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2

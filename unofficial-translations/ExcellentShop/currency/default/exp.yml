@@ -1,0 +1,10 @@
+Enabled: true
+Name: Exp
+Format: '%price% %currency_name%'
+Icon:
+  Material: EXPERIENCE_BOTTLE
+  Amount: 1
+  Durability: 0
+  Name: '&e%currency_name%'
+  Item_Flags: []
+  Unbreakable: false

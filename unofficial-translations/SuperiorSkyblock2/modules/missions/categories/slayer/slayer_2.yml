@@ -1,0 +1,117 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                  插件作者 Ome_R                   ##
+##                                                  ##
+######################################################
+
+# 使用的任务文件名称
+mission-file: KillsMissions
+
+# 任务在达到条件时是否自动并领取奖励.
+auto-reward: true
+
+# 是否在完成任务后重置玩家的方块计数?
+reset-after-finish: true
+
+# 完成任务时给予的奖励.
+rewards:
+  commands:
+    - 'eco give %player% 15000'
+    - 'is admin unlockworld %player% nether true'
+    - 'is admin msg %player% &e&l屠夫 | &7成功完成了任务 屠夫 II!'
+    - 'is admin msg %player% &e&l屠夫 | &7探索下界, 带些特产回家.'
+    - 'is admin msg %player% &e&l屠夫 | &7&ois admin msg %player% &e&l屠夫 | &7&o有关下一个任务的更多信息, 请输入命令 /is missions 查看'
+
+# 完成任务所需要的前置任务.
+required-missions:
+  - 'slayer_1'
+
+# 完成任务所需要击杀的实体及其数量.
+required-entities:
+  '1':
+    types:
+      - 'SKELETON'
+    amount: 32
+  '2':
+    types:
+      - 'ZOMBIE'
+    amount: 32
+  '3':
+    types:
+      - 'SPIDER'
+    amount: 32
+  '4':
+    types:
+      - 'CREEPER'
+    amount: 24
+
+# 菜单中使用的图标.
+icons:
+  not-completed:
+    type: PAPER
+    name: '&a屠夫 II'
+    lore:
+      - '&7是时候建个刷怪塔了.'
+      - '&7击杀 120 个敌对生物.'
+      - ''
+      - '&6任务需求:'
+      - '&8 - &7x32 骷髅'
+      - '&8 - &7x32 僵尸'
+      - '&8 - &7x32 蜘蛛'
+      - '&8 - &7x24 苦力怕'
+      - ''
+      - '&6任务奖励:'
+      - '&8 - &7$15,000'
+      - '&8 - &7解锁下界'
+      - ''
+      - '&6骷髅 Killed: &7{value_skeleton}/32'
+      - '&6僵尸 Killed: &7{value_zombie}/32'
+      - '&6蜘蛛 Killed: &7{value_spider}/32'
+      - '&6苦力怕 Killed: &7{value_creeper}/24'
+      - '&6总进度: &7{0}%'
+      - '&c&l ✘ &7尚未完成'
+  can-complete:
+    type: PAPER
+    name: '&a屠夫 II'
+    lore:
+      - '&7是时候建个刷怪塔了.'
+      - '&7击杀 120 个敌对生物.'
+      - ''
+      - '&6任务需求:'
+      - '&8 - &7x32 骷髅'
+      - '&8 - &7x32 僵尸'
+      - '&8 - &7x32 蜘蛛'
+      - '&8 - &7x24 苦力怕'
+      - ''
+      - '&6任务奖励:'
+      - '&8 - &7$15,000'
+      - '&8 - &7解锁下界'
+      - ''
+      - '&6骷髅 Killed: &732/32'
+      - '&6僵尸 Killed: &732/32'
+      - '&6蜘蛛 Killed: &732/32'
+      - '&6苦力怕 Killed: &724/24'
+      - '&6总进度: &7100%'
+      - '&a&l ✔ &7点击领取任务奖励.'
+    enchants:
+      DURABILITY: 1
+    flags:
+      - HIDE_ENCHANTS
+  completed:
+    type: MAP
+    name: '&a屠夫 II'
+    lore:
+      - '&7是时候建个刷怪塔了.'
+      - '&7击杀 120 个敌对生物.'
+      - ''
+      - '&6任务奖励:'
+      - '&8 - &7$15,000'
+      - '&8 - &7解锁下界'
+      - ''
+      - '&6骷髅 Killed: &732/32'
+      - '&6僵尸 Killed: &732/32'
+      - '&6蜘蛛 Killed: &732/32'
+      - '&6苦力怕 Killed: &724/24'
+      - '&6总进度: &7100%'
+      - '&a&l ✔ &7已经领取.'

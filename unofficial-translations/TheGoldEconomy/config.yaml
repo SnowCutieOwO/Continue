@@ -1,0 +1,13 @@
+# 是否强制删除诸如猪灵身上的金锭掉落物? (默认值: true)
+removeGoldDrop: true
+# 是否检查插件更新? (默认值: true)
+updateCheck: true
+# 可用的语言:
+# 德语: de_DE
+# 英语: en_US
+# 西班牙语: es_ES
+language: "en_US"
+# 是否限制银行命令只能在银行区域内使用 (需安装插件 Towny)
+restrictToBankPlot: false
+# 插件消息的前缀
+prefix: "TheGoldEconomy"

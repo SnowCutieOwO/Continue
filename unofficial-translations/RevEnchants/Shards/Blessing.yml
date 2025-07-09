@@ -1,0 +1,21 @@
+Settings:
+  Enabled: true
+  Name: '&c庇护'
+  MaxLevel: 10
+  MaxStack: 100
+  Requirement:
+    Enabled: true
+    Number: 10
+    Placeholder: '%RevEnchants_Tool_Flag_Level%'
+  Description: '&7提升庇护等级'
+  Shard:
+    Item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3700
+      type: LEGACY_PRISMARINE_SHARD
+    Glow: true
+    Name: '&c庇护 + %Level%'
+    Lore:
+    - '&1独特碎片 需要镐子等级达到 10'
+    - '&7将你的镐子庇护等级提升 %Level% 级'
+    - '&7最高可增加 100 级'

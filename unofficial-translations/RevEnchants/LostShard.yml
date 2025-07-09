@@ -1,0 +1,78 @@
+Settings:
+  Enabled: true
+LostShard:
+  '1':
+    Name: '&7&l&n低阶遗失碎片'
+    Lore:
+    - ' '
+    - '&6提示: &b右键拂去其上尘埃'
+    - '&b以此鉴别它的附魔.'
+    Item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3700
+      type: LEGACY_PRISMARINE_SHARD
+    Glow: true
+    Shards:
+    - Charity-1/5
+    - Efficiency-1/5
+    - EnergyCollector-1/5
+    - Explosive-1/5
+    - Fly-1/5
+    - Fortune-1/5
+    - Haste-1/5
+    - JackHammer-1/5
+    - JumpBoost-1/5
+    - KeysDiscover-1/5
+    - NightVision-1/5
+    - SpareChange-1/5
+    - Speed-1/5
+    - TokenDiscover-1/5
+    - AutoSell-1/5
+    - Luck-1/5
+    - SellMultiplier-1/5
+    - CoinDiscover-1/5
+    - Experience-1/5
+    - CratesFinder-1/5
+    - Transfuse-1/5
+    - Momentum-1/5
+    - BeaconDiscover-1/5
+    - ItemsCollector-1/5
+    - Laser-1/5
+    - ThorHammer-1/5
+    - MeteorShower-1/5
+  '2':
+    Name: '&7&l&n传奇遗失碎片'
+    Lore:
+    - ' '
+    - '&6提示: &b右键拂去其上尘埃'
+    - '&b以此鉴别它的附魔.'
+    Item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3700
+      type: LEGACY_PRISMARINE_SHARD
+    Glow: true
+    Shards:
+    - Charity-6/10
+    - Efficiency-6/10
+    - EnergyCollector-6/10
+    - Explosive-6/10
+    - Fly-6/5
+    - Fortune-6/10
+    - Haste-6/10
+    - JackHammer-6/10
+    - JumpBoost-6/10
+    - KeysDiscover-6/10
+    - NightVision-6/10
+    - SpareChange-6/10
+    - Speed-6/10
+    - TokenDiscover-6/10
+    - AutoSell-6/10
+    - Luck-6/10
+    - SellMultiplier-6/10
+    - CoinDiscover-6/10
+    - Experience-6/10
+    - CratesFinder-6/10
+    - Transfuse-6/10
+    - Momentum-6/10
+    - BeaconDiscover-6/10
+    - ItemsCollector-6/10

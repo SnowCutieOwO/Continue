@@ -1,0 +1,20 @@
+Settings:
+  Enabled: true
+  Name: '&c爆破'
+  MaxLevel: 2
+  MaxStack: 6
+  Requirement:
+    Enabled: false
+    Number: 10
+    Placeholder: '%RevEnchants_Tool_Flag_Level%'
+  Description: '&7提升镐子的爆破等级'
+  Shard:
+    Item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3700
+      type: LEGACY_PRISMARINE_SHARD
+    Glow: true
+    Name: '&c爆破 + %Level%'
+    Lore:
+    - '&1独特碎片  '
+    - '&7将镐子的爆破等级提升 %Level% 级'

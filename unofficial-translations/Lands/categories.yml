@@ -1,0 +1,29 @@
+# 在这个文件中你可以配置分类。土地分类可以通过土地选项菜单进行设置。
+# 这会帮助玩家在 /lands list 菜单中找到示例商店。
+#
+# 你可以添加你自己的分类并删除默认配置所给的分类。
+# 注意：如果要让该文件产生的变动生效，你需要重启服务器。
+
+land:
+  enabled: true
+  categories:
+    members:
+      enabled: true
+      name: '&e寻找成员 ☺'
+      description:
+        - '&7该土地正在寻找新成员.'
+    shop:
+      enabled: true
+      name: '&c商店 $'
+      description:
+        - '&7该土地正在寻找商店.'
+    pvp:
+      enabled: true
+      name: '&4竞技场 ⚔'
+      description:
+        - '&7该土地有一个供玩家切磋的竞技场.'
+    mobfarm:
+      enabled: true
+      name: '&9刷怪场'
+      description:
+        - '&7该土地有一个刷怪场.'

@@ -1,0 +1,44 @@
+acf-minecraft:
+  invalid_world: "错误: 指定世界不存在."
+  you_must_be_holding_item: "错误: 主手中必须持有物品."
+  player_is_vanished_confirm: |
+    警告: <c2>{vanished}</c2> 处于隐身状态. 不要让他们被发现!'
+    '若要确认你的操作, 在名称后加上 <c2>:confirm</c2>.'
+    '例如: <c2>{vanished}:confirm</c2>'
+
+  username_too_short: "错误: 用户名称过短, 至少需要三个字符."
+  is_not_a_valid_name: "错误: <c2>{name}</c2> 不是一个有效的用户名称."
+  multiple_players_match: "错误: 多个玩家符合搜索 <c2>{search}</c2> <c3>({all})</c3>, 请指定得更详细一些."
+  no_player_found_server: "此服务器内找不到符合搜索 <c2>{search}</c2> 的玩家."
+  no_player_found_offline: "找不到符合搜索 <c2>{search}</c2> 的玩家."
+  no_player_found: "找不到符合搜索 <c2>{search}</c2> 的玩家."
+  location_please_specify_world: "错误: 请指定世界名称. 示例: <c2>world:x,y,z</c2>."
+  location_please_specify_xyz: "错误: 请指定坐标 x, y 和 z. 示例: <c2>world:x,y,z</c2>."
+  location_console_not_relative: "错误: 控制台不可使用相对坐标."
+
+acf-core:
+  permission_denied: "抱歉, 但你没有权限使用该命令."
+  permission_denied_parameter: "抱歉, 但你没有权限使用该命令."
+  error_generic_logged: "出现未知错误. 该问题已被记录. 为带来的不便感到抱歉."
+  unknown_command: "未知命令, 请输入 <c2>/help</c2>"
+  invalid_syntax: "命令用法: <c2>{command}</c2> <c3>{syntax}</c3>"
+  error_prefix: "错误: {message}"
+  error_performing_command: "抱歉, 但执行该命令时出现错误."
+  info_message: "{message}"
+  please_specify_one_of: "错误: 请指定一个 (<c2>{valid}</c2>)."
+  must_be_a_number: "错误: {num} 必须为数字."
+  must_be_min_length: "错误: 至少需要 {min} 个字符长."
+  must_be_max_length: "错误: 至多需要 {max} 个字符长."
+  please_specify_at_most: "错误: 请指定不大于 {max} 的值."
+  please_specify_at_least: "错误: 请指定不小于 {min} 的值."
+  not_allowed_on_console: "错误: 控制台不能执行该命令."
+  could_not_find_player: "错误: 找不到符合该名称的玩家: <c2>{search}</c2>"
+  no_command_matched_search: "找不到命令 <c2>{search}</c2>."
+  help_page_information: "- 显示第 <c2>{page}</c2> 页,共 <c2>{totalpages}</c2> 页 (<c3>{results}</c3> 个结果)."
+  help_no_results: "错误: 没有更多结果."
+  help_header: "<c3>===</c3><c1>显示命令 </c1><c2>{commandprefix}{command}</c2><c1>的帮助</c1><c3> ===</c3>"
+  help_format: "<c1>{command}</c1> <c2>{parameters}</c2> <c3>{separator} {description}</c3>"
+  help_detailed_header: "<c3>=== </c3><c1>显示命令 </c1><c2>{commandprefix}{command}</c2><c1>的详细帮助</c1><c3> ===</c3>"
+  help_detailed_command_format: "<c1>{command}</c1> <c2>{parameters}</c2> <c3>{separator} {description}</c3>"
+  help_detailed_parameter_format: "<c2>{syntaxorname}</c2>: <c3>{description}</c3>"
+  help_search_header: "<c3>=== </c3><c1>显示命令 </c1><c2>{commandprefix}{command} {search}</c2><c1>的搜索结果</c1><c3> ===</c3>"

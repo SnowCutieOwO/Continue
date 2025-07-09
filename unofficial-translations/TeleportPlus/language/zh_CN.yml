@@ -1,0 +1,338 @@
+# -----=====[ 命令消息 ]=====----- #
+Command:
+  SetWarp Success:
+  - '{PREFIX} 已设置地标 &a{WARP}&r!'
+  Home Created:
+  - '{PREFIX} 已设置家 {HOME}!'
+  Home Not Exists:
+  - '{PREFIX} 家传送点不存在!'
+  Home Deleted:
+  - '{PREFIX} 已删除家 {HOME}'
+  Home Full:
+  - '{PREFIX} 你不能设置更多家了!'
+  Warp Created:
+  - '{PREFIX} 已创建地标 {WARP}!'
+  Warp Exists:
+  - '{PREFIX} 已存在同名地标!'
+  Warp Deleted:
+  - '{PREFIX} 已删除地标 {WARP}'
+  Warp Not Exists:
+  - '{PREFIX} 地标不存在!'
+  RTP Not Exists:
+  - '{PREFIX} 随机传送不存在!'
+  RTP Exists:
+  - '{PREFIX} 随机传送已存在!'
+  Cant Find Location:
+  - '{PREFIX} 找不到指定位置!'
+  Config Reloaded:
+  - '{PREFIX} &a配置已重载'
+  TP To Self:
+  - '{PREFIX} 你不能对自己发出传送请求!'
+  Cant Teleport:
+  - '{PREFIX} 你不能传送至该玩家'
+  Spawn Created:
+  - '{PREFIX} 已创建出生点 {SPAWN}!'
+  Cant Find Spawn:
+  - '{PREFIX} 找不到可用出生点!'
+  Spawn Deleted:
+  - '{PREFIX} 已删除出生点 {SPAWN}'
+  World Not Exists:
+  - '{PREFIX} 找不到名为 {WORLD} 的世界!'
+  Converted Essentials Home:
+  - '{PREFIX} 已转化 {AMOUNT} 份家传送点数据'
+  Converted Essentials Warp:
+  - '{PREFIX} 已转化 {AMOUNT} 份地标数据'
+
+# -----=====[ 参数消息 ]=====----- #
+Argument:
+  Invalid:
+  - '{PREFIX} 所给参数无效!'
+  Invalid_Value:
+  - '{PREFIX} 参数值无效!'
+  Setwarp:
+  - '&a/setwarp &r<名称>'
+  Warp:
+  - '&a/warp &r[名称]'
+  Teleport:
+  - '&a/teleport help'
+  Tp:
+  - '&a/tp &r<玩家名称> [玩家名称/地标名称]'
+  Tpa:
+  - '&a/tpa &r<玩家名称>'
+  Tpahere:
+  - '&a/tpahere &r<玩家名称>'
+  Tpaccept:
+  - '&a/tpaccept &r[<玩家名称>]'
+  Tpcoor:
+  - '&a/tpcoor &r[<玩家名称>] <x> <y> <z>'
+  Tpdeny:
+  - '&a/tpdeny &r[<玩家名称>]'
+  Home:
+  - '&a/home &r<名称>'
+  Sethome:
+  - '&a/sethome &r<名称>'
+  Delhome:
+  - '&a/delhome &r<名称>'
+  World:
+  - '&a/world &r[名称]'
+  Back:
+  - '&a/back'
+
+# -----=====[ 菜单物品文本 ]=====----- #
+Menu:
+  Home:
+    Display:
+      Material: SIGN
+      Durability: 0
+      Amount: 1
+      Display Name: '&a&l{HOME}'
+      Lore:
+      - '&b[&a左键点击&a] &r传送至 {HOME}'
+      - '&b[&c右键点击&b] &r删除 {HOME}'
+      - '&b➤&l描述'
+      - '&b➣ [&a位置&b] &r{X},{Y},{Z}'
+  Warp:
+    Display Name:
+      Material: EMERALD
+      Durability: 0
+      Amount: 1
+      Display Name: '&a显示名称&r: {WARP}'
+      Lore:
+      - '&b[&a点击&a&b] &r编辑显示名称'
+    Permission:
+      Material: SIGN
+      Durability: 0
+      Amount: 1
+      Display Name: '&a所需权限&r: {PERMISSION}'
+      Lore:
+      - '&b[&a点击&b] &r编辑权限'
+    Delay:
+      Material: WATCH
+      Durability: 0
+      Amount: 1
+      Display Name: '&b延迟&r: {DELAY}'
+      Lore:
+      - '&b[&a点击&b] &r编辑延迟'
+    Blacklisted:
+      Material: WOOL
+      Durability: 15
+      Amount: 1
+      Display Name: '&8黑名单&r: &a{BLACKLIST}'
+      Lore:
+      - '&b[&a点击&b] &r加入或移出黑名单'
+    Whitelisted:
+      Material: WOOL
+      Durability: 0
+      Amount: 1
+      Display Name: '&8黑名单&r: &c{BLACKLIST}'
+      Lore:
+      - '&b[&a点击&b] &r加入或移出黑名单'
+    Cost:
+      Material: PAPER
+      Durability: 0
+      Amount: 1
+      Display Name: '&b价格&r: {COST}'
+      Lore:
+      - '&b[&a点击&b] &r编辑费用'
+    Radius:
+      Material: COMPASS
+      Durability: 0
+      Amount: 1
+      Display Name: '&c范围&r: {RADIUS}'
+      Lore:
+      - '&b[&a点击&b] &r编辑范围'
+    Location:
+      Material: COMPASS
+      Durability: 0
+      Amount: 1
+      Display Name: '&6位置&r: {X},{Y},{Z}'
+      Lore:
+      - '&b[&a点击&b] &r将地标设置在当前位置'
+    Delete:
+      Material: REDSTONE_BLOCK
+      Durability: 0
+      Amount: 1
+      Display Name: '&c删除'
+      Lore:
+      - '&b[&c点击&b] &r删除 {WARP}'
+  RTP:
+    Create:
+      Material: SIGN
+      Durability: 0
+      Amount: 1
+      Display Name: '&b创建新的随机传送点'
+      Lore:
+      - '&b[&a点击&b] &r创建新的随机传送点'
+    Display Name:
+      Material: EMERALD
+      Durability: 0
+      Amount: 1
+      Display Name: '&a显示名称&r: {RTP}'
+      Lore:
+      - '&b[&a点击&b] &r编辑显示名称'
+    Permission:
+      Material: SIGN
+      Durability: 0
+      Amount: 1
+      Display Name: '&a权限&r: {PERMISSION}'
+      Lore:
+      - '&b[&a点击&b] &r编辑权限'
+    Delay:
+      Material: WATCH
+      Durability: 0
+      Amount: 1
+      Display Name: '&b延迟&r: {DELAY}'
+      Lore:
+      - '&b[&a点击&b] &r编辑延迟'
+    Cost:
+      Material: PAPER
+      Durability: 0
+      Amount: 1
+      Display Name: '&b价格&r: {COST}'
+      Lore:
+      - '&b[&a点击&b] &r编辑费用'
+    Radius:
+      Material: COMPASS
+      Durability: 0
+      Amount: 1
+      Display Name: '&c半径&r: {RADIUS}'
+      Lore:
+      - '&b[&a点击&b] &r编辑半径'
+    Center Location:
+      Material: FENCE
+      Durability: 0
+      Amount: 1
+      Display Name: '&a中心位置&r: {CENTER_LOCATION}'
+      Lore:
+      - '&b[&a左键点击&b] &r将中心点移动至当前位置'
+      - '&b[&a右键点击&b] &r根据玩家位置设置中心点'
+    Biome List:
+      Material: GRASS
+      Durability: 0
+      Amount: 1
+      Display Name: '&a群系列表'
+      Lore:
+      - '&b[&a点击&b] &r设置群系'
+    Biome:
+    - '&b[&a点击&b] &r白名单群系'
+    Delete:
+      Material: REDSTONE_BLOCK
+      Durability: 0
+      Amount: 1
+      Display Name: '&c删除'
+      Lore:
+      - '&b[&c点击&b] &r删除 {RTP}'
+  Back Item:
+    Material: ARROW
+    Amount: 1
+    Durability: 0
+    Display Name: '&a返回'
+    Lore:
+    - '&b[&a点击&b] &r返回至上一个菜单'
+  Close Item:
+    Material: WOOL
+    Amount: 1
+    Durability: 14
+    Display Name: '&c关闭'
+    Lore:
+    - '&b[&a点击&b] &r关闭当前菜单'
+  Cancel Item:
+    Material: WOOL
+    Amount: 1
+    Durability: 14
+    Display Name: '&c取消'
+    Lore:
+    - '&b[&a点击&b] &r取消操作'
+  Confirm Item:
+    Material: WOOL
+    Amount: 1
+    Durability: 5
+    Display Name: '&a确认'
+    Lore:
+    - '&b[&a点击&b] &r确认此操作'
+  DeselectAll Item:
+    Material: WOOL
+    Amount: 1
+    Durability: 14
+    Display Name: '&c取消全选'
+    Lore:
+    - '&b[&a点击&b] &r取消全选'
+  SelectAll Item:
+    Material: WOOL
+    Amount: 1
+    Durability: 5
+    Display Name: '&a全选'
+    Lore:
+    - '&b[&a点击&b] &r全选'
+  Empty Slot:
+    Material: STAINED_GLASS_PANE
+    Amount: 1
+    Durability: 0
+    Display Name: '&aTeleport+'
+
+# -----=====[ 底部消息 ]=====----- #
+Footer:
+  Warp:
+  - '&b➣[&a点击&b] &rGo {WARP} 位置'
+  - '&b➤&l描述'
+  - '&b➣ [&a位置&b] &r{X},{Y},{Z}'
+  - '&b➢ [&a延迟&b] &r{DELAY}'
+  - '&b➢ [&a附近玩家&b] &r{NEARBY}'
+  RTP:
+  - '&b➣[&a点击&b] &r使用 {RTP} 随机传送点'
+  - '&b➤&l描述'
+  - '&b➢ [&a延迟&b] &r{DELAY}'
+  - '&b➢ [&a半径&b] &r{RADIUS}'
+  - '&b➢ [&a中心点&b] &r{CENTER_LOCATION}'
+
+# -----=====[ 传送消息 ]=====----- #
+Teleport:
+  Cancelled: '&4传送已取消'
+  Teleporting: '&a将在 &c{SECOND} &a秒内传送...'
+  Success: '&a传送成功'
+
+# -----=====[ 控制台消息 ]=====----- #
+Console:
+  Not Player:
+  - '{PREFIX} 只有玩家才可以使用该命令!'
+
+# -----=====[ 玩家消息 ]=====----- #
+Player:
+  No Permission:
+  - '{PREFIX} 你没有权限 &a{PERMISSION}&r!'
+  No Money:
+  - '{PREFIX} 你没有足够的钱!'
+  Not Exists:
+  - '{PREFIX} 名为 &a{TARGET} &r的玩家不存在!'
+  Edit Mode:
+  - '{PREFIX} 类型已设置为 {TYPE}!'
+  Edit Success:
+  - '{PREFIX} {TYPE} 已设置为 {MESSAGE}'
+  Is Teleporting:
+  - '{PREFIX} 你仍然处于传送模式!'
+  Teleported:
+  - '{PREFIX} 已将你传送至 {DESTINATION}'
+  Lock TP:
+  - '{PREFIX} 传送锁定已 {TOGGLE}'
+  Send Request:
+  - '{PREFIX} 已将传送请求发送至 {TARGET}'
+  Send Double Request:
+  - '{PREFIX} 你不能发出多个传送请求!'
+  Receive Tpa Request:
+  - '&a{SENDER} &r想要传送到你这里!'
+  - '&2接受 &r-> {ACCEPT}  {DECLINE} &r<- &拒绝'
+  Receive Tpahere Request:
+  - '&a{SENDER} &r想要你传送到他的位置!'
+  - '&2接受 &r-> {ACCEPT}  {DECLINE} &r<- &4拒绝'
+  Request Expired:
+  - '{PREFIX} 传送请求已超时'
+  Accept Request:
+  - '{PREFIX} 你接受了传送请求'
+  Request Accepted:
+  - '{PREFIX} {TARGET} 接受了你的传送请求!'
+  Decline Request:
+  - '{PREFIX} 你拒绝了传送请求'
+  Request Declined:
+  - '{PREFIX} {TARGET} 拒绝了你的传送请求!'
+  No Request:
+  - '{PREFIX} 没有待处理的传送请求!'

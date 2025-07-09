@@ -1,0 +1,278 @@
+# 主设置
+prefix: "&7[&6ItemFilter&7] "
+language: "EN"
+
+debug: false
+metrics: true
+
+
+
+
+# 忽略带有自定义名称、描述、附魔或属性的物品
+ignore_custom_items: true
+
+itemsGUI:
+  navigation:
+    backButton:
+      material: OAK_DOOR
+      slot: 0 # 槽位必须处在 (0-8) 的位置
+      name: "&cBack"
+      lore:
+        - "&7点击返回至主菜单"
+    next_page:
+      material: LIME_DYE
+      slot: 5 # 槽位必须处在 (0-8) 的位置
+      name: "&下一页"
+      lore:
+        - "&7点击翻到下一页"
+        - ""
+    previous_page:
+      material: PINK_DYE
+      slot: 3 # 槽位必须处在 (0-8) 的位置
+      name: "&c上一页"
+      lore:
+        - "&7点击返回上一页"
+        - ""
+    seperators:
+      material: BLACK_STAINED_GLASS_PANE
+      name: " "
+      lore: []
+  # 被选中成为被过滤物品时的图标样式
+  formating:
+    # will - 在过滤器被启用时仍然会被拾起的物品 (默认)
+    will:
+      prefix: '&a'
+      lore:
+        - '&a&l将会 &7在过滤器'
+        - '&n被启用的时候&7拾起.'
+    # willNot - 在过滤器被启用时不会被拾起的物品
+    willNot:
+      prefix: '&c'
+      lore:
+        - '&c&l不会 &7在过滤器'
+        - '&n被启用的时候&7拾起.'
+categoriesGUI:
+  rows: 1 # 分类界面的大小 (1-6)
+  title: "&#666666分类"
+  spacers:
+    enabled: true
+    autofill: true
+    slots: []
+    name: ' '
+    lore: []
+    material: BLACK_STAINED_GLASS_PANE
+  categories:
+    Mining:
+      enabled: true
+      size: 6 # 行数大小 (1-6) (默认为 6)
+      material: DIAMOND_PICKAXE
+      name: "&6矿物"
+      slot: 2
+      title: 矿物过滤
+      items:
+        - COAL_ORE
+        - IRON_ORE
+        - GOLD_ORE
+        - REDSTONE_ORE
+        - LAPIS_ORE
+        - DIAMOND_ORE
+        - EMERALD_ORE
+        - GRAVEL
+        - STONE
+        - COAL
+        - IRON_INGOT
+        - GOLD_INGOT
+        - REDSTONE
+        - LAPIS_LAZULI
+        - DIAMOND
+        - EMERALD
+        - FLINT
+        - COBBLESTONE
+        - COAL_BLOCK
+        - IRON_BLOCK
+        - GOLD_BLOCK
+        - REDSTONE_BLOCK
+        - LAPIS_BLOCK
+        - DIAMOND_BLOCK
+        - EMERALD_BLOCK
+        - OBSIDIAN
+        - DIRT
+        - GRANITE
+        - ANDESITE
+        - DIORITE
+        - SAND
+        - SANDSTONE
+    PvP:
+      enabled: true
+      material: DIAMOND_CHESTPLATE
+      name: "&6战斗"
+      slot: 3
+      title: 战斗物品过滤
+      items:
+        - IRON_HELMET
+        - IRON_CHESTPLATE
+        - IRON_LEGGINGS
+        - IRON_BOOTS
+        - IRON_SWORD
+        - IRON_SHOVEL
+        - IRON_PICKAXE
+        - IRON_AXE
+        - IRON_HOE
+        - GOLDEN_HELMET
+        - GOLDEN_CHESTPLATE
+        - GOLDEN_LEGGINGS
+        - GOLDEN_BOOTS
+        - GOLDEN_SWORD
+        - GOLDEN_SHOVEL
+        - GOLDEN_PICKAXE
+        - GOLDEN_AXE
+        - GOLDEN_HOE
+        - DIAMOND_HELMET
+        - DIAMOND_CHESTPLATE
+        - DIAMOND_LEGGINGS
+        - DIAMOND_BOOTS
+        - DIAMOND_SWORD
+        - DIAMOND_SHOVEL
+        - DIAMOND_PICKAXE
+        - DIAMOND_AXE
+        - DIAMOND_HOE
+        - LEATHER_HELMET
+        - LEATHER_CHESTPLATE
+        - LEATHER_LEGGINGS
+        - LEATHER_BOOTS
+        - WOODEN_SWORD
+        - WOODEN_SHOVEL
+        - WOODEN_PICKAXE
+        - WOODEN_AXE
+        - WOODEN_HOE
+        - TRIDENT
+        - BOW
+        - CROSSBOW
+        - ARROW
+        - SHIELD
+        - ENCHANTED_GOLDEN_APPLE
+        - GOLDEN_APPLE
+        - COOKED_BEEF
+        - MUSHROOM_STEW
+    Herbalism:
+      enabled: true
+      material: DIAMOND_HOE
+      name: "&6炼药"
+      slot: 4
+      title: 炼药物品过滤
+      items:
+        - CARROT
+        - POTATO
+        - WHEAT_SEEDS
+        - PUMPKIN_SEEDS
+        - MELON_SEEDS
+        - BEETROOT_SEEDS
+        - RED_MUSHROOM
+        - BROWN_MUSHROOM
+        - BAMBOO
+        - SWEET_BERRIES
+        - POISONOUS_POTATO
+        - WHEAT
+        - PUMPKIN
+        - MELON_SLICE
+        - BEETROOT
+        - CACTUS
+        - VINE
+        - GRASS
+        - OAK_SAPLING
+        - SPRUCE_SAPLING
+        - HAY_BLOCK
+        - BIRCH_SAPLING
+        - JUNGLE_SAPLING
+        - OAK_SAPLING
+        - ACACIA_SAPLING
+        - DARK_OAK_SAPLING
+        - DANDELION
+        - POPPY
+        - BLUE_ORCHID
+        - ALLIUM
+        - AZURE_BLUET
+        - RED_TULIP
+        - ORANGE_TULIP
+        - WHITE_TULIP
+        - PINK_TULIP
+        - OXEYE_DAISY
+        - CORNFLOWER
+        - LILY_OF_THE_VALLEY
+        - SUNFLOWER
+        - LILAC
+        - ROSE_BUSH
+        - PEONY
+        - TALL_GRASS
+        - WITHER_ROSE
+        - LILY_PAD
+    Diving:
+      enabled: true
+      material: HEART_OF_THE_SEA
+      name: "&6海洋"
+      slot: 5
+      title: 海洋物品过滤
+      items:
+        - SEAGRASS
+        - SEA_PICKLE
+        - TUBE_CORAL
+        - TUBE_CORAL
+        - BRAIN_CORAL
+        - BUBBLE_CORAL
+        - FIRE_CORAL
+        - HORN_CORAL
+        - TUBE_CORAL_FAN
+        - TUBE_CORAL_FAN
+        - BRAIN_CORAL_FAN
+        - BUBBLE_CORAL_FAN
+        - FIRE_CORAL_FAN
+        - HORN_CORAL_FAN
+        - DEAD_BRAIN_CORAL
+        - DEAD_BUBBLE_CORAL
+        - DEAD_FIRE_CORAL
+        - DEAD_HORN_CORAL
+        - DEAD_TUBE_CORAL
+        - DEAD_TUBE_CORAL_FAN
+        - DEAD_TUBE_CORAL_FAN
+        - DEAD_BRAIN_CORAL_FAN
+        - DEAD_BUBBLE_CORAL_FAN
+        - DEAD_FIRE_CORAL_FAN
+        - DEAD_HORN_CORAL_FAN
+    Drops:
+      enabled: true
+      material: BONE
+      name: "&6掉落物"
+      slot: 6
+      title: 掉落物品过滤
+      items:
+        - BONE
+        - ARROW
+        - STRING
+        - GUNPOWDER
+        - ROTTEN_FLESH
+        - ENDER_PEARL
+        - BLAZE_ROD
+        - GHAST_TEAR
+        - GOLD_NUGGET
+        - SPIDER_EYE
+        - MAGMA_CREAM
+        - PRISMARINE_SHARD
+        - SLIME_BALL
+        - LEATHER
+        - BAMBOO
+        - FEATHER
+        - MUTTON
+        - RABBIT
+        - CHICKEN
+        - PORKCHOP
+        - SALMON
+        - BEEF
+        - COD
+        - PUFFERFISH
+        - INK_SAC
+        - TROPICAL_FISH
+        - IRON_INGOT
+        - POPPY
+        - SNOWBALL
+        - PRISMARINE_CRYSTALS
+        - EGG

@@ -1,0 +1,59 @@
+# ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+# ░██╗░░░░░░█████╗░░██████╗░░░███████╗██╗██╗░░██╗███████╗██████╗░░
+# ░██║░░░░░██╔══██╗██╔════╝░░░██╔════╝██║╚██╗██╔╝██╔════╝██╔══██╗░
+# ░██║░░░░░███████║██║░░██╗░░░█████╗░░██║░╚███╔╝░█████╗░░██████╔╝░
+# ░██║░░░░░██╔══██║██║░░╚██╗░░██╔══╝░░██║░██╔██╗░██╔══╝░░██╔══██╗░
+# ░███████╗██║░░██║╚██████╔╝░░██║░░░░░██║██╔╝╚██╗███████╗██║░░██║░
+# ░╚══════╝╚═╝░░╚═╝░╚═════╝░░░╚═╝░░░░░╚═╝╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝░
+# ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+# -----------------> 教程 <-----------------#
+#
+# HEX 与渐变色的用法:
+# - https://docs.advntr.dev/minimessage/format.html
+#
+# (即将推出) PlaceholderAPI 用法:
+# - 格式: <papi:[papi_placeholder]>
+# - 示例: <papi:luckperms_prefix>
+#
+# -----------------> TUTORIALS <-----------------#
+
+# 即将允许翻译所有消息
+messages:
+  Main:
+    no_access: '<gray>缺少该模块的权限: <yellow><permission>'
+    disabled_module: <gray>模块 <yellow><module> <gray>已被禁用, 需请求管理员将其开启!
+    player_only: <gray>命令只能由玩家执行!
+  
+  RedstoneLimiter:
+    alert: <gray>阻止了 <gradient:#c48d00:#fffb00><location></gradient><gray> 区块内的 <yellow><ticks> <gray>个红石刻!
+    cooldown: <gray>你需要等待 <gradient:#c48d00:#fffb00><cooldown></gradient><gray> 毫秒才可再次使用 <material>.
+  
+  WorldCleaner:
+    countingdown:
+      # 60: "<gradient:#ff3c00:#ffff00>警告!</gradient> <gray>所有物品将在 <color:#ff8800><remaining> <gray>秒内清理!"
+      # 45: "<gradient:#ff3c00:#ffff00>警告!</gradient> <gray>所有物品将在 <color:#ff8800><remaining> <gray>秒内清理!"
+      # 30: "<gradient:#ff3c00:#ffff00>警告!</gradient> <gray>所有物品将在 <color:#ff8800><remaining> <gray>秒内清理!"
+      '15': <gradient:#ff3c00:#ffff00>警告!</gradient> <gray>所有物品将在 <color:#ff8800><remaining>
+        <gray>秒内清理!
+      '10': <gradient:#ff3c00:#ffff00>警告!</gradient> <gray>所有物品将在 <color:#ff8800><remaining>
+        <gray>秒内清理!
+      '5': <gradient:#ff3c00:#ffff00>警告!</gradient> <gray>所有物品将在 <color:#ff8800><remaining>
+        <gray>秒内清理!
+      '4': <gradient:#ff3c00:#ffff00>警告!</gradient> <gray>所有物品将在 <color:#ff8800><remaining>
+        <gray>秒内清理!
+      '3': <gradient:#ff3c00:#ffff00>警告!</gradient> <gray>所有物品将在 <color:#ff8800><remaining>
+        <gray>秒内清理!
+      '2': <gradient:#ff3c00:#ffff00>警告!</gradient> <gray>所有物品将在 <color:#ff8800><remaining>
+        <gray>秒内清理!
+      '1': <gradient:#ff3c00:#ffff00>警告!</gradient> <gray>所有物品与实体将在 <color:#ff8800><remaining>
+        <gray>秒内清理!
+      '0': <gray>成功清理了 <color:#ff8800><items> <gray>个物品, <color:#ff8800><creatures>
+        <gray>个实体和 <color:#ff8800><projectiles> <gray>个弹射物!
+    items:
+      abyss: # 深渊为本插件的垃圾桶, 玩家可以输入命令 /abyss 打开界面并找回被清理的物品
+        gui: <color:white>深渊垃圾桶! <color:dark_gray>(<yellow>LagFixer<color:dark_gray>)
+        close: <gray>垃圾桶已关闭!
+        open: '<gray>成功打开垃圾桶, 若要再次取回物品, 请输入: <yellow>/abyss'
+        closed: <gray>垃圾桶<color:red>已关闭<gray>, 请等待其再次打开!
+        opened: <color:green>成功打开<gray>垃圾桶!

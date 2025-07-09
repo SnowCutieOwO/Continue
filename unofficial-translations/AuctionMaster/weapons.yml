@@ -1,0 +1,16 @@
+weapons-menu-item: '283'
+weapons-menu-name: '&6武器'
+weapons-menu-lore:
+  - '&8分类'
+  - ''
+  - '&7示例:'
+  - '&8■ &7剑'
+  - '&8■ &7弓'
+
+# 若你需要将特定的物品归于这个分类
+# 请将它们的名字写在这里
+custom-item-names:
+  - '&e&l示例&6&l物品'
+
+custom-item-ids:
+  - '2266'

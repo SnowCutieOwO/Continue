@@ -1,0 +1,31 @@
+Settings:
+  Enabled: true
+  InGui: true
+  Name: 代币发掘
+  Colour: '&7'
+  Slot: 28
+  MaxLevel: 1000
+  Max: 10
+  Min: 1
+  MultiBreak: true
+  MultiBreakMaxSuccess: 1000
+  GiveCurrency-Increase-by-Lvl: 0
+  GiveCurrency: RevToken
+  Currency: RevToken
+  Cost: 1000
+  Increase-Cost-by: 1000
+  Chance: 3
+  Increase-Chance-by: 0.01
+  Requirement:
+    Enabled: false
+    Number: 5
+    Placeholder: '%RevEnchants_Tool_Flag_Level%'
+  Description: '&7概率在挖掘时获得代币，数量随等级提升而提升'
+  Book:
+    ==: org.bukkit.inventory.ItemStack
+    v: 3700
+    type: LEGACY_BOOK
+  Message:
+    Enabled: false
+    Bar: true
+    Format: '&7代币发掘 + %Amount_FormattedA% '

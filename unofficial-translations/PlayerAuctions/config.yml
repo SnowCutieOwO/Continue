@@ -1,0 +1,393 @@
+# PlayerAuctions 插件作者 Olzie-12
+# https://www.spigotmc.org/resources/83073
+# 我们也有可以提供帮助的 Discord 聊天群组: https://olziedev.com/discord 和插件维基 https://docs.olziedev.com/projects/playerauctions
+# 如果你找到任何 BUG, 我很乐意第一时间修复它们 :)
+# 为爱发电
+
+# 若你想要从配置文件中完全删除某个列表, 不要直接移除它, 否则插件的配置文件更新器会自动检查到缺失的部分并将它补全.
+# 这会导致你前功尽弃, 所以如果要清空列表, 将其设置为 [] 即可
+# 例如:
+# list: []
+
+# 请勿修改本项!
+config-version: 87
+
+settings:
+  # 你需要插件使用哪种语言? 可使用的语言位于本插件的 lang/ 文件夹下.
+  lang: en_US
+  # 在插件作者需要知晓某些信息例如内存泄漏时, 本设置会非常有用.
+  # 目前可用的调试等级有:
+  # - NONE = 不使用调试模式
+  # - MINOR = 显示插件行为的调试信息
+  # - MAJOR - 显示更高级的调试信息 (通常为开发者所用)
+  debug: NONE
+  # 提醒是否存在更新 (仅对拥有 pa.admin.update 权限的人生效, 加入时显示)
+  notify-update: true
+  # 是否允许插件自动从 Spigot 下载更新
+  download-update: true
+  # 插件统计数据, 对作者知晓服务器相关的数据有用.
+  # 建议将此项保持开启, 可以鼓励我做更多诸如本插件一样好用的资源.
+  # 修改本设置需要重启服务器!
+  metrics: true
+  # 本插件的主命令.
+  main-command: "pauction"
+  # 主命令的别名.
+  command-aliases:
+    - "playerauction"
+    - "pa"
+    - "ah"
+    - "auctionhouse"
+  # 竞拍物品的排列顺序应当是怎样的?
+  # 可用选项:
+  # - HIGHEST_PRICE = 价格从高到低排序.
+  # - LOWEST_PRICE = 价格从低到高排序.
+  # - ALPHABETICAL = 通过物品名称排序.
+  # - OLDEST_DATE = 按创建时间从老到新排序.
+  # - NEWEST_DATE = 按创建时间从新到老排序.
+  # - AMOUNT = 按物品数量从多到少排序.
+  # - RANDOM = 每隔 x 秒随机排序.
+  order: OLDEST_DATE
+  # 在不使用 HIGHEST_PRICE 排序物品时的物品显示内容...
+  # 设置为 "" 可禁用指定的物品排序顺序.
+  order-name:
+    HIGHEST_PRICE: "价格降序"
+    LOWEST_PRICE: "价格升序"
+    ALPHABETICAL: "字母排序"
+    OLDEST_DATE: "创建时间升序"
+    NEWEST_DATE: "创建时间降序"
+    AMOUNT: "物品数量"
+    RANDOM: "随机排列"
+
+  # 随机排序的刷新时间?
+  order-random-time: 86400
+
+  # 内建变量 "%item%" 是否返回物品的展示名称(如果有)?
+  item-displayname: true
+
+  # 倒计时应该看起来是什么样的?
+  timer-display:
+    # 若存在天以上的时间长度
+    day: "%day%天 "
+    # 若存在复数天以上的时间长度
+    days: "%day%天 "
+    # 若存在小时以上的时间长度
+    hour: "%hour%时 "
+    # 若存在复数小时以上的时间长度
+    hours: "%hour%时 "
+    # 若存在分钟以上的时间长度
+    minute: "%minute%分 "
+    # 若存在复数分钟以上的时间长度
+    minutes: "%minute%分 "
+    # 若存在秒以上的时间长度
+    second: "%second%秒 "
+    # 若存在复数秒以上的时间长度
+    seconds: "%second%s "
+
+  # 是否保留离线消息? 若玩家离线且插件尝试发送消息, 插件会在他们下次上线时重新发送.
+  offline-message-pending: true
+
+  # 是否移除自定义描述中的空行?>
+  empty-line-removed: true
+
+  # 选择数字的排序格式, 请确保使用正确的语言代号. 相关内容请见 https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html
+
+  format-locale: "en"
+
+  # 插件如何格式化数字?
+  # 是否允许插件使用短计数方式? (例如 1,200 显示为 1.2k)
+  number-format-short: false
+  # 若上述设置为 true, 格式应当显示为什么样?
+  number-format-short-suffix: ["", "K", "M", "B", "T", "Q", "s", "S"]
+  # 你可以参阅下文的链接, 来了解小数格式是如何使用的:
+  # https://docs.oracle.com/javase/8/docs/api/java/text/DecimalFormat.html
+  number-format: "#,###.##" # 格式化整数
+  number-format-decimal: "#,##0.00" # 格式化小数
+
+  # 插件如何格式化日期?
+  # 你可以参阅下文的链接, 来了解日期格式是如何使用的:
+  # https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html
+  date-format: "dd/MM/yyy" # 无时间的格式
+  date-format-time: "dd/MM/yyy HH:mm:ss" # 带时间的格式
+  # 插件日期格式所使用的时区应当是什么? 若你想要使用服务器的默认时区, 请将其留空为 ""
+  # 你可以参阅下文的链接, 来了解时区是如何使用的:
+  # https://docs.oracle.com/javase/8/docs/api/java/util/TimeZone.html
+  date-format-timezone: ""
+
+  # 插件是否应当忽略 OP 的权限限制并专注于实际的权限限制本身.
+  pauction-limit-op: false
+
+  # 插件是否要分世界管理拍卖数据?
+  # 这将会包括, (分世界的)拍卖限制
+  # 这同样会包括菜单和命令中的拍卖.
+  pauction-separate-worlds: false
+  # 若上述选项为 true, 是否需要按组分类世界?
+  # 例如, world, world_nether, world_the_end 将会处于同一个世界组中
+  pauction-separate-group-worlds: true
+
+  # 插件应当使用哪种默认经济?
+  # 你可以在 extensions.yml 中找到插件支持的所有经济插件.
+  default-currency: "vault"
+  # 插件应当使用哪种默认物品提供者?
+  default-product: "item"
+
+  sub-commands:
+    # 若打开命令被禁用, 打开菜单的唯一方式就是输入命令 /pauction. (仅当你在 playerauction.yml 中覆盖的时候才有效).
+    # 若你禁用了该命令, 且 /pauction 没有在界面中被覆盖. 那么会导致没有玩家可以使用菜单界面.
+    # 若你需要禁用界面, 只需要将其在菜单中禁用即可.
+    open-command: true
+    sell-command: true
+    amount-command: true
+    collect-command: true
+    cancel-command: true
+    bid-command: true
+    auction-command: true
+
+    # 这里是子命令的格式, 需要注意的是你不能在这些内容中包含空格, 否则的话会引起一连串的判断问题. 
+    open-command-name: "open"
+    sell-command-name: "sell"
+    amount-command-name: "amount"
+    collect-command-name: "collect"
+    cancel-command-name: "cancel"
+    bid-command-name: "bid"
+    auction-command-name: "auction"
+
+    # 请记住, 你一直都可以添加命令别名, 请多使用这些.
+    # 本示例为出售命令, 但你可以继续添加其他命令的内容.
+    # sell-command-aliases:
+    #   - "sale"
+
+    sell-command-syntax: "%prefix% &b/%label% %args-0% <价格> [货币] [数量]"
+    bid-command-syntax: "%prefix% &b/%label% %args-0% <价格> [数量]"
+    addauctions-command-syntax: "%prefix% &b/%label% %args-0% <玩家> <数量>"
+    dbexec-command-syntax: "%prefix% &b/%label% %args-0% <请求内容>"
+
+    # 玩家是否需要拥有 "pa.sell" 权限才可以使用 /ah sell 命令?
+    # 他们需要拥有限制权限才可以出售物品.
+    sell-command-permission: false
+
+    # 在使用覆盖命令 /pauction 时玩家是否需要 "pa.open" 权限才可打开菜单?
+    open-command-permission: false
+
+    # 是否在玩家执行命令 /ah cancel 后自动执行 /ah collect (立即收回物品)
+    cancel-command-collect: false
+
+  database:
+    # 当插件初始化时, 是否将它连接到的数据库中的数据立即转化?
+    # 请在完成其他操作后再三确认关闭此项!
+    convert: false
+    # 该设置会检查插件至数据库的连接是否有. 若无效, 插件会尝试创建新连接.
+    # 若插件导致你的服务器崩溃, 且堆栈信息中包含 "com.mysql.cj.jdbc.ConnectionImpl.isValid", 那么请禁用本项.
+    # 当本项被禁用时, 插件会检查数据库连接是否被关闭. 若是则会创建新链接.
+    # 使用 SQLite 的用户无需担心这些内容.
+    use-is-valid: true
+
+    sqlite:
+      backups:
+        # 是否启用备份? 我非常推荐你启用这个.
+        enabled: true
+        # 备份文件夹中最多允许存在多少个备份? 设置为 -1 表示数量不限.
+        maximum: 10
+
+    mysql:
+      # 是否使用 MySQL?
+      enabled: false
+      # Should the connection to the database be closed periodically?
+      # 是否周期性关闭至数据库的连接?
+      # 若你遇到了 "No operations allowed after connection closed." 相关的问题. 请确保本项禁用并在下方的参数中加入 autoReconnect=true 参数
+      close: false
+      # 若你想要做到跨服拍卖请使用 MySQL, 之后你就需要使用 AuctionSync 拓展了.
+      # 请在这里正确输入你的服务器名称, 否则插件将不会正常工作.
+      # 若你不想要将该数据库当做网络建立, 请将该项留空.
+      server-name: ""
+      # 启用 MySQL 时插件需要连接至 SQL 数据库, 请在此输入你的详细内容.
+      # 我不对任何潜在的数据泄露负责. (如果某位管理员能访问它的话...)
+
+      # 使用的域名是?
+      hostname: "spigotmc.org"
+      # 端口号是什么? 大多数数据库的端口号为 3306.
+      port: 3306
+      # 你使用的数据库名称是什么?
+      database: "PlayerAuctions"
+      # 数据库的用户名是什么?
+      username: "root"
+      # 数据库的密码是什么?
+      password: "root"
+      # 在 MySQL 连接的网址上加上额外的参数.
+      arguments: "?characterEncoding=utf8&useSSL=true"
+
+  auction:
+    # 是否在出售物品前需要二次确认?
+    confirmation: false
+    # 确认请求操作的过期时间. 这意味着他们需要在这段时间内作出决定. 该项的推荐设置值为 10.
+    confirmation-expire-time: 10
+    # 玩家不可参与竞拍的物品有哪些?
+    auction-blacklist:
+      # 识别某个 NBT 而不是实际上的物品/材料.
+      # 你只需要列出 NBT 键值即可.
+      nbt: []
+      # 识别某个自定义物品名称而不是实际上的物品/材料.
+      # 你不需要在这里包括物品中的彩色字符.
+      names: []
+      # 识别某个自定义模型数据而不是实际上的物品/材料.
+      # custom-model-data: ["1000", "1001", "1002"]
+      custom-model-data: []
+      # 识别某个物品的命名空间, 对某些添加物品的插件很有用.
+      namespaces: []
+      # 识别某个物品的自定义描述而不是实际上的物品/材料.
+      # 例如这会禁止第一行描述为 "Custom Item"的物品商家.
+      # 你不需要在这里包括物品中的彩色字符.
+      lores:
+        - "0:Custom Item"
+      # 识别某个物品的自定义附魔而不是实际上的物品/材料.
+      # https://javadocs.olziedev.com/spigot/latest/org/bukkit/enchantments/Enchantment.html
+      # 示例中的配置会禁止任何绑定诅咒和消失诅咒 I附魔的物品上架.
+      enchantments:
+        - "BINDING_CURSE"
+        - "VANISHING_CURSE:1"
+      # 识别指定材料名称而不是特定的物品.
+      # 示例中的配置会禁止任意材料为书与笔的物品上架.
+      materials:
+        - BOOK_AND_QUILL
+      # 你也可以指定某些特定的物品.
+      # 示例中的配置会禁止材料为书与笔且没有自定义名称和描述的物品.
+      items:
+        1:
+          name: ""
+          material: BOOK_AND_QUILL
+          data: 0
+          lore: []
+          glowing: false
+      # 是否将上述内容改为白名单?
+      whitelist: false
+    # 拍卖是否禁止上架带有耐久的物品?
+    disallow-damaged-items: false
+    # 拍卖会是否不允许带有额外内容的物品上架? (包含物品的箱子或潜影盒等)
+    disallow-item-contents: false
+    # 玩家不能在什么模式下参与拍卖?
+    blacklisted-gamemodes:
+      - "CREATIVE"
+    # 出售物品的冷却时间是多久 (单位为秒)? 设置为 -1 可将其禁用.
+    # 非常推荐至少设置 1 秒的冷却来防止 Bukkit 物品的复制.
+    cooldown: 5
+    # 购买物品的冷却时间是多久 (单位为秒)? 设置为 -1 可将其禁用.
+    purchase-cooldown: 5
+    # 是否允许出售和竞价命令中允许玩家指定购买数量?
+    # 可用选项:
+    # DISABLED - 玩家不可自行选择数量.
+    # REQUIRED - 玩家必须自行选择数量.
+    # OPTIONAL - 玩家可以选择数量, 也可以不选择.
+    quantity-type: OPTIONAL
+    # 在拍卖物品时是否解除物品的堆叠限制. 若玩家在一次拍卖中重复给出同一物品, 则它会加在原有物品上, 其他玩家可在确认菜单中选择自己想要的数量.
+    stack-exact-item: false
+    # 插件是否使用拍卖物品的原版最大堆叠数量?
+    # 若此项禁用, 插件将可以给出超过原版最大堆叠数量的物品.
+    respect-max-stack-size: true
+    # 在购买拍卖时从出售方克扣多少比例的钱? 设置为 -1 可禁用该功能.
+    percentage-cut: -1
+    # 额外克扣部分流向哪个玩家的账户 (或玩家 UUID)?
+    # 若不想指定可留空, 钱款会自动消失.
+    percentage-cut-holder: ""
+    # 是否允许玩家以小数形式出价?
+    # 部分货币不支持小数, 所以对这些货币该选项默认为 false.
+    allow-decimals: true
+    # 是否允许玩家拍下他们自己的物品?
+    purchase-own: false
+    # 物品过期时间为多久 (单位为分钟)? 设置为 -1 可禁用过期时间.
+    expire-time: 2880
+    # 在此你可以指定物品的过期时间, 若指定组没有出现在下方的列表中, 则统一使用上方列表的过期时间.
+    # 警告: 若你正在使用 Bukkit 的默认权限系统, 这将会无法工作, 因为 vault 不支持权限组.
+    # 请按等级高低将它们排序, 插件会默认使用最上面的组别而不是在继承链中最顶端的组别.
+    # 基于你所使用的权限管理插件, 该选项导致的性能开销可能会成吨增长.
+    expire-ranks-time: {}
+       # 等级为 MVP 的用户没有过期时间.
+#      MVP: -1
+       # 等级为 VIP 的用户的过期时间为 72.
+#      vip: 72
+
+    # 在物品过期后多久被清除? 设置为 -1 可禁用清除功能. 
+    purge-expire: -1
+    # 玩家的过期拍卖是否也计入他们使用的拍卖次数中.
+    # 这是用于阻止玩家将拍卖暂存区当裆裤的行为
+    # 示例: 使用过的拍卖次数 + 已过期的拍卖次数 >= 限制
+    use-expired-limit: false
+    # 你可以将指定拍卖的 ID 写在这, 这样这些拍卖的物品就是无限量供应!
+    unlimited-items-id: []
+    # 在列出竞拍时执行什么命令?
+    commands:
+      - "[broadcast] &e%player%&b 正在以 &e%price%&b 的价格拍卖 &e%amount% 个物品 %item% &b!(/ah)!"
+    # 购买拍卖时执行什么命令? 执行方为买家.
+    commands-purchase: []
+    # 购买拍卖时执行什么命令? 执行方为卖家, 且仅在卖家在线时执行.
+    commands-purchase-seller: []
+
+    economy:
+      # 此即为玩家出售物品所需的最低价格, 若他们没有足够的钱, 他们会收到语言文件中预先配置好的消息, 物品也不会被出售
+      # 请确保你安装了支持 Vault 的经济插件!
+      # 将该项设置为 -1 可将其禁用.
+      sell-price: 500
+      # 出售价格是否视作竞拍花费的一部分?
+      # 竞拍花费 * (出售花费 / 100)
+      sell-price-rate: false
+      # 在这里你可以指定不同的权限组支付价格, 没有被列入该列表中的组会使用上方统一的价格.
+      # 警告: 若你正在使用 Bukkit 的默认权限系统, 这将会无法工作, 因为 vault 不支持权限组.
+      # 请按等级高低将它们排序, 插件会默认使用最上面的组别而不是在继承链中最顶端的组别.
+      # 基于你所使用的权限管理插件, 该选项导致的性能开销可能会成吨增长.
+      sell-ranks-price: {}
+#        # 等级为 MVP 的玩家无需支付.
+#        MVP: -1
+#        # 等级为 VIP 的玩家只需支付 $1
+#        vip: 1
+
+    # 禁止玩家在下列世界中出售物品.
+    disabled-worlds:
+      - "world_nether"
+
+  bidding:
+    # 拍下物品的间隔时间是多少? 单位为秒, 设置为 -1 可将其禁用.
+    cooldown: 5
+    # 竞价的间隔时间是多少? 单位为秒, 设置为 -1 可将其禁用.
+    offer-cooldown: 5
+    # 在竞拍结束时从出售方克扣多少比例的钱? 设置为 -1 可禁用该功能.
+    percentage-cut: -1
+    # 额外克扣部分流向哪个玩家的账户 (或玩家 UUID)?
+    # 若不想指定可留空, 钱款会自动消失.
+    percentage-cut-holder: ""
+    # 是否允许玩家拍下自己的物品?
+    bid-own: false
+    # 若玩家的拍卖被其他玩家参与竞价, 是否允许他们取消?
+    cancel-bid: true
+    # 物品过期的时间应当被设置为多少? 你绝对不能把这个设置为 -1.
+    expire-time: 2880
+    # 在这里你可以指定不同的权限组过期时间, 没有被列入该列表中的组会使用上方统一过期时间.
+    # 警告: 若你正在使用 Bukkit 的默认权限系统, 这将会无法工作, 因为 vault 不支持权限组.
+    # 请按等级高低将它们排序, 插件会默认使用最上面的组别而不是在继承链中最顶端的组别.
+    # 基于你所使用的权限管理插件, 该选项导致的性能开销可能会成吨增长.
+    expire-ranks-time: {}
+       # 等级 MVP 的过期时间为 96.
+#      MVP: 96
+       # 等级 VIP 的过期时间为 72.
+#      vip: 72
+
+    # 每次玩家给出价格后延长拍卖多少时间? 单位为秒.
+    extended-needed-time: 1800
+    # 若拍卖剩余时间少于单次加价延长的时间, 那么增加多少时间? 单位为秒.
+    # 设置为 -1 表示将其禁用.
+    extended-time: -1
+    # 在列出竞拍时执行什么命令?
+    commands:
+      - "[broadcast] &e%player%&b 正在以 &e%price%&b 的价格拍卖 &e%amount% 个物品 %item% &b!(/ah)!"
+    # 在支付账单时执行什么命令?
+    commands-offer: []
+    # 在竞价结束时执行什么命令? 执行方默认为购买者.
+    commands-ended: []
+    # 在竞价结束时执行什么命令? 执行方默认为出售者, 且只在出售者在线时执行.
+    commands-ended-seller: []
+
+  # 该选项会在玩家退出菜单界面时更新玩家的背包. 这可以阻止任何与物品栏有关的问题, 如将菜单中不应在玩家背包内物品取出的漏洞.
+  # 若你在使用时遇到了与诸如 Cosmetics 一类的插件兼容性问题, 你可以启用该选项来修复一些问题. 但这会导致你无法接收任何有关于复制物品的帮助.
+  dangerous-ignore-update-inventory: false
+  # 该设置用于修改聊天延迟行为的优先级, 若你遇到了任何与聊天延迟有关的问题, 你可能需要将该项从 HIGHEST 修改为 LOWEST.
+  wait-chat-event-priority: HIGHEST
+  # 若你正在使用除 Spigot 外的服务端且带有 forge, 你可能需要启用本项来修复一些与插件交互的问题, 例如 NBT 丢失.
+  # 启用此项需要安装 ProtocolLib
+  use-modded-serialization: false

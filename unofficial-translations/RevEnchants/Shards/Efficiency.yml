@@ -1,0 +1,21 @@
+Settings:
+  Enabled: true
+  Name: '&c效率'
+  MaxLevel: 10
+  MaxStack: 100
+  Requirement:
+    Enabled: false
+    Number: 10
+    Placeholder: '%RevEnchants_Tool_Flag_Level%'
+  Description: '&7提升镐子挖掘速度'
+  Shard:
+    Item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3700
+      type: LEGACY_PRISMARINE_SHARD
+    Glow: true
+    Name: '&cEfficiency + %Level%'
+    Lore:
+    - '&1独特碎片所需等级 %RequiredLevel%'
+    - '&7将镐子的效率等级提升 %Level% 级'
+    - '&7最高为 %MaxStack% 级'

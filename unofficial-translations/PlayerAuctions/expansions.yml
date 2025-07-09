@@ -1,0 +1,307 @@
+# 在这里你可以选择其他受本插件支持的数据进行迁移
+# 转化后请再三确认这些内容被关闭!
+converters:
+  zauctionhouse:
+    # 若启用, 插件将自动转化 zAuctionHouse (https://www.spigotmc.org/resources/63010/) 的数据至本插件中.
+    # 若要开始转化, 请重启服务器.
+    enabled: false
+  product:
+    # 这会将旧版的序列化物品数据转化为新格式, 基本上可修复报错
+    # "java.io.InvalidClassException: com.olziedev.playerauctions.api.auction.product.ASerializableProduct; local class incompatible:" 一类的错误.
+    # 推荐你保持启用该项, 以防止此类错误的出现.
+    enabled: true
+
+# 在这里你可以根据喜好配置对接至其他支持本插件的拓展.
+expansions:
+  # 本设置用于跨服同步玩家竞拍相关内容. 你需要在这里下载 AuctionSync https://cdn.olziedev.com/playerauctions/expansions/auctionsyncexpansion.jar, 并在子服中安装.
+  # 然后阅读文档 https://docs.olziedev.com/projects/playerauctions/features#proxy-support 并详细了解如何使用该拓展模块.
+  auctionsync:
+    # 是否要启用拍卖同步?
+    enabled: false
+    # 在这里填入 IP 地址.
+    host: "0.0.0.0"
+    # 在这里填入开放端口.
+    port: 27789
+    # 请将子服中生成的登录信息黏贴至此.
+    auth: ""
+
+  # 该部分用于管理发送至 Discord 聊天群组的消息提醒.
+  # 你可以阅读文档 https://docs.olziedev.com/projects/playerauctions/features#discord-alerts 并详细了解如何使用该拓展模块.
+  auctiondiscord:
+    # 是否启用竞拍与 Discord 提醒同步的拓展功能?
+    enabled: false
+    webhook:
+      # 来自 Discord 频道的 Webhook 的链接.
+      url: ""
+      # 出现在聊天信息中的用户名称
+      username: "拍卖提醒"
+      # 消息提醒所使用的头像样式.
+      avatar: "https://cdn.olziedev.com/playerauctions/images/PlayerAuctionsIcon.png"
+      # 消息中的文本, 若你只需要嵌入式界面则将其留空.
+      content: ""
+
+      # 在嵌入式界面中出现的物品按钮.
+      thumbnail:
+        enabled: true
+        # Here you can put custom thumbnail links the plugin will use if a plugin has a specific custom model data.
+        # 在这里你可以放入自定义缩略图设置, 插件可以在物品拥有自定义模型数据时使用对应的设置.
+        # 若你需要在物品列表中指定数据, 你也可以按如下设置进行配置:
+        # custom-thumbnails:
+        #  该缩略图只会在物品为苹果且自定义模型数据值为 20 时使用.
+        #  ITEM=APPLE#MODEL=20: https://cdn.olziedev.com/playerauctions/images/PlayerAuctionsIcon.png
+        #  该缩略图只会在物品自定义模型数据值为 20 时使用.
+        #  MODEL=20: https://cdn.olziedev.com/playerauctions/images/PlayerAuctionsIcon.png
+        #  该缩略图只会在物品自定义名称为 "自定义物品" 时使用.
+        #  NAME=自定义物品: https://cdn.olziedev.com/playerauctions/images/PlayerAuctionsIcon.png
+        custom-thumbnails:
+          # 如果任意物品包含值为 20 的自定义模型数据值, 则使用该图片
+          model=20: "https://cdn.olziedev.com/playerauctions/images/PlayerAuctionsIcon.png"
+
+    # 若你正在使用离线模式, 你需要使用 [name] 获取玩家名称.
+    author-url: "https://www.mc-heads.net/head/[uuid]/100/.png"
+
+    # 若你希望玩家拍卖的物品显示自定义名称, 请使用 [item_displayname] 而不是 [item]!
+    embeds:
+      sell:
+        enabled: true
+        author: "玩家 [seller] 正在以 [price] 的价格出售物品 [item_displayname]"
+        color: "#4287f5"
+        title: "拍卖信息"
+        footer: "拍卖 ID: [id]"
+        fields:
+          Seller:
+            name: "卖家"
+            value: "[seller]"
+            inline: true
+          blank:
+            name: ""
+            value: ""
+            inline: true
+          Item:
+            name: "物品"
+            value: "[item_displayname]"
+            inline: true
+          Amount:
+            name: "数量"
+            value: "[amount]"
+            inline: true
+          blank1:
+            name: ""
+            value: ""
+            inline: true
+          Price:
+            name: "价格"
+            value: "[price]"
+            inline: true
+      buy:
+        enabled: true
+        author: "玩家 [buyer] 花费了 [price] 购买了 [item_displayname]"
+        color: "#48f542"
+        title: "拍卖信息"
+        footer: "拍卖 ID: [id]"
+        fields:
+          Seller:
+            name: "卖家"
+            value: "[seller]"
+            inline: true
+          Buyer:
+            name: "Buyer"
+            value: "[buyer]"
+            inline: true
+          Item:
+            name: "物品"
+            value: "[item_displayname]"
+            inline: true
+          Amount:
+            name: "数量"
+            value: "[amount]"
+            inline: true
+          blank1:
+            name: ""
+            value: ""
+            inline: true
+          Price:
+            name: "价格"
+            value: "[price]"
+            inline: true
+      remove:
+        enabled: true
+        author: "[item_displayname] was removed from the Auction!"
+        color: "#bf2a2a"
+        title: "拍卖信息"
+        footer: "拍卖 ID: [id]"
+        fields:
+          Seller:
+            name: "卖家"
+            value: "[seller]"
+            inline: true
+          blank:
+            name: ""
+            value: ""
+            inline: true
+          Item:
+            name: "物品"
+            value: "[item_displayname]"
+            inline: true
+          Amount:
+            name: "数量"
+            value: "[amount]"
+            inline: true
+          blank1:
+            name: ""
+            value: ""
+            inline: true
+          Price:
+            name: "价格"
+            value: "[price]"
+            inline: true
+      bid:
+        enabled: true
+        author: "玩家 [buyer] 为物品 [item_displayname] 的拍卖出价 [price]"
+        color: "#48f542"
+        title: "拍卖信息"
+        footer: "拍卖 ID: [id]"
+        fields:
+          Seller:
+            name: "卖家"
+            value: "[seller]"
+            inline: true
+          Buyer:
+            name: "竞拍者"
+            value: "[buyer]"
+            inline: true
+          Item:
+            name: "物品"
+            value: "[item_displayname]"
+            inline: true
+          Amount:
+            name: "数量"
+            value: "[amount]"
+            inline: true
+          blank1:
+            name: ""
+            value: ""
+            inline: true
+          Price:
+            name: "价格"
+            value: "[price]"
+            inline: true
+
+# 在这里你可以按喜好配置其他经济的对接内容.
+currencies:
+  vault:
+    # 是否要启用基于 Vault 的货币? 
+    enabled: true
+    # 在游戏中使用的货币名称.
+    name: "硬币"
+    # 价格变量的前缀, 此即为你想要使用物品货币显示的变量.
+    prefix: "$%price%"
+    # 在确认界面使用该类型货币最少需要支付的价格. 设置为 -1 表示不作限制.
+    min-price-purchase: -1
+    # 玩家可加到竞拍中的最低价格是多少?
+    # 这是用于阻止玩家加入过低价例如 $1 拖延拍卖时间的. 
+    min-bid-amount: 1000
+    # 拍卖发起的最低价格是多少?
+    min-price-auction: 1000
+    # 拍卖发起的最高价格是多少?
+    max-price-auction: 9999999
+    # 插件如何与 Vault 对接, 默认情况下插件使用玩家名称, 因为经济插件固定存在一些限制.
+    # 若你在使用此拓展时遇到问题, 将该项设置为 false 可能可以解决.
+    use-name: true
+    # 银行拓展支持该经济, 若你想要为该类型经济启用拓展, 将该项设置为 true 即可.
+    # 该拓展可以帮助玩家在没有足够的钱时从银行账户中代为支付.
+    banks:
+      bankplus:
+        # 是否为该货币启用 BankPlus 拓展?
+        enabled: true
+        # 竞拍时玩家所使用的默认银行是什么? 若未设置则使用默认银行.
+        bank: ""
+
+  tokenmanager:
+    # 是否启用基于 TokenManager 的经济?
+    enabled: false
+    # 在游戏中使用的货币名称.
+    name: "代币"
+    # 价格变量的前缀, 此即为你想要使用物品货币显示的变量.
+    prefix: "%price% 代币"
+    # 在确认界面使用该类型货币最少需要支付的价格. 设置为 -1 表示不作限制.
+    min-price-purchase: -1
+    # 玩家可加到竞拍中的最低价格是多少?
+    # 这是用于阻止玩家加入过低价例如 $1 拖延拍卖时间的. 
+    min-bid-amount: 1000
+    # 拍卖发起的最低价格是多少?
+    min-price-auction: 1000
+    # 拍卖发起的最高价格是多少?
+    max-price-auction: 9999999
+  playerpoints:
+    # 是否启用基于 PlayerPoints 的经济?
+    enabled: false
+    # 在游戏中使用的货币名称.
+    name: "点券"
+    # 价格变量的前缀, 此即为你想要使用物品货币显示的变量.
+    prefix: "%price% 点券"
+    # 在确认界面使用该类型货币最少需要支付的价格. 设置为 -1 表示不作限制.
+    min-price-purchase: -1
+    # 玩家可加到竞拍中的最低价格是多少?
+    # 这是用于阻止玩家加入过低价例如 $1 拖延拍卖时间的. 
+    min-bid-amount: 1000
+    # 拍卖发起的最低价格是多少?
+    min-price-auction: 1000
+    # 拍卖发起的最高价格是多少?
+    max-price-auction: 9999999
+  beasttoken:
+    # 是否启用基于 BeastToken 的经济?
+    enabled: false
+    # 在游戏中使用的货币名称.
+    name: "tokens"
+    # 价格变量的前缀, 此即为你想要使用物品货币显示的变量.
+    prefix: "%price% tokens"
+    # 在确认界面使用该类型货币最少需要支付的价格. 设置为 -1 表示不作限制.
+    min-price-purchase: -1
+    # 玩家可加到竞拍中的最低价格是多少?
+    # 这是用于阻止玩家加入过低价例如 $1 拖延拍卖时间的. 
+    min-bid-amount: 1000
+    # 拍卖发起的最低价格是多少?
+    min-price-auction: 1000
+    # 拍卖发起的最高价格是多少?
+    max-price-auction: 9999999
+  gemseconomy:
+    # 是否启用基于 GemsEconomy 的经济?
+    enabled: false
+    # 在游戏中使用的货币名称.
+    name: "gems"
+    # 价格变量的前缀, 此即为你想要使用物品货币显示的变量.
+    prefix: "%price% gems"
+    # 在确认界面使用该类型货币最少需要支付的价格. 设置为 -1 表示不作限制.
+    min-price-purchase: -1
+    # 玩家可加到竞拍中的最低价格是多少?
+    # 这是用于阻止玩家加入过低价例如 $1 拖延拍卖时间的. 
+    min-bid-amount: 1000
+    # 拍卖发起的最低价格是多少?
+    min-price-auction: 1000
+    # 拍卖发起的最高价格是多少?
+    max-price-auction: 9999999
+    # 玩家参与拍卖时应当使用哪种货币? 若该项未设置则使用默认货币.
+    currency: ""
+  item:
+    # 是否启用基于 item 的经济?
+    enabled: true
+    # 在游戏中使用的货币名称.
+    name: "item"
+    # 价格变量的前缀, 此即为你想要使用物品货币显示的变量.
+    prefix: "%price% Beacons"
+    # 在确认界面使用该类型货币最少需要支付的价格. 设置为 -1 表示不作限制.
+    min-price-purchase: -1
+    # 玩家可加到竞拍中的最低价格是多少?
+    # 这是用于阻止玩家加入过低价例如 $1 拖延拍卖时间的.
+    min-bid-amount: 1000
+    # 拍卖发起的最低价格是多少?
+    min-price-auction: 1000
+    # 拍卖发起的最高价格是多少?
+    max-price-auction: 9999999
+    # 物品经济中使用的物品样式.
+    item:
+      name: ""
+      material: BEACON
+      data: 0
+      lore: []

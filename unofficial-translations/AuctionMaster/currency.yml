@@ -1,0 +1,23 @@
+# 这里设置让插件知道
+# 你想让玩家在通过本插件交易时使用什么货币
+
+# 'Vault' 表示 Vault 货币(默认选项)
+# 'TokenManager' 表示 TokenManager 货币
+# 'PlayerPoints' 表示 PlayerPoints 货币
+# 'CustomEconomy-Balance' 表示 CustomEconomy 经济模式
+# 'CustomEconomy-Tokens' 表示 CustomEconomy 代币模式
+# 'Skript' 表示 Skript 货币
+# 若输入了错误种类的货币, 插件将会使用默认的 Vault 货币
+currency-type: 'Vault'
+
+# 若你的货币系统不能正常工作, 插件也不能正常工作
+# 那么有两种可能的错误:
+# 错误编号 404 = 货币插件缺失
+# 错误编号 505 = 玩家货币数据不可获取 (通常是由 Skript 的一些变量造成的)
+
+#----------- Skript 配置 -----------
+# 使用 %player% 表示玩家的名称
+# 变量与 skript 相同, 但没有花括号
+# 示例: {balance.%player%} 即为 balance.%player%
+skript-variable: 'balance::%player%'
+

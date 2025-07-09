@@ -1,0 +1,63 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                  插件作者 Ome_R                   ##
+##                                                  ##
+######################################################
+
+title: '&l交易记录&r{0}'
+previous-menu: true
+
+pattern:
+  - '@ @ @ @ @ @ @ @ @'
+  - '@ @ @ @ @ @ @ @ @'
+  - '@ @ @ @ @ @ @ @ @'
+  - '@ @ @ @ @ @ @ @ @'
+  - '$ $ $ ! $ - $ $ $'
+  - '# # % # * # ^ # #'
+
+slots: '@'
+previous-page: '%'
+current-page: '*'
+next-page: '^'
+
+time-sort: '!'
+money-sort: '-'
+
+items:
+  '@':
+    type: PAPER
+    name: '&e交易 #{0}'
+    lore:
+      - '&7玩家名称: {1}'
+      - '&7当前状态: {2}'
+      - '&7交易时间: {3}'
+      - '&7交易数量: {4}'
+      - '&7 '
+      - '&7&o(( &f&o鼠标右键 &7&o查看该玩家的所有交易. ))'
+  '%':
+    type: PAPER
+    name: '{0}上一页'
+  '*':
+    type: SUNFLOWER
+    name: '&a当前页'
+    lore:
+      - '&7第 {0} 页'
+  '^':
+    type: PAPER
+    name: '{0}下一页'
+  '$':
+    type: BLACK_STAINED_GLASS_PANE
+    name: '&f'
+  '!':
+    type: CLOCK
+    name: '&6按时间排序'
+  '-':
+    type: EMERALD
+    name: '&6按交易额度排序'
+
+sounds:
+  '@':
+    type: BLOCK_CHEST_OPEN
+    volume: 0.8
+    pitch: 1

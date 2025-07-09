@@ -1,0 +1,59 @@
+config:
+
+  # 插件生效的世界列表
+  allowed-worlds:
+    - world
+    - skyblock
+
+  # 是否启用/禁用插件的黑曜石转岩浆功能
+  obsidian-to-lava: true
+
+  # 使用本功能的冷却设定 (包含 cooldown-message)
+  cooldown:
+    enable: true
+    time: 60 # 单位为秒
+    # 可用变量: %plugin%, %timereaming%
+    cooldown-message: '%plugin% &cYou must wait &e%timereaming% &cseconds to turn obsidian into lava'
+
+  # 是否启用/禁用插件更新检查 (包含 update-message)
+  update-checker: true
+  # 可用变量: %plugin%, %version%, %latestversion%
+  update-message: '%plugin% &b新版本可用 &e(&f%latestversion%&e)&b, 你使用的版本为 &e(&f%version%&e)&b. 可在这里下载: &7https://www.spigotmc.org/resources/118073/'
+
+messages:
+
+  # 可用变量: %plugin%
+  obsidiantolava-lava: '%plugin% &7请使用命令 &e/obsidiantolava lava <enable/disable>'
+  lava-enable: '%plugin% &b黑曜石转岩浆&7功能&e已启用&7.'
+  lava-disable: '%plugin% &b黑曜石转岩浆&7功能&e已禁用&7.'
+
+  # 可用变量: NA
+  help:
+    - '&b<-----------------&aOBSIDIANTOLAVA 插件命令&b----------------->'
+    - '&e/obsidiantolava help &7显示本菜单'
+    - '&e/obsidiantolava reload &7重载插件配置'
+    - '&e/obsidiantolava version &7显示插件版本'
+    - '&e/obsidiantolava author &7显示插件作者'
+    - '&e/obsidiantolava plugin &7显示插件下载链接'
+    - '&e/obsidiantolava lava <enable/disable> &7启用或禁用岩浆转黑曜石的功能'
+
+  # 可用变量: %plugin%
+  reload: '%plugin% &a插件已重载'
+
+  # 可用变量: %plugin%, %version%, %latestversion%
+  version: '%plugin% &a插件版本: &b%version%'
+
+  # 可用变量: %plugin%, %author%
+  author: '%plugin% &a插件作者: &b%author%'
+
+  # 可用变量: %plugin%
+  plugin-link: '%plugin% &7https://www.spigotmc.org/resources/118073/'
+
+  # 可用变量: %plugin%
+  command-no-argument: '%plugin% &7请输入 &e/obsidiantolava help &7浏览命令列表'
+
+  # 可用变量: %plugin%
+  no-perm: '%plugin% &c你没有使用此命令的权限'
+
+  # 可用变量: 无
+  console-error: '你不能在控制台中使用此命令'

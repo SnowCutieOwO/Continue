@@ -1,0 +1,303 @@
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#                                        ----[ClansLite]----                                        #
+#                                     ----[插件作者 Loving11ish]----                                 #
+#                        ----[贡献者: Gamlin,TechnicallyCoded,GameKuchen]----                       #
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#                                       ----[插件消息文档]----                                       #
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#ClansLite 插件消息, 对应版本 1.4.3
+
+#公会创建信息
+clan-name-too-short: "&3公会名称过短 - 最小长度为 &6%CHARMIN% &3个字."
+clan-name-too-long: "&3公会名称过长 - 最大长度为 &6%CHARMAX% &3个字."
+clan-created-successfully: "&3公会 &6%CLAN% &3已成功创建!"
+clan-name-already-taken: "&3已存在名为 &6%CLAN% &3的公会.\n&3请换一个名字!"
+clan-name-is-banned: "&3抱歉, 但你&c不可以&3将公会取名为 &6%CLAN% &3!\n&3请换一个名字!"
+clan-name-cannot-contain-colours: "&3抱歉, 公会名称不能包含 '&' 或者 '#' 符号."
+clan-creation-failed: "&3不能创建公会 &6%CLAN% &3, 请先确保你不在公会内!"
+clan-created-broadcast-chat: "&6%CLANOWNER%&3 创建了一个新公会!\n&3它的名字叫 &6%CLAN%&3!"
+clan-created-broadcast-title-1: "&6%CLANOWNER%&3 创建了一个新公会!"
+clan-created-broadcast-title-2: "&3新公会的名字叫 &6%CLAN%&3!"
+
+#公会解散信息
+clan-successfully-disbanded: "&3公会已解散!"
+clan-disband-failure: "&3公会解散失败 - 请确保你是公会领袖!"
+clan-admin-disband-failure: "&3公会解散失败 - 请确保这个玩家是公会领袖!"
+incorrect-disband-command-usage: "&3检测到未知参数, 请重新输入命令 &6/clanadmin disband <公会领袖玩家名称>&3."
+
+#公会转移消息
+clan-ownership-transfer-successful: "&3你成功将公会所有权转让给了玩家 &6%PLAYER%&3."
+clan-ownership-transfer-new-owner: "&6%OLDOWNER% &3将公会 &6%CLAN% &3的所有权转让给了你."
+clan-ownership-transfer-failure-owner-offline: "&3公会所有权转移至玩家 &6%PLAYER%&3 失败!\n&3他们必须在线."
+clan-ownership-transfer-failed-cannot-transfer-to-self: "&3公会所有权转移至玩家 &6%PLAYER% &3失败!\n&3不可以转移给自己!"
+clan-ownership-transfer-failed-target-in-clan: "&3不能转移给已有公会的玩家!"
+incorrect-clan-transfer-ownership-command-usage: "&3检测到未知参数, 请重新输入命令 &6/clan transfer <玩家名称>&3."
+
+#公会玩家邀请
+clan-invite-no-valid-player: "&3请指定要邀请的玩家!"
+clan-invite-not-clan-owner: "&3你必须为公会领袖才可邀请其他玩家!"
+clan-invite-self-error: "&3你不能邀请自己!"
+clan-invitee-not-found: "&3玩家 &6%INVITED% &3不存在, 请确保他们在线!"
+clan-invite-invited-already-in-clan: "&3玩家 &6%INVITED% &3已属于其他公会!"
+clan-invite-max-size-reached: "&3你已到达了 &a%LIMIT%&3 位玩家的上限!"
+clan-invite-successful: "&3你成功将 &6%INVITED% &3邀请至你的公会!"
+clan-invite-failed: "&3发送给玩家 &6%INVITED%&3 邀请请求失败, 此玩家已收到相同的邀请!"
+clan-invited-player-invite-pending: "&3你已被玩家 &6%CLANOWNER% &3邀请加入公会&3 - 请输入命令 /clan join 来同意"
+clan-invite-request: "&6%PLAYER% &3想要你邀请他们加入公会.\n&3请输入命令 &6/clan invite %PLAYER% &3发送邀请."
+clan-invite-request-failed: "&3发送邀请失败, 检查公会领袖是否在线!"
+clan-invite-sent-successfully: "&3你成功将邀请发送至了玩家 %CLANOWNER%"
+clan-invite-failed-own-clan: "&3发送邀请失败, 这是你自己的公会!"
+
+#公会加入消息
+clan-join-successful: "&3成功加入了公会 &6%CLAN%&3!"
+clan-join-failed: "&3加入公会 &6%CLAN%&3 失败"
+clan-join-failed-no-valid-clan: "&3加入公会失败 - 未找到公会!"
+clan-join-failed-no-invite: "&3加入公会失败 - 没有待处理的邀请!"
+clan-join-broadcast-chat: "&6%PLAYER%&3 加入了公会!\n&3他加入的公会是 &6%CLAN%&3!"
+clan-join-broadcast-title-1: "&6%PLAYER%&3 加入了公会!"
+clan-join-broadcast-title-2: "&3他加入的公会是 &6%CLAN%&3!"
+
+#离开公会消息
+failed-clan-owner: "&3你是公会领袖, 请使用命令 &6/clan disband&3."
+clan-leave-successful: "&3你离开了公会 &6%CLAN%."
+clan-leave-failed: "&3离开公会失败, 请稍后再试."
+
+#踢出公会消息
+clan-member-kick-successful: "&3玩家 &6%KICKEDPLAYER%&3 被踢出了公会."
+clan-kicked-player-message: "&3你被踢出了公会 &6%CLAN%&3!"
+targeted-player-is-not-in-your-clan: "&3玩家 &6%KICKEDPLAYER%&3 不属于你的公会."
+could-not-find-specified-player: "&3无法找到玩家 &6%KICKEDPLAYER%&3. 他们之前并未加入."
+must-be-owner-to-kick: "&3你不是公会领袖!"
+incorrect-kick-command-usage: "&3检测到未知参数, 请重新输入命令 &6/clan kick <成员名称>&3."
+failed-cannot-kick-yourself: "&3You cannot kick yourself, use &6/clan leave&3."
+
+#公会前缀消息
+clan-prefix-change-successful: "&3成功将公会前缀修改为了 &6%CLANPREFIX%&3!"
+clan-prefix-too-long: "&3公会前缀过长 - 最大长度为 &6%CHARMAX% &3个字符."
+clan-prefix-too-short: "&3公会前缀过短 - 最小长度为 &6%CHARMIN% &3个字符."
+clan-invalid-prefix: "&3请输入一个新前缀. 输入命令 &b/clan prefix <前缀>&3 进行设置!"
+clan-prefix-already-taken: "&3已存在名为 &6%CLANPREFIX% &3的公会前缀.\n&3请重新输入!"
+clan-prefix-is-banned: "&3不可以将公会前缀设置为 &6%CLANPREFIX%&3!\n&3请重新输入!"
+clan-prefix-no-colours-permission: "&3抱歉, 你没有权限在前缀中加入彩色代码."
+must-be-owner-to-change-prefix: "&3你不是公会领袖!"
+
+#公会列表消息
+no-clans-to-list: "&3找不到公会!\n&3你可以输入命令 &b/clan create <公会名称>&3 创建一个这样的公会!"
+clans-list-header: "&7----- &6公会列表 &7-----&r\n&3&l当前公会列表:&r\n"
+clans-list-footer: "\n&7-----"
+
+#公会信息消息
+clan-info-header: "&7----- &6公会信息 &7-----&r\n&3名称: %CLAN%&r\n&3前缀: &7(%CLANPREFIX%&r&7)&r"
+clan-info-owner-online: "\n\n&3领袖: &a%OWNER%"
+clan-info-owner-offline: "\n\n&3领袖: &c%OWNER%&7&o(离线)"
+clan-info-members-header: "\n\n&3成员数量: &3&o(%NUMBER%)"
+clan-info-members-online: "\n&a%MEMBER%\n"
+clan-info-members-offline: "\n&c%MEMBER%&7&o(离线)\n"
+clan-info-allies-header: "\n\n&3同盟公会:"
+clan-ally-members: "\n&a%ALLYCLAN%\n"
+clan-ally-members-not-found: "\n&a未找到同盟\n"
+clan-info-enemies-header: "\n\n&3敌对公会:"
+clan-enemy-members: "\n&c%ENEMYCLAN%\n"
+clan-enemy-members-not-found: "\n&a未找到敌人\n"
+clan-pvp-status-enabled: "\n\n&3友伤: &a&o启用"
+clan-pvp-status-disabled: "\n\n&3友伤: &c&o禁用"
+clan-home-set-true: "\n\n&3已设置据点: &a&o是"
+clan-home-set-false: "\n\n&3已设置据点: &c&o否"
+clan-points-value: "\n\n&3剩余公会积分: &a%POINTS%"
+clan-chest-amount: "\n\n&3目前保护箱子: &a%CHESTS%"
+clan-total-allowed-chests: "\n\n&3保护箱子上限: &a%MAXALLOWED%"
+clan-info-footer: "\n&7-----"
+not-in-clan: "&3你不属于任何公会!"
+
+#公会同盟消息
+added-clan-to-your-allies: "&3你成功与 &6%ALLYCLAN% &3结盟!"
+clan-added-to-other-allies: "&6%CLANOWNER% &3与你成功结盟!"
+failed-to-add-clan-to-allies: "&3与 &6%ALLYOWNER%&3 结盟失败! 请确保领袖在线!"
+failed-clan-already-your-ally: "&3这个公会已经是你的盟友了!"
+failed-player-not-clan-owner: "&6%ALLYOWNER%&3 不是公会领袖!"
+removed-clan-from-your-allies: "&3你成功解除了与公会 &6%ALLYCLAN% &3的盟友关系!"
+clan-removed-from-other-allies: "&3公会领袖 &6%CLANOWNER% &3解除了与你的盟友关系!"
+failed-to-remove-clan-from-allies: "&3不能解除与 &6%ALLYOWNER%&3 的盟友关系! 请确保他们是你的盟友"
+ally-clan-add-owner-offline: "&3不能与 &6%ALLYOWNER%&3 结盟! 请确保领袖在线!"
+ally-clan-remove-owner-offline: "&3不能解除与 &6%ALLYOWNER%&3 的盟友关系! 请确保领袖在线!"
+incorrect-clan-ally-command-usage: "&3检测到未知参数, 请重新输入命令 &6/clan ally [add|remove] <公会领袖玩家名称>&3."
+failed-cannot-ally-your-own-clan: "&3你不能与&3&l自己的&r&3公会结盟!"
+clan-ally-max-amount-reached: "&3你已经达到了 &a%LIMIT%&3 个结盟公会的上限!"
+failed-cannot-ally-enemy-clan: "&3你不能与&c&l敌对公会&r&3结盟!"
+
+#公会敌对消息
+added-clan-to-your-enemies: "&3你成功将 &6%ENEMYCLAN% &3列为敌对公会!"
+clan-added-to-other-enemies: "&6%CLANOWNER% &3将你设置为了他们的敌人!"
+failed-to-add-clan-to-enemies: "&3不能添加公会 &6%ENEMYOWNER%&3 为敌人! 请确保领袖在线!"
+failed-clan-already-your-enemy: "&3这个公会已经是你的敌人了!"
+failed-enemy-player-not-clan-owner: "&6%ENEMYOWNER%&3 不是公会领袖!"
+removed-clan-from-your-enemies: "&3你成功解除了与公会 &6%ENEMYCLAN% &3的敌对关系!"
+clan-removed-from-other-enemies: "&3公会领袖 &6%CLANOWNER% &3解除了与你的敌对关系!"
+failed-to-remove-clan-from-enemies: "&3不能解除与 &6%ENEMYOWNER%&3 的关系! 请确保他们是你的敌人!"
+enemy-clan-add-owner-offline: "&3不能与 &6%ENEMYOWNER%&3 敌对! 请确保领袖在线!"
+enemy-clan-remove-owner-offline: "&3不能解除与 &6%ENEMYOWNER%&3 的敌对关系! 请确保领袖在线!"
+incorrect-clan-enemy-command-usage: "&3检测到未知参数, 请重新输入命令 &6/clan enemy [add|remove] <公会领袖玩家名称>&3."
+failed-cannot-enemy-your-own-clan: "&3你不能与&3&l自己的&r&3公会敌对!"
+clan-enemy-max-amount-reached: "&3你已经达到了 &a%LIMIT%&3 个敌对公会的上限!"
+failed-cannot-enemy-allied-clan: "&3你不能与&a&l同盟公会&r&3敌对!"
+added-enemy-clan-to-your-enemies-title-1: "&c&l你的公会正在与这个公会进行战争:"
+added-enemy-clan-to-your-enemies-title-2: "&6%CLANOWNER% &c的公会!"
+removed-enemy-clan-from-your-enemies-title-1: "&a&l你的公会已不再与这个公会产生战争:"
+removed-enemy-clan-from-your-enemies-title-2: "&6%CLANOWNER% &a的公会!"
+clan-added-to-other-enemies-title-1: "&c&l你的公会正在与这个公会进行战争:"
+clan-added-to-other-enemies-title-2: "&6%CLANOWNER% &c的公会!"
+clan-removed-from-other-enemies-title-1: "&a&l你的公会已不再与这个公会产生战争:"
+clan-removed-from-other-enemies-title-2: "&6%CLANOWNER% &a的公会!"
+
+#公会友伤
+enabled-friendly-fire: "&3你成功&a启用&3了友伤.\n&3你的公会成员现在可相互攻击!"
+disabled-friendly-fire: "&3你成功&c禁用&3了友伤.\n&3你的公会成员现在不可相互攻击!"
+failed-not-in-clan: "&3你需要先加入一个公会! 输入命令 &6/clan &3来浏览细节."
+friendly-fire-is-disabled: "&3你的公会已启用了友伤."
+
+#公会箱子保护
+chest-purchased-successfully: "&3你&a成功&3购买了&6%AMOUNT%&3个箱子."
+chest-protected-successfully: "&3你&a成功&3保护了该位置的箱子: &6%X%, %Y%, %Z%&3."
+chest-protection-removed-successfully: "&3你&a成功&3移除了该位置的保护箱子: &6%X%, %Y%, %Z%&3."
+block-targeted-incorrect-material: "&3使用该命令时请看向单格箱子!"
+chest-max-amount-reached: "&3你的公会不能再保护更多箱子了. 你最多只能保护 &a%LIMIT% &3个箱子!"
+chest-owned-by-another-clan: "&3抱歉, 该箱子已属于公会 &6%CLAN%&3."
+chest-owned-by-another-clan-name-unknown: "&3抱歉, 该箱子已属于其他公会."
+failed-chest-already-protected: "&3该箱子已受到保护!"
+failed-chest-not-protected: "&3抱歉, 你不拥有该箱子, 或它已被上锁."
+failed-not-enough-points: "&3抱歉, 你的公会没有足够的积分购买 &6%AMOUNT% &3个箱子保护."
+players-with-access-list:
+  header: "&7----- &6允许打开箱子的玩家 &7-----&r\n"
+  player-entry: "  &7>> &e%PLAYER%&7\n"
+  footer: "&7----- &6允许打开箱子的玩家 &7-----&r"
+
+#公会据点
+successfully-set-clan-home: "&3你&a成功&3将公会据点设置在了当前位置!"
+successfully-deleted-clan-home: "&3你&a成功&3删除了当前的公会据点!"
+home-cool-down-timer-wait: "&3抱歉, 你还需要等待 &6%TIMELEFT%&r &3秒才可再次这么做."
+failed-no-home-set: "&3你的公会尚未设置据点!"
+failed-tp-not-in-clan: "&3你需要先加入一个公会! 输入命令 &6/clan &3来浏览细节."
+timed-teleporting-begin-tp: "&3正在传送至公会据点...\n&3请不要走动!"
+timed-teleporting-complete: "&3成功传送至公会据点."
+timed-teleport-failed-player-moved: "&3你在发起传送的时候移动了! 传送已取消."
+non-timed-teleporting-complete: "&3成功传送至公会据点."
+
+#公会聊天
+failed-must-be-in-clan: "&3你需要先加入一个公会! 输入命令 &6/clan &3来浏览细节."
+chat-cool-down-timer-wait: "&3抱歉, 你还需要等待 &6%TIMELEFT%&r &3秒才可再次这么做."
+chatspy-toggle-on: "&3已将公会聊天窃听&a&l开启&3."
+chatspy-toggle-off: "&3已将公会聊天窃听&c&l关闭&3."
+
+#公会与玩家积分
+player-points-killer-non-enemy-received-success: "&3你击杀了玩家 &6%PLAYER% &3并获得了 &6%POINTVALUE%&3 积分!"
+player-points-killer-enemy-received-success: "&3你击杀了玩家 &6%PLAYER% &3, 他们与公会敌对, 你因此获得了 &6%ENEMYPOINTVALUE%&3 积分!"
+player-points-victim-non-enemy-withdrawn-success: "&3你被 &6%KILLER% &3击杀, 并被夺走了 &6%POINTVALUE% &3积分!"
+player-points-victim-enemy-withdrawn-success: "&3你被玩家 &6%KILLER% &3击杀, 他们与公会敌对, 你因此获得了 &6%ENEMYPOINTVALUE% &3点去哪n!"
+player-points-console-victim-point-withdraw-failed: "&6%VICTIM% &c被击杀时没有足够的积分用于支付!"
+player-points-victim-withdraw-failed: "&3你死亡时没有足够的积分用于取出!"
+player-points-list-command: "&3你当前拥有 &6%POINTVALUE% &3积分."
+clan-deposit-points-success: "&3你成功向公会 &6%CLAN% 的&3账户中存入了 &6%POINTS% &3积分."
+clan-deposit-points-failed: "&c从 &6%CLAN% 的公会&c账户存入 &6%POINTS% &c失败. &3你的积分不足!"
+clan-deposit-points-invalid-point-amount: "&c请输入存入的数量!"
+clan-deposit-points-incorrect-command: "&c请输入积分数量: &6/clan point deposit <数量>"
+clan-withdraw-points-success: "&3你成功从公会 &6%CLAN% 的&3账户取出了 &6%POINTS% &3积分."
+clan-withdraw-points-failed: "&c从 &6%CLAN% 的公会&c账户取出 &6%POINTS% &c失败. &3公会积分不足!"
+clan-withdraw-points-invalid-point-amount: "&c请输入取出的数量!"
+clan-withdraw-points-incorrect-command: "&c请输入积分数量: &6/clan point withdraw <数量>"
+clan-points-failed-not-in-clan: "&3你需要先加入公会! 输入命令 &6/clan &3来浏览细节."
+
+#玩家积分消息
+all-points-list-header: "&7----- &6全体玩家积分数 &7-----&r\n"
+all-points-list-entry: " &7>> &e%PLAYER%&7: &6%POINTVALUE%\n"
+all-points-list-footer: "&7----- &6全部玩家积分数 &7-----&r"
+
+#通用插件消息
+clan-must-be-owner: "&3你必须为公会领袖才可这么做."
+function-disabled: "&3抱歉, 本服务器未启用该功能. :("
+no-permission: "&6ClansLite: &c抱歉, 但你没有权限这么做. :("
+plugin-reload-begin: "&6ClansLite: &a正准备重载插件..."
+plugin-reload-successful: "&6ClansLite: &a插件成功重载!"
+plugin-reload-broadcast-start: "&6ClansLite: &a插件正在重载, 请不要使用任何 ClansLite 的命令, 直到重载完毕!"
+player-only-command: "&4抱歉, 该命令只能被玩家执行!"
+chest-location-save-failed-1: "&4公会 &6%CLAN% &4的保护箱子处于不存在的世界, 保存失败!"
+chest-location-save-failed-2: "&c跳过并检查公会 &6%CLAN%&c 的保护箱子!"
+chest-location-load-failed: "&4世界 &6%WORLD% &4不存在! 正尝试跳过当前对公会 &6%CLAN%&4 的检查!"
+saving-clans-start: "&6ClansLite: 正在保存公会数据..."
+save-completed: "&6ClansLite: &a公会数据保存成功!"
+save-failed-no-clans: "&6ClansLite: &c跳过公会数据保存, 缓存中&c&l未发现&c需更新的公会数据!"
+auto-save-started: "&6ClansLite: &a自动保存任务已开始执行."
+auto-save-complete: "&6ClansLite: &a成功保存公会数据!"
+auto-save-failed: "&6ClansLite: &4保存 clans.yml 文件失败!"
+auto-invite-wipe-started: "&6ClansLite: &a正在清理邀请请求."
+auto-invite-wipe-complete: "&6ClansLite: &a成功清理邀请请求!"
+invite-wipe-failed: "&6ClansLite: &c清理待处理邀请请求失败!"
+clans-save-error-1: "&6ClansLite: &4保存 clans.yml 文件失败!"
+clans-save-error-2: "&6ClansLite: &4检查控制台获取详细信息!"
+clans-load-error-1: "&6ClansLite: &4载入 clans.yml 数据失败!"
+clans-load-error-2: "&6ClansLite: &4检查控制台获取详细信息!"
+clans-update-error-1: "&6ClansLite: &4更新 clans.yml 文件失败!"
+clans-update-error-2: "&6ClansLite: &4检查控制台获取详细信息!"
+clan-player-not-found-1: "&6ClansLite: &4找不到名为 &6%PLAYER%&4 的玩家!"
+clan-player-not-found-2: "&6ClansLite: &4确保玩家 &6%PLAYER% &4此前已加入!"
+
+#/clanchat 命令消息
+clan-chat-command-incorrect-usage:
+  - "&7----- &6ClansLite &7-----&r\n"
+  - "&6ClansLite 公会聊天使用方法:\n"
+  - "&3/clanchat <消息>\n"
+  - "&7----- &6ClansLite &7-----&r"
+
+#/chest 命令消息
+chest-command-incorrect-usage:
+  - "&7----- &6ClansLite &7-----&r\n"
+  - "&6ClansLite 箱子保护使用方法:\n"
+  - "&3/clanchest lock\n"
+  - "&3/clanchest unlock\n"
+  - "&3/clanchest buylock <数量>\n"
+  - "&3/clanchest accesslist\n"
+  - "&7----- &6ClansLite &7-----&r"
+
+#/clan 命令消息
+clan-command-incorrect-usage:
+  - "&7----- &6ClansLite &7-----&r\n"
+  - "&6ClansLite 命令用法:\n"
+  - "&3/clan create <公会名称>\n"
+  - "&3/clan disband\n"
+  - "&3/clan invite <玩家名称>\n"
+  - "&3/clan join\n"
+  - "&3/clan leave\n"
+  - "&3/clan kick <玩家名称>\n"
+  - "&3/clan info\n"
+  - "&3/clan list\n"
+  - "&3/clan prefix <前缀>\n"
+  - "&3/clan transfer <玩家名称>\n"
+  - "&3/clan ally [add|remove] <公会领袖玩家名称>\n"
+  - "&3/clan enemy [add|remove] <公会领袖玩家名称>\n"
+  - "&3/clan pvp\n"
+  - "&3/clan [sethome|delhome|home]\n"
+  - "&3/clan points [deposit|withdraw] <数量>\n"
+  - "&3/clan playerpoints <listall>\n"
+  - "&7----- &6ClansLite &7-----&r"
+
+#/clanadmin 命令消息
+clanadmin-command-incorrect-usage:
+  - "&7----- &6ClansLite &7-----&r\n"
+  - "&6ClansLite Admin usage:\n"
+  - "&3/clanadmin save\n"
+  - "&3/clanadmin reload\n"
+  - "&3/clanadmin disband <公会领袖玩家名称>\n"
+  - "&3/clanadmin about\n"
+  - "&7----- &6ClansLite &7-----&r"
+
+#插件更新提示
+update-check-failure: "&6ClansLite: &4检查更新失败! - &c"
+update-available:
+  1: "&4*-------------------------------------------*"
+  2: "&6ClansLite: &c有新版本可用!"
+  3: "&4*-------------------------------------------*"
+no-update-available:
+  1: "&a*-------------------------------------------*"
+  2: "&6ClansLite: &a插件已是最新版!"
+  3: "&a*-------------------------------------------*"

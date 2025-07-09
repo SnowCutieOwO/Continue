@@ -1,0 +1,40 @@
+conditionals:
+  'false': '&C否'
+  'true': '&a是'
+  closed: '&c关闭'
+  disabled: '&c禁用'
+  enabled: '&a启用'
+  open: '&a开启'
+redeem:
+  item name tag: '&e请在聊天栏中输入物品的新名称!'
+  cancel message: '&e你可以输入 &F''&b%cancel_word%&f''&e 取消本次重命名操作'
+  item lore tag: '&e请在聊天栏中输入添加的物品描述!'
+  item delore tag: '&a请右键你需要删除描述的物品!"'
+error:
+  blocked item: '&c你不能重命名那个物品!'
+  blocked word: '&c你不能在新物品名称中使用这个词'
+  not a number: '&4%value% &c不是有效数字!'
+  no permission: '&c你没有足够的权限!'
+  using tag: '&c请在使用其他编辑卡前完成本次操作!'
+  player offline: '&4%value% &c不在线或不存在!'
+  not enough money: '&c你没有足够的钱!'
+  player not found: '&4%value% &c未找到!'
+  invalid tag: '&c这不是一个有效的编辑卡卡种类!'
+  air: '&c你不能重命名无效材料.'
+  max rename length: '&c重命名失败, 名称过长'
+button:
+  number key: '键盘 # 键'
+  left click: 鼠标左键
+  right click: 鼠标右键
+  left shift click: Shift+鼠标左键
+  middle click: 鼠标中键
+  drop key: 键盘 Q 键
+success:
+  reload: '&a成功重载了配置文档'
+  canceled rename: '&c你取消了本次编辑操作, 编辑卡已返还'
+  give tag: '&a成功将 &f&e%amount% 个 &e%tag_type%&a 给予了玩家&f: &e%player%.'
+  give all tag: '&a成功将 &f&e%amount% 个 &e%tag_type%&a 给予了在线的所有玩家.'
+gui:
+  lore removal:
+    remove line: '&7点击将该行描述从物品移除'
+    title: '&8点击删除本行描述'

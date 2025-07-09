@@ -1,0 +1,396 @@
+Spawners:
+  ELDER_GUARDIAN:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 远古守卫者
+  WITHER_SKELETON:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 凋零骷髅
+  STRAY:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 流浪者
+  HUSK:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 尸壳
+  ZOMBIE_VILLAGER:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 僵尸村民
+  SKELETON_HORSE:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 骷髅马
+  ZOMBIE_HORSE:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 僵尸马
+  DONKEY:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 驴
+  MULE:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 骡
+  EVOKER:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 唤魔者
+  VEX:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 恼鬼
+  VINDICATOR:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 卫道士
+  ILLUSIONER:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 幻术师
+  CREEPER:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 苦力怕
+  SKELETON:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 骷髅
+  SPIDER:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 蜘蛛
+  GIANT:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 巨人
+  ZOMBIE:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 僵尸
+  SLIME:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 史莱姆
+  GHAST:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 恶魂
+  ZOMBIFIED_PIGLIN:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 僵尸猪灵
+  ENDERMAN:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 末影人
+  CAVE_SPIDER:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 洞穴蜘蛛
+  SILVERFISH:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 蠹虫
+  BLAZE:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 烈焰人
+  MAGMA_CUBE:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 岩浆史莱姆
+  ENDER_DRAGON:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 末影龙
+  WITHER:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 凋灵
+  BAT:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 蝙蝠
+  WITCH:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 女巫
+  ENDERMITE:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 末影螨
+  GUARDIAN:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 守卫者
+  SHULKER:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 潜影贝
+  PIG:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 猪
+  SHEEP:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 羊
+  COW:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 牛
+  CHICKEN:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 鸡
+  SQUID:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 鱿鱼
+  WOLF:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 狼
+  MUSHROOM_COW:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 蘑菇牛
+  SNOWMAN:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 雪傀儡
+  OCELOT:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 豹猫
+  IRON_GOLEM:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 铁傀儡
+  HORSE:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 马
+  RABBIT:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 兔
+  POLAR_BEAR:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 北极熊
+  LLAMA:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 羊驼
+  PARROT:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 鹦鹉
+  VILLAGER:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 村民
+  TURTLE:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 海龟
+  PHANTOM:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 幻翼
+  COD:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 鳕鱼
+  SALMON:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 鲑鱼
+  PUFFERFISH:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 河豚
+  TROPICAL_FISH:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 热带鱼
+  DROWNED:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 溺尸
+  DOLPHIN:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 海豚
+  CAT:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 猫
+  PANDA:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 熊猫
+  PILLAGER:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 灾厄村民
+  RAVAGER:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 劫掠兽
+  TRADER_LLAMA:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 行商羊驼
+  WANDERING_TRADER:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 流浪商人
+  FOX:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 狐狸
+  BEE:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 蜜蜂
+  HOGLIN:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 疣猪兽
+  PIGLIN:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 猪灵
+  STRIDER:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 炽足兽
+  ZOGLIN:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 僵尸疣猪兽
+  PIGLIN_BRUTE:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 猪灵蛮兵
+  AXOLOTL:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 美西螈
+  GLOW_SQUID:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 荧光鱿鱼
+  GOAT:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 山羊
+  ALLAY:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 悦灵
+  FROG:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 青蛙
+  TADPOLE:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 蝌蚪
+  WARDEN:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 监守者
+  CAMEL:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 骆驼
+  SNIFFER:
+    Enabled: true
+    Kill Whole Stack: false
+    Max Stack Size: -1
+    Display Name: 嗅探兽

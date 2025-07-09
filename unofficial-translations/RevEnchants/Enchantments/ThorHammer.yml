@@ -1,0 +1,40 @@
+# [
+#  the plugin is not responsible for your options Minecraft has limitation, 
+#  recommended  MaxLightningStrike 4, 
+#  recommended  Radius 1 to 2]
+
+Settings:
+  Enabled: true
+  InGui: true
+  Name: 唤雷
+  Colour: '&7'
+  Slot: 46
+  MaxLevel: 10
+  MaxLightningStrike: 4
+  MinLightningStrike: 2
+  Radius: 1
+  Currency: RevToken
+  Cost: 1000
+  Increase-Cost-by: 1000
+  Chance: 1
+  Increase-Chance-by: 0.1
+  Requirement:
+    Enabled: false
+    Number: 5
+    Placeholder: '%RevEnchants_Tool_Flag_Level%'
+  Lightning:
+    Enabled: true
+  Sound:
+    Enabled: true
+    ID: ENTITY_LIGHTNING_BOLT_THUNDER
+    Volume: 1
+    Pitch: 1
+  Description: '&7挖掘时随机在矿场内产生闪电'
+  Book:
+    ==: org.bukkit.inventory.ItemStack
+    v: 3700
+    type: LEGACY_BOOK
+  Message:
+    Enabled: true
+    Bar: true
+    Format: '&7唤雷效果清除了 %Amount_FormattedA% 个方块'

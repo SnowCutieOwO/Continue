@@ -1,0 +1,160 @@
+# 在这里你可以编辑管理员菜单中显示的文本
+
+npccreate-item-name: '&a创建 NPC'
+npccreate-item-lore:
+  - '&7在你当前的位置'
+  - '&7创建一个 &aAuctionMaster NPC.'
+  - ''
+  - '&7创建该 NPC 后可对其使用基础的'
+  - '&7Citizens 管理命令.'
+  - ''
+  - '&7若需要使用该功能, 请先安装 &aCitizens &7插件!'
+
+npc-debug-item-name: '&a调试 NPC'
+npc-debug-item-lore:
+  - '&7若你创建了多个 NPC'
+  - '&7且它们头上的悬浮字没有对齐'
+  - '&7则你可以点击此物品来修复'
+
+manage-ended-auctions-item-name: '&a管理已结束竞拍'
+manage-ended-auctions-item-lore:
+  - '&7通过强制删除物品来管理'
+  - '&7已结束或超时的竞拍项目.'
+  - ''
+  - '&7你可以用下列两种方式来删除竞拍:'
+  - ''
+  - '&7通过 &a物品递送&7 将拍卖品退还.'
+  - ''
+  - '&7完全清除本场拍卖,'
+  - '&7参与者可能会失去他们的钱和物品.'
+
+manage-auctions-item-name: '&a管理竞拍'
+manage-auctions-item-lore:
+  - '&7管理尚未结束的竞拍.'
+  - '&7你可以向竞拍添加物品, 或是删除它,'
+  - '&7编辑它的价格, 强制结束它, 或是删除出价.'
+  - ''
+  - '&7你也可以复制参与竞拍的物品'
+  - '&7并将其放入背包中.'
+
+delivery-item-name: '&a发送物品'
+delivery-item-lore:
+  - '&7向一名玩家 &a递送物品&7.'
+  - '&7你也可以使用命令 &a/ahadmin delivery'
+  - '&7来删除指定玩家已经收到的递送物品.'
+
+help-item-name: '&a命令帮助'
+help-item-lore:
+  - '&7使用命令 &a/ahadmin help&7 或点击本物品'
+  - '&7来展示你可以使用的管理员命令列表.'
+
+delete-auction-item:
+  with-delivery-name: '&a删除竞拍与物品递送'
+  with-delivery-lore:
+    - '&7删除本场拍卖并清除所有有关数据'
+    - '&7但会将竞拍的物品和钱通过'
+    - '&a物品递送 &7发送给玩家.'
+  without-delivery-name: '&a删除竞拍'
+  without-delivery-lore:
+    - '&7删除本场拍卖并清除所有有关数据.'
+    - ''
+    - '&c注意'
+    - '&7所有参与竞拍的玩家都会失去'
+    - '&7他们投入的钱或物品(如果有)!'
+
+# 管理已结束竞拍的竞价按钮
+manage-bids-item-name: '&a删除未领取的竞价'
+manage-bids-item-lore:
+  - '&7你可以在这里删除无人认领的竞价.'
+  - ''
+  - '&7可以通过将钱和物品给予竞标者来删除'
+  - '&7也可以单纯地删掉这些内容.'
+
+# 管理未结束竞拍的竞价按钮
+manage-bids-item-name2: '&a删除竞价'
+manage-bids-item-lore2:
+  - '&7你可以在这里删除竞价.'
+  - ''
+  - '&7可以通过将钱和物品给予竞标者来删除'
+  - '&7也可以单纯地删掉这些内容.'
+
+get-item-copy-name: '&a复制物品'
+get-item-copy-lore:
+  - '&7将参与本场拍卖的物品发送至你的背包.'
+
+force-end-auction-name: '&a终止拍卖'
+force-end-auction-lore:
+  - '&7点击强制停止这场拍卖'
+  - '&7并将结束时间设置为当前时间.'
+  - ''
+  - '&c注意!'
+  - '&7该操作不可撤销!'
+
+edit-duration-item-name: '&a编辑竞拍时长'
+edit-duration-item-lore:
+  - '&7点击通过增减时间'
+  - '&7来编辑竞拍时间长度.'
+  - ''
+  - '&7所有编辑为确保精准性都以分钟为单位'
+  - '&7若要按天/时增减请自行计算...'
+  - ''
+  - '&e左键点击设置时间'
+  - '&b右键点击增加/减少'
+
+selected-player-item-name: '&a选择玩家'
+selected-player-item-lore:
+  - '&7点击选择你想要应用操作的玩家.'
+  - ''
+  - '&7选中的玩家: &a%player%'
+  - ''
+  - '&7注意! 即使填入的玩家名称不在线'
+  - '&7物品也会发送至他的缓存背包!'
+  - ''
+  - '&7当前递送数据:'
+  - '&7递送物品: &e%items-count%'
+  - '&7递送硬币: &e%coins%'
+
+delivery-send-item-name: '&a创建递送'
+delivery-send-item-lore:
+  - '&7点击发起物品递送并'
+  - '&7将其发送给指定玩家.'
+
+delivery-set-item-name: '&a设置递送'
+delivery-set-item-lore:
+  - '&7点击设置特殊物品递送'
+  - '&7此次递送会覆盖此玩家'
+  - '&7之前所有的物品递送内容.'
+
+
+delivery-remove-item-name: '&a删除递送'
+delivery-remove-item-lore:
+  - '&7点击删除玩家缓存背包中'
+  - '&7所有的递送物品和钱.'
+
+delivery-item-clone-name: '&a获取递送物品'
+delivery-item-clone-lore:
+  - '&7将玩家递送的物品复制一份并发送至背包'
+  - '&7若空间不足则会将物品掉落在地上.'
+
+no-selected-player-message: '&c你必须选择一名玩家才可以使用该按钮!'
+
+no-delivery-to-send: '&c发送失败, 请在空白位置放入钱或物品!'
+no-delivery-to-set: '&c发送失败, 若你要删除该玩家的物品递送, 请使用右侧的设置.'
+no-delivery-to-work-with: '&c选定玩家没有收到过任何的递送, 操作无效!'
+
+delivery-coins-item-name: '&a递送硬币'
+delivery-coins-item-lore:
+  - '&7当前硬币: &6%coins% 枚'
+  - ''
+  - '&7点击编辑本次递送'
+  - '&7将会包含的硬币数量.'
+
+confirm-action-item-name: '&a完成!'
+confirm-action-item-lore:
+  - '&7如果你认为你已经完成操作, '
+  - '&7可点此发送!'
+
+cancel-action-item-name: '&c取消'
+cancel-action-item-lore:
+  - '&7取消本操作并返回上一级菜单.'
+

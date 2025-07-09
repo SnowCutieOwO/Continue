@@ -1,0 +1,10 @@
+Enabled: true
+Name: Money
+Format: '$%price%'
+Icon:
+  Material: SUNFLOWER
+  Amount: 1
+  Durability: 0
+  Name: '&e%currency_name%'
+  Item_Flags: []
+  Unbreakable: false

@@ -1,0 +1,406 @@
+#
+# 语言文档已经更新!
+#
+# (!!!) 旧版彩色字符 (&a&1&b...) 不再使用.
+#
+# 新的格式:
+#
+# 单种颜色:
+#   <#123abc>
+#   <#ABC987>
+#   ...
+#
+# 渐变颜色:
+#   <#ff0000-#00ff00>
+#   <#ff0000-#ffff00-#00ff00>
+#   ...
+#
+# 其他格式:
+#   粗体 - <!bold> or <!b>
+#   斜体 - <!italic> or <!i>
+#   下划线 - <!underline> or <!u>
+#   删除线 - <!strikethrough> or <!s>
+#   混乱字符 - <!obfuscated> or <!o> (原版的 §k)
+#
+# 若你发现了任何错误或漏洞, 亦或是文本显示文本
+#   请尽快汇报.
+
+Upgrade-GUI:
+  purchase:
+    range: <#00ff00>(!) <#80ff00>成功升级升级 <#00ffff-#008080><!italic>范围 <#80ff00>to
+      至等级 %level%
+    delay: <#00ff00>(!) <#80ff00>成功升级升级 <#ffff00-#ff8000><!italic>间隔 <#80ff00>to
+      至等级 %level%
+    amount: <#00ff00>(!) <#80ff00>成功升级升级 <#ff00ff-#800080><!italic>数量 <#80ff00>to
+      至等级 %level%
+  name: Spawner
+  items:
+    upgrade:
+      name:
+        range: <#00ffff-#008080>-= 范围 %level% =-
+        delay: <#ffff00-#ff8000>-= 间隔 %level% =-
+        amount: <#ff00ff-#800080>-= 数量 %level% =-
+      help: <#808080><!italic>点击升级!
+      info:
+        range:
+        - '  <#99bfbf>显示玩家激活刷怪笼'
+        - <#99bfbf>所需的最小距离
+        delay:
+        - '  <#bfbf99>显示启用刷怪笼后'
+        - <#bfbf99>刷怪间隔
+        amount:
+        - '  <#bf99bf>显示刷怪笼'
+        - <#bf99bf>每次生成的怪物数量
+      current:
+        range: '<#bfbfbf>当前范围: <#80ffff-#00ffff><!italic>%value% 格'
+        delay: '<#bfbfbf>当前间隔: <#ffff80-#ffff00><!italic>%value% 秒'
+        amount: '<#bfbfbf>当前数量: <#ff80ff-#ff00ff><!italic>%value% 个'
+      next:
+        range: '<#bfbfbf>下一级范围: <#80ffff-#00ffff><!italic>%value% 格'
+        delay: '<#bfbfbf>下一级间隔: <#ffff80-#ffff00><!italic>%value% 秒'
+        amount: '<#bfbfbf>下一级数量: <#ff80ff-#ff00ff><!italic>%value% 个'
+      maximum-reached: <#008000>已到达最大等级!
+      price: '<#ffffff>价格: <#00bf00><!italic>%price%'
+    disabled-upgrade:
+      name:
+        range: <#00ffff-#008080>-= 范围 =-
+        delay: <#ffff00-#ff8000>-= 间隔 =-
+        amount: <#ff00ff-#800080>-= 数量 =-
+      help: <#800000>不能升级!
+      current:
+        range: '<#bfbfbf><!italic>当前范围: <#80ffff-#00ffff>%value% 格'
+        delay: '<#bfbfbf><!italic>当前间隔: <#ffff80-#ffff00>%value% 秒'
+        amount: '<#bfbfbf><!italic>当前数量: <#ff80ff-#ff00ff>%value% 个'
+    stats:
+      name: <#bfffff-#00ffff>-= %type% 刷怪笼 =-
+      disabled: <#ff0000>已禁用 <#bfbfbf><!italic>(点击启用)
+      enabled: <#00ff00>已启用 <#bfbfbf><!italic>(点击禁用)
+      empty: <#bfbfbf>Shift+右键点击来清空这个刷怪笼.
+      location: '<#bfbfbf>位置: <#ff0000>%x%<#808080>, <#ff0000>%y%<#808080>,
+        <#ff0000>%z%'
+      stacking:
+        infinite: '<#bfbfbf>堆叠数量: <#bfff00>%stack% 个刷怪笼'
+        finite: '<#bfbfbf>堆叠数量: <#bfff00>%stack%/%limit% 个刷怪笼'
+      spawnable: '<#bfbfbf>可生成实体: <#ffff00-#ffbf00>%spawnable%'
+      warnings:
+        header: '<#ff0000><!underline>刷怪笼有 %count% 条提醒:'
+        light: '  <#ff8000><!italic>光照等级不足'
+        environment: '  <#ff8000><!italic>生成空间不足'
+        ground: '  <#ff8000><!italic>附近地面方块种类不正确'
+        charges: '  <#ff8000><!italic>充能不足'
+        power: '  <#ff8000><!italic>没有足够的红石信号'
+        unknown: '  <#ff8000><!italic>无效生成条件'
+      lore: []
+    charges:
+      name: '<#ff0080-#ff0000>刷怪笼充能: <#00ffff>%charges%'
+      purchase:
+        first: <#bfbfbf>鼠标左键购买<#ffff00>%charges% 点充能 <#808080><!italic>(%price%)
+        second: <#bfbfbf>鼠标右键购买 <#ff8000>%charges% 点充能 <#808080><!italic>(%price%)
+        all: <#bfbfbf>Shift+鼠标右键购买 <#ff0000>%charges% 点充能 <#808080><!italic>(%price%)
+  charges:
+    purchase: <#00ff00>(!) <#00ffff>你购买了 %charges% 点充能
+  disabled-upgrade: <#800000>(!) <#ff8000>你不能升级这个!
+Spawner-item:
+  regular:
+    name: <#bfffff-#00ffff>刷怪笼 <#ffff00-#ffaa00>(%type%)
+  empty:
+    name: <#ff8000><空> <#bfffff-#00ffff>刷怪笼
+  empty-stored:
+    name: '<#ff8000><空 : %type%> <#bfffff-#00ffff>刷怪笼'
+  header: '<#ffffff>升级:'
+  upgrade:
+    range: <#808080>- <#00ffff-#008080><!italic>范围 <#00ffff>%level%
+    delay: <#808080>- <#ffff00-#ff8000><!italic>间隔 <#00ffff>%level%
+    amount: <#808080>- <#ff00ff-#800080><!italic>数量 <#00ffff>%level%
+  charges: '<#ff0080-#ff0000>充能: <#00ffff>%charges%'
+  spawnable: '<#ffff00-#ff8000>可生成实体: <#00ffff>%spawnable%'
+  info: []
+Spawner-view:
+  name: <#000000>所有刷怪笼
+  items:
+    name: <#ffff00>-=[ <#00ffff>%type% 刷怪笼<#ffff00> ]=-
+    header:
+      range: '<#00ffff-#008080><!italic>范围:'
+      delay: '<#ffff00-#ff8000><!italic>间隔:'
+      amount: '<#ff00ff-#800080><!italic>数量:'
+    price: '<#808080>- <#bfbfbf>价格: <#ffffff><!italic>%price%'
+    price-increase: '<#808080>- <#bfbfbf>价格增长: <#ffffff><!italic>%increase%'
+    maximum-level: '<#808080>- <#bfbfbf>最大等级: <#ffffff><!italic>%level%'
+    spawnable: '<#bfbfbf>可生成实体: <#ffff00-#ff8000>%spawnable%'
+    page:
+      current: <#00ffff>第 %page% 页
+      next: <#ff8000>下一页
+      previous: <#ff8000>上一页
+  permission: <#ff8000>上一页
+Prices:
+  experience:
+    insufficient: 经验不足!
+  type:
+    experience:
+      amount: '%amount% 点经验值'
+    levels:
+      insufficient: 经验等级不足!
+      amount: '%amount% 级经验等级'
+    material:
+      insufficient: 物品不足!
+      amount: '%amount% 个 %material%'
+    economy:
+      insufficient: 金钱不足!
+      amount: $%amount%
+    flare-tokens:
+      insufficient: 代币不足!
+      amount: '%amount% 代币'
+  insufficient: <#800000>(!) <#ff8000>%insufficient% <#bfbfbf>[缺少 %price%]
+Holograms:
+  empty:
+    single: <#ff8000><空> <#bfffff-#00ffff>刷怪笼
+    multiple: <#ffff00>%stack% <#bfbfbf>个 <#ff8000><空> <#bfffff-#00ffff>刷怪笼
+  regular:
+    single: <#bfffff-#00ffff>%name% 刷怪笼
+    multiple: <#ffff00>%stack% <#bfbfbf>个 <#bfffff-#00ffff>%name% 刷怪笼
+  warning: <#ffff00>( <#800000>!!! <#ffff00>)
+Shop-buy:
+  name: <#000000>刷怪笼商店 <#808080>(<#ff8000>%page_current%<#808080>/<#ff8000>%page_total%<#808080>)
+  items:
+    page:
+      current: <#00ffff>第 %page% 页
+      next: <#ff8000>下一页
+      previous: <#ff8000>上一页
+    spawner:
+      name: <#bfffff-#00ffff>刷怪笼 <#ffff00-#ffaa00>(%type%)
+      price: '<#ffffff>价格: <#00bf00><!italic>%price%'
+      purchase:
+        first: <#bfbfbf>鼠标左键购买 %amount% 个
+        second: <#bfbfbf>鼠标右键购买 %amount% 个
+        third: <#bfbfbf>Shift+鼠标左键购买 %amount% 个
+        all: <#bfbfbf>Shift+鼠标右键购买 maximum 个
+  purchase:
+    success: <#008000>(!) <#00ffff>成功购买了 <#ffff00-#ffaa00>%amount% 个 %type%<#00ffff>
+      Spawner(s)!
+  permission:
+    opening: <#800000>(!) <#ff8000>你没有权限打开这个!
+    purchase: <#800000>(!) <#ff8000>你没有权限购买这个!
+Shop-sell:
+  name: <#000000>刷怪笼出售
+  accept: <#00ff00>出售
+  cancel: <#ff0000>取消并返回
+  items:
+    selling:
+      name: '<#00ffff>将要出售:'
+      price: <#bfbfbf>- <#00bf00>%price%
+  selling:
+    success: '<#008000>(!) <#00ffff>成功出售了刷怪笼:'
+    empty: <#800000>(!) <#ff8000>没有可以出售的物品!
+    unable: <#800000>(!) <#ff8000>不可出售该物品!
+  disabled: <#800000>(!) <#008080>刷怪笼商店功能已关闭!
+  permission:
+    opening: <#800000>(!) <#ff8000>你没有权限打开这个!
+    selling: <#800000>(!) <#ff8000>你没有权限出售这个!
+Shop-select:
+  name: <#000000>刷怪笼出售
+  buy-shop: <#00ffff>点击购买刷怪笼
+  sell-shop: <#00ffff>点击出售刷怪笼
+  permission:
+    opening: <#800000>(!) <#ff8000>你没有权限打开这个!
+Inventory:
+  insufficient-space: <#800000>(!) <#ff8000>你的背包空间不足!
+Items:
+  spawner-drop:
+    alert: <#00ffff>你还有 <#ffff00>%seconds% 秒 <#00ffff>来捡起你的刷怪笼掉落物! <#ffffff>(点击此处或输入命令 /spawnerdrops)
+    cleared: <#800000>(!) <#ff8000>由于未及时收集, 刷怪笼掉落物已被清理!
+    try-breaking: <#800000>(!) <#ff8000>含有未收集的掉落物时不可破坏刷怪笼!
+    empty: <#800000>(!) <#ff8000>没有可给予的物品!
+Spawners:
+  placing:
+    permission: <#800000>(!) <#ff8000>你没有权限放置这个!
+  breaking:
+    success: <#00ff00>(!) <#00ffff>刷怪笼成功破坏!
+    failure: <#800000>(!) <#008080>刷怪笼破坏失败!
+    permission: <#800000>(!) <#ff8000>你没有权限破坏这个!
+  stacking:
+    stacked:
+      infinite: <#008000>(!) <#00ffff>刷怪笼已被堆叠! <#ffff00>(%stack%
+        Stacked)
+      finite: <#008000>(!) <#00ffff>刷怪笼已被堆叠! <#ffff00>(%stack%/%limit%
+        Stacked)
+    unequal-spawner: <#800000>(!) <#ff8000>参与堆叠的刷怪笼种类必须相同!
+    limit-reached: <#800000>(!) <#ff8000>这个刷怪笼已经到达了它的堆叠上限!
+    nearby:
+      none-match: <#800000>(!) <#ff8000附近没有刷怪笼可供堆叠!
+    permission: <#800000>(!) <#ff8000>你没有权限堆叠这个!
+  chunks:
+    limit-reached: <#800000>(!) <#ff8000>该区块已到达了它的刷怪限制!
+  ownership:
+    limit:
+      place: <#008000>(!) <#00ffff>刷怪笼已成功放置 <#ff8000>(<#ffff00>%placed%<#ff8000>/<#ffff00>%limit%<#ff8000>)
+      reached: <#800000>(!) <#ff8000>你已经到达了你的刷怪笼数量放置上限! <#bfbfbf>(%limit%)
+    stacking:
+      warning: <#800000>(!) <#ff8000>你不能堆叠不属于自己的刷怪笼!
+    breaking:
+      warning: <#800000>(!) <#ff8000>你不能破坏不属于自己的刷怪笼!
+    upgrading:
+      warning: <#800000>(!) <#ff8000>你不能升级不属于自己的刷怪笼!
+    opening:
+      warning: <#800000>(!) <#ff8000>你不能打开不属于自己的刷怪笼!
+    changing:
+      warning: <#800000>(!) <#ff8000>你不能修改不属于自己的刷怪笼!
+    show-owner: <#008000>(!) <#ffff00>这个刷怪笼的拥有者是玩家 <#00ffff>%player%
+  natural:
+    changing:
+      warning: <#800000>(!) <#ff8000>你不能修改自然生成的刷怪笼!
+    breaking:
+      warning: <#800000>(!) <#ff8000>你不能破坏自然生成的刷怪笼!
+    stacking:
+      warning: <#800000>(!) <#ff8000>你不能堆叠自然生成的刷怪笼!
+    opening:
+      warning: <#800000>(!) <#ff8000>你不能打开自然生成的刷怪笼!
+    upgrading:
+      warning: <#800000>(!) <#ff8000>你不能升级自然生成的刷怪笼!
+  changing:
+    type-changed: <#008000>(!) <#00ffff>刷怪笼种类已设置为 <#ffff00>%type%
+    same-type: <#800000>(!) <#ff8000>你不能设置相同的实体种类!
+    dany:
+      from: <#800000>(!) <#ff8000>你不能切换该种类的刷怪笼!
+      to: <#800000>(!) <#ff8000>你不能切换该种类的刷怪笼!
+    permission: <#800000>(!) <#ff8000>你没有权限使用这个!
+    eggs:
+      insufficient: <#800000>(!) <#ff8000>缺少刷怪蛋 <#bfbfbf>(需要 %required%)
+  charges:
+    lose-by-stacking: <#800000>(!) <#ff8000>在堆叠时失去了 <#ffff00>%charges% 点充能 <#ff8000>!
+  upgrades:
+    disabled: <#800000>(!) <#ff8000>你不能升级这个!
+    permission:
+      opening: <#800000>(!) <#ff8000>你没有权限打开这个!
+      purchase: <#800000>(!) <#ff8000>你没有权限升级这个!
+  empty:
+    disabled: <#800000>(!) <#008080>空白刷怪笼已被禁用!
+    try-open: <#800000>(!) <#008080>不能打开空白刷怪笼!
+    hand-full: <#800000>(!) <#008080>你必须空手才可移除刷怪笼中的刷怪笼蛋!
+    verify-removing:
+      first: <#ff8000>(!) <#ffff00>左键确认你已将该刷怪笼的刷怪蛋移除!
+      try-again: <#800000>(!) <#008080>你需要 Shift+鼠标右键点击空白刷怪笼!
+  view:
+    empty: <#800000>(!) <#008080>没有可浏览的内容!
+    disabled: <#800000>(!) <#008080>刷怪笼浏览功能已被禁用!
+  give:
+    success: <#008000>(!) <#008080>成功将 <#00ffff>%amount% <#008080>个 <#00ffff>%type%
+      个刷怪笼 <#008080>发送至你的背包!
+    success-single: <#008000>(!) <#008080>成功将 <#00ffff>%type% 刷怪笼 <#008080>发送至你的背包!
+Locations:
+  header: '<#00ffff>你放置了 %count% 个刷怪笼, 位置:'
+  world: '  <#808080>(%world%)'
+  position: <#ff0080>%index%. <#c4c4c4>%x%, %y%, %z%
+  none-owned: <#ff8000>你没有任何刷怪笼!
+Trusted:
+  help:
+    primary:
+    - '<#00ff80>命令用法: <#80ffff>/spawnertrust'
+    - '  <#80ffff>add [玩家名称] <#cccccc>- 将玩家添加至白名单'
+    - '  <#80ffff>remove [玩家名称] <#cccccc>- 将玩家移出白名单'
+    - '  <#80ffff>clear <#cccccc>- 将所有玩家移出白名单'
+    - '  <#80ffff>view <#cccccc>- 浏览白名单内的玩家'
+    add: '<#00ff80>命令用法: <#80ffff>/spawnertrust add [玩家名称]'
+    remove: '<#00ff80>命令用法: <#80ffff>/spawnertrust remove [玩家名称]'
+  info:
+    unknow-player: <#ff0000>玩家不存在或不在线!
+    already-trusted: <#ff8000>该玩家已经在白名单中了!
+    not-trusted: <#ff8000>该玩家已经不在白名单中了!
+    empty: <#ff8000>白名单中没有玩家!
+    added: <#00ffff>成功将该玩家添加至白名单!
+    removed: <#00ffff>成功将该玩家移出白名单!
+    cleared: <#00ffff>成功将 %count% 名玩家移出白名单!
+  header: '<#00ffff>你的白名单中有 %count% 名玩家:'
+  player: <#ff0080>%index%. <#c4c4c4>%player%
+Entities:
+  name:
+    ALLAY: 悦灵
+    ARMOR_STAND: 盔甲架
+    AXOLOTL: 美西螈
+    BAT: 蝙蝠
+    BEE: 蜜蜂
+    BLAZE: 烈焰人
+    BOAT: 船
+    CAMEL: 骆驼
+    CAT: 猫
+    CAVE_SPIDER: 洞穴蜘蛛
+    CHEST_BOAT: 运输船
+    CHICKEN: 鸡
+    COD: 鳕鱼
+    COW: 牛
+    CREEPER: 苦力怕
+    DOLPHIN: 海豚
+    DONKEY: 驴
+    DROWNED: 溺尸
+    ELDER_GUARDIAN: 远古守卫者
+    ENDERMAN: 末影人
+    ENDERMITE: 末影螨
+    ENDER_DRAGON: 末影龙
+    EVOKER: 唤魔者
+    EXPERIENCE_BOTTLE: 经验之瓶
+    EXPERIENCE_ORB: 经验球
+    FOX: 狐狸
+    FROG: 青蛙
+    GHAST: 恶魂
+    GIANT: 巨人
+    GLOW_SQUID: 发光鱿鱼
+    GOAT: 山羊
+    GUARDIAN: 守卫者
+    HOGLIN: 疣猪兽
+    HORSE: 马
+    HUSK: 尸壳
+    ILLUSIONER: 幻术师
+    IRON_GOLEM: 铁傀儡
+    LLAMA: 羊驼
+    MAGMA_CUBE: 岩浆史莱姆
+    MINECART: 矿车
+    MINECART_CHEST: 运输矿车
+    MINECART_COMMAND: 命令方块矿车
+    MINECART_FURNACE: 动力矿车
+    MINECART_HOPPER: 漏斗矿车
+    MINECART_SPAWNER: 刷怪笼矿车
+    MINECART_TNT: TNT矿车
+    MULE: 骡
+    MUSHROOM_COW: 蘑菇牛
+    OCELOT: 豹猫
+    PANDA: 熊猫
+    PARROT: 鹦鹉
+    PHANTOM: 幻翼
+    PIG: 猪
+    PIGLIN: 猪灵
+    PIGLIN_BRUTE: 猪灵蛮兵
+    PILLAGER: 灾厄村民
+    POLAR_BEAR: 北极熊
+    PUFFERFISH: 河豚
+    RABBIT: 兔子
+    RAVAGER: 掠夺者
+    SALMON: 鲑鱼
+    SHEEP: 羊
+    SHULKER: 潜影贝
+    SILVERFISH: 蠹虫
+    SKELETON: 骷髅
+    SKELETON_HORSE: 骷髅马
+    SLIME: 史莱姆
+    SNIFFER: 嗅探兽
+    SNOWMAN: 雪傀儡
+    SPIDER: 蜘蛛
+    SQUID: 鱿鱼
+    STRAY: 流浪者
+    STRIDER: 炽足兽
+    TADPOLE: 蝌蚪
+    TRADER_LLAMA: 行商羊驼
+    TROPICAL_FISH: 热带鱼
+    TURTLE: 海龟
+    VEX: 恼鬼
+    VILLAGER: 村民
+    VINDICATOR: 卫道士
+    WANDERING_TRADER: 行商
+    WARDEN: 监守者
+    WITCH: 女巫
+    WITHER: 凋灵
+    WITHER_SKELETON: 凋灵骷髅
+    WOLF: 狼
+    ZOGLIN: 僵尸疣猪兽
+    ZOMBIE: 僵尸
+    ZOMBIE_HORSE: 僵尸马
+    ZOMBIE_VILLAGER: 僵尸村民
+    ZOMBIFIED_PIGLIN: 僵尸猪灵

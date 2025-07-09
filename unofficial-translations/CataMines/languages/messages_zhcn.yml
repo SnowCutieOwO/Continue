@@ -1,0 +1,394 @@
+Time:
+  Seconds: 秒
+  Second: 秒
+  Minutes: 分
+  Minute: 分
+  Hours: 时
+  Hour: 时
+
+GUI:
+  Universal:
+    Previous-Page:
+      Name: '&6&l上一页'
+      Lore:
+      - ''
+      - '&7翻到上一页'
+    Next-Page:
+      Name: '&6&l下一页'
+      Lore:
+      - ''
+      - '&7翻到下一页'
+    Close:
+      Name: '&4&l关闭'
+      Lore:
+      - ''
+      - '&7关闭本菜单'
+    Back-To-Mine-Menu:
+      Name: '&6&l返回'
+      Lore:
+      - ''
+      - '&7回到矿场菜单'
+    Back-To-Composition-Menu:
+      Name: '&6&l返回'
+      Lore:
+      - ''
+      - '&7返回矿场生成界面'
+    Back-To-Block-Menu:
+      Name: '&6&l返回'
+      Lore:
+      - ''
+      - '&7返回方块界面'
+    Increase-By: '&a增加 %number%'
+    Decrease-By: '&c减少 %number%'
+  Mine-List-Menu:
+    Title: '&b矿场列表'
+  Mine-Menu:
+    Title: '&b%mine%'
+    Items:
+      Configure-Composition:
+        Name: '&6配置生成率'
+        Lore:
+        - ''
+        - '&b生成几率: &c%chance%%'
+      Configure-Delay:
+        Name: '&6配置重置时间'
+        Lore:
+        - '&f固定间隔重置'
+        - ''
+        - '&b重置间隔: &c%delay%'
+        - '&b重置比例: &c%percentage%'
+        - ''
+        - '&a&l右键点击切换模式'
+      Configure-Percentage:
+        Name: '&6配置重置比例'
+        Lore:
+        - '&f按挖掘比例重置'
+        - ''
+        - '&b重置间隔: &c%delay%'
+        - '&b重置比例: &c%percentage%'
+        - ''
+        - '&a&l右键点击切换模式'
+      Configure-TimePercentage:
+        Name: '&6时间与比例'
+        Lore:
+        - '&f同时检查时间与挖掘比例并进行重置'
+        - ''
+        - '&b重置间隔: &c%delay%'
+        - '&重置比例: &c%percentage%'
+        - ''
+        - '&a&l右键点击切换模式'
+      Flag-Menu:
+        Name: '&6配置标志'
+        Lore:
+        - ''
+        - '&e警告: &f%warn%'
+        - '  &e全服公告: &f%global%'
+        - '  &eActionbar: &f%actionbar%'
+        - '  &e距离: &c%warndistance%'
+        - '&e传送: &f%teleports%'
+        - '  &e重置时传送: &f%resettp%'
+        - '&e替换: &f%replacemode%'
+      Efficiency-Lvl:
+        Name: '&6挖掘等级'
+        Lore:
+        - ''
+        - '&b等级: &c%level%'
+        - ''
+        - '&f挖掘矿场内方块所需挖掘等级.'
+        - ''
+        - '&f可使用权限 &6catamines.break'
+        - '&f绕过该限制!'
+      Reset-Mine:
+        Name: '&c重置矿场'
+      Teleport:
+        Name: '&5传送至矿场'
+        Lore:
+        - '&b将你传送至矿场'
+      Delete:
+        Name: '&4&l删除矿场'
+      Start-Stop:
+        Active:
+          Name: '&a矿场开放'
+        Inactive:
+          Name: '&7矿场关闭'
+        Lore:
+        - '&b设置矿场是否自动重置'
+      Back:
+        Name: '&4&l返回'
+        Lore:
+        - ''
+        - '&7返回至矿场菜单'
+      Running:
+        Active:
+          Name: '&a矿场正在运行'
+          Lore:
+          - '&7显示矿场的运行状态.'
+          - '&7若没有正常运行, 这里会显示停止运行的原因.'
+        Inactive:
+          Name: '&7矿场因下列原因没有运行:'
+          Reasons:
+            Invalid-Region: '&c所处区域无效'
+            Stopped: '&c它被手动关闭'
+            No-Composition: '&c未设置方块构成'
+            Invalid-Delay: '&c重置间隔为 %delay%'
+  Composition-Menu:
+    Title: '&b方块生成: &c%chance%%'
+    Items:
+      Composition-Block:
+        Name: '%!unchangeable! internal material name%'
+        Lore:
+        - '&f%blockdata%'
+        - ''
+        - '&b生成比例: &c%chance%%'
+        - ''
+        - '&a左键点击配置'
+      Info:
+        Name: '&6信息:'
+        Lore:
+        - '&a鼠标左/右键点击物品栏中的方块进行添加.'
+        - ''
+        - '&c右键点击列表菜单中的方块将其删除'
+  Composition-Block-Menu:
+    Title: '&b方块生成: &c%blockChance%% / %compChance%%'
+    Items:
+      Current-Block:
+        Name: '%!unchangeable! internal material name%'
+        Lore:
+        - '&f%blockdata%'
+        - ''
+        - '&b生成几率: &c%blockChance%%'
+        - '&b生成占比: &c%compChance%%'
+      Change-Table:
+        Name: '&6修改战利品表'
+      Configure-Table:
+        Name: '&6修改战利品表的掉落几率'
+      Add-Loot-Table:
+        Active:
+          Name: '&a&l添加自定义掉落物'
+          Lore:
+          - ''
+          - '&f自定义掉落会添加在默认战利品表的最上方'
+        Inactive:
+          Name: '&7自定义掉落覆盖'
+          Lore:
+          - ''
+          - '&f清除默认掉落物.'
+          - '&f矿场内的方块只会掉落自定义物品.'
+  Change-Loot-Table-Menu:
+    Title: '&b将物品添加至战利品表'
+    Items:
+      Save-Table:
+        Name: '&a保存战利品表'
+        Message: '&a已保存战利品表.'
+  Loot-Table-List-Menu:
+    Title: '&b配置物品掉落几率'
+    Items:
+      Drop-Item:
+        Name: '!unchangeable! internal material name'
+        Lore:
+        - ''
+        - '&b掉落几率: &c%chance%%'
+  Configure-Item-Drop-Chances-Menu:
+    Title: '&b掉落几率: &c%itemChance%/100%'
+    Items:
+      Current-Item: '!unchangeable! internal item'
+      Fortune:
+        Active:
+          Name: '&a&l时运'
+          Lore:
+          - ''
+          - '&f时运能够影响物品的掉落几率'
+        Inactive:
+          Name: '&7时运'
+          Lore:
+          - ''
+          - '&f时运不能影响物品的掉落几率'
+  Reset-Delay-Menu:
+    Title: '&b当前间隔: &c%delay%'
+    Items:
+      Current-Delay:
+        Name: '&b当前间隔: &c%delay%'
+      Switch:
+        Name: '&6切换模式'
+        Lore:
+        - ''
+        - '&b将模式切换为&6百分比'
+  Reset-Percentage-Menu:
+    Title: '&b当前挖掘比例: &c%percentage%%'
+    Items:
+      Current-Percentage:
+        Name: '&b当前挖掘比例: &c%percentage%'
+      Switch:
+        Name: '&6切换模式'
+        Lore:
+        - ''
+        - '&b将模式切换为&6定时'
+  Flags-Menu:
+    Title: '&6&l设置矿场标志'
+    Items:
+      Warn:
+        Active:
+          Name: '&a&l警告'
+          Lore:
+          - ''
+          - '&f矿场会在重置前和重置时警告玩家'
+        Inactive:
+          Name: '&7警告'
+          Lore:
+          - ''
+          - '&f矿场不会警告玩家'
+      Warn-Global:
+        Active:
+          Name: '&a&l全局警告'
+          Lore:
+          - ''
+          - '&f若 &a&l''警告'' &f设置项启用'
+          - '&f向全部玩家发送警告'
+        Inactive:
+          Name: '&7全局警告'
+          Lore:
+          - ''
+          - '&f矿场不会全局警告玩家'
+      Warn-Hotbar:
+        Active:
+          Name: '&a&lActionBar 信息显示'
+          Lore:
+          - ''
+          - '&f在玩家的 ActionBar 中显示矿场的信息'
+        Inactive:
+          Name: '&7ActionBar 信息显示'
+          Lore:
+          - ''
+          - '&f在玩家的 ActionBar 中显示矿场的信息'
+      Teleport-Players:
+        Active:
+          Name: '&a&l传送玩家'
+          Lore:
+          - ''
+          - '&f在矿场重置时传送玩家'
+          - '&f你可以选择将玩家传送至矿场顶端或指定的位置'
+        Inactive:
+          Name: '&7传送玩家'
+          Lore:
+          - ''
+          - '&f在矿场重置时传送玩家'
+          - '&f你可以选择将玩家传送至矿场顶端或指定的位置'
+      Teleport-Players-To-Reset-Location:
+        Active:
+          Name: '&a传送至指定位置'
+          Lore:
+          - ''
+          - '&f目前设置为传送到指定位置'
+          - '&f可通过命令设置指定传送点'
+          - '&f/cm setresettp <矿场名称>'
+        Inactive:
+          Name: '&2传送至指定位置'
+          Lore:
+          - ''
+          - '&f目前设置为传送到矿场顶端'
+      Replace-Mode:
+        Active:
+          Name: '&a&l替换空气'
+          Lore:
+          - ''
+          - '&f仅重置矿场内的空位'
+        Inactive:
+          Name: '&7全部替换'
+          Lore:
+          - ''
+          - '&f重置矿场内的所有方块'
+      Warn-Distance:
+        Name: '&6配置警告范围'
+        Lore:
+        - '&b警告范围: &c%distance%'
+  Efficiency-Menu:
+    Title: '&b挖掘等级: &c%level%'
+    Items:
+      Current-Level:
+        Name: '&b挖掘等级: &c%level%'
+        Lore:
+        - ''
+        - '&f拥有权限 &6catamines.break'
+        - '&f的玩家可绕过该限制!'
+  Warn-Distance-Menu:
+    Title: '&b警告范围: &c%distance%'
+    Items:
+      Current-Distance:
+        Name: '&b当前范围: &c%distance%'
+
+Commands:
+  Create: "成功创建了矿场 &b%mine%&7."
+  Delete: "成功删除了矿场 &b%mine%&7."
+  Reset-Mode: "成功将矿场 &b%mine% &7的重置模式设置为了 &a%mode%&7."
+  Delay: "将重置间隔设置为了 &a%seconds% &7秒."
+  Reset-Percentage: '&7矿井 &b%mine% &7现在会在剩余 &a%percentage%% &7方块时重置'
+  Set:
+    Success: '&b%material% &7已为矿井 &a%mine%&7 设置. 你现在还可以设置剩余 &6%remainingChance%% &7的方块占比.'
+    Error: '%chance-over-100%. 你现在还可以设置剩余 &6%remainingChance%% &7的方块占比.'
+  Unset:
+    Clear: "矿场 &a%mine% &7h的方块组成已被清除"
+    Remove:
+      Success: '&b%material% &7已被删除. 你现在还可以设置剩余 &a%remainingChance%% &7的方块占比.'
+      Error: '&b%material% &7不属于矿场 %mine%&7 的组成. 你现在还可以设置剩余 &a%remainingChance%% &7的方块占比.'
+  Reset: "矿场已被重置."
+  Teleport:
+    Self: "已传送至矿场 &b%mine%."
+    Other: "已将玩家 &6%player% &7传送至矿场 &b%mine%"
+  Set-Teleport: "已设置了矿场 &b%mine% &7的传送点."
+  Set-Reset-Teleport: 成功设置了矿场 &b%mine% &7的重置传送. &7同时将 teleportPlayersToResetLocation 设置为了 &atrue
+  Flag:
+    Move-Region: 成功移动了 &c%mine% &7的区域.
+    Rename: 成功将矿场 &b%oldmine% &7重命名为了 &a%newmine%.
+    Replace-Mode: 成功将矿场 &b%mine% &7的替换模式设置为了 &a%arg%.
+    Teleport-Players: 成功将矿场 &b%mine% &7的玩家传送点设置为了 &a%arg%.
+    Warn:
+      Warn-Hotbar: 矿场 &b%mine% &7的警告模式已设置为了 &a%arg%.
+      Warn-Enable: 矿场 &b%mine% &7的警告模式已设置为了 &a%arg%.
+      Warn-Global: 矿场 &b%mine% &7的全局警告模式已设置为了 &a%arg%.
+      Warn-Message: '&a成功更新了警告消息.'
+      Reset-Message: '&a成功更新了重置消息.'
+      Warn-Distance: 矿场 &b%mine% &7的警告范围已设置为了 &a%arg%.
+      Warn-Seconds: '&a成功更新了警告时间.'
+  Start: '&a开放了矿井 %mine%.'
+  Stop: '&c关闭了矿井 %mine%.'
+  Start-Tasks: '&a启动了所有矿场的定时任务'
+  Stop-Tasks: '&c停止了所有矿场的定时任务'
+  Sync: '&a成功同步了所有矿场的时间'
+  Reload:
+    All: '&a插件已成功重载.'
+    Mines: '&a矿场已成功重载.'
+    Config: '&a配置已成功重载.'
+    Messages: '&a消息文件已成功重载.'
+    Properties: '&a属性文件已成功重载.'
+
+Error-Messages:
+  No-Permission: '&c你没有这么做的权限!'
+  Only-Players: '&c只有玩家才可执行该命令!'
+  Unknown-Command: 未知命令.
+  Unknown-Flag: 未知标志.
+  Player-Not-Found: 名为 &6%player% &7的玩家不存在!
+  Mine:
+    Incomplete-Region: 请先选择一片区域!
+    Not-Exist: 矿场不存在!
+    Exist: 矿场已存在!
+    Cant-Reset: 重置矿场失败!
+    Material-Not-Found: 材料名不存在!
+    Not-Number: 所输入几率必须为数字!
+    Not-Percentage: 所输入几率必须为百分比!
+    Invalid-Chance: 所输入几率必须处于 0 到 100% 之间!
+    Invalid-Range: 你所输入的内容需处于 %start%-%end% 之间!
+    Material-Not-Solid: 材料必须为固体方块!
+    Invalid-Block-Configuration: 无效方块配置!
+    Invalid-Boolean: 最后一个参数必须为 true 或 false!
+    Teleport-Error: 位置不存在!
+    Block-Not-In-Composition: 方块不属于该矿场的组成成分
+    Invalid-Region: '&c区域无效!'
+    Material-In-Composition: 材料已属于该矿场的组成成分!
+    Chance-Over-100: 几率已经超过了 100%
+  GUI:
+    Mine-Deleted: 已踢出矿场界面!
+    Block-Deleted: 已提出方块界面!
+    Loot-Table-Change: 已修改战利品表!
+    First-Page: 你已在首页
+    Last-Page: 你已在尾页
+    Mine-Doesnt-Exist: '&c你尝试访问的矿井已被删除!'

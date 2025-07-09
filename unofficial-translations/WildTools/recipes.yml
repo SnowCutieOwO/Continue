@@ -1,0 +1,64 @@
+####################################################
+##                                                ##
+##            WildTools 配置文件                  ##
+##              插件作者 Ome_R                    ##
+##                                                ##
+####################################################
+
+items:
+  tool_core:
+    type: REDSTONE
+    name: '&4工具核心'
+    lore:
+    - '&7可以用这个核心制作神奇的魔杖!'
+    glow: true
+
+recipes:
+  trench_pickaxe:
+  - 'DIAMOND, DIAMOND, DIAMOND'
+  - 'tool_core, STICK, tool_core'
+  - 'tool_core, STICK, tool_core'
+  tray_pickaxe:
+  - 'DIAMOND, DIAMOND, DIAMOND'
+  - 'tool_core, STICK, tool_core'
+  - 'AIR, STICK, AIR'
+  sand_wand:
+  - 'SAND, STICK, tool_core'
+  - 'AIR, AIR, AIR'
+  - 'AIR, AIR, AIR'
+  sell_wand:
+  - 'GOLD_INGOT, STICK, tool_core'
+  - 'AIR, AIR, AIR'
+  - 'AIR, AIR, AIR'
+  lightning_wand:
+  - 'EMERALD, STICK, tool_core'
+  - 'AIR, AIR, AIR'
+  - 'AIR, AIR, AIR'
+  harvester_hoe:
+  - 'DIAMOND, DIAMOND, AIR'
+  - 'tool_core, STICK, AIR'
+  - 'AIR, STICK, AIR'
+  cannon_wand:
+  - 'TNT, STICK, tool_core'
+  - 'AIR, AIR, AIR'
+  - 'AIR, AIR, AIR'
+  crafting_wand:
+  - 'WORKBENCH, STICK, tool_core'
+  - 'AIR, AIR, AIR'
+  - 'AIR, AIR, AIR'
+  builder_wand:
+  - 'tool_core, AIR, tool_core'
+  - 'AIR, STICK, AIR'
+  - 'tool_core, AIR, tool_core'
+  ice_wand:
+  - 'ICE, STICK, tool_core'
+  - 'AIR, AIR, AIR'
+  - 'AIR, AIR, AIR'
+  drain_wand:
+  - 'WATER_BUCKET, STICK, tool_core'
+  - 'AIR, AIR, AIR'
+  - 'AIR, AIR, AIR'
+  sort_wand:
+  - 'CHEST, STICK, tool_core'
+  - 'AIR, AIR, AIR'
+  - 'AIR, AIR, AIR'

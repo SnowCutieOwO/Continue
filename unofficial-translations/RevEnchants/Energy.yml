@@ -1,0 +1,53 @@
+# [ , 
+# what is LastTimeEnergySeconds ,  
+# its placeholder for each player to see ,  
+# how much did they collected Energy is the las 60 Seconds, 
+#  you can change the time to a different value, 
+#  example make it every 10 minutes set to 600 Seconds, 
+# %RevEnchants_LastTime_Energy%, 
+# %RevEnchants_LastTime_Energy_FormattedA%, 
+# %RevEnchants_LastTime_Energy_FormattedB%]
+
+Settings:
+  Start: 100
+  Increase: 10
+  Percentage: true
+  Mining:
+    Enabled: true
+    Chance: 100
+    Max: 10
+    Min: 5
+    MultiBreak: true
+  EnergyItem:
+    Item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3700
+      type: LEGACY_INK_SACK
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        enchants:
+          LOOT_BONUS_BLOCKS: 1
+    Name: '&f&l%Amount% &b&l附魔原能'
+    Glow: true
+    Lore:
+    - ' '
+    - '&6包含 %Amount_Formatted% &b&l点附魔原能'
+    - '&6这些能量会用于升级你的镐子'
+    - ' '
+    - '&7提示:可将物品拖放至镐子上'
+    - '&7以增加 +%Amount_Formatted2% 点能量!'
+    - ' '
+    - '&6由 &f%Player% &6取出'
+  Progress:
+    Lore:
+      Amount: 50
+      Full: '&a'
+      Empty: '&c'
+      Icon: ▏
+    Score:
+      Amount: 10
+      Full: '&a'
+      Empty: '&c'
+      Icon: █
+  LastTimeEnergySeconds: 60

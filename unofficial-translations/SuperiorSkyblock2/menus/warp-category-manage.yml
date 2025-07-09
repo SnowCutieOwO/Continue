@@ -1,0 +1,50 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                  插件作者 Ome_R                   ##
+##                                                  ##
+######################################################
+
+title: '&l分类: {0}'
+previous-menu: true
+
+pattern:
+  - '@ @ @ @ @ @ @ @ @'
+  - '@ ! @ @ ~ @ @ $ @'
+  - '@ @ @ @ @ @ @ @ @'
+
+success-update-sound:
+  type: ENTITY_EXPERIENCE_ORB_PICKUP
+  volume: 0.2
+  pitch: 0.2
+
+category-rename: '!'
+category-icon: '~'
+category-warps: '$'
+
+items:
+  '!':
+    type: BOOK
+    name: '&6重命名分类'
+    lore:
+      - '&f '
+      - '&f '
+      - '&7&o(( &f&o鼠标单击 &7&o来重命名该分类. ))'
+  '~':
+    type: STONE
+    lore:
+      - '&f '
+      - '&f '
+      - '&7&o你可使用下列内置变量:'
+      - '&7&o{0} 表示传送点名称.'
+      - '&7&o{1} 表示传送点位置.'
+      - '&7&o{2} 表示传送点开放状态.'
+      - '&7&o(( &f&o鼠标右键 &7&o编辑图标. ))'
+      - '&7&o(( &f&o鼠标左键 &7&o编辑分类位置. ))'
+  '$':
+    type: ENDER_PEARL
+    name: '&6岛屿传送'
+    lore:
+      - '&f '
+      - '&f '
+      - '&7&o(( &f&o鼠标单击 &7&o来编辑岛屿分类下的传送点. ))'

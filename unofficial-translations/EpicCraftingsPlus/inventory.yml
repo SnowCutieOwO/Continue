@@ -1,0 +1,163 @@
+Inventories:
+  main:
+    slots: 45
+    title: '&4&l合成背包'
+    '21':
+      type: category:weapons_armor
+    '23':
+      type: category:others
+  crafting_menu:
+    slots: 45
+    title: '&4&l合成你的物品'
+    0-9;11;17;18;20;26;27;29;35;36-44:
+      item:
+        id: STAINED_GLASS_PANE:15
+        name: ' '
+    '36':
+      item:
+        id: ARROW
+        name: '&7返回'
+      open_inventory: previous
+      not_show_on_blocked_inventories: true
+    '19':
+      type: final_crafting
+    '18':
+      type: previous_crafting
+      not_show_on_blocked_inventories: true
+    '20':
+      type: next_crafting
+      not_show_on_blocked_inventories: true
+    '41':
+      type: click_to_craft
+    '42':
+      type: craft_with_money
+    12-16;21-25;30-34:
+      type: required_item
+    '23':
+      type: no_required_items
+  category_weapons_armor:
+    slots: 45
+    title: '&4&l武器与盔甲 &8%current_page%/%total_pages%'
+    0-9;17;18;26;27;35;36-44:
+      item:
+        id: STAINED_GLASS_PANE:15
+        name: ' '
+    '36':
+      item:
+        id: ARROW
+        name: '&7返回至分类'
+      open_inventory: main
+      not_show_on_blocked_inventories: true
+    '43':
+      type: previous_page
+    '44':
+      type: next_page
+    10-16;19-25;28-34:
+      type: preview_crafting
+  category_others:
+    slots: 45
+    title: '&4&l其他物品 &8%current_page%/%total_pages%'
+    0-9;17;18;26;27;35;36-44:
+      item:
+        id: STAINED_GLASS_PANE:15
+        name: ' '
+    '36':
+      item:
+        id: ARROW
+        name: '&7返回至分类'
+      open_inventory: main
+      not_show_on_blocked_inventories: true
+    '43':
+      type: previous_page
+    '44':
+      type: next_page
+    10-16;19-25;28-34:
+      type: preview_crafting
+  bypass_cooldown_menu:
+    slots: 27
+    title: '&4&l无视冷却'
+    '13':
+      item:
+        id: HOPPER
+        name: '&a&l你确定吗?'
+        lore:
+        - '&7你确定要绕过 &a%crafting_name% &7的'
+        - '&7合成 &c冷却&7吗 &7?'
+        - '&7这会消耗你: &2$%bypass_cost%'
+    '10':
+      type: bypass_cooldown_yes
+    '16':
+      type: bypass_cooldown_no
+CustomItems:
+  previous_page:
+    item:
+      id: ARROW
+      name: '&7上一页'
+  next_page:
+    item:
+      id: ARROW
+      name: '&7下一页'
+  previous_crafting:
+    item:
+      id: STAINED_GLASS_PANE:14
+      name: '&7« 上一个合成 «'
+  next_crafting:
+    item:
+      id: STAINED_GLASS_PANE:14
+      name: '&7» 下一个合成 »'
+  final_crafting:
+    cooldown_info_lore:
+    - ''
+    - '&9冷却剩余: &7%time%'
+  preview_crafting:
+    name: '&e合成 %name%'
+    cooldown_info_lore:
+    - ''
+    - '&9冷却剩余: &7%time%'
+    in_cooldown_lore:
+    - ''
+    - '&8[&c合成正在进行&8]'
+    - '&6你仍需等待: &7%time%'
+    cooldown_ready_lore:
+    - ''
+    - '&8[&a合成已经完毕!&8]'
+    - '&6&l点击获得成品!'
+    bypass_cooldown_lore:
+    - ''
+    - '&c&l鼠标右键付费跳过冷却'
+  required_item:
+    status_lore:
+    - ''
+    - '&6你需要这些物品来合成'
+    - '&8当前: %current_items%&8/%total_items%'
+    no_items_status_color: '&c'
+    some_items_status_color: '&e'
+    all_items_status_color: '&a'
+    not_removed_lore:
+    - ''
+    - '&8[&7该物品不会被移除!&8]'
+  no_required_items:
+    item:
+      id: BARRIER
+      name: '&c该配方没有原料物品'
+  click_to_craft:
+    item:
+      id: WORKBENCH
+      name: '&2&l点击合成!'
+    success_probability_lore:
+    - ''
+    - '&7合成成功率: &c%chance%%'
+  craft_with_money:
+    item:
+      id: INK_SACK:10
+      name: '&6&l付费合成'
+      lore:
+      - '&7点击消费 &a$%cost%&7 来合成该物品.'
+  bypass_cooldown_yes:
+    item:
+      id: STAINED_CLAY:5
+      name: '&a&l是'
+  bypass_cooldown_no:
+    item:
+      id: STAINED_CLAY:14
+      name: '&c&l否'

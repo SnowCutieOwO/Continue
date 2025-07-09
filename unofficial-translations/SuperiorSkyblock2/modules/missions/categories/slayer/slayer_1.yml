@@ -1,0 +1,82 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                  插件作者 Ome_R                   ##
+##                                                  ##
+######################################################
+
+# 使用的任务文件名称
+mission-file: KillsMissions
+
+# 任务在达到条件时是否自动并领取奖励.
+auto-reward: true
+
+# 是否在完成任务后重置玩家的方块计数?
+reset-after-finish: true
+
+# 完成任务时给予的奖励.
+rewards:
+  commands:
+    - 'eco give %player% 1000'
+    - 'is admin msg %player% &e&l屠夫 | &7成功完成了任务 屠夫 I!'
+    - 'is admin msg %player% &e&l屠夫 | &7Your sword hasn''t seen blood yet... Kill more mobs!'
+    - 'is admin msg %player% &e&l屠夫 | &7&ois admin msg %player% &e&l屠夫 | &7&o有关下一个任务的更多信息, 请输入命令 /is missions 查看'
+
+# 完成任务所需要的前置任务.
+required-entities:
+  '1':
+    types:
+      - 'SKELETON'
+      - 'CREEPER'
+      - 'ZOMBIE'
+      - 'SPIDER'
+    amount: 5
+
+# 菜单中使用的图标.
+icons:
+  not-completed:
+    type: PAPER
+    name: '&a屠夫 I'
+    lore:
+      - '&7击杀 5 个任意敌对生物.'
+      - ''
+      - '&6任务需求:'
+      - '&8 - &7x5 骷髅/苦力怕/僵尸/蜘蛛'
+      - ''
+      - '&6任务奖励:'
+      - '&8 - &7$1,000'
+      - ''
+      - '&6已击杀敌对生物: &7{1}/5'
+      - '&6总进度: &7{0}%'
+      - '&c&l ✘ &7尚未完成'
+  can-complete:
+    type: PAPER
+    name: '&a屠夫 I'
+    lore:
+      - '&7击杀 5 个任意敌对生物.'
+      - ''
+      - '&6任务需求:'
+      - '&8 - &7x5 骷髅/苦力怕/僵尸/蜘蛛'
+      - ''
+      - '&6任务奖励:'
+      - '&8 - &7$1,000'
+      - ''
+      - '&6已击杀敌对生物: &75/5'
+      - '&6总进度: &7100%'
+      - '&a&l ✔ &7点击领取任务奖励.'
+    enchants:
+      DURABILITY: 1
+    flags:
+      - HIDE_ENCHANTS
+  completed:
+    type: MAP
+    name: '&a屠夫 I'
+    lore:
+      - '&7击杀 5 个任意敌对生物.'
+      - ''
+      - '&6任务奖励:'
+      - '&8 - &7$1,000'
+      - ''
+      - '&6已击杀敌对生物: &75/5'
+      - '&6总进度: &7100%'
+      - '&a&l ✔ &7已经领取.'

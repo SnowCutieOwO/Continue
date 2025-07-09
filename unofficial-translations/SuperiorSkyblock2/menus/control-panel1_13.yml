@@ -1,0 +1,167 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                  插件作者 Ome_R                   ##
+##                                                  ##
+######################################################
+
+title: '&l岛屿控制面板'
+previous-menu: true
+
+pattern:
+  - '2 2 2 2 2 2 2 2 2'
+  - '# ! # @ # $ # % #'
+  - '_ # ^ # & # * # 1'
+  - '# ~ # = # - # + #'
+  - '2 2 2 2 2 2 2 2 2'
+
+members: '+'
+settings: '@'
+visitors: '-'
+
+items:
+  '!':
+    type: OAK_SIGN
+    name: '&e传送'
+    lore:
+      - '&7返回你的岛屿.'
+  '@':
+    type: REPEATER
+    name: '&e岛屿设置'
+    lore:
+      - '&7管理你的岛屿设置.'
+  '$':
+    type: ENDER_PEARL
+    name: '&e岛屿权限'
+    lore:
+      - '&7管理你的岛屿权限.'
+  '%':
+    type: GRASS_BLOCK
+    name: '&e岛屿群系'
+    lore:
+      - '&7改变你的岛屿生物群系.'
+  '_':
+    type: EMERALD
+    name: '&e岛屿银行'
+    lore:
+      - '&7打开你的岛屿金库.'
+  '^':
+    type: GOLD_INGOT
+    name: '&e岛屿功能升级'
+    lore:
+      - '&7提升你的岛屿功能等级!'
+  '&':
+    type: BEACON
+    name: '&e岛屿排行'
+    lore:
+      - '&7浏览全服最强的岛屿!'
+  '*':
+    type: PAPER
+    name: '&e岛屿任务'
+    lore:
+      - '&7完成任务, 获得奖励!'
+  '1':
+    type: STONE_BRICKS
+    name: '&e岛屿统计'
+    lore:
+      - '&7查看岛屿上所有的方块数量!'
+  '~':
+    type: BARRIER
+    name: '&e解散岛屿'
+    lore:
+      - '&7解散你所在的岛屿.'
+      - '&c该操作不可逆!'
+  '=':
+    type: CHEST
+    name: '&e岛屿仓库'
+    lore:
+      - '&7打开岛屿上的公共仓库.'
+  '-':
+    type: SKELETON_SKULL
+    name: '&e岛屿访客'
+    lore:
+      - '&7浏览岛屿上的所有访客.'
+  '+':
+    type: PLAYER_HEAD
+    name: '&e岛屿成员'
+    lore:
+      - '&7管理岛屿上的成员.'
+  '2':
+    type: BLACK_STAINED_GLASS_PANE
+    name: '&f'
+
+sounds:
+  '!':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2
+  '@':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2
+  '$':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2
+  '%':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2
+  '_':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2
+  '^':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2
+  '&':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2
+  '*':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2
+  '1':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2
+  '~':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2
+  '-':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2
+  '=':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2
+  '+':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2
+
+commands:
+  '!':
+    - '[player] is tp'
+  '$':
+    - '[player] is permissions'
+  '%':
+    - '[player] is biome'
+  '_':
+    - '[player] is bank'
+  '^':
+    - '[player] is upgrade'
+  '&':
+    - '[player] is top'
+  '*':
+    - '[player] is missions'
+  '1':
+    - '[player] is counts'
+  '~':
+    - '[player] is disband'
+  '=':
+    - '[player] is chest'

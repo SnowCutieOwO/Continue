@@ -1,0 +1,46 @@
+Title: '           &n虚拟宝箱'
+Size: 45
+Inventory_Type: CHEST
+Use_Mini_Message: false
+
+Crate:
+    Name: '#9af7ff&l%crate_name%'
+    Lore:
+      - '%crate_item_lore%'
+      - ''
+      - '#9af7ff&l信息:'
+      - '#9af7ff▪ #ddecee你的钥匙: #9af7ffx%keys%'
+      - '#9af7ff▪ #ddecee冷却时间: #9af7ff%crate_opening_cooldown%'
+      - ''
+      - '#a5ff9a&l操作:'
+      - '#a5ff9a▪ #ddecee鼠标左键: #a5ff9a预览'
+      - '#a5ff9a▪ #ddecee鼠标右键: #a5ff9a开启'
+      - ''
+      - '#f39aff&l购买钥匙:'
+      - '#f39aff▪ #ddecee商店链接: #f39affhttp://samplesmp.com/store'
+    Slots:
+      emerald: 20
+      golden: 22
+      diamond: 24
+
+Content:
+  panes_1:
+    Priority: 0
+    Item:
+      Material: BLACK_STAINED_GLASS_PANE
+    Slots: 1,2,3,5,6,7,9,18,27,17,26,35,37,38,39,40,41,42,43
+
+  panes_2:
+    Priority: 0
+    Item:
+      Material: CYAN_STAINED_GLASS_PANE
+    Slots: 0,4,8,36,44
+
+  exit:
+    Priority: 5
+    Item:
+      Material: PLAYER_HEAD
+      Head_Texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2VkMWFiYTczZjYzOWY0YmM0MmJkNDgxOTZjNzE1MTk3YmUyNzEyYzNiOTYyYzk3ZWJmOWU5ZWQ4ZWZhMDI1In19fQ==
+      Name: '#FF5733(✕) &l退出'
+    Slots: 40
+    Type: CLOSE

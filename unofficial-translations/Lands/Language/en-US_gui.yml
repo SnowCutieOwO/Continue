@@ -1,0 +1,2779 @@
+# 在这里你可以编辑所有界面的内容.
+#
+# 如果你遇到了任何问题或想要提问:
+# Discord 聊天群组: https://discord.gg/B4MAJVk
+#
+# 插件维基: https://github.com/Angeschossen/General/wiki/GUI-Menus
+
+general:
+  all: '&a全部'
+  previous: '&8之前的'
+  nation:
+    role:
+      capital: '&4&l首都'
+      land: '&2&l土地'
+    managed:
+      nation: '&c由国家管理'
+      land: '&c由土地管理'
+  inbox-filter:
+    members: '&e成员 ☺'
+    war: '&4战争 ⚔'
+    economy: '&c经济 $'
+    relations: '&a外交'
+  wYes: '&a是'
+  war:
+    defenders: '&a防守方'
+    name:
+      nation: '&9国家 '
+      land: '&2土地 '
+    attackers: '&c进攻方'
+  value:
+    none: '&c无'
+    unlimited: '&a不限制'
+  enabled: '&a启用'
+  offline: '&c离线'
+  never: 从不
+  rentables:
+    cost: '&c花费'
+    price_blocks_ratio: '&a计价方块比例'
+    size: '&e大小'
+    buy: '&a购买'
+    rent: '&e租借'
+  top:
+    sorting:
+      balance: 经济
+      ratio-kd: KD比
+      level: 等级
+      chunks: 区块数量
+      members: 成员数量
+      ratio-wl: 胜负比
+  now: '&a现在'
+  wNo: '&c否'
+  disabled: '&c禁用'
+common:
+  items:
+    default:
+      child_failure_player_trusted:
+        lore:
+        - '&7你已经是该土地的一部分了.'
+        name: '&4&l已受信任'
+      child_failure_land_max-members:
+        lore:
+        - '&c你不能受到土地&4 {object}&c 的信任.'
+        - ' &8• &7他们不能再信任更多成员, 因为信任数量已达到上限.'
+        name: '&4&l满员'
+      child_failure_permission:
+        lore:
+        - '&c你缺少这么做的权限.'
+        name: '&4&l缺少权限'
+      child_failure_teleport_enter:
+        lore:
+        - '&c你不能进入目的地所在的区域.'
+        - ' &8• &7土地拥有者可分配给你相应的权限.'
+        name: '&4&l拒绝进入'
+      child_failure_player_banned:
+        lore:
+        - '&c你不能加入该土地, 因为他们已经封禁了你.'
+        name: '&4&l你被封禁'
+      refresh_page_previous:
+        lore:
+        - '&8✖ &7当前: {current} / {pages}'
+        name: '&c&l前一页'
+        material: ARROW
+        slots: 38
+      child_failure_no-item:
+        lore:
+        - '&7你需要从你的背包中奖物品拖拽至此.'
+        name: '&4&l鼠标没有物品'
+      child_failure_spawn_cooldown:
+        lore:
+        - '&c在传送到其他区域前你还需要等待&4 {time}&c.'
+        name: '&4&l正在冷却'
+      back:
+        lore:
+        - '&8✖ &7返回至'
+        - '   &7{back}.'
+        name: '&c&l返回'
+        material: RED_STAINED_GLASS_PANE
+        slots: 37
+      refresh_page_next:
+        lore:
+        - '&8✖ &7当前: {current} / {pages}'
+        name: '&a&l下一页'
+        material: ARROW
+        slots: 44
+      child_failure_cost:
+        lore:
+        - '&7你需要支付&c {cost} &7才可以这么做.'
+        name: '&4&l余额不足'
+      child_failure_spawn_cost:
+        lore:
+        - '&7你需要支付&c {cost} &7才可以进行传送操作.'
+        name: '&4&l余额不足'
+      child_failure_spawn_teleport:
+        lore:
+        - '&c你不能传送至这个土地的出生点.'
+        - ' &8• &7土地拥有者可给予你进入此处的权限.'
+        name: '&4&l禁止传送'
+      child_failure_spawn_war:
+        lore:
+        - '&c你不能传送至这个土地的出生点.'
+        - ' &8• &这片土地正在进行一场战争,'
+        - '   &7它将会在&5 {time}&7 后结束.'
+        name: '&4&l正进行战争'
+      child_failure_player_own-land:
+        lore:
+        - '&c你不能在拥有一个土地的同时'
+        - '&c加入其他玩家的土地.'
+        - ' &8• &7你必须先删除自己的土地:'
+        - '   &3/lands delete'
+        name: '&4&l你已有土地'
+      child_failure_current-war:
+        lore:
+        - '&7你不能这么做, 因为'
+        - '&7{object}&7 正在进行一场战争.'
+        name: '&4&l正进行战争'
+      child_failure_membership-request_not-looking:
+        lore:
+        - '&c该土地不接纳新成员的加入.'
+        name: '&4&l拒绝假如'
+      child_failure_page_previous:
+        name: '&4&l已是首页'
+      child_success_player_trusted:
+        lore:
+        - '&7土地&2 {land} &7已经自动同意了你的请求.'
+        - ' &8• &7若要离开土地:'
+        - '   &e/lands leave'
+        name: '&a你已被信任'
+      child_failure_page_next:
+        name: '&4&l已是末页'
+      child_success_membership-request_revoked:
+        lore:
+        - '&7成功撤销了你的成员请求.'
+        name: '&c已撤销成员请求'
+      child_failure_noaccess:
+        lore:
+        - '&c你不能这么做.'
+        - ' &8• &7{object}&7 可以给予你所在职位对应的权限以允许你这么做.'
+        - '   &7标志: {flag}'
+        name: '&4&l禁止操作'
+      child_success_membership-request_sent:
+        lore:
+        - '&7他们现在可以接受你的加入请求了.'
+        name: '&a已发送成员邀请'
+      child_failure_spawn_none:
+        lore:
+        - '&c这块土地尚未设置出生点.'
+        - ' &8• &7通过命令设置出生地那:'
+        - '   &e/lands setspawn'
+        name: '&4&l无出生点'
+      child_failure_player_max-lands:
+        lore:
+        - '&c你不能再加入更多土地了.'
+        - ' &8• &7你已达到可加入土地数量的上限.'
+        name: '&4&l到达上限'
+      category:
+        lore:
+        - '&8✖ &7修改土地分类.'
+        - '  &8• &7其他人可以在 &3/lands list'
+        - '    &7下的此分类中找到你的土地.'
+        name: '&6&l所属分类: {category}'
+        material: BOOKSHELF
+        slots: 40
+      category_members:
+        lore:
+        - '&8✖ &7修改土地分类.'
+        - '  &8• &7其他人可以在 &3/lands list'
+        - '    &7下的此分类中找到你的土地.'
+        - ''
+        - '  &8• &7其他玩家在 &3/lands list &7菜单中'
+        - '    &7允许向你发送加入请求,'
+        - '    &7只要你的土地保持在以下状态:'
+        - '    &7{looking}'
+        name: '&6&l所属分类: {category}'
+        material: BOOKSHELF
+        slots: 40
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        slots: 1-45
+  size: 45
+  entries: 10-36
+  auto-correct: true
+gui:
+  area_various:
+    title: '&8杂项'
+    items:
+      default:
+        child_no-item:
+          lore:
+          - '&7你需要在主手中持有物品.'
+          name: '&4&l主手没有物品'
+        name:
+          lore:
+          - '&8✖ &7重命名该区域.'
+          - '   &7当前名称: {name}'
+          name: '&6&l名称'
+          material: NAME_TAG
+          slots: 20
+        icon:
+          lore:
+          - '&8✖ &7将物品拖放至此以修改图标.'
+          - '    &8• &7这能帮你在区域菜单中更好标记这个区域.'
+          name: '&6&l图标'
+          material: INHERIT
+          slots: 26
+        description:
+          lore:
+          - '&8✖ &7修改这片区域的描述.'
+          - '   &8• &7&l当前:'
+          - '     {description}'
+          name: '&6&l描述'
+          material: OAK_SIGN
+          slots: 23
+  role:
+    title: '&8{role}'
+    items:
+      default:
+        taxes_never:
+          lore:
+          - '&7该职位不可更换.'
+          name: '&6&l该职位未交税'
+          material: GOLD_INGOT
+          slots: 15
+        settings:
+          lore:
+          - '&8✖ &7切换诸如破坏方块、'
+          - '   &7打开容器等的操作标志.'
+          name: '&6&l操作标志'
+          material: IRON_PICKAXE
+          slots: 29
+        apply:
+          lore:
+          - '&8✖ &7该职位及其成员和设置的标志,'
+          - '   &7是否要应用至新创建的区域?'
+          name: '&6&l默认添加至新区域: {apply}'
+          material: OAK_FENCE
+          slots: 14
+        members_ally:
+          lore:
+          - '&7所有未受信任和盟友土地的玩家'
+          - '&7均会获得该职位.'
+          name: '&6&l职位成员'
+          material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+          slots: 11
+        icon:
+          lore:
+          - '&8✖ &7将物品拖放至此来修改图标.'
+          - '&8✖ &3键盘 Q 键'
+          - '   &7将其重置为默认状态.'
+          name: '&6&l图标'
+          material: INHERIT
+          slots: 13
+        taxes:
+          lore:
+          - '&8✖ &7是否要求该职位交税?'
+          - '   &8• &7这块土地会在 &5{time}&7 内'
+          - '     &7收到&c {taxes} &7的税款'
+          name: '&6&l支付税款: {current}'
+          material: GOLD_INGOT
+          slots: 15
+        apply_always:
+          lore:
+          - '&7该职位及其成员和标志,'
+          - '&7在新创建的区域也默认包含'
+          - '&7这不能被当前职位修改.'
+          name: '&6&l将职位添加至新区域'
+          material: OAK_FENCE
+          slots: 14
+        members_visitor:
+          lore:
+          - '&7所有未受信任的玩家都会被分配该职位.'
+          name: '&6&l职位成员'
+          material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+          slots: 11
+        child_failure_priority:
+          lore:
+          - '&c你不能编辑该职位的权限.'
+          - ' &8• &7这个职位的等级'
+          - '   &7与你相同或比你更高.'
+          name: '&4&l职位等级'
+        members_nation:
+          lore:
+          - '&7所有未受信任且与你处于同一国家的玩家'
+          - '&7都会被分配该职位.'
+          name: '&6&l职位成员'
+          material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+          slots: 11
+        child_failure_access:
+          lore:
+          - '&c你不能编辑该区域内的职位.'
+          - ' &8• &7土地拥有者可给予你相关权限.'
+          name: '&4&l不允许'
+        management:
+          lore:
+          - '&8✖ &7切换管理性标志, 例如信任玩家、占领区域等.'
+          name: '&6&l管理性标志'
+          material: GOLD_INGOT
+          slots: 30
+        members:
+          lore:
+          - '&8✖ &7浏览所有职位成员.'
+          name: '&6&l职位成员'
+          material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+          slots: 11
+        name:
+          lore:
+          - '&8✖ &7重命名该职位.'
+          - '   &7当前名称: {name}'
+          name: '&6&l重命名'
+          material: NAME_TAG
+          slots: 12
+        child_failure_nation:
+          lore:
+          - '&c该职位部分被你的国家管理.'
+          - ' &8• &7只有国家的首都土地才可通过命令修改该设置'
+          - '   &7命令: &e/nations menu'
+          name: '&4&l职位通过国家管理'
+  list_nation_effects:
+    title: '&8效果'
+    items:
+      default:
+        child_failure_max:
+          lore:
+          - '&c你的国家已经到达了触发 &4{max} 个效果'
+          - '&c的上限.'
+          - ' &8• &7你可以通过升级同时拥有更多的效果.'
+          name: '&4&l最大数量'
+        child_failure_locked:
+          lore:
+          - '&7你的国家需要达到&3 {level} &7级'
+          - '&7才可激活该效果.'
+          name: '&4&l等级过低'
+        entry_object:
+          lore:
+          - '&8✖ &7该效果是否仅限国家内土地触发?'
+          name: '&6&l{effect}: {active}'
+          material: POTION
+        entry_object_locked:
+          lore:
+          - '&7Unlocks at level: {level}'
+          name: '&6&l{effect}'
+          material: POTION
+        entry_object_active:
+          lore:
+          - '&8✖ &7该效果是否仅限国家内土地触发?'
+          enchanted: true
+          name: '&6&l{effect}: {active}'
+          material: POTION
+  nation:
+    title: '&8{level} {nation}'
+    items:
+      default:
+        role:
+          lore:
+          - '&8✖ &7配置国家成员在各自'
+          - '   &7属于国家的区域内能做的事.'
+          name: '&6&l国家职位'
+          material: INHERIT
+          slots: 30
+        level:
+          lore:
+          - '&8✖ &7浏览升级进度和相关属性.'
+          name: '&6&lLevel'
+          material: EXPERIENCE_BOTTLE
+          slots: 15
+        war:
+          lore:
+          - '&8✖ &7获取当前战争的相关信息.'
+          name: '&c&l当前战争'
+          material: IRON_SWORD
+          slots: 12
+        taxes:
+          lore:
+          - '&8✖ &7根据大小设置对国内土地的税收.'
+          name: '&6&l税收'
+          material: GOLD_INGOT
+          slots: 29
+        child_failure_spawn_teleport:
+          lore:
+          - '&c你不能传送至国家出生点.'
+          - ' &8• &7首都土地拥有者可给予你先关的权限.'
+          name: '&4&l禁止传送'
+        effects:
+          lore:
+          - '&8✖ &7设置国家内能激活的效果.'
+          - '   &7效果可通过升级解锁.'
+          name: '&6&l效果'
+          material: POTION
+          slots: 31
+        spawn:
+          lore:
+          - '&8✖ &7传送至首都的出生点.'
+          name: '&6&l出生点'
+          material: ENDER_PEARL
+          slots: 9
+        stats:
+          lore:
+          - '&7总成员数: {members}'
+          - '&6&l经济:'
+          - ' &8• &7国家'
+          - '   &7国库存款: {balance}'
+          - '   &7维护费用为每 {upkeep_next}&c {upkeep} &7.'
+          - ' &8• &4你的土地 &8({land}&8)'
+          - '   &7维护土地费用为每 {upkeep_next_land}&c {upkeep_land} &7.'
+          name: '&6&l统计数据'
+          material: skin:d01afe973c5482fdc71e6aa10698833c79c437f21308ea9a1a095746ec274a0f
+          slots: 16
+        lands:
+          lore:
+          - '&8✖ &7管理属于这个国家的土地.'
+          name: '&6&l土地'
+          material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
+          slots: 11
+        no-war:
+          lore:
+          - '&7你的国家没有参与任何战争. 一切如常'
+          name: '&a&l和平'
+          material: WOODEN_SWORD
+          slots: 12
+        relations:
+          lore:
+          - '&8✖ &7管理与其他土地或国家的关系.'
+          name: '&6&l外交'
+          material: LIME_BANNER
+          slots: 14
+        inbox:
+          lore:
+          - '&8✖ &7打开高级查看模式.'
+          - '&7收到的信息:'
+          - '{inbox}'
+          name: '&6&l信息 &8(&7{amount}&8)'
+          material: skin:6bf3fcdccffd963e4334818108e1e9ae3a80566d0d3d2d4ab3051a2cd811348c
+          slots: 13
+        child_failure_spawn_none:
+          lore:
+          - '&c该首都尚未设置出生点.'
+          - ' &8• &7若要设置出生点:'
+          - '   &e/lands setspawn'
+          name: '&4&l无出生点'
+  list_area_invites:
+    title: '&8{area} &7> &8邀请'
+    items:
+      default:
+        entry_object_owner:
+          lore:
+          - '&7将该玩家设置为土地 &2{land}&7 的新拥有者.'
+          - '&6&l信息'
+          - '&8• &7发送时间:&5 {time}'
+          - '&8• &7发送者: {sender}'
+          - '&8✖  &3键盘 Q 键'
+          - '   &7撤销邀请.'
+          name: '&e&l{player} &7- &6&l拥有权转移邀请'
+        entry_object_trust_area:
+          lore:
+          - '&7将玩家设置为区域 &6{area}&7 的受信任成员.'
+          - '&6&l信息'
+          - '&8• &7发送时间:&5 {time}'
+          - '&8• &7发送者: {sender}'
+          - '&8✖  &3键盘 Q 键'
+          - '   &7撤销邀请.'
+          name: '&e&l{player} &7-&6&l成员邀请'
+        child_failure_access:
+          lore:
+          - '&c你不能撤销该区域内的邀请.'
+          - ' &8• &7土地拥有者可给予你的职位相关权限来让你这么做.'
+          name: '&4&l拒绝操作'
+        entry_object_trust_land:
+          lore:
+          - '&7将玩家设置为土地 &2{land}&7 的受信任成员.'
+          - '&6&l信息'
+          - '&8• &7发送时间:&5 {time}'
+          - '&8• &7发送者: {sender}'
+          - '&8✖  &3键盘 Q 键'
+          - '   &7撤销邀请.'
+          name: '&e&l{player} &7- &6&l成员邀请'
+        entry_invite_area:
+          material: INHERIT
+        entry_invite_land:
+          material: INHERIT
+  land_various:
+    title: '&8杂项'
+    items:
+      default:
+        name:
+          lore:
+          - '&8✖ &7设置土地的新名称.'
+          - '   &7&l当前名称: &7{name}'
+          name: '&6&l土地名称'
+          material: NAME_TAG
+          slots: 20
+        icon:
+          lore:
+          - '&8✖ &7将物品拖放至此来设置新的土地图标.'
+          - '&8✖  &3键盘 Q 键'
+          - '   &7重置为默认图标.'
+          name: '&6&l图标'
+          material: INHERIT
+          slots: 26
+        title:
+          lore:
+          - '&8✖ &7修改玩家进入土地时向他们发送的消息.'
+          - '    &8• &7&l当前消息:'
+          - '      {title}'
+          - '    &8• &7&l可用变量'
+          - '      &8- &3%owner% &8= &7土地拥有者'
+          - '      &8- &3%level% &8= &7土地等级'
+          - '      &8- &3%nation% &8= &7土地所属国家'
+          - '      &8- &3%player% &8= &7进入土地的玩家名称'
+          - '&8✖ &9右键点击'
+          - '   &7是否显示为标题: {show}'
+          name: '&6&l欢迎标语'
+          material: OAK_SIGN
+          slots: 22
+      patches:
+        all:
+          category:
+            slots: 24
+          category_members:
+            slots: 24
+  taxes:
+    title: '&8税收'
+    items:
+      default:
+        tax_area:
+          lore:
+          - '&7在&5 {time} &7之后, 你的土地'
+          - '&7将会收到共计 &a{revenue} &7的税款, '
+          - '&7这些钱来自于土地各区域内的玩家.'
+          - ' &8• &7间隔: {interval}'
+          - ' &8• &7玩家只需为其所属的土地交税.'
+          name: '&7&l税收:&a {tax}'
+          material: GOLD_INGOT
+          slots: 23
+        refresh_minus-1:
+          name: '&c&l减少 {value}'
+          material: REDSTONE
+          slots: 20
+          data:
+            modify: 500
+        refresh_minus-2:
+          name: '&c&l减少 {value}'
+          material: REDSTONE
+          slots: 21
+          data:
+            modify: 50
+        refresh_minus-3:
+          name: '&c&l减少 {value}'
+          material: REDSTONE
+          slots: 22
+          data:
+            modify: 1
+        refresh_plus-3:
+          name: '&a&l增加 {value}'
+          material: GLOWSTONE_DUST
+          slots: 26
+          data:
+            modify: 500
+        refresh_plus-1:
+          name: '&a&l增加 {value}'
+          material: GLOWSTONE_DUST
+          slots: 24
+          data:
+            modify: 1
+        refresh_plus-2:
+          name: '&a&l增加 {value}'
+          material: GLOWSTONE_DUST
+          slots: 25
+          data:
+            modify: 50
+        child_failure_value_max:
+          lore:
+          - '&c你不能设置高于&4 {max}&c 的税收.'
+          name: '&4&l最大值'
+        tax_nation:
+          lore:
+          - '&7在&5 {time} &7内, 你的国家'
+          - '&7将会收到来自国内所有土地'
+          - '&7共计&a {revenue} &7的税款.'
+          - ' &8• &7间隔: {interval}'
+          - ' &8• &7这个值决定了每个区块收取的税款,'
+          - '   &7这意味着土地面积越大, 所缴税数量越大.'
+          name: '&7&l税收:&c {tax}'
+          material: GOLD_INGOT
+          slots: 23
+        child_failure_value_min:
+          lore:
+          - '&c你不能设置低于&4 {min}&c 的税收.'
+          name: '&4&l最小值'
+        child_failure_cooldown:
+          lore:
+          - '&c你现在还不能修改税收价格.'
+          - ' &8• &7你需要再等待 &5{time} 才可再次修改.'
+          name: '&4&l处于冷却'
+  main:
+    title: '&8Main Menu'
+    items:
+      default:
+        limitation:
+          lore:
+          - '&8• &7创建&3 {ownlands} &7土地:'
+          - '  &e/lands create'
+          - '&8• &7每块土地占领&3 {chunks} &7个区块:'
+          - '  &e/lands claim'
+          - '&8• &7每块土地拥有&3 {members} &7名成员:'
+          - '  &e/lands trust'
+          - '&8• &7共加入了&3 {lands} &7个土地'
+          - '  &e/lands accept'
+          - '&8• &7支持你所信任的土地,'
+          - '  &7拥有 &3{support-chunks} &7块额外的区域'
+          name: '&6&l你的限制'
+          material: INHERIT
+          slots: 17
+        rentable:
+          lore:
+          - '&8✖ &7浏览可供出租或购买的区域.'
+          name: '&6&l租借'
+          material: OAK_FENCE
+          slots: 31
+        lands:
+          lore:
+          - '&8✖ &7管理你所属的土地.'
+          - '    &8• &7拥有: {own}'
+          - '    &8• &7信任: {trusted}'
+          name: '&2&l你的土地'
+          material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
+          slots: 11
+        flags:
+          lore:
+          - '&8✖ &7编辑个人设置.'
+          name: '&6&l设置'
+          material: skin:ec2ff244dfc9dd3a2cef63112e7502dc6367b0d02132950347b2b479a72366dd
+          slots: 32
+        invites:
+          lore:
+          - '&8✖ &7浏览你收到的邀请.'
+          - '   &8• &7数量: {invites}'
+          name: '&6&l邀请'
+          material: WRITABLE_BOOK
+          slots: 13
+        nations:
+          lore:
+          - '&8✖ &7浏览你所属的国家.'
+          - '    &8• &7拥有: {own}'
+          - '    &8• &7信任: {trusted}'
+          name: '&9&l你的国家'
+          material: skin:45587da7fe7336e8ab9f791ea5e2cfc8a827ca959567eb9d53a647babf948d5
+          slots: 12
+        all-lands:
+          lore:
+          - '&8✖ &7浏览本服上的所有土地.'
+          - '    &8• &7总数: {lands}'
+          name: '&2&l所有土地'
+          material: skin:c9c8881e42915a9d29bb61a16fb26d059913204d265df5b439b3d792acd56
+          slots: 29
+        all-nations:
+          lore:
+          - '&8✖ &7浏览本服上的所有国家.'
+          - '    &8• &7总数: {nations}'
+          name: '&9&l所有国家'
+          material: skin:cf40942f364f6cbceffcf1151796410286a48b1aeba77243e218026c09cd1
+          slots: 30
+      patches:
+        basic:
+          lands:
+            slots: 20
+          all-lands:
+            slots: 22
+          flags:
+            slots: 24
+          limitation:
+            slots: 26
+  list_land_claims:
+    title: '&8Claims'
+    items:
+      default:
+        entry_object:
+          lore:
+          - '&7占领时间:&5 {time} &7前'
+          - '&8✖ &7传送至该区块.'
+          name: '&6&l所在世界: {world} X: {x} Z: {z}'
+          material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
+        refresh_toggle:
+          lore:
+          - '&8✖ &7点击切换世界.'
+          name: '&6&l世界: {world}'
+          material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
+          slots: 41
+        child_failure_cooldown:
+          lore:
+          - '&c你需要再等到&4 {time}'
+          - '&c才可再次这么做.'
+          name: '&4&l处于冷却'
+  list_admin_wilderness_roleflags:
+    title: '&8玩家标志'
+  list_war_lands:
+    title: '&8{team}'
+    items:
+      default:
+        entry_object:
+          lore:
+          - '{title}'
+          - '&8✖ &7浏览该土地的信息.'
+          name: '&2&l{land}'
+          material: INHERIT
+        entry_object_ally:
+          lore:
+          - '{title}'
+          - '&8✖ &7浏览该土地的信息.'
+          name: '&a&l盟友 &2&l{land}'
+          material: INHERIT
+  list_level_progress:
+    title: '&8升级进度'
+    items:
+      default:
+        next:
+          lore:
+          - '&7{object} &7在满足条件时, 会升到该等级.'
+          - '&7&l属性:'
+          - '{attributes}'
+          name: '&6&l下一等级:&7 {level}'
+          material: BEACON
+          slots: 42
+        current:
+          lore:
+          - '&7属性:'
+          - '{attributes}'
+          name: '&6&l当前:&7 {level}'
+          material: OAK_SIGN
+          slots: 41
+        entry_done:
+          lore:
+          - '{bar} {progress}'
+          - '{description}'
+          name: '&a&l✔ {title}'
+          material: LIME_STAINED_GLASS
+        entry_loading:
+          lore:
+          - '&7当前进度正在计算,'
+          - '&7完成后会立即显示.'
+          - '{description}'
+          name: '&7&l? {title}'
+          material: GRAY_STAINED_GLASS
+        entry_progress:
+          lore:
+          - '{bar} {progress}'
+          - '{description}'
+          name: '&c&l✘ {title}'
+          material: RED_STAINED_GLASS
+  land:
+    title: '&8{level} {land}'
+    items:
+      default:
+        mainblock_reposition:
+          name: '&c&l删除主方块'
+          lore:
+          - '&8✖ &7移除或重新放置主方块.'
+          - '   &7再次放置花费:&c {cost}'
+          material: BELL
+          slots: 45
+        mainblock_set:
+          name: '&a&l放置主方块'
+          lore:
+          - '&8✖ &7将主方块放置在你当前的位置.'
+          - '   &7花费:&c {cost}'
+          material: BELL
+          slots: 45
+        child_failure_mainblock_claim:
+          name: '&4&l需要放置在土地内'
+          lore:
+          - '&8✖ &c主方块需要被放置在土地内.'
+          - '&7请确保你站在了土地&2 {land}&7 的范围中.'
+        child_failure_mainblock_space:
+          name: '&4&l空间不足'
+          lore:
+          - '&8✖ &c当前位置并不能容纳主方块.'
+        level:
+          lore:
+          - '&8✖ &7浏览升级进度和属性.'
+          name: '&6&l等级'
+          material: EXPERIENCE_BOTTLE
+          slots: 14
+        player-management:
+          lore:
+          - '&8✖ &7管理成员、被封禁玩家,'
+          - '   &7邀请和成员请求.'
+          name: '&6&l玩家管理'
+          material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+          slots: 12
+        roles:
+          lore:
+          - '&8✖ &7浏览区域&6 {area}&7 的职位.'
+          name: '&6&l职位'
+          material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+          slots: 30
+        taxes:
+          lore:
+          - '&8✖ &7浏览区域&6 {area}&7 的税收.'
+          name: '&6&l税收'
+          material: GOLD_INGOT
+          slots: 31
+        areas:
+          lore:
+          - '&8✖ &7浏览该土地的所有区域.'
+          - '   &7你也可以在该菜单中增加你自己的新区域.'
+          name: '&6&l区域'
+          material: OAK_FENCE
+          slots: 11
+        level_camp:
+          lore:
+          - '&c营地没有任何等级.'
+          name: '&6&l等级'
+          material: EXPERIENCE_BOTTLE
+          slots: 14
+        land-settings:
+          lore:
+          - '&8✖ &7编辑区域&6 {area}&7 的自然标志.'
+          name: '&6&l自然标志'
+          material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
+          slots: 29
+        spawn:
+          lore:
+          - '&8✖ &7传送至土地的出生点.'
+          name: '&6&l出生点'
+          material: ENDER_PEARL
+          slots: 9
+        stats:
+          lore:
+          - '&7出生点: {world}, x={x}, z={z}'
+          - '&7所属国家: {nation}'
+          - '&7占领区块: {chunks} / {chunks_max}'
+          - '&7成员数量: {members} / {members_max}'
+          - '&6&l经济:'
+          - ' &8• &7土地'
+          - '   &7存款: {balance}'
+          - '   &7下一个占领耗费: {chunk_cost}'
+          - '   &7下次支付&c {upkeep} &7的维护费用时间:'
+          - '   &7{upkeep_next}'
+          - ' &8• &4你'
+          - '   &7存款: {balance_player}'
+          - '   &7下次缴纳&c {taxes} &7的税收时间:'
+          - '   &7{taxes_next}'
+          name: '&6&l统计'
+          material: skin:d01afe973c5482fdc71e6aa10698833c79c437f21308ea9a1a095746ec274a0f
+          slots: 16
+        various:
+          lore:
+          - '&8✖ &7编辑土地名称与欢迎标语.'
+          name: '&6&l杂项设置'
+          material: BEACON
+          slots: 32
+        relations_camp:
+          lore:
+          - '&c营地没有外交关系.'
+          name: '&6&l外交'
+          material: LIME_BANNER
+          slots: 13
+        relations:
+          lore:
+          - '&8✖ &7管理与其他国家和土地的关系.'
+          name: '&6&l外交'
+          material: LIME_BANNER
+          slots: 13
+        inbox:
+          lore:
+          - '&8✖ &7打开高级消息窗口.'
+          - '&7收到消息:'
+          - '{inbox}'
+          name: '&6&l消息 &8(&7{amount}&8)'
+          material: skin:6bf3fcdccffd963e4334818108e1e9ae3a80566d0d3d2d4ab3051a2cd811348c
+          slots: 15
+      patches:
+        basic:
+          stats:
+            name: '&6&l统计信息'
+            lore: '&7出生点: {world}, x={x}, z={z}[newline]&7占领区块: {chunks} / {chunks_max}[newline]&7成员数量:
+              {members} / {members_max}'
+            material: skin:d01afe973c5482fdc71e6aa10698833c79c437f21308ea9a1a095746ec274a0f
+            slots: 17
+          members:
+            lore: '&8✖ &7管理成员.'
+            name: '&6&l成员'
+            material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+            slots: 11
+          roles:
+            slots: 13
+          inbox:
+            slots: 15
+          land-settings:
+            slots: 29
+          various:
+            slots: 31
+  list_area_settings:
+    title: '&8{area} &7> &8自然标志'
+    items:
+      default:
+        entry_phantom_spawn:
+          lore:
+          - '&8✖ &7允许幻翼自然生成.'
+          - '    &8• &7刷怪笼不受该标志影响.'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l幻翼生成: {enabled}'
+          material: PHANTOM_SPAWN_EGG
+        child_failure_permission:
+          lore:
+          - '&c你没有权限编辑该标志.'
+          name: '&4&l缺少权限'
+        entry_monster_spawn:
+          lore:
+          - '&8✖ &7允许怪物自然生成.'
+          - '    &8• &7刷怪笼不受该标志影响.'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l怪物生成: {enabled}'
+          material: SPAWNER
+        entry_entity_griefing:
+          lore:
+          - '&8✖ &7允许实体摧毁方块?'
+          - '    &8• &7&l若启用:'
+          - '      &7苦力怕的爆炸可以破坏方块,'
+          - '      &7雷击的爆炸也可以摧毁方块.'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l实体破坏: {enabled}'
+          material: CREEPER_HEAD
+        entry_snow_melt:
+          lore:
+          - '&8✖ &7是否允许冰融化?'
+          - '    &8• &7&l若禁用:'
+          - '      &7暴风雪和雪人将不再能使地面覆雪.'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l融雪: {enabled}'
+          material: SNOWBALL
+        child_failure_priority:
+          lore:
+          - '&c你不能编辑该职位的设置.'
+          - ' &8• &7该职位等级高于你的职位,'
+          - '   &7或你属于该职位.'
+          name: '&4&l职位等级不足'
+        entry_piston_griefing:
+          lore:
+          - '&8✖ &7是否允许郊区的活塞推入你的土地?'
+          - '    &8• &7&l若启用:'
+          - '      &7玩家将可以在你的土地与郊区边界,'
+          - '      &7通过使用活塞的方式恶意破坏你的土地.'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l区域外活塞: {enabled}'
+          material: PISTON
+        child_failure_access:
+          lore:
+          - '&c你不能编辑该区域内的职位.'
+          - ' &8• &7土地拥有者可给予你相关权限.'
+          name: '&4&l不允许'
+        entry_general_admin:
+          lore:
+          - '&8✖ &7点击切换:'
+          - '   &7解锁状态: {unlocked}'
+          - '&7描述:'
+          - ' &8• {desc}'
+          - ' &8• &7此为管理员标志. 它仅对'
+          - '   &7管理员土地和命令 &e/lands admin wilderness&7 施加的区域有效.'
+          name: '&6&l{flag}: {enabled}'
+          material: INHERIT
+        entry_fire_spread:
+          lore:
+          - '&8✖ &7允许火焰在你的土地内蔓延?'
+          - '    &8• &7来自郊区的火焰不会传播到土地内.'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l火焰蔓延: {enabled}'
+          material: FLINT_AND_STEEL
+        entry_animal_spawn:
+          lore:
+          - '&8✖ &7是否允许动物生生成?'
+          - '    &8• &7刷怪笼不会被该标志影响.'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l生成动物: {enabled}'
+          material: skin:bee8514892f3d78a32e8456fcbb8c6081e21b246d82f398bd969fec19d3c27b3
+        entry_plant_growth:
+          lore:
+          - '&8✖ &7是否允许植物生长?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l植物生长: {enabled}'
+          material: VINE
+        entry_tnt_griefing:
+          lore:
+          - '&8✖ &7是否允许 TNT 爆炸摧毁方块?'
+          - '    &8• &7&l若启用:'
+          - '      &7玩家可以将 TNT 投掷进土地内造成破坏.'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&lTNT 爆炸破坏: {enabled}'
+          material: TNT
+        entry_leaf_decay:
+          lore:
+          - '&8✖ &7是否允许土地内的树叶自然腐烂?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l树叶腐烂: {enabled}'
+          material: OAK_LEAVES
+        entry_general_player:
+          lore:
+          - '&8✖ &7点击切换:'
+          - '   &7解锁状态: {unlocked}'
+          - '&7描述:'
+          - '{desc}'
+          name: '&6&l{flag}: {enabled}'
+          material: INHERIT
+        entry_waterflow_allow:
+          lore:
+          - '&8✖ &7是否允许郊区的流体流入你的土地?'
+          - '    &8• &7&l若启用:'
+          - '      &7玩家将可以在郊区外倒流体的方式'
+          - '      &7对土地内的区域进行破坏.'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l流体流动: {enabled}'
+          material: WATER_BUCKET
+  list_role_settings:
+    title: '&8Flags'
+    items:
+      default:
+        entry_setting_edit_various:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家编辑杂项设置,'
+          - '   &7例如名称等?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l杂项编辑: {enabled}'
+          material: NAME_TAG
+        entry_plant:
+          lore:
+          - '&8✖ &7是否允许该职位种植农作物、树苗、'
+          - '   &7浆果和甘蔗等植物?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l种植: {enabled}'
+          material: IRON_HOE
+        entry_balance_withdraw:
+          lore:
+          - '&8✖ &7是否允许该职位从银行取钱?'
+          - '    &8• &7命令: &e/lands withdraw'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l取出存款: {enabled}'
+          material: GOLD_NUGGET
+        entry_player_untrust:
+          lore:
+          - '&8✖ &7是否允许该职位解除玩家信任?'
+          - '    &8• &7该职位的玩家不可以解除职位等级'
+          - '      &7高于他们的玩家, 同样也不可以'
+          - '      &7解除与他们职位相同的玩家.'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l解除信任: {enabled}'
+          material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
+        entry_land_enter:
+          lore:
+          - '&8✖ &7是否允许该职位进入这片区域?'
+          - '    &8• &7抛开该标志不谈, 玩家仍有机会'
+          - '      &7在你进入战斗模式且战斗标签功能启用时'
+          - '      &7进入你的区域.'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&lEnter this Area: {enabled}'
+          material: OAK_FENCE_GATE
+        entry_land_claim:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家解除区块占领?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l占领与解除占领: {enabled}'
+          material: IRON_SHOVEL
+        entry_ender_pearl:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家通过末影珍珠和紫颂果进入区域?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l使用传送: {enabled}'
+          material: ENDER_PEARL
+        entry_shear:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家为羊剪毛、为蘑菇牛剪蘑菇?'
+          name: '&6&l剪刀交互: {enabled}'
+          material: SHEARS
+        entry_attack_monster:
+          lore:
+          - '&8✖ &7是否允许玩家伤害怪物?'
+          - '    &8• &7&l若禁用:'
+          - '      &7怪物也不能伤害玩家.'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l攻击怪物: {enabled}'
+          material: ZOMBIE_HEAD
+        entry_harvest:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家收获作物、'
+          - '   &7破坏树苗、破坏浆果丛和收获甘蔗?'
+          name: '&6&l收获作物: {enabled}'
+          material: WHEAT
+        entry_fly:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家在土地内使用命令 &e/fly'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l飞行: {enabled}'
+          material: FEATHER
+        entry_general_admin:
+          lore:
+          - '&8✖ &7点击切换:'
+          - '   &7解锁状态: {unlocked}'
+          - '    &8• &7描述:'
+          - '      {desc}'
+          - ' &8• &7此为管理员标志. 它仅对'
+          - '   &7管理员土地和命令 &e/lands admin wilderness&7 施加的区域有效.'
+          name: '&6&l{flag}: {enabled}'
+          material: INHERIT
+        entry_player_trust:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家为土地信任其他玩家?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l信任玩家: {enabled}'
+          material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
+        entry_block_ignite:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家点燃方块?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l点燃方块: {enabled}'
+          material: FLINT_AND_STEEL
+        entry_war_manage:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家管理战争相关的事宜?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l管理战争: {enabled}'
+          material: IRON_SWORD
+        entry_attack_player:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家攻击其他玩家?'
+          - '    &8• &7&l战斗标签:'
+          - '      &7如果土地内的玩家攻击到了土地外的玩家,'
+          - '      &7他们仍然可以在土地内相互攻击.'
+          - '    &8• &7&l中立标志:'
+          - '      &7他们只能攻击玩家, 而玩家也可以攻击他们.'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l攻击玩家: {enabled}'
+          material: IRON_SWORD
+        entry_trample_farmland:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家踩踏耕地使其成为泥土?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l踩踏耕地: {enabled}'
+          material: FARMLAND
+        entry_elytra:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家在土地内使用鞘翅飞行?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l使用鞘翅: {enabled}'
+          material: ELYTRA
+        entry_interact_villager:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家与村民交易?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l村民交易: {enabled}'
+          material: EMERALD
+        child_failure_permission:
+          lore:
+          - '&c你缺少在岛屿内切换该标志的权限.'
+          name: '&4&l缺少权限'
+        entry_player_setrole:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家为其他受信任玩家设置职位?'
+          - '    &8• &7这些玩家不能编辑职位等级'
+          - '      &7高于他们的玩家, 也不能编辑'
+          - '      &7与他处于同一职位的玩家.'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l设置职位: {enabled}'
+          material: skin:1e8ffbfd7890dfba8841166d688c93a88b6e8cac4d0260644cac9f3afd57c63e
+        entry_interact_general:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家'
+          - '   &7与其他标志未提及的方块交互?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l全局交互: {enabled}'
+          material: STRING
+        child_failure_blacklist:
+          lore:
+          - '&c该标志在国家中不可调整.'
+          - ' &8• &7每个国家的土地都可分别调整该标志的设置.'
+          name: '&4&l标志由土地管理'
+        child_failure_edit_owner:
+          lore:
+          - '&c你不能为你自己拥有者的职位'
+          - '&c切换该标志.'
+          - ' &8• &7这可以防止你误操作将自己的权利剥夺.'
+          name: '&4&l拥有者职位'
+        entry_interact_mechanism:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家使用诸如拉杆等的红石元件?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l使用红石: {enabled}'
+          material: REDSTONE
+        entry_land_claim_border:
+          lore:
+          - '&8✖ &7允许该职位的玩家为对应的土地'
+          - '   &7直接在其边界附近开拓新的占领区域.'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l边界扩张: {enabled}'
+          material: IRON_BARS
+        entry_spawn_set:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家设置出生点?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l设置出生点: {enabled}'
+          material: ENDER_EYE
+        entry_player_ban:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家封禁或解封玩家?'
+          - '    &8• &7他们不能封禁职位等级高于他们的玩家.'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l管理封禁: {enabled}'
+          material: BARRIER
+        entry_item_pickup:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家捡起物品?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l捡起物品: {enabled}'
+          material: HOPPER
+        child_failure_priority:
+          lore:
+          - '&c你不能编辑该职位的设置.'
+          - ' &8• &7该职位的等级高于你,'
+          - '   &7或你属于该职位.'
+          name: '&4&l等级不足'
+        entry_block_place:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家放置方块?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l放置方块: {enabled}'
+          material: OAK_PLANKS
+        entry_setting_edit_land:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家编辑自然标志?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l自然标志编辑: {enabled}'
+          material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
+        entry_interact_container:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家打开容器?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l打开容器: {enabled}'
+          material: CHEST
+        child_failure_access:
+          lore:
+          - '&c你不能编辑该区域内的职位.'
+          - ' &8• &7土地拥有者可给予你相关权限.'
+          name: '&4&l不允许'
+        entry_block_break:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家破坏方块?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l破坏方块: {enabled}'
+          material: IRON_PICKAXE
+        entry_setting_edit_role:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家编辑或创建其他职位?'
+          - '    &8• &7他们不能编辑自己的职位标志.'
+          - '    &8• &7你应该只把这个权限给予最受信任的玩家.'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l编辑职位设置: {enabled}'
+          material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+        entry_interact_trapdoor:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家打开活板门?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l开启活板门: {enabled}'
+          material: OAK_TRAPDOOR
+        entry_setting_edit_taxes:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家编辑税收?'
+          - '    &8• &7你应该只把这个权限给予最受信任的玩家.'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l编辑税收: {enabled}'
+          material: GOLD_INGOT
+        child_failure_nation:
+          lore:
+          - '&c该职位被国家&4 {nation}&c 管理.'
+          - ' &8• &7只有国家可修改此标志:'
+          - '   &e/nations menu'
+          name: '&4&l职位被国家管理'
+        entry_attack_animal:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家伤害动物?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l攻击动物: {enabled}'
+          material: BOW
+        entry_spawn_teleport:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家传送至出生点.'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l传送至出生点: {enabled}'
+          material: ENDER_EYE
+        entry_vehicle_use:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家使用载具?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l使用载具: {enabled}'
+          material: MINECART
+        entry_area_assign:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家创建区域或调整其大小?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l设置区域: {enabled}'
+          material: OAK_FENCE
+        entry_general_player:
+          lore:
+          - '&8✖ &7点击切换:'
+          - '   &7解锁状态: {unlocked}'
+          - '    &8• &7描述:'
+          - '      {desc}'
+          name: '&6&l{flag}: {enabled}'
+          material: INHERIT
+        entry_interact_door:
+          lore:
+          - '&8✖ &7是否允许该职位的玩家开门?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l开门: {enabled}'
+          material: IRON_DOOR
+  war-declaration_tribute:
+    title: '&8Tribute'
+    items:
+      default:
+        cancel-declaration:
+          lore:
+          - '&8✖ &7取消战争请求.'
+          name: '&c&l取消战争请求'
+          material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
+          slots: 37
+        send-declaration:
+          lore:
+          - '&8✖ &7向敌方发送战争请求.'
+          name: '&a&l发送战争请求'
+          material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
+          slots: 45
+        refresh_minus-1:
+          name: '&c&l减少 {value}'
+          material: REDSTONE
+          slots: 20
+          data:
+            modify: 1000
+        refresh_minus-2:
+          name: '&c&l减少 {value}'
+          material: REDSTONE
+          slots: 21
+          data:
+            modify: 100
+        refresh_minus-3:
+          name: '&c&l减少 {value}'
+          material: REDSTONE
+          slots: 22
+          data:
+            modify: 1
+        child_max-tribute:
+          lore:
+          - '&c你不能将上贡金额设置为高于&c {max}&c 的数量.'
+          - ' &8• &7最大值取决于敌方的经济状况.'
+          name: '&4&l已到达最大值'
+        refresh_plus-3:
+          name: '&a&l增加 {value}'
+          material: GLOWSTONE_DUST
+          slots: 26
+          data:
+            modify: 1000
+        refresh_plus-1:
+          name: '&a&l增加 {value}'
+          material: GLOWSTONE_DUST
+          slots: 24
+          data:
+            modify: 1
+        refresh_plus-2:
+          name: '&a&l增加 {value}'
+          material: GLOWSTONE_DUST
+          slots: 25
+          data:
+            modify: 100
+        tribute:
+          lore:
+          - '&7敌方如果投降, 他们就需要支付这部分钱.'
+          - ' &8• &7&l最大上贡金额:&c {max}'
+          - '   &7最大值取决于敌方的经济状况.'
+          - ' &8• &7&l如果将上贡金额设置为 0:'
+          - '   &7敌方将不允许投降.'
+          name: '&7&l贡金:&c {tribute}'
+          material: GOLD_INGOT
+          slots: 23
+  area:
+    title: '&8{area}'
+    items:
+      default:
+        land-settings:
+          lore:
+          - '&8✖ &7编辑自然标志, 例如生物生成、'
+          - '   &7植物生长等.'
+          name: '&6&l自然标志'
+          material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
+          slots: 29
+        child_failure_rented:
+          lore:
+          - '&c你不能在该区域出租或待售的情况下'
+          - '&c为该区域设置税收.'
+          - ' &8• &7当前租客:&3 {player}'
+          name: '&4已出租'
+        child_failure_access:
+          lore:
+          - '&7区域拥有者可给予你这么做的权限.'
+          - ' &8• &7标志: {flag}'
+          name: '&4拒绝操作'
+        player-management:
+          lore:
+          - '&8✖ &7管理成员、被封禁玩家、'
+          - '   &7外来邀请与成员申请.'
+          name: '&6&l玩家管理'
+          material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+          slots: 11
+        various:
+          lore:
+          - '&8✖ &7编辑区域名称和描述.'
+          name: '&6&l杂项设置'
+          material: BEACON
+          slots: 32
+        spawn:
+          lore:
+          - '&8✖ &b左键点击'
+          - '   &7传送至该区域的出生点.'
+          - '&8✖ &9右键点击'
+          - '   &7设置该区域的出生点.'
+          name: '&6&l传送'
+          material: ENDER_PEARL
+          slots: 9
+        roles:
+          lore:
+          - '&8✖ &7管理该区域的职位.'
+          - '   &8• &7默认区域的职位会'
+          - '     &7自动添加至该区域.'
+          name: '&6&l职位'
+          material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+          slots: 30
+        taxes:
+          lore:
+          - '&8✖ &7管理该区域的税收.'
+          - '   &7税收会按区域收集.'
+          name: '&6&l税收'
+          material: GOLD_INGOT
+          slots: 31
+        child_failure_spawn_area:
+          name: '&4&l必须处于区域内'
+          lore:
+          - '&c出生点必须在区域内设置.'
+          - '&7你当前没有站在区域中.'
+        child_failure_spawn_none:
+          name: '&4&l未设置出生点'
+          lore:
+          - '&c该区域尚未设置出生点.'
+        child_success_spawn_set:
+          name: '&a出生点设置'
+          lore:
+          - '&7你已将出生点设置在当前位置.'
+  list_area_players:
+    title: '&8{area} &7> &8信任玩家'
+    items:
+      default:
+        trust:
+          lore:
+          - '&8✖ &7信任此区域内的玩家.'
+          - '   &7可用人数:&3 {players} &8/&c {max}'
+          name: '&a&l信任玩家'
+          material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
+          slots: 40
+        child_failure_edit_player_land:
+          lore:
+          - '&c你不能编辑该玩家.'
+          - ' &8• &7他们的职位&6 {role} &7等级大于你的职位等级,'
+          - '   &7或与你处在同一职位.'
+          name: '&4&l等级不足'
+        entry_area:
+          lore:
+          - '&7职位: {role}'
+          - '&8✖ &bSHIFT + 左键点击'
+          - '   &7▲ 升职'
+          - '&8✖ &9SHIFT + 右键点击'
+          - '   &7▼ 降职'
+          - '&8✖  &3键盘 Q 键'
+          - '   &7解除该区域的信任.'
+          - '&8✖  &7点击获得更多信息.'
+          name: '&e&l{player}'
+          material: INHERIT
+        child_failure_edit_player_area:
+          lore:
+          - '&c你不能编辑该玩家.'
+          - ' &8• &7他们的职位&6 {role} &7等级大于或等于'
+          - '   &7你所处的职位.'
+          name: '&4&l等级不足'
+        child_failure_max-players:
+          lore:
+          - '&7该土地已经达到了&3 {max} &7位'
+          - '&7能容纳的最大玩家.'
+          name: '&4&l最大玩家数量'
+        refresh_toggle:
+          lore:
+          - '&8✖ &7是否仅显示在区域&8(&6{area}&8)&7内'
+          - '   &7受信任的玩家?'
+          - '    &8• &6&l若禁用:'
+          - '      &7它会显示属于土地的所有玩家.'
+          - '      &7这也会允许你对土地内的玩家信任或解除信任.'
+          name: '&6&l仅显示区域内玩家: {current}'
+          material: HOPPER
+          slots: 41
+        child_failure_priority:
+          lore:
+          - '&c你不能编辑该角色.'
+          - ' &8• &7该职位的等级高于你的职位'
+          - ' &8• &7或你正属于该职位.'
+          name: '&4&l职位等级'
+        entry_land:
+          lore:
+          - '&7该区域内的受信任玩家:'
+          - '{areas}'
+          - '&8✖  &3键盘 Q 键'
+          - '   &7解除土地内所有成员的信任装填.'
+          - '&8✖  &7点击获得更多信息.'
+          name: '&e&l{player}'
+          material: INHERIT
+        child_failure_access:
+          lore:
+          - '&c你不能解除玩家信任.'
+          - ' &8• &7土地拥有者可给予你相关权限.'
+          name: '&4&l没有权限'
+        untrust:
+          lore:
+          - '&8✖ &7解除指定玩家在该区域的信任状态.'
+          name: '&c&l解除信任'
+          material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
+          slots: 42
+        child_failure_owner:
+          lore:
+          - '&c拥有者不可设置信任.'
+          - ' &8• &7可通过命令 &e/{cmd}&7 设置新的拥有者.'
+          name: '&4&l拥有者'
+        child_failure_tenant:
+          lore:
+          - '&c租客不可设置信任,'
+          - '&c且他们的职位也不可修改.'
+          - ' &8• &7可通过命令 &e/{cmd}&7 迁出租客.'
+          name: '&4&l租客'
+        child_failure_setrole:
+          lore:
+          - '&c你不能设置职位.'
+          - '&8• &7土地拥有者可给予你相关操作的权限.'
+          name: '&4&l没有权限'
+        child_failure_self:
+          lore:
+          - '&7若要离开土地, 请输入命令 &e/lands leave&7.'
+          name: '&4&l不能解除自己的信任'
+  list_admin_lands:
+    title: '&8管理员土地'
+    items:
+      default:
+        add:
+          lore:
+          - '&8✖ &7将一块普通的土地转为管理员土地.'
+          name: '&a&l转为管理员土地'
+          material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
+          slots: 40
+        entry_object:
+          lore:
+          - '{title}'
+          - '&8✖ &7打开土地菜单.'
+          name: '&2&l{land}'
+          material: INHERIT
+        convert:
+          lore:
+          - '&8✖ &7将一块管理员土地转为普通的土地.'
+          name: '&e&l转为普通土地'
+          material: skin:1811917c644f04f56b68c9c71b33ac082c2601c24409be78c2063d4df2a86525
+          slots: 41
+        delete:
+          lore:
+          - '&8✖ &7完全删除一块管理员土地.'
+          name: '&c&l完全删除'
+          material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
+          slots: 42
+  list_player_nations:
+    title: '&8你的国家'
+    items:
+      default:
+        entry_nation_edit:
+          lore:
+          - '&7该国家被命令 &3/lands edit &8<&3首都&8>&7 设置为你的主国家'
+          - '&7执行的命令将会以这个国家为基础.'
+          - '&8✖ &7打开国家菜单.'
+          - '&8✖ &9右键点击'
+          - '   &7浏览该国家的信息.'
+          name: '&9&l{nation}'
+          material: skin:eef425b4db7d62b200e89c013e421a9e110bfb27f2d8b9f5884d10104d00f4f4
+        entry_nation_own:
+          lore:
+          - '&7你拥有该国家.'
+          - ' &8• &7土地: {lands}'
+          - ' &8• &7总区块: {chunks}'
+          - ' &8• &7总成员: {members}'
+          - '&8✖ &7打开国家菜单.'
+          - '&8✖ &9右键点击'
+          - '   &7浏览该国家的信息.'
+          name: '&9&l{nation}'
+          material: INHERIT
+        entry_nation:
+          lore:
+          - '&7你被该国家信任.'
+          - ' &8• &7土地: {lands}'
+          - ' &8• &7总区块: {chunks}'
+          - ' &8• &7总成员: {members}'
+          - '&8✖ &7打开国家菜单.'
+          - '&8✖ &9右键点击'
+          - '   &7浏览该国家的信息.'
+          name: '&9&l{nation}'
+          material: INHERIT
+  player-management:
+    title: '&8玩家管理'
+    items:
+      default:
+        members:
+          lore:
+          - '&8✖ &7管理成员.'
+          name: '&6&l成员'
+          material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+          slots: 20
+        invites:
+          lore:
+          - '&8✖ &7管理发出的邀请.'
+          name: '&6&l邀请'
+          material: WRITABLE_BOOK
+          slots: 24
+        banned:
+          lore:
+          - '&8✖ &7管理已封禁的玩家.'
+          name: '&6&l驱逐玩家'
+          material: BARRIER
+          slots: 22
+        membership-requests:
+          lore:
+          - '&8✖ &7管理待处理的加入请求.'
+          name: '&6&l加入请求'
+          material: BOOKSHELF
+          slots: 26
+  war:
+    title: '&8战争'
+    items:
+      default:
+        child_failure_permission:
+          lore:
+          - '&c你不能对对方 &8({object}&8)&c 这么做.'
+          - ' &8• &7土地拥有者可给予你的职位相关权限.'
+          - '   &7标志: {flag}'
+          name: '&4&l拒绝操作'
+        child_failure_surrender:
+          lore:
+          - '&c你的敌人不允许你投降.'
+          - ' &8• &7这是因为他们没有设置你在投降之后所要上贡的金额'
+          - '   &7但他们也可以在战争菜单中通过命令设置:'
+          - '   &e/wars menu'
+          name: '&4&l拒绝投降'
+        tribute_attacker_mutual:
+          lore:
+          - '&8✖ &7如果在本次战争中投降'
+          - '   &7你将需要为敌方上贡&c {tribute-att}'
+          - '   &7作为对其的补偿.'
+          - '    &8• &7若上贡金额为 0:'
+          - '      &7防守方将不可以投降.'
+          - '    &8• &7&l若防守方投降:'
+          - '      &7他们需要向你上贡&c {tribute}&7.'
+          name: '&6&l贡品:&c {tribute}'
+          material: GOLD_INGOT
+          slots: 29
+        recipe:
+          lore:
+          - '&7点击这里查看夺旗战旗帜'
+          - '&7的合成配方.'
+          name: '&6&l旗帜合成配方'
+          material: BEACON
+          slots: 13
+        tribute_defender:
+          lore:
+          - '&8✖ &7如果在本次战争中投降'
+          - '    &7你将需要为进攻方上贡&c {tribute-att}'
+          - '    &7作为对其的补偿.'
+          - '    &8• &7若上贡金额为 0:'
+          - '      &7进攻方将不会接受投降.'
+          name: '&6&l投降:&c {tribute}'
+          material: GOLD_INGOT
+          slots: 29
+        child_failure_none:
+          lore:
+          - '&c敌方 {enemy} &c没有可供传送的占领区域.'
+          name: '&4&l没有区域'
+        attackers:
+          lore:
+          - '&8✖ &7浏览所有攻击方的土地.'
+          - '&7玩家: {players}'
+          - ''
+          - '&6&l进度'
+          - ' &8• &7夺取: {cap}'
+          - ' &8• &7击杀: {kills}'
+          - '   &3= 仍需 {points} / {towin} &7点分数取得胜利'
+          - '   {bar}'
+          name: '&c&l进攻方 {object}'
+          material: IRON_SWORD
+          slots: 11
+        child_failure_attacker:
+          lore:
+          - '&7进攻方在本场战争中不可投降.'
+          name: '&4&l不可投降'
+        points:
+          lore:
+          - '&7其中一方需要至少&3 {points} &7点分数才可取得胜利.'
+          - ' &8• &7击杀: &3{p_kill} 点分数'
+          - ' &8• &7夺取: &3{p_cap} 点分数'
+          - '    &8• &7若要夺取敌方区域, 将夺取旗帜放置'
+          - '      &7在敌方区域之中. 你可以在本菜单中'
+          - '      &7找到这面旗帜的合成方法.'
+          - ''
+          - '&6&l敌方玩家可以在你的土地中做如下事情:'
+          - '{settings}'
+          name: '&6&l分数占比'
+          material: IRON_INGOT
+          slots: 14
+        child_failure_cost:
+          lore:
+          - '&c你方 &8({object}&8) &c没有足够的钱'
+          - '&c来支付&4 {tribute}&c.'
+          name: '&4&l余额不足'
+        spawn:
+          lore:
+          - '&7传送至敌方边界.'
+          name: '&6&l出生点'
+          material: ENDER_PEARL
+          slots: 9
+        defenders:
+          lore:
+          - '&8✖ &7浏览所有防守方的土地.'
+          - '&7玩家: {players}'
+          - ''
+          - '&6&l进度'
+          - ' &8• &7夺取: {cap}'
+          - ' &8• &7击杀: {kills}'
+          - '   &3= 仍需 {points} / {towin} &7点分数取得胜利'
+          - '   {bar}'
+          name: '&a&l防守方 {object}'
+          material: SHIELD
+          slots: 12
+        declaration_start:
+          lore:
+          - '&7战争将会在&5 {time}&7 内开始.'
+          - '&7在此之前双方均可进行准备.'
+          name: '&6&l开始'
+          material: CLOCK
+          slots: 15
+        war_end:
+          lore:
+          - '&7战争将会在任意一方达到'
+          - '&7&3 {points} &7点分数后结束.'
+          - '&7如果其中一方投降, 战争也可结束.'
+          - ' &8• &7若双方均为达到 {points} 点分数:'
+          - '   &7战争将会在&5 {end}&7 之后结束.'
+          name: '&6&l结束'
+          material: CLOCK
+          slots: 15
+        tribute_attacker:
+          lore:
+          - '&8✖ &b左键点击'
+          - '   &7修改本场战争的贡品数额.'
+          - '    &8• &7&若贡品价值为 0:'
+          - '      &7防守方不可投降.'
+          - '    &8• &7&l若防守方投降:'
+          - '      &7防守方需要向你方进献价值&c {tribute} &7的贡品.'
+          - '&8✖ &9右键点击'
+          - '   &7作为攻击方的你, 若需要投降'
+          - '   &7你需要向防守方进献价值'
+          - '   &c{tribute-att} &7的贡品.'
+          name: '&6&l贡品:&c {tribute}'
+          material: GOLD_INGOT
+          slots: 29
+  admin_main:
+    title: '&8管理员主菜单'
+    items:
+      default:
+        lands:
+          lore:
+          - '&8✖ &7浏览和管理管理员土地.'
+          - '    &8• &7若要更进一步编辑管理员土地, 输入命令'
+          - '      &3/lands edit &8<&3土地&8>&7, 就如'
+          - '      &7你对普通土地做的那样.'
+          - '    &8• &7管理员土地无需支付维护费用,'
+          - '      &7且不能参与任何战争.'
+          - '      &7且这些土地的拥有者会自动设置为 "服务器",'
+          - '      &7但你还是可以通过命令 &3/lands setowner&7 进行修改.'
+          name: '&6&l管理管理员土地'
+          material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
+          slots: 25
+        child_failure_world:
+          lore:
+          - '&c你所处的世界必须允许土地区域占领.'
+          - ' &8• &7你可以在配置文件下编辑'
+          - '   &7"claim-worlds_list" 选项, '
+          - '   &7将该世界添加至允许占领区域的世界中.'
+          name: '&4&l非占领区'
+        wilderness:
+          lore:
+          - '&8✖ &7在郊区中切换职位和自然标志.'
+          name: '&6&l郊区标志'
+          material: NAME_TAG
+          slots: 21
+  list_membership-requests:
+    title: '&8成员邀请'
+    items:
+      default:
+        child_failure_player_own-land:
+          lore:
+          - '&c不能信任该玩家, 因为他已有自己的土地.'
+          - '&7在这之前他必须先删除自己的土地.'
+          name: '&4&l自有土地'
+        child_failure_land_max-members:
+          lore:
+          - '&c{object}&7 已达到了它可信任的成员数量上限.'
+          name: '&4&l达到上限'
+        child_failure_player_banned:
+          lore:
+          - '&c你不能信任已被封禁的玩家&4 {player}&c.'
+          - ' &8• &7若要解封: &e/lands unban'
+          name: '&4&l已被封禁'
+        entry_object:
+          lore:
+          - '&5{time}&7 前'
+          - '&8✖ &b左键点击'
+          - '   &7接受请求并信任该玩家.'
+          - '&8✖ &9右键点击'
+          - '   &7浏览该申请的更多信息.'
+          - '&8✖  &3键盘 Q 键'
+          - '   &7拒绝该玩家的请求.'
+          name: '&6&l{name}'
+          material: INHERIT
+        membership_accept:
+          lore:
+          - '&8✖ &7是否自动同意玩家的加入请求?'
+          - '  &8• &7这意味着任何玩家都可以加入你的土地.'
+          - '  &8• &7新加入的玩家将会被分配&7 {role} &7职位.'
+          name: '&6&l自动通过申请: {status}'
+          material: REDSTONE
+          slots: 42
+        child_failure_player_max-lands:
+          lore:
+          - '&c玩家拥有的土地数量已达到上限,'
+          - '&c这也意味着他们也不能加入更多土地了.'
+          name: '&4&l达到上限'
+      patches:
+        all:
+          category:
+            slots: 40
+          category_members:
+            slots: 40
+  list_player_lands:
+    title: '&8你的土地'
+    items:
+      default:
+        entry_land_own:
+          lore:
+          - '&7你拥有该土地.'
+          - ' &8• &7所属国家:&9 {nation}'
+          - ' &8• &7占领区块:&3 {chunks} &7/&c {max-chunks}'
+          - '&8✖ &b左键点击'
+          - '   &7管理这片土地.'
+          - '&8✖ &bSHIFT + 左键点击'
+          - '   &7通过命令 &e/lands edit &7选择该土地.'
+          - '   &7接下来的所有土地相关命令都将会以该土地为操作对象执行.'
+          - '&8✖ &9右键点击'
+          - '   &7浏览该土地的相关信息.'
+          name: '&2&l{land}'
+          material: INHERIT
+        entry_camp_edit:
+          lore:
+          - '&7你通过命令 &e/lands edit &7将该土地'
+          - '&7设置为了命令编辑对象. '
+          - '&7接下来的所有土地相关命令都将会以该土地为操作对象执行.'
+          - '&7营地是不用支付维护费用但也不能扩张的土地.'
+          - '&7&l这块营地的过期时间大约是:'
+          - '&5~{time}'
+          - '&8✖ &b左键点击'
+          - '   &7管理这块营地.'
+          - '&8✖ &bSHIFT + 左键点击'
+          - '   &7通过命令 &e/lands edit &7选择该土地.'
+          - '   &7接下来的所有土地相关命令都将会以该土地为操作对象执行.'
+          - '&8✖ &9右键点击'
+          - '   &7浏览该营地的相关信息.'
+          name: '&2&l{land}'
+          material: INHERIT
+        entry_camp_own:
+          lore:
+          - '&7你拥有该营地.'
+          - '&7营地是不用支付维护费用但也不能扩张的土地.'
+          - '&7&l这块营地的过期时间大约是:'
+          - '&5~{time}'
+          - '&8✖ &b左键点击'
+          - '   &7管理这块营地.'
+          - '&8✖ &bSHIFT + 左键点击'
+          - '   &7通过命令 &e/lands edit &7选择该土地.'
+          - '   &7接下来的所有土地相关命令都将会以该土地为操作对象执行.'
+          - '&8✖ &9右键点击'
+          - '   &7浏览该营地的相关信息.'
+          name: '&2&l{land}'
+          material: INHERIT
+        entry_camp:
+          lore:
+          - '&7你已在该营地中受信任.'
+          - '&7营地是不用支付维护费用但也不能扩张的土地.'
+          - '&7&l这块营地的过期时间大约是:'
+          - '&5~{time}'
+          - '&8✖ &b左键点击'
+          - '   &7管理这块营地.'
+          - '&8✖ &bSHIFT + 左键点击'
+          - '   &7通过命令 &e/lands edit &7选择该土地.'
+          - '   &7接下来的所有土地相关命令都将会以该土地为操作对象执行.'
+          - '&8✖ &9右键点击'
+          - '   &7浏览该营地的相关信息.'
+          name: '&2&l{land}'
+          material: INHERIT
+        entry_land:
+          lore:
+          - '&7你已在该土地中受信任.'
+          - ' &8• &7所属国家:&9 {nation}'
+          - ' &8• &7拥有区块:&3 {chunks} &7/&c {max-chunks}'
+          - '&8✖ &b左键点击'
+          - '   &7管理这片土地.'
+          - '&8✖ &bSHIFT + 左键点击'
+          - '   &7通过命令 &e/lands edit &7选择该土地.'
+          - '   &7接下来的所有土地相关命令都将会以该土地为操作对象执行.'
+          - '&8✖ &9右键点击'
+          - '   &7浏览该土地的相关信息.'
+          name: '&2&l{land}'
+          material: INHERIT
+        entry_land_edit:
+          lore:
+          - '&7你通过命令 &e/lands edit &7将该土地'
+          - '&7设置为了命令编辑对象. '
+          - '&7接下来的所有土地相关命令都将会以该土地为操作对象执行.'
+          - '&8✖ &b左键点击'
+          - '   &7管理这片土地.'
+          - '&8✖ &bSHIFT + 左键点击'
+          - '   &7通过命令 &e/lands edit &7选择该土地.'
+          - '   &7接下来的所有土地相关命令都将会以该土地为操作对象执行.'
+          - '&8✖ &9右键点击'
+          - '   &7浏览该土地的相关信息.'
+          name: '&2&l{land}'
+          material: skin:eef425b4db7d62b200e89c013e421a9e110bfb27f2d8b9f5884d10104d00f4f4
+  player_invite:
+    title: '&8{land}'
+    items:
+      default:
+        child_failure_banned:
+          lore:
+          - '&c你不能加入土地&4 {land}&c的 &4 {area} &c区域,'
+          - '&c他们已将你封禁.'
+          name: '&4&l你已被封禁'
+        deny:
+          lore:
+          - '&8✖ &7拒绝该邀请.'
+          name: '&c&l拒绝'
+          material: RED_STAINED_GLASS_PANE
+          slots: 24-27
+        accept_owner:
+          lore:
+          - '&8✖ &7接受该邀请.'
+          - '   &7税收:&c {tax}'
+          - '   &7维护费用:&c {upkeep}'
+          name: '&a&l接受'
+          material: LIME_STAINED_GLASS_PANE
+          slots: 19-22
+        accept_trust:
+          lore:
+          - '&8✖ &7接受该邀请.'
+          - '   &7税收:&c {tax}'
+          name: '&a&l接受'
+          material: LIME_STAINED_GLASS_PANE
+          slots: 19-22
+        child_failure_invite拥有者:
+          lore:
+          - '&c你不能加入该土地.'
+          - ' &8• &7你不能在拥有土地的情况下,'
+          - '   &7再加入其他人的土地.'
+          name: '&4&l邀请拥有者'
+        child_failure_lands:
+          lore:
+          - '&c你不能加入其他土地.'
+          - ' &8• &7你已经达到了你能加入的&3 {max} &7块土地上限.'
+          name: '&4&l最大数量'
+        child_failure_members:
+          lore:
+          - '&c不能加入土地&4 {land}&c.'
+          - ' &8• &7他们已经达到了&3 {max} &7名最大成员的限制.'
+          name: '&4&l最大成员'
+        child_failure_war:
+          lore:
+          - '&c你现在不能加入参战的土地&4 {land}&c.'
+          name: '&4&l正在参战'
+        info:
+          lore:
+          - ' &8• &7区域:&6 {area}'
+          - ' &8• &7土地:&2 {land}'
+          - ' &8• &7收到消息:&5 {time}'
+          - ' &8• &7发送者: {sender}'
+          name: '&6&l信息'
+          material: OAK_SIGN
+          slots: 23
+  list_rentables:
+    title: '&8可租赁'
+    items:
+      default:
+        refresh_type:
+          lore:
+          - '&8✖ &7是否显示该区域的租售种类?'
+          name: '&7&l类型: {type}'
+          material: COMPARATOR
+          slots: 42
+        entry_land_buy:
+          lore:
+          - '&8• &7耗费:&c {costs}'
+          - '&8✖ &7传送'
+          name: '&a&l购买土地:&2 {land}'
+          material: INHERIT
+        entry_area_buy:
+          lore:
+          - '&8• &7大小: {size} 格方块'
+          - '&8• &7花费:&c {costs}'
+          - '&8• &7土地: {land}'
+          - '&8✖ &7传送'
+          name: '&a&l购买:&6 {area}'
+          material: INHERIT
+        refresh_sort:
+          lore:
+          - '&8✖ &7点击切换整理模式.'
+          name: '&7&l筛选模式: {mode}'
+          material: HOPPER
+          slots: 41
+        entry_area_rent:
+          lore:
+          - '&8• &7大小: {size} 格方块'
+          - '&8• &7花费:&7每 &5{time}&c {costs} '
+          - '&8• &7租期上限: {max}'
+          - '&8• &7所属土地: {land}'
+          - '&8✖ &7传送'
+          name: '&e&l出租:&6 {area}'
+          material: INHERIT
+        child_failure_cooldown:
+          lore:
+          - '&7你需要等待&5 {time} 才可再次使用传送.'
+          name: '&4&l正在冷却'
+  action-confirm:
+    title: '&8确认此操作'
+    items:
+      default:
+        confirm:
+          name: '&a&l确认'
+          material: LIME_STAINED_GLASS_PANE
+          slots:
+          - 1-4
+          - 10-13
+          - 19-22
+          - 28-31
+          - 37-40
+          sound_click: ENTITY_PLAYER_LEVELUP
+        cancel:
+          name: '&c&l拒绝'
+          material: RED_STAINED_GLASS_PANE
+          slots:
+          - 6-9
+          - 15-18
+          - 24-27
+          - 33-36
+          - 42-45
+          sound_click: BLOCK_ANVIL_HIT
+        info:
+          lore:
+          - '&7点击 &a&l确认 &7确认操作,'
+          - '&7或点击 &c&l取消 &7取消操作.'
+          name: '&6&l确认操作'
+          material: OAK_SIGN
+          slots:
+          - 5
+          - 14
+          - 23
+          - 32
+          - 41
+  admin_wilderness:
+    title: '&8郊区标志'
+    items:
+      default:
+        management:
+          lore:
+          - '&8✖ &7编辑第三方插件可在郊区切换的管理标志.'
+          name: '&6&l管理标志'
+          material: GOLD_INGOT
+          slots: 23
+        action:
+          lore:
+          - '&8✖ &7编辑行为标志, 例如破坏方块等.'
+          name: '&6&l行为标志'
+          material: IRON_PICKAXE
+          slots: 20
+        landflags:
+          lore:
+          - '&8✖ &7切换自然标志, 例如生物生成等.'
+          name: '&6&l自然标志'
+          material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
+          slots: 26
+  object_info:
+    title: '&8{object}'
+    items:
+      default:
+        membership-request_not-looking:
+          lore:
+          - '&c该土地不接纳新成员.'
+          name: '&6&l成员申请'
+          material: BOOKSHELF
+          slots: 33
+        level:
+          lore:
+          - '&8✖ &7点击这里浏览当前等级和下一等级的信息.'
+          name: '&6&l等级'
+          material: BEACON
+          slots: 15
+        created:
+          lore:
+          - '&5{date}'
+          name: '&6&l创建时间'
+          material: CLOCK
+          slots: 11
+        players:
+          lore:
+          - '&e{players}'
+          name: '&6&l玩家 &8(&7{amount}&8)'
+          material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+          slots: 13
+        lands:
+          lore:
+          - '&e{lands}'
+          name: '&6&l土地 &8(&7{amount}&8)'
+          material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
+          slots: 13
+        membership-request:
+          lore:
+          - '&8✖ &b左键点击'
+          - '   &7发送加入请求.'
+          - '&8✖ &9右键点击'
+          - '   &7撤回加入请求.'
+          name: '&6&l成员请求'
+          material: BOOKSHELF
+          slots: 33
+        war:
+          lore:
+          - ' &8• &7胜场: {won}'
+          - ' &8• &7败场: {lost}'
+          - '   &8= &7胜负比:&3 {wlr}'
+          - '&6&l击杀信息:'
+          - ' &8• &7击杀: {kills}'
+          - ' &8• &7死亡: {deaths}'
+          - '   &8= &7KD 比:&3 {kdr}'
+          - '&8• &7夺取数: {captures}'
+          name: '&6&l胜负信息:'
+          material: IRON_SWORD
+          slots: 31
+        level_camp:
+          lore:
+          - '&c营地没有等级.'
+          name: '&6&l等级'
+          material: BEACON
+          slots: 15
+        relations:
+          lore:
+          - '&8✖ &7浏览邻近关系.'
+          name: '&6&l外交'
+          material: LIME_BANNER
+          slots: 29
+  list_admin_wilderness_landflags:
+    title: '&8自然标志'
+  list_area_roles:
+    title: '&8{area} &7> &8职位'
+    items:
+      default:
+        child_failure_max-roles:
+          lore:
+          - '&c该区域达到了f&4 {max} &c个职位的最大数量.'
+          name: '&4&l数量上限'
+        child_failure_access:
+          lore:
+          - '&c你不能编辑该区域内的职位.'
+          - ' &8• &7土地拥有者可给予你相关权限.'
+          name: '&4&l不允许'
+        entry_object:
+          lore:
+          - '&8✖ &bSHIFT + 左键点击'
+          - '   &7提升等级'
+          - '&8✖ &9SHIFT + 右键点击'
+          - '   &7降低等级'
+          - '&8✖  &3键盘 Q 键'
+          - '   &7删除该职位.'
+          name: '&7&l{role}'
+          material: INHERIT
+        create:
+          lore:
+          - '&8✖ &7创建新职位.'
+          - '   &7可用数量:&3 {roles} &8/&c {max}'
+          name: '&a&l创建职位'
+          material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
+          slots: 40
+        child_failure_required:
+          lore:
+          - '&c你不能删除该职位.'
+          - ' &8• &7该职位是管理玩家所必需的.'
+          name: '&4&l职位不可删除'
+        delete:
+          lore:
+          - '&8✖ &7删除区域内的职位.'
+          name: '&c&l删除职位'
+          material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
+          slots: 42
+        child_failure_priority:
+          lore:
+          - '&c你不能编辑该职位的设置.'
+          - ' &8• &7该职位等级高于你的等级,'
+          - '   &7或你的等级与该职位相同.'
+          name: '&4&l等级不足'
+  list_player_invites:
+    title: '&8Received Invites'
+    items:
+      default:
+        entry_object_owner:
+          lore:
+          - '&8✖ &7拒绝该邀请或浏览信息.'
+          name: '&2&l{land} &7- &6&l拥有权转移'
+          material: INHERIT
+        entry_object_trust:
+          lore:
+          - '&8✖ &7拒绝该邀请或浏览信息.'
+          name: '&2&l{land} &7- &6&l加入邀请'
+          material: INHERIT
+  list_land_areas:
+    title: '&8Areas'
+    items:
+      default:
+        child_failure_rented:
+          lore:
+          - '&c你不能编辑这个出租或出售的区域.'
+          - ' &8• &7当前租客:&3 {player}'
+          name: '&4&l出租'
+        entry_area_default:
+          lore:
+          - '&7{description}'
+          - '&8✖ &7打开该区域的菜单.'
+          name: '&6&l{area}'
+          material: INHERIT
+        child_failure_access:
+          lore:
+          - '&c你不能删除该土地的区域.'
+          - ' &8• &7土地拥有者可给予你相关权限.'
+          name: '&4&l拒绝操作'
+        entry_area:
+          lore:
+          - '&7{description}'
+          - '&8✖ &7管理该区域.'
+          - '&8✖  &3键盘 Q 键'
+          - '   &7删除该区域.'
+          name: '&6&l{area}'
+          material: INHERIT
+        create:
+          lore:
+          - '&8✖ &7在该土地内创建一个新区域.'
+          - '   &7可用数量:&3 {areas} &8/&c {max}'
+          name: '&a&l创建区域'
+          material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
+          slots: 40
+        entry_area-setup:
+          lore:
+          - '&81. &7输入命令 &e/lands selection &7来选择土地的两个边角.'
+          - '&82. &7输入命令 &e/{cmd} 将区域设置为该选区.'
+          - '&8✖  &3键盘 Q 键'
+          - '   &7删除该区域.'
+          name: '&c&l设置'
+          material: ACACIA_FENCE
+        child_failure_untrusted:
+          lore:
+          - '&c你不能打开该区域的菜单.'
+          - ' &8• &7你需要受到该区域的信任.'
+          name: '&4&l不受信任'
+        child_failure_default:
+          lore:
+          - '&c你不能编辑该土地的默认区域.'
+          - ' &8• &7新占领的区域将会自动归属于该区域.'
+          name: '&4&l默认区域'
+        child_failure_max-areas:
+          lore:
+          - '&c该土地已达到了创建&4 {max} &c片区域的上限.'
+          name: '&4&l最大数量'
+        delete:
+          lore:
+          - '&8✖ &7删除该土地的区域.'
+          name: '&c&l删除区域'
+          material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
+          slots: 42
+  list_area_banned:
+    title: '&8{area} &7> &8已封禁玩家'
+    items:
+      default:
+        unban:
+          lore:
+          - '&8✖ &7将该玩家从此区域解封.'
+          name: '&a&l解封玩家'
+          material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
+          slots: 42
+        entry_all:
+          lore:
+          - '&7被此区域封禁的玩家:'
+          - '{areas}'
+          - '&8✖ &7点击获取该玩家的更多信息.'
+          name: '&e&l{player}'
+          material: INHERIT
+        entry_area:
+          lore:
+          - '&7此玩家已被该区域封禁.'
+          - '&8✖ &7点击获取该玩家的更多信息.'
+          name: '&e&l{player}'
+          material: INHERIT
+        refresh_toggle:
+          lore:
+          - '&8✖ &7仅显示该区域内被封禁的玩家 &8(&6{area}&8)&7?'
+          - '    &8• &6&l若禁用:'
+          - '      &7将会显示整个土地的封禁玩家.'
+          - '      &7同时也允许你解封或封禁土地内的玩家.'
+          name: '&6&lV仅浏览区域: {current}'
+          material: HOPPER
+          slots: 41
+        ban:
+          lore:
+          - '&8✖ &7将指定玩家从该区域封禁.'
+          - ' &8• &7被封禁玩家将不可以传送或进入该区域.'
+          name: '&c&l封禁玩家'
+          material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
+          slots: 40
+  war_capture_recipe:
+    title: '&8旗帜配方'
+  list_role_players:
+    title: '&8玩家'
+    items:
+      default:
+        entry_object:
+          lore:
+          - '&7该玩家为你的区域提供了 &3{support} &7个区块.'
+          name: '&e&l{player}'
+          material: INHERIT
+          slots: 10-36
+  list_all:
+    title: '&8All'
+    items:
+      default:
+        refresh_toggle-allowed:
+          lore:
+          - '&8✖ &是否只显示允许传送至土地内出生点或进入土地的玩家?'
+          name: '&6&l仅显示允许进入玩家: {only-allowed}'
+          material: OAK_DOOR
+          slots: 42
+        refresh_toggle-category:
+          lore:
+          - '&8✖ &7仅显示该分类下的土地?'
+          - '   &8• &7分类描述:'
+          - '     {description}'
+          name: '&6&l分类: {category}'
+          material: BOOKSHELF
+          slots: 41
+        entry_land_looking:
+          lore:
+          - ' &8• &7{sorting}: {value}'
+          - ' &8• &7分类: {category}'
+          - ' &8• &7标题:'
+          - '   &7{title}'
+          - '&8✖ &b左键点击'
+          - '   &7传送至该岛屿的出生点.'
+          - '&8✖ &9右键点击'
+          - '   &7浏览更多信息.'
+          - '&6&l成员请求'
+          - '&8✖ &bSHIFT + 左键点击'
+          - '   &7发送加入请求.'
+          - '&8✖ &9SHIFT + 右键点击'
+          - '   &7撤回加入请求.'
+          name: '&6&l#{pos} &2&l{land}'
+          material: INHERIT
+        entry_nation:
+          lore:
+          - ' &8• &7{sorting}: {value}'
+          - ' &8• &7土地: {lands}'
+          - '&8✖ &b左键点击'
+          - '   &7传送至首都出生点.'
+          - '&8✖ &9右键点击'
+          - '   &7浏览更多信息.'
+          name: '&6&l#{pos} &2&l{nation}'
+          material: INHERIT
+        refresh_sorting:
+          lore:
+          - '&8✖ &7切换排序模式.'
+          name: '&6&l排序依据: {current}'
+          material: HOPPER
+          slots: 40
+        entry_land:
+          lore:
+          - ' &8• &7{sorting}: {value}'
+          - ' &8• &7分类: {category}'
+          - ' &8• &7标题:'
+          - '   &7{title}'
+          - '&8✖ &b左键点击'
+          - '   &7传送至该岛屿的出生点.'
+          - '&8✖ &9右键点击'
+          - '   &7浏览更多信息.'
+          name: '&6&l#{pos} &2&l{land}'
+          material: INHERIT
+  list_inbox:
+    title: '&8消息'
+    items:
+      default:
+        refresh_filter:
+          lore:
+          - '&8✖ &7在各种信息之间切换.'
+          - '   &7当前:&3 {type}'
+          name: '&6&l通过种类过滤'
+          material: HOPPER
+          slots: 40
+        entry_object:
+          lore:
+          - '{message}'
+          - '&8✖ &7点击移除.'
+          name: '&6&l#{id}'
+          material: PAPER
+          slots: 10-36
+        refresh_clear:
+          lore:
+          - '&8✖ &7移除所有未读消息.'
+          name: '&6&l清除'
+          material: BARRIER
+          slots: 42
+        child_failure_owner:
+          lore:
+          - '&7只有土地拥有者可以清除未读消息.'
+          name: '&4&l拥有者'
+  list_player_flags:
+    title: '&8个人设置'
+    items:
+      default:
+        entry_enter_messages:
+          lore:
+          - '&8✖ &7是否显示进入或离开土地的消息提示?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l进入和离开消息: {enabled}'
+          material: OAK_SIGN
+        entry_receive_invites:
+          lore:
+          - '&8✖ &7是否允许其他土地向你发送加入邀请?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l接收邀请: {enabled}'
+          material: WRITABLE_BOOK
+        entry_show_inbox:
+          lore:
+          - '&8✖ &7是否向你发送有关土地的消息提醒?'
+          - '   &7解锁状态: {unlocked}'
+          name: '&6&l发送消息: {enabled}'
+          material: skin:6bf3fcdccffd963e4334818108e1e9ae3a80566d0d3d2d4ab3051a2cd811348c
+        entry_general_player:
+          lore:
+          - '&8✖ &7点击切换:'
+          - '   &7解锁状态: {unlocked}'
+          - '&7描述:'
+          - '{desc}'
+          name: '&6&l{flag}: {enabled}'
+          material: INHERIT
+  player_info:
+    title: '&8玩家 {player}'
+    items:
+      default:
+        max-chunks:
+          lore:
+          - '&7该玩家的加入将会为你的土地提供'
+          - '&3{chunks} &7个区块的区域.'
+          name: '&6&l支持区域'
+          material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
+          slots: 22
+        lands:
+          lore:
+          - '{lands}'
+          name: '&6&l土地 &8(&7{amount}&8)'
+          material: OAK_SIGN
+          slots: 24
+        areas:
+          lore:
+          - '&7该玩家在土地&2 {land}&7 的受信任区域如下:'
+          - '{areas}'
+          name: '&6&l受信任区域 &8(&7{amount}&8)'
+          material: OAK_FENCE
+          slots: 26
+        time:
+          lore:
+          - '&8• &7最后在线: &5{seen}'
+          - '   &7下线时间: &5{offline}'
+          - '&8• &7游玩时间: &5{playtime}'
+          name: '&6&l最后在线与游玩时间'
+          material: CLOCK
+          slots: 20
+  relations:
+    title: '&8外交'
+    items:
+      default:
+        offer_received:
+          lore:
+          - '&8✖ &7管理接收的申请.'
+          name: '&6&l接收申请'
+          material: skin:3b83bbccf4f0c86b12f6f79989d159454bf9281955d7e2411ce98c1b8aa38d8
+          slots: 26
+        offer_sent:
+          lore:
+          - '&8✖ &7管理发出的申请.'
+          name: '&6&l发出申请'
+          material: skin:3e4f2f9698c3f186fe44cc63d2f3c4f9a241223acf0581775d9cecd7075
+          slots: 24
+        enemies:
+          lore:
+          - '&8✖ &7管理敌人.'
+          name: '&c&l敌人'
+          material: RED_BANNER
+          slots: 22
+        allies:
+          lore:
+          - '&8✖ &7管理盟友.'
+          name: '&a&l盟友'
+          material: LIME_BANNER
+          slots: 20
+  list_relation:
+    title: '&8外交'
+    items:
+      default:
+        add:
+          lore:
+          - '   &7最大数量: {max}'
+          name: '&8✖ &a&l增加'
+          material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
+          slots: 40
+        entry_offer_neutral_sender:
+          lore:
+          - '&7如果他们接受该申请,'
+          - '&7他们将再次与你保持中立关系.'
+          - '&8✖  &3键盘 Q 键'
+          - '   &7撤销该申请.'
+          - '&7&l信息'
+          - ' &8• &7拥有者: {owner}'
+          - ' &8• &7等级: {level}'
+          - ' &8✖ &bSHIFT + 左键点击'
+          - '    &7获取有关他们的更多信息.'
+          name: '&c&l{object}'
+          material: INHERIT
+        entry_offer_ally_sender:
+          lore:
+          - '&7如果他们接受该申请,'
+          - '&7他们将会与你结盟.'
+          - '&8✖  &3键盘 Q 键'
+          - '   &7撤回该申请.'
+          - '&7&l信息'
+          - ' &8• &7拥有者: {owner}'
+          - ' &8• &7等级: {level}'
+          - ' &8✖ &bSHIFT + 左键点击'
+          - '    &7获取有关他们的更多信息.'
+          name: '&c&l{object}'
+          material: INHERIT
+        remove:
+          name: '&8✖ &c&l删除'
+          material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
+          slots: 42
+        entry_offer_neutral_receiver:
+          lore:
+          - '&8✖ &7接受中立请求.'
+          - '   &7你将不再会是他们的敌人.'
+          - '&8✖  &3键盘 Q 键'
+          - '   &7拒绝该邀请.'
+          - '&7&l信息'
+          - ' &8• &7拥有者: {owner}'
+          - ' &8• &7等级: {level}'
+          - ' &8✖ &bSHIFT + 左键点击'
+          - '    &7获取有关他们的更多信息.'
+          name: '&c&l{object}'
+          material: INHERIT
+        child_failure_war:
+          lore:
+          - '&c你不能在 {object} 迎战敌人 &4{enemy}&c 时'
+          - '&c管理这个.'
+          name: '&4&l正在或将要进行战争'
+        add_nation:
+          lore:
+          - '&c所有外交关系都由国家 &4{nation} &c管理'
+          - '&c你的土地属于这个国家.'
+          name: '&6&l由国家管理'
+          material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
+          slots: 40
+        child_failure_max_allies:
+          lore:
+          - '&4{object} &c达到了能设置的&4 {max} &c个.'
+          - '&c盟友数量上限.'
+          name: '&4&lMax Allies reached'
+        entry_offer_ally_receiver:
+          lore:
+          - '&8✖ &7接受结盟邀请.'
+          - '   &7你将会成为他们的盟友.'
+          - '&8✖  &3键盘 Q 键'
+          - '   &7拒绝该邀请.'
+          - '&7&l信息'
+          - ' &8• &7拥有者: {owner}'
+          - ' &8• &7等级: {level}'
+          - ' &8✖ &bSHIFT + 左键点击'
+          - '    &7获取有关他们的更多信息.'
+          name: '&c&l{object}'
+          material: INHERIT
+        entry_ally:
+          lore:
+          - '&8✖  &3键盘 Q 键'
+          - '   &7Remove ally.'
+          - '&7&l信息'
+          - ' &8• &7拥有者: {owner}'
+          - ' &8• &7等级: {level}'
+          - ' &8✖ &bSHIFT + 左键点击'
+          - '    &7获取有关他们的更多信息.'
+          name: '&a&l盟友 {object}'
+          material: INHERIT
+        remove_nation:
+          lore:
+          - '&c所有外交关系都由国家 &4{nation} &c管理'
+          - '&c你的土地属于这个国家.'
+          name: '&6&l由国家管理'
+          material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
+          slots: 42
+        entry_enemy:
+          lore:
+          - '&8✖  &3键盘 Q 键'
+          - '   &7发送中立请求.'
+          - '&7&l信息'
+          - ' &8• &7拥有者: {owner}'
+          - ' &8• &7等级: {level}'
+          - ' &8✖ &bSHIFT + 左键点击'
+          - '    &7获取有关他们的更多信息.'
+          name: '&c&l第二年 {object}'
+          material: INHERIT
+        child_failure_nation:
+          lore:
+          - '&c所有外交关系都由国家 &4{nation} &c管理'
+          - '&c你的土地属于这个国家.'
+          name: '&4&l由国家管理'
+        child_war:
+          lore:
+          - '&c你不能在 {object} 参加战争的时候这么做.' 
+          name: '&4&l正在进行战争'
+        child_failure_max_enemies:
+          lore:
+          - '&4{object} &c达到了所能设置的&4 {max} &c个'
+          - '&c敌人数量的上限.'
+          name: '&4&l数量上限'
+  object_info_relations:
+    title: '&8外交'
+    items:
+      default:
+        enemies:
+          lore:
+          - '&8✖ &7浏览敌人.'
+          - '   &8• &7数量: {enemies}'
+          name: '&c&l敌人'
+          material: RED_BANNER
+          slots: 25
+        allies:
+          lore:
+          - '&8✖ &7浏览盟友.'
+          - '   &8• &7数量: {allies}'
+          name: '&a&l盟友'
+          material: LIME_BANNER
+          slots: 21
+  list_land_storage:
+    title: '&8仓库'
+    items:
+      default:
+        entry_item:
+          name: ''
+          lore:
+          - ''
+          material: INHERIT
+  list_nation_lands:
+    title: '&8国家成员'
+    items:
+      default:
+        trust:
+          lore:
+          - '&8✖ &7邀请土地加入你的国家.'
+          - '   &7土地数量:&3 {lands} &8/&c {max}'
+          name: '&a&l邀请土地'
+          material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
+          slots: 41
+        entry_object:
+          lore:
+          - '&8✖ &7浏览该土地的信息.'
+          - '&7Title:'
+          - '&7{title}'
+          - '&8✖ &9右键点击'
+          - '   &7获取该土地的更多信息.'
+          name: '&2&l{prefix} {land}'
+          material: INHERIT
+        untrust:
+          lore:
+          - '&8✖ &7解除国家内土地的信任.'
+          name: '&c&l解除土地信任'
+          material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
+          slots: 42
+skull:
+  area:
+    sub: OAK_FENCE
+    default: DARK_OAK_FENCE
+physical:
+  selection:
+    lore:
+    - '&7使用这个工具创建选区.'
+    - '&7所创建的选区可以用于:'
+    - ' &8- &e/claim'
+    - ' &8- &e/unclaim'
+    - ' &8- &e/assign'
+    name: '&2&l选择工具'
+    material: GOLDEN_HOE
+  capture_flag:
+    lore:
+    - '&7在战争时将该旗帜插在地方的土地上,'
+    - '&7可对敌方土地进行夺旗战.'
+    name: '&2&l旗帜'
+    material: BEACON
+  currency:
+    name: ''
+    material: GOLD_INGOT
+  claim_block:
+    lore:
+    - '&7可将该方块放置在郊区,'
+    - '&7占领对应的区块'
+    - '&7拥有者:&3 {owner}'
+    name: '&2&l占领方块'
+    material: GRASS_BLOCK
+  info:
+    lore:
+    - '&7使用该工具查询你所指向的土地.'
+    name: '&2&l信息工具'
+    material: FEATHER
+  camp:
+    lore:
+    - '&7使用该物品放置一个临时营地'
+    - '&7它会在 &5{time}&7 后消失.'
+    - '&7范围:&3 {radius}'
+    - '&7营地不能被扩张.'
+    name: '&2&l营地'
+    material: CAMPFIRE
+common_sounds:
+  # 在菜单物品被设置的时候播放音效.
+  set:
+    # 每个以 [物品类型]_failure_<名称> 开头的物品都会设置这个声音.
+    # 你仍然可以通过物品各自的 "sound_set" 选项覆盖该设置.
+    failure: ENTITY_VILLAGER_NO
+    success: ENTITY_PLAYER_LEVELUP

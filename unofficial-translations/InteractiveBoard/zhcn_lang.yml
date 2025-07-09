@@ -1,0 +1,67 @@
+# This is an language file for InteractiveBoard
+
+messages:
+  prefix: '&3&lInteractiveBoard &r&7> '
+  errorprefix: '&c&lInteractiveBoard 错误 &r&7> '
+  board_created: '展示板已被命名为 &a%name%&7. 可打开展示板文件 &a%name%.yml&7 进行详细配置.'
+  board_teleport: '你已被传送至名为 &a%name%&7 的展示板附近.'
+  name_select: '请左键点击你想要获取名字的展示板.'
+  board_name: '&a%name%'
+  shop:
+    success_prefix: '&7>&r&a '
+    error_prefix: '&7>&r&c '
+    function_purchase: '购买成功.'
+    balance_insufficient: '余额不足.'
+    item_purchase: '你花费了 $%price% 购买了 %amount% 个 %item_name%.'
+    item_sold: 你通过出售 %amount% 个 %item_name% 物品, 获得了 $%price%.
+    inventory_full: 你没有足够的背包空间容纳你所购买的物品.
+    no_item: 你缺少 %amount% 个 %item_name% 来进行出售操作.
+  selection:
+    tool_name: '&l&7<> &bInteractiveBoard 选择 &7<>'
+    tool_given: '已获得选区工具. 若要创建一块展示板, 请使用选区工具左键点击方块选取展示板的&a&l左下&r&7角, 然后右键点击方块选区展示板的 &a&l右上&r&7角.'
+    first_position_set: 已选择第一点.
+    second_position_set: 已选择第二点.
+    first_position_removed: 已取消选择第一点.
+    second_position_removed: 已取消选择第二点.
+    complete: |-
+      选择完毕.
+      你现在可以使用命令 &a/ib create &l<展示板名称>&7 来创建一块展示板了.
+    complete_text1: 你好, %player_name%! 你成功创建了一块展示板!
+    complete_text2: 找到 plugins/InteractiveBoard/boards/ 下的展示板文件来编辑这块展示板的设置.
+  delete:
+    select: 请使用鼠标左键点击你想要删除的展示板.
+    confirm_message: 成功选中了一块展示板, 按下确认按钮进行删除操作.
+    confirm_boardmessage: 你真的要删除这块展示板吗?
+    confirm: 确认
+    cancel: 取消
+    complete: 展示板已成功删除.
+  error:
+    selection_must_be_1wide: 选区的宽度不能超过一格方块.
+    selection_must_be_in_same_world: 选区必须处于统一世界.
+    selection_not_completed: 在创建展示板之前必须进行选区操作.
+    selection_positions_incorrect: 选区不正确. 清先放置决定展示板左下角的选择方块, 再放置决定展示板右上角的选择方块.
+    invalid_command: 无效命令, 请输入 &a/ib help&7 获取帮助.
+    invalid_character: 符号 &c#&7 不能作为展示板的名称.
+    board_not_found: 找不到该名称的展示板.
+    board_exists: 已存在同名展示板.
+    board_not_deletable: 这块展示板不能在游戏内删除.
+    board_not_resettable: 这块展示板不能在游戏内重置.
+    horizontal_unsupported: 水平展示板只在 &c&l1.13+&7 的版本可用.
+  reload: 所有展示板已重载.
+  reset:
+    select: 请使用鼠标左键点击你想要重置的展示板.
+    complete: 展示板 &a%name%&7 已被成功重置.
+  coordinates:
+    select: 请点击你想要获取位置的像素点.
+    complete: 'x: &a&l%x%&r&7 y: &a&l%y%&r&7'
+  help: |-
+    &7======== &3&bInteractiveBoard 帮助页面 &r&7========
+    &a/ib &7create - 创建一块新的展示板
+    &a/ib &7delete - 删除一块已有的展示板
+    &a/ib &7reload - 重载展示板配置
+    &a/ib &7teleport &a<名称>&7 - 传送至指定展示板
+    &a/ib &7fonts - 从字体文件夹获取已载入的字体名称
+    &a/ib &7name - 获取指定展示板的名称
+    &a/ib &7reset - 重载指定的展示板
+    &a/ib &7coordinates - 获取展示板上像素点的位置
+version: '19.95'

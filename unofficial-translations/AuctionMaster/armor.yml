@@ -1,0 +1,18 @@
+armor-menu-item: '311'
+armor-menu-name: '&b盔甲'
+armor-menu-lore:
+  - '&8分类'
+  - ''
+  - '&7示例:'
+  - '&8■ &7头盔'
+  - '&8■ &7胸甲'
+  - '&8■ &7护腿'
+  - '&8■ &靴子'
+
+# 若你需要将特定的物品归于这个分类
+# 请将它们的名字写在这里
+custom-item-names:
+  - '&e&l示例&6&l物品'
+
+custom-item-ids:
+  - '2266'

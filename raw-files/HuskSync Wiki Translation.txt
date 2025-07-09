@@ -1,0 +1,1139 @@
+[index]
+[#1]前言
+[#2]安装教程
+[#3]配置文件
+[#4]排除问题
+[#5]数据切换
+[#6]从旧版迁移
+[#7]MPDB 迁移
+[#8]语言贡献
+[#9]常见问题
+[#10]命令列表
+[#11]同步功能
+[#12]Plan 插件联动
+[#13]用户数据缓存
+[#14]事件优先级
+[#15]背包保存
+[#16]API
+*[#17]玩家数据 API
+*[#18]API 事件
+[#19]!翻译信息
+[/index]
+[postbg]2.jpg[/postbg][b]【前言】[/b]
+
+2023/7/23 16:10
+绝对不会再干这么疯狂的事情了，后面还有一个 PocketHorse 的翻译和维基要做。
+我爱翻译，因为有钱，我说，好。
+虽然现在精神状态不是很好，但是让我休息一下。
+今天早上才看到 HuskHomes 的维基有一个章节缺失，重新编辑了一下。
+希望残叶给我快点发绿宝石。
+
+2023/7/29 17:29
+又是一个维基告一段落了，剩下的 PocketHorse 和 CrateReloaded 就暂时先放放吧。
+我太累了，最近发生了很多事，我甚至都来不及处理。
+
+[b]【链接】[/b]
+
+插件：[url=https://william278.net/docs/husksync]https://william278.net/docs/husksync[/url]
+原帖：[url=https://www.spigotmc.org/resources/husksync-1-16-1-20-synchronize-player-inventories-data-cross-server.97144/]https://www.spigotmc.org/resourc ... cross-server.97144/[/url]
+[page]
+[size=5][b]安装教程[/b][/size][hr]
+本章节将会引导你安装 HuskSync 至你的 Spigot 群组子服上。
+
+[size=4][b]安装需求[/b][/size][hr]
+[list]
+[*]MySQL 数据库（8.0 或更高版本）
+[*]Redis 数据库（5.0 或更高版本）— 请浏览常见问题来获取更多信息。
+[*]Spigot 子服若干，以 BungeeCord 或 Velocity 组建的群组服（Minecraft 1.16.5 或更高，使用 Java 16 或更高）
+[/list]
+[size=4][b]安装步骤[/b][/size][hr]
+[size=3][b]1. 安装 jar 文件[/b][/size]
+[list]
+[*]将插件拖放至每个 Spigot 子服的 [font=Consolas]/plugins/[/font] 文件夹下；
+[*]你不需要将 HuskSync 安装在群组服上。
+[/list]
+[size=3][b]2. 重启服务器[/b][/size]
+[list]
+[*]开启，之后关闭服务器，使 HuskSync 生成一份配置文件；
+[*]HuskSync 将会在控制台报错并随后禁用自己，因为它无法连接到数据库。你还未设置登录凭据，所以这是预料之内的；
+[*]对于高级用户：如果你喜欢的话，你可以自己创建一个 config.yml 文件并使得每个子服的 [font=Consolas]/plugins/HuskSync/[/font] 文件夹同步，更方便地更新配置文件。
+[/list]
+[size=3][b]3. 输入 MySQL 和 Redis 数据库的登录凭据[/b][/size]
+[list]
+[*]找到每个子服的 HuskSync 的配置文件（一般位于 [font=Consolas]~/plugins/HuskSync/config.yml[/font]）；
+[*]在 [font=Consolas]database[/font] 设置区域下的 [font=Consolas]credentials[/font] 部分，输入你的 MySQL 数据库登录凭据。通常情况下你不应该动 [font=Consolas]connection_pool[/font] 部分设置的任何内容；
+[*]在 [font=Consolas]redis[/font] 的 [font=Consolas]credentials[/font] 设置中，输入你的 Redis 数据库登录凭据。如果你的 Redis 数据库没有设置密码，请将密码一项留空（译者注：即空字符串 '' 或 ""）；
+[*]除非你在一个群组下区分多个子群组，每个子群组之间的玩家数据相互隔离，否则不应更改 [font=Consolas]cluster_id[/font] 的值。
+[/list]
+[size=3][b]4. 再次重启每个子服[/b][/size]
+[list]
+[*]若提供的 MySQL 和 Redis 数据库登录凭据有效，服务器开启之后数据同步功能就会正常运行；
+[*]若你需要从 HuskSync 1.x 版本或 MySQLPlayerDataBridge 导入数据，请浏览下方的教程：
+[list]
+[*]从旧版迁移
+[*]从 MPDB 迁移
+[/list][/list]
+[page]
+[size=5][b]配置文件[/b][/size][hr]
+本章节包含了 HuskSync 的参考配置文件。配置文件位于 [font=Consolas]/plugins/HuskSync/config.yml[/font]。
+
+[size=4][b]示例配置[/b][/size][hr]
+[code]# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+# ┃       HuskSync 主配置文件      ┃
+# ┃       插件作者 William278      ┃
+# ┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+# ┣╸ 插件介绍: https://william278.net/project/husksync
+# ┗╸ 维基原文: https://william278.net/docs/husksync
+language: en-gb
+check_for_updates: true
+cluster_id: ''
+debug_logging: false
+database:
+  credentials:
+    # 数据库连接设置
+    host: localhost
+    port: 3306
+    database: HuskSync
+    username: root
+    password: pa55w0rd
+    parameters: ?autoReconnect=true&useSSL=false
+  connection_pool:
+    # MySQL 连接池设置
+    maximum_pool_size: 10
+    minimum_idle: 10
+    maximum_lifetime: 1800000
+    keepalive_time: 0
+    connection_timeout: 5000
+  table_names:
+    users: husksync_users
+    user_data: husksync_user_data
+redis:
+  credentials:
+    # Redis 连接设置
+    host: localhost
+    port: 6379
+    password: ''
+  use_ssl: false
+synchronization:
+  # 数据同步设置
+  max_user_data_snapshots: 5
+  save_on_world_save: true
+  save_on_death: false
+  save_empty_drops_on_death: true
+  compress_data: true
+  notification_display_slot: ACTION_BAR
+  synchronise_dead_players_changing_server: true
+  network_latency_milliseconds: 500
+  features:
+    health: true
+    statistics: true
+    persistent_data_container: false
+    hunger: true
+    ender_chests: true
+    advancements: true
+    location: false
+    game_mode: true
+    potion_effects: true
+    locked_maps: false
+    inventories: true
+    max_health: true
+    experience: true
+  blacklisted_commands_while_locked: []
+  event_priorities:
+    join_listener: LOWEST
+    quit_listener: LOWEST
+    death_listener: NORMAL[/code]
+[size=4][b]消息文本[/b][/size][hr]
+你可以自定义插件显示的语言，可通过编辑 [font=Consolas]message-xx-xx.yml[/font] 文件实现。该文件使用了 [url=https://github.com/Phoenix616/MineDown]MineDown 格式[/url]。若要浏览更多信息，请见语言支持章节。
+[page]
+[size=5][b]排除问题[/b][/size][hr]
+本章节包含了一系列经常会遇到的问题与相应的解决方法。
+
+[size=4][b]常见问题[/b][/size][hr]
+[size=3][b]数据库包含重复的 UUID[/b][/size]
+
+该问题常出现在离线服务器上。我们[url=https://william278.net/terms]不为此类服务器提供支持[/url]，我们唯一能给予你的建议是：
+
+[list]
+[*]确保每个子服的 [font=Consolas]paper.yml[/font] 下的 [font=Consolas]bungee_online_mode[/font] 设置项正确；
+[*]确保你的登录插件对每个子服的玩家都有独立有效的 ID。
+[/list]
+[size=3][b]不能为高于服务器版本的 Minecraft 客户端设置数据[/b][/size]
+
+在你尝试将新版本的 Minecraft 用户数据迁移到旧版本，或是你的服务器使用了与客户端不匹配的版本时，这种情况经常出现。
+
+[size=3][b]玩家数据同步出错[/b][/size]
+
+这可能是你的 Spigot 服务器和 Redis 服务器时间不同所导致的。HuskSync 有自带的方法来纠正这一问题。
+尝试连续增加配置文件中 [font=Consolas]network_latency_milliseconds[/font] 项的值来解决这一问题。
+
+[size=3][b]死亡不掉落与数据同步的问题[/b][/size]
+
+使用了死亡不掉落（玩家死亡后不会掉落背包物品）的服务器，可能会出现此类数据同步的问题。见死亡不掉落章节来确认该问题出现的原因，并找到相应的解决方法。
+
+[size=3][b]通过 Snappy（轻量的 Linux 发行版）压缩数据时出现问题[/b][/size]
+
+一些 Linux 的轻量化的发行版，例如 Alpine Linux（在 Pterodactyl 上被使用）可能缺少 Snappy 数据压缩所需要的前置。这可以通过将配置文本中的 [font=Conoslas]compress_data[/font] 项修改为 false 来解决。注意，在修改该设置之后你需要重启你的数据库。或者，为你的发行版找到压缩数据的前置！
+
+[size=3][b]Pterodactyl 上的 Redis 连接出现问题[/b][/size]
+
+Pterodactyl 内置的防火墙可阻止 Redis 服务器在各子服之间的通信。请为每个服务器添加信任，使其能在子服之间通信。使用 egg 安装 Redis 可能比后端的内部服务更加方便。
+[page]
+[size=5][b]数据切换[/b][/size][hr]
+HuskSync 提供了备份和自动切换玩家数据的功能。这样的话，如果玩家数据出现任何问题，插件立即会将玩家的数据还原到上一个保存的快照。
+ 
+[size=4][b]数据快照[/b][/size][hr]
+HuskSync 能够将玩家的数据保存为“快照”的形式。
+
+每个用户数据的快照都包含下列数据：
+
+[list]
+[*]玩家的 UUID；
+[*]时间戳（创建快照的时间）；
+[*]创建原因（该快照为何被创建）；
+[*]用于显示是否被标记的快照标志（防止被数据切换覆盖）。
+[/list]
+默认区块下，HuskSync 将会为每个用户创建五个快照（最晚创建的快照包括在内）。在那之后，每当一个新的快照被生成，最早生成的一个快照就会被删除。你可以在 [font=Consolas]config.yml[/font] 下的 [font=Consolas]max_user_data_snapshots[/font] 处修改保存的快照数量（最小值为 1）。
+
+被标记的快照数据不会被切换，仅能从游戏内通过命令删除。
+
+[size=4][b]浏览玩家数据[/b][/size][hr]
+若要浏览玩家的数据快照，在游戏内使用命令 [font=Consolas]/userdata list <玩家名称>[/font]。玩家最近保存的快照将会从数据库中读取，并按照从新到旧的顺序排列。在快照上点击可浏览详细信息。
+
+数据快照列表[图片]
+
+被星标标注的快照表示它已被标记。鼠标移动到其上可显示详细信息。
+
+你可以点击列表中的内容，浏览其中的每个快照。相似地，若要浏览一个用户最近的数据，请使用 [font=Consolas]/userdata view <玩家名称>[/font]。
+
+浏览数据快照[图片]
+
+[size=4][b]管理玩家数据[/b][/size][hr]
+你可以使用“管理”按钮来管理玩家数据。这些数据只会在你有用户命令管理权限时出现。（见命令章节列表）
+
+[list]
+[*]点击“删除”来删除数据；
+[*]点击“恢复”按钮来回复玩家数据。若玩家在线，他们的物品与相关属性将会被更新，否则数据更新将会在他们下次上线时触发；
+[*]点击“标记”按钮来标记玩家数据。被标记的数据将会出现星标，以表示它被标记。
+[/list]
+[size=4][b]保存原因[/b][/size][hr]
+数据保存原因，被标志标记，显示该快照被保存的原因。
+
+[list]
+[*][b]disconnect（连接断开）：[/b]表示玩家断开连接时保存的数据（切换服务器或登出）；
+[*][b]world save（世界保存）：[/b]表示玩家在世界保存期间保存的数据。该项可在 [font=Consolas]config.yml[/font] 下的 [font=Consolas]synchronization[/font] 将 [font=Consolas]save_on_world_save[/font] 项设置为 false 来禁用；
+[*][b]server shutdown（服务器关闭）：[/b]表示服务器关闭时保存的玩家数据；
+[*][b]inventory command（背包命令）：[/b]表示通过 [font=Consolas]/inventory[/font] 命令修改背包后保存的数据；
+[*][b]enderchest command（末影箱命令）：[/b]表示通过 [font=Consolas]/enderchest[/font] 命令修改末影箱后保存的数据；
+[*][b]backup restore（背包保存）：[/b]表示数据从前一个版本还原后保存的数据；
+[*][b]api（api 调用）：[/b]表示通过 api 调用事件后保存的数据；
+[*][b]mpdb migration（MPDB 数据库迁移）：[/b]从插件 MySQLPlayerDataBridge 迁移数据后保存的数据（见“MPDB 迁移”章节）；
+[*][b]legacy migration（旧版数据迁移）：[/b]从本插件的旧版本（1.x 版本 - 见“从旧版迁移”章节）
+[*][b]unknown（未知）：[/b]表示未知原因保存的数据。
+[/list]
+[page]
+[size=5][b]从旧版迁移[/b][/size][hr]
+该教程会指导你将 1.4.x 版本的 HuskSync 数据迁移至 2.x 版本。
+
+[size=4][b]需求[/b][/size][hr]
+[list]
+[*]带有 HuskSync 1.4.x 版本数据的 MySQL 数据库；
+[list]
+[*]暂不支持从 SQLite 转化数据，因为 HuskSync 2.x 版本需要 MySQL 数据库，且不支持 SQLite。多有不便敬请谅解；
+[*]若正在使用 1.3.x 或更低版本的 HuskSync，建议在升级至 2.x 版本前先按照操作升级至 1.4.x 版本。
+[/list][/list]
+[size=4][b]迁移步骤[/b][/size][hr]
+[size=3][b]1. 将所有子服的 HuskSync 卸载[/b][/size]
+
+[list]
+[*]关闭你所有的群组服和子服；
+[*]删除子服下 [font=Consolas]~/plugins/[/font] 的 jar 插件；
+[*]同时删除群组服下 [font=Consolas]~/plugins/[/font] 的插件。HuskSync 的 2.x 版本不再需要安装在群组服上；
+[*]直接删除（或先备份再删除）所有的配置文件夹（[font=Consolas]~/plugins/HuskSync[/font]）。HuskSync 2.x 版本的配置与消息文本格式不同。
+[/list]
+[size=3][b]2. 重新在子服上安装 HuskSync 的 2.x 版本[/b][/size]
+
+[list]
+[*]所有的 HuskSync 的 2.x 版本只需要安装在你的子服上，而无需安装在群组服上；
+[*]详细请参照开头的安装教程章节。
+[/list]
+[size=3][b]3. 设置迁移[/b][/size]
+
+[list]
+[*]确保服务器没有玩家并按步骤正确安装 HuskSync 2.x 版本；
+[*]在子服控制台输入命令 [font=Consolas]husksync migrate legacy[/font]；
+[*]仔细阅读迁移配置的指导信息。在大多数情况下，你无需改动配置文本的设置，如果你需要更改，请使用命令 [font=Consolas]husksync migrate legacy set <设置> <值>[/font]；
+[*]迁移将会[i]从[/i]你在控制台中指定的数据库迁移[i]至[/i]你在 [font=Consolas]config.yml[/font] 中指定的数据库。若你要从多个群组中迁移数据，请确保数据迁移的数据库一一对应。
+[/list]
+[size=3][b]3. 开始迁移[/b][/size]
+
+[list]
+[*]输入命令 [font=Consolas]husksync migrate legacy start[/font] 来开始迁移程序。这会消耗一些时间，具体时长取决于迁移数据量。
+[/list]
+[size=3][b]5. 确保数据迁移成功[/b][/size]
+
+[list]
+[*]数据迁移完毕之后，HuskSync 将会在控制台发出提醒。若要验证数据迁移是否成功，可以进入游戏，输入命令 [font=Consolas]/userdata list <玩家名称>[/font]，检查数据是否因 [font=Consolas]legacy migration[/font] 原因而转化；
+[*]你可以删除数据库中的旧数据表。确保你删除了原数据表而不是转化后的数据表。默认情况下，[i]新的[/i]数据表名称为 [font=Consolas]husksync_users[/font] 和 [font=Consolas]husksync_user_data[/font]，而[i]旧版本[/i]数据表名称为 [font=Consolas]husksync_players[/font] 和 [font=Consolas]husksync_data[/font]，具体情况视配置文本设置而定。
+[/list]
+[page]
+[size=5][b]MPDB 数据迁移[/b][/size][hr]
+该教程将会引导你将 MySQLPlayerDataBridge（MPDB） 插件的数据迁移至 HuskSync 2.x。
+
+[size=4][b]需求[/b][/size][hr]
+[list]
+[*][i]安装了[/i] MySQLPlayerDataBridge 的 Spigot 子服。
+[/list]
+[size=4][b]迁移教程[/b][/size][hr]
+[size=3][b]1. 在所有的子服上安装 HuskSync 2.x[/b][/size]
+
+[list]
+[*]下载并在所有的子服上安装 HuskSync。先不要急着卸载 MySQLPlayerDataBridge；
+[*]按照章节开头的教程安装插件；
+[*]完成后，重启你的服务器。
+[/list]
+[size=3][b]2. 配置迁移[/b][/size]
+
+[list]
+[*]确保服务器没有玩家并按步骤正确安装 HuskSync 2.x 版本；
+[*]请使用子服的控制台输入命令 [font=Consolas]husksync migrate mpdb[/font]。若 MPDB 迁移不可用，请确保 MySQLPlayerDataBridge 仍然安装着；
+[*]通过下列命令按需修改迁移设置：[font=Consolas]husksync migrate mpdb set <设置> <值>[/font]；
+[*]请注意数据将会[i]从[/i]你在上述命令中指定的数据库迁移[i]至[/i] [font=Consolas]config.yml[/font] 中设置的数据库。
+[/list]
+[size=3][b]3. 开始迁移[/b][/size]
+
+[list]
+[*]输入命令 [font=Consolas]husksync migrate legacy start[/font] 来开始迁移程序。这会消耗一些时间，具体时长取决于迁移数据量。
+[/list]
+[size=3][b]4. 卸载 MySQLPlayerDataBridge[/b][/size]
+
+[list]
+[*]迁移完毕后，HuskSync 将会在控制台弹出消息，提示迁移完成；
+[*]关闭所有子服，并删除每个子服的 MySQLPlayerDataBridge jar 文件；
+[*]重启你的所有子服。
+[/list]
+[size=3][b]5. 确保数据迁移成功[/b][/size]
+
+[list]
+[*]若要验证数据迁移是否成功，可以进入游戏，输入命令 [font=Consolas]/userdata list <玩家名称>[/font]，检查数据是否因 [font=Consolas]mpdb_migration[/font] 原因而转化；
+[*]你可以删除数据库中的旧数据表。确保你删除了原数据表而不是转化后的数据表。
+[/list]
+[page]
+[size=5][b]语言贡献[/b][/size][hr]
+HuskHomes 支持许多种类的语言，这些语言由社区成员贡献。插件的默认语言为 [font=Consolas]en-gb[/font]（英文-英 国）。消息文本以 MineDown 格式标注。
+
+你可以通过修改插件 config.yml 中最顶上的 [font=Consolas]language[/font] 设置，来修改本插件所使用的语言。你所设置的语言必须是插件支持的。你可以通过查看翻译的存档[url=https://github.com/WiIIiam278/HuskHomes/tree/master/common/src/main/resources/locales]浏览插件支持的语言[/url]。
+
+[size=4][b]贡献翻译[/b][/size][hr]
+你可以提交一个包含从[url=https://github.com/WiIIiam278/HuskHomes/blob/master/common/src/main/resources/locales/en-gb.yml]默认语言[/url]翻译的 yaml 文件的拉取请求来为本插件的语言支持做贡献。这里是翻译的一些守则：
+[list]
+[*]不要翻译本地语言的键名称（例如 [font=Consolas]teleporting[/font]）；
+[*]你拉取请求的内容必须为[url=https://github.com/WiIIiam278/HuskHomes/tree/master/common/src/main/resources/locales]本地语言[/url]中的一个文件；
+[*]不要翻译 [url=https://github.com/Phoenix616/MineDown]MineDown[/url] 的格式字符，以及命令文本；只需要翻译英语原文的描述；
+[*]每段语言文本需处在同一行，且要去掉页眉；
+[*]使用 ISO 639-1 标准的[url=https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes]语言代码[/url]来命名你所翻译语言的文件；
+[*]如果你可以，那么可以在 [font=Consolas]AboutMenu[/font] 下的翻译贡献者处添加你自己的名字，或者我们也会帮你完成这项工作。
+[/list]
+感谢你让 HuskSync 在世界范围内变得更加易懂！
+[page]
+[size=5][b]常见问题[/b][/size][hr]
+该页面解答了一些常被提及的问题。
+
+[size=4][b]问题列表[/b][/size][hr]
+[b]哪些数据可以被同步？[/b][hr]HuskSync 支持同步许多数据，所有同步的数据种类均可按照你的喜好更高。请浏览“同步特点”章节以获取可同步数据的完整列表。
+
+[b]是否需要 Redis？什么是 Redis？[/b][hr]HuskSync 需要 Redis 来操作（原因如下）。Redis 是一种运行在内存中的数据库，可用于服务器之间的数据缓存与群组之间的信息交换。安装 Redis 的方法与安装 MySQL 的方式相似（译者注：是真的。尤其是 Windows，除 MySQL 有安装包需要解压外，二者均可通过 cmd 观察运行状态。）若你正在使用官方的服务器，则你可能需要咨询客服是否支持 Redis。若你正在寻找支持 Redis 的服务器提供商，我在[url=https://william278.net/redis-hosts]这里[/url]为你提供了一个列表，你可以稍后浏览。
+
+[b]插件如何同步数据？[/b][hr]图表[图片]
+
+HuskSync 利用 MySQL 和 Redis 来实现最大效率的数据同步。
+
+当一个玩家切换服务器时，除了保存在 MySQL 的数据之外，插件也会通过 Redis 以一个临时的秘钥验证数据缓存数据。当切换服务器后，对应服务器会检查秘钥并读取缓存，从而将其应用在玩家上。当玩家重新加入群组服时，系统会从 MySQL 获取最后保存的数据快照。
+
+该方法用于显著提升同步性能与稳定性。一些其他的方法被用于优化这个过程，例如通过 Snappy 压缩序列化的数据。
+
+[b]HuskSync 为什么不支持同步玩家经济/支持 Vault？[/b][hr]这个问题被经常提及，我有一个很好的理由来解释为什么 HuskSync 不支持它。
+
+Vault API 是设计为成为玩家的“数据仓库”。而经济插件通过 Vault 处理数据存储——通过拓展跨服同步。然后，依赖 Vault 的插件也可以通过其 API 来获取玩家的经济数值和相关数据。
+
+诸如 MySQLPlayerDataBridge 支持同步经济的插件也是通过[i]对接[/i]此插件实现的，原本依赖 Vault 返回数据的方法对别的插件将不再有效。所以，诸如 MySQLPlayerDataBridge 的插件需要人工制作插件对接并针对每个插件进行特定的调整来确保兼容性。
+
+这会因为许多不兼容的插件引起兼容性问题，并且插件体积也会增加，开发量也会显著增加。
+
+所以，我建议使用能够跨服同步的经济插件（直接[i]集成[/i] Vault API）。XConomy 是一个不错的选择，个人测试时体验尚佳。
+
+[b]这个插件会比 MySQLDataBridge 好吗？[/b][hr]我可没法回答这个问题！使用体验应当是因人而异的。不过 HuskSync 提供数据同步方法的性能，取决于你的服务器网络环境，以及你的玩家数据量。
+
+与此同时，HuskSync 内置了从 MPDB 迁移数据的功能。
+[page]
+[size=5][b]命令列表[/b][/size][hr]
+本章节包含了 HuskSync 的所有命令及其所有的权限节点。
+[table=98%,White]
+[tr][td][align=center][b]命令[/b][/align][/td][td][align=center][b]描述[/b][/align][/td][td][align=center][b]权限[/b][/align][/td][/tr]
+[tr][td][font=Consolas]/husksync[/font][/td][td]使用 [font=Consolas]/husksync[/font] 子命令[/td][td][font=Consolas]husksync.command.husksync[/font][/td][/tr]
+[tr][td][font=Consolas]/husksync info[/font][/td][td]浏览插件信息[/td][td][font=Consolas]husksync.command.husksync.info[/font][/td][/tr]
+[tr][td][font=Consolas]/husksync reload[/font][/td][td]重载配置及消息文本[/td][td][font=Consolas]husksync.command.husksync.reload[/font][/td][/tr]
+[tr][td][font=Consolas]/husksync update[/font][/td][td]检查更新是否可用[/td][td][font=Consolas]husksync.command.husksync.update[/font][/td][/tr]
+[tr][td][font=Consolas]/husksync migrate <迁移来源> [参数][/font][/td][td]迁移数据[/td][td][i]仅控制台[/i][/td][/tr]
+[tr][td][font=Consolas]/husksync view <玩家名称> [UUID][/font][/td][td]浏览指定玩家的快照数据[/td][td][font=Consolas]husksync.command.userdata[/font][/td][/tr]
+[tr][td][font=Consolas]/husksync restore <玩家名称> <UUID>[/font][/td][td]恢复指定玩家的快照数据[/td][td][font=Consolas]husksync.command.userdata.manage[/font][/td][/tr]
+[tr][td][font=Consolas]/husksync delete <玩家名称> <UUID>[/font][/td][td]删除指定玩家的快照数据[/td][td][font=Consolas]husksync.command.userdata.manage[/font][/td][/tr]
+[tr][td][font=Consolas]/husksync pin <玩家名称> <UUID>[/font][/td][td]标记指定玩家的快照数据[/td][td][font=Consolas]husksync.command.manage[/font][/td][/tr]
+[tr][td][font=Consolas]/inventory <玩家名称> [UUID][/font][/td][td]浏览玩家背包[/td][td][font=Consolas]husksync.command.inventory[/font]†[/td][/tr]
+[tr][td][font=Consolas]/enderchest <玩家名称> [UUID][/font][/td][td]浏览玩家末影箱[/td][td][font=Consolas]husksync.command.enderchest[/font]†[/td][/tr]
+[/table]
+† 需要对应的 [font=Consolas]husksync.command.inventory.edit[/font] 和 [font=Consolas]husksync.command.enderchest.edit[/font] 权限节点，以通过 GUI 界面编辑玩家的背包/末影箱。
+[page]
+[size=5][b]同步功能[/b][/size][hr]
+本章节讲述了 HuskSync 支持和不支持同步的内容。
+
+你可以通过调整同步配置来设置 HuskSync 同步的玩家数据量。当特定类型的数据同步被设置为禁用时，HuskSync 不会尝试转移该部分的玩家数据；换句话说，同步的内容是从本地的服务器上选择性读取的。
+
+[size=4][b]同步内容一览表[/b][/size][hr]
+✅—完全支持  ❌—不将支持  ⚠️—尚在测试
+[table=98%,White]
+[tr][td][align=center][b]名称[/b][/align][/td][td][align=center][b]描述[/b][/align][/td][td][align=center][b]是否支持同步[/b][/align][/td][/tr]
+[tr][td]背包内容[/td][td]玩家背包和快捷栏选中的物品[/td][td][align=center]✅[/align][/td][/tr]
+[tr][td]末影箱内容[/td][td]末影箱中存放的物品*[/td][td][align=center]✅[/align][/td][/tr]
+[tr][td]生命值[/td][td]玩家当前的生命值[/td][td][align=center]✅[/align][/td][/tr]
+[tr][td]最大生命值[/td][td]玩家的生命值上限[/td][td][align=center]✅[/align][/td][/tr]
+[tr][td]饱食度[/td][td]玩家的饱食度、饱和度体力值[/td][td][align=center]✅[/align][/td][/tr]
+[tr][td]经验值[/td][td]玩家的等级、经验值与分数[/td][td][align=center]✅[/align][/td][/tr]
+[tr][td]药水效果[/td][td]玩家身上的药水效果[/td][td][align=center]✅[/align][/td][/tr]
+[tr][td]成就[/td][td]玩家获得的成就、解锁的配方及达成的进度[/td][td][align=center]✅[/align][/td][/tr]
+[tr][td]游戏模式[/td][td]玩家当前的游戏模式[/td][td][align=center]✅[/align][/td][/tr]
+[tr][td]统计数据[/td][td]玩家统计信息中的所有数据（ESC 界面 -> 统计信息）[/td][td][align=center]✅[/align][/td][/tr]
+[tr][td]位置[/td][td]玩家当前所处世界及位置†[/td][td][align=center]✅[/align][/td][/tr]
+[tr][td]持久数据容器[/td][td]插件定义的玩家数据[/td][td][align=center]⚠[/align][/td][/tr]
+[tr][td]未探索的地图[/td][td]被锁定在制图台中的地图/藏宝图[/td][td][align=center]⚠[/align][/td][/tr]
+[tr][td]已探索的地图[/td][td]正常的、未解锁的地图/藏宝图（原因见下）。[/td][td][align=center]❌[/align][/td][/tr]
+[tr][td]经济数据[/td][td]与 Vault 有关的经济数据（原因见下）。[/td][td][align=center]❌[/align][/td][/tr]
+[/table]
+* 同时支持 Purpur 的自定义大小末影箱功能
+† 该功能为一些拥有副本世界（例如一些 RPG 服务器）设计。当启用该项时，玩家在切换服务器时将会停留在对应世界的原地。
+
+[size=3][b]持久化数据容器标签[/b][/size]
+
+[url=https://blog.jeff-media.com/persistent-data-container-the-better-alternative-to-nbt-tags/]持久化数据容器[/url]是 Spigot API 的一部分，允许向玩家、实体或物品上添加自定义的数据标签并使其持久化。HuskSync 支持将这一类数据跨服同步。若有插件使用了旧版本或旧格式的数据保存格式，例如直接修改 NBT，可能会有同步出错的情况。
+
+[size=3][b]自定义附魔[/b][/size]
+
+通过 [url=https://hub.spigotmc.org/javadocs/spigot/org/bukkit/inventory/meta/EnchantmentStorageMeta.html]EnchantmentStorageMeta[/url] 向 ItemStack 注册自定义附魔的插件能够兼容本插件，但需要注意，这些插件的加载顺序[i]必须[/i]先于 HuskSync；换句话说，HuskSync 须出现在插件的 [font=Consolas]loadbefore:[/font] 项中。因为 Spigot 的物品序列化 API 需要对应插件载入才能将物品序列化，这与其从附魔注册表中的读取机制有关，因此如果插件晚于 HuskSync 加载（而无法晚于插件关闭），会导致服务器关闭时因插件已卸载而无法序列化在线玩家身上的自定义附魔。
+
+[size=3][b]地图同步[/b][/size]
+
+地图同步相对特殊，因为它们的数据不存储在物品中，而是在游戏的世界存档下。因此，它们的数据是随世界改变而改变的，而这则是不能在多个实例之间记录的。所以，不太可能同步这些已解锁的地图物品。
+
+但是，针对此类物品的实验测试已经开始—也就是已经在一个制图台中解锁的地图—在最新的开发构建版中可用。该功能通过序列化，将地图上的像素点数据转入物品的持久化数据容器中。
+
+[size=3][b]经济同步[/b][/size]
+
+尽管它经常被用户们提起，但 HuskSync 有多种理由来解释为什么不会同步这些数据！
+
+我强烈建议使用自带跨服同步的经济插件，这些插件有更多的选择。更多内容请转到“常见问题”章节浏览。
+
+[size=4][b]切换同步功能[/b][/size][hr]
+除位置和锁定地图的同步外，所有同步都是默认启用的。若要切换指定数据的同步功能，在 [font=Consolas]config.yml[/font] 下 [font=Consolas]features:[/font] 的 [font=Consolas]synchronisation:[/font] 项自行调整，将对应项的值修改为 [font=Consolas]true[/font]/[font=Consolas]false[/font] 即可。
+
+config.yml 下的示例[hr][code]synchronization:
+  # ...
+  features:
+    inventories: true
+    ender_chests: true
+    health: true
+    max_health: true
+    hunger: true
+    experience: true
+    potion_effects: true
+    advancements: true
+    game_mode: true
+    statistics: true
+    persistent_data_container: false
+    locked_maps: true
+    location: false
+  #...[/code]
+[page]
+[size=5][b]Plan 插件联动[/b][/size][hr]
+HuskSync 支持在玩家的统计界面（Plan）显示信息。
+
+截图[图片]
+
+[size=4][b]需求[/b][/size][hr]
+[list]
+[*]HuskSync 2.0 或更高版本
+[*]Plan 5.4.1690 或更高版本
+[/list]
+[size=4][b]安装教程[/b][/size][hr]
+[list=1]
+[*]将 Plan 和 HuskSync 一并安装；
+[*]按需求配置 Plan 后重启服务器；
+[*]在“插件”一栏将会显示玩家的数据；
+[*]点击来浏览玩家的当前数据，以及他们的备份快照。
+[/list]
+[page]
+[size=5][b]用户数据缓存[/b][/size][hr]
+在 2.1 版本开始，HuskSync 可以将用户数据的快照缓存至 [font=Consolas]json[/font] 文件，或是选择保存至网络剪贴板（[font=Consolas]mc.lo.gs[/font]）
+这个操作可以通过命令 [font=Consolas]/userdata dump[/font] 命令完成。
+
+[size=4][b]使用说明[/b][/size][hr]
+[list=1]
+[*]使用之前确保你拥有权限 [font=Consolas]husksync.command.userdata.dump[/font]。玩家默认不会拥有该权限，管理员也是如此；
+[*]使用命令 [font=Consolas]/userdata list <玩家名称>[/font] 来浏览玩家的数据内容；
+[*]点击指定用户的数据条目。快照浏览菜单会出现，底部会出现两个新的按钮。
+[/list]
+输出数据按钮[图片]
+
+[size=3][b]输出为文件[/b][/size]
+点击“输出文件...”按钮后（与命令 [font=Consolas]/userdata dump <玩家名称> <快照 ID> file[/font] 等价），该用户的数据缓存将会在目录 [font=Consolas]~/plugins/HuskSync/dumps[/font] 输出。
+输出的 .json 文件名称通常按照下列格式：[font=Consolas]<玩家名>_<时间戳>_<保存原因>_<短UUID>.json[/font]
+
+示例的输出文件：William278_2022-10-12_21-46-37_disconnect_f7719f5c.json[hr][code]{
+  "status": {
+    "health": 20.0,
+    "max_health": 20.0,
+    "health_scale": 0.0,
+    "hunger": 20,
+    "saturation": 0.0,
+    "saturation_exhaustion": 0.24399996,
+    "selected_item_slot": 1,
+    "total_experience": 0,
+    "experience_level": 0,
+    "experience_progress": 0.0,
+    "game_mode": "CREATIVE",
+    "is_flying": true
+  },
+  "inventory": {
+    "serialized_items": "rO0ABXcEAAAAKXBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBzcgAXamF2YS51dGlsLkxp\r\nbmtlZEhhc2hNYXA0wE5cEGzA+wIAAVoAC2FjY2Vzc09yZGVyeHIAEWphdmEudXRpbC5IYXNoTWFw\r\nBQfawcMWYNEDAAJGAApsb2FkRmFjdG9ySQAJdGhyZXNob2xkeHA/QAAAAAAADHcIAAAAEAAAAAJ0\r\nAAF2c3IAEWphdmEubGFuZy5JbnRlZ2VyEuKgpPeBhzgCAAFJAAV2YWx1ZXhyABBqYXZhLmxhbmcu\r\nTnVtYmVyhqyVHQuU4IsCAAB4cAAADDB0AAR0eXBldAASTEVBVEhFUl9DSEVTVFBMQVRFeABwc3EA\r\nfgAAP0AAAAAAAAx3CAAAABAAAAADcQB+AANzcQB+AAQAAAwwcQB+AAd0AAdCRURST0NLdAAGYW1v\r\ndW50c3EAfgAEAAAAQHgAcHBwcHBwcA\u003d\u003d\r\n"
+  },
+  "ender_chest": {
+    "serialized_items": "rO0ABXcEAAAAG3NyABdqYXZhLnV0aWwuTGlua2VkSGFzaE1hcDTATlwQbMD7AgABWgALYWNjZXNz\r\nT3JkZXJ4cgARamF2YS51dGlsLkhhc2hNYXAFB9rBwxZg0QMAAkYACmxvYWRGYWN0b3JJAAl0aHJl\r\nc2hvbGR4cD9AAAAAAAAMdwgAAAAQAAAAA3QAAXZzcgARamF2YS5sYW5nLkludGVnZXIS4qCk94GH\r\nOAIAAUkABXZhbHVleHIAEGphdmEubGFuZy5OdW1iZXKGrJUdC5TgiwIAAHhwAAAMMHQABHR5cGV0\r\nAA1TUFJVQ0VfUExBTktTdAAGYW1vdW50c3EAfgAEAAAAQHgAc3EAfgAAP0AAAAAAAAx3CAAAABAA\r\nAAADcQB+AANzcQB+AAQAAAwwcQB+AAd0AAdCRURST0NLcQB+AAlxAH4ACngAc3EAfgAAP0AAAAAA\r\nAAx3CAAAABAAAAADcQB+AANzcQB+AAQAAAwwcQB+AAdxAH4ADXEAfgAJcQB+AAp4AHNxAH4AAD9A\r\nAAAAAAAMdwgAAAAQAAAAA3EAfgADc3EAfgAEAAAMMHEAfgAHcQB+AA1xAH4ACXEAfgAKeABzcQB+\r\nAAA/QAAAAAAADHcIAAAAEAAAAANxAH4AA3NxAH4ABAAADDBxAH4AB3EAfgANcQB+AAlxAH4ACngA\r\nc3EAfgAAP0AAAAAAAAx3CAAAABAAAAADcQB+AANzcQB+AAQAAAwwcQB+AAdxAH4ADXEAfgAJcQB+\r\nAAp4AHNxAH4AAD9AAAAAAAAMdwgAAAAQAAAAA3EAfgADc3EAfgAEAAAMMHEAfgAHcQB+AA1xAH4A\r\nCXEAfgAKeABzcQB+AAA/QAAAAAAADHcIAAAAEAAAAANxAH4AA3NxAH4ABAAADDBxAH4AB3EAfgAN\r\ncQB+AAlxAH4ACngAc3EAfgAAP0AAAAAAAAx3CAAAABAAAAADcQB+AANzcQB+AAQAAAwwcQB+AAdx\r\nAH4ADXEAfgAJcQB+AAp4AHNxAH4AAD9AAAAAAAAMdwgAAAAQAAAAA3EAfgADc3EAfgAEAAAMMHEA\r\nfgAHcQB+AA1xAH4ACXEAfgAKeABzcQB+AAA/QAAAAAAADHcIAAAAEAAAAANxAH4AA3NxAH4ABAAA\r\nDDBxAH4AB3EAfgANcQB+AAlxAH4ACngAc3EAfgAAP0AAAAAAAAx3CAAAABAAAAADcQB+AANzcQB+\r\nAAQAAAwwcQB+AAdxAH4ADXEAfgAJcQB+AAp4AHNxAH4AAD9AAAAAAAAMdwgAAAAQAAAAA3EAfgAD\r\nc3EAfgAEAAAMMHEAfgAHcQB+AA1xAH4ACXEAfgAKeABzcQB+AAA/QAAAAAAADHcIAAAAEAAAAANx\r\nAH4AA3NxAH4ABAAADDBxAH4AB3EAfgANcQB+AAlxAH4ACngAc3EAfgAAP0AAAAAAAAx3CAAAABAA\r\nAAADcQB+AANzcQB+AAQAAAwwcQB+AAdxAH4ADXEAfgAJcQB+AAp4AHNxAH4AAD9AAAAAAAAMdwgA\r\nAAAQAAAAA3EAfgADc3EAfgAEAAAMMHEAfgAHcQB+AA1xAH4ACXEAfgAKeABzcQB+AAA/QAAAAAAA\r\nDHcIAAAAEAAAAANxAH4AA3NxAH4ABAAADDBxAH4AB3EAfgANcQB+AAlxAH4ACngAc3EAfgAAP0AA\r\nAAAAAAx3CAAAABAAAAADcQB+AANzcQB+AAQAAAwwcQB+AAdxAH4ADXEAfgAJcQB+AAp4AHNxAH4A\r\nAD9AAAAAAAAMdwgAAAAQAAAAA3EAfgADc3EAfgAEAAAMMHEAfgAHcQB+AA1xAH4ACXEAfgAKeABz\r\ncQB+AAA/QAAAAAAADHcIAAAAEAAAAANxAH4AA3NxAH4ABAAADDBxAH4AB3EAfgANcQB+AAlxAH4A\r\nCngAc3EAfgAAP0AAAAAAAAx3CAAAABAAAAADcQB+AANzcQB+AAQAAAwwcQB+AAdxAH4ADXEAfgAJ\r\ncQB+AAp4AHNxAH4AAD9AAAAAAAAMdwgAAAAQAAAAA3EAfgADc3EAfgAEAAAMMHEAfgAHcQB+AA1x\r\nAH4ACXEAfgAKeABzcQB+AAA/QAAAAAAADHcIAAAAEAAAAANxAH4AA3NxAH4ABAAADDBxAH4AB3EA\r\nfgANcQB+AAlxAH4ACngAc3EAfgAAP0AAAAAAAAx3CAAAABAAAAADcQB+AANzcQB+AAQAAAwwcQB+\r\nAAdxAH4ACHEAfgAJcQB+AAp4AHNxAH4AAD9AAAAAAAAMdwgAAAAQAAAAA3EAfgADc3EAfgAEAAAM\r\nMHEAfgAHcQB+AAhxAH4ACXEAfgAKeABzcQB+AAA/QAAAAAAADHcIAAAAEAAAAANxAH4AA3NxAH4A\r\nBAAADDBxAH4AB3EAfgAIcQB+AAlxAH4ACngAc3EAfgAAP0AAAAAAAAx3CAAAABAAAAADcQB+AANz\r\ncQB+AAQAAAwwcQB+AAdxAH4ACHEAfgAJcQB+AAp4AA\u003d\u003d\r\n"
+  },
+  "potion_effects": {
+    "serialized_potion_effects": ""
+  },
+  "advancements": [
+    {
+      "key": "minecraft:recipes/transportation/mangrove_boat",
+      "completed_criteria": {
+        "in_water": "Oct 11, 2022, 10:07:07 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/redstone/spruce_button",
+      "completed_criteria": {
+        "has_planks": "Oct 11, 2022, 9:25:12 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/misc/iron_nugget_from_smelting",
+      "completed_criteria": {
+        "has_chainmail_leggings": "Oct 12, 2022, 5:43:37 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/redstone/spruce_pressure_plate",
+      "completed_criteria": {
+        "has_planks": "Oct 11, 2022, 9:25:12 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/redstone/warped_pressure_plate",
+      "completed_criteria": {
+        "has_planks": "Oct 12, 2022, 5:43:22 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/decorations/spruce_sign",
+      "completed_criteria": {
+        "has_planks": "Oct 11, 2022, 9:25:12 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/redstone/spruce_trapdoor",
+      "completed_criteria": {
+        "has_planks": "Oct 11, 2022, 9:25:12 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/building_blocks/warped_slab",
+      "completed_criteria": {
+        "has_planks": "Oct 12, 2022, 5:43:22 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/redstone/spruce_door",
+      "completed_criteria": {
+        "has_planks": "Oct 11, 2022, 9:25:12 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/redstone/spruce_fence_gate",
+      "completed_criteria": {
+        "has_planks": "Oct 11, 2022, 9:25:12 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/decorations/crafting_table",
+      "completed_criteria": {
+        "has_planks": "Oct 11, 2022, 9:25:12 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/decorations/chest",
+      "completed_criteria": {
+        "has_lots_of_items": "Oct 12, 2022, 5:43:42 PM"
+      }
+    },
+    {
+      "key": "minecraft:story/shiny_gear",
+      "completed_criteria": {
+        "diamond_boots": "Oct 12, 2022, 5:43:36 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/misc/stick",
+      "completed_criteria": {
+        "has_planks": "Oct 11, 2022, 9:25:12 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/redstone/warped_fence_gate",
+      "completed_criteria": {
+        "has_planks": "Oct 12, 2022, 5:43:22 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/transportation/acacia_boat",
+      "completed_criteria": {
+        "in_water": "Oct 11, 2022, 10:07:07 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/misc/iron_nugget_from_blasting",
+      "completed_criteria": {
+        "has_chainmail_leggings": "Oct 12, 2022, 5:43:37 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/decorations/warped_fence",
+      "completed_criteria": {
+        "has_planks": "Oct 12, 2022, 5:43:22 PM"
+      }
+    },
+    {
+      "key": "minecraft:adventure/adventuring_time",
+      "completed_criteria": {
+        "minecraft:beach": "Oct 12, 2022, 5:10:27 PM",
+        "minecraft:old_growth_pine_taiga": "Oct 12, 2022, 9:32:20 PM",
+        "minecraft:dark_forest": "Oct 11, 2022, 9:24:06 PM",
+        "minecraft:forest": "Oct 11, 2022, 10:06:58 PM",
+        "minecraft:taiga": "Oct 12, 2022, 8:58:59 PM",
+        "minecraft:river": "Oct 11, 2022, 10:07:07 PM",
+        "minecraft:stony_shore": "Oct 11, 2022, 9:23:59 PM",
+        "minecraft:snowy_plains": "Oct 11, 2022, 10:08:53 PM",
+        "minecraft:snowy_taiga": "Oct 12, 2022, 3:38:05 PM",
+        "minecraft:frozen_river": "Oct 11, 2022, 10:09:54 PM",
+        "minecraft:windswept_gravelly_hills": "Oct 12, 2022, 3:14:39 PM",
+        "minecraft:old_growth_spruce_taiga": "Oct 12, 2022, 9:42:12 PM",
+        "minecraft:snowy_beach": "Oct 11, 2022, 10:08:40 PM",
+        "minecraft:plains": "Oct 11, 2022, 10:07:07 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/decorations/barrel",
+      "completed_criteria": {
+        "has_planks": "Oct 11, 2022, 9:25:12 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/transportation/spruce_boat",
+      "completed_criteria": {
+        "in_water": "Oct 11, 2022, 10:07:07 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/redstone/redstone_from_smelting_redstone_ore",
+      "completed_criteria": {
+        "has_redstone_ore": "Oct 11, 2022, 10:21:34 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/transportation/birch_boat",
+      "completed_criteria": {
+        "in_water": "Oct 11, 2022, 10:07:07 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/decorations/spruce_fence",
+      "completed_criteria": {
+        "has_planks": "Oct 11, 2022, 9:25:12 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/building_blocks/spruce_stairs",
+      "completed_criteria": {
+        "has_planks": "Oct 11, 2022, 9:25:12 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/transportation/oak_boat",
+      "completed_criteria": {
+        "in_water": "Oct 11, 2022, 10:07:07 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/redstone/redstone_from_blasting_redstone_ore",
+      "completed_criteria": {
+        "has_redstone_ore": "Oct 11, 2022, 10:21:34 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/redstone/warped_button",
+      "completed_criteria": {
+        "has_planks": "Oct 12, 2022, 5:43:22 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/building_blocks/warped_stairs",
+      "completed_criteria": {
+        "has_planks": "Oct 12, 2022, 5:43:22 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/redstone/warped_trapdoor",
+      "completed_criteria": {
+        "has_planks": "Oct 12, 2022, 5:43:22 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/building_blocks/spruce_slab",
+      "completed_criteria": {
+        "has_planks": "Oct 11, 2022, 9:25:12 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/decorations/warped_sign",
+      "completed_criteria": {
+        "has_planks": "Oct 12, 2022, 5:43:22 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/transportation/jungle_boat",
+      "completed_criteria": {
+        "in_water": "Oct 11, 2022, 10:07:07 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/transportation/dark_oak_boat",
+      "completed_criteria": {
+        "in_water": "Oct 11, 2022, 10:07:07 PM"
+      }
+    },
+    {
+      "key": "minecraft:recipes/redstone/warped_door",
+      "completed_criteria": {
+        "has_planks": "Oct 12, 2022, 5:43:22 PM"
+      }
+    }
+  ],
+  "statistics": {
+    "untyped_statistics": {
+      "LEAVE_GAME": 16,
+      "TOTAL_WORLD_TIME": 282633,
+      "CROUCH_ONE_CM": 43,
+      "WALK_UNDER_WATER_ONE_CM": 113,
+      "DEATHS": 4,
+      "WALK_ONE_CM": 7313,
+      "JUMP": 866,
+      "SPRINT_ONE_CM": 63807,
+      "DROP_COUNT": 9,
+      "WALK_ON_WATER_ONE_CM": 331,
+      "TIME_SINCE_DEATH": 282357,
+      "SNEAK_TIME": 95,
+      "FLY_ONE_CM": 584296,
+      "ENDERCHEST_OPENED": 2,
+      "PLAY_ONE_MINUTE": 282633,
+      "TIME_SINCE_REST": 282377
+    },
+    "block_statistics": {},
+    "item_statistics": {
+      "PICKUP": {
+        "SUGAR_CANE": 2
+      },
+      "DROP": {
+        "SPRUCE_PLANKS": 70,
+        "TURTLE_HELMET": 1,
+        "DIAMOND_BOOTS": 1,
+        "BEDROCK": 1,
+        "CHAINMAIL_LEGGINGS": 1,
+        "MANGROVE_PROPAGULE": 1,
+        "LEATHER_CHESTPLATE": 1
+      },
+      "USE_ITEM": {
+        "TURTLE_HELMET": 1,
+        "DIAMOND_BOOTS": 1,
+        "GRASS_BLOCK": 5,
+        "ENDER_CHEST": 1,
+        "CHAINMAIL_LEGGINGS": 1,
+        "LEATHER_CHESTPLATE": 1
+      }
+    },
+    "entity_statistics": {}
+  },
+  "persistent_data_container": {
+    "persistent_data_map": {}
+  },
+  "minecraft_version": "1.19.2",
+  "format_version": 3
+}[/code]
+[size=3][b]上传至网络[/b][/size]
+
+按钮“上传至网络...”（与命令 [font=Consolas]/userdata dump <玩家名称> <快照 ID> web[/font] 等价）将会输出玩家的数据快照至 [url=https://mc.lo.gs]https://mc.lo.gs[/url] 托管平，并将输出的文本以链接的形式发给你。需要注意的是，若用户数据超过了 10MB，则剪贴板服务可能会超时。
+[page]
+[size=5][b]事件优先级[/b][/size][hr]
+若你正在使用检查退出、加入或死亡时玩家身上的物品或属性并进行操作的插件，例如战斗记录插件时，你可能会遇到诸如事件执行顺序等于 HuskSync 的兼容性问题。
+
+在战斗记录插件方面，这意味着 HuskSync 监听了一个在玩家死亡、加入或退出游戏时调用的事件，且先于战斗记录插件执行击杀玩家、处理物品。换句话说，玩家会起死回生，并被同步至他们尚未死亡的状态。这会引起刷物品的问题。
+
+HuskSync 提供了一个自定义事件优先级的方法—也就是，HuskSync 监听事件调用的优先级—来让你修复这个问题。
+
+[size=4][b]修改事件优先级[/b][/size][hr]
+在 HuskSync 2.1.3 或更高的版本，你可以在 [font=Consolas]config.yml[/font] 下的 [font=Consolas]synchronization[/font] 设置下修改事件的优先级，如下文所示：
+[code]synchronization:
+  #(...)
+  event_priorities:
+    join_listener: LOWEST
+    death_listener: NORMAL
+    quit_listener: LOWEST[/code]若要修改玩家加入、死亡或退出事件的优先级，只需简单的将值修改为下列的三个之一：
+[list=1]
+[*][font=Consolas]LOWEST[/font]（最先执行，在事件触发后即开始处理）
+[*][font=Consolas]NORMAL[/font]（在所有的 LOWEST 监听处理完毕后处理）
+[*][font=Consolas]HIGHEST[/font]（在所有的 NORMAL 和 LOWEST 事件处理完毕后处理）
+[/list]
+请注意，默认情况下 HuskSync 最先监听加入与退出事件（[font=Consolas]LOEWST[/font]）。这是出于同步需要；在退出事件监听的情况下，断开连接的一开始就可让 HuskSync 保存数据。这是因为部分插件可能会增加服务器的 tick 循环，导致在数据保存时出现问题，从而影响到系统的正常工作。
+
+[size=4][b]战斗记录[/b][/size][hr]
+对于使用战斗记录插件的服主—若有在PVP时击杀玩家的玩家退出游戏情况的—应当将 [font=Consolas]quite_listener[/font] 设置为 [font=Consolas]NORMAL[/font] 或 [font=Consolas]HIGHEST[/font]。
+[page]
+[size=5][b]背包保存[/b][/size][hr]
+若你的服务器使用了 [font=Consolas]keepInventory[/font]，一种让玩家在死后保留背包物品的规则，HuskSync 内置的死亡快照和死亡玩家背包同步功能可能导致同步问题。
+
+若要解决此问题，你需要修改配置文本 [font=Consolas]config.yml[/font] 的内容，如下文所示。
+
+[size=4][b]为什么会这样？[/b][/size][hr]
+HuskSync 在玩家死亡时有特殊处理，以应对玩家死后切换服务器的情况（防止物品丢失）。
+[list]
+[*]死亡状态保存—HuskSync 有特殊的逻辑保存玩家数据快照，[i]除了[/i]他们切换服务器时的[i]背包内容[/i]。当 [font=Consolas]keepInventory[/font] 启用时，背包栏仍然保存着物品，所以快照不会正确保存。该逻辑是默认启用的；
+[*]死亡时创建快照—HuskSync 在玩家死亡时会创建一个用于备份的特殊快照，拿走他们的掉落物并将它们重新放回玩家的背包。当 [font=Consolas]keepInventory[/font] 启用时，玩家不会掉落物品，所以这会导致不正确的快照被创建。该功能默认启用。
+[/list]
+[size=4][b]这要如何修复？[/b][/size][hr]
+你需要将 [font=Consolas]config.yml[/font] 中的 [font=Consolas]synchronization.save_on_death[/font]（控制是否在死亡时生成快照）、[font=Consolas]save_empty_drops_on_death[/font]（控制空背包的玩家是否在死亡时产生快照）和 [font=Consolas]synchronization.synchronise_dead_players_changing_server[/font]（控制切换服务器时是否同步死亡玩家的背包）项设置为 [font=Consolas]false[/font]。
+
+config.yml 中的示例[hr][code]   synchronization:
+     # ...
+     save_on_death: false # <-- 将这个设置为 false
+     save_empty_drops_on_death: false # <-- 将这个设置为 false
+     # ...
+     synchronise_dead_players_changing_server: false # <-- 将这个设置为 false[/code]
+
+[size=4][b]通过自定义 keepInventory 设置排除问题[/b][/size][hr]
+若上述的操作方法对你均无效，你可能需要再做一些额外的事情才能让它正确工作。
+
+若你的服务器使用了高级的设置，例如只保留物品，其他不受插件逻辑影响，那么你需要使用 HuskSync API 来创建一个联动来更新 DataSaveEvent 事件上的数据，以此解决[i]死亡玩家[/i]切换服务器所产生的问题.
+
+若你的服务器使用了一个权限节点来控制死亡的物品保存，你应该能按照上述步骤正常设置，方法可能据服务器的设置方式和处理玩家的不同方式而略有区别。请注意这个选项可能也会和其他试图保存物品的插件冲突。
+[page]
+[size=5][b]API[/b][/size][hr]
+HuskSync API 提供了一系列修改与更新用户数据的方法，以及用于追踪用户同步和保存时间的方法。
+
+[size=4][b]兼容性[/b][/size][hr]
+[img]https://repo.william278.net/api/badge/latest/releases/net/william278/husksync?color=00fb9a&name=Maven&prefix=v[/img]
+为保持一致和方便使用，HuskSync API 的版本与插件本体的版本保持一致。请注意，API 随插件更新可能会略有变化，但不会在没有说明的情况下做出较大的改动。
+[table=98%,White]
+[tr][td][align=center][b]API 版本[/b][/align][/td][td][align=center][b]HuskSync 版本[/b][/align][/td][td][align=center][b]是否支持[/b][/align][/td][/tr]
+[tr][td][align=center]v2.x[/align][/td][td][align=center][i]v2.0—现版本[/i][/align][/td][td][align=center]✅[/align][/td][/tr]
+[tr][td][align=center]v1.x[/align][/td][td][i]v1.0—v1.4.1[/i][/td][td][align=center]❌️[/align][/td][/tr]
+[/table]
+针对旧版本[hr]
+早于 [font=Consolas]2.2.5[/font] 版本的 HuskSync 是通过 [url=https://jitpack.io/#/net/william278/HuskSync]JitPack[/url] 分发的，你需要使用 [font=Consolas]https://jitpack.io[/font] 作为仓库。
+
+[size=4][b]内容表[/b][/size][hr]
+[list=1]
+[*]将 API 添加至你的项目中；
+[*]将 HuskSync 添加为依赖；
+[*]进行下一步操作。
+[/list]
+[size=4][b]API 介绍[/b][/size][hr]
+[size=3][b]1.1 通过 Maven 导入[/b][/size]
+Maven 设置信息[hr]将仓库按如下代导入至你的 [font=Consolas]pom.xml[/font] 文件。你也可以指定 [font=Consolas]/snapshots[/font] 来使用包含最新开发构建的仓库（不稳定故不推荐）。[code]<repositories>
+    <repository>
+        <id>william278.net</id>
+        <url>https://repo.william278.net/releases</url>
+    </repository>
+</repositories>[/code]
+将依赖按如下代码导入至你的 [font=Consolas]pom.xml[/font] 文件。将 [font=Consolas]VERSION[/font] 处替换为 HuskHomes 最新的版本号（去除字母 v）：[img]https://img.shields.io/github/v/tag/WiIIiam278/HuskSync?color=fbf2db&label=%20&style=flat-square[/img][code]<dependency>
+    <groupId>net.william278</groupId>
+    <artifactId>husksync</artifactId>
+    <version>VERSION</version>
+    <scope>provided</scope>
+</dependency>[/code]
+[size=3][b]1.2 通过 Gradle 导入[/b][/size]
+Gradle 安装信息[hr]将依赖按如下代码添加至你的 [font=Consolas]build.gradle[/font]。你也可以指定 [font=Consolas]/snapshots[/font] 来使用包含最新开发构建的仓库（不稳定故不推荐）。[code]allprojects {
+    repositories {
+        maven { url 'https://repo.william278.net/releases' }
+    }
+}[/code]
+将依赖按如下代码导入至你的文件。将 [font=Consolas]VERSION[/font] 处替换为 HuskHomes 最新的版本号（去除字母 v）：[img]https://img.shields.io/github/v/tag/WiIIiam278/HuskSync?color=fbf2db&label=%20&style=flat-square[/img][code]dependencies {
+    compileOnly 'net.william278:husksync:VERSION'
+}[/code]
+[size=3][b]2. 将 HuskSync 添加为依赖[/b][/size]
+[list]
+[*]将 HuskSync 添加至你项目的 [font=Consolas]plugin.yml[/font] 下 [font=Consolas]softdepend[/font]（若你想要插件可选安装 HuskSync）或 [font=Consolas]depend[/font]（插件必须安装 HuskSync）中。
+[/list][code]name: MyPlugin
+version: 1.0
+main: net.william278.myplugin.MyPlugin
+author: William278
+description: '一个使用 HuskSync API 的插件!'
+softdepend: # 或者在这里使用 'depend'
+  - HuskSync[/code]
+[size=3][b]3. 进行下一步操作[/b][/size]
+
+现在你准备好了所有内容，你可以开始使用 HuskSync 的 API 了！
+[list]
+[*]玩家数据 API — 获取数据快照、更新玩家当前数据
+[*]API 事件 — 监听、取消和修改数据同步设置事件的结果
+[/list]
+[page]
+[size=5][b]玩家数据 API[/b][/size][hr]
+HuskSync 提供了一个 API 用于获取和返回 [font=Consolas]UserData[/font] 对象；这是一个用户同步数据的快照。
+该页面默认你已阅读 API 介绍章节，并将 HuskSync 的 API 导入了你的仓库。
+
+[size=4][b]目录[/b][/size][hr]
+[list=1]
+[*]创建一个用于实例化 API 的类；
+[*]检查 HuskSync 是否安装并对接；
+[*]获取 API 的实例；
+[*]通过 UUID 获取玩家；
+[*]获取玩家的数据；
+[*]获取玩家的数据；[[i]原文如此[/i]]
+[*]获取玩家的背包内容；
+[*]更新玩家的数据。
+[/list]
+[size=4][b]1. 创建一个用于实例化 API 的类[/b][/size][hr]
+[list]
+[*]除非你的插件完全依赖 HuskSync，否则你不应在主类中使用 HuskSync 的 API，不然就会在 HuskSync 未安装时弹出 [font=Consolas]ClassNotFoundException[/font] 报错。
+[/list]
+[markdown]```public class HuskSyncAPIHook {
+
+    public HuskSyncAPIHook() {
+        // Ready to do stuff with the API
+    }
+
+}```[/markdown]
+[size=4][b]2. 检查 HuskSync 是否安装并对接[/b][/size][hr]
+[list]
+[*]在插件对接 API 的类之前，确保 HuskSync 已安装
+[/list][markdown]```public class MyPlugin extends JavaPlugin {
+
+    public HuskSyncAPIHook huskSyncAPIHook;
+
+    @Override
+    public void onEnable() {
+        if (Bukkit.getPluginManager().getPlugin("HuskSync") != null) {
+            this.huskSyncAPIHook = new HuskSyncAPIHook();
+        }
+    }
+}```[/markdown]
+[size=4][b]3. 获取 API 的实例[/b][/size][hr]
+[list]
+[*]通过调用 [font=Consolas]HuskSyncAPI#getInstance()[/font] 方法可获取 API 的实例。
+[/list][markdown]```import net.william278.husksync.api.HuskSyncAPI;
+
+public class HuskSyncAPIHook {
+
+    private final HuskSyncAPI huskSyncAPI;
+
+    public HuskSyncAPIHook() {
+        this.huskSyncAPI = HuskSyncAPI.getInstance();
+    }
+
+}```[/markdown]
+[size=4][b]4. CompletableFuture 和 Optional 基础[/b][/size][hr]
+[list]
+[*]HuskSync 的 API 方法 会返回 [font=Consolas]CompletableFuture[/font] 和 [font=Consolas]Optional[/font]。
+[*][font=Consolas]CompletableFuture[/font] 是一种异步调用机制。该方法将会异步处理，并在需要的时间返回相应的处理数据。使用 [font=Consolas]CompletableFuture#join()[/font] 方法 会将线程阻塞到处理完毕为止，所以使用 [font=Consolas]CompletableFuture#thenAccept(data -> {})[/font] 在检索后处理你请求的 [font=Consolas]data[/font] 内容以防止卡顿，是更加明智的选择。
+[*][font=Consolas]Optional[/font] 则是 null 的安全表现形式，或者说它就是无数据。你可以通过方法 [font=Consolas]Optional#isEmpty()[/font] 来检查该 Optional 是否为空（当你调用的参数没有可用数据时会被 API 返回）。若该 Optional 包含数据，你可以通过方法 [font=Consolas]Optional#get()[/font] 来获取它。
+[/list]
+[size=4][b]5. 通过 UUID 获取玩家数据[/b][/size][hr]
+[list]
+[*]HuskSync 有一个 [font=Consolas]User[/font] 对象，代表着特定玩家在数据库中保存的数据。你可以通过方法 [font=Consolas]HuskSyncAPI#getUser(uuid)[/font] 请求玩家数据。
+[*]若你有一个在线的 [font=Consolas]org.bukkit.Player[/font] 对象，你可以使用方法 [font=Consolas]BukkitPlayer#adapt(player)[/font] 来获取一个 [font=Consolas]OnlineUser[/font] 对象（继承 [font=Consolas]User[/font]），以此代表一个已登入的玩家。
+[/list][code]public class HuskSyncAPIHook {
+
+    private final HuskSyncAPI huskSyncAPI;
+
+    public HuskSyncAPIHook() {
+        this.huskSyncAPI = HuskSyncAPI.getInstance();
+    }
+    
+
+    public void logUserName(UUID uuid) {
+        // getUser() returns a CompletableFuture supplying an Optional<User>
+        huskSyncAPI.getUser(uuid).thenAccept(optionalUser -> {
+            // Check if we found a user by that UUID either online or on the database
+            if (optionalUser.isEmpty()) {
+                // If we didn't, we'll log that they don't exist
+                System.out.println("User does not exist!");
+                return;
+            }
+            // The User object has two fields; uuid and username.
+            System.out.println("User name is: " + optionalUser.get().username);
+        });
+    }
+
+}[/code]
+[size=4][b]6. 获取玩家数据[/b][/size][hr]
+[list]
+[*]通过一个 [font=Consolas]User[/font] 对象，我们现在可以调用方法 [font=Consolas]HuskSyncAPI#getUserData()[/font] 来获取他们最新的数据。
+[*][font=Consolas]UserData[/font] 对象包含八个数据“模块”，每个模块都包含特定的信息。
+[*]UserData 对象不会包含全部的数据“模块”；在被插件保存的 UserData 中所包含的模块内容由配置文本决定。
+[*]你可以单独或获取每一个模块的内容，返回值会包装为一个 Optional（若未指定则返回为空），见下：
+[list]
+[*][font=Consolas]UserData#getStatus();[/font] - 玩家的基本属性（生命值、饱食度、饱和度、经验值和游戏模式等）
+[*][font=Consolas]UserData#getInventory();[/font] - 玩家的背包内容。包含一个 base64 序列化的 [font=Consolas]ItemStack[/font] 数组。
+[*][font=Consolas]UserData#getEnderChest();[/font] - 玩家的末影箱内容。包含一个 base64 序列化的 [font=Consolas]ItemStack[/font] 数组。
+[*][font=Consolas]UserData#getPotionEffects();[/font] - 玩家当前的药水效果。包含一个 base64 序列化的 [font=Consolas]PotionEffect[/font] 数组。
+[*][font=Consolas]UserData#getAdvancements();[/font] - 返回玩家当前获取的进度和成就
+[*][font=Consolas]UserData#getStatistics();[/font] - 玩家的四大类统计数据（未分类、物品、方块和实体）
+[*][font=Consolas]UserData#getLocation();[/font] - 玩家的位置数据，用于启用了同步位置数据的服务器
+[*][font=Consolas]UserData#getPersistentDataContainer();[/font] - 玩家的持久化数据容器，包含了一个有键值的映射表
+[/list]
+[/list][markdown]```public class HuskSyncAPIHook {
+
+    // ... //
+
+    public void logUserData(UUID uuid) {
+        huskSyncAPI.getUser(uuid).thenAccept(optionalUser -> {
+            // Optional#isPresent() is the opposite of #isEmpty()
+            if (optionalUser.isPresent()) {
+                logHealth(optionalUser.get());
+            }
+        });
+    }
+
+    private void logHealth(User user) {
+        // A user might not have data, if it's deleted by an admin or they're brand new
+        huskSyncAPI.getUserData(user).thenAccept(optionalUserData -> {
+            if (optionalUserData.isPresent()) {
+                // Get the StatusData from the UserData object
+                Optional<StatusData> statusData = optionalUserData.get().getStatus();
+                // Print the health from the fields, if the user has a status object
+                statusData.ifPresent(status -> {
+                    System.out.println(user.username + "'s health: " + status.health + "/" + status.maxHealth);
+                });
+            }
+        });
+    }
+
+}```[/markdown]
+[size=4][b]7. 获取玩家的背包内容[/b][/size][hr]
+[list]
+[*]API 提供了反序列化 [font=Consolas]ItemData[/font] 的方法来处理 base64 序列化的背包和末影箱 [font=Consolas]ItemStack[/font] 数组，将它们转化为实际的 [font=Consolas]ItemStack[/font] 数组数据。
+[*]若要反序列化背包物品，使用方法 [font=Consolas]HuskSyncAPI#deserializeInventory(serializedItems)[/font]。
+[*]若要翻序列化末影箱物品，使用方法 [font=Consolas]HuskSyncAPI#deserializeItemStackArray(serializedItems)[/font]。
+[*]相似地，[font=Consolas]HuskSyncAPI#getPlayerInventory(user)[/font] 和 [font=Consolas]HuskSyncAPI#getPlayerEnderChest(user)[/font] 方法可以更优雅地达到目的。请注意如果最后的 UserData 不包含 ItemData（译者注：原文似乎笔误，写成了 UserData），那么这里返回的 ItemData 将会是对应的空 ItemStack 数组。
+[*]序列化和反序列化对药水效果同样可用。
+[/list][code]public class HuskSyncAPIHook {
+
+    // ... //
+
+    private void printInventoryItems(User user) {
+        huskSyncAPI.getUserData(user).thenAccept(optionalUserData -> {
+            if (optionalUserData.isPresent()) {
+                // Get the ItemData and make sure it's present
+                Optional<ItemData> inventoryDataOptional = optionalUserData.get().getInventory();
+                if (inventoryDataOptional.isEmpty) {
+                    return;
+                }
+                ItemData inventoryData = inventoryDataOptional.get();
+
+                // Get the ItemStack[] array as a BukkitInventoryMap.
+                // This returns a future, but we're using #join() to block the thread until it's done
+                BukkitInventoryMap inventory = huskSyncAPI.deserializeInventory(inventoryData.serializedItems).join();
+                
+                // A BukkitInventoryMap is simply a wrapper for an ItemStack array.
+                // It provides a few handy methods for getting the player's armor, their offhand item, etc.
+                // To get the ItemStack array from it, just call BukkitInventoryMap#getContents();
+                for (ItemStack item : inventory.getContents()) {
+                    // Print out the item material types of every item in the player's inventory
+                    System.out.println(item.getType().name());
+                }
+            }
+        });
+    }
+
+}[/code]
+HuskSyncAPI#getPlayerInventory()[hr][code]private void printInventoryItems(User user) {
+    huskSyncAPI.getPlayerInventory(user).thenAccept(inventory -> {
+        if (inventory.isPresent()) {
+            for (ItemStack item : inventory.get().getContents()) {
+                System.out.println(item.getType().name());
+            }
+        }
+    });
+}[/code]
+HuskSyncAPI#getPlayerInventory()[hr][code]private void printEnderChestItems(User user) {
+    huskSyncAPI.getPlayerEnderChest(user).thenAccept(enderChest -> {
+        if (enderChest.isPresent()) {
+            for (ItemStack item : enderChest.get()) {
+                System.out.println(item.getType().name());
+            }
+        }
+    });
+}[/code]
+[size=4][b]8. 更新玩家数据[/b][/size][hr]
+[list]
+[*]你可以使用 [font=Consolas]HuskSyncAPI#setUserData(user, userData)[/font] 来将一个玩家的数据修改并提交至数据库。
+[*]若你需要在每次更新后修改玩家数据，你可能需要监听 HuskSync 所提供的事件。
+[*]你可以使用 [font=Consolas]HuskSyncAPI#serializeItemStackArray(itemStack[])[/font] 来将任何 ItemStack 序列化为 base64 值。
+[*]相似地，你可以使用 [font=Consolas]HuskSyncAPI#setInventoryData(user, bukkitInventoryMap)[/font] 来设置玩家背包内容，或使用 [font=Consolas]HuskSyncAPI#setEnderChestData(user, itemStack[])[/font] 来设置玩家的末影箱内容。
+[*]更新 UserData 将会完全覆盖玩家当前的“活跃”数据。HuskSync 设计之初就不会追踪玩家的“活跃”数据，仅会在保存时产生数据的“快照”。换句话说，获取并更新用户数据有可能造成回档。
+[/list][markdown]```public class HuskSyncAPIHook {
+
+    // Set a user's health to 20
+    private void updateUserHealth(User user) {
+        huskSyncAPI.getUserData(user).thenAccept(optionalUserData -> {
+            if (optionalUserData.isPresent()) {
+                UserData data = optionalUserData.get();
+                Optional<StatusData> statusDataOptional = data.getStatus();
+                StatusData statusData = statusDataOptional.get();            
+                statusData.health = 20;
+    
+                // This returns a CompletableFuture<Void> that will invoke #thenRun() when it has completed
+                huskSyncAPI.setUserData(user, data).thenRun(() -> {
+                    System.out.println("Healed " + user.username + "!");
+                });
+            }
+        });
+    }
+
+}```[/markdown]
+[page]
+[size=5][b]API 事件[/b][/size][hr]
+HuskSync 提供了可供你的插件监听的三个 API 事件，可以在插件同步玩家数据的过程中触发。这些事件涉及不同的 HuskSync 类，所以在阅读本章之前建议先熟悉 API 基础章节。有两个事件是可取消的（但是也会将数据同步的过程阻断），一些事件可以使用方法来修改它们的结果（例如修改保存时的数据）
+
+阅读 Javadoc 来获得更多信息 — 不要忘记了在监听事件调用时注册你的监听器。请注意事件执行期间不应取消，可能会影响到插件运行的效率。
+
+[size=4][b]API 事件列表[/b][/size][hr]
+[table=98%,White]
+[tr][td][align=center][b]Bukkit 事件类名[/b][/align][/td][td][align=center][b]是否可取消[/b][/align][/td][td][align=center][b]描述[/b][/align][/td][/tr]
+[tr][td][font=Consolas]BukkitDataSaveEvent[/font][/td][td][align=center]✅[/align][/td][td]在快照被创建、保存或因 DataSaveCause 而被缓存时调用[/td][/tr]
+[tr][td][font=Consolas]BukkitPreSync[/font][/td][td][align=center]✅[/align][/td][td]在玩家登录后通过缓存或数据库更新数据时调用[/td][/tr]
+[tr][td][font=Consolas]BukkitSyncCompleteEvent[/font][/td][td][align=center]❌[/align][/td][td]在玩家完成数据同步或登录后调用†[/td][/tr]
+[/table]
+† 该事件也可在玩家登入游戏并更新数据后触发；例如，当管理员回档一名玩家、通过命令更新背包或末影箱内容或 API 强制玩家更新数据。
+[page]
+翻译作者：SnowCutieOwO
+发布时间：2023/7/29
+最后校对：2023/7/29
+翻译字数：9235
