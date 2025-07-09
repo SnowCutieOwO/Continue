@@ -10,9 +10,6 @@
 * [纪念版加速线路](https://doc.mcbbs.co/snowcutieowo)（由猫提供）
 * [Netlify](https://continue-project.netlify.app/) [![Netlify 构建状态](https://api.netlify.com/api/v1/badges/6e69d526-ea60-4ff8-9bfe-e0b9e4d028f0/deploy-status)](https://app.netlify.com/projects/continue-project/deploys)
 
-> [!IMPORTANT]
-> 由于主仓库受到 Github 的限制而无法在取消原域名的基础上展示页面，因此本仓库将会永久保留直至我想出更好的方法。
-
 ## 在线访问
 
 直接进入上述链接即可。
