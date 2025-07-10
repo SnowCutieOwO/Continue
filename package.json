@@ -23,5 +23,5 @@
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview"
   },
-  "packageManager": "pnpm@10.12.2"
+  "packageManager": "pnpm@10.13.1"
 }
