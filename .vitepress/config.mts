@@ -331,7 +331,8 @@ export default defineConfig({
         {
           text: '🌟 个人向教程', link: '/common/personal-guides', collapsed: true, items: [
             { text: '安装教程', link: '/common/personal-guides.installtion' },
-            { text: '实用链接', link: '/common/personal-guides.useful-links' }
+            { text: '实用链接', link: '/common/personal-guides.useful-links' },
+            { text: '分世界显示玩家的 TAB', link: '/common/personal-guides.tab-based-world-seperation' }
           ]
         }
       ],
