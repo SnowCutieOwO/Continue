@@ -14,11 +14,11 @@ API 成品会发布到 Sonatype Snapshots 仓库中。
 
 ::: tab Maven
 
-```HTML
+``` XML
 <repositories>
     <repository>
-        <id>sonatype-snapshots</id>
-        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        <id>luck-repo</id>
+        <url>https://repo.lucko.me/</url>
     </repository>
 </repositories>
 
@@ -36,9 +36,15 @@ API 成品会发布到 Sonatype Snapshots 仓库中。
 
 ::: tab Gradle (Groovy DSL)
 
-```Kotlin
+``` groovy
 repositories {
-    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    maven {
+        name 'luck-repo'
+        url 'https://repo.lucko.me/'
+        content {
+            includeModule 'me.lucko', 'spark-api'
+        }
+    }
 }
 
 dependencies {
@@ -49,9 +55,15 @@ dependencies {
 
 ::: tab Gradle (Kotlin DSL)
 
-```Kotlin
+``` kotlin
 repositories {
-    maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
+    maven {
+        name 'luck-repo'
+        url 'https://repo.lucko.me/'
+        content {
+            includeModule 'me.lucko', 'spark-api'
+        }
+    }
 }
 
 dependencies {
