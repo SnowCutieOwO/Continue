@@ -18,10 +18,15 @@ HuskSync 需要 Redis，并使用它在玩家切换服务器及主/副通信执�
 ``` YAML
 # Redis 设置
 redis:
-  # 在此指定 Redis 服务器的登录凭证。若未设置登录密码，则将 "password" 项留空
+  # 在此指定 Redis 服务器的登录凭证。
+  # 若未设置用户名或你需要使用默认用户，则将 "user" 项留空
+  # 若未设置登录密码或你需要使用默认用户，则将 "password" 项留空。
   credentials:
     host: localhost
     port: 6379
+    # 自行修改，后果自负！默认值为 0。
+    database: 0
+    user: ''
     password: ''
     use_ssl: false
   # Redis 哨兵模式相关设置。请勿擅自修改，否则后果自负！
@@ -36,7 +41,7 @@ redis:
 
 ### 凭据
 
-在你的 Redis 上输入域名、端口及默认的用户密码。
+在你的 Redis 上输入域名、端口、用户名和密码。
 
 如果你的 Redis 默认用户没有密码，则将其留空（`password: ''`），之后插件就会尝试不带密码连接数据库。
 
