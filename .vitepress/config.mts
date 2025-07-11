@@ -468,6 +468,7 @@ export default defineConfig({
               collapsed: true,
               items: [
                 { text: '安装', link: '/ajLeaderboards/setup.setup' },
+                { text: '变量参考', link: '/ajLeaderboards/setup.good-boards' },
                 { text: '变量', link: '/ajLeaderboards/setup.placeholders' },
                 { text: '权限', link: '/ajLeaderboards/setup.permissions' },
                 { text: '消息变量', link: '/ajLeaderboards/setup.message-placeholders' },
@@ -485,6 +486,7 @@ export default defineConfig({
             },
             { text: '切换存储方法', link: '/ajLeaderboards/moving-storage-methods' },
             { text: '常见问题', link: '/ajLeaderboards/faq' },
+            { text: '少见问题', link: '/ajLeaderboards/less-faq' },
             { text: '名词解释', link: '/ajLeaderboards/glossary' }
           ]
         },

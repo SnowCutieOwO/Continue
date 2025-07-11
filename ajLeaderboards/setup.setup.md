@@ -16,7 +16,7 @@ ajLeaderboards 通过读取玩家在插件中浏览的变量进行排序。正�
 
 在选择使用变量的时候，请确保它不是对应插件的排行榜变量。简单的判断方法就是看看变量名称上有没有诸如“leaderboard”或“top”的类似单词。其他插件的排行榜变量不可以与本插件的变量一起正常工作。
 
-::: info 为什么我不能这么做？
+::: details 为什么我不能这么做？
 
 ajLeaderboards 是给那些没有内置排行榜功能的插件提供排行榜的。如果插件已经有内置的排行榜，你可以使用它们。
 ajLeaderboards 通过以玩家身份判断变量（如 `%vault_eco_balance` 获取玩家的余额），再存储它们的值。然后插件将其整理并呈现在排行榜上。
@@ -89,7 +89,7 @@ ajLeaderboards 通过以玩家身份判断变量（如 `%vault_eco_balance` 获�
 
 若要生成告示牌排行榜，只需放置空白告示牌（每块告示牌都能容纳一名玩家及其分数）
 
-为了将内容添加至告示牌，请输入命令 `/ajlb signs add <排行榜名称> <排名> <时间类型>`
+为了将内容添加至告示牌，请看向你需要添加的告示牌，并输入命令 `/ajlb signs add <排行榜名称> <排名> <时间类型>`。
 
 例如，使用先前提及的变量（`statistic_player_kills`），如果你想要显示全时排行的第一名玩家，则你需要看向告示牌并输入命令 `/ajlb signs add statistic_player_kills 1 alltime`。
 
@@ -121,19 +121,21 @@ ajLeaderboards 通过以玩家身份判断变量（如 `%vault_eco_balance` 获�
 
 1. 按上述步骤创建皮肤和名称为对应变量的 NPC。这个命令会让 NPC 的名称在本示例中变为 `ajgeiss0702 - 12 kills`。
 
-```
+``` txt
 /npc create &a%ajlb_lb_statistic_player_kills_1_alltime_name% &7- &6%ajlb_lb_statistic_player_kills_1_alltime_value% kills
 ```
 
 2. 将皮肤设置为变量
 
-```
+``` txt
 /npc skin %ajlb_lb_statistic_player_kills_1_alltime_skin%
 ```
 
 ## 8.（可选）设置时间排行榜
 
 与普通的全时（`alltime`）排行榜一样，你也可以创建每小时、每日、每周、每月或每年刷新一次的排行榜。
+
+例如，为了创建一个每月刷新的排行榜，你应当使用 `monthly` 时间类型。
 
 ::: info 注意
 
