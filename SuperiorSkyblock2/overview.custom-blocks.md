@@ -21,3 +21,15 @@ https://www.spigotmc.org/resources/73355/
 https://www.spigotmc.org/resources/72448/
 
 你可以通过 `ORAXEN:` 前缀来使用 ItemsAdder 的自定义方块，后接对应方块的名称。
+
+## Nexo
+
+https://polymart.org/product/6901/nexo
+
+你可以通过 `NEXO:` 前缀来使用 ItemsAdder 的自定义方块，后接对应方块的名称。
+
+## CraftEngine
+
+https://modrinth.com/plugin/craftengine
+
+你可以通过 `CRAFTENGINE:` 前缀来使用 ItemsAdder 的自定义方块，后接对应方块的名称。
