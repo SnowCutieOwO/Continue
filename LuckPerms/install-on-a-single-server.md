@@ -99,12 +99,14 @@
 
 LuckPerms 对安装环境有一些要求。不过*大多数*服务器都可以达到这些条件。
 
-* Java 8 或更高版本
+* Java 11 或更高版本
 * 首次载入 LuckPerms 时需要联网
 
-### Java 8
+### Java 11
 
-你的服务器使用的 Java 版本必须不小于 8。LuckPerms 不能在更旧版本的 Java 环境中运行。
+你的服务器使用的 Java 版本必须不小于 11。LuckPerms 不能在更旧版本的 Java 环境中运行。
+
+部分核心或新版本可能要求更高的 Java 版本（如 Java 21），LuckPerms 同样支持。
 
 ### 网络连接
 

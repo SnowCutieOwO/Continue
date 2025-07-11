@@ -15,40 +15,13 @@
 
 ## 官方拓展
 
-### extension-legacy-api
+### REST API
 
-* [源码](https://github.com/LuckPerms/extension-legacy-api)
-* [下载](https://ci.lucko.me/job/extension-legacy-api/)
+[见此](developers.standalone-app-rest-api.md)了解更多。:)
 
-LuckPerms v5 的拓展，集成了旧版 v4 的 API。* `
-这允许依赖之前版本的 LuckPerms 能继续在当前版本运行。* `
-但这不是长久之计，它的存在是为了减轻用户的更新负担。开发者应当尽可能使用 v5 的 API。
+### 弃用拓展
 
-#### 事件监听
+下述的拓展是大约 6 年前发布的（截止 2025 年 6 月算），用于减轻从 LuckPerms v4 升级至 v5 的负担。我们认为用户已经花了足够长的时间去升级，因此现在弃用它们，并不再受到支持。
 
-只有数量有限的事件可以被监听。
-
-当前支持的事件：
-
-* `GroupCacheLoadEvent`
-* `GroupDataRecalculateEvent`
-* `NodeAddEvent`
-* `NodeClearEvent`
-* `NodeMutateEvent`
-* `NodeRemoveEvent`
-* `UserCacheLoadEvent`
-* `UserDataRecalculateEvent`
-* `UserDemoteEvent`
-* `UserFirstLoginEvent`
-* `UserLoadEvent`
-* `UserPromoteEvent`
-* `UserTrackEvent`
-
-### extension-default-assignments
-
-* [源码](https://github.com/LuckPerms/extension-default-assignments)
-* [下载](https://ci.lucko.me/job/extension-default-assignments/)
-
-LuckPerms v5 的拓展，集成了默认分配（现已移除）功能。
-
-这允许旧系统的用户能够无感更新至更新的版本。
+* [extension-legacy-api](https://github.com/LuckPerms/extension-legacy-api)
+* [extension-default-assignments](https://github.com/LuckPerms/extension-default-assignments)
