@@ -25,6 +25,18 @@ mysql_database:
   password: root
   database: database
 
+  # 连接池属性: 
+  # https://github.com/brettwooldridge/HikariCP#configuration-knobs-baby
+  pool:
+    connectionTimeout: 5000
+    
+  # 高级属性: 
+  # https://dev.mysql.com/doc/connector-j/en/connector-j-reference-configuration-properties.html
+  advanced:
+    verifyServerCertificate: false
+    useSSL: true
+    allowPublicKeyRetrieval: true
+
 # 请勿修改此项.
 config_version: 2
 ```
