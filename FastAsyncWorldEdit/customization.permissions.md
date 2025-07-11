@@ -45,3 +45,22 @@ FAWE 默认限制在区域内，对那些需要给予普通玩家使用该插件
 `fawe.plotsquared` 权限默认在 [plugin.yml](https://github.com/IntellectualSites/FastAsyncWorldEdit/blob/e40a657faf993536133b2e1bbe771a5c96619bd7/worldedit-bukkit/src/main/resources/plugin.yml#L14-L17) 中为激活状态！若要覆盖权限，建议调整优先级更高的该权限设置，而非 `fawe.plotsquared.trusted` 子权限的设置。
 
 :::
+
+### GriefPrevention
+
+安装 [GriefPrevention](https://www.spigotmc.org/resources/1884) 时增加的限制权限。
+
+* `fawe.griefprevention`
+
+### Towny Advanced
+
+安装 [Towny Advanced](https://www.spigotmc.org/resources/72694) 的增加的限制权限。
+
+* `fawe.towny`
+* `fawe.towny.member`
+* `fawe.towny.*`
+
+## 扩展 WorldEdit 权限
+
+* `worldedit.schematic.load.other`（允许在 per-player-schematics 启用的情况下通过 `../` 载入结构主文件夹下的结构）
+* `worldedit.schematic.save.other`（允许在 per-player-schematics 启用的情况下通过 `../` 保存结构主文件夹下的结构）
