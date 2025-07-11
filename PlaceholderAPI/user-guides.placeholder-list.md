@@ -684,6 +684,17 @@
 %progress_bar_{变量}_c:&a■_p:&e■_r:&7■_l:10_m:100_fullbar:&a已完成!%
 ```
 
+### PronounDB
+
+::: tip https://github.com/JasperLorelai/Expansion-PronounDB/releases
+:::
+
+显示玩家的代词，和 https://pronoundb.org/ 上的连接帐户。
+
+``` txt
+%pronoundb%
+```
+
 ### RainbowColor
 
 ::: tip papi ecloud download RainbowColor
@@ -3554,6 +3565,46 @@
 
 ### [Multiverse-Core](https://www.spigotmc.org/resources/390/)
 
+::::: tabs
+
+:::: tab Multiverse-Core v5
+
+::: tip 内置于插件
+:::
+
+::: warning 这些变量只适用于 Multiverse-Core v5！
+:::
+
+所有变量都可以在末尾加入一个 `_<世界名称>`，`<世界名称>` 可替换为由 Multiverse-Core 载入的世界名称。
+
+示例：`%multiverse-core_alias_myworld%`
+
+``` txt
+%multiverse-core_alias%
+%multiverse-core_animalspawn%
+%multiverse-core_autoheal%
+%multiverse-core_blacklist%
+%multiverse-core_currency%
+%multiverse-core_difficulty%
+%multiverse-core_entryfee%
+%multiverse-core_environment%
+%multiverse-core_flight%
+%multiverse-core_gamemode%
+%multiverse-core_generator%
+%multiverse-core_hunger%
+%multiverse-core_monstersspawn%
+%multiverse-core_name%
+%multiverse-core_playerlimit%
+%multiverse-core_price%
+%multiverse-core_pvp%
+%multiverse-core_seed%
+%multiverse-core_time%
+%multiverse-core_type%
+%multiverse-core_weather%
+```
+
+:::: tab Multiverse-Core v4
+
 ::: tip papi ecloud download multiverse
 :::
 
@@ -3585,6 +3636,8 @@
 %multiverse_world_style%
 %multiverse_world_type%
 ```
+
+::::
 
 ### [MyCommand](http://dev.bukkit.org/bukkit-plugins/mycommand/)
 
@@ -4048,10 +4101,14 @@
 %PTM_lastseen_elapsed_#_<玩家名称>%
 %PTM_playtime_top_<名次>%
 %PTM_playtime_top_#_<名次>%
+%PTM_firstjoin%
+%PTM_firstjoin_<玩家名称>%	
 %PTM_nickname_top_<名次>%
 %PTM_lastseen_top_<名次>%
 %PTM_lastseen_elapsed_top_<名次>%
 %PTM_lastseen_elapsed_top_#_<名次>%
+%PTM_rank%
+%PTM_rank_<玩家名称>%
 %PTM_lp_prefix_top_<名次>%
 %PTM_joinstreak%
 %PTM_joinstreak_<玩家名称>%
