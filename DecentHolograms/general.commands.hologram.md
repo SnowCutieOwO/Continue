@@ -71,7 +71,7 @@
 ```
 :::
 
-### `/dh h create <名称> [-l:<世界名称>:<x>:<y>:<z>] [内容]`
+### `/dh h create <名称> [-l:<世界名称>:<x>:<y>:<z>] [--center] [内容]`
 
 **别称：**`create`、`c`
 
@@ -81,14 +81,15 @@
 
 * `<名称>` - 创建悬浮字的名称。
 * `[-l:<世界名称>:<x>:<y>:<z>]` - 可选的位置参数，允许你指定悬浮字生成的位置。这个参数可以让控制台执行这个命令。
-* `[内容]` - 悬浮字第一行的文本。（可选）
-
+* `[--center]` - 将悬浮字设置为居中状态。
+* `[内容]` - 悬浮字第一行的文本。
 ::: info 示例
 ```
 /dh h create test
 /dh h create test -l:world:0:100:0
 /dh h create test First Line
 /dh h create test -l:world:0:100:0 First Line
+/dh h create test --center
 ```
 :::
 
