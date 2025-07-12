@@ -112,16 +112,53 @@ $\frac { 购买基础价 - 出售基础价 }  { 购买最高价 - 出售最低�
 
 ## 可用变量
 
-* \{buy-times-player\}
-* \{buy-times-server\}
-* \{sell-times-player\}
-* \{sell-times-server\}
-* \{last-buy-player\}
-* \{last-buy-server\}
-* \{last-sell-player\}
-* \{last-sell-server\}
+你可以在 `buy-prices`、`sell-prices` 的 `amount` 部分，以及 `buy-limits`、`sell-limits` 的 `value` 部分设置变量（包括 PlaceholderAPI 变量）和[数学计算格式](format.math-calculate-format.md)。
 
-有关这些变量的更多信息，请浏览[该章节](placeholders.built-in-placeholder.md)。
+可用的内建变量如下。更多信息请浏览“[内建变量](placeholders.built-in-placeholder.md)”章节。
+
+* `{buy-times-player}`
+* `{buy-times-server}`
+* `{buy-total-player}` <font color="red">**- 仅付费版，3.9.0+ 引入**</font>
+* `{buy-total-server}` <font color="red">**- 仅付费版，3.9.0+ 引入**</font>
+
+::: info **times** 变量与 **total** 变量之间的区别：
+
+* **times** 变量会在每次重置后变为你设定的值。
+* **total** 变量会在重置后保持不变，且会与先前的值叠加。通过命令或其他方式设置的购买/出售次数仍然会影响到总数变量。这个变量会在到达 int 极限值时自动重置。
+
+:::
+
+* `{sell-times-player}`
+* `{sell-times-server}`
+* `{sell-total-player}` <font color="red">**- 仅付费版，3.9.0+ 引入**</font>
+* `{sell-total-server}` <font color="red">**- 仅付费版，3.9.0+ 引入**</font>
+* `{last-buy-player}` <font color="red">**- 仅付费版**</font>
+* `{last-buy-server}` <font color="red">**- 仅付费版**</font>
+* `{last-sell-player}` <font color="red">**- 仅付费版**</font>
+* `{last-sell-server}` <font color="red">**- 仅付费版**</font>
+* `{last-buy-reset-player}` <font color="red">**- 仅付费版，3.9.0+ 引入**</font>
+* `{last-buy-reset-server}` <font color="red">**- 仅付费版，3.9.0+ 引入**</font>
+* `{last-sell-reset-player}` <font color="red">**- 仅付费版，3.9.0+ 引入**</font>
+* `{last-sell-reset-server}` <font color="red">**- 仅付费版，3.9.0+ 引入**</font>
+
+另外在 `buy-prices` 与 `sell-prices` 部分下，你还可以设置两个新的选项：
+
+* `max-amount`：最高价格。用于动态定价。**可选。**
+* `min-amount`：最低价格。用于动态定价。**可选。**
+
+需要注意的是，如果你需要使用 PlaceholderAPI 拓展的变量，则你需要使用新格式。如下所示：
+
+``` YAML
+    buy-prices:
+      1:
+        economy-plugin: Vault
+        amount: '15 - {sell-times-player} * 0.1 + %ultimateshop_farming_B_sell-times-player% * 0.1'
+        # 我们使用不带花括号“{}”的新格式.
+        placeholder: '{amount}$'
+        start-apply: 0
+```
+
+另外，如果你的物品位于打开的菜单中，你还需要将 `menu.shop.click-update` 选项设置为 `true`。否则出售物品 B 之后不会自动更新价格。
 
 ## 单玩家动态定价
 

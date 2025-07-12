@@ -123,6 +123,33 @@ buy-limits-conditions:
 
 你可以在商店配置的 `buy-prices`、`sell-prices` 的 `amount` 部分与 `buy-limits`、`sell-limits` 的值中插入变量与[数学计算格式](format.math-calculate-format.md)。
 
+可用的内建变量如下。更多信息请浏览“[内建变量](placeholders.built-in-placeholder.md)”章节。
+
+* `{buy-times-player}`
+* `{buy-times-server}`
+* `{buy-total-player}` <font color="red">**- 仅付费版，3.9.0+ 引入**</font>
+* `{buy-total-server}` <font color="red">**- 仅付费版，3.9.0+ 引入**</font>
+
+::: info **times** 变量与 **total** 变量之间的区别：
+
+* **times** 变量会在每次重置后变为你设定的值。
+* **total** 变量会在重置后保持不变，且会与先前的值叠加。通过命令或其他方式设置的购买/出售次数仍然会影响到总数变量。这个变量会在到达 int 极限值时自动重置。
+
+:::
+
+* `{sell-times-player}`
+* `{sell-times-server}`
+* `{sell-total-player}` <font color="red">**- 仅付费版，3.9.0+ 引入**</font>
+* `{sell-total-server}` <font color="red">**- 仅付费版，3.9.0+ 引入**</font>
+* `{last-buy-player}` <font color="red">**- 仅付费版**</font>
+* `{last-buy-server}` <font color="red">**- 仅付费版**</font>
+* `{last-sell-player}` <font color="red">**- 仅付费版**</font>
+* `{last-sell-server}` <font color="red">**- 仅付费版**</font>
+* `{last-buy-reset-player}` <font color="red">**- 仅付费版，3.9.0+ 引入**</font>
+* `{last-buy-reset-server}` <font color="red">**- 仅付费版，3.9.0+ 引入**</font>
+* `{last-sell-reset-player}` <font color="red">**- 仅付费版，3.9.0+ 引入**</font>
+* `{last-sell-reset-server}` <font color="red">**- 仅付费版，3.9.0+ 引入**</font>
+
 另外在 `buy-prices` 与 `sell-prices` 部分下，你还可以设置两个新的选项：
 
 * `max-amount`：最高价格。用于动态定价。**可选。**
@@ -149,4 +176,4 @@ buy-limits-conditions:
 * `display-item`：支持为子按钮设置不同的显示物品。
 * `as-sub-button`：可以在此填入 `物品 ID` 或 `商店 ID;;物品 ID`。
 
-**子按钮**的示例可以在“[商店](shops.shops.md)”章节找到，你可以在其开头示例配置中 `items` 部分的 `C` 见到。
+**子按钮**的示例可以在“[商店](shops.shops.md)”章节找到，你可以在其开头示例配置 `items` 中的 `C` 部分见到。

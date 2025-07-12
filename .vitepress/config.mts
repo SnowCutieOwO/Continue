@@ -1459,7 +1459,7 @@ export default defineConfig({
                 { text: '🎨 颜色代码', link: '/UltimateShop/features.color-code' },
                 { text: '💴 简单定价', link: '/UltimateShop/features.easy-prices' },
                 { text: '🪄 出售魔杖 - 仅付费版', link: '/UltimateShop/features.sell-stick-premium' },
-                { text: '💾 保存物品', link: '/UltimateShop/features.saved-item' },
+                { text: '💾 保存物品（物品管理器）', link: '/UltimateShop/features.saved-item-itemmanager' },
                 { text: '🌍 本地化物品名称 - 仅付费版', link: '/UltimateShop/features.localized-item-name' },
                 { text: '🌐 多服同步 - 仅付费版', link: '/UltimateShop/features.multi-server-sync-premium' },
                 { text: '🔢 数字格式', link: '/UltimateShop/features.number-format' },

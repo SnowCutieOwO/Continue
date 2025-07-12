@@ -20,15 +20,20 @@
 |`{buy-price}`|物品的购买价格。|物品附加描述<br>PlaceholderAPI 支持|
 |`{sell-price}`|物品的出售价格。|物品附加描述<br>PlaceholderAPI 支持|
 |`{buy-times-player}`|玩家个人购买次数。|物品附加描述<br>PlaceholderAPI 支持<br>`amount` 选项|
+|`{buy-total-player}`|显示玩家的购买次数。|物品附加描述<br>PlaceholderAPI 支持<br>`amount` 选项|
 |`{buy-limit-player}`|玩家个人购买限制。|物品附加描述<br>PlaceholderAPI 支持|
 |`{buy-refresh-player}`|玩家个人重置时间。|物品附加描述<br>PlaceholderAPI 支持|
 |`{buy-next-player}`|显示物品重置刷新时间的剩余时间。|物品附加描述<br>PlaceholderAPI 支持<br><font color="red">**仅付费版**</font>|
 |`{sell-xxx}`|见上。<br>xxx 与上文的 buy 类似，如 `{sell-limit-player}` 代表单玩家出售限制。|见上。|
 |`{xxx-server}`|见上。<br>xxx 处的内容与上文的 player 类似，如 `{buy-limit-server}` 代表全服购买限制。|见上。|
 |`{last-buy-player}`|分玩家显示上次购买物品距今的时间间隔，单位为秒。若玩家尚未购买该物品，或物品购买次数已被重置，则它会返回 `0`。|PlaceholderAPI 支持<br>`amount` 选项<br><font color="red">**仅付费版**</font>|
+|`{last-buy-reset-player}`|显示单个玩家距重置前或重置后首次/末次购买物品的时间间隔（取决于你使用的重置模式，更多信息请见[此页](shops.product-config-buy-sell-times-reset.md)），单位为秒。如果玩家没有购买过这个物品，或购买时间已被重置，则它会返回上一次购买时间。|PlaceholderAPI 支持<br>`amount` 选项<br><font color="red">**仅付费版（3.8.3+）**</font>|
 |`{last-sell-player}`|分玩家显示上次出售物品距今的时间间隔，单位为秒。若玩家尚未出售该物品，或物品出售次数已被重置，则它会返回 `0`。|PlaceholderAPI 支持<br>`amount` 选项<br><font color="red">**仅付费版**</font>|
+|`{last-sell-reset-player}`|显示单个玩家距重置前或重置后首次/末次出售物品的时间间隔（取决于你使用的重置模式，更多信息请见[此页](shops.product-config-buy-sell-times-reset.md)），单位为秒。如果玩家没有出售过这个物品，或出售时间已被重置，则它会返回上一次出售时间。|PlaceholderAPI 支持<br>`amount` 选项<br><font color="red">**仅付费版（3.8.3+）**</font>|
 |`{last-buy-server}`|显示上一位玩家购买物品距今的时间间隔，单位为秒。若没有人购买过该物品，或物品购买次数已被重置，则它会返回 `0`。|PlaceholderAPI 支持<br>`amount` 选项<br><font color="red">**仅付费版**</font>|
+|`{last-buy-reset-server}`|显示全服距重置前或重置后首次/末次购买物品的时间间隔（取决于你使用的重置模式，更多信息请见[此页](shops.product-config-buy-sell-times-reset.md)），单位为秒。如果玩家没有购买过这个物品，或购买时间已被重置，则它会返回上一次购买时间。|PlaceholderAPI 支持<br>`amount` 选项<br><font color="red">**仅付费版（3.8.3+）**</font>|
 |`{last-sell-server}`|显示上一位玩家出售物品距今的时间间隔，单位为秒。若没有人出售过该物品，或物品出售次数已被重置，则它会返回 `0`。|PlaceholderAPI 支持<br>`amount` 选项<br><font color="red">**仅付费版**</font>|
+|`{last-sell-reset-server}`|显示全服距重置前或重置后首次/末次出售物品的时间间隔（取决于你使用的重置模式，更多信息请见[此页](shops.product-config-buy-sell-times-reset.md)），单位为秒。如果玩家没有出售过这个物品，或出售时间已被重置，则它会返回上一次出售时间。|PlaceholderAPI 支持<br>`amount` 选项<br><font color="red">**仅付费版（3.8.3+）**</font>|
 |`{buy-click}`|购买物品的提示。|物品附加描述|
 |`{sell-click}`|出售物品的提示。|物品附加描述|
 |`{item-name}`|显示物品的展示名称。|物品附加描述<br>PlaceholderAPI支持|
