@@ -29,7 +29,7 @@
 
 ### 已翻译的维基
 
-[![Netlify 构建状态](https://api.netlify.com/api/v1/badges/6e69d526-ea60-4ff8-9bfe-e0b9e4d028f0/deploy-status)]
+![Netlify 构建状态](https://api.netlify.com/api/v1/badges/6e69d526-ea60-4ff8-9bfe-e0b9e4d028f0/deploy-status)
 
 ![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-24-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-432204-84f5bb)
 （最后更新：2025/5/31）
