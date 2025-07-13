@@ -25,6 +25,7 @@
 * [网址缩短 2](https://s.201a.cn/)
 * [网址缩短 3](https://dlj.bz/links)
 * [网址缩短 4](https://acg.kr/)
+* [网址缩短 5](https://www.985.so/)
 * [短网址还原 1](https://duanwangzhihuanyuan.bmcx.com/)
 * [短网址还原 2](https://www.sojson.com/dwz/parse.html)
 
