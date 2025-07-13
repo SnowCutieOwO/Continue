@@ -4,8 +4,7 @@ WorldEdit 为其他模组和插件提供了一个稳定的公开接口。它提�
 
 ## API 库
 
-你可以通过 [Maven 仓库](https://help.sonatype.com/repomanager3/repository-manager-concepts/an-example---maven-repository-format
-)获取 API，它与 [Maven](https://maven.apache.org/)、[Gradle](https://gradle.org/) 和 [sbt](https://www.scala-sbt.org/) 等其他构建系统兼容。仓库地址为 https://maven.enginehub.org/repo/ ，WorldEdit 位于 `con.sk89q.worldedit` 组下。根据你所需要的 API，你可以按名称选择下列内容：
+你可以通过 [Maven 仓库](https://maven.apache.org/repositories/layout.html)获取 API，它与 [Maven](https://maven.apache.org/)、[Gradle](https://gradle.org/) 和 [sbt](https://www.scala-sbt.org/) 等其他构建系统兼容。仓库地址为 https://maven.enginehub.org/repo/ ，WorldEdit 位于 `con.sk89q.worldedit` 组下。根据你所需要的 API，你可以按名称选择下列内容：
 
 * `worldedit-core`：核心 API。它不依赖任何平台，但也不提供任何转换类；
 * `worldedit-bukkit`：Bukkit 平台集成。依赖于 Bukkit API，并通过 `BukkitAdapter` 提供了在 Bukkit 数据类型和 WorldEdit 数据类型之间的转换功能；
