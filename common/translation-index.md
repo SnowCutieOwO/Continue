@@ -159,4 +159,7 @@
 |BlockMeterFabric|是|仅语言文本|[Modrinth](https://modrinth.com/mod/blockmeter)|
 |Client Tweaks|是|仅语言文本|[Modrinth](https://modrinth.com/mod/client-tweaks)|
 |Cave Dust|是|仅语言文本|[Modrinth](https://modrinth.com/mod/cave-dust)|
+|No Man's Delight|否|仅语言文本|[Modrinth](https://modrinth.com/mod/no-mans-delight)|
+|No Man's Land|否|仅语言文本|[Modrinth](https://modrinth.com/mod/no-mans-land)|
+|OreBerries Replanted|是|仅语言文本|[Modrinth](https://modrinth.com/mod/oreberries-replanted)|
 |Scrolls And Curses|是|仅语言文本|[Modrinth](https://modrinth.com/mod/scrolls-and-curses)|
