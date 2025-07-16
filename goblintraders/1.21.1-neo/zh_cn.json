@@ -1,0 +1,13 @@
+{
+    "entity.goblintraders.goblin_trader": "哥布林游商",
+    "entity.goblintraders.vein_goblin_trader": "熔岩哥布林游商",
+    "subtitle.goblintraders.goblin_trader.annoyed_grunt": "哥布林游商：恼怒",
+    "subtitle.goblintraders.goblin_trader.idle_grunt": "哥布林游商：嘀咕",
+    "item.goblintraders.goblin_trader_spawn_egg": "哥布林游商刷怪蛋",
+    "item.goblintraders.vein_goblin_trader_spawn_egg": "熔岩哥布林游商刷怪蛋",
+    "stat.goblintraders.trade_with_goblin": "与哥布林游商交易",
+    "custom.goblintraders.tuned": "哥布林倾情打造",
+    "custom.goblintraders.lore": "由哥布林重新设计并强化属性的工具",
+    "custom.goblintraders.moon_boots": "耀月之靴",
+    "custom.goblintraders.mystery_map": "神秘地图"
+}
