@@ -1,0 +1,193 @@
+{
+  "item.adorablehamsterpets.cucumber": "黄瓜",
+  "item.adorablehamsterpets.cucumber_seeds": "黄瓜种子",
+  "item.adorablehamsterpets.cucumber_crop": "黄瓜植株",
+  "item.adorablehamsterpets.sliced_cucumber": "黄瓜片",
+  "item.adorablehamsterpets.green_beans": "青豆",
+  "item.adorablehamsterpets.green_bean_crop": "青豆植株",
+  "item.adorablehamsterpets.green_bean_seeds": "青豆种子",
+  "item.adorablehamsterpets.steamed_green_beans": "蒸青豆",
+  "item.adorablehamsterpets.sunflower_seeds": "葵花籽",
+  "item.adorablehamsterpets.cheese": "§e奶酪§",
+  "item.adorablehamsterpets.hamster_food_mix": "仓鼠粮",
+  "item.adorablehamsterpets.hamster_spawn_egg": "仓鼠刷怪蛋",
+
+
+  "entity.adorablehamsterpets.hamster": "仓鼠",
+
+
+  "itemgroup.adorablehamsterpets.main": "可爱小仓鼠",
+
+
+  "entity.adorablehamsterpets.hamster.inventory_title": "仓鼠物品栏",
+
+
+  "item.adorablehamsterpets.hamster_guide_book": "§f§l仓鼠宝典：§r§6§o带你走进小小毛团的内心§r",
+  "tooltip.adorablehamsterpets.hamster_guide_book.hint1": "可通过黄瓜片与书本合成。",
+
+
+  "block.adorablehamsterpets.wild_green_bean_bush": "野生青豆丛",
+  "block.adorablehamsterpets.wild_cucumber_bush": "野生黄瓜丛",
+  "block.adorablehamsterpets.sunflower_block": "向日葵",
+
+
+  "block.adorablehamsterpets.wild_green_bean_bush.hint1": "野生的种子。适合给...小小的哺乳动物吃。",
+  "block.adorablehamsterpets.wild_green_bean_bush.hint2": "如果成熟的话，右键点击。也许吧。",
+
+
+  "block.adorablehamsterpets.wild_cucumber_bush.hint1": "掉落种子。能让你交到小小朋友。",
+  "block.adorablehamsterpets.wild_cucumber_bush.hint2": "小心点摸它，它很脆弱。",
+
+
+  "block.adorablehamsterpets.sunflower_block.hint1": "一些野生种子...或许是关键材料？",
+  "block.adorablehamsterpets.sunflower_block.hint2": "可能得等上一会才能让它长满种子。",
+
+
+  "tooltip.adorablehamsterpets.green_bean_seeds.hint1": "种豆得豆。有魔力的豆子哟...",
+  "tooltip.adorablehamsterpets.green_bean_seeds.hint2": "耐心等待，可能还需要点土。",
+
+
+  "tooltip.adorablehamsterpets.cucumber_seeds.hint1": "种黄瓜。黄瓜也许能...吸引什么？",
+  "tooltip.adorablehamsterpets.cucumber_seeds.hint2": "有水有土，等着就成。",
+
+
+  "tooltip.adorablehamsterpets.sunflower_seeds.hint1": "显然是某些食物的配方。",
+  "tooltip.adorablehamsterpets.sunflower_seeds.hint2": "茶余饭后的绝佳零嘴。",
+
+
+  "tooltip.adorablehamsterpets.cucumber.hint1": "爽脆。鲜甜。回味无穷。",
+  "tooltip.adorablehamsterpets.cucumber.hint2": "尝试把它放进工作台...",
+
+
+  "tooltip.adorablehamsterpets.sliced_cucumber.hint1": "直抵毛茸茸内心的指导。或者，至少引起它们的注意。",
+  "tooltip.adorablehamsterpets.sliced_cucumber.hint2": "接近的时候应当蹲下，而且动作要轻缓。",
+
+
+  "tooltip.adorablehamsterpets.green_beans.hint1": "简单的绿色蔬菜。煮出来应该... 很有意思。",
+  "tooltip.adorablehamsterpets.green_beans.hint2": "生吃也许并不让人满意。",
+
+
+  "tooltip.adorablehamsterpets.steamed_green_beans.hint1": "能让仓鼠感到一阵...欢欣鼓舞？",
+  "tooltip.adorablehamsterpets.steamed_green_beans.hint2": "这效果并不长久。什么都是，除了柴米油盐。",
+
+
+  "tooltip.adorablehamsterpets.hamster_food_mix.hint1": "最挑剔的仓鼠也难以拒绝。",
+  "tooltip.adorablehamsterpets.hamster_food_mix.hint2": "进退两难的时候必备。单纯饿了也可以拿它喂。",
+
+
+  "tooltip.adorablehamsterpets.cheese.hint1": "烹饪界的大作。可爱毛团无法抗拒的美味。",
+  "tooltip.adorablehamsterpets.cheese.hint2": "看看在仓鼠面前拿着奶酪会发生什么。",
+  "tooltip.adorablehamsterpets.cheese.hint3": "回复 %s 点饱食度和 %s 点饱和度 (可配置)。",
+
+
+  "key.category.adorablehamsterpets.main": "可爱小仓鼠",
+  "key.adorablehamsterpets.throw_hamster": "投掷仓鼠",
+
+
+
+  "message.adorablehamsterpets.throw_cooldown": "仓鼠得休息一下— 等 %d 分 %d 秒后再试试吧。",
+  "message.adorablehamsterpets.baby_throw_refusal": "小仓鼠紧紧抓着地面，不想被大炮发射出去。也许它还太小了？",
+  "message.adorablehamsterpets.beans_cooldown": "你的仓鼠还没有从上一次兴奋刺激中缓过来呢。(还剩 %d 分 %d 秒)。",
+  "message.adorablehamsterpets.creeper_detected": "你的仓鼠感知到附近有苦力怕。",
+  "message.adorablehamsterpets.diamond_nearby": "仓鼠感知到附近有钻石。",
+  "message.adorablehamsterpets.sweet_potato_secret": "地瓜？这名字不错，干得漂亮。",
+  "message.adorablehamsterpets.dismount.1": "仓鼠脱离骑乘。它忙自己的事去了。",
+  "message.adorablehamsterpets.dismount.2": "毛茸茸的小家伙落地了。",
+  "message.adorablehamsterpets.dismount.3": "肩膀上是空的。仓鼠有别的打算。",
+  "message.adorablehamsterpets.dismount.4": "仓鼠已部署。或者它只是想散散步。",
+  "message.adorablehamsterpets.dismount.5": "又少一个乘客。仓鼠现在可以自由活动了。",
+  "message.adorablehamsterpets.dismount.6": "仓鼠回到了地上继续探路。",
+  "message.adorablehamsterpets.cheek_pouch_locked": "仓鼠的腮帮子现在是空的。吃上一顿也许能让它改变想法...",
+  "message.adorablehamsterpets.debug_overlay_enabled": "调试仓鼠界面：启用",
+  "message.adorablehamsterpets.debug_overlay_disabled": "调试仓鼠界面：禁用",
+  "message.adorablehamsterpets.found_gold_mistake.1": "你的仓鼠找到了什么珍贵的矿物。喔，但不是它想要的，真可惜。",
+  "message.adorablehamsterpets.found_gold_mistake.2": "你的仓鼠成功找到了...黄金。只拿到个参与奖。",
+  "message.adorablehamsterpets.found_gold_mistake.3": "一番努力之下，你的仓鼠终于找到了闪闪发光的 ... 喔等等，这不是那钟亮晶晶。",
+  "message.adorablehamsterpets.found_gold_mistake.4": "本来期待的钻石变成了什么别的东西，这让仓鼠感到恐惧。",
+  "message.adorablehamsterpets.found_gold_mistake.5": "好吧... §o确实§r是块宝...理论上说。但是你的仓鼠可不买账。",
+  "message.adorablehamsterpets.found_gold_mistake.6": "寻宝任务最终得到的是...金子。仓鼠似乎在做鼠生的重要选择。",
+  "message.adorablehamsterpets.found_gold_mistake.7": "靠近一点，我们找到了...金子。仓鼠脸上写满了失望。",
+
+  "subtitles.adorablehamsterpets.hamster_attack": "仓鼠：攻击",
+  "subtitles.adorablehamsterpets.hamster_beg": "仓鼠：乞求",
+  "subtitles.adorablehamsterpets.hamster_death": "仓鼠：死亡",
+  "subtitles.adorablehamsterpets.hamster_hurt": "仓鼠：受伤",
+  "subtitles.adorablehamsterpets.hamster_idle": "仓鼠：吱吱叫",
+  "subtitles.adorablehamsterpets.hamster_sleep": "仓鼠：睡觉",
+  "subtitles.adorablehamsterpets.hamster_sniff": "仓鼠：嗅嗅",
+  "subtitles.adorablehamsterpets.hamster_creeper_detect": "仓鼠：发出警报",
+  "subtitles.adorablehamsterpets.hamster_celebrate": "仓鼠：庆祝",
+  "subtitles.adorablehamsterpets.hamster_throw": "仓鼠：被投出",
+  "subtitles.adorablehamsterpets.hamster_impact": "仓鼠：被压扁",
+  "subtitles.adorablehamsterpets.hamster_flying": "仓鼠：在空中吱吱叫",
+  "subtitles.adorablehamsterpets.hamster_wake_up": "仓鼠：醒来",
+  "subtitles.adorablehamsterpets.cheese_use": "奶酪：沙沙作响",
+  "subtitles.adorablehamsterpets.cheese_eat": "玩家：食用奶酪",
+  "subtitles.adorablehamsterpets.hamster_mount": "仓鼠：坐上肩膀",
+  "subtitles.adorablehamsterpets.hamster_dismount": "仓鼠：脱离骑乘",
+  "subtitles.adorablehamsterpets.hamster_bounce": "仓鼠：蹦跳",
+  "subtitles.adorablehamsterpets.hamster_scratch": "仓鼠：挠痒",
+  "subtitles.adorablehamsterpets.alarm_orchestra_hit": "搞笑的声音",
+  "subtitles.adorablehamsterpets.hamster_affection": "仓鼠：小声叫",
+  "subtitles.adorablehamsterpets.diamond_sparkle": "钻石：发光",
+
+
+
+
+  "config.jade.plugin_adorablehamsterpets.wild_bush_tooltips": "野生植株提示框",
+  "config.jade.plugin_adorablehamsterpets.hamster_debug_info": "详细仓鼠信息 (调试用)",
+
+
+  "advancements.adorablehamsterpets.husbandry.root.title": "仓鼠生活",
+  "advancements.adorablehamsterpets.husbandry.root.description": "欢迎你，啮齿动物爱好者。我们不会说什么的。",
+  "advancements.adorablehamsterpets.husbandry.craft_bait.title": "诱饵",
+  "advancements.adorablehamsterpets.husbandry.craft_bait.description": "将一整根黄瓜切成黄瓜片。啮齿动物欲罢不能的最爱。",
+  "advancements.adorablehamsterpets.husbandry.craft_food_mix.title": "口袋零嘴",
+  "advancements.adorablehamsterpets.husbandry.craft_food_mix.description": "制作一些混合鼠粮。说得上是 '饿急了'。多有趣一段话。",
+  "advancements.adorablehamsterpets.husbandry.seed_money.title": "种子经济",
+  "advancements.adorablehamsterpets.husbandry.seed_money.description": "获得黄瓜种子。组建毛茸茸小动物军团的第一步。",
+  "advancements.adorablehamsterpets.husbandry.tame_hamster.title": "毛绒魅影",
+  "advancements.adorablehamsterpets.husbandry.tame_hamster.description": "成功驯服野生仓鼠。希望你的膝盖还好。",
+  "advancements.adorablehamsterpets.husbandry.sunflower_hoarder.title": "向日葵囤积者",
+  "advancements.adorablehamsterpets.husbandry.sunflower_hoarder.description": "获得葵花籽。看起来毫无关联，但其实能够吸引某个毛茸茸的存在。",
+  "advancements.adorablehamsterpets.husbandry.cheeky_storage.title": "你是好人",
+  "advancements.adorablehamsterpets.husbandry.cheeky_storage.description": "那些混合鼠粮起作用了！仓鼠现在觉得你可以向它的脸颊里输送坚果了。",
+  "advancements.adorablehamsterpets.husbandry.shoulder_hamster.title": "站在巨人的肩膀上",
+  "advancements.adorablehamsterpets.husbandry.shoulder_hamster.description": "让仓鼠站到肩膀上看看风景吧。提示：用点奶酪。",
+  "advancements.adorablehamsterpets.husbandry.throw_hamster.title": "丢仓鼠™",
+  "advancements.adorablehamsterpets.husbandry.throw_hamster.description": "投出你肩膀上的小家伙。砸中苦力怕还有额外效果。(仓鼠不会因此功能受伤。)",
+  "advancements.adorablehamsterpets.husbandry.green_bean_gardener.title": "青豆种植家",
+  "advancements.adorablehamsterpets.husbandry.green_bean_gardener.description": "获得青豆种子。这些和正常的豆子不一样。",
+  "advancements.adorablehamsterpets.husbandry.steamy_greens.title": "蒸青豆",
+  "advancements.adorablehamsterpets.husbandry.steamy_greens.description": "煮熟一些青豆。闻起来...意外地有些带劲。",
+  "advancements.adorablehamsterpets.husbandry.supercharged_squeaker.title": "超级吱吱",
+  "advancements.adorablehamsterpets.husbandry.supercharged_squeaker.description": "用蒸青豆喂食仓鼠，然后看着它...活蹦乱跳。",
+  "advancements.adorablehamsterpets.technical.crafted_guide_book.title": "神圣宝典",
+  "advancements.adorablehamsterpets.technical.crafted_guide_book.description": "你合成了仓鼠传说的神圣记载之书。做得好。",
+  "advancements.adorablehamsterpets.husbandry.petal_pusher.title": "推花置瓣",
+  "advancements.adorablehamsterpets.husbandry.petal_pusher.description": "你刚刚把你的仓鼠...打扮得花枝招展。嗯...干得好？如果后悔了的话，剪刀可能会派上用场。",
+  "advancements.adorablehamsterpets.husbandry.pocket_paramedic.title": "口袋帮手",
+  "advancements.adorablehamsterpets.husbandry.pocket_paramedic.description": "你的仓鼠，有着优秀的自我保护能力，它把腮帮子里的东西都消灭光了。聪明，或者也许是饿坏了？",
+  "advancements.adorablehamsterpets.husbandry.nose_for_treasure.title": "嗅探宝物",
+  "advancements.adorablehamsterpets.husbandry.nose_for_treasure.description": "坐在肩膀上的小家伙感觉到了...一些闪闪发光的东西。也有可能不是真的。总之祝你好运。",
+  "advancements.adorablehamsterpets.husbandry.impending_doom_squeak.title": "大难临头吱吱叫",
+  "advancements.adorablehamsterpets.husbandry.impending_doom_squeak.description": "这尖锐的声音不是你的耳鸣。仓鼠感觉到附近有苦力怕，如果不跑的话...就得吃席了。",
+  "advancements.adorablehamsterpets.husbandry.chipmunk_aspirations.title": "朵颐之梦",
+  "advancements.adorablehamsterpets.husbandry.chipmunk_aspirations.description": "它的腮帮子塞不下更多东西了。仓鼠在准备逃难，或者它只是超爱吃小零食。",
+  "advancements.adorablehamsterpets.recipes.hamster_guide_book.title": "宝典知识",
+  "advancements.adorablehamsterpets.recipes.hamster_guide_book.description": "学会如何制作仓鼠宝典。",
+  "advancements.adorablehamsterpets.husbandry.canine_aspirations.title": "狗鼻子？",
+  "advancements.adorablehamsterpets.husbandry.canine_aspirations.description": "你的仓鼠成功找出了钻石！哇，这模组可太棒了！",
+
+
+  "config.adorablehamsterpets.main.helpAndResources": "寻求帮助与其他问题解答",
+  "config.adorablehamsterpets.main.helpAndResources.desc": "如果需要汇报漏洞，或只是想聊天吹水，点击这里。",
+  "config.adorablehamsterpets.main.helpAndResources.giveGuideBook": "我找不着我书了！",
+  "config.adorablehamsterpets.main.helpAndResources.giveGuideBook.desc": "弄丢你的仓鼠宝典了？点这里就行。这是咱们之间的小秘密。",
+  "config.adorablehamsterpets.main.helpAndResources.reportBug": "汇报漏洞",
+  "config.adorablehamsterpets.main.helpAndResources.reportBug.desc": "发现了破坏体验的漏洞？或者是你的仓鼠变成了育碧？赶快在 Github 联系我吧。细节越多越好。信不信随你，我在那高强度巡逻。",
+  "config.adorablehamsterpets.main.helpAndResources.visitWebsite": "浏览我的网站",
+  "config.adorablehamsterpets.main.helpAndResources.visitWebsite.desc": "厚着脸皮在这里宣传我其他的，不那么“鼠”的作品。如果你想的话，点进来吧。",
+  "config.adorablehamsterpets.main.helpAndResources.joinDiscord": "加入 Discord",
+  "config.adorablehamsterpets.main.helpAndResources.joinDiscord.desc": "加入 '仓鼠袋'官方 Discord 服务器。这是个分享截图、获取支持或旁观开发闹成一团的好地方。你已经被邀请了。"
+}
