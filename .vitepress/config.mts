@@ -10,6 +10,7 @@ import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-i
 import CodeBlockPlugin from '../.vitepress/plugins/codeblock.mjs';
 import { figure } from '@mdit/plugin-figure';
 import { attrs } from "@mdit/plugin-attrs";
+import { MermaidMarkdown, MermaidPlugin } from 'vitepress-plugin-mermaid';
 
 const customElements = [
   'math',
@@ -143,6 +144,7 @@ export default defineConfig({
       md.use(CodeBlockPlugin);
       md.use(figure);
       md.use(attrs);
+      md.use(MermaidMarkdown);
     },
     math: true
   },
@@ -160,6 +162,9 @@ export default defineConfig({
     optimizeDeps: {
       exclude: [
         'nolebase@vitepress-plugin-breadcrumbs/client'
+      ],
+      include: [
+        'mermaid'
       ]
     },
     ssr: {
@@ -169,7 +174,8 @@ export default defineConfig({
         'markdown-it-footnote',
         'markdown-it-mathjax3',
         'markdown-it-checkbox',
-        '@red-asuka/vitepress-plugin-tabs'
+        '@red-asuka/vitepress-plugin-tabs',
+        'mermaid'
       ]
     },
     plugins: [
@@ -186,6 +192,7 @@ export default defineConfig({
       }) as any,
       GitChangelogMarkdownSection(),
       groupIconVitePlugin(),
+      MermaidPlugin()
     ],
   },
   themeConfig: {
@@ -332,7 +339,8 @@ export default defineConfig({
           text: '🌟 个人向教程', link: '/common/personal-guides', collapsed: true, items: [
             { text: '安装教程', link: '/common/personal-guides.installtion' },
             { text: '实用链接', link: '/common/personal-guides.useful-links' },
-            { text: '分世界显示玩家的 TAB', link: '/common/personal-guides.tab-based-world-seperation' }
+            { text: '分世界显示玩家的 TAB', link: '/common/personal-guides.tab-based-world-seperation' },
+            { text: '在火狐及分支上使用 Motrix 接管下载', link: '/common/personal-guides.motrix-setup-firefox' }
           ]
         }
       ],

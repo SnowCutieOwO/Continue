@@ -61,7 +61,9 @@
 * 点击下载，即可静默拉起 Motrix，并在右下角弹出下载开始和完毕的提示。
 
 ![](images/example-download-started.png)
+
 ![](images/exmaple-downloading.png)
+
 ![](images/example-download-completed.png)
 
 ## 5. 大功告成！
