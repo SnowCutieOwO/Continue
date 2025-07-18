@@ -217,7 +217,7 @@ public class HuskHomesAPIHook {
 
 ### 延时传送
 
-延时传送是需要玩家原地停留一段时间才可进行的传送，所以玩家不会立即在战斗或在危险的时候传送。可通过在 `TeleportBuilder` 调用 `#toTimedTeleport()` 方法来取消。玩家所需要停留的预热时间是在配置文本中预先设置的。
+延时传送是需要玩家原地停留一段时间才可进行的传送，所以玩家不会立即在战斗或在危险的时候传送。可通过在 `TeleportBuilder` 调用 `#toTimedTeleport()` 方法来取消。玩家停留时间可以在配置文本中预先设置。
 
 ::: details 构建一个延时传送
 
