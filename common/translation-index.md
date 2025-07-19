@@ -144,7 +144,7 @@
 |UpgradableHoppers|是|否|N/A|[SpigotMC](https://www.spigotmc.org/resources/upgradeable-hoppers-%E2%AD%95-fast-hopper-plugin-link-containers-%E2%9C%85-item-transfer-suction-chunk-1-21-suppor.69201/)|
 |VillagerMarket|是|是|仅语言文件|[Github](https://github.com/Bestem0r/VillagerMarket/blob/master/src/main/resources/zh_CN.yml)|
 |Vulcan|是|否|N/A|[SpigotMC](https://www.spigotmc.org/resources/vulcan-anti-cheat-advanced-cheat-detection-1-7-1-21-4.83626/)|
-|Waypoints|是|是|[Github](https://github.com/Sytm/waypoints/blob/v4/master/waypoints/src/main/resources/lang/zh-simplified.yml)|
+|Waypoints|是|是|N/A|[Github](https://github.com/Sytm/waypoints/blob/v4/master/waypoints/src/main/resources/lang/zh-simplified.yml)|
 |WildStacker|否|否|N/A|[SpigotMC](https://www.spigotmc.org/resources/%E2%9A%A1%EF%B8%8F-wildstacker-%E2%9A%A1%EF%B8%8F-spawners-entities-drops-blocks-%E2%9A%A1%EF%B8%8F-1-21-3-support.87404/)|
 |Wuufu's Waypoints|是|否|N/A|[SpigotMC](https://www.spigotmc.org/resources/wuufus-waypoints-1-13-1-21.76603/)|
 |XClaim|是|是|仅语言文件|[Github](https://github.com/WasabiThumb/xclaim/blob/master/src/main/resources/lang/zh.json)|
@@ -156,10 +156,13 @@
 
 |名称|已提交|当前状态（若有）|链接|
 |---|---|---|---|
+|Adorable Hamster Pets|是|是|仅语言文本|[Modrinth](https://modrinth.com/mod/adorable-hamster-pets) [Crowdin](https://crowdin.com/project/adorable-hamster-pets)|
+|Arbitary Delight|否|是|仅语言文本|[Modrinth](https://modrinth.com/mod/arbitrary-delight)|
 |BlockMeterFabric|是|仅语言文本|[Modrinth](https://modrinth.com/mod/blockmeter)|
 |Client Tweaks|是|仅语言文本|[Modrinth](https://modrinth.com/mod/client-tweaks)|
 |Cave Dust|是|仅语言文本|[Modrinth](https://modrinth.com/mod/cave-dust)|
 |No Man's Delight|否|仅语言文本|[Modrinth](https://modrinth.com/mod/no-mans-delight)|
 |No Man's Land|否|仅语言文本|[Modrinth](https://modrinth.com/mod/no-mans-land)|
 |OreBerries Replanted|是|仅语言文本|[Modrinth](https://modrinth.com/mod/oreberries-replanted)|
+|ReviveMe|否|是|仅语言文本|[Modrinth](https://modrinth.com/mod/revive-me)|
 |Scrolls And Curses|是|仅语言文本|[Modrinth](https://modrinth.com/mod/scrolls-and-curses)|
