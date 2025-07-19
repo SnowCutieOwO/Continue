@@ -1,0 +1,38 @@
+
+{
+  "fallenScreen.fallen_text": "你倒下了",
+  "fallenScreen.wait_text": "等待救援，或者...",
+  "fallenScreen.force_death_text": "长按 {attack} {seconds} 秒自杀。",
+  "fallenScreen.cant_force_death_text": "想要去世，你的选择。",
+  "fallenScreen.self_revive.give_items": "长按 {use} 献祭物品",
+  "fallenScreen.self_revive.give_chance_1": "长按 {attack} 自救",
+  "fallenScreen.self_revive.give_chance_2": "成功几率",
+  "fallenScreen.self_revive.used": "已使用",
+  "fallenScreen.self_revive.no_items": "没有物品",
+  "reviveScreen.being_revived": "正在获救...",
+  "reviveScreen.reviving": "正在救起...",
+  "revive-me.chat.player_fallen": " 倒下了",
+  "revive-me.chat.blocked_command": "(Revive Me) 你不能在倒下状态使用这个命令!",
+  "revive-me.fall_plate.kill": "{attack} 击杀",
+  "revive-me.fall_plate.cant_kill": "还不能击杀...",
+  "revive-me.fall_plate.revive": "{use} 复活",
+  "revive-me.commands.revive_fail": " 已死亡或已获救",
+  "revive-me.commands.revive_pass": " 已获救",
+  "revive-me.commands.fix": " 已经固定",
+  "revive-me.call_for_help": "救我！",
+
+  "__comment": "用于实体效果名称",
+  "effect.revive_me.fallen_effect": "获救惩罚",
+
+  "__comment":"小标题消息",
+  "sounds.reviveme.fallen_state_heart_beat": "玩家：心跳声",
+  "sounds.reviveme.fallen_state_tick_tock": "时间流逝",
+  "sounds.reviveme.revive_main": "玩家：施救 (主音效)",
+  "sounds.reviveme.revive_background": "玩家：施救 (背景音效)",
+  "sounds.reviveme.revived": "玩家：获救",
+  "sounds.reviveme.call_for_help": "玩家：求救",
+
+  "__comment": "键相关",
+  "key.category.reviveme": "救我！",
+  "key.reviveme.callForHelpKey": "呼救"
+}
