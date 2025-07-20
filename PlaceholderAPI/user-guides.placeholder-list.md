@@ -9,8 +9,8 @@
 ::: tip
 变量列表未经过任何改动，且不保证其准确性和/或时效性。
 
-本页只会在请求时更新。我们建议通过[提交推送请求](https://github.com/PlaceholderAPI/PlaceholderAPI/pulls)对本列表进行更新。  
-如何对本维基进行贡献的有关细节可以在[本维基的自述页面](https://github.com/PlaceholderAPI/PlaceholderAPI/blob/wiki/README.md)中找到。
+本页只会在请求时更新。我们建议通过[提交推送请求](https://github.com/PlaceholderAPI/PlaceholderAPI/pulls)对本列表进行更新。
+[本维基的自述页面](https://github.com/PlaceholderAPI/PlaceholderAPI/blob/wiki/README.md)解释了贡献相关的细节。
 :::
 
 [[toc]]
