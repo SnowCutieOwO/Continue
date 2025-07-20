@@ -156,14 +156,14 @@
 
 |名称|已提交|当前状态（若有）|链接|
 |---|---|---|---|
-|Adorable Hamster Pets|是|是|仅语言文本|[Modrinth](https://modrinth.com/mod/adorable-hamster-pets) [Crowdin](https://crowdin.com/project/adorable-hamster-pets)|
-|Arbitary Delight|否|是|仅语言文本|[Modrinth](https://modrinth.com/mod/arbitrary-delight)|
+|Adorable Hamster Pets|是|仅语言文本|[Modrinth](https://modrinth.com/mod/adorable-hamster-pets) [Crowdin](https://crowdin.com/project/adorable-hamster-pets)|
+|Arbitary Delight|否|仅语言文本|[Modrinth](https://modrinth.com/mod/arbitrary-delight)|
 |BlockMeterFabric|是|仅语言文本|[Modrinth](https://modrinth.com/mod/blockmeter)|
 |Client Tweaks|是|仅语言文本|[Modrinth](https://modrinth.com/mod/client-tweaks)|
 |Cave Dust|是|仅语言文本|[Modrinth](https://modrinth.com/mod/cave-dust)|
-|Goblin Traders|否|是|仅语言文本|[Curseforge](https://www.curseforge.com/minecraft/mc-mods/goblin-traders)|
+|Goblin Traders|否|仅语言文本|[Curseforge](https://www.curseforge.com/minecraft/mc-mods/goblin-traders)|
 |No Man's Delight|否|仅语言文本|[Modrinth](https://modrinth.com/mod/no-mans-delight)|
 |No Man's Land|否|仅语言文本|[Modrinth](https://modrinth.com/mod/no-mans-land)|
 |OreBerries Replanted|是|仅语言文本|[Modrinth](https://modrinth.com/mod/oreberries-replanted)|
-|ReviveMe|否|是|仅语言文本|[Modrinth](https://modrinth.com/mod/revive-me)|
+|ReviveMe|否|仅语言文本|[Modrinth](https://modrinth.com/mod/revive-me)|
 |Scrolls And Curses|是|仅语言文本|[Modrinth](https://modrinth.com/mod/scrolls-and-curses)|
