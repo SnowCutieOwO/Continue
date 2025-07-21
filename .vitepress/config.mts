@@ -196,13 +196,6 @@ export default defineConfig({
     ],
   },
   themeConfig: {
-    notFound: {
-      title: '页面不存在',
-      quote: "找不到你请求的页面！", // set to '' to hide
-      linkLabel: '返回首页', // aria-label
-      linkText: '返回首页',
-      code: '<img src="./public/404-poop.png">'
-    },
     outline: [2, 3],
     outlineTitle: '目录',
     // 文章翻页

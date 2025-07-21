@@ -8,3 +8,8 @@
   --vp-home-hero-image-filter: blur(30px);
 }
 
+.vp-doc a {
+  text-decoration-style: dotted;
+  text-decoration-color: var(--vp-c-text-1);
+  opacity: 80%;
+}
