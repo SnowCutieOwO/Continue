@@ -17,7 +17,7 @@ export default {
   enhanceApp({ app }) {
     app.component('Tab', Tab);
     app.component('Tabs', Tabs);
-    app.use(NolebaseGitChangelogPlugin)
+    app.use(NolebaseGitChangelogPlugin);
   },
   Layout
 } satisfies Theme

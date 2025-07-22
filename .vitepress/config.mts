@@ -692,33 +692,31 @@ export default defineConfig({
         { text: '前言', link: '/ExcellentEnchants/index' },
         {
           text: 'ExcellentEnchants 维基', items: [
+            { text: '从 v4 升级', link: '/ExcellentEnchants/upgrading-from-v4' },
+            { text: '欢迎', link: '/ExcellentEnchants/welcome' },
+            { text: '命令', link: '/ExcellentEnchants/commands' },
+            { text: '权限', link: '/ExcellentEnchants/permissions' },
             {
-              text: '🏠 通用', collapsed: true, items: [
-                { text: '开始使用', link: '/ExcellentEnchants/general.getting-started' },
-                { text: '从 V3 迁移至 V4', link: '/ExcellentEnchants/general.migrating-from-v3-to-v4' },
-                { text: '命令列表', link: '/ExcellentEnchants/general.commands' },
-                { text: '权限列表', link: '/ExcellentEnchants/general.permissions' },
-                { text: '兼容性', link: '/ExcellentEnchants/general.compatbility' },
-                { text: '常见功能问题', link: '/ExcellentEnchants/general.common-questions' },
-                { text: '常见插件问题', link: '/ExcellentEnchants/general.common-issues' },
-                { text: '附魔列表', link: '/ExcellentEnchants/general.enchantments' },
+              text: '集成', collapsed: true, items: [
+                { text: 'PlaceholderAPI 支持', link: '/ExcellentEnchants/intergrations.placeholderapi' }
               ]
             },
-
+            { text: '常见插件问题', link: '/ExcellentEnchants/common-issues' },
+            { text: '常见问题', link: '/ExcellentEnchants/common-questions' },
             {
-              text: '⭐ 功能', collapsed: true, items: [
-                { text: '集成', link: '/ExcellentEnchants/features.intergration' },
-                { text: '稀有度', link: '/ExcellentEnchants/features.rarity' },
+              text: '功能', collapsed: true, items: [
+                { text: '兼容性', link: '/ExcellentEnchants/features.compatibility' },
                 { text: '分布', link: '/ExcellentEnchants/features.distribution' },
+                { text: '附魔列表', link: '/ExcellentEnchants/features.enchantments' },
+                { text: '附魔描述', link: '/ExcellentEnchants/features.description' },
+                { text: '禁用附魔', link: '/ExcellentEnchants/features.disabling' },
+                { text: '物品集', link: '/ExcellentEnchants/features.item-sets' },
                 { text: '充能', link: '/ExcellentEnchants/features.charges' },
               ]
             },
-
-            {
-              text: '🧰 实用', collapsed: true, items: [
-                { text: '变量列表', link: '/ExcellentEnchants/utility.placeholders' },
-              ]
-            },
+            { text: '修饰符', link: '/ExcellentEnchants/modifiers' },
+            { text: '内部变量', link: '/ExcellentEnchants/placeholders' },
+            { text: '开发者 API', link: '/ExcellentEnchants/developer-api' }
           ]
         },
       ],
