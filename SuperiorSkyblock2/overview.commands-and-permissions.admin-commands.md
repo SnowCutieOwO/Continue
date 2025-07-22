@@ -409,7 +409,7 @@
 
 ## /island admin recalc [玩家名称/岛屿名称]
 
-重新计算制定岛屿的价值与等级。
+重新计算指定岛屿的价值与等级。
 
 * 别称：
   `/island admin recalculate [玩家名称/岛屿名称]`
