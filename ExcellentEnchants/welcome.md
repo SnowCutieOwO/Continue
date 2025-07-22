@@ -48,7 +48,7 @@
 * [Hangar](https://hangar.papermc.io/NightExpress/ExcellentEnchants)
 * [Modrinth](https://modrinth.com/plugin/excellentenchants)
 * [文档（原帖）](https://nightexpressdev.com/excellentenchants/)
-* [开发者 API]()
+* [开发者 API](developer-api.md)
 
 ## 捐赠
 
