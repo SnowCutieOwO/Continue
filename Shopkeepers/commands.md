@@ -58,7 +58,7 @@
 
 ### `/shopkeeper remote [商店名称] [玩家名称]`
 
-远程打开制定商店。商店可以通过名称、ID、唯一 ID 或看向实体选中。另外，如果命令执行者拥有 `shopkeeper.remote.otherplayer` 权限，则商店可以为其他玩家打开。
+远程打开指定商店。商店可以通过名称、ID、唯一 ID 或看向实体选中。另外，如果命令执行者拥有 `shopkeeper.remote.otherplayer` 权限，则商店可以为其他玩家打开。
 
 ### `/shopkeeper edit [商店名称]`
 
