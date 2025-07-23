@@ -4,7 +4,7 @@
 
 ::: tip
 
-如果你正在寻找外部变量，请浏览“[PlaceholderAPI 集成](intergrations.placeholders.md)”章节。
+如果你正在寻找外部变量，请浏览“[PlaceholderAPI 集成](intergrations.placeholderapi.md)”章节。
 
 :::
 

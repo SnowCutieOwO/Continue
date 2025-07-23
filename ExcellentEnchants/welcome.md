@@ -6,15 +6,15 @@
 
 ## 插件特色
 
-* 完全支持[**铁砧**](features.compatbility.md)。
-* 完全支持[**砂轮**](features.compatbility.md)。
-* 完全支持[**村民交易**](features.compatbility.md)。
-* 完全支持[**战利品表**](features.compatbility.md)。
-* 完全支持[**渔获**](features.compatbility.md)。
-* 完全支持[**怪物装备**](features.compatbility.md)。
-* 完全支持[**附魔书**](features.compatbility.md)。
-* [**无感集成**](features.compatbility.md)。附魔会自动注册并应用至服务器。这表示它们兼容所有原版机制，可以自动与其他插件兼容而无需额外代码！
-* [**原版分布**](features.compatbility.md)。所有附魔都会自动出现在世界中！
+* 完全支持[**铁砧**](features.compatibility.md)。
+* 完全支持[**砂轮**](features.compatibility.md)。
+* 完全支持[**村民交易**](features.compatibility.md)。
+* 完全支持[**战利品表**](features.compatibility.md)。
+* 完全支持[**渔获**](features.compatibility.md)。
+* 完全支持[**怪物装备**](features.compatibility.md)。
+* 完全支持[**附魔书**](features.compatibility.md)。
+* [**无感集成**](features.compatibility.md)。附魔会自动注册并应用至服务器。这表示它们兼容所有原版机制，可以自动与其他插件兼容而无需额外代码！
+* [**原版分布**](features.compatibility.md)。所有附魔都会自动出现在世界中！
 * **高度可自定义**。编辑附魔的任何属性！
 * **超限支持**。等级极高的物品会有意想不到的效果！
 * **颜色支持**。自定义新附魔的颜色，同时支持 HEX 与渐变色！
