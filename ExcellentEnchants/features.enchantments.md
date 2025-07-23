@@ -60,7 +60,7 @@
 |---|---|---|---|---|---|---|
 |爆破发掘<br>（Blast Mining）|概率在挖掘时产生[爆炸](https://zh.minecraft.wiki/w/%E7%88%86%E7%82%B8)并破坏范围内所有方块。|穿隧、连锁挖掘|V|![](images/iron_pickaxe.png)||2|
 |玻璃之触<br>（Glass Breaker）|立即破坏玻璃。||I|![](images/iron_pickaxe.png)![](images/iron_axe.png)![](images/iron_shovel.png)|![](images/iron_hoe.png)![](images/)|10|
-|急迫<br>（Haste）|在挖掘时产生[急迫](https://zh.minecraft.wiki/w/%E6%80%A5%E8%BF%AB)效果。||III|![](images/iron_pickaxe.png)![](images/iron_axe.png)![](images/iron_shovel.png)|![](images/iron_hoe.png)![](images/)|2|
+|急迫<br>（Haste）|在挖掘时产生[急迫](https://zh.minecraft.wiki/w/%E6%80%A5%E8%BF%AB)效果。||III|![](images/iron_pickaxe.png)![](images/iron_axe.png)![](images/iron_shovel.png)|![](images/iron_hoe.png)![](images/shears.png)|2|
 |幸运矿工<br>（Lucky Miner）|概率从挖掘的方块中获取更多[经验值](https://zh.minecraft.wiki/w/%E7%BB%8F%E9%AA%8C)。|镐||III|![](images/iron_pickaxe.png)||5|
 |复种<br>（Replanter）|右键或破坏[作物](https://zh.minecraft.wiki/w/%E5%86%9C%E4%BD%9C%E7%89%A9)时自动补种。||I|![](images/iron_hoe.png)||1|
 |搬箱<br>（Silk Chest）|破坏[箱子](https://zh.minecraft.wiki/w/%E7%AE%B1%E5%AD%90)后有几率使箱子保留内容物而不掉落。|![](images/iron_axe.png)|![](images/iron_pickaxe.png)![](images/iron_shovel.png)![](images/iron_hoe.png)|1|
