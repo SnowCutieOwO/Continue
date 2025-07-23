@@ -1,6 +1,6 @@
 # 变量
 
-LuckPerms 有一些变量可以被支持的插件引用。
+LuckPerms 提供了一些可以用在其他插件中的变量。
 
 ## PlaceholderAPI
 
@@ -17,15 +17,15 @@ LuckPerms 有一些变量可以被支持的插件引用。
 
 若要使用支持 MVdWPlaceholderAPI 的 LuckPerms 变量，你需要安装 LuckPerms 变量联动插件。
 
-* 从[这里](https://ci.lucko.me/job/LuckPermsPlaceholders/)下载 `LuckPermsMVdWHook.jar`
+* 从[这里](https://ci.lucko.me/job/LuckPermsPlaceholders/)下载 `LuckPermsMVdWHook.jar`。
 * 将它放入 `/plugins/` 文件夹中。
 
 ## Fabric PlaceholderAPI
 
 若要在支持 [Fabric PlaceholderAPI](https://placeholders.pb4.eu/) 的模组中使用 Fabric LuckPerms 的变量，你需要安装 LuckPerms 变量联动模组。变量格式略有不同，可以在他们文档[此处](https://placeholders.pb4.eu/user/mod-placeholders/#luckperms)查询
 
-* 从[这里](https://ci.lucko.me/job/LuckPermsPlaceholders/) 下载 `LuckPerms-Fabric-PlaceholderAPI-Hook.jar`
-* 将它放入你的 `/mods/` 文件夹中
+* 从[这里](https://ci.lucko.me/job/LuckPermsPlaceholders/)下载 `LuckPerms-Fabric-PlaceholderAPI-Hook.jar`。
+* 将它放入你的 `/mods/` 文件夹中。
 
 ## 变量
 
