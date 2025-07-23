@@ -13,7 +13,7 @@
 <dependency>
   <groupId>su.nightexpress.excellentcrates</groupId>
   <artifactId>ExcellentCrates</artifactId>
-  <version>{VERSION}</version>
+  <version>{版本}</version>
 </dependency>
 ```
 
@@ -27,13 +27,13 @@
 ``` Java
 CratesPlugin plugin = CratesAPI.getPlugin(); // ExcellentCrates 实例
 
-UserManager userManager = CratesAPI.getUserManager(); // 用户管理.
+UserManager userManager = CratesAPI.getUserManager(); // 用户管理。
 
-CrateManager crateManager = CratesAPI.getCrateManager(); // 宝箱管理.
+CrateManager crateManager = CratesAPI.getCrateManager(); // 宝箱管理。
 
-KeyManager keyManager = CratesAPI.getKeyManager(); // 钥匙管理.
+KeyManager keyManager = CratesAPI.getKeyManager(); // 钥匙管理。
 
-CrateUser user = userManager.getUserData(Player player); // 获取玩家数据.
+CrateUser user = userManager.getUserData(Player player); // 获取玩家数据。
 CrateUser user = userManager.getUserData(UUID playerId);
 CrateUser user = userManager.getUserData(String playerName);
 ```

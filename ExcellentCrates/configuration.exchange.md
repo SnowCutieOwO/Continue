@@ -10,7 +10,7 @@ CoinsEngine 内置的交换系统允许玩家在不同类型的货币之间转�
 
 ``` YAML
 Exchange:
-  Allowed: true # 必须启用.
+  Allowed: true # 必须启用。
   Rates:
     coins: 5.0
 ```
@@ -21,7 +21,7 @@ Exchange:
 
 ``` YAML
 Exchange:
-  Allowed: true # 必须启用.
+  Allowed: true # 必须启用。
   Rates:
     gems: 0.2
 ```
@@ -31,3 +31,5 @@ Exchange:
 ::: info 
 
 若货币的 `Demical` 设置为 `false`，则玩家只能交换整数数量的货币。
+
+:::

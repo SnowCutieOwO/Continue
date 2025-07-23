@@ -8,6 +8,8 @@
 
 * 奖励命令（需在奖励编辑器中启用“应用变量（Apply Placeholders）”）
 * 奖励物品（需在奖励编辑器中启用“应用变量（Apply Placeholders）”）
+* 宝箱悬浮字
+* 宝箱预览界面
 
 :::
 
@@ -27,6 +29,7 @@
 
 * `%excellentcrates_keys_[宝箱 ID]%` - 显示玩家拥有指定宝箱的剩余钥匙数量。
 * `%excellentcrates_openings_[宝箱 ID]%` - 显示玩家开启宝箱的次数。
+* `%excellentcrates_openings_raw_[宝箱 ID]%` - 不带格式显示玩家开启宝箱的次数。
 * `%excellentcrates_cooldown_[宝箱 ID]%` - 显示玩家距下次开启宝箱的冷却时间。
 * `%excellentcrates_next_milestone_openings_[宝箱 ID]%` - 显示玩家距下次累抽奖励所需的抽奖次数。
 * `%excellentcrates_next_milestone_reward_[宝箱 ID]%` - 显示玩家下次累抽奖励的名称。

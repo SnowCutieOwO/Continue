@@ -678,8 +678,8 @@ export default defineConfig({
             },
             {
               text: '🔑 钥匙', collapsed: true, items: [
-                { text: '➕ 设置钥匙', link: '/ExcellentCrates/keys' },
-                { text: '*️⃣ 虚拟钥匙', link: '/ExcellentCrates/keys' }
+                { text: '➕ 设置钥匙', link: '/ExcellentCrates/keys.setup-keys' },
+                { text: '*️⃣ 虚拟钥匙', link: '/ExcellentCrates/keys.virtual-keys' }
               ]
             },
             { text: '🔤 变量', link: '/ExcellentCrates/placeholders' },

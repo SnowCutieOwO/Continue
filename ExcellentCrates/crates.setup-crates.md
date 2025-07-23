@@ -2,7 +2,7 @@
 
 在 ExcellentCrates 中创建、编辑与移除宝箱非常简单！
 
-宝箱配置位于 `/plugins/ExcellentCrates/crates/` 下。
+宝箱配置位于 **/plugins/ExcellentCrates/crates/** 下。
 
 你可以通过[编辑器](editor-gui.md)设置宝箱。
 
@@ -15,16 +15,16 @@
 
 在创建宝箱后，就可以着手配置了：
 
-* 外观
-* 预览
-* 开箱
-* 放置
-* 开箱冷却
-* 开箱收费
-* 开箱权限
-* 钥匙
-* 奖励
-* 累抽奖励
+* [外观](crates.appearance.md)
+* [预览](crates.previews.md)
+* [开箱](crates.openings.md)
+* [放置](crates.placement.md)
+* [开箱冷却](crates.open-cooldown.md)
+* [开箱收费](crates.open-cost.md)
+* [开箱权限](crates.open-permission.md)
+* [钥匙](crates.key-requirements.md)
+* [奖励](rewards.setup-rewards.md)
+* [累抽奖励](crates.milestones.md)
 
 ## 移除宝箱
 

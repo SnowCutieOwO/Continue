@@ -5,12 +5,12 @@
 ## 参数
 
 * `-s` - 命令静默执行（目标玩家不会收到消息）。
+* `-sf` - 命令静默执行（命令发送者不会收到消息）。
 * `-f` - 绕过限制执行。
 
 ## 插件命令
 
-
-<badge type="warning" text="<> 必选参数" /> <badge type="tip" text="[] 可选参数" />
+<badge type="tip" text="<> 必选参数" /> <badge type="info" text="[] 可选参数" />
 
 * `/crates [help]` - 列出可用的插件命令。
 * `/crates reload` - 重载插件。

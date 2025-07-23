@@ -12,7 +12,7 @@
 
 ## 场景 \#1
 
-货币：`money.yml`
+货币：**money.yml**
 
 所有服务器上同步经济。
 
@@ -22,7 +22,7 @@
 
 ## 场景 \#2
 
-货币：`money.yml`
+货币：**money.yml**
 
 所有服务器上使用不同的经济。
 
@@ -32,10 +32,10 @@
 
 ## 场景 \#3
 
-货币：`gems.yml`
+货币：**gems.yml**
 
 在服务器 B 和 C 上同步，在服务器 A 上使用独立货币。
 
-* 服务器 A：`Column_Name: gems_a`、 `Synchronized: false`、`Sync_Interval: -1`
+* 服务器 A：`Column_Name: gems_a`、`Synchronized: false`、`Sync_Interval: -1`
 * 服务器 B：`Column_Name: gems_shared`、`Synchronized: true`、`Sync_Interval: 1`
 * 服务器 C：`Column_Name: gems_shared`、`Synchronized: true`、`Sync_Interval: 1`

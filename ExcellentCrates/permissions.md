@@ -25,7 +25,6 @@
     * `excellentcrates.command.preview.others` - 允许对其他玩家使用 `/crates preview` 命令。
     * `excellentcrates.command.resetcooldown` - 允许使用 `/crates resetcooldown` 命令。
   * `excellentcrates.bypass.*` - 绕过插件所有的限制。
-  * `excellentcrates.bypass.crate.open.cost.*` - 绕过所有开箱限制。
-  * `excellentcrates.bypass.crate.opencost.*` - 无视支付指定货币开箱的要求。
-  * `excellentcrates.bypass.crate.opencooldown` - 无视开箱冷却。
-  * `excellentcrates.bypass.reward.limit` - 无视奖励获取次数冷却。
+    * `excellentcrates.bypass.opencost.*` - 绕过开箱收费限制。
+    * `excellentcrates.bypass.crate.opencooldown` - 无视开箱冷却。
+    * `excellentcrates.bypass.reward.limit` - 无视奖励获取次数冷却。

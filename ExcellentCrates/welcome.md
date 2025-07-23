@@ -30,7 +30,7 @@
 * [奖励命令](rewards.setup-rewards.md#设置命令奖励)。支持放入数量不限的命令！
 * [奖励权限](rewards.permissions.md)。在玩家无权领取时阻止获得！
 * 奖励公告。获得指定奖励时发送公告！
-* [奖励限制](rewards.roll-limits.md)。限制制定奖励被全局或分玩家抽取的最大次数！
+* [奖励限制](rewards.roll-limits.md)。限制指定奖励被全局或分玩家抽取的最大次数！
 * 奖励日志。在本地文件存储所有奖励抽取记录！
 * 支持 [PlaceholderAPI](intergrations.placeholderapi.md)！
 
@@ -38,37 +38,21 @@
 
 |Java|服务器版本|服务器核心|
 |---|---|---|
-|✅ Java 21|✅ 1.21.3<br>✅1.21.4|✅ Spigot<br>✅ Paper<br>✅ Purpur|
-
-::: warning Folia 服务器
-
-尚无计划支持。
-
-:::
-
-::: danger 模组端核心
-
-诸如 **Arclighy、Mohist、Forge** 和 **Fabric** 的模组服不会也不将会得到支持。
-
-:::
+|✅ Java 21|✅ 1.21.4<br>✅1.21.5|<font color="green">✔</font>Spigot<br><font color="green">✔</font>Paper<br><font color="green">✔</font>Purpur<br><font colore="red">⛔</font>Folia（不在计划内）<br><font color="red">⛔</font>Forge（永不支持）|
 
 ## 依赖
    
-<Badge type="warning" text="必需" /> [nightcore](https://github.com/nulli0n/nightcore-spigot/releases)（2.7.3.2 或更高版本）  
-
-<br>
-
-<Badge type="tip" text="可选" /> [EconomyBridge](https://nightexpressdev.com/economy-bridge/)- 用于自定义物品和开箱收费支持。  
-
-<br>
-
-<Badge type="tip" text="可选" /> [ProtocolLib](https://ci.dmulloy2.net/job/ProtocolLib/) 或 [PacketEvents](https://spigotmc.org/resources/80279/) - 用于悬浮字相关内容。
+* <Badge type="tip" text="必需" /> [nightcore](https://github.com/nulli0n/nightcore-spigot/releases)（2.7.5 或更高版本）  
+* <Badge type="info" text="可选" /> [EconomyBridge](https://nightexpressdev.com/economy-bridge/)- 用于自定义物品和开箱收费支持。  
+* <Badge type="info" text="可选" /> [ProtocolLib](https://ci.dmulloy2.net/job/ProtocolLib/) 或 [PacketEvents](https://spigotmc.org/resources/80279/) - 用于悬浮字相关内容。
 
 ## 下载
 
 * [SpigotMC](https://spigotmc.org/resources/48732/)
 * [Hangar](https://hangar.papermc.io/NightExpress/ExcellentCrates)
 * [Modrinth](https://modrinth.com/plugin/excellentcrates)
+* [文档（原文）](https://nightexpressdev.com/excellentcrates/)
+* [开发者 API]()
 
 ## 捐赠
 
