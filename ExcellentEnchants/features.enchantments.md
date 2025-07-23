@@ -23,7 +23,7 @@
 |炽炎之盾<br>（Fire Shield）|点燃攻击者。||IV|![](images/iron_chestplate.png)|![](images/elytra.png)|2|
 |炽炎行者<br>（Flame Walker）|与原版的冰霜行者类似，行走在岩浆上可产生临时的岩浆块防止玩家坠入岩浆，同时免疫岩浆块的灼烧伤害。|[冰霜行者](https://zh.minecraft.wiki/w/%E5%86%B0%E9%9C%9C%E8%A1%8C%E8%80%85)|II|![](images/iron_boots.png)||1|
 |硬化<br>（Hardened）|受击后获得[抗性提升](https://zh.minecraft.wiki/w/%E6%8A%97%E6%80%A7%E6%8F%90%E5%8D%87)效果。||II|![](images/iron_chestplate.png)|![](images/elytra.png)|5|
-|霜寒之御<br>（Ice Shield）|[冻结](https://zh.minecraft.wiki/w/%E7%BB%86%E9%9B%AA#%E5%86%B0%E5%86%BB)并[降低敌人移速](https://zh.minecraft.wiki/w/%E7%BC%93%E6%85%A2)。|![](images/iron_chestplate.png)|-|
+|霜寒之御<br>（Ice Shield）|[冻结](https://zh.minecraft.wiki/w/%E7%BB%86%E9%9B%AA#%E5%86%B0%E5%86%BB)并[降低敌人移速](https://zh.minecraft.wiki/w/%E7%BC%93%E6%85%A2)。||III|![](images/iron_chestplate.png)|![](images/elytra.png)|10|
 |灵跃<br>（Jumping）|获得[跳跃提升](https://zh.minecraft.wiki/w/%E8%B7%B3%E8%B7%83%E6%8F%90%E5%8D%87)效果。||II|![](images/iron_boots.png)||2|
 |自爆<br>（Kamikadze）|死亡后产生爆炸。||III|![](images/iron_chestplate.png)|![](images/elytra.png)|5|
 |夜视<br>（Night Vision）|给予[夜视](https://zh.minecraft.wiki/w/%E5%A4%9C%E8%A7%86)效果。||I|![](images/iron_helmet.png)||1|
@@ -38,21 +38,21 @@
 
 |附魔名称|附魔描述|冲突附魔|最大等级|初级物品|次级物品|权重|
 |---|---|---|---|---|---|---|
-|爆裂之矢<br>（Bomber）|概率将射出的箭替换成 [TNT](https://zh.minecraft.wiki/w/TNT)。|（非）箭类附魔|III|![](images/bow.png)|![](images/crossbow_standby.png)|1|
-|惑乱之矢<br>（Confusing Arrows）|命中目标后概率施加[反胃](https://zh.minecraft.wiki/w/%E5%8F%8D%E8%83%83)效果。|非箭类附魔|III|![](images/bow.png)|![](images/crossbow_standby.png)|10|
-|暗黑之矢<br>（Darkness Arrows）|命中目标后概率施加[黑暗](https://zh.minecraft.wiki/w/%E9%BB%91%E6%9A%97)效果。非箭类附魔|III|![](images/bow.png)|![](images/crossbow_standby.png)|10|
-|龙涎之矢<br>（Dragonfire Arrows）|概率在箭落地时生成一团[龙息](https://zh.minecraft.wiki/w/%E9%BE%99%E6%81%AF)。|非箭类附魔|III|![](images/bow.png)|![](images/crossbow_standby.png)|2|
-|唤雷之矢<br>（Electrified Arrows）|命中目标后概率生成[闪电](https://zh.minecraft.wiki/w/%E9%97%AA%E7%94%B5%E6%9D%9F)。|非箭类附魔|III|![](images/bow.png)|![](images/crossbow_standby.png)|5|
-|末影之矢<br>（Ender Bow）|概率将射出的箭替换成[末影珍珠](https://zh.minecraft.wiki/w/%E6%9C%AB%E5%BD%B1%E7%8F%8D%E7%8F%A0)。|（非）箭类附魔|I|![](images/bow.png)|![](images/crossbow_standby.png)|1|
-|爆破之矢<br>（Explosive Arrows）|概率射出落地[爆炸](https://zh.minecraft.wiki/w/%E7%88%86%E7%82%B8)的箭。|非箭类附魔|III|![](images/bow.png)|![](images/crossbow_standby.png)|5|
-|飞火之矢<br>（Flare）|概率在箭落地时放置一根[火把](https://zh.minecraft.wiki/w/%E7%81%AB%E6%8A%8A)。|非箭类附魔|I|![](images/bow.png)|![](images/crossbow_standby.png)|5|
-|恶魂之矢<br>（Ghast）|概率将射出的箭替换成恶魂的[烈焰弹](https://zh.minecraft.wiki/w/%E7%81%AB%E7%84%B0%E5%BC%B9)。|（非）箭类附魔|I|![](images/bow.png)|![](images/crossbow_standby.png)|1|
-|虚浮之矢<br>（Hover）|命中目标后概率施加[漂浮](https://zh.minecraft.wiki/w/%E9%A3%98%E6%B5%AE)效果。|非箭类附魔|III|![](images/bow.png)|![](images/crossbow_standby.png)|10|
-|滞留<br>（Lingering）|箭矢落地时生成[药水效果云](https://zh.minecraft.wiki/w/%E5%8C%BA%E5%9F%9F%E6%95%88%E6%9E%9C%E4%BA%91)。|非箭类附魔|III|![](images/bow.png)|![](images/crossbow_standby.png)|2|
-|淬毒之矢<br>（Poisoned Arrows）|命中目标后概率施加[中毒](https://zh.minecraft.wiki/w/%E4%B8%AD%E6%AF%92)。|非箭类附魔|III|![](images/bow.png)|![](images/crossbow_standby.png)|5|
+|爆裂之矢<br>（Bomber）|概率将射出的箭替换成 [TNT](https://zh.minecraft.wiki/w/TNT)。|（非）箭类附魔[^1][^2]|III|![](images/bow.png)|![](images/crossbow_standby.png)|1|
+|惑乱之矢<br>（Confusing Arrows）|命中目标后概率施加[反胃](https://zh.minecraft.wiki/w/%E5%8F%8D%E8%83%83)效果。|非箭类附魔[^2]|III|![](images/bow.png)|![](images/crossbow_standby.png)|10|
+|暗黑之矢<br>（Darkness Arrows）|命中目标后概率施加[黑暗](https://zh.minecraft.wiki/w/%E9%BB%91%E6%9A%97)效果。|非箭类附魔[^2]|III|![](images/bow.png)|![](images/crossbow_standby.png)|10|
+|龙涎之矢<br>（Dragonfire Arrows）|概率在箭落地时生成一团[龙息](https://zh.minecraft.wiki/w/%E9%BE%99%E6%81%AF)。|非箭类附魔[^2]|III|![](images/bow.png)|![](images/crossbow_standby.png)|2|
+|唤雷之矢<br>（Electrified Arrows）|命中目标后概率生成[闪电](https://zh.minecraft.wiki/w/%E9%97%AA%E7%94%B5%E6%9D%9F)。|非箭类附魔[^2]|III|![](images/bow.png)|![](images/crossbow_standby.png)|5|
+|末影之矢<br>（Ender Bow）|概率将射出的箭替换成[末影珍珠](https://zh.minecraft.wiki/w/%E6%9C%AB%E5%BD%B1%E7%8F%8D%E7%8F%A0)。|（非）箭类附魔[^1][^2]|I|![](images/bow.png)|![](images/crossbow_standby.png)|1|
+|爆破之矢<br>（Explosive Arrows）|概率射出落地[爆炸](https://zh.minecraft.wiki/w/%E7%88%86%E7%82%B8)的箭。|非箭类附魔[^2]|III|![](images/bow.png)|![](images/crossbow_standby.png)|5|
+|飞火之矢<br>（Flare）|概率在箭落地时放置一根[火把](https://zh.minecraft.wiki/w/%E7%81%AB%E6%8A%8A)。|非箭类附魔[^2]|I|![](images/bow.png)|![](images/crossbow_standby.png)|5|
+|恶魂之矢<br>（Ghast）|概率将射出的箭替换成恶魂的[烈焰弹](https://zh.minecraft.wiki/w/%E7%81%AB%E7%84%B0%E5%BC%B9)。|（非）箭类附魔[^1][^2]|I|![](images/bow.png)|![](images/crossbow_standby.png)|1|
+|虚浮之矢<br>（Hover）|命中目标后概率施加[漂浮](https://zh.minecraft.wiki/w/%E9%A3%98%E6%B5%AE)效果。|非箭类附魔[^2]|III|![](images/bow.png)|![](images/crossbow_standby.png)|10|
+|滞留<br>（Lingering）|箭矢落地时生成[药水效果云](https://zh.minecraft.wiki/w/%E5%8C%BA%E5%9F%9F%E6%95%88%E6%9E%9C%E4%BA%91)。|非箭类附魔[^2]|III|![](images/bow.png)|![](images/crossbow_standby.png)|2|
+|淬毒之矢<br>（Poisoned Arrows）|命中目标后概率施加[中毒](https://zh.minecraft.wiki/w/%E4%B8%AD%E6%AF%92)。|非箭类附魔[^2]|III|![](images/bow.png)|![](images/crossbow_standby.png)|5|
 |乘风快矢<br>（Sniper）|提升箭矢的速度。||II|![](images/bow.png)|![](images/crossbow_standby.png)|10|
-|歃血之矢<br>（Vampiric Arrows）|命中目标后概率恢复生命值。|非箭类附魔|III|![](images/bow.png)|![](images/crossbow_standby.png)|2|
-|凋谢之矢<br>（Withered Arrows）|命中目标后概率施加[凋零](https://zh.minecraft.wiki/w/%E5%87%8B%E9%9B%B6)。|非箭类附魔|III|![](images/bow.png)|![](images/crossbow_standby.png)|5|
+|歃血之矢<br>（Vampiric Arrows）|命中目标后概率恢复生命值。|非箭类附魔[^2]|III|![](images/bow.png)|![](images/crossbow_standby.png)|2|
+|凋谢之矢<br>（Withered Arrows）|命中目标后概率施加[凋零](https://zh.minecraft.wiki/w/%E5%87%8B%E9%9B%B6)。|非箭类附魔[^2]|III|![](images/bow.png)|![](images/crossbow_standby.png)|5|
 
 ## 工具附魔
 
@@ -66,7 +66,7 @@
 |搬箱<br>（Silk Chest）|破坏[箱子](https://zh.minecraft.wiki/w/%E7%AE%B1%E5%AD%90)后有几率使箱子保留内容物而不掉落。|![](images/iron_axe.png)|![](images/iron_pickaxe.png)![](images/iron_shovel.png)![](images/iron_hoe.png)|1|
 |封魔之触<br>（Divine Touch）|概率挖下[刷怪笼](https://zh.minecraft.wiki/w/%E5%88%B7%E6%80%AA%E7%AC%BC)。|熔炼|I|![](images/iron_pickaxe.png)||1|
 |熔炼<br>（Smelter）|按[配方](https://zh.minecraft.wiki/w/%E7%83%A7%E7%82%BC?variant=zh-cn#%E9%85%8D%E6%96%B9)自动熔炼挖下的矿物。|[精准采集](https://zh.minecraft.wiki/w/%E7%B2%BE%E5%87%86%E9%87%87%E9%9B%86)、封魔之触|V|![](images/iron_pickaxe.png)![](images/iron_axe.png)![](images/iron_shovel.png)|![](images/iron_hoe.png)![](images/shears.png)|5|
-|心灵遥感<br>（Telekinesis）|概率将掉落物直接送入背包。||I|![](images/iron_pickaxe.png)![](images/iron_axe.png)![](images/iron_shovel.png)![](images/iron_hoe.png)!|![](images/shears.png)|1|
+|心灵遥感<br>（Telekinesis）|概率将掉落物直接送入背包。||I|![](images/iron_pickaxe.png)![](images/iron_axe.png)![](images/iron_shovel.png)![](images/iron_hoe.png)|![](images/shears.png)|1|
 |连锁伐树<br>（Treefeller）|一次砍下整棵树。||I|![](images/iron_axe.png)||2|
 |穿隧<br>（Tunnel）|概率范围挖掘。I 级为 1x2 范围，II 级为 2x2，III 级为 3x3。|连锁挖掘、爆破发掘|III|![](images/iron_pickaxe.png)|![](images/iron_axe.png)![](images/iron_shovel.png)![](images/iron_hoe.png)|1|
 |连锁挖掘<br>（Veinminer）|一次挖下所有相邻的矿物。|穿隧、爆破发掘|III|![](images/iron_pickaxe.png)||1|
@@ -78,7 +78,7 @@
 |自动收杆<br>（Auto Reel）|在鱼咬钩时自动收杆。||I|![](images/fishing_rod.png)||1|
 |溺尸诅咒<br>（Curse Of Drowned）|概率钓上溺尸。||III|![](images/fishing_rod.png)||5|
 |二重钓<br>（Double Catch）|钓上来的物品数量翻倍。||III|![](images/fishing_rod.png)||2|
-|抛钩大师<br>（River Master）|提升抛钩距离。|V|![](images/fishing_rod.png)||10|
+|抛钩大师<br>（River Master）|提升抛钩距离。||V|![](images/fishing_rod.png)||10|
 |捕鱼大师<br>（Seasoned Angler）|提升钓鱼获得的经验数量。||III|![](images/fishing_rod.png)||5|
 |烈焰鱼钩<br>（Survivalist）|自动将钓上来的食物按配方[烤熟](https://zh.minecraft.wiki/w/%E7%83%A7%E7%82%BC?variant=zh-cn#%E9%A3%9F%E7%89%A9)。||I|![](images/fishing_rod.png)||2|
 
@@ -107,7 +107,6 @@
 |落雷<br>（Thunder）|命中时概率召唤[闪电](https://zh.minecraft.wiki/w/%E9%97%AA%E7%94%B5%E6%9D%9F)，造成额外伤害。||V|![](images/iron_sword.png)|![](images/iron_axe.png)|5|
 |歃血<br>（Vampire）|命中时窃取目标生命值。||III|![](images/iron_sword.png)|![](images/iron_axe.png)|2|
 |淬毒<br>（Venom）|命中时概率附加[中毒](https://zh.minecraft.wiki/w/%E4%B8%AD%E6%AF%92)效果。||II|![](images/iron_sword.png)|![](images/iron_axe.png)|10|
-|经验<br>（Exp Hunter）|击杀的敌怪有几率掉落更多经验值。|![](images/iron_sword.png)|![](images/iron_axe.png)|-|
 |村庄卫士<br>（Village Defender）|概率对[灾厄村民](https://zh.minecraft.wiki/w/%E7%81%BE%E5%8E%84%E6%9D%91%E6%B0%91)造成额外伤害。||V|![](images/iron_sword.png)|![](images/iron_axe.png)|10|
 |智慧<br>（Wisdom）|击杀生物可以获得更多[经验值](https://zh.minecraft.wiki/w/%E7%BB%8F%E9%AA%8C)。||V|![](images/iron_sword.png)|![](images/iron_axe.png)|5|
 |凋零<br>（Wither）|命中时概率附加[凋零](https://zh.minecraft.wiki/w/%E5%87%8B%E9%9B%B6)效果。||II|![](images/iron_sword.png)|![](images/iron_axe.png)|5|
@@ -122,3 +121,7 @@
 |厄运诅咒<br>（Curse of Misfortune）|概率导致实体不产生掉落物。|[时运](https://zh.minecraft.wiki/w/%E6%97%B6%E8%BF%90)、[抢夺](https://zh.minecraft.wiki/w/%E6%8A%A2%E5%A4%BA)|III|![](images/iron_pickaxe.png)![](images/iron_axe.png)![](images/iron_shovel.png)![](images/iron_hoe.png)![](images/iron_sword.png)![](images/bow.png)![](images/crossbow_standby.png)![](images/shears.png)![](images/trident.png)![](images/mace.png)||5|
 |传承<br>（Restore）|物品损坏时以失去所有附魔的代价阻止损坏并回复一定耐久度。||III|![](images/iron_pickaxe.png)![](images/iron_axe.png)![](images/iron_shovel.png)![](images/iron_hoe.png)![](images/iron_sword.png)![](images/bow.png)![](images/crossbow_standby.png)![](images/shears.png)![](images/iron_helmet.png)![](images/iron_chestplate.png)![](images/iron_leggings.png)![](images/iron_boots.png)![](images/elytra.png)![](images/shield.png)![](images/fishing_rod.png)![](images/trident.png)![](images/mace.png)||2|
 |归魂<br>（Soulbound）|阻止物品的死亡掉落。|[消失诅咒](https://zh.minecraft.wiki/w/%E6%B6%88%E5%A4%B1%E8%AF%85%E5%92%92)|I|![](images/iron_pickaxe.png)![](images/iron_axe.png)![](images/iron_shovel.png)![](images/iron_hoe.png)![](images/iron_sword.png)![](images/bow.png)![](images/crossbow_standby.png)![](images/shears.png)![](images/iron_helmet.png)![](images/iron_chestplate.png)![](images/iron_leggings.png)![](images/iron_boots.png)![](images/elytra.png)![](images/shield.png)![](images/fishing_rod.png)![](images/trident.png)![](images/mace.png)||2|
+
+[^1]: 箭类附魔，即效果只能作用在箭上的附魔。
+
+[^2]: 非箭类附魔[^2]，即替换弹射物的附魔，例如：爆炸箭矢、末影之矢、恶魂之矢等。
