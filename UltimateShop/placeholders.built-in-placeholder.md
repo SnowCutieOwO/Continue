@@ -43,6 +43,7 @@
 |`{random-next_<ID>}`|显示随机变量刷新时间的倒计时。若未生成刷新时间，则会返回在 `config.yml` 中设置的值。|插件内任意位置<br><font color="red">**仅付费版**</font>|
 |`{conditional_<ID>}`|使用条件变量。<br>更多信息请见“[条件变量](placeholders.conditional-placeholder-premium.md)”章节。|插件内任意位置<br><font color="red">**仅付费版**</font>|
 |`{compare_<数字1>_<数字2>}`|比较两个数字。返回的格式可在 `config.yml` 中修改。|插件内任意位置<br><font color="red">**仅付费版**</font>|
+|`{cron_"<cron 表达式>""}`|输出 Cron 表达式的结果。变量中的英文引号 `"` 不可省略！本插件使用的格式为 Quartz。|插件内任意位置|
 |`{math_<公式>}`|计算输入的数学公式。例如 `{math_10+50}` 会返回 60。需要你在 `config.yml` 设置 `math.enabled` 为启用。你可以在 `placeholder.math.scale` 部分设置返回的小数位数。|插件内任意位置|
 
 ::: info

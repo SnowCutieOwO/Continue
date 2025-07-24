@@ -50,10 +50,17 @@ use-times:
 * `NEVER`：永不刷新。
 * `TIMER`：在给定时间如五小时后刷新。
 * `TIMED`：在指定时间如早晨 8：15 刷新。
-* `COOLDOWN_TIMER`（于 3.3.0 加入）<font color="red">- 仅付费版</font>
-* `COOLDOWN_TIMED`（于 3.3.0 加入）<font color="red">- 仅付费版</font>
-* `RANDOM_PLACEHOLDER`：与指定随机变量同步重置时间。（于 3.3.0 加入）<font color="red">- 仅付费版</font>
-* `CUSTOM`：在重置时间处直接填入重置时间点，插件不会进行任何计算。推荐通过 PlaceholderAPI 获取重置时间。你需要在 `reset-time-format` 处设置时间格式，这会影响 PlaceholderAPI 变量的输出结果。（于 3.3.0 加入）<font color="red">- 仅付费版</font>
+* `COOLDOWN_TIMER`（于 3.3.0 加入）<font color="red">**- 仅付费版**</font>
+* `COOLDOWN_TIMED`（于 3.3.0 加入）<font color="red">**- 仅付费版**</font>
+* `COOLDOWN_CUSTOM`（于 3.9.1 加入）<font color="red">**- 仅付费版**</font>
+* `RANDOM_PLACEHOLDER`：与指定随机变量同步重置时间。（于 3.3.0 加入）<font color="red">**- 仅付费版**</font>
+* `CUSTOM`：在重置时间处直接填入重置时间点，插件不会进行任何计算。推荐通过 PlaceholderAPI 获取重置时间。你需要在 `reset-time-format` 处设置时间格式，这会影响 PlaceholderAPI 变量的输出结果。（于 3.3.0 加入）<font color="red">**- 仅付费版**</font>
+
+::: info
+
+随机变量重置模式支持 TIMER、TIMED、CUSTOM。随机变量的重置时间会保存至服务器，因此它们的效果与 COOLDOWN_TIMER、COOLDOWN_TIMED、COOLDOWN_CUSTOM 相同。
+
+:::
 
 ### `COOLDOWN_TIMED`（或 `COOLDOWN_TIMER`）与 `TIMED`（或 `TIMER`）间的差异
 
@@ -102,7 +109,7 @@ use-times:
 
 在本示例中，这个物品会在每天的 19：00 与 20：00 重置。
 
-### `CUSTOM` <font color="red">- 仅付费版</font>
+### `CUSTOM`/`COOLDOWN_CUSTOM` <font color="red">- 仅付费版</font>
 
 你只需要在此填入 PlaceholderAPI 变量，且其必须返回年、月、日、时、分、秒的完整格式。你也需要在配置中填入它们的时间格式，因为不同类型的变量会返回不同的时间格式，插件很难自动识别。
 
@@ -152,6 +159,61 @@ use-times:
     buy-times-reset-mode: 'TIMED'
     buy-times-reset-time: '{random_reset}' # <--- 在这里使用, 出售次数同样有效!
 ```
+
+## 动态重置值 <font color="red">- 仅付费版</font>
+
+默认情况下，每次重置都会将玩家的购买或出售次数重置为 0，但你也可以将其设置为其他固定或随机值！
+
+按如下示例在 `config.yml` 中创建一个随机变量：
+
+``` YAML
+  # 仅付费版本。
+  random:
+    reset:
+      reset-mode: ONCE
+      elements:
+        - '0~20' # 范围为 0 到 20 的随机变量
+        - '40' # 固定数
+```
+
+在任意商品配置中的 `buy-times-reset-value` 中使用这个变量：
+
+``` YAML
+  B:
+    price-mode: ALL
+    product-mode: CLASSIC_ALL
+    products:
+      1:
+        material: GOLD_INGOT
+        amount: 1
+    buy-prices:
+      # 
+    sell-prices:
+      #
+    buy-limits:
+      default: '2'
+    buy-times-reset-mode: 'TIMED'
+    buy-times-reset-time: '19:00:00;;20:00:00' # <--- TIMED 支持多次重置时间!
+    buy-times-reset-value: '{random_resetvalue}' # <--- 使用随机变量
+```
+
+## Cron 重置 <font color="red">- 仅付费版</font>
+
+你可以在重置时间中使用 Cron 表达式。
+
+* 将重置模式设置为 `COOLDOWN_CUSTOM`（若使用随机变量，将其设置为 `CUSTOM` 即可）。
+* 在重置时间中填入 `cron_"<cron 表达式>"` 内建变量。不要漏了英文双引号 `"`。
+
+例如：
+
+``` YAML
+    sell-times-reset-mode: 'COOLDOWN_CUSTOM'
+    sell-times-reset-time: '{cron_"0 0 0 ? * 5"}'
+```
+
+你可以通过询问 AI 获得你想要的 Cron 表达式。例如，本示例中的 Cron 表达式表示每周三 0：00 重置。我们不会提供有关编写 Cron 表达式的帮助。
+
+另外，本插件使用的 Cron 表达式为 **Quartz** 版本。
 
 ## 重置时间不正确？
 

@@ -58,6 +58,7 @@ confirm-items:
       name: '&a确认'
       lore:
         - '&7点此确认交易!'
+      modify-lore: true
   D:
     display-item:
       material: PAPER
@@ -82,6 +83,9 @@ confirm-items:
 * `display-item`：需为单字符。在 `layout` 中填入该字符来调整其在菜单中的显示位置。
 * `confirm-items`：确认购买或出售的物品配置。
 * `confirm-items.??.click-action`：使得按钮只能完成指定操作，如购买或出售。
+
+
+* `confirm-items.??.modify-lore`：是否尝试修改展示物品的描述，为其添加价格与出售限制等内容。你可以在 `config.yml` 文件中设置。**可选（默认为 true）**。
 
 ## 设置增量购买菜单
 
