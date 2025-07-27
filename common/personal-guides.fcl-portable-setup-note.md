@@ -49,7 +49,7 @@ https://github.com/root-S7/FoldCraftLauncher
 
 ::: tip `version` 的妙用
 
-更新客户端打包内容时可将 `version` 的值修改为更大的值，这样可以更新客户端内容而无需更新启动器。
+更新客户端打包内容时可将 `version` 的内容修改为更大的值，这样可以更新客户端内容而无需重装启动器。
 
 :::
 
@@ -61,7 +61,6 @@ https://github.com/root-S7/FoldCraftLauncher
 |包名|`源码文件夹\FCL\build.gradle.kts` -> `android.defaultConfig.applicationId`|`com.tungsten.fcl.server`|
 |软件版本|`源码文件夹\FCL\build.gradle.kts` -> `android.defaultConfig.versionCode`（版本数字）、`android.defaultConfig.versionName`（显示版本）|`1242`、`1.2.4.2`|
 |软件图标（含两种类型）|`源码文件夹\FCL\src\main\res\mipmap-<分辨率>\`（包括 `mdpi`、`hdpi`、`xhdpi`、`xxhdpi`、`xxxhdpi`） -> `ic_launcher_foreground.webp`（显示样式）、`ic_launcher_round.png`（圆角图标，通常无需修改）|N/A
-|
 |启动器背景|`源码文件夹\FCL\src\main\assets\app_config\settings_launcher_pictures` -> `lt.png`（亮色模式背景）、`dk.png`（暗色模式背景）|N/A|
 |启动器主界面下方小字|`源码文件夹\FCL\src\main\assets\app_config\general_setting.properties` -> `activity-main-title`|`Fold Craft Launcher`|
 |QQ 群/Discord|`源码文件夹\FCL\src\main\assets\app_config\general_setting.properties` -> `qq-group-key`、`discord-url`|*FCL 直装包交流群联系方式*|
@@ -85,7 +84,7 @@ oauth-api-key=******
 key-store-password=******
 ```
 
-这些密钥既可自行寻找，也可反编译官方 FCL 寻找。本教程恕不提供。
+这些密钥既可自行寻找，也可反编译官方 FCL 获取。本教程恕不提供。
 
 ## 5. 开始构建
 
