@@ -1405,6 +1405,12 @@ export default defineConfig({
               ]
             },
             {
+              text: '📚 快速上手', collapsed: true, items: [
+                { text: '⚡ 第一课', link: '/UltimateShop/quick-understand.course-1' },
+                { text: '⚡ 第二课', link: '/UltimateShop/quick-understand.course-2' }
+              ] 
+            },
+            {
               text: '📋 格式', collapsed: true, items: [
                 { text: '🛒 物品格式™ 的信息', link: '/UltimateShop/format.info-of-itemformat' },
                 {

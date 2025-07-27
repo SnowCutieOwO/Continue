@@ -58,7 +58,7 @@ use-times:
 
 ::: info
 
-随机变量重置模式支持 TIMER、TIMED、CUSTOM。随机变量的重置时间会保存至服务器，因此它们的效果与 COOLDOWN_TIMER、COOLDOWN_TIMED、COOLDOWN_CUSTOM 相同。
+随机变量重置模式支持 `TIMER`、`TIMED`、`CUSTOM`。随机变量的重置时间会保存至服务器，因此它们的效果与 `COOLDOWN_TIMER`、`COOLDOWN_TIMED`、`COOLDOWN_CUSTOM` 相同。
 
 :::
 
@@ -209,11 +209,19 @@ use-times:
 ``` YAML
     sell-times-reset-mode: 'COOLDOWN_CUSTOM'
     sell-times-reset-time: '{cron_"0 0 0 ? * 5"}'
+    # sell-times-reset-time-format: 'yyyy-MM-dd HH:mm:ss' 
+    # 你不需要在这里设置时间格式，这只是方便你记住可以在这里设置时间格式。
 ```
 
 你可以通过询问 AI 获得你想要的 Cron 表达式。例如，本示例中的 Cron 表达式表示每周四 0：00 重置。我们不会提供有关编写 Cron 表达式的帮助。
 
 另外，本插件使用的 Cron 表达式为 **Quartz** 版本。
+
+::: info
+
+你**必须**保证 Cron 变量返回的时间格式（在 `config.yml` 中设置）与你在这里设置的相同。默认情况下就是如此。
+
+:::
 
 ## 重置时间不正确？
 
