@@ -334,7 +334,8 @@ export default defineConfig({
             { text: '实用链接', link: '/common/personal-guides.useful-links' },
             { text: '分世界显示玩家的 TAB', link: '/common/personal-guides.tab-based-world-seperation' },
             { text: '在火狐及分支上使用 Motrix 接管下载', link: '/common/personal-guides.motrix-setup-firefox' },
-            { text: 'FCL 服务器手机端制作简述', link: '/common/personal-guides.fcl-portable-setup-note.md' }
+            { text: 'FCL 服务器手机端制作简述（电脑）', link: '/common/personal-guides.fcl-pc-setup' },
+            { text: 'FCL 服务器手机端制作简述（手机）', link: '/common/personal-guides.fcl-moble-setup' },
           ]
         }
       ],

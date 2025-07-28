@@ -32,9 +32,9 @@
 1. 打开客户端的 `.minecraft` 文件夹。
 2. 删除 `logs`（运行日志）、`crash-reports`（崩溃日志）文件夹。如果对大小有较高要求，还可删除 `assets` 和 `libraries` 文件夹（游戏会自行补全这两个文件夹的内容，但如果客户端包含*反作弊*，则不建议删）。
 
-![](images/fcl-logs.png){: width="40%"}
+![](images/fcl-logs.png){width="40%"}
 
-![](images/fcl-assets.png){: width="40%"}
+![](images/fcl-assets.png){width="40%"}
 
 3. 打开客户端，在设置界面关闭“版本隔离”。之后确保游戏能够正常启动。
 
@@ -54,7 +54,7 @@
 :::
 
 4. 完成后，将整个 `.minecraft` 文件夹替换项目内的 `.minecraft` 文件夹。
-![](images/fcl-resources.gif){: width="40%"}
+![](images/fcl-resources.gif){width="40%"}
 5. 在文件夹内加入 `version` **文件**，将内容修改为数字。
 
 ::: info 为什么要创建 `version` **文件**？
@@ -73,15 +73,15 @@
 
 ### 方案一
 
-![](images/fcl-name1.gif){: width="40%"}
+![](images/fcl-name1.gif){width="40%"}
 
 ### 方案二
 
-![](images/fcl-name2.gif){: width="40%"}
+![](images/fcl-name2.gif){width="40%"}
 
 ## 4. 软件图标修改
 
-![](images/fcl-icon.gif "示例"){: width="40%"}
+![](images/fcl-icon.gif "示例"){width="40%"}
 
 |屏幕像素密度|DPI|适用范围|
 |---|---|---|
@@ -106,27 +106,27 @@
 
 1. 打开 APKTool M 并找到你下载的模板。
    
-![](images/fcl-package1.png){: width="40%"}
+![](images/fcl-package1.png){width="40%"}
 
 2. 单击该文件，并点击 `快速编辑`。
 
-![](images/fcl-package2.png){: width="40%"}
+![](images/fcl-package2.png){width="40%"}
 
 3. 修改包名为你想要的，然后保存（据说改成大型游戏的包名，手机会分配更多性能）。
 
-![](images/fcl-package3.png){: width="40%"}![](images/fcl-package4.png){: width="40%"}
+![](images/fcl-package3.png){width="40%"}![](images/fcl-package4.png){width="40%"}
 
 4. 重新回到 `MT管理器` 中，在模板文件夹下会生成一个 `XX_mod.APK` 文件，打开 `AndroidManifest.xml`。
 
-![](images/fcl-package5.png){: width="45%"}![](images/fcl-package6.png){: width="45%"}
+![](images/fcl-package5.png){width="45%"}![](images/fcl-package6.png){width="45%"}
 
 5. 点右上角三个点，点击搜索 `FileProvider` ，修改 `android:authorities` 的值为 `com.tungsten.fcl.server.provider` ，然后保存。
 
-![](images/fcl-package7.png){: width="45%"}
+![](images/fcl-package7.png){width="45%"}
 
-![](images/fcl-package8.png){: width="45%"}
+![](images/fcl-package8.png){width="45%"}
 
-![](images/fcl-package10.png){: width="45%"}
+![](images/fcl-package10.png){width="45%"}
 
 6. 安装即可。
 
@@ -134,7 +134,7 @@
 
 修改 `android:versionCode` 和 `android:versionName` 即可。
 
-![](images/fcl-package7.png){: width="45%"}
+![](images/fcl-package7.png){width="45%"}
 
 ## 7. 配置项修改
 
