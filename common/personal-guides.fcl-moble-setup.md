@@ -2,13 +2,13 @@
 
 ::: danger
 
-请注意，FCL直装包为非官方团队修改
+请注意，FCL 直装包为非官方团队修改
 
 :::
 
 ## 1. 准备基础
 
-1. 下载 [直装包模板](https://github.com/root-S7/FoldCraftLauncher/ "点击前往下载") ，将其放置在合适的位置。
+1. 下载[直装包模板](https://github.com/root-S7/FoldCraftLauncher/ "点击前往下载") ，将其放置在合适的位置。
    
 ::: tip
 
@@ -26,14 +26,18 @@
 
 ## 2. 对客户端进行处理
 
-1. 打开客户端的 .minecraft 文件夹。
-2. 删除 `logs`（运行日志）、`crash-reports`（崩溃日志）文件夹。如果对大小有较高要求，还可删除 `assets` 和 `libraries` 文件夹 ( 这两个加载游戏后会自动下载，但有 <u>反作弊</u> 的不建议删 ) 。
-![](images/fcl-logs.png){: width="40%"} ![](images/fcl-assets.png){: width="40%"}
+1. 打开客户端的 `.minecraft` 文件夹。
+2. 删除 `logs`（运行日志）、`crash-reports`（崩溃日志）文件夹。如果对大小有较高要求，还可删除 `assets` 和 `libraries` 文件夹（游戏会自行补全这两个文件夹的内容，DNA如果客户端包含*反作弊*，则不建议删）。
+
+![](images/fcl-logs.png){: width="40%"}
+
+![](images/fcl-assets.png){: width="40%"}
+
 3. 打开客户端，在设置界面关闭“版本隔离”。之后确保游戏能够正常启动。
 
 ::: info 手动关闭版本隔离的方法
 
-打开 versions 文件夹，将其下除 `版本名称.jar`、`版本名称.json`、`options.txt`（原版设置选项，资源包启用在这）、`optionsof.txt`（Optifine 的设置文件）之外的文件移动到 `.minecraft` 中即可。
+打开 versions 文件夹，将其下除 `版本名称.jar`、`版本名称.json`、`options.txt`（原版设置选项，其中包含默认启用资源包的选项）、`optionsof.txt`（Optifine 的设置文件）之外的文件移动到 `.minecraft` 中即可。
 
 :::
 
@@ -42,7 +46,7 @@
 如果需要预安装资源包：
 * 在“设置->资源包...”界面，将对应资源包勾选并移动至右侧。
 如果需要预设服务器列表：
-* 在“多人游戏->添加服务器”界面，填入服务器名称以及服务器地址 ( 服务器地址将保存到 `servers.dat` ) 。
+* 在“多人游戏->添加服务器”界面，填入服务器名称以及服务器地址（服务器地址会保存在 `servers.dat` 中）。
 
 :::
 
@@ -63,18 +67,18 @@
 :::
 
 ## 3. 软件名称修改
-**方案1:**
+
+### 方案一
 
 ![](images/fcl-name1.gif){: width="40%"}
 
-**方案2:**
+### 方案二
 
 ![](images/fcl-name2.gif){: width="40%"}
 
 ## 4. 软件图标修改
-**示例:**
 
-![](images/fcl-icon.gif){: width="40%"}
+![](images/fcl-icon.gif "示例"){: width="40%"}
 
 |屏幕像素密度|DPI|适用范围|
 |---|---|---|
@@ -84,13 +88,14 @@
 |xxhdpi（1080x1920或更低）|480|适用于非常高分辨率的屏幕|
 |xxxhdpi（1440x2560或更低）|640|用于极高分辨率的屏幕|
 
-::: tip
+::: tip 可用于修改图片参数的网站
 
 **提供几个修改图片参数的网站：**
 1. [PNG 转 WEBP](https://cdkm.com/cn/png-to-webp)
-2. [PNG <u>DPI</u> 转换](https://cdkm.com/cn/png-to-webp)
+2. [PNG *DPI* 转换](https://cdkm.com/cn/png-to-webp)
 3. [PNG24 转 PNG32](https://omnifile.co/zh-cn/to-png32/)
-4. [WEBP调整](https://products.aspose.app/imaging/zh-hans/image-resize/webp)
+4. [WEBP 调整](https://products.aspose.app/imaging/zh-hans/image-resize/webp)
+5. [AConvert](https://www.aconvert.com/)（支持 PNG 和 WEBP 互转，支持修改导出格式大小）
 
 :::
 
