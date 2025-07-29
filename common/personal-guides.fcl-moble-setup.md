@@ -80,27 +80,71 @@
 ![](images/fcl-name2.gif){width="40%"}
 
 ## 4. 软件图标修改
-
-![](images/fcl-icon.gif "示例"){width="40%"}
-
-|屏幕像素密度|DPI|适用范围|
-|---|---|---|
-|mdpi（320x480或更低）|160|是Android应用程序的基准密度|
-|hdpi（480x800或更低）|240|通常用于较大的高分辨率屏幕|
-|xhdpi（720x1280或更低）|320|用于更高分辨率的屏幕|
-|xxhdpi（1080x1920或更低）|480|适用于非常高分辨率的屏幕|
-|xxxhdpi（1440x2560或更低）|640|用于极高分辨率的屏幕|
+|屏幕像素密度|DPI|图片分辨率|适用范围|
+|---|---|---|---|
+|mdpi（320x480或更低）|160|48x48|是Android应用程序的基准密度|
+|hdpi（480x800或更低）|240|72x72|通常用于较大的高分辨率屏幕|
+|xhdpi（720x1280或更低）|320|96x96|用于更高分辨率的屏幕|
+|xxhdpi（1080x1920或更低）|480|144x144|适用于非常高分辨率的屏幕|
+|xxxhdpi（1440x2560或更低）|640|192x192|用于极高分辨率的屏幕|
 
 ::: tip 可用于修改图片参数的网站
 
 **提供几个修改图片参数的网站：**
-1. [PNG 转 WEBP](https://cdkm.com/cn/png-to-webp)
-2. [PNG *DPI* 转换](https://www.dpi-converter.com/zh-cn/)
-3. [PNG24 转 PNG32](https://omnifile.co/zh-cn/to-png32/)
-4. [WEBP 调整](https://products.aspose.app/imaging/zh-hans/image-resize/webp)
-5. [AConvert](https://www.aconvert.com/)（支持 PNG 和 WEBP 互转，支持修改导出格式大小）
+1. [PNG *DPI* 转换](https://www.imgdiet.com/zh-CN/dpi-converter)
+2. [JPG 转 PNG](https://cdkm.com/cn/jpg-to-png)
+3. [调整图片大小](https://www.iloveimg.com/zh-cn/resize-image#resize-options,pixels)
+4. [PNG 转 WEBP](https://cdkm.com/cn/png-to-webp)
+5. [PNG24 转 PNG32](https://omnifile.co/zh-cn/to-png32/)
+6. [图片圆角处理](https://www.lddgo.net/image/round-image)
+7. [WEBP 调整](https://products.aspose.app/imaging/zh-hans/image-resize/webp)
+8. [AConvert](https://www.aconvert.com/)（支持 PNG 和 WEBP 互转，支持修改导出格式大小）
 
 :::
+
+##### 第一步：转换图片DPI
+打开[PNG *DPI* 转换](https://www.imgdiet.com/zh-CN/dpi-converter)网站
+将你图标按上方表格一一转换为指定DPI大小
+![](images/fcl-icon1.gif){width="40%"}
+
+::: info
+
+请注意，将生成的不同DPI文件分清楚，以便后续操作
+
+:::
+
+##### 第二步：文件格式转换
+::: tip
+
+由于转换完文件会自动变为`JPG` 格式，所以我们需要将其重新转换成 `PNG` 格式
+
+:::
+打开 [JPG 转 PNG](https://cdkm.com/cn/jpg-to-png) 网址
+![](images/fcl-icon2.gif){width="40%"}
+##### 第三步：调整图片大小
+::: tip
+
+为了适应不同设备分辨率，我们需要用不同分辨率来适配
+各个文件夹中图片所需的分辨率在上表中也已一一呈现，只需按需求修改即可
+
+:::
+打开 [调整图片大小](https://www.iloveimg.com/zh-cn/resize-image#resize-options,pixels) 网址
+![](images/fcl-icon3.gif){width="40%"}
+##### 第四步：将 `PNG24` 转换成 `PNG32`（此步可忽略）
+::: tip
+
+由于该网站原因，转换分辨率后，图片位深度会变成24，我们需将其转换回32
+
+:::
+打开 [PNG24 转 PNG32](https://omnifile.co/zh-cn/to-png32/) 网址
+![](images/fcl-icon4.gif){width="40%"}
+
+##### 第五步：为 `PNG` 文件添加圆角
+打开 [图片圆角处理](https://www.lddgo.net/image/round-image) 网址，选择你的图片，并将值改为 `100`
+![](images/fcl-icon5.gif){width="40%"}
+
+##### 第六步：将你修改的图片替换模板中的图片
+![](images/fcl-icon.gif "示例"){width="40%"}
 
 ## 5. 修改包名（可做到多端共存）。
 
