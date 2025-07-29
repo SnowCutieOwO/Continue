@@ -90,8 +90,10 @@ buy-limits:
   default: 10
   vip: 20
 buy-limits-conditions:
-  vip:
-    - 'permission: test.permission'
+  vip: 
+    1:
+      type: permission
+      permission: 'test.permission'
 ```
 
 - sell-limits: 与 buy-limits 设置相同，但是是为出售使用的。
