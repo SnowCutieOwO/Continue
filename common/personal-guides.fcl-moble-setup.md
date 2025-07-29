@@ -92,7 +92,7 @@
 
 **提供几个修改图片参数的网站：**
 1. [PNG 转 WEBP](https://cdkm.com/cn/png-to-webp)
-2. [PNG *DPI* 转换](https://cdkm.com/cn/png-to-webp)
+2. [PNG *DPI* 转换](https://www.dpi-converter.com/zh-cn/)
 3. [PNG24 转 PNG32](https://omnifile.co/zh-cn/to-png32/)
 4. [WEBP 调整](https://products.aspose.app/imaging/zh-hans/image-resize/webp)
 5. [AConvert](https://www.aconvert.com/)（支持 PNG 和 WEBP 互转，支持修改导出格式大小）
