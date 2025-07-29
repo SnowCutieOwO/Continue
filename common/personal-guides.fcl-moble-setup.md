@@ -18,7 +18,7 @@
 
 ::: danger
 
-请注意，直装包部分目录下有一个名为 `version` 的文件，该文件不能删去，不然游戏无法启动，注意，**不能删去！不能删去！不能删去！**
+请注意，直装包部分目录下有一个名为 `version` 的文件，该文件不能删去，不然游戏无法启动。注意，**不能删去！不能删去！不能删去！**
 
 :::
 
@@ -54,7 +54,9 @@
 :::
 
 4. 完成后，将整个 `.minecraft` 文件夹替换项目内的 `.minecraft` 文件夹。
+
 ![](images/fcl-resources.gif){width="40%"}
+
 5. 在文件夹内加入 `version` **文件**，将内容修改为数字。
 
 ::: info 为什么要创建 `version` **文件**？
@@ -80,6 +82,7 @@
 ![](images/fcl-name2.gif){width="40%"}
 
 ## 4. 软件图标修改
+
 |屏幕像素密度|DPI|图片分辨率|适用范围|
 |---|---|---|---|
 |mdpi（320x480或更低）|160|48x48|是Android应用程序的基准密度|
@@ -90,7 +93,6 @@
 
 ::: tip 可用于修改图片参数的网站
 
-**提供几个修改图片参数的网站：**
 1. [PNG *DPI* 转换](https://www.imgdiet.com/zh-CN/dpi-converter)
 2. [JPG 转 PNG](https://cdkm.com/cn/jpg-to-png)
 3. [调整图片大小](https://www.iloveimg.com/zh-cn/resize-image#resize-options,pixels)
@@ -102,48 +104,63 @@
 
 :::
 
-##### 第一步：转换图片DPI
-打开[PNG *DPI* 转换](https://www.imgdiet.com/zh-CN/dpi-converter)网站
-将你图标按上方表格一一转换为指定DPI大小
+### 第一步：转换图片DPI
+
+打开 [PNG *DPI* 转换](https://www.imgdiet.com/zh-CN/dpi-converter)网站，将图标按上方表格一一转换为指定 DPI 大小。
+
 ![](images/fcl-icon1.gif){width="40%"}
 
 ::: info
 
-请注意，将生成的不同DPI文件分清楚，以便后续操作
+请注意，将生成的不同 DPI 文件分清楚，以便后续操作。
 
 :::
 
-##### 第二步：文件格式转换
+### 第二步：文件格式转换
+
 ::: tip
 
-由于转换完文件会自动变为`JPG` 格式，所以我们需要将其重新转换成 `PNG` 格式
+由于转换完文件会自动变为 `JPG` 格式，所以我们需要将其重新转换成 `PNG` 格式
 
 :::
+
 打开 [JPG 转 PNG](https://cdkm.com/cn/jpg-to-png) 网址
+
 ![](images/fcl-icon2.gif){width="40%"}
-##### 第三步：调整图片大小
+
+### 第三步：调整图片大小
+
 ::: tip
 
 为了适应不同设备分辨率，我们需要用不同分辨率来适配
 各个文件夹中图片所需的分辨率在上表中也已一一呈现，只需按需求修改即可
 
 :::
-打开 [调整图片大小](https://www.iloveimg.com/zh-cn/resize-image#resize-options,pixels) 网址
+
+打开[调整图片大小](https://www.iloveimg.com/zh-cn/resize-image#resize-options,pixels) 网址。
+
 ![](images/fcl-icon3.gif){width="40%"}
-##### 第四步：将 `PNG24` 转换成 `PNG32`（此步可忽略）
+
+### 第四步：将 `PNG24` 转换成 `PNG32`（可选）
+
 ::: tip
 
 由于该网站原因，转换分辨率后，图片位深度会变成24，我们需将其转换回32
 
 :::
-打开 [PNG24 转 PNG32](https://omnifile.co/zh-cn/to-png32/) 网址
+
+打开 [PNG24 转 PNG32](https://omnifile.co/zh-cn/to-png32/) 网址。
+
 ![](images/fcl-icon4.gif){width="40%"}
 
-##### 第五步：为 `PNG` 文件添加圆角
-打开 [图片圆角处理](https://www.lddgo.net/image/round-image) 网址，选择你的图片，并将值改为 `100`
+### 第五步：为 `PNG` 文件添加圆角
+
+打开[图片圆角处理](https://www.lddgo.net/image/round-image) 网址，选择你的图片，并将值改为 `100`。
+
 ![](images/fcl-icon5.gif){width="40%"}
 
-##### 第六步：将你修改的图片替换模板中的图片
+### 第六步：将你修改的图片替换模板中的图片
+
 ![](images/fcl-icon.gif "示例"){width="40%"}
 
 ## 5. 修改包名（可做到多端共存）。
@@ -152,17 +169,21 @@
    
 ![](images/fcl-package1.png){width="40%"}
 
-2. 单击该文件，并点击 `快速编辑`。
+2. 单击该文件，并点击**快速编辑**。
 
 ![](images/fcl-package2.png){width="40%"}
 
-3. 修改包名为你想要的，然后保存（据说改成大型游戏的包名，手机会分配更多性能）。
+3. 修改包名，然后保存。
 
-![](images/fcl-package3.png){width="40%"}![](images/fcl-package4.png){width="40%"}
+![](images/fcl-package3.png){width="40%"}
 
-4. 重新回到 `MT管理器` 中，在模板文件夹下会生成一个 `XX_mod.APK` 文件，打开 `AndroidManifest.xml`。
+![](images/fcl-package4.png){width="40%"}
 
-![](images/fcl-package5.png){width="45%"}![](images/fcl-package6.png){width="45%"}
+4. 重新回到 **MT管理器** 中，在模板文件夹下会生成一个 `XX_mod.APK` 文件，打开 `AndroidManifest.xml`。
+
+![](images/fcl-package5.png){width="45%"}
+
+![](images/fcl-package6.png){width="45%"}
 
 5. 点右上角三个点，点击搜索 `FileProvider` ，修改 `android:authorities` 的值为 `com.tungsten.fcl.server.provider` ，然后保存。
 
@@ -197,7 +218,7 @@
 |`launcher_rules.json`|`/assets/app_config`|
 |`menu_setting.json`|`/assets/app_config`|
 
-### eula.txt（最终用户许可协议）
+### 1. eula.txt（最终用户许可协议）
 
 想必开过服务器的对此并不陌生，此文件中的内容为用户第一次安装打开时显示的内容。
 
@@ -206,6 +227,7 @@
 ![](images/fcl-setting1.png)
 
 #### 默认配置：
+
 ``` txt
 FoldCraftLauncher — 整合包一键安装版
 
@@ -249,6 +271,7 @@ FoldCraftLauncher — 整合包一键安装版
 ### 3. authlib_injector_server.json（皮肤站地址）
 
 #### 默认配置：
+
 ``` json title="authlib_injector_server.json"
 {
   "注意事项": {
@@ -275,6 +298,7 @@ FoldCraftLauncher — 整合包一键安装版
 修改可参考 [MinecraftArgs](https://zhuanlan.zhihu.com/p/12840515737)。
 
 #### 默认配置：
+
 ``` json title="config.json"
 {
   # 自动选择下载方式（官方源/镜像源）
@@ -349,9 +373,9 @@ FoldCraftLauncher — 整合包一键安装版
   "versionListSource": "balanced"
 ```
 
-### general_setting.properties（常规设置）
+### 5. general_setting.properties（常规设置）
 
-该文件注释非常清晰，这里会只提一两笔。
+该文件注释非常清晰，文中不作赘述。
 
 ::: info 解决无法使用中文的问题
 
@@ -359,7 +383,7 @@ FoldCraftLauncher — 整合包一键安装版
 
 :::
 
-### launcher_rules.json（启动器规则）
+### 6. launcher_rules.json（启动器规则）
 
 #### 默认配置：
 
@@ -412,7 +436,7 @@ FoldCraftLauncher — 整合包一键安装版
 }
 ```
 
-### menu_setting.json（菜单设置）
+### 7. menu_setting.json（菜单设置）
 
 |配置项|默认值|功能|
 |---|---|---|
