@@ -3603,6 +3603,8 @@
 %multiverse-core_weather%
 ```
 
+::::
+
 :::: tab Multiverse-Core v4
 
 ::: tip papi ecloud download multiverse
@@ -3638,6 +3640,8 @@
 ```
 
 ::::
+
+:::::
 
 ### [MyCommand](http://dev.bukkit.org/bukkit-plugins/mycommand/)
 
