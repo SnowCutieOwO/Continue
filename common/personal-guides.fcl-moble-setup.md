@@ -120,11 +120,11 @@
 
 ::: tip
 
-由于转换完文件会自动变为 `JPG` 格式，所以我们需要将其重新转换成 `PNG` 格式
+由于转换完文件会自动变为 `JPG` 格式，所以我们需要将其重新转换成 `PNG` 格式。
 
 :::
 
-打开 [JPG 转 PNG](https://cdkm.com/cn/jpg-to-png) 网址
+打开 [JPG 转 PNG](https://cdkm.com/cn/jpg-to-png) 网址。
 
 ![](images/fcl-icon2.gif){width="40%"}
 
@@ -132,12 +132,13 @@
 
 ::: tip
 
-为了适应不同设备分辨率，我们需要用不同分辨率来适配
-各个文件夹中图片所需的分辨率在上表中也已一一呈现，只需按需求修改即可
+为了适应不同设备分辨率，我们需要用不同分辨率来适配。
+
+各个文件夹中图片所需的分辨率在上表中也已一一呈现，只需按需求修改即可。
 
 :::
 
-打开[调整图片大小](https://www.iloveimg.com/zh-cn/resize-image#resize-options,pixels) 网址。
+打开[调整图片大小](https://www.iloveimg.com/zh-cn/resize-image#resize-options,pixels)网址。
 
 ![](images/fcl-icon3.gif){width="40%"}
 
@@ -301,44 +302,44 @@ FoldCraftLauncher — 整合包一键安装版
 
 ``` json title="config.json"
 {
-  # 自动选择下载方式（官方源/镜像源）
+  // 自动选择下载方式（官方源/镜像源）
   "autoChooseDownloadType": true,
-  # 自动选择下载线程
+  // 自动选择下载线程
   "autoDownloadThreads": true,
   "_version": 0,
   "configurations": {
     "公有目录": {
       "global": {
-        # 是否启用全局配置
+        // 是否启用全局配置
         "usesGlobal": true,
-        # java 参数（不懂的别乱改）
+        // java 参数（不懂的别乱改）
         "javaArgs": "",
-        # Minecraft 参数（不懂的别乱改）
+        // Minecraft 参数（不懂的别乱改）
         "minecraftArgs": "",
-        # 最大内存（-1为无上限，该处值必须为正整数）
+        // 最大内存（-1为无上限，该处值必须为正整数）
         "maxMemory": -1,
-        # 自动分配内存
+        // 自动分配内存
         "autoMemory": true,
         "permSize": "",
-        # 服务器IP
+        // 服务器IP
         "serverIp": "",
-        # java 版本自动选择
+        // java 版本自动选择
         "java": "Auto",
         "scaleFactor": 1.0,
-        # 不检查游戏数据
+        // 不检查游戏数据
         "notCheckGame": false,
-        # 不检查 JVM
+        // 不检查 JVM
         "notCheckJVM": false,
         "beGesture": true,
         "vulkanDriverSystem": false,
         "controller": "00000000",
-        # 渲染器
+        // 渲染器
         "renderer": "",
         "driver": "",
         "isolateGameDir": false,
         "pojavBigCore": false
       },
-      # 储存目录
+      // 储存目录
       "gameDir": "/storage/emulated/0/FCL-Server/.minecraft",
       "selectedMinecraftVersion": ""
     },

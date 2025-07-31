@@ -187,6 +187,11 @@ export default defineConfig({
             name: 'SnowCutieOwO',
             username: 'SnowCutieOwO',
             mapByEmailAliases: ['2210609731@qq.com']
+          },
+          {
+            name: 'hanchen',
+            username: '1hanchen1',
+            mapByEmailAliases: ['1364281481@qq.com']
           }
         ],
       }) as any,
