@@ -295,6 +295,11 @@ FoldCraftLauncher — 整合包一键安装版
 ```
 
 ### 4. config.json
+``` info
+
+为了实现多端共存，请私有目录的路径 `/storage/emulated/0/Android/data/com.tungsten.fcl.server/files/.minecraft` 为 `/storage/emulated/0/Android/data/你的包名/files/.minecraft` ，但由于按键解压路径在 `公有目录` ，按键不同启动器会自动检测而导致需要重新解压，所以为了不每次打开不同启动器都要重新解压，你需要更改 `公有目录` 路径 `/storage/emulated/0/FCL-Server/.minecraft` 中的 `FCL-Server`，建议为你服务器名称英文名
+
+```
 
 修改可参考 [MinecraftArgs](https://zhuanlan.zhihu.com/p/12840515737)。
 
@@ -310,33 +315,41 @@ FoldCraftLauncher — 整合包一键安装版
   "configurations": {
     "公有目录": {
       "global": {
-        // 是否启用全局配置
+        // 开启后会在『.minecraft/versions/xxxx』版本下生成一个『fclversion.cfg』文件，然后会使用该文件的设置项游戏设置项依据。
         "usesGlobal": true,
-        // java 参数（不懂的别乱改）
+        // Java虚拟机参数（不懂的别乱改）
         "javaArgs": "",
-        // Minecraft 参数（不懂的别乱改）
+        // 游戏参数（不懂的别乱改）
         "minecraftArgs": "",
-        // 最大内存（-1为无上限，该处值必须为正整数）
+        // 游戏内存设置『值低于0则会根据设备运行内存大小自动设置』。
         "maxMemory": -1,
-        // 自动分配内存
+        // 启动器的『自动分配内存』选项。
         "autoMemory": true,
+        // 启动器的『内存永久保留区域』选项。
         "permSize": "",
-        // 服务器IP
+        // 启动器的『服务器地址』选项。
         "serverIp": "",
-        // java 版本自动选择
+        // 启动器的『Java版本』选项，可以设置Auto、jre8、jre11、jre17、jre21。
         "java": "Auto",
-        "scaleFactor": 1.0,
-        // 不检查游戏数据
+        // 启动器的『窗口分辨率』选项，范围为25~100。
+        "newScaleFactor": 1.0,
+        // 启动器的『不检查游戏完整性』选项，可以设置false、true。
         "notCheckGame": false,
-        // 不检查 JVM
+        // 启动器的『不检查JVM兼容性』选项，可以设置false、true。
         "notCheckJVM": false,
+        // 启动器的『基岩版触控手势』选项，可以设置false、true。
         "beGesture": true,
+        // 启动器的『允许Zink使用系统Vulkan驱动』选项，可以设置false、true。
         "vulkanDriverSystem": false,
+        // 使用哪个按键布局，这个建议保留默认别乱动。
         "controller": "00000000",
-        // 渲染器
+        // 启动器的『渲染器』选项，具体可设置内容见『launcher_rules.json』文件；需要注意的是，该设置是设置第一次运行启动器选择哪个渲染器。
         "renderer": "",
+        // 启动器的『Vulkan驱动』选项，这是给Zink渲染器设置的；需要注意的是Zink渲染器通常不支持最新的设备。
         "driver": "",
+        // 启动器的『版本隔离』选项，可以设置false、true。
         "isolateGameDir": false,
+        // 启动器的『强制渲染器在大核上运行(Pojav后端)』选项，可以设置false、true。
         "pojavBigCore": false
       },
       // 储存目录
@@ -345,25 +358,44 @@ FoldCraftLauncher — 整合包一键安装版
     },
     "私有目录": {
       "global": {
+        // 开启后会在『.minecraft/versions/xxxx』版本下生成一个『fclversion.cfg』文件，然后会使用该文件的设置项游戏设置项依据。
         "usesGlobal": true,
+        // Java虚拟机参数（不懂的别乱改）
         "javaArgs": "",
+        // 游戏参数（不懂的别乱改）
         "minecraftArgs": "",
+        // 游戏内存设置『值低于0则会根据设备运行内存大小自动设置』。
         "maxMemory": -1,
+        // 启动器的『自动分配内存』选项。
         "autoMemory": true,
+        // 启动器的『内存永久保留区域』选项。
         "permSize": "",
+        // 启动器的『服务器地址』选项。
         "serverIp": "",
+        // 启动器的『Java版本』选项，可以设置Auto、jre8、jre11、jre17、jre21。
         "java": "Auto",
-        "scaleFactor": 1.0,
+        // 启动器的『窗口分辨率』选项，范围为25~100。
+        "newScaleFactor": 1.0,
+        // 启动器的『不检查游戏完整性』选项，可以设置false、true。
         "notCheckGame": false,
+        // 启动器的『不检查JVM兼容性』选项，可以设置false、true。
         "notCheckJVM": false,
+        // 启动器的『基岩版触控手势』选项，可以设置false、true。
         "beGesture": true,
+        // 启动器的『允许Zink使用系统Vulkan驱动』选项，可以设置false、true。
         "vulkanDriverSystem": false,
+        // 使用哪个按键布局，这个建议保留默认别乱动。
         "controller": "00000000",
+        // 启动器的『渲染器』选项，具体可设置内容见『launcher_rules.json』文件；需要注意的是，该设置是设置第一次运行启动器选择哪个渲染器。
         "renderer": "",
+        // 启动器的『Vulkan驱动』选项，这是给Zink渲染器设置的；需要注意的是Zink渲染器通常不支持最新的设备。
         "driver": "",
+        // 启动器的『版本隔离』选项，可以设置false、true。
         "isolateGameDir": false,
+        // 启动器的『强制渲染器在大核上运行(Pojav后端)』选项，可以设置false、true。
         "pojavBigCore": false
       },
+      // 储存目录
       "gameDir": "/storage/emulated/0/Android/data/com.tungsten.fcl.server/files/.minecraft",
       "selectedMinecraftVersion": ""
     }
@@ -372,6 +404,7 @@ FoldCraftLauncher — 整合包一键安装版
   "downloadType": "bmclapi",
   "last": "私有目录",
   "versionListSource": "balanced"
+}
 ```
 
 ### 5. general_setting.properties（常规设置）
