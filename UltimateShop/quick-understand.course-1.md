@@ -25,7 +25,7 @@ items:
 
 这里你会发现 `settings.menu` 选项，这至关重要，因为它是连接菜单与商店的桥梁。在本示例中，我们会将其设置为 `example-shop-menu`。
 
-你可以在 `menus` 文件夹下找到商店，本示例的商店文件名称即为 `example-shpp-menu.yml`。
+你可以在 `menus` 文件夹下找到菜单，本示例的菜单文件名称即为 `example-shpp-menu.yml`。
 
 ``` YAML
 title: '{shop-name}'
