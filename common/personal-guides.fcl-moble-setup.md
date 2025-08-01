@@ -485,6 +485,12 @@ FoldCraftLauncher — 整合包一键安装版
 }
 ```
 ::::
+::: tip
+
+支持使用正则表达式对游戏名称（即 minecraft/versions 目录下的文件夹名称）进行匹配校验。如『^1\.17(\.\d{1,2})?$』可匹配所有以『1.17』开头的游戏目录，用于启动前进行规则校验
+![](images/fcl-launcher.png)
+
+:::
 
 ### 7. menu_setting.json（菜单设置）
 
