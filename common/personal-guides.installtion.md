@@ -66,3 +66,29 @@ FOR /f "tokens=*" %%z IN ('fnm env --use-on-cd') DO CALL %%z
 :::
 
 ::::
+
+:::: details Gradle
+
+1. 前往 [Gradle 官网的下载页面](https://gradle.org/releases/)，下载其安装包（`complete`）。
+
+2. 将文件解压至合适的路径，例如 `D:\gradle`。
+
+3. 打开系统环境变量配置，在 `PATH` 部分加入指向 Gradle `bin` 文件夹的内容，如 `%GRADLE_HOME%/bin`。
+
+4. 新建一个环境变量，名为 `GRADLE_HOME`，值为先前解压的路径，如 `D:\gradle`。
+
+5. 新建一个文件夹，名称随意，这里将会是之后存储其他 Gradle 版本的仓库。
+
+6. 再新建一个环境变量，名为 `GRADLE_USER_HOME`，将上述文件夹的路径填入。
+
+7. 完成！拉起命令行界面并输入 gradle -v，如果它显示了版本号，说明你已经安装完毕。
+
+::: warning
+
+不要在没有安装 Gradle 的情况下试图构建插件/模组等需要 Gradle 参与构建的源码，这会导致其缓存文件生成在 C 盘挤占空间。
+
+如果你不小心这么做了，请使用诸如 WizTree 等的软件将 C 盘的 `.gradle` 文件夹删除。
+
+:::
+
+::::
