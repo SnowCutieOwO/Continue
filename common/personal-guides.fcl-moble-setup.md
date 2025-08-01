@@ -295,11 +295,16 @@ FoldCraftLauncher — 整合包一键安装版
 ```
 
 ### 4. config.json
-``` info
+::: info
 
-为了实现多端共存，请私有目录的路径 `/storage/emulated/0/Android/data/com.tungsten.fcl.server/files/.minecraft` 为 `/storage/emulated/0/Android/data/你的包名/files/.minecraft` ，但由于按键解压路径在 `公有目录` ，按键不同启动器会自动检测而导致需要重新解压，所以为了不每次打开不同启动器都要重新解压，你需要更改 `公有目录` 路径 `/storage/emulated/0/FCL-Server/.minecraft` 中的 `FCL-Server`，建议为你服务器名称英文名
+为了实现多端共存，请私有目录的路径 `/storage/emulated/0/Android/data/com.tungsten.fcl.server/files/.minecraft` 为 `/storage/emulated/0/Android/data/你的包名/files/.minecraft` ，但由于按键解压路径在 `公有目录` ，按键不同启动器会自动检测而导致需要重新解压，所以为了不每次打开不同启动器都要重新解压，你需要更改 `公有目录` 路径 `/storage/emulated/0/FCL-Server/.minecraft` 中的 `FCL-Server`，建议为你服务器名称英文名。
 
-```
+:::
+::: tip
+
+按键默认解压目录详见 `general_setting.properties` 中的 `controller-dir`。
+
+:::
 
 修改可参考 [MinecraftArgs](https://zhuanlan.zhihu.com/p/12840515737)。
 
