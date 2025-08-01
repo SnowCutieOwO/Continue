@@ -1,5 +1,12 @@
 # FCL直装包制作——手机端教程
 
+:::: details FCL启动器下载
+
+[FCL直装模板](https://github.com/root-S7/FoldCraftLauncher/releases/download/1.2.4.3/FCL-release-1.2.4.3-arm64-v8a.apk "点击前往下载")
+[FCL官方原版（非直装）](https://github.com/FCL-Team/FoldCraftLauncher/releases/download/1.2.4.3/FCL-release-1.2.4.3-arm64-v8a.apk "点击前往下载")
+
+::::
+
 ::: danger
 
 请注意，FCL 直装包为非官方团队修改
@@ -227,7 +234,7 @@
 
 ![](images/fcl-setting1.png)
 
-#### 默认配置：
+:::: details 默认配置
 
 ``` txt
 FoldCraftLauncher — 整合包一键安装版
@@ -251,6 +258,7 @@ FoldCraftLauncher — 整合包一键安装版
 
   9. 禁止直接反编译APK的dex文件；请使用Git克隆该项目源码，并使用IDE集成开发环境进行修改
 ```
+::::
 
 ### 2. settings_launcher_pictures `文件夹` （启动器主页和鼠标贴图）
 
@@ -271,7 +279,7 @@ FoldCraftLauncher — 整合包一键安装版
 
 ### 3. authlib_injector_server.json（皮肤站地址）
 
-#### 默认配置：
+:::: details 默认配置
 
 ``` json title="authlib_injector_server.json"
 {
@@ -293,6 +301,7 @@ FoldCraftLauncher — 整合包一键安装版
   ]
 }
 ```
+::::
 
 ### 4. config.json
 ::: info
@@ -308,8 +317,8 @@ FoldCraftLauncher — 整合包一键安装版
 
 修改可参考 [MinecraftArgs](https://zhuanlan.zhihu.com/p/12840515737)。
 
-#### 默认配置：
 
+:::: details 默认配置
 ``` json title="config.json"
 {
   // 自动选择下载方式（官方源/镜像源）
@@ -411,6 +420,7 @@ FoldCraftLauncher — 整合包一键安装版
   "versionListSource": "balanced"
 }
 ```
+::::
 
 ### 5. general_setting.properties（常规设置）
 
@@ -424,7 +434,7 @@ FoldCraftLauncher — 整合包一键安装版
 
 ### 6. launcher_rules.json（启动器规则）
 
-#### 默认配置：
+:::: details 默认配置
 
 ``` json title="launcher_rules.json"
 {
@@ -474,6 +484,7 @@ FoldCraftLauncher — 整合包一键安装版
   }
 }
 ```
+::::
 
 ### 7. menu_setting.json（菜单设置）
 
