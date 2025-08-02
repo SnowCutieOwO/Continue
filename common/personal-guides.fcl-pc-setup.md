@@ -1,8 +1,16 @@
-# 制作 FCL 直装包相关笔记
+# FCL直装包制作——电脑端教程
 
-本章节使用的 FCL 打包分支可在这里找到：
+:::: details FCL启动器下载
 
-https://github.com/root-S7/FoldCraftLauncher
+* [FCL直装模板](https://github.com/root-S7/FoldCraftLauncher/releases/download/1.2.4.3/FCL-release-1.2.4.3-arm64-v8a.apk "点击前往下载")
+* [FCL官方原版（非直装）](https://github.com/FCL-Team/FoldCraftLauncher/releases/download/1.2.4.3/FCL-release-1.2.4.3-arm64-v8a.apk "点击前往下载")
+
+::::
+::: danger
+
+请注意，FCL 直装包为非官方团队修改
+
+:::
 
 ## 1. 准备基础
 
@@ -113,3 +121,7 @@ key-store-password=******
 如果你的电脑配置较差，甚至不足以支持构建程序（通常很少发生），尽可能不要运行调试用模拟器。
 
 :::
+
+## 7. 其他配置文件
+
+详见 `FCL 服务器手机端制作简述（手机）` 中的介绍。
