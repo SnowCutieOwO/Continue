@@ -21,7 +21,7 @@ bytebin 的源码在 https://github.com/lucko/bytebin —— 你可以用 [Maven
 
 相似地，你可以在这里下载预构建的二进制文件：https://ci.lucko.me/job/bytebin/
 
-```
+``` bash
 mkdir bytebin
 cd bytebin
 curl -O https://ci.lucko.me/job/bytebin/lastSuccessfulBuild/artifact/target/bytebin.jar
@@ -46,7 +46,7 @@ touch config.json
 
 之后，你可能需要在反代中建立 bytebin 示例。下文为 [nginx](https://www.nginx.com/) 的示例。
 
-```nginx
+``` nginx
 server {
     listen 80;
     listen 443;
@@ -85,6 +85,6 @@ web-editor-url: 'https://example.com/luckperms/editor/'
 verbose-viewer-url: 'https://example.com/luckperms/verbose/'
 tree-viewer-url: 'https://example.com/luckperms/treeview/'
 
-# only required if you did Step 1
+# 仅在完成步骤 1 之后需要填入
 bytebin-url: 'https://bytebin.example.com/'
 ```
