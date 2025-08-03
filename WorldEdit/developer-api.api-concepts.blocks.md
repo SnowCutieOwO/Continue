@@ -5,7 +5,7 @@
 你可以在 `BlockType` 中通过方法 `getDefaultState()` 或提供正确的属性映射表至 `getState(Map)` 方法中获得 `BlockStates` 对象。
 
 例如，获取 `minecraft:oak_log[axis=y]` 的状态：
-```Java
+``` Java
 BlockType oakLog = Objects.requireNonNull(BlockTypes.OAK_LOG);
 BlockState yFacingOakLog = oakLog.getState(ImmutableMap.of(
     oakLog.getProperty("axis"), "y"

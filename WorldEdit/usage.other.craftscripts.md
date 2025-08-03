@@ -52,7 +52,7 @@
 
 所有在 WorldEdit 中的方块编辑都是通过 EditSession 完成的。这个对象会自动处理所有历史和方块放置顺序。若要为自己的快速脚本获取一个编辑选区，你需要使用：
 
-```Java
+``` Java
 var sess = context.remember();
 ```
 
@@ -60,7 +60,7 @@ var sess = context.remember();
 
 ::: info 示例：将一个方块设置为白色羊毛
 
-```Java
+``` Java
 importPackage(Packages.com.sk89q.worldedit.world.block);
 var sess = context.remember();
 sess.setBlock(player.getBlockOn().toVector().toBlockPoint(), BlockTypes.WHITE_WOOL.getDefaultState());
@@ -75,7 +75,7 @@ sess.setBlock(player.getBlockOn().toVector().toBlockPoint(), BlockTypes.WHITE_WO
 `CraftScriptContext` 可通过 `CraftScriptContext#checkArgs()` 进行基本的参数判断。你也可以使用 `WorldEdit.getInstance().getPatternFactory()` 和 `.getMaskFactory()` 直接对接 WorldEdit 的判断器。
 
 ::: info 示例：检查参数
-```Java
+``` Java
 context.checkArgs(1, 3, "<block> [width] [height]");
 var block = context.getBlock(argv[1]);
 ```
@@ -87,7 +87,7 @@ var block = context.getBlock(argv[1]);
 
 若要导入一个 Java 包，你可以按下列格式进行操作：
 
-```Java
+``` Java
 importPackage(Packages.package.name.here);
 ```
 

@@ -4,7 +4,7 @@
 
 产生一个 `EditSession` 最简单的方式就是通过 `WorldEdit` 类上的 `newEditSession(World)` 或 `newEditSessions(Actor & Locatable)` 的辅助方法。使用 `newEditSessionBuilder()` 完整构建器也有它的缺点。构建器所有的选项，曾经是 `EditSessionFactory` 的方法，但是可读性更强。若你使用了构建器，不要忘记在末尾调用 `build()` 来获取实际的 `EditSession` 对象。
 
-```Java
+``` Java
 // 从 WorldEdit 世界获取编辑会话
 WorldEdit.getInstance().newEditSession(world)
 
@@ -15,7 +15,7 @@ WorldEdit.getInstance().newEditSessionBuilder().world(world).maxBlocks(1000).bui
 会话编辑需要在所有操作完成之后关闭，以此确保操作的任务队列能正常刷新。在关闭之后这些内容将不再可用，只能重新创建一个对象用于之后可能的操作。
 
 一个简单的关闭 `EditSession` 方式是使用 `try-with-resources` 状态：
-```Java
+``` Java
 try (EditSession editSession = WorldEdit.getInstance().newEditSession(world)) {
     // 在这里使用会话编辑 ...
 } // 当代码执行到退出这块内容时，它会自动关闭/刷新
@@ -33,7 +33,7 @@ try (EditSession editSession = WorldEdit.getInstance().newEditSession(world)) {
 
 `EditSessionEvent` 是与 WorldEdit 的变动进行高效对接的方式。它会作为 `EditSession` 创建的一部分发起，并允许与区段堆栈在上述的多个状态中进行对接。你可以通过注册 WorldEdit 的 eventBus 来监听这一事件。
 
-```Java
+``` Java
 WorldEdit.getInstance().getEventBus().register(new Object() /* [1] */ {
     // 请确保你导入了 WorldEdit 的 @Subscribe!
     @Subscribe

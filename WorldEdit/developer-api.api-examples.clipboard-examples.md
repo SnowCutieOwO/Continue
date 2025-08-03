@@ -9,7 +9,7 @@
 ## 复制
 
 复制是创建剪贴板最直接的方法。若要这么做，你需要一个 `Region` 对象，一个源和目标区段，例如 `World` 和一个 `Clipboard` 对象。在本示例中我们会使用一个 `CoboidRegion` 和一个标准的 `BlockArrayClipboard`。之后，你所需要做的就是将参数传递至 `ForwardExtentCopy`，应用配置（例如调用 `setCopyingEntities(true)` 来复制实体），并调用 `Operations.complete`。
-```Java
+``` Java
 CuboidRegion region = new CuboidRegion(min, max);
 BlockArrayClipboard clipboard = new BlockArrayClipboard(region);
 
@@ -26,7 +26,7 @@ Operations.complete(forwardExtentCopy);
 粘贴是将方块从 `Clipboard` 移动到其他 `Extent`，通常为 `World` 的方法。若要粘贴，你需要一个目标 `Extent`（通常来讲，可以是 `World` 的 `EditSession`）和一个 `Clipboard`。通过你的剪贴板创建一个 `ClipboardHolder`，然后通过调用带有 `EditSession` 的 `createPaste` 获取一个 `PasteBuilder`。调用 `.to` 方法将位置设置在你想要粘贴的位置（实际位置会被剪贴板偏移影响，见上文的“剪贴板”章节来获取更多信息）。添加其他你想要的配置（蒙版、粘贴实体、粘贴生物群系等），之后调用 `build()` 方法获取操作。这之后操作就会被完成，所有方块都会被粘贴。需要注意的是如果你需要旋转剪贴板内容，你需要对 `ClipboardHolder` *在*调用 `createPaste` *之前*使用 `setTransform`。
 
 完整示例：
-```Java
+``` Java
 try (EditSession editSession = WorldEdit.getInstance().newEditSession(world)) {
     Operation operation = new ClipboardHolder(clipboard)
             .createPaste(editSession)
@@ -47,7 +47,7 @@ try (EditSession editSession = WorldEdit.getInstance().newEditSession(world)) {
 
 `Clipboard` 对象可以简单地保存至本地。你所要准备的就是一个 `ClipboardFormat`，一个 `Clipboard` 和一个 `OutputStream`。之后，你可以按格式调用 `getWriter` 并在其上以你的 `Clipboard` 进行 `write` 操作。下文为将剪贴板保存为文件的示例：
 
-```Java
+``` Java
 File file = /* 需要保存至剪贴板的内容 */;
 
 try (ClipboardWriter writer = BuiltInClipboardFormat.SPONGE_SCHEMATIC.getWriter(new FileOutputStream(file))) {
@@ -58,7 +58,7 @@ try (ClipboardWriter writer = BuiltInClipboardFormat.SPONGE_SCHEMATIC.getWriter(
 ### 载入
 
 载入一个 `Clipboard` 也很简单。你可以强制指定一个 `ClipboardFormat`，或让 WorldEdit 自行发现你想要载入的结构文件。示例如下文所示。之后你就可以在格式上调用 `getReader`，并在读取器上执行 `read` 方法，以获取一个 `Clipboard` 实例。
-```Java
+``` Java
 Clipboard clipboard;
 
 ClipboardFormat format = ClipboardFormats.findByFile(file);
