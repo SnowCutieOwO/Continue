@@ -6,7 +6,7 @@
 
 订阅方法允许你指定能够从 EventTypes 获取的类。示例：
 
-```Java
+``` Java
 var eventTypes = eventProvider.getTypes()
 
 eventProvider.subscribe(eventTypes.passwordChange, event -> {

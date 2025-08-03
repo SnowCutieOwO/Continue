@@ -22,7 +22,7 @@ maven {
 
 #### Maven
 
-```XML
+``` XML
 <repository>
   <id>kyngs-repo-public</id>
   <name>Repository</name>
@@ -48,7 +48,7 @@ compileOnly "xyz.kyngs.librelogin:API:<version>"
 
 #### Maven
 
-```XML
+``` XML
 <dependency>
   <groupId>xyz.kyngs.librelogin</groupId>
   <artifactId>API</artifactId>
@@ -63,7 +63,7 @@ compileOnly "xyz.kyngs.librelogin:API:<version>"
 
 你必须在插件的 `plugin.yml` 中声明“LibreLogin”为依赖。然后你就可以获取 API 实例：
 
-```Java
+``` Java
 var api = ((LibreLoginProvider<Player, World>) Bukkit.getPluginManager().getPlugin("LibreLogin")).getLibreLogin();
 ```
 
@@ -71,7 +71,7 @@ var api = ((LibreLoginProvider<Player, World>) Bukkit.getPluginManager().getPlug
 
 你必须在插件的声明中标记“LibreLogin”为依赖。然后你就可以获取 API 实例：
 
-```Java
+``` Java
 var api = ((LibreLoginProvider<Player, RegisteredServer>) server.getPluginManager().getPlugin("librelogin").orElseThrow().getInstance().orElseThrow()).getLibreLogin();
 ```
 
@@ -79,7 +79,7 @@ var api = ((LibreLoginProvider<Player, RegisteredServer>) server.getPluginManage
 
 你必须在插件的 `plugin.yml`/`bungee.yml` 中声明“LibreLogin”为依赖。然后你就可以获取 API 实例：
 
-```Java
+``` Java
 var api = ((LibreLoginProvider<ProxiedPlayer, ServerInfo>) getProxy().getPluginManager().getPlugin("librelogin")).getLibreLogin();
 ```
 
