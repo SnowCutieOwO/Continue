@@ -81,7 +81,7 @@ API 的主包为 [`me.lucko.spark.api`](https://github.com/lucko/spark/tree/mast
 [`Spark`](https://github.com/lucko/spark/blob/master/spark-api/src/main/java/me/lucko/spark/api/Spark.java) 接口在拥有 ServiceManager 的平台上，被作为“服务”提供。另外，你也可以通过 [`SparkProvider`](https://github.com/lucko/spark/blob/master/spark-api/src/main/java/me/lucko/spark/api/SparkProvider.java) 的单个示例获取接口。
 
 例如，在 Bukkit 核心上，你可以这么写：
-```Java
+``` Java
 RegisteredServiceProvider<Spark> provider = Bukkit.getServicesManager().getRegistration(Spark.class);
 if (provider != null) {
     Spark spark = provider.getProvider();
@@ -89,7 +89,7 @@ if (provider != null) {
 ```
 
 在其他所有的平台上，你可以这么写：
-```Java
+``` Java
 Spark spark = SparkProvider.get();
 ```
 
@@ -103,7 +103,7 @@ spark API 当前能提供一系列的统计数据，这些数据都是由 spark 
 
 获取由 spark 计算的 TPS 数值...
 
-```Java
+``` Java
 // 获取 TPS 数据 (在不存在滴答的服务端上会返回 null!)
 DoubleStatistic<StatisticWindow.TicksPerSecond> tps = spark.tps();
 
@@ -116,7 +116,7 @@ double tpsLast5Mins = tps.poll(StatisticWindow.TicksPerSecond.MINUTES_5);
 
 获取由 spark 计算的 MSPT（每刻毫秒数） 数值...
 
-```Java
+``` Java
 // 获取 MSPT 数值 (在不支持此类计算的服务端上会返回 null!)
 GenericStatistic<DoubleAverageInfo, StatisticWindow.MillisPerTick> mspt = spark.mspt();
 
@@ -130,7 +130,7 @@ double mspt95Percentile = msptLastMin.percentile95th();
 
 获取 CPU 使用情况的信息...
 
-```Java
+``` Java
 // 获取 CPU 使用情况的相关信息
 DoubleStatistic<StatisticWindow.CpuUsage> cpuUsage = spark.cpuSystem();
 
@@ -142,7 +142,7 @@ double usagelastMin = cpuUsage.poll(StatisticWindow.CpuUsage.MINUTES_1);
 
 获取 GC 活动的相关信息...
 
-```Java
+``` Java
 // 返回自服务器启动以来的 GC 活动情况
 Map<String, GarbageCollector> gc = spark.gc();
 
