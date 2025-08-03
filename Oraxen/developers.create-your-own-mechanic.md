@@ -19,7 +19,7 @@
 
 当然，为此 Oraxen 还允许你为每个机制关联 `ItemModifier` 列表。一个 `ItemModifier` 即为 `Function<ItemBuilder, ItemBuilder>`，而它则基本上是包含了服务器生成物品时所做改动的一小段代码。例如，对于耐久机制，我使用了一个 `ItemModifier`，存储了来自用户自行配置并存储在物品元数据中的耐久值。
 
-```Java
+``` Java
 item -> item.setCustomTag(NAMESPACED_KEY, PersistentDataType.INTEGER, section.getInt("value"))
 ```
 
@@ -33,7 +33,7 @@ item -> item.setCustomTag(NAMESPACED_KEY, PersistentDataType.INTEGER, section.ge
 
 首先创建一个继承 `Mechanic` 的类，如果你使用了 [intelliJ](https://www.jetbrains.com/idea/)，你会得到如下结果：
 
-```Java
+``` Java
 class DurabilityMechanic extends Mechanic {
 
     public DurabilityMechanic(MechanicFactory mechanicFactory, 
@@ -55,7 +55,7 @@ class DurabilityMechanic extends Mechanic {
 
 #### 机制配置部分会看起来像这样：
 
-```Java
+``` Java
 class DurabilityMechanic extends Mechanic {
 
     private int itemDurability;
@@ -85,7 +85,7 @@ class DurabilityMechanic extends Mechanic {
 
 如之前那样，使用你的 IDE 功能来自动创建一个继承了 `MechanicFactory` 的类。
 
-```Java
+``` Java
 class DurabilityMechanicFactory extends MechanicFactory {
 
     public DurabilityMechanicFactory(ConfigurationSection section) {
@@ -101,7 +101,7 @@ class DurabilityMechanicFactory extends MechanicFactory {
 
 我们重写了判断方法来（通过先前创建的 `DurabilityMechanic` 类）创建一个新机制。我们也想要告诉 Oraxen 这个机制被成功实现，且可通过 `addToImplemented` 方法载入。所以我们的新类大概会像这样：
 
-```Java
+``` Java
 public class DurabilityMechanicFactory extends MechanicFactory {
 
     public DurabilityMechanicFactory(ConfigurationSection section) {
@@ -124,7 +124,7 @@ public class DurabilityMechanicFactory extends MechanicFactory {
 
 我告诉 Bukkit 在工厂类构建时负责管理事件的类，如下：
 
-```Java
+``` Java
 public class DurabilityMechanicFactory extends MechanicFactory {
 
     public DurabilityMechanicFactory(String mechanicId) {
@@ -149,7 +149,7 @@ $bukkitdamage = {bukkitMaxDurability - {{realDurability * bukkitMaxDurability} \
 
 接着，这就是我的 `DurabilityMechanicsManager` 类：
 
-```Java
+``` Java
 class DurabilityMechanicsManager implements Listener {
 
     private DurabilityMechanicFactory factory;
@@ -200,7 +200,7 @@ class DurabilityMechanicsManager implements Listener {
 
 若要实现这个，我们需要将这些内容添加至插件的 `onEnabled` 部分：
 
-```Java
+``` Java
 Bukkit.getPluginManager().registerEvents(new Listener() {
     @EventHandler
     public void onMechanicRegister(OraxenNativeMechanicsRegisteredEvent event) {
@@ -220,12 +220,12 @@ Bukkit.getPluginManager().registerEvents(new Listener() {
 
 ::: info 提示
 因为 `ItemModifier`，你能够通过自定义机制修改物品。
-```Java
+``` Java
 item -> item.setCustomTag(NAMESPACED_KEY,
                         PersistentDataType.INTEGER, section.getInt("value"))
 ```
 你也可以用相似的方式修改纹理包：
-```Java
+``` Java
 ResourcePack.addModifiers(packFolder -> {/* 修改内容 */});
 ```
 :::

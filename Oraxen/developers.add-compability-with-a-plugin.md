@@ -19,7 +19,7 @@
 
 ### 第一步：创建一个兼容类
 
-```Java
+``` Java
 import io.lumine.xikage.mythicmobs.MythicMobs;
 import io.lumine.xikage.mythicmobs.api.bukkit.events.MythicDropLoadEvent;
 import io.th0rgal.oraxen.compatibilities.CompatibilityProvider;
@@ -36,7 +36,7 @@ public class MythicMobsCompatibility extends CompatibilityProvider<MythicMobs>{
 
 ### 第二步：将兼容类添加至 Oraxen
 
-```Java
+``` Java
 import io.th0rgal.oraxen.compatibilities.CompatibilitiesManager;
 import org.bukkit.plugin.java.JavaPlugin;
 

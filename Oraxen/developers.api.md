@@ -19,13 +19,13 @@ Oraxen 围绕 `ItemsBuilder` 类构建，允许你快速创建物品，在插件
 
 #### 从 Oraxen ID 获取 ItemBuilder
 
-```Java
+``` Java
 OraxenItems.getItemById(itemID); // where itemID is a section in items configurations
 ```
 
 #### 检查 Oraxen ID 是否存在
 
-```Java
+``` Java
 OraxenItems.isAnItem(itemID);
 ```
 
@@ -33,7 +33,7 @@ OraxenItems.isAnItem(itemID);
 
 你可以用这个方法检查某个物品是否为 Oraxen 物品（如果不存在对应的 Oraxen ID，则这个方法会返回 null）。
 
-```Java
+``` Java
 OraxenItems.getIdByItem(itemstack);
 ```
 
@@ -43,13 +43,13 @@ OraxenItems.getIdByItem(itemstack);
 
 在指定位置放置 Oraxen 方块：
 
-```Java
+``` Java
 OraxenBlocks.place(itemID, location)
 ```
 
 在指定位置放置 Oraxen 家具，可选择玩家对象用于调整朝向：
 
-```Java
+``` Java
 OraxenFurniture.place(itemID, location, @Nullable player)
 ```
 
@@ -57,7 +57,7 @@ OraxenFurniture.place(itemID, location, @Nullable player)
 
 #### 获取 assets/ 文件夹
 
-```Java
+``` Java
 ResourccePack.getAssetsFolder();
 ```
 
