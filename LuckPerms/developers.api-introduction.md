@@ -45,7 +45,7 @@ API 成品可以在 [Maven 中心](http://central.sonatype.org/)的仓库中找�
 
 如果你正在使用 Maven，将这些内容添加至 POM 的 `dependencies` 部分即可。
 
-```XML
+``` XML
 <dependencies>
     <dependency>
         <groupId>net.luckperms</groupId>
@@ -102,7 +102,7 @@ API 示例的根为 `LuckPerms`，在对 API 做任何事之前都需要先生�
 
 插件启用后，Bukkit 的 ServicesManager 会提供一个 `LuckPerms` 的实例。（只在 Bukkit 上有效！）
 
-```Java
+``` Java
 RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
 if (provider != null) {
     LuckPerms api = provider.getProvider();
@@ -113,7 +113,7 @@ if (provider != null) {
 
 插件启用后，Sponge 的 ServicesManager 会提供一个 `LuckPerms` 的实例。（只在 Sponge 上有效！）
 
-```Java
+``` Java
 Optional<ProviderRegistration<LuckPerms>> provider = Sponge.getServiceManager().getRegistration(LuckPerms.class);
 if (provider.isPresent()) {
     LuckPerms api = provider.get().getProvider();
@@ -125,7 +125,7 @@ if (provider.isPresent()) {
 插件启用后，`LuckPermsProvider` 会提供一个 `LuckPerms` 的实例。（全平台通用）
 **注意：**若 API 未载入，则这个方法会抛出一个 `IllegalStateException`。
 
-```Java
+``` Java
 LuckPerms api = LuckPermsProvider.get();
 ```
 
@@ -157,7 +157,7 @@ LuckPerms api = LuckPermsProvider.get();
 
 为了便于解释，我们从 `ActionLogger` 类中拿出这个方法：
 
-```Java
+``` Java
 CompletableFuture<ActionLog> getLog();
 ```
 
@@ -165,7 +165,7 @@ CompletableFuture<ActionLog> getLog();
 
 如果我们的方法调用已经是异步（如果我们调用的方法来自于异步定时任务），那么我们就可以完全以异步对象将其去掉。
 
-```Java
+``` Java
 /*
   Calling this method "requests" an ActionLog from the API.
   
@@ -191,7 +191,7 @@ ActionLog log = logFuture.join();
 
 若我们需要在服务器主线程上使用实例，那么服务器主线程上会产生一个特殊的任务执行器传递给回调。
 
-```Java
+``` Java
 // Create an executor that will run our callback on the server thread.
 Executor executor = runnable -> Bukkit.getScheduler().runTask(plugin, runnable);
 
@@ -211,7 +211,7 @@ logFuture.whenCompleteAsync(new BiConsumer<ActionLog, Throwable>() { // can be r
 
 如果你不关心报错，那么这个还可以进一步简化：
 
-```Java
+``` Java
 logFuture.thenAcceptAsync(log -> { /* Use the log for something */ }, executor);
 ```
 

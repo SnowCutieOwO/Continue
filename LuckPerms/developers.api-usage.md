@@ -36,7 +36,7 @@
 
 检查权限组归属可以通过 hasPermission 检查实现。
 
-```Java
+``` Java
 public static boolean isPlayerInGroup(Player player, String group) {
     return player.hasPermission("group." + group);
 }
@@ -48,7 +48,7 @@ public static boolean isPlayerInGroup(Player player, String group) {
 
 我们可以用上述的方法在“可能”的权限组中找到玩家所处的组。
 
-```Java
+``` Java
 public static String getPlayerGroup(Player player, Collection<String> possibleGroups) {
     for (String group : possibleGroups) {
         if (player.hasPermission("group." + group)) {
@@ -84,14 +84,14 @@ public static String getPlayerGroup(Player player, Collection<String> possibleGr
 
 非常简单，就像这样...
 
-```Java
+``` Java
 Player player = ...;
 User user = luckPerms.getPlayerAdapter(Player.class).getUser(player);
 ```
 
 如果你只有 `UUID` 的话...
 
-```Java
+``` Java
 User user = luckPerms.getUserManager().getUser(uuid);
 ```
 
@@ -107,7 +107,7 @@ User user = luckPerms.getUserManager().getUser(uuid);
 
 我们可以在这个异步对象上施加一个回调来应用操作。
 
-```Java
+``` Java
 UserManager userManager = luckPerms.getUserManager();
 CompletableFuture<User> userFuture = userManager.loadUser(uniqueId);
 
@@ -128,7 +128,7 @@ userFuture.thenAcceptAsync(user -> {
 
 第一个选择的代码会像这样...
 
-```Java
+``` Java
 public User giveMeADamnUser(UUID uniqueId) {
     UserManager userManager = luckPerms.getUserManager();
     CompletableFuture<User> userFuture = userManager.loadUser(uniqueId);
@@ -143,7 +143,7 @@ public User giveMeADamnUser(UUID uniqueId) {
 
 在理想环境下，我们可以实现如下的代码而不需考虑任何后果。
 
-```Java
+``` Java
 public boolean isAdmin(UUID who) {
     User user = luckPerms.getUserManager().loadUser(who);
 
@@ -164,7 +164,7 @@ public void informIfAdmin(CommandSender sender, UUID who) {
 
 解决方法？异步往死里叠！
 
-```Java
+``` Java
 public CompletableFuture<Boolean> isAdmin(UUID who) {
     return luckPerms.getUserManager().loadUser(who)
         .thenApplyAsync(user -> {
@@ -201,7 +201,7 @@ public void informIfAdmin(CommandSender sender, UUID who) {
 
 只需...
 
-```Java
+``` Java
 Group group = luckPerms.getGroupManager().getGroup(groupName);
 if (group == null) {
     // group doesn't exist.
@@ -220,7 +220,7 @@ group.doSomething(...);
 
 在对玩家/权限组/路线做出改动以后，你需要保存变动至存储提供方。方法非常简单。
 
-```Java
+``` Java
 public void addPermission(User user, String permission) {
     // Add the permission
     user.data().add(Node.builder(permission).build());
@@ -232,7 +232,7 @@ public void addPermission(User user, String permission) {
 
 这还有一个非常方便的 `modify*` 方法，可以为你处理数据的载入与保存。
 
-```Java
+``` Java
 public void addPermission(UUID userUuid, String permission) {
     // Load, modify, then save
     luckPerms.getUserManager().modifyUser(userUuid, user -> {
@@ -278,7 +278,7 @@ public void addPermission(UUID userUuid, String permission) {
 
 若你只有一个“键”且不确定它属于哪一类接地那，你可以直接使用 `Node.builder()`
 
-```Java
+``` Java
 // build any type of node
 Node node = Node.builder("some.node.key").build();
 
@@ -322,7 +322,7 @@ DisplayNameNode node = DisplayNameNode.builder("SeniorModerator").build();
 
 如，
 
-```Java
+``` Java
 Node negated = node.toBuilder().value(false).build();
 ```
 
@@ -337,7 +337,7 @@ Node negated = node.toBuilder().value(false).build();
 ### `.getNodes()`
 
 方法签名为：
-```Java
+``` Java
 Collection<Node> getNodes()
 ```
 
@@ -349,7 +349,7 @@ Collection<Node> getNodes()
 
 你可以使用 Stream API 来筛选你需要的数据。例如，如果你想要获取持有者继承的权限组列表，你可以这样写：
 
-```Java
+``` Java
 Set<String> groups = user.getNodes().stream()
     .filter(NodeType.INHERITANCE::matches)
     .map(NodeType.INHERITANCE::cast)
@@ -359,7 +359,7 @@ Set<String> groups = user.getNodes().stream()
 
 你也可以将这件事变得更简单，比如将节点类型以字段的方式传递！
 
-```Java
+``` Java
 Set<String> groups = user.getNodes(NodeType.INHERITANCE).stream()
     .map(InheritanceNode::getGroupName)
     .collect(Collectors.toSet());
@@ -367,7 +367,7 @@ Set<String> groups = user.getNodes(NodeType.INHERITANCE).stream()
 
 甚至执行更复杂的操作，例如找到指定服务器中优先级最大的临时前缀。
 
-```Java
+``` Java
 int maxWeight = user.getNodes(NodeType.PREFIX).stream()
     .filter(Node::hasExpiry)
     .filter(n -> n.getContexts().getAnyValue(DefaultContextKeys.SERVER_KEY)
@@ -383,7 +383,7 @@ int maxWeight = user.getNodes(NodeType.PREFIX).stream()
 
 方法签名为：
 
-```Java
+``` Java
 SortedSet<Node> getDistinctNodes();
 ```
 
@@ -399,7 +399,7 @@ SortedSet<Node> getDistinctNodes();
 
 这里是向指定玩家添加权限的示例：
 
-```Java
+``` Java
 DataMutateResult result = user.data().add(Node.builder("your.node.here").build());
 ```
 
@@ -434,7 +434,7 @@ DataMutateResult result = user.data().add(Node.builder("your.node.here").build()
 
 一种 ContextSet 的*不可变*实现。你可以通过多种方式获得这样的一个实例。
 
-```Java
+``` Java
 ImmutableContextSet set1 = ImmutableContextSet.empty();  
 
 ImmutableContextSet set2 = ImmutableContextSet.of("world", "world_nether");
@@ -455,7 +455,7 @@ ImmutableContextSet set4 = builder.build();
 
 你当然也可以通过首次创建（或获得）一个 `MutableContextSet` 并将其转化来获得该对象。
 
-```Java
+``` Java
 MutableContextSet set = MutableContextSet.create();
 set.add("something", "something");
 
@@ -466,7 +466,7 @@ ImmutableContextSet immutableSet = set.immutableCopy();
 
 一种 ContextSet 的*可变*实现。你可以通过多种方式获得这样的一个实例。
 
-```Java
+``` Java
 MutableContextSet set1 = MutableContextSet.create();
 set1.add("world", "text");
 
@@ -482,7 +482,7 @@ set3.removeAll("region");
 ```
 若要编辑一个 `ImmutableContextSet`，你可以将其复制为“可变”对象。
 
-```Java
+``` Java
 ImmutableContextSet set = ImmutableContextSet.of("something", "something");
 
 MutableContextSet mutableCopy = set.mutableCopy();
@@ -512,7 +512,7 @@ mutableCopy.add("something", "something-else");
 例如，如果我想要为玩家的游戏模式提供情境，从而让玩家只能在创造模式下设置权限，我按上文叙述的创建了一个计算器。
 `estimatePotentialContexts` 方法可以被添加，但不是必要的，它一般用于在 TAB 补全中显示情境输入建议。
 
-```Java
+``` Java
 public class CustomCalculator implements ContextCalculator<Player> {
 
     @Override  
@@ -533,7 +533,7 @@ public class CustomCalculator implements ContextCalculator<Player> {
 
 然后再使用如下方法将其注册
 
-```Java
+``` Java
 luckPerms.getContextManager().registerCalculator(new CustomCalculator());
 ```
 
@@ -542,7 +542,7 @@ luckPerms.getContextManager().registerCalculator(new CustomCalculator());
 你可以通过 `ContextManager` 查询操作对象的“活跃”情境/搜索选项。
 若你已经有了一个操作对象的实力，你可以直接使用这个。
 
-```Java
+``` Java
 Player player = ...;
 
 ImmutableContextSet contextSet = luckPerms.getContextManager().getContext(player);
@@ -550,14 +550,14 @@ QueryOptions queryOptions = luckPerms.getContextManager().getQueryOptions(player
 ```
 若你只有一个 `User`，你还是可以进行查询操作，但是只会在操作对象（玩家）在线时返回结果。
 
-```Java
+``` Java
 Optional<ImmutableContextSet> contextSet = luckPerms.getContextManager().getContext(user);
 Optional<QueryOptions> queryOptions = luckPerms.getContextManager().getQueryOptions(user);
 ```
 
 如果你非常需要获得一个实例，你可以回到服务器的“静态”情境/查询选项。（这些都是用无视传递的操作对象提供了情境/查询选项的 calculators 形成的。）
 
-```Java
+``` Java
 User user = ...;
 
 // This is the easy way...
@@ -590,7 +590,7 @@ QueryOptions queryOptions = cm.getQueryOptions(user).orElse(cm.getStaticQueryOpt
 
 若你有一个 `Player` 平台实例（如 *org.bukkit.entity.player*），你可以使用 `PlayerAdapter` 来获取缓存数据。
 
-```Java
+``` Java
 Player player = ...;
 PlayerAdapter<Player> adapter = luckperms.getPlayerAdapter(Player.class);
 
@@ -600,7 +600,7 @@ CachedMetaData metaData = adapter.getMetaData(player);
 
 若你已经有了一个 LuckPerms 的 `User` 或 `Group` 示例，你可以使用下列方法来获取缓存数据。
 
-```Java
+``` Java
 // Will attempt to use the most appropriate currect query options for the User
 CachedPermissionData permissionData = user.getCachedData().getPermissionData();
 CachedMetaData metaData = user.getCachedData().getMetaData();
@@ -614,7 +614,7 @@ CachedMetaData metaData = user.getCachedData().getMetaData(queryOptions);
 
 ### 进行权限检查
 
-```Java
+``` Java
 // run a permission check!
 Tristate checkResult = permissionData.checkPermission("some.permission.node");
 
@@ -624,7 +624,7 @@ boolean checkResultAsBoolean = checkResult.asBoolean();
 
 我们可以把这些放在一起来创建一个能够在传递 `User` 和 `String`（权限）后执行一次“普通”权限检查方法。
 
-```Java
+``` Java
 public boolean hasPermission(User user, String permission) {
     return user.getCachedData().getPermissionData().checkPermission(permission).asBoolean();
 }
@@ -632,14 +632,14 @@ public boolean hasPermission(User user, String permission) {
 
 ### 返回前/后缀
 
-```Java
+``` Java
 String prefix = user.getCachedData().getMetaData().getPrefix();
 String suffix = user.getCachedData().getMetaData().getSuffix();
 ```
 
 ### 返回元数据
 
-```Java
+``` Java
 String metaValue = user.getCachedData().getMetaData().getMetaValue("some-key");
 ```
 
@@ -655,7 +655,7 @@ String metaValue = user.getCachedData().getMetaData().getMetaValue("some-key");
 
 为了表述这个，让我们先给玩家存储一个“level”元数据组。
 
-```Java
+``` Java
 public void setLevel(Player player, int level) {
     // obtain a User instance (by any means! see above for other ways)
     User user = luckPerms.getPlayerAdapter(Player.class).getUser(player);
@@ -678,7 +678,7 @@ public void setLevel(Player player, int level) {
 
 在设置元数据后，查询就简单得多了！
 
-```Java
+``` Java
 public int getLevel(Player player) {
     // obtain CachedMetaData - the easiest way is via the PlayerAdapter
     // of course, you can get it via a User too if the player is offline.
@@ -707,7 +707,7 @@ LuckPerms 支持的事件被定义为继承自 [`LuckPermsEvent`](https://github
 
 为自己的监听器创建一个单独的类是个好点子。这里的示例类描述了如何订阅事件。
 
-```Java
+``` Java
 import net.luckperms.api.event.EventBus;
 import net.luckperms.api.event.log.LogPublishEvent;
 import net.luckperms.api.event.user.UserLoadEvent;
