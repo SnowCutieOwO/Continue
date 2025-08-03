@@ -45,7 +45,7 @@
 事实上，只有 `player` 对象默认可用。**以特定身份如 `CONSOLE`（控制台）执行时将不可用。**
 
 若要获取正在用于检查条件的玩家，你可以这样做：
-```Java
+``` Java
 Player p = facts.get("player")
 ```
 这里另一个重要的方法是 `ConditionRule#getNeededValues()`。该方法会返回一个 `NeededValue` 对象，表示了条件所需的额外参数。你可以将它当做玩家所需提供额外参数的设置。    
