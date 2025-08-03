@@ -44,7 +44,7 @@ dependencies {
 
 ## 获取 API 实例
 若要使用 API，你需要先获得一个 API 实例。插件的示例类可在下文参考。
-```Java
+``` Java
 import org.black_ixx.PlayerPointsAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
