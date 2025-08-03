@@ -39,7 +39,7 @@ Fabric 使用回调来处理事件。HuskHomes 提供了与上述事件相同的
 
 ### HuskHomes 和 Fabric 回调
 
-```Java
+``` Java
 HomeCreateCallback.EVENT.register((player, home) -> {
     // Do something with the player and home
     return ActionResult.SUCCESS; // Return an appropriate ActionResult

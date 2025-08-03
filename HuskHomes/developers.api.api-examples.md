@@ -22,7 +22,7 @@ HuskHomes API 为下列内容提供了方法与类：
 * 除非你的插件以 HuskHomes 为硬依赖，否则你不应该将 HuskHomes API 调用至你的主类中，否则在本插件未安装时，你的插件将会弹出 `ClassNotFoundException` 报错。
 
 ::: details 创建对接类
-```Java
+``` Java
 public class HuskHomesAPIHook {
 
     public HuskHomesAPIHook() {
@@ -38,7 +38,7 @@ public class HuskHomesAPIHook {
 * 这段代码用来确保你的 HuskHomes 插件在你制作的插件读取 API 之前已经载入。
 
 ::: details 实例化对接
-```Java
+``` Java
 public class MyPlugin extends JavaPlugin {
 
     public HuskHomesAPIHook huskHomesHook;
@@ -59,7 +59,7 @@ public class MyPlugin extends JavaPlugin {
 
 ::: details 获取 API 实例
 
-```Java
+``` Java
 import net.william278.huskhomes.api.HuskHomesAPI;
 
 public class HuskHomesAPIHook {
@@ -113,7 +113,7 @@ public class HuskHomesAPIHook {
 
 ::: details 将一个玩家设置的家传送点输出在后台上
 
-```Java
+``` Java
 public class HuskHomesAPIHook {
 
     private final HuskHomesAPI huskHomesAPI;
@@ -153,7 +153,7 @@ public class HuskHomesAPIHook {
 
 ::: details 创建家传送点
 
-```Java
+``` Java
 public class HuskHomesAPIHook {
 
     private final HuskHomesAPI huskHomesAPI;
@@ -184,7 +184,7 @@ API 提供了一种方法来获取 `TeleportBuilder`，可以用于构建 `Telep
 
 ::: details 构建传送
 
-```Java
+``` Java
 public class HuskHomesAPIHook {
 
     private final HuskHomesAPI huskHomesAPI;
@@ -221,7 +221,7 @@ public class HuskHomesAPIHook {
 
 ::: details 构建一个延时传送
 
-```Java
+``` Java
 public class HuskHomesAPIHook {
 
     private final HuskHomesAPI huskHomesAPI;
