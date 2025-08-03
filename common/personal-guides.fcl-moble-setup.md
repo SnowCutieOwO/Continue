@@ -434,48 +434,75 @@ FoldCraftLauncher — 整合包一键安装版
 
 ### 6. launcher_rules.json（启动器规则）
 
+::: tip
+
+所有游戏设置规则只能填入 `launcherRules` 中，不能加在其他地方。\
+请严格按照 Json 文件语法，若出现错误则整个文件都不会识别。\
+请注意，只要是数组数据结构的一律有使用优先级；顺序越靠前越优先使用。\
+如果某个版本有多个适用规则，只读取首个有效的，其余均忽略。
+支持使用正则表达式对游戏名称（即 `minecraft/versions` 目录下的文件夹名称）进行匹配筛选。
+如 `^1\\.17(\\.\\d{1,2})?$` 可匹配所有以 `1.17` 开头的游戏目录，用于启动前进行校验。
+
+:::
+
+#### 内存项说明
+
+`minMemory` 项的值不能低于 `1024` ，否则该项检测会被忽略。
+
+#### 渲染器项说明
+
+##### 内置渲染器
+
+::: details 启动器内置的渲染器
+
+|UUID|渲染器名称|
+|---|---|
+|f7e985d8-6d4c-f63c-d9f1-06074dab823a|Holy-GL4ES，Custom|
+|417a7a93-d9b4-98b9-ec6e-1ea400259c1f|VirGLRenderer|
+|0fb718e4-64e3-83d4-a974-8204ea1d9f9f|VGPU|
+|18d93f17-ff53-a319-fa61-58709a77bf87|Vulkan Zink|
+|8d427e6c-9d22-2d19-db0c-3b9ac2c1543f|Freedreno|
+|1a46495a-5503-eaf5-9e3d-1ba08626b95b|GL4ES+|
+
+在 `useRenderer` 字段中，需填写上述渲染器对应的 UUID ，而非渲染器名称。
+
+:::
+
+##### 自定义渲染器
+需要在 `useRenderer` 字段中填写对象型数据，详细格式如下：
+
+``` Json
+{"packageName": "ren.test.com", "name": "Renderer name"}
+```
+|Key|Key值|
+|---|---|
+|packageName|app的包名|
+|name|渲染器别名|
+
+两个key的值必须有合法的，不合法的将不被解析；获取包名方式请百度，这里不会介绍如何获取。
+
+#####  forceChange 说明
+开启 `forceChange` 选项后，即使当前使用的渲染器已包含在 `useRenderer` 列表中
+启动器在进行规则检查时仍会从列表中的第一个渲染器开始依次检查，直到找到一个可用的渲染器，并强制设置为该渲染器。
+
 :::: details 默认配置
 
 ``` json title="launcher_rules.json"
 {
-  "formatSpecification": {
-    "重要说明1": "所有游戏设置规则只能在『launcherRules』里面写，不能在其他任何地方写",
-    "重要说明2": "请严格按照Json文件格式编写，若出现错误则任何规则都不会识别",
-    "重要说明3": "请注意，只要是数组数据结构的一律有使用优先级；也就是谁在前谁就会优先使用",
-    "重要说明4": "如果某个版本有多个适用规则则只会读取第一个有效的，其余均无效",
-    "内存项说明": {
-      "说明1": "『minMemory』项的值不能低于“1024”，否则该项检测会自动失效"
-    },
-    "渲染器项说明": {
-      "说明1": "截至2025年7月9日，启动器内置的渲染器共包含以下6类：",
-      "说明1-1": "f7e985d8-6d4c-f63c-d9f1-06074dab823a『Holy-GL4ES』，6『Custom』",
-      "说明1-2": "417a7a93-d9b4-98b9-ec6e-1ea400259c1f『VirGLRenderer』",
-      "说明1-3": "0fb718e4-64e3-83d4-a974-8204ea1d9f9f『VGPU』",
-      "说明1-5": "18d93f17-ff53-a319-fa61-58709a77bf87『Vulkan Zink』",
-      "说明1-6": "8d427e6c-9d22-2d19-db0c-3b9ac2c1543f『Freedreno』",
-      "说明1-7": "1a46495a-5503-eaf5-9e3d-1ba08626b95b『GL4ES+』",
-      "说明2": "在『useRenderer』字段中，需填写上述渲染器对应的UUID，而非渲染器名称",
-      "说明3": "若是自定义渲染器，则需要在『useRenderer』字段中填写对象型数据，详细格式如下：",
-      "说明3-1": {"packageName": "ren.test.com", "name": "Renderer name"},
-      "说明3-2": "『packageName』是app的包名，『name』是该渲染器别名",
-      "说明3-3": "且这两个key的值必须有合法的，不合法的将不被解析；获取包名方式请百度，这里不会介绍如何获取"
-    },
-    "Java项说明": {
-      "说明1": "该功能暂未启用，预计下周正式启用！"
-    }
-  },
   "launcherRules": {
-    "1.17": {
+    "^1\\.17(\\.\\d{1,2})?$": {
       "memory": {
         "minMemory": 3072,
         "tip": "内存最低要求为“${minMemory}MB”\n由于你的设备总运行内存只有“${totalMemory}GB”，不满足最低配置要求！"
       },
       "renderer": {
-        "useRenderer": [{"packageName": "com.fcl.plugin.mobileglues", "name": "MobileGlues"}],
+        "forceChange": false,
+        "useRenderer": [{"packageName": "com.fcl.plugin.mobileglues", "name": "MobileGlues"}, "f7e985d8-6d4c-f63c-d9f1-06074dab823a", "417a7a93-d9b4-98b9-ec6e-1ea400259c1f"],
         "downloadURL": "https://icraft.ren:90",
         "tip": "当前所使用的渲染器为『${setRenderer}』，要求的渲染器必须为『${requiredRenderer}』\n\n检测到您未安装该渲染器，请点击右下角按钮安装额外渲染器，否则游戏将不能启动！！！"
       },
       "java": {
+        "forceChange": false,
         "useJava": ["jre8"],
         "downloadURL": "https://icraft.ren:90",
         "tip": "当前所使用的Java为“${useJava}”，要求必须是使用如下Java才可以启动游戏：\n${requiredJava}"
