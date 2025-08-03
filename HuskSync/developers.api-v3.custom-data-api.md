@@ -25,7 +25,7 @@ HuskSync 允许你以现有的通用 DataSnapshot 格式保存并同步数据。
 * 在 Bukkit 服务端上，你必须创建一个带有 `extends BukkitData` 的类。这个类有方法实现：`#apply(BukkitUser, BukkitHuskSync)`，在数据需要应用至玩家时会被调用。
 * 你可以使用 `BukkitUser` 类来获取玩家的 `Player` 对象。请避免使用 `BukkitHuskSync`，因为这是与插件内核交互用的。
 
-```Java
+``` Java
 // An example of a BukkitData class that you could use in a cosmetic plugin to store player particle data.
 public class LoginParticleData extends BukkitData {
     
@@ -57,7 +57,7 @@ public class LoginParticleData extends BukkitData {
 
 #### 代码示例——Adaptable LoginParticleData 类
 
-```Java
+``` Java
 // We've implemented Adaptable here to make it easier to serialize and deserialize our data using Gson.
 public class LoginParticleData extends BukkitData implements Adaptable {
 
@@ -90,7 +90,7 @@ public class LoginParticleData extends BukkitData implements Adaptable {
 * 若你通过上述方法实现了 `Adaptable` 接口，那么 HuskSync 也提供了 `BukkitSerializer.Json<T extends Adaptable>` 类，便于你继承以创建一个使用 Gson 的简单序列化工具。
     * 这是创建序列化方法的推荐方式，即便如此，若你在着手 NBT 数据相关的内容，你可能需要实现一个带有你自己方法的基础序列化方法接口。
 
-```Java
+``` Java
 // An example of a BukkitSerializer class that you could use in a cosmetic plugin to store player particle data.
 public class LoginParticleSerializer extends BukkitSerializer.Json<LoginParticleData> implements Serializer<LoginParticleData> {
     
@@ -109,7 +109,7 @@ public class LoginParticleSerializer extends BukkitSerializer.Json<LoginParticle
     * 使用 `Identifer#from(String, String)` 或 `Identifier#from(Key)` 来从键值对或 adventure `key` 对象中创建一个标识。
 * 确保你注册了序列化方法的插件在每个服务器上安装，这样 HuskSync 才能同步数据。
 
-```Java
+``` Java
 // Create an identifier for our data (you may wish to store this somewhere where it can be accessed statically)
 public static Identifier LOGIN_PARTICLES_ID = Identifier.from("myplugin", "login_particles");
 
@@ -126,7 +126,7 @@ huskSyncAPI.registerSerializer(LOGIN_PARTICLES_ID, new LoginParticleSerializer(H
     * 这个方法会将数据应用至玩家，并将数据存储至玩家插件自定义数据表，来允许数据之后的获取或保存至快照。
 * 在注册数据类型的服务器上创建的快照现在会带着我们的数据并在服务器之间同步！
 
-```Java
+``` Java
 // Create an instance of our data
 LoginParticleData loginParticleData = new LoginParticleData("FIREWORKS_SPARK", 10);
 
@@ -141,7 +141,7 @@ LoginParticleData loginParticleData = (LoginParticleData) huskSyncAPI.getUser(pl
 
 向 `DataSaveEvent` 添加监听器并使用 `#editData` Consumer 方法来向标准的 DataSave 中添加自定义数据。这会在数据保存时将应用至玩家的数据持久化（在玩家登出、服务器关闭、世界保存时触发）
 
-```Java
+``` Java
 @EventHandler
 public void onDataSave(BukkitDataSaveEvent event) {
     event.editData((unpacked) -> unpacked.setData(LOGIN_PARTICLES_ID, new LoginParticleData("FIREWORKS_SPARK", 10)));

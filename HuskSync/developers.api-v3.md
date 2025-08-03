@@ -48,7 +48,7 @@ HuskSync API 仅对下列平台开放使用：
 #### Maven 安装详情
 
 将仓库按如下格式添加至你的 `pom.xml`。你也可以在末尾指定 `/snapshots` 来获取最新版的开发构建（但不推荐）
-```XML
+``` XML
 <repositories>
     <repository>
         <id>william278.net</id>
@@ -98,7 +98,7 @@ softdepend: # 或者在这里用 'depend' 代替，取决于你想将 HuskSync �
 
 * 除非你的插件完全依赖于 HuskSync，否则不应将 HuskSync API 直接在主类中调用，如果 HuskSync 尚未安装，在这种情况下就会抛出 `ClassNotFoundException` 错误。
 
-```Java
+``` Java
 public class HuskSyncAPIHook {
 
     public HuskSyncAPIHook() {
@@ -112,7 +112,7 @@ public class HuskSyncAPIHook {
 
 * 在与 API 对接类进行交互前确认是否安装了 HuskSync
 
-```Java
+``` Java
 public class MyPlugin extends JavaPlugin {
 
     public HuskSyncAPIHook huskSyncAPIHook;
@@ -131,7 +131,7 @@ public class MyPlugin extends JavaPlugin {
 * 你现在可以通过调用 `HuskSyncAPI#getInstance()` 方法获取 API 实例
 * 若是在 Bukkit 平台，你也可以调用 `BukkitHuskSyncAPI#getBukkitInstance()` 来获取 Bukkit 平台的 API 实例（推荐）
 
-```Java
+``` Java
 import net.william278.husksync.api.HuskSyncAPI;
 
 public class HuskSyncAPIHook {

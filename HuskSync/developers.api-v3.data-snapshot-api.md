@@ -28,7 +28,7 @@ HuskSync 3.0 提供了获取、创建、编辑与删除指定玩家一段时间�
 
 ### 代码示例——通过 UUID 获取玩家对象
 
-```Java
+``` Java
 // getUser() returns a CompletableFuture supplying an Optional<User>
 huskSyncAPI.getUser(uuid).thenAccept(optionalUser -> {
     // Check if we found a user by that UUID either online or on the database
@@ -48,7 +48,7 @@ huskSyncAPI.getUser(uuid).thenAccept(optionalUser -> {
 
 ### 代码示例——获取在线玩家
 
-```Java
+``` Java
 // Get an online user
 OnlineUser user = huskSyncAPI.getUser(player);
 System.out.println("Hello, %s!", user.getUsername());
@@ -63,7 +63,7 @@ System.out.println("Hello, %s!", user.getUsername());
 
 #### 代码示例——获取玩家当前数据快照
 
-```Java
+``` Java
 // Get a user's current data
 huskSyncAPI.getCurrentData(user).thenAccept(optionalSnapshot -> {
     if (optionalSnapshot.isEmpty()) {
@@ -83,7 +83,7 @@ huskSyncAPI.getCurrentData(user).thenAccept(optionalSnapshot -> {
 
 #### 代码示例——获取用户最后保存的数据快照
 
-```Java
+``` Java
 // Get a user's current data
 huskSyncAPI.getCurrentData(user).thenAccept(optionalSnapshot -> {
     if (optionalSnapshot.isEmpty()) {
@@ -102,7 +102,7 @@ huskSyncAPI.getCurrentData(user).thenAccept(optionalSnapshot -> {
 
 #### 代码示例——获取玩家已保存的数据快照
 
-```Java
+``` Java
 // Get a user's saved snapshots
 huskSyncAPI.getSnapshots(user).thenAccept(optionalSnapshots -> {
     if (optionalSnapshots.isEmpty()) {
@@ -124,7 +124,7 @@ huskSyncAPI.getSnapshots(user).thenAccept(optionalSnapshots -> {
 * 编辑方法 `HuskSyncAPI#editPackedSnapshot(DataSnapshot.Packed`、`Consumer<DataSnapshot.Unpacked>)` 提供了额外的解包、编辑操作，并能将 `DataSnapshot` 对象重新打包。
 
 #### 代码示例——数据的打包与解包
-```Java
+``` Java
 // Get a user's current data
 huskSyncAPI.getCurrentData(user).thenAccept(optionalSnapshot -> {
     if (optionalSnapshot.isEmpty()) {
@@ -181,7 +181,7 @@ huskSyncAPI.getCurrentData(user).thenAccept(optionalSnapshot -> {
 
 #### 代码示例——获取并设置玩家的生命值
 
-```Java
+``` Java
 // Get a user's current data
 huskSyncAPI.getCurrentData(user).thenAccept(optionalSnapshot -> {
     if (optionalSnapshot.isEmpty()) {
@@ -232,7 +232,7 @@ huskSyncAPI.getCurrentData(user).thenAccept(optionalSnapshot -> {
 
 #### 代码示例——编辑玩家的生命值
 
-```Java
+``` Java
 // Edit a user's current data
 huskSyncAPI.editCurrentData(user, snapshot -> {
     // Get the player's health
@@ -264,7 +264,7 @@ huskSyncAPI.editCurrentData(user, snapshot -> {
 
 #### 代码示例——获取并编辑玩家的末影箱内容
 
-```Java
+``` Java
 // Get a user's current data
 huskSyncAPI.getCurrentData(user).thenAccept(optionalSnapshot -> {
     if (optionalSnapshot.isEmpty()) {
@@ -301,7 +301,7 @@ huskSyncAPI.getCurrentData(user).thenAccept(optionalSnapshot -> {
 
 #### 代码示例——编辑玩家背包
 
-```Java
+``` Java
 // Edit a user's current inventory
 huskSyncAPI.editCurrentInventory(user, inventory -> {
     // Get the player's inventory contents
@@ -324,7 +324,7 @@ huskSyncAPI.editCurrentInventory(user, inventory -> {
 
 #### 代码示例——编辑玩家的位置
 
-```Java
+``` Java
 // Edit a user's current data
 huskSyncAPI.editCurrentData(user, snapshot -> {
     // Get the player's location
@@ -353,7 +353,7 @@ huskSyncAPI.editCurrentData(user, snapshot -> {
 
 #### 代码示例——编辑玩家成就
 
-```Java
+``` Java
 // Edit a user's current data
 huskSyncAPI.editCurrentData(user, snapshot -> {
     // Get the player's advancements
@@ -392,7 +392,7 @@ huskSyncAPI.editCurrentData(user, snapshot -> {
 * 你可以通过 `HuskSyncAPI#createSnapshot(OnlineUser)` 创建一个新快照，这会返回一个以 `SaveCause.API` 为理由创建的 `DataSnapshot.Packed`。
 
 #### 代码示例——将玩家当前数据捕获并创建新快照
-```Java
+``` Java
 // Create a new snapshot from a player's current data
 final DataSnapshot.Packed data = huskSyncAPI.createSnapshot(user);
 
@@ -412,7 +412,7 @@ huskSyncAPI.addSnapshot(edited);
 
 #### 代码示例——从零创建新快照
 
-```Java
+``` Java
 // Create a new snapshot from scratch
 final DataSnapshot.Builder builder = huskSyncAPI.snapshotBuilder();
 
@@ -440,7 +440,7 @@ huskSyncAPI.addSnapshot(user, packed);
 
 ### 代码示例——删除快照
 
-```Java
+``` Java
 // Delete a snapshot
 huskSyncAPI.deleteSnapshot(user, uuid).thenAccept(success -> {
     if (success) {

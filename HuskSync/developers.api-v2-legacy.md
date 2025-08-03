@@ -22,7 +22,7 @@ API v2 已不再受支持且不与 HuskSync v3.0 兼容。见[数据快照 API](
 * HuskSync 有一个 `User` 对象，代表着特定玩家在数据库中保存的数据。你可以通过方法 `HuskSyncAPI#getUser(uuid)` 请求玩家数据。
 * 若你有一个在线的 `org.bukkit.Player` 对象，你可以使用方法 `BukkitPlayer#adapt(player)` 来获取一个 `OnlineUser` 对象（继承 `User`），以此代表一个已登入的玩家。
 
-```Java
+``` Java
 public class HuskSyncAPIHook {
 
     private final HuskSyncAPI huskSyncAPI;
@@ -63,7 +63,7 @@ public class HuskSyncAPIHook {
     * `UserData#getLocation();` - 玩家的位置数据，用于启用了同步位置数据的服务器
     * `UserData#getPersistentDataContainer();` - 玩家的持久化数据容器，包含了一个有键值的映射表
 
-```Java
+``` Java
 public class HuskSyncAPIHook {
 
     // ... //
@@ -102,7 +102,7 @@ public class HuskSyncAPIHook {
 * 相似地，`HuskSyncAPI#getPlayerInventory(user)` 和 `HuskSyncAPI#getPlayerEnderChest(user)` 方法可以更优雅地达到目的。请注意如果最后的 UserData 不包含 ItemData（译者注：原文似乎笔误，写成了 UserData），那么这里返回的 ItemData 将会是对应的空 ItemStack 数组。
 * 序列化和反序列化对药水效果同样可用。
 
-```Java
+``` Java
 public class HuskSyncAPIHook {
 
     // ... //
@@ -137,7 +137,7 @@ public class HuskSyncAPIHook {
 ```
 ### HuskSyncAPI#getPlayerInventory()
 
-```Java
+``` Java
 private void printInventoryItems(User user) {
     huskSyncAPI.getPlayerInventory(user).thenAccept(inventory -> {
         if (inventory.isPresent()) {
@@ -151,7 +151,7 @@ private void printInventoryItems(User user) {
 
 ### HuskSyncAPI#getPlayerInventory()
 
-```Java
+``` Java
 private void printEnderChestItems(User user) {
     huskSyncAPI.getPlayerEnderChest(user).thenAccept(enderChest -> {
         if (enderChest.isPresent()) {
@@ -170,7 +170,7 @@ private void printEnderChestItems(User user) {
 * 相似地，你可以使用 `HuskSyncAPI#setInventoryData(user, bukkitInventoryMap)` 来设置玩家背包内容，或使用 `HuskSyncAPI#setEnderChestData(user, itemStack[])` 来设置玩家的末影箱内容。
 * 更新 UserData 将会完全覆盖玩家当前的“活跃”数据。HuskSync 设计之初就不会追踪玩家的“活跃”数据，仅会在保存时产生数据的“快照”。换句话说，获取并更新用户数据有可能造成回档。
 
-```Java
+``` Java
 public class HuskSyncAPIHook {
 
     // Set a user's health to 20
