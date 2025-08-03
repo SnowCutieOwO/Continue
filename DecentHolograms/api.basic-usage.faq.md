@@ -10,31 +10,31 @@
 
 所以，在[获取悬浮字对象](api.basic-usage.dhapi.md#获取悬浮字)之后，将它的默认可见性设置为 `false`：
 
-```Java
+``` Java
 hologram.setDefaultVisibleState(false);
 ```
 
 在这之后，将能看见悬浮字的玩家通过这个方法设置：
 
-```Java
+``` Java
 hologram.setShowPlayer(player);
 ```
 
 你也可以将玩家移出可见列表：
 
-```Java
+``` Java
 hologram.removeShowPlayer(player);
 ```
 
 若你想要做到相反的操作 —— 只让特定玩家看不见悬浮字 —— 你可以通过 `setHidePlayer` 方法做到：
 
-```Java
+``` Java
 hologram.setHidePlayer(player);
 ```
 
 也有将玩家移出隐藏列表的方法：
 
-```Java
+``` Java
 hologram.removeHidePlayer(player);
 ```
 

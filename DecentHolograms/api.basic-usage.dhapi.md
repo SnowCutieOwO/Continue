@@ -11,7 +11,7 @@ DHAPI 类内的多种方法阐释
 
 最基础的代码看起来会像这样：
 
-```Java
+``` Java
 DHAPI.createHologram(String, Location);
 ```
 
@@ -24,7 +24,7 @@ DHAPI.createHologram(String, Location);
 
 若要让悬浮字变成永久状态，我们同样可以使用 `createHologram` 方法，但要在它的末尾加上一个布尔值：
 
-```Java
+``` Java
 DHAPI.createHologram(String, Location, boolean);
 ```
 
@@ -34,7 +34,7 @@ DHAPI.createHologram(String, Location, boolean);
 调用 `createHologram` 时若指定的悬浮字名称已存在，则会抛出一个错误。
 若要避免这种情况，请先在调用方法前检查相同的悬浮字是否已存在。
 
-```Java
+``` Java
 public void createHologram(String name, Location location){
    if(DHAPI.getHologram(name) != null)
         return;
@@ -49,13 +49,13 @@ public void createHologram(String name, Location location){
 `createHologram` 方法也有提供了一种设定初始内容的方法，可以覆盖配置文件中提供的默认文本。
 下为方法示例：
 
-```Java
+``` Java
 DHAPI.createHologram(String, Location, List<String>);
 ```
 
 当然，就像[第一个例子](#创建悬浮字)的那样，这不会创建一个持久显示的悬浮字。但是，肯定有方法能让我们这么做：
 
-```Java
+``` Java
 DHAPI.createHologram(String, Location, boolean, List<String>);
 ```
 就像[第二个例子](#创建永久悬浮字)那样，在这里填入 `true` 会让悬浮字能持久显示。
@@ -64,7 +64,7 @@ DHAPI.createHologram(String, Location, boolean, List<String>);
 
 若要通过这个类编辑悬浮字，首先你要获得一个 `Hologram` 实例。这可以通过 `getHologram` 方法实现：
 
-```Java
+``` Java
 DHAPI.getHologram(String);
 ```
 
@@ -76,7 +76,7 @@ DeceneHolograms 允许悬浮字有多页不同的文本。所以肯定有在悬�
 
 方法本身很容易看懂：
 
-```Java
+``` Java
 DHAPI.getHologramPage(Hologram, int);
 ```
 
@@ -94,7 +94,7 @@ DHAPI.getHologramPage(Hologram, int);
 
 在你获取了有效的 `HologramPage` 实例之后，你可以使用 `getHologramLine` 方法：
 
-```Java
+``` Java
 DHAPI.getHologramLine(HologramPage, int);
 ```
 
@@ -112,14 +112,14 @@ DHAPI.getHologramLine(HologramPage, int);
 
 为了将一行文本加入悬浮字，你需要使用 `addHologramLine` 方法。最基本的使用方式看起来会像这样：
 
-```Java
+``` Java
 DHAPI.addHologramLine(Hologram, String);
 ```
 
 这会向悬浮字的第一页添加一行文本。    
 如果你的如果你的悬浮字有很多页，并且你想要给除了第一页之外的其他页加上文本，你就可以用到下面这种方法：
 
-```Java
+``` Java
 DHAPI.addHologramLine(Hologram, int, String);
 ```
 
@@ -137,14 +137,14 @@ DHAPI.addHologramLine(Hologram, int, String);
 
 若要覆盖指定行文本，你可以使用下列方法：
 
-```Java
+``` Java
 DHAPI.setHologramLine(Hologram, int, String);
 ```
 
 `int` 处填入的应该为不小于 0 的整数，表示获取悬浮字的索引。需要注意的是，序号从 0 开始计数，例如第一页的序号为 0，第二页的序号为 1。    
 如果你的如果你的悬浮字有很多页，并且你想要给除了第一页之外的其他页加上文本，你就可以用到下面这种方法：
 
-```Java
+``` Java
 DHAPI.setHologramLine(Hologram, int, int, String);
 ```
 
@@ -158,13 +158,13 @@ DHAPI.setHologramLine(Hologram, int, int, String);
 
 最后你也可以编辑整页的文本。若要这么做，你可以使用 `setHologramLines` 方法（注意末尾的 `s`）方法：
 
-```Java
+``` Java
 DHAPI.setHologramLines(Hologram, List<String>);
 ```
 
 与之前的例子一样，这个方法会修改第一页悬浮字。你可以使用如下方法来批量修改指定页的悬浮字行：
 
-```Java
+``` Java
 DHAPI.setHologramLines(Hologram, int, List<String>)
 ```
 
@@ -174,7 +174,7 @@ DHAPI.setHologramLines(Hologram, int, List<String>)
 
 最基本的方法看起来像这样：
 
-```Java
+``` Java
 DHAPI.insertHologramLine(Hologram, int, String);
 ```
 
@@ -182,7 +182,7 @@ DHAPI.insertHologramLine(Hologram, int, String);
 
 与上文方法相似，这个方法也提供了一种能让你在其他页插入文本的方法：
 
-```Java
+``` Java
 DHAPI.insertHologramLine(Hologram, int, int, String);
 ```
 
@@ -198,7 +198,7 @@ DHAPI.insertHologramLine(Hologram, int, int, String);
 
 移除一行悬浮字也特别简单：
 
-```Java
+``` Java
 DHAPI.removeHologramLine(Hologram, int);
 ```
 
@@ -206,7 +206,7 @@ DHAPI.removeHologramLine(Hologram, int);
 
 若要移除其他页的悬浮字行，请使用这个方法：
 
-```Java
+``` Java
 DHAPI.removeHologramLine(Hologram, int, int);
 ```
 
@@ -225,7 +225,7 @@ DecentHolograms 提供了显示多页悬浮字的功能。
 
 向悬浮字添加新的一页非常简单，只需调用 `addHologramPage` 方法：
 
-```Java
+``` Java
 DHAPI.addHologramPage(Hologram);
 ```
 
@@ -233,7 +233,7 @@ DHAPI.addHologramPage(Hologram);
 
 若要创建包含自定义内容的一页悬浮字，你需要使用这个方法：
 
-```Java
+``` Java
 DHAPI.addHologramPage(Hologram, List<String>);
 ```
 
@@ -241,7 +241,7 @@ DHAPI.addHologramPage(Hologram, List<String>);
 
 悬浮字页可通过 `insertHologramPage` 方法插入：
 
-```Java
+``` Java
 DHAPI.insertHologramPage(Hologram, int);
 ```
 
@@ -249,7 +249,7 @@ DHAPI.insertHologramPage(Hologram, int);
 
 当然也可以像上文那样为新加入的一页设定文本，方法如下：
 
-```Java
+``` Java
 DHAPI.insertHologramPage(Hologram, int, List<String>);
 ```
 
@@ -257,7 +257,7 @@ DHAPI.insertHologramPage(Hologram, int, List<String>);
 
 移除一页悬浮字可以通过调用 `removeHologramPage` 实现：
 
-```Java
+``` Java
 DHAPI.removeHologramPage(Hologram, int)
 ```
 
