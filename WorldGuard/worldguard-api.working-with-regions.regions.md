@@ -19,13 +19,13 @@
 向量用于指代位置—这些向量对象来自于 WorldEdit（见“引自 Bukkit 的对象”章节来转化 Bukkit 的位置对象）
 
 ::: info 示例：修改区域的优先级
-```Java
+``` Java
 region.setPriority(100);
 ```
 :::
 
 ::: info 示例：设置区域的父区域
-```Java
+``` Java
 mall.setParent(null); // 表示没有父区域
 plot.setParent(mall);
 ```
@@ -33,7 +33,7 @@ plot.setParent(mall);
 :::
 
 ::: info 示例：获取区域的平面顶点
-```Java
+``` Java
 if (region instanceof ProtectedPolygonalRegion) {
     ProtectedPolygonalRegion polygon = (ProtectedPolygonalRegion) region;
     List<BlockVector2> points = polygon.getPoints();
@@ -45,7 +45,7 @@ if (region instanceof ProtectedPolygonalRegion) {
 
 拥有者和成员（通过 `region.getOwners()` 和 `region.getMembers()` 获取）都是 `DefaultDomain` 的单独实例，它们都存储着玩家名称、玩家的 UUID 以及其所属的权限组。
 ::: info 示例：将一个成员添加至指定区域]
-```Java
+``` Java
 > DefaultDomain members = region.getMembers();
 > members.addPlayer(UUID.fromString("0ea8eca3-dbf6-47cc-9d1a-c64551ca975c"));
 > members.addGroup("admins");
@@ -58,7 +58,7 @@ if (region instanceof ProtectedPolygonalRegion) {
 ::: info 示例：在后台将名称转化为 UUID
 如果你需要将玩家名称转化为 UUID，你必须尽可能在后台进行这个操作，这样你就不会让游戏或服务器卡顿。    
 你可以使用 WorldGuard 的 `DomainInputResolver` 类来帮助你。它集成了 `Callable<DefaultDomain>`，且会返回一个 `DefaultDomain` 对象，可以用于添加至已存在的领域。它会捕获成员管理命令中的参数。这会在下文详细描述。
-```Java
+``` Java
 // Google 的 Guava 库提供了有用的并发类.
 // 下列执行器可在你的插件中重复使用.
 ListeningExecutorService executor =
@@ -97,7 +97,7 @@ Flags.LIGHTNING
 ```
 返回值即为对应设置的数据类型。例如，如果你正要调用 `Flags.GREET_MESSAGE`，而它是一个 `StringFlag` 对象，那么该方法就会返回 `String`。
 ::: info 示例：获取欢迎消息]
-```Java
+``` Java
 String message = region.getFlag(Flags.GREET_MESSAGE);
 player.sendMessage(message);
 ```
@@ -107,19 +107,19 @@ player.sendMessage(message);
 ### 设置标志
 
 标志可以通过方法 `setFlag(Flag flag, ? value)`。所设置的值必须与标志类型对应。例如，若标志类型为 `StringFlag`，则你只能设置一个 `String` 类型的标志：
-```Java
+``` Java
 region.setFlag(Flags.GREET_MESSAGE, "你好!");
 ```
 
 标志可通过将值设置为 `null` 来清除设置。
 
 区域组可以通过调用 `getRegionGroupFlag()` 方法对其对应的标志进行设置：
-```Java
+``` Java
 RegionGroupFlag flag = Flags.PVP.getRegionGroupFlag();
 ```
 
 ::: info 示例：设置区域组的 `use` 标志]
-```Java
+``` Java
 region.setFlag(Flags.USE, StateFlag.State.ALLOW);
 region.setFlag(Flags.USE.getRegionGroupFlag(), RegionGroup.MEMBERS);
 ```
@@ -140,7 +140,7 @@ region.setFlag(Flags.USE.getRegionGroupFlag(), RegionGroup.MEMBERS);
 ### 长方体区域
 
 若要创建一个新的长方体区域，需要指定该区域中的两个对角线上的端点。任意对角线上两端点均可接受。
-```Java
+``` Java
 BlockVector3 min = BlockVector3.at(-10, 5, -4);
 BlockVector3 max = BlockVector3.at(5, -8, 10);
 ProtectedRegion region = new ProtectedCuboidRegion("spawn", min, max);
@@ -149,7 +149,7 @@ ProtectedRegion region = new ProtectedCuboidRegion("spawn", min, max);
 ### 平面多边形区域
 
 只支持平面多边形。这些是垂直方向上无限拓展的区域，也就是从最小 Y 轴覆盖到最大 Y 轴的区域。至少需要三个点来创建一个有效的平面多边形区域。
-```Java
+``` Java
 List<BlockVector2> points = new ArrayList<>();
 points.add(BlockVector2.at(3, 4));
 points.add(BlockVector2.at(0, 0));
@@ -164,7 +164,7 @@ ProtectedRegion region = new ProtectedPolygonalRegion("spawn", points, minY, max
 不需要将它与全局区域混淆，本章节提到的全局区域没有物理边界。也不包含任意一点。全局区域[i]需要[/i]用到 `GlobalProtectedRegion` 对象，但其他区域也可以调用该类（用户也可以在命令 `/rg define` 中使用 `-g` 参数创建区域）
 
 这些区域通常用于创建继承用的模板区域。
-```Java
+``` Java
 ProtectedRegion region = new GlobalProtectedRegion("template");
 ```
 
@@ -181,7 +181,7 @@ ProtectedRegion region = new GlobalProtectedRegion("template");
 `boolean contains(BlockVector3)` 可以用于测试一个区域中是否包含指定的点。
 
 ::: info 示例：查询包含位置 (20, 0, 30) 的区域]
-```Java
+``` Java
 region.contains(BlockVector3.at(20, 0, 30));
 ```
 :::
@@ -191,7 +191,7 @@ region.contains(BlockVector3.at(20, 0, 30));
 方法 `getIntersectingRegions(Collection<ProtectedRegion>)` 的调用可以用于返回相互重叠的区域。这些区域[b]不一定[/b]是相互之间存在完全包含关系的。
 
 ::: info 示例：查找 spawn 区域附近重叠的区域]
-```Java
+``` Java
 List<ProtectedRegion> candidates = Lists.newArrayList();
 candidates.add(mall);
 candidates.add(hospital);

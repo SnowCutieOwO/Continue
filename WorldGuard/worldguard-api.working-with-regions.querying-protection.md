@@ -4,13 +4,13 @@
 
 ::: warning
 区域查询不检查玩家是否拥有绕过权限。这取决于你使用的情况，你可能需要分开检查这些内容。
-```Java
+``` Java
 boolean canBypass = WorldGuard.getInstance().getPlatform().getSessionManager().hasBypass(player, player.getWorld());
 ```
 :::
 
 ::: info 示例：通过缓存队列查询建筑权限
-```Java
+``` Java
 LocalPlayer localPlayer = WorldGuardPlugin.inst().wrapPlayer(player);
 Location loc = new Location(world, 10, 64, 100);
 RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();

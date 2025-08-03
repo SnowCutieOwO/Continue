@@ -3,7 +3,7 @@
 ## 区域容器（Region Container）
 
 区域数据可从 `RegionContainer` 对象中读取：
-```Java
+``` Java
 RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
 ```
 每个世界都有一个区域的列表。若要获取指定世界的区域列表，容器有一个 `getWorld(World)` 方法：
@@ -21,7 +21,7 @@ RegionManager regions = container.get(world);
 ## 区域管理
 
 若要按区域命名获取区域对象：
-```Java
+``` Java
 ProtectedRegion region = regions.getRegion("spawn");
 ```
 
@@ -32,7 +32,7 @@ ProtectedRegion region = regions.getRegion("spawn");
 * 获取区域大小：`regions.size()`
 
 ::: info 示例：获取名为“spawn”的区域数据
-```Java
+``` Java
 RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
 RegionManager regions = container.get(world);
 if (regions != null) {
@@ -46,7 +46,7 @@ if (regions != null) {
 ### 创建区域
 
 当你创建了一个 ProtectedRegion 的实例之后，可以在区域管理模块上使用 `addRegion(ProtectedRegion)` 方法。
-```Java
+``` Java
 RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
 RegionManager regions = container.get(world);
 regions.addRegion(region);
@@ -56,7 +56,7 @@ regions.addRegion(region);
 ### 删除区域
 
 区域可以以按命名的方式通过方法 `regions.removeRegion(String, RemovalStrategy)` 删除。删除方法中的参数决定了该区域继承的子区域是操作方法。
-```Java
+``` Java
 regions.removeRegion("mall", RemovalStrategy.UNSET_PARENT_IN_CHILDREN);
 ```
 

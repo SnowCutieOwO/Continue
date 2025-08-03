@@ -11,7 +11,7 @@
 注册需要在 WorldGuard **启用**之前完成。因此，非常推荐在你插件**载入**的时候完成注册。在 WorldGuard 启用之后，FlagRegistery 就会被锁定，不能用于新标志的注册。
 
 ::: info 示例：注册一个自定义标志]
-```Java
+``` Java
 // 将标志声明成其他部分代码可以读取的字段（这样就可以用于标志检查）
 // 注意: 若你需要使用不同种类的标志, 请确保你修改了这里和下面的 StateFlag 至对应的类型
 public static StateFlag MY_CUSTOM_FLAG;
@@ -52,7 +52,7 @@ public void onLoad() {
 自定义处理器可以在 WorldGuard 启用后的任意时间启用。处理器会被一个工厂方法为每个区域（玩家）在创建时实例化。这里也有一些方法在处理器类中，而你的自定义处理器会覆盖这些。若你在使用一个后者所属行为的处理器。非常推荐先继承 FlagValueChangeHandler 类，这会帮你处理很多很多的区域边界交叉逻辑。
 
 ::: info 示例：创建并注册一个自定义处理器
-```Java
+``` Java
 public class CustomHandler extends FlagValueChangeHandler<State{
     public static final Factory FACTORY = new Factory();
     public static class Factory extends Handler.Factory<CustomHandler{
@@ -72,7 +72,7 @@ public class CustomHandler extends FlagValueChangeHandler<State{
 }
 ```
 >
-```Java
+``` Java
 SessionManager sessionManager = WorldGuard.getInstance().getPlatform().getSessionManager();
  // 第二个字段允许处理器排序 - 详见 JavaDocs
 sessionManager.registerHandler(MyCustomHandler.FACTORY, null);

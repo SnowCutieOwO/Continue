@@ -11,7 +11,7 @@
 `queryAllValues(RegionAssociable, Flag)` 可以用于获取对一个标志设置的所有值。标志可以从 `Flags` 中获取。
 
 ::: info 示例：获取 greeting 标志设置的消息，将其设置在玩家上
-```Java
+``` Java
 LocalPlayer localPlayer = WorldGuardPlugin.inst().wrapPlayer(player);
 Collection<String> greetings = set.queryAllValues(localPlayer, Flags.GREET_MESSAGE);
 ```
@@ -22,7 +22,7 @@ Collection<String> greetings = set.queryAllValues(localPlayer, Flags.GREET_MESSA
 `queryValue(RegionAssociable, Flag)` 可以用于获取单个值。取决于标志种类，这可能是找到的第一个值，或者是“最匹配”的值。截至维基最后一次编辑前，仅 `StateFlags` 会实际意义上地选择“最匹配”的值。
 
 ::: info 示例：获取 greeting 标志设置的消息，将其设置在玩家上
-```Java
+``` Java
 LocalPlayer localPlayer = WorldGuardPlugin.inst().wrapPlayer(player);
 String greeting = set.queryValue(localPlayer, Flags.GREET_MESSAGE);
 ```
@@ -52,7 +52,7 @@ if (!set.testState(localPlayer, Flags.BUILD)) {
 如果你正在尝试寻找不需要玩家的标志（例如，`creeper-explosion` 标志），那么你就可以在 `RegionAssociable` 参数的位置使用 `null`。
 
 ::: info 示例：测试爬行者爆炸摧毁（creeper-explosion）标志]
-```Java
+``` Java
 if (!set.testState(null, Flags.CREEPER_EXPLOSION)) {
     event.setCancelled(true);
 }
@@ -68,7 +68,7 @@ if (!set.testState(null, Flags.CREEPER_EXPLOSION)) {
 该页面中描述的方法同样在 `RegionQuery` 中可直接获取。
 
 ::: info 示例：使用 `RegionQuery` 直接查询标志]
-```Java
+``` Java
 LocalPlayer localPlayer = WorldGuardPlugin.inst().wrapPlayer(player);
 Location loc = new Location(world, 10, 64, 100);
 RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
@@ -88,13 +88,13 @@ query.testState(loc, localPlayer, Flags.BUILD);
 除了在玩家上传递，你也可以在（一个非`LocalPlayer`的）`RegionAssociable` 中传递。这个对象用于决定是否对区域的拥有者、成员或非成员使用标志。
 
 但是，让我们先考虑玩家方面会发生的事情。让玩家成为建筑团队的一个成员，而该区域组是主城区域和“builder's cloud”，返回的内容一定是 `OWNER`，如下所述：
-```Java
+``` Java
 List<ProtectedRegion> regions = Arrays.asList(spawnRegion, buildersClub);
 builderPlayer.getAssociation(regions) == Association.OWNER;
 ```
 
 你可能会担心，你不能将实体或方块作为成员添加至区域，所以它不可以像之前那样工作。若要这么做，一个特殊的 `RegionAssociable` 会被用于方块和实体：它会获取一个**源区域**的列表，以此决定哪一个目标位置的源区域是“成员”。如下所述。
-```Java
+``` Java
 Set deepInside    = newHashSet(spawn, mall);
 Set inside        = newHashSet(spawn);
 Set outside       = newHashSet(); // 空置
@@ -131,7 +131,7 @@ new RegionOverlapAssociation(deepInside).getAssociation(inside) == OWNER
 
 ::: info 示例：探究 WorldGuard 如何处理区域保护]
 首先，正确的 `RegionAssociation` 必须为事件而创建。下文叙述的 `createRegionAssociable()` 并会返回一个 `RegionAssociable`。
-```Java
+``` Java
 private RegionAssociable createRegionAssociable(Object cause) {
     if (!cause.isKnown()) {
         return Associables.constant(Association.NON_MEMBER);

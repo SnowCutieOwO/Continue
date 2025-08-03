@@ -4,7 +4,7 @@
 
 ## API 版本
 
-在主流版本下（5.x、6.x、7.x），WorldGuard 的 API 非常稳定。对特定内容的弃用通常要三个月，但更一般的情况下是六个月。
+在主流版本下（5.x、6.x、7.x），WorldGuard 的 API 非常稳定。弃用特定内容会提前三个月公布，但一般正式废除会将其延长至六个月。
 
 API 当前支持的版本为 7.x。旧版本的 API（以及 Minecraft）不再会接收到更新提醒或是技术支持。你可以使用右上角的“版本选择”按钮来找到旧版本的文档，但是其中可能包含改动或错误。
 
@@ -20,7 +20,7 @@ API 当前支持的版本为 7.x。旧版本的 API（以及 Minecraft）不再�
 Maven 仓库应当是全天在线的，它也是 Minecraft 历史上运行时间最长的 Maven 仓库。如果遇到问题，请参阅“获取帮助”章节。
 
 ::: info 示例：配置一个 Maven 的 pom.xml
-```XML
+``` XML
 <repositories>
     <repository>
         <id>sk89q-repo</id>
@@ -40,7 +40,7 @@ Maven 仓库应当是全天在线的，它也是 Minecraft 历史上运行时间
 :::
 
 ::: info 示例：配置一个 Gradle 的构建脚本
-```Kotlin
+``` Kotlin
 repositories {
     mavenCentral()
     maven { url "https://maven.enginehub.org/repo/" }
@@ -54,36 +54,41 @@ dependencies {
 
 ## 修改 plugin.yml
 
-首先，在 plugin.yml 下指定 WorldGuard 为“硬依赖”或“软依赖”是非常重要的，这能使 Bukkit 知道你的插件需要在 WorldGuard 之后加载；
-```
+首先，在 plugin.yml 下指定 WorldGuard 为“硬依赖”或“软依赖”是非常重要的，这能让 Bukkit 知道你的插件是否需要在 WorldGuard 之后加载；
+
+``` YAML
 name: My Plugin
 version: 1.0
 description: 这是我的插件!
 depend: [WorldGuard]
 ```
-如果你需要将它设置为软依赖，在 WorldGuard 存在的情况下它会先于你的插件加载，但其他情况下你的插件还是会按一般顺序加载。
+
+如果你需要将它设置为软依赖，则安装 WorldGuard 的情况下它会先于你的插件加载，否则按一般顺序加载。
 
 ## 通过自己的插件与 WorldGuard 交互
 
-大多数 WorldGuard API 可以通过方法 `WorldGuard.getInstance()` 进行交互。
-修改玩家也可以通过 `WorldGuardPlugin.inst()` 下的 `wrapPlayer` 方法来使用。见“引自 Bukkit 的对象”章节来获取更多细节。
+大多数 WorldGuard API 可以通过 `WorldGuard.getInstance()` 方法进行交互。
+也可以通过 `WorldGuardPlugin.inst()` 下的 `wrapPlayer` 方法修改玩家。见“[引自 Bukkit 的对象](worldguard-api.from-bukkit-objects.md)”章节了解更多。
 
 需要注意的是，在访问 WorldGuard 的特定部分时，你必须事先保留它的内部 API。
 
 ## 软依赖关系的类路径问题
 
-如果你正在以 WorldGuard 为赢前置，你不需要担心 WorldGuard 的类在运行时不存在的潜在情况。但是，如果你在以 WorldGuard 为软依赖，则可能需要考虑一下这个问题。
+如果你正在以 WorldGuard 为硬前置，无需担心 WorldGuard 类运行时不存在。除非 WorldGuard 被设置为软依赖。
 
 比如，当你尝试：
-```Java
+
+``` Java
 class MyPlugin {
     public void onEnable() {
         ProtectedCuboidRegion region = new ProtectedCuboidRegion(...);
     }
 }
 ```
-你的插件不会载入，因为 `ProtectedCuboidRegion` 不存在。插件管理器也不能调用 `onEnable()`。解决问题的一种方法是将下列代码放入一个完全不同的类中：
-```Java
+
+你的插件会因为 `ProtectedCuboidRegion` 不存在而无法载入。插件管理器也不能调用 `onEnable()`。其中一种解决方法是将下列代码放入一个完全不同的类中：
+
+``` Java
 class RegionHolder {
     private final ProtectedCuboidRegion region;
 
@@ -92,28 +97,33 @@ class RegionHolder {
     }
 }
 ```
-在你遇到相同问题且甚至不能创建一个 `RegionHolder` 时，至少你可以从另一个类中尝试捕获错误：
-```Java
+
+在你遇到类似问题且无法创建 `RegionHolder` 时，至少你可以从另一个类中尝试捕获错误：
+
+``` Java
 class MyPlugin {
     public void onEnable() {
         try {
             new RegionHolder();
         } catch (NoClassDefFoundError e) {
-            // Do something here
+            // 在此处填入代码
         }
     }
 }
 ```
-但是，这种问题也不会在所有情况中出现。链式方法的调用，总是起始于一个静态的方法调用，也可以用于防止包括其的类载入失败：
-```Java
+
+但是，这种问题也不会在所有情况中出现。链式方法通常从静态方法调用开始，可以用于防止含有它的类载入失败：
+
+``` Java
 class MyPlugin {
     public void onEnable() {
         try {
             boolean result = SomeClass.staticMethod();
         } catch (NoClassDefFoundError e) {
-            // Do something here
+            // 在此处填入代码
         }
     }
 }
 ```
-如果你在插件中使用了任意形式的软依赖，非常推荐进行不安装软依赖情况下的插件调试。
+
+如果你在插件中使用了任意形式的软依赖，非常建议先在不安装它们的情况下调试一次。

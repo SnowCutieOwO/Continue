@@ -9,4 +9,4 @@
   * `com.sk89q.worldguard.internal`
   * `com.sk89q.worldguard.commands`
   * `com.sk89q.worldguard.util`
-* 任意被标记为“内部”的内容（[Javadoc](https://enginehub.org/documentation) 中标注）
+* 任意被标记为“内部”的内容（[Javadoc](https://enginehub.org/documentation) 中标注）。
