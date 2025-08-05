@@ -2,12 +2,12 @@
 
 ::: details FCL启动器下载
 
-* [FCL直装模板](https://wget.la/https://github.com/root-S7/FoldCraftLauncher/releases/download/1.2.4.3/FCL-release-1.2.4.3-arm64-v8a.apk "点击前往下载")
-* [FCL官方原版（非直装）](https://wget.la/https://github.com/FCL-Team/FoldCraftLauncher/releases/download/1.2.4.4/FCL-release-1.2.4.4-arm64-v8a.apk "点击前往下载")
+* [FCL直装模板](https://gh.chjina.com/https://github.com/root-S7/FoldCraftLauncher/releases/download/1.2.4.3/FCL-release-1.2.4.3-arm64-v8a.apk "点击前往下载")
+* [FCL官方原版（非直装）](https://gh.chjina.com/https://github.com/FCL-Team/FoldCraftLauncher/releases/download/1.2.4.4/FCL-release-1.2.4.4-arm64-v8a.apk "点击前往下载")
 
 :::
 
-::: danger 
+::: danger 重要提示
 
 请注意，FCL 直装包为非官方团队修改
 
@@ -17,19 +17,19 @@
 
 1. 下载[直装包模板](https://github.com/root-S7/FoldCraftLauncher/ "点击前往下载") ，将其放置在合适的位置。
    
-::: tip
+::: tip 下载建议
 
 建议下载图中所示 `FCL-release-X.X.X.X-arm64-v8a.apk`，版本保持最新即可。
 
 :::
 
-::: danger
+![](images/fcl-download.png)
+
+::: danger 重要提示
 
 请注意，直装包部分目录下有一个名为 `version` 的文件，该文件不能删去，不然游戏无法启动。注意，**不能删去！不能删去！不能删去！**
 
 :::
-
-![](images/fcl-download.png)
 
 2. 下载 [MT 修改器](https://mt2.cn/ "点击跳转官方网站")。
 3. 下载 [APKTool M](https://maximoff.su/apktool/?lang=zh "点击跳转官方网站")（用于修改包名，无该需求可以不下）。
@@ -37,7 +37,7 @@
 ## 2. 对客户端进行处理
 
 1. 打开客户端的 `.minecraft` 文件夹。
-2. 删除 `logs`（运行日志）、`crash-reports`（崩溃日志）文件夹。如果对大小有较高要求，还可删除 `assets` 和 `libraries` 文件夹（游戏会自行补全这两个文件夹的内容，但如果客户端包含*反作弊*，则不建议删）。
+2. 删除 `logs`（运行日志）、`crash-reports`（崩溃日志）文件夹。如果对大小有较高要求，还可删除 `assets` 和 `libraries` 文件夹（游戏会自行补全这两个文件夹的内容，但如果客户端包含 **反作弊**，则不建议删）。
 
 ![](images/fcl-logs.png){width="40%"}
 
@@ -80,11 +80,11 @@
 
 ## 3. 软件名称修改
 
-### 方案一
+### 方案一：修改 resources.arsc
 
 ![](images/fcl-name1.gif){width="40%"}
 
-### 方案二
+### 方案二：修改 AndroidManifest.xml
 
 ![](images/fcl-name2.gif){width="40%"}
 
@@ -117,7 +117,7 @@
 
 ![](images/fcl-icon1.gif){width="40%"}
 
-::: info
+::: info 注意
 
 请注意，将生成的不同 DPI 文件分清楚，以便后续操作。
 
@@ -186,6 +186,12 @@
 ![](images/fcl-package3.png){width="40%"}
 
 ![](images/fcl-package4.png){width="40%"}
+
+::: tip
+
+似乎新版模板秩序修改包名即可，第4、5步可以不用，但如果你在测试时，分享按键/日志时会报错，则需执行第4、5步的操作
+
+:::
 
 4. 重新回到 **MT管理器** 中，在模板文件夹下会生成一个 `XX_mod.APK` 文件，打开 `AndroidManifest.xml`。
 
@@ -306,14 +312,10 @@ FoldCraftLauncher — 整合包一键安装版
 ### 4. config.json
 ::: info
 
-为了实现多端共存，请私有目录的路径 `/storage/emulated/0/Android/data/com.tungsten.fcl.server/files/.minecraft` 为 `/storage/emulated/0/Android/data/你的包名/files/.minecraft` ，但由于按键解压路径在 `公有目录` ，按键不同启动器会自动检测而导致需要重新解压，所以为了不每次打开不同启动器都要重新解压，你需要更改 `公有目录` 路径 `/storage/emulated/0/FCL-Server/.minecraft` 中的 `FCL-Server`，建议为你服务器名称英文名。
+为了实现多端共存，请将私有目录的路径 `/storage/emulated/0/Android/data/com.tungsten.fcl.server/files/.minecraft` 改为 `/storage/emulated/0/Android/data/你的包名/files/.minecraft`，并确保按键解压目录不同，修改按键解压目录见 `general_setting.properties`。
 
 :::
-::: tip
 
-按键默认解压目录详见 `general_setting.properties` 中的 `controller-dir`。
-
-:::
 
 修改可参考 [MinecraftArgs](https://zhuanlan.zhihu.com/p/12840515737)。
 
@@ -425,6 +427,12 @@ FoldCraftLauncher — 整合包一键安装版
 ### 5. general_setting.properties（常规设置）
 
 该文件注释非常清晰，文中不作赘述。
+
+::: tip
+
+按键默认解压目录见 `general_setting.properties` 中的 `controller-dir`。
+
+:::
 
 ::: info 解决无法使用中文的问题
 
