@@ -1,13 +1,13 @@
 # FCL直装包制作——手机端教程
 
-:::: details FCL启动器下载
+::: details FCL启动器下载
 
-* [FCL直装模板](https://github.com/root-S7/FoldCraftLauncher/releases/download/1.2.4.3/FCL-release-1.2.4.3-arm64-v8a.apk "点击前往下载")
-* [FCL官方原版（非直装）](https://github.com/FCL-Team/FoldCraftLauncher/releases/download/1.2.4.3/FCL-release-1.2.4.3-arm64-v8a.apk "点击前往下载")
+* [FCL直装模板](https://wget.la/https://github.com/root-S7/FoldCraftLauncher/releases/download/1.2.4.3/FCL-release-1.2.4.3-arm64-v8a.apk "点击前往下载")
+* [FCL官方原版（非直装）](https://wget.la/https://github.com/FCL-Team/FoldCraftLauncher/releases/download/1.2.4.4/FCL-release-1.2.4.4-arm64-v8a.apk "点击前往下载")
 
-::::
+:::
 
-::: danger
+::: danger 
 
 请注意，FCL 直装包为非官方团队修改
 
