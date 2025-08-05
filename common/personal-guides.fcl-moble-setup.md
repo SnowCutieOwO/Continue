@@ -456,6 +456,7 @@ FoldCraftLauncher — 整合包一键安装版
 如果某个版本有多个适用规则，只读取首个有效的，其余均忽略。
 支持使用正则表达式对游戏名称（即 `minecraft/versions` 目录下的文件夹名称）进行匹配筛选。
 如 `^1\\.17(\\.\\d{1,2})?$` 可匹配所有以 `1.17` 开头的游戏目录，用于启动前进行校验。
+若某个游戏有多个可用规则，则只会识别最顶部那个，其余都不会识别。
 
 :::
 
@@ -482,7 +483,7 @@ FoldCraftLauncher — 整合包一键安装版
 
 :::
 
-##### 自定义渲染器
+##### 自定义渲染器（也就是渲染器插件）
 需要在 `useRenderer` 字段中填写对象型数据，详细格式如下：
 
 ``` Json
@@ -494,30 +495,40 @@ FoldCraftLauncher — 整合包一键安装版
 |name|渲染器别名|
 
 两个key的值必须有合法的，不合法的将不被解析；获取包名方式请百度，这里不会介绍如何获取。
+需要注意的是，若存在相同的包名会自动去重。
 
 #####  forceChange 说明
 开启 `forceChange` 选项后，即使当前使用的渲染器已包含在 `useRenderer` 列表中
 启动器在进行规则检查时仍会从列表中的第一个渲染器开始依次检查，直到找到一个可用的渲染器，并强制设置为该渲染器。
+
+##### Java项说明
+
+需要注意的是，若你在 `useJava` 设置了内容；即使\
+截至2025年8月3日，启动器内置的Java共包含以下5类：\
+Auto、jre8、jre11、jre17、jre21\
+如果是 **内置**的Java 则只能填写上面的这5种值，可不区分大小写（但最好还是按照标准写）\
+如果不是内置的则需要写对应解压以后Java目录名称即可\
+若你不知道解压后的Java目录名称可以用 `MT/NP` 挂载APP的路径在对应目录下就能找到\
+需要注意的是，若在启动器设置中勾选了 `不检查JVM兼容性` ，则Java规则依旧无效
 
 :::: details 默认配置
 
 ``` json title="launcher_rules.json"
 {
   "launcherRules": {
-    "^1\\.17(\\.\\d{1,2})?$": {
+    "^1\\.(1[7-9]|[2-9][0-9]?)(\\.\\d+)?$": {
       "memory": {
         "minMemory": 3072,
         "tip": "内存最低要求为“${minMemory}MB”\n由于你的设备总运行内存只有“${totalMemory}GB”，不满足最低配置要求！"
       },
       "renderer": {
         "forceChange": false,
-        "useRenderer": [{"packageName": "com.fcl.plugin.mobileglues", "name": "MobileGlues"}, "f7e985d8-6d4c-f63c-d9f1-06074dab823a", "417a7a93-d9b4-98b9-ec6e-1ea400259c1f"],
+        "useRenderer": [{"packageName": "com.fcl.plugin.mobileglues", "name": "MobileGlues"}, {"packageName": "com.mio.plugin.renderer.ltw", "name": "OpenLTW"}, {"packageName": "com.mio.plugin.renderer.ltw", "name": "OpenLTW2"}],
         "downloadURL": "https://icraft.ren:90",
         "tip": "当前所使用的渲染器为『${setRenderer}』，要求的渲染器必须为『${requiredRenderer}』\n\n检测到您未安装该渲染器，请点击右下角按钮安装额外渲染器，否则游戏将不能启动！！！"
       },
       "java": {
-        "forceChange": false,
-        "useJava": ["jre8"],
+        "useJava": ["Auto"],
         "downloadURL": "https://icraft.ren:90",
         "tip": "当前所使用的Java为“${useJava}”，要求必须是使用如下Java才可以启动游戏：\n${requiredJava}"
       }
