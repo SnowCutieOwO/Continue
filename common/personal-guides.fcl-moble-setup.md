@@ -43,13 +43,14 @@
 ## 2. 对客户端进行处理
 
 1. 打开客户端的 `.minecraft` 文件夹。
-2. 删除 `logs`（运行日志）、`crash-reports`（崩溃日志）文件夹。如果对大小有较高要求，还可删除 `assets` 和 `libraries` 文件夹（游戏会自行补全这两个文件夹的内容，但如果客户端包含 **反作弊**，则不建议删）。
+2. 删除 `logs`（运行日志）、`crash-reports`（崩溃日志）文件夹。如果对大小有较高要求，还可删除 `assets` 和 `libraries` 文件夹（游戏会自行补全这两个文件夹的内容，但如果客户端包含 **反作弊**，则不建议删）。\
+具体详见 [包体压缩](#_10-包体压缩)。
 
 ![](images/fcl-logs.png){width="40%"}
 
 ![](images/fcl-assets.png){width="40%"}
 
-3. 打开客户端，在设置界面关闭“版本隔离”。之后确保游戏能够正常启动。
+1. 打开客户端，在设置界面关闭“版本隔离”。之后确保游戏能够正常启动。
 
 ::: info 手动关闭版本隔离的方法
 
@@ -106,12 +107,12 @@
 
 ::: tip 可用于修改图片参数的网站
 
-1. [PNG *DPI* 转换](https://www.imgdiet.com/zh-CN/dpi-converter)
-2. [JPG 转 PNG](https://cdkm.com/cn/jpg-to-png)
-3. [调整图片大小](https://www.iloveimg.com/zh-cn/resize-image#resize-options,pixels)
-4. [PNG 转 WEBP](https://cdkm.com/cn/png-to-webp)
-5. [PNG24 转 PNG32](https://omnifile.co/zh-cn/to-png32/)
-6. [图片圆角处理](https://www.lddgo.net/image/round-image)
+1. [PNG *DPI* 转换](https://www.imgdiet.com/zh-CN/dpi-converter) -->  应用于 [转换图片DPI](#第一步-转换图片dpi)
+2. [JPG 转 PNG](https://cdkm.com/cn/jpg-to-png) -->  应用于 [文件格式转换](#第二步-文件格式转换)
+3. [调整图片大小](https://www.iloveimg.com/zh-cn/resize-image#resize-options,pixels) -->  应用于 [调整图片大小](#第三步-调整图片大小)
+4. [PNG 转 WEBP](https://cdkm.com/cn/png-to-webp) -->  应用于 [将 PNG 转换成 WEBP](#第五步-将-png-转换成-webp)
+5. [PNG24 转 PNG32](https://omnifile.co/zh-cn/to-png32/) -->  应用于 [将 PNG24 转换成 PNG32](#第四步-将-png24-转换成-png32-可选)
+6. [图片圆角处理](https://www.lddgo.net/image/round-image) -->  应用于 [为 PNG 文件添加圆角](#第六步-为-png-文件添加圆角)
 7. [WEBP 调整](https://products.aspose.app/imaging/zh-hans/image-resize/webp)
 8. [AConvert](https://www.aconvert.com/)（支持 PNG 和 WEBP 互转，支持修改导出格式大小）
 
@@ -167,13 +168,19 @@
 
 ![](images/fcl-icon4.gif){width="40%"}
 
-### 第五步：为 `PNG` 文件添加圆角
+### 第五步：将 `PNG` 转换成 `WEBP`
 
-打开[图片圆角处理](https://www.lddgo.net/image/round-image) 网址，选择你的图片，并将值改为 `100`。
+打开 [PNG 转 WEBP](https://cdkm.com/cn/png-to-webp) 网站，选择你的图片。
+
+![](images/fcl-png-to-webp.gif){width="40%"}
+
+### 第六步：为 `PNG` 文件添加圆角
+
+打开 [图片圆角处理](https://www.lddgo.net/image/round-image) 网址，选择你的图片，并将值改为 `100`。
 
 ![](images/fcl-icon5.gif){width="40%"}
 
-### 第六步：将你修改的图片替换模板中的图片
+### 第七步：将你修改的图片替换模板中的图片
 
 ![](images/fcl-icon.gif "示例"){width="40%"}
 
@@ -229,14 +236,14 @@
 
 :::
 
-|文件名|路径|
-|---|---|
-|`eula.txt`|`/assets/`|
-|`authlib_injector_server.json`|`/assets/app_config`|
-|`config.json`|`/assets/app_config`|
-|`general_setting.properties`|`/assets/app_config`|
-|`launcher_rules.json`|`/assets/app_config`|
-|`menu_setting.json`|`/assets/app_config`|
+|文件名|路径|文件介绍|
+|---|---|---|
+|`eula.txt`|`/assets/`|[点击跳转](#_1-eula-txt-最终用户许可协议)|
+|`authlib_injector_server.json`|`/assets/app_config`|[点击跳转](#_3-authlib-injector-server-json-皮肤站地址)|
+|`config.json`|`/assets/app_config`|[点击跳转](#_4-config-json)|
+|`general_setting.properties`|`/assets/app_config`|[点击跳转](#_5-general-setting-properties-常规设置)|
+|`launcher_rules.json`|`/assets/app_config`|[点击跳转](#_6-launcher-rules-json-启动器规则)|
+|`menu_setting.json`|`/assets/app_config`|[点击跳转](#_7-menu-setting-json-菜单设置)|
 
 ### 1. eula.txt（最终用户许可协议）
 
@@ -503,7 +510,6 @@ FoldCraftLauncher — 整合包一键安装版
 
 ##### Java项说明
 
-需要注意的是，若你在 `useJava` 设置了内容；即使\
 截至2025年8月3日，启动器内置的Java共包含以下5类：\
 Auto、jre8、jre11、jre17、jre21\
 如果是 **内置**的Java 则只能填写上面的这5种值，可不区分大小写（但最好还是按照标准写）\
@@ -611,10 +617,13 @@ Auto、jre8、jre11、jre17、jre21\
 * 给部分 `Manager` 类增加部分缺少方法。
 * 修复 `launcher_rules.json` 文件中某些数组内重复写值无法过滤重复问题。
 * 优化公告展示逻辑。
+* 优化自定义内部Java逻辑。
+* 优化文件检测代码。
+* 修复渲染器规则检查时机问题。
+* 将渲染器规则检查从 `checkRenderer` 移至 `setGameRule` 方法。
+* 确保渲染器规则在 `FCLBridge` 设置前完成验证和修改。
 
 ### 版本号：1.2.4.3
-
-#### 
 
 * 进一步减少工具类对 `Activity` 的依赖。
 * 修复 `setGameRule` 方法异常处理中的线程问题。
