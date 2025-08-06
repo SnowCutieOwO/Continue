@@ -8,7 +8,7 @@
 
 ::: details FCL启动器下载
 
-* [FCL 直装模板](https://github.com/root-S7/FoldCraftLauncher/releases/download/1.2.4.3/FCL-release-1.2.4.3-arm64-v8a.apk "点击前往下载")
+* [FCL 直装模板](https://github.com/root-S7/FoldCraftLauncher/releases/download/1.2.4.4/FCL-release-1.2.4.4-arm64-v8a.apk "点击前往下载")
 * [FCL 官方原版（非直装）](https://github.com/FCL-Team/FoldCraftLauncher/releases/download/1.2.4.4/FCL-release-1.2.4.4-arm64-v8a.apk "点击前往下载")
 
 :::
@@ -43,13 +43,14 @@
 ## 2. 对客户端进行处理
 
 1. 打开客户端的 `.minecraft` 文件夹。
-2. 删除 `logs`（运行日志）、`crash-reports`（崩溃日志）文件夹。如果对大小有较高要求，还可删除 `assets` 和 `libraries` 文件夹（游戏会自行补全这两个文件夹的内容，但如果客户端包含 **反作弊**，则不建议删）。
+2. 删除 `logs`（运行日志）、`crash-reports`（崩溃日志）文件夹。如果对大小有较高要求，还可删除 `assets` 和 `libraries` 文件夹（游戏会自行补全这两个文件夹的内容，但如果客户端包含 **反作弊**，则不建议删）。\
+具体详见 [包体压缩](#_10-包体压缩)。
 
 ![](images/fcl-logs.png){width="40%"}
 
 ![](images/fcl-assets.png){width="40%"}
 
-3. 打开客户端，在设置界面关闭“版本隔离”。之后确保游戏能够正常启动。
+1. 打开客户端，在设置界面关闭“版本隔离”。之后确保游戏能够正常启动。
 
 ::: info 手动关闭版本隔离的方法
 
@@ -106,12 +107,12 @@
 
 ::: tip 可用于修改图片参数的网站
 
-1. [PNG *DPI* 转换](https://www.imgdiet.com/zh-CN/dpi-converter)
-2. [JPG 转 PNG](https://cdkm.com/cn/jpg-to-png)
-3. [调整图片大小](https://www.iloveimg.com/zh-cn/resize-image#resize-options,pixels)
-4. [PNG 转 WEBP](https://cdkm.com/cn/png-to-webp)
-5. [PNG24 转 PNG32](https://omnifile.co/zh-cn/to-png32/)
-6. [图片圆角处理](https://www.lddgo.net/image/round-image)
+1. [PNG *DPI* 转换](https://www.imgdiet.com/zh-CN/dpi-converter) -->  应用于 [转换图片DPI](#第一步-转换图片dpi)
+2. [JPG 转 PNG](https://cdkm.com/cn/jpg-to-png) -->  应用于 [文件格式转换](#第二步-文件格式转换)
+3. [调整图片大小](https://www.iloveimg.com/zh-cn/resize-image#resize-options,pixels) -->  应用于 [调整图片大小](#第三步-调整图片大小)
+4. [PNG 转 WEBP](https://cdkm.com/cn/png-to-webp) -->  应用于 [将 PNG 转换成 WEBP](#第五步-将-png-转换成-webp)
+5. [PNG24 转 PNG32](https://omnifile.co/zh-cn/to-png32/) -->  应用于 [将 PNG24 转换成 PNG32](#第四步-将-png24-转换成-png32-可选)
+6. [图片圆角处理](https://www.lddgo.net/image/round-image) -->  应用于 [为 PNG 文件添加圆角](#第六步-为-png-文件添加圆角)
 7. [WEBP 调整](https://products.aspose.app/imaging/zh-hans/image-resize/webp)
 8. [AConvert](https://www.aconvert.com/)（支持 PNG 和 WEBP 互转，支持修改导出格式大小）
 
@@ -167,17 +168,23 @@
 
 ![](images/fcl-icon4.gif){width="40%"}
 
-### 第五步：为 `PNG` 文件添加圆角
+### 第五步：将 `PNG` 转换成 `WEBP`
 
-打开[图片圆角处理](https://www.lddgo.net/image/round-image) 网址，选择你的图片，并将值改为 `100`。
+打开 [PNG 转 WEBP](https://cdkm.com/cn/png-to-webp) 网站，选择你的图片。
+
+![](images/fcl-png-to-webp.gif){width="40%"}
+
+### 第六步：为 `PNG` 文件添加圆角
+
+打开 [图片圆角处理](https://www.lddgo.net/image/round-image) 网址，选择你的图片，并将值改为 `100`。
 
 ![](images/fcl-icon5.gif){width="40%"}
 
-### 第六步：将你修改的图片替换模板中的图片
+### 第七步：将你修改的图片替换模板中的图片
 
 ![](images/fcl-icon.gif "示例"){width="40%"}
 
-## 5. 修改包名（可做到多端共存）。
+## 5. 修改包名（多端共存）
 
 1. 打开 APKTool M 并找到你下载的模板。
    
@@ -229,14 +236,14 @@
 
 :::
 
-|文件名|路径|
-|---|---|
-|`eula.txt`|`/assets/`|
-|`authlib_injector_server.json`|`/assets/app_config`|
-|`config.json`|`/assets/app_config`|
-|`general_setting.properties`|`/assets/app_config`|
-|`launcher_rules.json`|`/assets/app_config`|
-|`menu_setting.json`|`/assets/app_config`|
+|文件名|路径|文件介绍|
+|---|---|---|
+|`eula.txt`|`/assets/`|[点击跳转](#_1-eula-txt-最终用户许可协议)|
+|`authlib_injector_server.json`|`/assets/app_config`|[点击跳转](#_3-authlib-injector-server-json-皮肤站地址)|
+|`config.json`|`/assets/app_config`|[点击跳转](#_4-config-json)|
+|`general_setting.properties`|`/assets/app_config`|[点击跳转](#_5-general-setting-properties-常规设置)|
+|`launcher_rules.json`|`/assets/app_config`|[点击跳转](#_6-launcher-rules-json-启动器规则)|
+|`menu_setting.json`|`/assets/app_config`|[点击跳转](#_7-menu-setting-json-菜单设置)|
 
 ### 1. eula.txt（最终用户许可协议）
 
@@ -322,9 +329,7 @@ FoldCraftLauncher — 整合包一键安装版
 
 :::
 
-
 修改可参考 [MinecraftArgs](https://zhuanlan.zhihu.com/p/12840515737)。
-
 
 :::: details 默认配置
 ``` json title="config.json"
@@ -456,6 +461,7 @@ FoldCraftLauncher — 整合包一键安装版
 如果某个版本有多个适用规则，只读取首个有效的，其余均忽略。
 支持使用正则表达式对游戏名称（即 `minecraft/versions` 目录下的文件夹名称）进行匹配筛选。
 如 `^1\\.17(\\.\\d{1,2})?$` 可匹配所有以 `1.17` 开头的游戏目录，用于启动前进行校验。
+若某个游戏有多个可用规则，则只会识别最顶部那个，其余都不会识别。
 
 :::
 
@@ -482,42 +488,52 @@ FoldCraftLauncher — 整合包一键安装版
 
 :::
 
-##### 自定义渲染器
+##### 自定义渲染器（即渲染器插件）
+
 需要在 `useRenderer` 字段中填写对象型数据，详细格式如下：
 
 ``` Json
 {"packageName": "ren.test.com", "name": "Renderer name"}
 ```
-|Key|Key值|
+|键名|键值|
 |---|---|
 |packageName|app的包名|
 |name|渲染器别名|
 
-两个key的值必须有合法的，不合法的将不被解析；获取包名方式请百度，这里不会介绍如何获取。
+两个key的值必须合法，不合法的将自动忽略；获取包名方式请百度，这里不会介绍如何获取。
+需要注意的是，若存在相同的包名会自动去重。
 
-#####  forceChange 说明
+##### forceChange 说明
 开启 `forceChange` 选项后，即使当前使用的渲染器已包含在 `useRenderer` 列表中
 启动器在进行规则检查时仍会从列表中的第一个渲染器开始依次检查，直到找到一个可用的渲染器，并强制设置为该渲染器。
+
+##### Java项说明
+
+截至2025年8月3日，启动器内置的 Java 有如下 5 种：\
+Auto、jre8、jre11、jre17、jre21。\
+如果是 **内置** Java，则只能填写上面的这5种值，不会区分大小写（建议按标准写）。\
+如果不是内置的则需要写对应解压以后 Java 目录名称即可。\
+若你不知道解压后的 Java 目录名称，可以用 `MT/NP` 挂载 APP 的路径在对应目录下就能找到。\
+需要注意的是，若在启动器设置中勾选了 `不检查JVM兼容性` ，则 Java 规则依旧无效。
 
 :::: details 默认配置
 
 ``` json title="launcher_rules.json"
 {
   "launcherRules": {
-    "^1\\.17(\\.\\d{1,2})?$": {
+    "^1\\.(1[7-9]|[2-9][0-9]?)(\\.\\d+)?$": {
       "memory": {
         "minMemory": 3072,
         "tip": "内存最低要求为“${minMemory}MB”\n由于你的设备总运行内存只有“${totalMemory}GB”，不满足最低配置要求！"
       },
       "renderer": {
         "forceChange": false,
-        "useRenderer": [{"packageName": "com.fcl.plugin.mobileglues", "name": "MobileGlues"}, "f7e985d8-6d4c-f63c-d9f1-06074dab823a", "417a7a93-d9b4-98b9-ec6e-1ea400259c1f"],
+        "useRenderer": [{"packageName": "com.fcl.plugin.mobileglues", "name": "MobileGlues"}, {"packageName": "com.mio.plugin.renderer.ltw", "name": "OpenLTW"}, {"packageName": "com.mio.plugin.renderer.ltw", "name": "OpenLTW2"}],
         "downloadURL": "https://icraft.ren:90",
         "tip": "当前所使用的渲染器为『${setRenderer}』，要求的渲染器必须为『${requiredRenderer}』\n\n检测到您未安装该渲染器，请点击右下角按钮安装额外渲染器，否则游戏将不能启动！！！"
       },
       "java": {
-        "forceChange": false,
-        "useJava": ["jre8"],
+        "useJava": ["Auto"],
         "downloadURL": "https://icraft.ren:90",
         "tip": "当前所使用的Java为“${useJava}”，要求必须是使用如下Java才可以启动游戏：\n${requiredJava}"
       }
@@ -552,7 +568,7 @@ FoldCraftLauncher — 整合包一键安装版
 |cursorOffset|0.0|鼠标指针偏移量|
 |gamepadDeadzone|1.0|手柄死区|
 
-## 按键配置
+## 9. 按键配置
 
 ::: tip 按键配置
 
@@ -562,7 +578,7 @@ FoldCraftLauncher — 整合包一键安装版
 
 按键制作只能在启动器内进行。
 
-## 包体压缩
+## 10. 包体压缩
 
 ::: tip
 
@@ -589,3 +605,29 @@ FoldCraftLauncher — 整合包一键安装版
 一般情况下，只需对 `caciocavallo` 或 `java` 资源进行修改即可，其他文件**不推荐改动**！
 
 比如，我删除了 `Java 11` 和 `Java 17` 运行环境（由于我删除了 `Java 17` 和 `Java 11`，所以 `caciocavallo11` 和 `caciocavallo17` 不会保留）。
+
+## 11. 更新日志
+
+### 版本号：1.2.4.4
+
+* 删除无用代码。
+* 增加Java检测规则。
+* 修复误报 `配置文件安装失败` 错误。
+* 给部分 `Manager` 类增加部分缺少方法。
+* 修复 `launcher_rules.json` 文件中某些数组内重复写值无法过滤重复问题。
+* 优化公告展示逻辑。
+* 优化自定义内部Java逻辑。
+* 优化文件检测代码。
+* 修复渲染器规则检查时机问题。
+* 将渲染器规则检查从 `checkRenderer` 移至 `setGameRule` 方法。
+* 确保渲染器规则在 `FCLBridge` 设置前完成验证和修改。
+
+### 版本号：1.2.4.3
+
+* 进一步减少工具类对 `Activity` 的依赖。
+* 修复 `setGameRule` 方法异常处理中的线程问题。
+* 支持使用 `TouchController` 时启用指针跟随手指。
+* 将 `setGameRule` 中设置渲染器的逻辑迁移到 `checkRenderer` 。
+* 微调渲染器设置规则。
+* 删除 `InstallResources` 中Activity依赖。
+* 将UI更新内容恢复到 `RuntimeFragment` 中执行。
