@@ -7,7 +7,7 @@ UltimateShop 提供了两种样式的颜色代码。插件会自动检测你所�
 * [在此](https://docs.advntr.dev/minimessage/format.html)浏览彩色代码格式。
 * 需要使用 Paper 或其分支，且服务器版本为 1.17.1+。
 * 可使用更多高级功能，如字体、悬浮文本等。
-* 可在除基岩版设置或 `config.yml` 文件外的任何地方使用。这是因为 Geyser 和 PlaceholderAPI 都尚未在 api 层面兼容 MiniMessage。
+* 可在任意地方使用。
 
 ## 内置颜色判断器
 
