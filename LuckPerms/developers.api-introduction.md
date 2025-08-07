@@ -62,7 +62,7 @@ API 成品可以在 [Maven 中心](http://central.sonatype.org/)的仓库中找�
 
 ##### Groovy DSL：
 
-```Kotlin
+``` Kotlin
 repositories {
     mavenCentral()
 }
@@ -74,7 +74,7 @@ dependencies {
 
 ##### Kotlin DSL：
 
-```Kotlin
+``` Kotlin
 repositories {
     mavenCentral()
 }
