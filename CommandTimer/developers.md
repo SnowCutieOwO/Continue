@@ -17,7 +17,7 @@ dependencies {
 
 ### Maven
 
-```HTML
+``` XML
 <repositories>
     <repository>
         <id>jitpack.io</id>
@@ -25,7 +25,7 @@ dependencies {
     </repository>
 </repositories>
 ```
-```HTML
+``` XML
 
 <dependency>
     <groupId>com.github.titivermeesch</groupId>
