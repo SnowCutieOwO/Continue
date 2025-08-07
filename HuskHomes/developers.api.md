@@ -74,7 +74,7 @@ HuskHomes 4.3.1 之前的版本发布在 [JitPack](https://jitpack.io/#net.willi
 #### Gradle 安装信息
 
 将依赖按如下代码添加至你的 `build.gradle`。你也可以指定 `/snapshots` 来使用包含最新开发构建的仓库。需要注意的是对于 Fabric，你还需要在版本号后添加 Minecraft 的版本号（如 `3.6.1+1.20.1`）
-```Kotlin
+``` Kotlin
 allprojects {
     repositories {
         maven { url 'https://repo.william278.net/releases' }
@@ -82,7 +82,7 @@ allprojects {
 }
 ```
 将依赖按如下代码导入至你的文件。将 `VERSION` 处替换为 HuskHomes 最新的版本号（去除字母 v）：![](https://img.shields.io/github/v/tag/WiIIiam278/HuskHomes?color=%23ffffff&label=%20&style=flat-square)
-```Kotlin
+``` Kotlin
 dependencies {
     compileOnly 'net.william278:huskhomes:VERSION'
 }
