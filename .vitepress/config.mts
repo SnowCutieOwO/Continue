@@ -1216,13 +1216,9 @@ export default defineConfig({
         { text: '前言', link: '/PlayerPoints/index' },
         {
           text: 'PlayerPoints 维基', items: [
-            {
-              text: '通用', collapsed: true, items: [
-                { text: '主页', link: '/PlayerPoints/general.home' },
-                { text: 'PlaceholderAPI 支持', link: '/PlayerPoints/general.placeholderapi-support' },
-                { text: '命令与权限', link: '/PlayerPoints/general.commands-permissions' }
-              ]
-            },
+            { text: '介绍', link: '/PlayerPoints/introduction' },
+            { text: 'PlaceholderAPI 支持', link: '/PlayerPoints/placeholderapi-support' },
+            { text: '命令与权限', link: '/PlayerPoints/commands-permissions' },
             {
               text: 'API 用法', collapsed: true, items: [
                 { text: '开始使用', link: '/PlayerPoints/api-usage.getting-started' }
@@ -1414,7 +1410,7 @@ export default defineConfig({
               text: '📚 快速上手', collapsed: true, items: [
                 { text: '⚡ 第一课', link: '/UltimateShop/quick-understand.course-1' },
                 { text: '⚡ 第二课', link: '/UltimateShop/quick-understand.course-2' }
-              ] 
+              ]
             },
             {
               text: '📋 格式', collapsed: true, items: [

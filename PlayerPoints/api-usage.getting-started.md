@@ -10,7 +10,7 @@ PlayerPoints 自带一个 API，允许你查询和修改玩家持有的点券数
 
 ### Gradle
 
-```Kotlin
+``` Kotlin
 repositories {
     maven { 
         url = 'https://repo.rosewooddev.io/repository/public/' 
@@ -24,7 +24,7 @@ dependencies {
 
 ### Maven
 
-```HTML
+``` XML
 <repositories>
     <repository>
         <id>rosewood-repo</id>

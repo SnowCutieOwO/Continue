@@ -5,7 +5,7 @@
 虽然不是什么很有必要的事情，但是为了挽救已经损失的插件文档还是值得的。
 别的不多说了。
 
-维基地址：https://github.com/Rosewood-Development/PlayerPoints/wiki    
+维基地址：https://wiki.rosewooddev.io/PlayerPoints/introduction/\
 原帖地址：https://www.spigotmc.org/resources/playerpoints.80745/
 
 # 翻译信息
