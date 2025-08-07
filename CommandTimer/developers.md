@@ -4,12 +4,12 @@
 
 ### Gradle
 
-```Kotlin
+``` Kotlin
 repositories {
    maven { url 'https://jitpack.io' }
 }
 ```
-```Kotlin
+``` Kotlin
 dependencies {
     implementation 'com.github.titivermeesch:CommandTimer:<version>'
 }
