@@ -65,7 +65,7 @@ HuskSync API 仅对下列平台开放使用：
 
 将以依赖按如下格式导入你的 `build.gradle`。你也可以通过指定 `/snapshots` 来使用最新的开发构建版仓库（但不推荐）
 
-```Kotlin
+``` Kotlin
 allprojects {
     repositories {
         maven { url 'https://repo.william278.net/releases' }
@@ -75,7 +75,7 @@ allprojects {
 
 按如下格式导入依赖。将 `VERSION` 替换为 HuskSync 的最新版本号（去掉左侧的“v”）：![](https://img.shields.io/github/v/tag/WiIIiam278/HuskSync?color=%23ffffff&label=%20&style=flat-square)
 
-```Kotlin
+``` Kotlin
 dependencies {
     compileOnly 'net.william278.husksync:husksync-PLATFORM:VERSION'
 }
