@@ -8,13 +8,13 @@ LibreLogin 提供了一个 API，允许你将本插件按需修改。若你想�
 
 #### Gradle（KTS）:
 
-```Kotlin
+``` Kotlin
 maven("https://repo.kyngs.xyz/public")
 ```
 
 #### Gradle（Groovy）
 
-```Kotlin
+``` Kotlin
 maven {
     url "https://repo.kyngs.xyz/public"
 }
@@ -36,13 +36,13 @@ maven {
 
 #### Gradle（KTS）：
 
-```Kotlin
+``` Kotlin
 compileOnly("xyz.kyngs.librelogin:API:<version>")
 ```
 
 #### Gradle（Groovy）：
 
-```Kotlin
+``` Kotlin
 compileOnly "xyz.kyngs.librelogin:API:<version>"
 ```
 
