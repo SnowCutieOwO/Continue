@@ -182,20 +182,20 @@
 
 |标志|种类|描述|
 |---|---|---|
-|creeper-explosion|state（状态）|苦力怕是否可以造成爆炸|
+|creeper-explosion|state（状态）|苦力怕能否爆炸|
 |enderdragon-block-damage|state（状态）|末影龙是否可以破坏方块|
-|ghast-fireball|state（状态）|恶魂火球和凋灵的骷髅头是否可以造成爆炸|
+|ghast-fireball|state（状态）|恶魂火球和凋灵的骷髅头能否爆炸|
 |other-explosion|state（状态）|爆炸是否造成伤害|
 |fire-spread|state（状态）|火焰是否可以蔓延|
 |enderman-grief|state（状态）|末影人是否可以拾起/放置方块|
-|snowman-trails|state（状态）|雪傀儡脚下是否会产生雪|
-|ravager-grief|state（状态）|劫掠兽是否可以破坏方块|
-|mob-damage|state（状态）|实体是否可以攻击玩家|
+|snowman-trails|state（状态）|雪傀儡脚下是否产生雪|
+|ravager-grief|state（状态）|劫掠兽是否破坏方块|
+|mob-damage|state（状态）|实体是否攻击玩家|
 |mob-spawning|state（状态）|是否禁止实体的生成，包括玩家使用命令、刷怪蛋等方法生成的怪物，下 `deny-spawn` 同|
-|deny-spawn|实体种类列表|禁止生成的实体列表，|
+|deny-spawn|实体种类列表|禁止生成的实体列表|
 |entity-painting-destroy|state（状态）|非玩家来源是否可以破坏挂画|
 |entity-item-frame-destroy|state（状态）|非玩家来源是否可以破坏物品展示框|
-|wither-damage|state（状态）|凋灵是否可以造成伤害（比如刚生成时爆炸的伤害，而凋灵的骷髅头弹射物所造成的伤害则由上述的 ghast-fireball 控制）|
+|wither-damage|state（状态）|凋灵是否可以造成伤害（比如生成时的爆炸伤害，而凋灵的骷髅头弹射物所造成的伤害则由上述的 ghast-fireball 控制）|
 
 ::: info 示例：阻止羊和猪在主城生成
 实体种类必须在参数中指定：
