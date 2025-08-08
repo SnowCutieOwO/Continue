@@ -30,7 +30,7 @@ mobs:
     block-creeper-block-damage: false
 ```
 上级键和其下的设置只需按这样复制即可。
-
+:::
 
 ## 设置
 
