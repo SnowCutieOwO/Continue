@@ -477,7 +477,7 @@ FoldCraftLauncher — 整合包一键安装版
 
 |UUID|渲染器名称|
 |---|---|
-|f7e985d8-6d4c-f63c-d9f1-06074dab823a|Holy-GL4ES，Custom|
+|f7e985d8-6d4c-f63c-d9f1-06074dab823a|Holy-GL4ES|
 |417a7a93-d9b4-98b9-ec6e-1ea400259c1f|VirGLRenderer|
 |0fb718e4-64e3-83d4-a974-8204ea1d9f9f|VGPU|
 |18d93f17-ff53-a319-fa61-58709a77bf87|Vulkan Zink|
@@ -528,7 +528,7 @@ Auto、jre8、jre11、jre17、jre21。\
       },
       "renderer": {
         "forceChange": false,
-        "useRenderer": [{"packageName": "com.fcl.plugin.mobileglues", "name": "MobileGlues"}, {"packageName": "com.mio.plugin.renderer.ltw", "name": "OpenLTW"}, {"packageName": "com.mio.plugin.renderer.ltw", "name": "OpenLTW2"}],
+        "useRenderer": [{"packageName": "com.fcl.plugin.mobileglues", "name": "MobileGlues"}, {"packageName": "com.mio.plugin.renderer.ltw", "name": "OpenLTW"}],
         "downloadURL": "https://icraft.ren:90",
         "tip": "当前所使用的渲染器为『${setRenderer}』，要求的渲染器必须为『${requiredRenderer}』\n\n检测到您未安装该渲染器，请点击右下角按钮安装额外渲染器，否则游戏将不能启动！！！"
       },
