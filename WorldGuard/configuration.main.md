@@ -49,7 +49,7 @@ mobs:
 |use-player-teleports|TRUE|是否在计算玩家位置的时候考虑传送。该项在你使用玩家移动事件或任意需要检测移动事件的标志时应当保持开启。|
 |use-particle-effects|TRUE|是否在操作被阻止时显示粒子效果。|
 |disable-permission-cache|FALSE|WorldGuard 会在查询权限时调用先前的缓存以加快判断结果，在使用检查性能差的权限插件时相当有用。如果你在使用现代的权限插件情况下使用缓慢权限更新时遇到问题，请将该选项设置为 `TRUE`。|
-|custom-metrics-charts|TRUE|将部分信息上传至 [bStats](https://bstats.org/plugin/bukkit/WorldGuard/3283)|
+|custom-metrics-charts|TRUE|将部分信息上传至 [bStats](https://bstats.org/plugin/bukkit/WorldGuard/3283)。|
 |host-keys||玩家可以连接至服务器的来源域名。见“域名秘钥”章节。|
 
 ### security.*
@@ -204,8 +204,8 @@ physics:
 |disable-contact-damage|FALSE|是否阻止玩家受到接触伤害（如仙人掌）。|
 |teleport-on-suffocation|FALSE|是否在玩家卡在方块中时将玩家传送到其他位置（通常为正上方）。该选项可能会导致玩家可以通过水平的屏障。|
 |disable-void-damage|FALSE|是否阻止玩家受到虚空（掉入世界底部所受的）伤害。|
-|teleport-on-void-falling|FALSE|是否将坠入虚空的玩家传送至安全地点（如果有的话）。该功能对驱逐误入虚空的玩家很有用。|
-|reset-fall-on-void-teleport|FALSE|传送出虚空后是否重置摔落高度。如果将该项关闭很可能会导致玩家摔死（但是至少如果会掉落背包中的物品的话，不会掉在虚空里）。|
+|teleport-on-void-falling|FALSE|是否将坠入虚空的玩家传送至安全地点（若有）。该功能对驱逐误入虚空的玩家很有用。|
+|reset-fall-on-void-teleport|FALSE|传送出虚空后是否重置摔落高度。如果将该项关闭很可能会导致玩家摔死（如果开启了死亡掉落，则可以避免物品掉入虚空）。|
 |disable-explosion-damage|FALSE|是否阻止玩家受到爆炸伤害。|
 |disable-mob-damage|FALSE|是否阻止玩家被其他实体攻击。|
 |disable-death-messages|FALSE|是否禁用玩家的死亡消息。|
