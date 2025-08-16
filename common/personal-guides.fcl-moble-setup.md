@@ -33,7 +33,8 @@
 
 ::: danger 重要提示
 
-请注意，直装包部分目录下有一个名为 `version` 的文件，该文件不能删去，不然游戏无法启动。注意，**不能删去！不能删去！不能删去！**
+请注意，直装包部分目录下有一个名为 `version` 的文件，该文件不能删去，不然游戏无法启动。注意，**不能删去！不能删去！不能删去！**，里面的内容只能填写有效的数字。不能是小数，必须是整数！\
+值的范围只能在 `-9223372036854775808~9223372036854775807`
 
 :::
 
@@ -340,7 +341,7 @@ FoldCraftLauncher — 整合包一键安装版
   "autoDownloadThreads": true,
   "_version": 0,
   "configurations": {
-    "公有目录": {
+    "内部目录": {
       "global": {
         // 开启后会在『.minecraft/versions/xxxx』版本下生成一个『fclversion.cfg』文件，然后会使用该文件的设置项游戏设置项依据。
         "usesGlobal": true,
@@ -380,7 +381,7 @@ FoldCraftLauncher — 整合包一键安装版
         "pojavBigCore": false
       },
       // 储存目录
-      "gameDir": "/storage/emulated/0/FCL-Server/.minecraft",
+      "gameDir": "/data/data/com.tungsten.fcl.server/.minecraft",
       "selectedMinecraftVersion": ""
     },
     "私有目录": {
@@ -429,7 +430,7 @@ FoldCraftLauncher — 整合包一键安装版
   },
   "downloadThreads": 64,
   "downloadType": "bmclapi",
-  "last": "私有目录",
+  "last": "内部目录",
   "versionListSource": "balanced"
 }
 ```
@@ -467,7 +468,20 @@ FoldCraftLauncher — 整合包一键安装版
 
 #### 内存项说明
 
-`minMemory` 项的值不能低于 `1024` ，否则该项检测会被忽略。
+`minMemory` 项的值不能低于 `1024` ，否则检测失效，确保设备满足最低内存要求。\
+
+若设备内存达不到要求会提示用户，如『内存最低要求为“${minMemory}MB”』，引导用户满足配置。
+
+::: tip 常用占位符
+
+|占位符|功能|
+|---|---|
+|`${minMemory}`|当前规则要求最低内存|
+|`${totalMemory}`|设备总内存大小|
+|`${setMemory}`|当前启动器设置内存大小|
+
+:::
+
 
 #### 渲染器项说明
 
@@ -487,6 +501,17 @@ FoldCraftLauncher — 整合包一键安装版
 在 `useRenderer` 字段中，需填写上述渲染器对应的 UUID ，而非渲染器名称。
 
 :::
+
+::: tip 常用占位符
+|占位符|作用|
+|---|---|
+|`${useRenderer}`|当前规则设置的可使用渲染器列表|
+|`${downloadURL}`|当前规则设置的下载链接|
+|`${requiredRenderer}`|要求使用的渲染器，也就是规则列表中首个渲染器名称|
+|`${setRenderer}`|当前启动器设置的渲染器|
+
+:::
+
 
 ##### 自定义渲染器（即渲染器插件）
 
@@ -520,7 +545,7 @@ Auto、jre8、jre11、jre17、jre21。\
 
 ``` json title="launcher_rules.json"
 {
-  "launcherRules": {
+  {
     "^1\\.(1[7-9]|[2-9][0-9]?)(\\.\\d+)?$": {
       "memory": {
         "minMemory": 3072,
