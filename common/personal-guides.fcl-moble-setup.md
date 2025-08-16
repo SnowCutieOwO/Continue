@@ -8,8 +8,8 @@
 
 ::: details FCL启动器下载
 
-* [FCL 直装模板](https://github.com/root-S7/FoldCraftLauncher/releases/download/1.2.4.4/FCL-release-1.2.4.4-arm64-v8a.apk "点击前往下载")
-* [FCL 官方原版（非直装）](https://github.com/FCL-Team/FoldCraftLauncher/releases/download/1.2.4.4/FCL-release-1.2.4.4-arm64-v8a.apk "点击前往下载")
+* [FCL 直装模板](https://github.com/root-S7/FoldCraftLauncher/releases/download/1.2.4.6/FCL-release-1.2.4.6-arm64-v8a.apk "点击前往下载")
+* [FCL 官方原版（非直装）](https://github.com/FCL-Team/FoldCraftLauncher/releases/download/1.2.4.6/FCL-release-1.2.4.6-arm64-v8a.apk "点击前往下载")
 
 :::
 
