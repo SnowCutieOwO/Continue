@@ -605,29 +605,3 @@ Auto、jre8、jre11、jre17、jre21。\
 一般情况下，只需对 `caciocavallo` 或 `java` 资源进行修改即可，其他文件**不推荐改动**！
 
 比如，我删除了 `Java 11` 和 `Java 17` 运行环境（由于我删除了 `Java 17` 和 `Java 11`，所以 `caciocavallo11` 和 `caciocavallo17` 不会保留）。
-
-## 11. 更新日志
-
-### 版本号：1.2.4.4
-
-* 删除无用代码。
-* 增加Java检测规则。
-* 修复误报 `配置文件安装失败` 错误。
-* 给部分 `Manager` 类增加部分缺少方法。
-* 修复 `launcher_rules.json` 文件中某些数组内重复写值无法过滤重复问题。
-* 优化公告展示逻辑。
-* 优化自定义内部Java逻辑。
-* 优化文件检测代码。
-* 修复渲染器规则检查时机问题。
-* 将渲染器规则检查从 `checkRenderer` 移至 `setGameRule` 方法。
-* 确保渲染器规则在 `FCLBridge` 设置前完成验证和修改。
-
-### 版本号：1.2.4.3
-
-* 进一步减少工具类对 `Activity` 的依赖。
-* 修复 `setGameRule` 方法异常处理中的线程问题。
-* 支持使用 `TouchController` 时启用指针跟随手指。
-* 将 `setGameRule` 中设置渲染器的逻辑迁移到 `checkRenderer` 。
-* 微调渲染器设置规则。
-* 删除 `InstallResources` 中Activity依赖。
-* 将UI更新内容恢复到 `RuntimeFragment` 中执行。
