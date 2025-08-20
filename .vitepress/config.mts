@@ -116,7 +116,7 @@ export default defineConfig({
       var _hmt = _hmt || [];
       (function() {
         var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?0dc05fd6e64cff9d5680877b4e642a6a";
+        hm.src = "https://hm.baidu.com/hm.js?ea20ee5ef417f995dc9f67e185482c76";
         var s = document.getElementsByTagName("script")[0]; 
         s.parentNode.insertBefore(hm, s);
       })();
