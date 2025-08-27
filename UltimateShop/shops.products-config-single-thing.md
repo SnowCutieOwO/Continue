@@ -29,7 +29,7 @@
     * `products.give-item`：在玩家尝试购买时是否直接给予物品。
 * `buy-prices`：物品的买价。支持[物品格式](format.itemformat.md)与[经济格式](format.economyformat.md)。你也可以根据单条目内容添加[自定义出售匹配方法](features.custom-item-match-method.md)。**可选。若不设置则表示物品不可购买。**
     * `buy-prices.start-apply`：在指定次数购买后应用该价格。仅支持 `ANY` 或 `ALL` 定价模式。**可选，默认为 0。**
-    * `buy=prices.end-apply`：在指定次数购买后不再应用该价格。仅支持 `ANY` 或 `ALL` 定价模式。**可选。默认为无穷大。**
+    * `buy-prices.end-apply`：在指定次数购买后不再应用该价格。仅支持 `ANY` 或 `ALL` 定价模式。**可选。默认为无穷大。**
     * `buy-prices.apply`：应用该价格的购买次数，格式为：`[1,2,3,4]`。仅支持 `ANY` 或 `ALL` 定价模式。**可选。默认使用 `start-apply` 项的值。**
     * `buy-prices.placeholder`：显示在 `{price}` 中的内容。**可选。默认使用配置文件的中的“未知类型”。**
     * `buy-prices.conditions`：玩家必须满足指定条件才可使用该价格。在此使用“[条件格式](format.condition-format.md)”。**可选。默认不设置条件。**
