@@ -9,6 +9,7 @@ import { NolebaseGitChangelogPlugin } from '@nolebase/vitepress-plugin-git-chang
 import '@nolebase/vitepress-plugin-git-changelog/client/style.css'
 import errorLayout from './error.vue'
 import '../theme/theme.css'
+import '../theme/scrollBar.css'
 import '@theojs/lumen/pic'
 import Layout from './Layout.vue'
 

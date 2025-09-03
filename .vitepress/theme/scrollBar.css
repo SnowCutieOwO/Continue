@@ -1,0 +1,180 @@
+/* 强制始终显示垂直滚动条，防止页面宽度跳动 :cite[2] */
+html {
+  overflow-y: scroll;
+}
+
+/* 定义亮色模式下的滚动条颜色变量 */
+:root {
+  --scrollbar-thumb-bg: rgba(144, 147, 153, 0.5);
+  --scrollbar-thumb-hover-bg: rgba(144, 147, 153, 0.8);
+  --scrollbar-track-bg: transparent;
+  transition-duration: 0.5s;
+}
+
+/* 定义暗色模式下的滚动条颜色变量 */
+.dark {
+  --scrollbar-thumb-bg: rgba(255, 255, 255, 0.25);
+  --scrollbar-thumb-hover-bg: rgba(255, 255, 255, 0.4);
+  --scrollbar-track-bg: transparent;
+  transition-duration: 0.5s;
+}
+
+/* 整个滚动条 - Webkit浏览器 (Chrome, Edge, Safari) :cite[10] */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+/* 滚动条轨道 - Webkit */
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-bg);
+  border-radius: 10px;
+}
+
+/* 滚动条滑块 - Webkit */
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-bg);
+  border-radius: 10px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+/* 滑块悬停状态 - Webkit */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover-bg);
+  background-clip: content-box;
+}
+
+/* Firefox 浏览器兼容性 :cite[2] */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-track-bg);
+}
+
+.dark {
+  scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-track-bg);
+}
+
+/* 针对 VitePress 常见溢出元素的滚动条样式 */
+/* 1. 左侧边栏导航 */
+.VPSidebar::-webkit-scrollbar,
+.vp-sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.VPSidebar::-webkit-scrollbar-thumb,
+.vp-sidebar::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-bg);
+  border-radius: 4px;
+}
+
+.VPSidebar::-webkit-scrollbar-thumb:hover,
+.vp-sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover-bg);
+}
+
+.VPSidebar,
+.vp-sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-track-bg);
+}
+
+/* 2. 右侧大纲目录 */
+.VPDocAside .content::-webkit-scrollbar,
+.vp-doc-aside .content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.VPDocAside .content::-webkit-scrollbar-thumb,
+.vp-doc-aside .content::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-bg);
+  border-radius: 4px;
+}
+
+.VPDocAside .content::-webkit-scrollbar-thumb:hover,
+.vp-doc-aside .content::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover-bg);
+}
+
+.VPDocAside .content,
+.vp-doc-aside .content {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-track-bg);
+}
+
+/* 3. 代码块 :cite[1] */
+pre::-webkit-scrollbar,
+code::-webkit-scrollbar {
+  height: 8px; /* 代码块通常需要水平滚动 */
+}
+
+pre::-webkit-scrollbar-thumb,
+code::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-bg);
+  border-radius: 4px;
+}
+
+pre::-webkit-scrollbar-thumb:hover,
+code::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover-bg);
+}
+
+pre,
+code {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-track-bg);
+}
+
+/* 4. 下拉菜单和弹出框 */
+[class*='dropdown']::-webkit-scrollbar,
+[class*='menu']::-webkit-scrollbar,
+[class*='popup']::-webkit-scrollbar {
+  width: 6px;
+}
+
+[class*='dropdown']::-webkit-scrollbar-thumb,
+[class*='menu']::-webkit-scrollbar-thumb,
+[class*='popup']::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-bg);
+  border-radius: 3px;
+}
+
+[class*='dropdown']::-webkit-scrollbar-thumb:hover,
+[class*='menu']::-webkit-scrollbar-thumb:hover,
+[class*='popup']::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover-bg);
+}
+
+[class*='dropdown'],
+[class*='menu'],
+[class*='popup'] {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-track-bg);
+}
+
+/* 5. 通用内容容器 */
+.content-container::-webkit-scrollbar,
+[class*='content']::-webkit-scrollbar,
+[class*='container']::-webkit-scrollbar {
+  width: 10px;
+}
+
+.content-container::-webkit-scrollbar-thumb,
+[class*='content']::-webkit-scrollbar-thumb,
+[class*='container']::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-bg);
+  border-radius: 5px;
+}
+
+.content-container::-webkit-scrollbar-thumb:hover,
+[class*='content']::-webkit-scrollbar-thumb:hover,
+[class*='container']::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover-bg);
+}
+
+.content-container,
+[class*='content'],
+[class*='container'] {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-track-bg);
+}
