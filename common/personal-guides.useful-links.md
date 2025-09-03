@@ -30,6 +30,7 @@
 * [网址缩短 7](https://suo.yt/)
 * [网址缩短 8](http://t.hk.uy/)
 * [网址缩短 9](https://short.yuelikeji.cn/)
+* [网址缩短 10](https://short.link/)
 * [短网址还原 1](https://duanwangzhihuanyuan.bmcx.com/)
 * [短网址还原 2](https://www.sojson.com/dwz/parse.html)
 
