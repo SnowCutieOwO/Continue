@@ -8,8 +8,8 @@
 
 ::: details FCL启动器下载
 
-* [FCL 直装模板](https://github.com/root-S7/FoldCraftLauncher/releases/download/1.2.4.6/FCL-release-1.2.4.6-arm64-v8a.apk "点击前往下载")
-* [FCL 官方原版（非直装）](https://github.com/FCL-Team/FoldCraftLauncher/releases/download/1.2.4.6/FCL-release-1.2.4.6-arm64-v8a.apk "点击前往下载")
+* [FCL 直装模板](https://github.com/root-S7/FoldCraftLauncher/releases/download/1.2.4.8/FCL-release-1.2.4.8-arm64-v8a.apk "点击前往下载")
+* [FCL 官方原版（非直装）](https://github.com/FCL-Team/FoldCraftLauncher/releases/download/1.2.4.8/FCL-release-1.2.4.8-arm64-v8a.apk "点击前往下载")
 
 :::
 
@@ -245,6 +245,7 @@
 |`general_setting.properties`|`/assets/app_config`|[点击跳转](#_5-general-setting-properties-常规设置)|
 |`launcher_rules.json`|`/assets/app_config`|[点击跳转](#_6-launcher-rules-json-启动器规则)|
 |`menu_setting.json`|`/assets/app_config`|[点击跳转](#_7-menu-setting-json-菜单设置)|
+|`custom_renderer.json`|`/assets/app_config`|[点击跳转](#_8-custom-renderer-json-自定义渲染器-未完成)|
 
 ### 1. eula.txt（最终用户许可协议）
 
@@ -430,7 +431,7 @@ FoldCraftLauncher — 整合包一键安装版
   },
   "downloadThreads": 64,
   "downloadType": "bmclapi",
-  "last": "内部目录",
+  "last": "私有目录",
   "versionListSource": "balanced"
 }
 ```
@@ -543,7 +544,7 @@ Auto、jre8、jre11、jre17、jre21。\
 
 :::: details 默认配置
 
-``` json title="launcher_rules.json"
+``` Json title="launcher_rules.json"
 {
   {
     "^1\\.(1[7-9]|[2-9][0-9]?)(\\.\\d+)?$": {
@@ -592,6 +593,38 @@ Auto、jre8、jre11、jre17、jre21。\
 |windowScale|1.0|窗口分辨率|
 |cursorOffset|0.0|鼠标指针偏移量|
 |gamepadDeadzone|1.0|手柄死区|
+
+### 8. custom_renderer.json（自定义渲染器规则）<未完成>
+
+:::: details 默认配置
+``` Json title="menu_setting.json"
+{
+  "com.mio.plugin.renderer.ltw": {
+    "des": "OpenLTW（OpenGL 4.6）",
+    "renderer": "LTW:libltw.so:libltw.so",
+    "boatEnv": "",
+    "pojavEnv": "LIBGL_ES=3:POJAV_RENDERER=opengles3_ltw",
+    "minMCVer": "1.17",
+    "maxMCVer": ""
+  }
+}
+```
+::::
+
+若 `custom_renderer.json` 中与 `渲染器插件` 和 `内置` 的存在**重复**的id则不添加到列表中。\
+也就是说渲染器会自动去重。
+::: info 优先级说明
+
+内置的渲染器 > 渲染器插件 > 自定义的渲染器
+
+:::
+
+::: tip
+
+自带规则不会生效，因为对应的 **so 文件** 未引入
+
+:::
+
 
 ## 9. 按键配置
 
