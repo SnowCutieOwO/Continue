@@ -34,7 +34,7 @@
 
 ![Netlify 构建状态](https://api.netlify.com/api/v1/badges/6e69d526-ea60-4ff8-9bfe-e0b9e4d028f0/deploy-status)
 
-![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-24-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-432204-84f5bb)
+![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-25-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-492177-84f5bb)
 （最后更新：2025/5/31）
 
 > [!NOTE]
@@ -62,6 +62,7 @@
 - [Shopkeepers](https://continue-project.netlify.app/Shopkeepers)
 - [Spark](https://continue-project.netlify.app/spark)
 - [SuperiorSkyBlock2](https://continue-project.netlify.app/SuperiorSkyblock2)
+- [Terra](https://continue-project.betlify.app/Terra)
 - [UltimateShop](https://continue-project.netlify.app/UltimateShop)（简体中文维基重汉化）
   * 完整版维基原本由我翻译，经过交涉后同意迁回此处继续维护。
 - [WorldEdit](https://continue-project.netlify.app/WorldEdit)
