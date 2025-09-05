@@ -1,6 +1,12 @@
 # 💴 简单定价
 
-你可以在 `config.yml` 中的  `prices` 部分创建新的简单定价！
+::: warning
+
+❌ 该功能已不受支持，可能会在未来版本中<font color="red">移除</font>。
+
+:::
+
+你可以在 `config.yml` 中的 `prices` 部分创建新的简单定价！
 
 例如：
 

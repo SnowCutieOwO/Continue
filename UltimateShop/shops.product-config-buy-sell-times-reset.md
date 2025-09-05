@@ -127,17 +127,14 @@ use-times:
 
 本示例使用了一个随机变量，实现在 3、4 或 5 小时后刷新物品而非固定事件点刷新。
 
-首先在 `config.yml` 中按如下格式创建一个随机变量：
+首先在 `random_placeholder` 文件夹中按如下格式创建一个随机变量配置：
 
 ``` YAML
-  # 仅付费版本。
-  random:
-    reset:
-      reset-mode: ONCE
-      elements:
-        - '03:00:00'
-        - '04:00:00'
-        - '05:00:00'
+reset-mode: ONCE
+elements:
+  - '03:00:00'
+  - '04:00:00'
+  - '05:00:00'
 ```
 
 在任意物品配置的 `buy-times-reset-time` 选项中使用这个变量。
@@ -164,16 +161,14 @@ use-times:
 
 默认情况下，每次重置都会将玩家的购买或出售次数重置为 0，但你也可以将其设置为其他固定或随机值！
 
-按如下示例在 `config.yml` 中创建一个随机变量：
+按如下示例在 `random_placeholder` 中创建一个随机变量：
 
 ``` YAML
-  # 仅付费版本。
-  random:
-    reset:
-      reset-mode: ONCE
-      elements:
-        - '0~20' # 范围为 0 到 20 的随机变量
-        - '40' # 固定数
+# 仅付费版本。
+reset-mode: ONCE
+elements:
+  - '0~20' # 范围为 0 到 20 的随机变量
+  - '40' # 固定数
 ```
 
 在任意商品配置中的 `buy-times-reset-value` 中使用这个变量：

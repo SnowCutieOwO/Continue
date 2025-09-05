@@ -1566,12 +1566,6 @@ export default defineConfig({
               ]
             },
             {
-              text: '📚 快速上手', collapsed: true, items: [
-                { text: '⚡ 第一课', link: '/UltimateShop/quick-understand.course-1' },
-                { text: '⚡ 第二课', link: '/UltimateShop/quick-understand.course-2' }
-              ]
-            },
-            {
               text: '📋 格式', collapsed: true, items: [
                 { text: '🛒 物品格式™ 的信息', link: '/UltimateShop/format.info-of-itemformat' },
                 {
@@ -1601,6 +1595,7 @@ export default defineConfig({
                 { text: '💰 物品配置：单条目', link: '/UltimateShop/shops.products-config-single-thing' },
                 { text: '♻️ 物品配置：交易次数重置', link: '/UltimateShop/shops.product-config-buy-sell-times-reset' },
                 { text: '📚 普通示例', link: '/UltimateShop/shops.common-examples' },
+                { text: '⚡ 示例：普通用法', link: '/UltimateShop/shops.example-common-usage' },
                 { text: '🌱 示例：真实库存', link: '/UltimateShop/shops.example-stock-like-in-life' },
                 { text: '📅 示例：每日商店', link: '/UltimateShop/shops.example-daily-shops' },
                 { text: '🏆 示例：每日奖励', link: '/UltimateShop/shops.example-daily-rewards' },
@@ -1640,7 +1635,6 @@ export default defineConfig({
               text: '💻 开发相关', collapsed: true, items: [
                 { text: '开发教程', link: '/UltimateShop/develop.develop-guide' },
                 { text: '与 UltimateShop 挂钩', link: '/UltimateShop/develop.hook-into-ultimateshop' },
-                { text: '无法实现的事', link: '/UltimateShop/develop.cant-do-things' },
               ]
             },
           ]

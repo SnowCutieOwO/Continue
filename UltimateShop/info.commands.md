@@ -1,5 +1,14 @@
 # ⌨️ 命令
 
+## 常见问题
+
+### 问：`/shop` 命令需要权限吗？
+
+**答：** `/shop` 命令可直接打开名为 `main` 的菜单。这个功能被称作**自动开启**，你可以在 config.yml 的 `menu.auto-open.enabled` 选项中关闭。若你只需要某些玩家可以使用这个命令，你可以在菜单中设置 `conditions` 来限制满足条件的玩家打开它。更多信息详见菜单章节。
+
+### 打开每日示例菜单时为什么显示条件不足？
+
+**答：** 菜单有预先设置的条件，你可以在 `menus/daily-shop-example.yml` 中找到。
 
 ## ultimateshop.bypassprice
 
@@ -117,3 +126,15 @@ global 参数表示为 `{buy-times-server}` 或 `{sell-times-server}` 变量设�
 需要附属插件 **UltimateShopEditor**，你可在 SpigotMC 下载它。
 
 需要权限 `ultimateshop.editor`。
+
+## /shop search
+
+搜索附近包含手持物品的商店。
+
+需要权限 `ultimateshop.search permission`。
+
+## /shop sellallhand
+
+出售手持的所有物品。
+
+需要权限 `ultimateshop.sellallhand permission`。

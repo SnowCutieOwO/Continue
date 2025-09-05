@@ -93,6 +93,7 @@ items:
         # 购买给予命令
         give-actions:
           1:
+            multi-once: true
             type: console_command
             command: 'items give {player} {amount}'
           2:
@@ -105,29 +106,31 @@ items:
 
 ### 示例：将不支持的经济插件用作价格
 
-在本示例中，我们会灵活利用不同的单条目与 `give-actions` 选项，这些功能可以在商品页面找到详细解释。假设玩家购买了这个物品，然后购买选项中的 `match-placeholder` 判断玩家是否拥有足够的货币。若其达到条件，则玩家会获得苹果。然后 `give-actions` 会被触发，使得玩家对应货币减少。相似地，在出售过程中，出售部分的 `give-actions` 也会被执行，因此玩家会收到对应货币。
+在本示例中，我们会灵活利用不同的单条目、`give-actions` 与 `take-actions` 选项，这些功能可以在商品页面找到详细解释。假设玩家购买了这个物品，然后购买选项中的 `match-placeholder` 判断玩家是否拥有足够的货币。若其达到 `buy-prices` 条件，则玩家会获得 `products` 中的苹果，同时触发 `buy-prices` 部分的 `take-actions` 操作。相似地，在出售过程中，出售部分的 `give-actions` 也会被执行，因此玩家会收到对应货币。
 
 ``` YAML
     products:
       1:
         # 出售物品名称
         material: APPLE
-        # 购买给予命令
-        give-actions:
-          1:
-            type: console_command
-            command: 'eco take {player} {amount}'
         amount: 64
     buy-prices:
       1:
         # 购买匹配变量
         match-placeholder: '%economy_now_balance_placeholder%'
         amount: 500
+        # 购买后扣除操作
+        take-actions:
+          1:
+            multi-once: true
+            type: console_command
+            command: 'eco take {player} {amount}'
     sell-prices:
       1:
-        # 出售给予命令
+        # 出售给予动作
         give-actions:
           1:
+            multi-once: true
             type: 'console_command'
             command: 'eco give {player} {amount}'
         amount: 500

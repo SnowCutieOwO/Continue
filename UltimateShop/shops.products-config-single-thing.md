@@ -21,18 +21,85 @@
 
 ## 选项
 
+``` YAML
+  A:
+    price-mode: ALL
+    product-mode: CLASSIC_ANY
+    products:
+      1:
+        material: emerald
+      2:
+        material: diamond
+    buy-prices:
+      1:
+        economy-plugin: Vault
+        amount: '55+({buy-times-server}-{sell-times-server})*0.1'
+        max-amount: 5500
+        min-amount: 325
+        placeholder: '{amount}$'
+        start-apply: 0
+      2:
+        economy-plugin: PlayerPoints
+        amount: '2'
+        placeholder: '{amount}$'
+        start-apply: 5
+        end-apply: 15
+    sell-prices:
+      1:
+        economy-plugin: Vault
+        amount: '15'
+        max-amount: 455
+        min-amount: 1
+        placeholder: '{amount}$'
+        start-apply: 0 
+  B:
+    products:
+      1:
+        # 出售物品
+        material: APPLE
+        amount: 64
+        give-actions:
+          1:
+            multi-once: true
+            type: message
+            message: 'eco give {player} {amount}'
+    buy-prices:
+      1:
+        # 购买匹配变量
+        match-placeholder: '%player_health%'
+        placeholder: '{amount}$'
+        amount: 5
+        take-actions:
+          1:
+            multi-once: true
+            type: console_command
+            command: 'eco take {player} {amount}'
+    sell-prices:
+      1:
+        # 出售给予命令
+        give-actions:
+          1:
+            type: 'message'
+            message: 'eco give {player} {amount} 1'
+        amount: 500
+        placeholder: '{amount}$'
+```
+
 在物品配置中，我们通过几个选项配置了对应类型的单条目。根据你需要的类型，在这些选项中填入了对应的内容。部分选项有一些额外内容可填入，如下：
 
 * `products`：用于出售的物品。支持“[物品格式](format.itemformat.md)”与“[经济格式](format.economyformat.md)”。你也可以根据单条目内容添加[自定义出售匹配方法](features.custom-item-match-method.md)。**可选。若不设置，玩家在交易后不会获得任何东西。适用于命令商店。**
     * `products.conditions`：玩家必须达到指定条件才可以购买这个物品。在此使用“[条件格式](format.condition-format.md)”。
     * `products.give-actions`：在物品基于玩家后执行的动作。在此使用“[动作格式](format.action-format.md)”。
     * `products.give-item`：在玩家尝试购买时是否直接给予物品。
+    * `products.take`：是否在玩家尝试出售物品时扣除物品。如果你不需要消耗物品，这个选项会很有用。
 * `buy-prices`：物品的买价。支持[物品格式](format.itemformat.md)与[经济格式](format.economyformat.md)。你也可以根据单条目内容添加[自定义出售匹配方法](features.custom-item-match-method.md)。**可选。若不设置则表示物品不可购买。**
     * `buy-prices.start-apply`：在指定次数购买后应用该价格。仅支持 `ANY` 或 `ALL` 定价模式。**可选，默认为 0。**
     * `buy-prices.end-apply`：在指定次数购买后不再应用该价格。仅支持 `ANY` 或 `ALL` 定价模式。**可选。默认为无穷大。**
     * `buy-prices.apply`：应用该价格的购买次数，格式为：`[1,2,3,4]`。仅支持 `ANY` 或 `ALL` 定价模式。**可选。默认使用 `start-apply` 项的值。**
     * `buy-prices.placeholder`：显示在 `{price}` 中的内容。**可选。默认使用配置文件的中的“未知类型”。**
     * `buy-prices.conditions`：玩家必须满足指定条件才可使用该价格。在此使用“[条件格式](format.condition-format.md)”。**可选。默认不设置条件。**
+    * `buy-prices.take-actions`: 购买价格被玩家使用后触发的操作。使用“[动作格式](format.action-format.md)”。
+    * `buy-prices.take`：是否在玩家尝试出售物品时扣除货币。如果你不需要消耗物品，这个选项会很有用。
 * `sell-prices`：物品的卖价。支持[物品格式](format.itemformat.md)与[经济格式](format.economyformat.md)。你也可以根据单条目内容添加[自定义出售匹配方法](features.custom-item-match-method.md)。**可选。若不设置则表示物品不可出售。**
     * 它也支持所有能填入 `buy-prices` 下的选项。
     * `sell-prices.give-actions`：物品给予玩家后执行的动作，使用“[动作格式](format.action-format.md)”。**可选。**
@@ -136,3 +203,21 @@ items:
           rule: '=='
           value: 'B'
 ```
+
+## 物品描述自动展示价格
+
+* 下载并安装 [MythicChanger](https://www.spigotmc.org/resources/mythicchanger-auto-match-change-drag-change-gui-change-in-1-plugin-1-14-1-21-8.98523/)（此插件依赖 PacketEvents）。
+* 在 `plugins/MythicChanger/rules` 文件夹中新建一个 `shop-display.yml` 文件。
+* 粘贴如下内容，保存并重启服务器。
+
+``` YAML
+weight: 15
+only-in-player-inventory: true
+fake-changes:
+  add-price-lore:
+    - '&f买价：&6{buy-price} &7/个'
+    - '&f卖价：&6{sell-price} &7/个'
+    - '&f总价：&6{total-price}'
+```
+
+![](images/image12.png)

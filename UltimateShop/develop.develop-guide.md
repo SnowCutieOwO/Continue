@@ -1,5 +1,11 @@
 # 开发教程
 
+::: info
+
+请注意，UltimateShop 并非传统的商店插件。它可以动态显示商店商品与价格（甚至细分到每种货币/物品的数量），这与其他一个 ItemStack 对应一个价格的商店插件有很大区别。
+
+:::
+
 ## 获取商店对象
 
 ``` Java
@@ -50,4 +56,59 @@ CacheManager.cacheManager.playerCacheMap.get(player);
 
 ``` Java
 CacheManager.cacheManager.serverCache;
+```
+
+## 从 ItemStack 获取价格
+
+``` Java
+ShopHelper.getBuyPrices(items, player, 1);
+ShopHelper.getSellPrices(items, player, 1);
+```
+
+## 获取 Vault 货币价格
+
+所有价格/商品配置格式遵照[经济格式](format.economyformat.md)或[物品格式](format.itemformat.md)
+
+``` Java
+Map<AbstractSingleThing, BigDecimal> resultMap = takeResult.getResultMap();
+for (AbstractSingleThing singleThing : resultMap.keySet()) {
+   if (singleThing.getSingleSection().getString("economy-plugin", "").equals("Vault") {
+       return "这个商品的价格设置包含 Vault 货币";
+   }
+}
+```
+
+## GiveResult
+
+::: info
+
+此方法无视购买/出售限量、条件检查等限制。如果你需要插件检查是否能购买或出售这个物品，你需要使用 BuyProductMethod SellProductMethod 方法。
+
+:::
+
+``` Java
+int sellUseTimes = ShopHelper.getSellUseTimes(item, player);
+GiveResult giveResult = ShopHelper.getSellPrices(items, player, 1);
+giveResult.give(sellUseTimes, 1, player, 1.01);
+```
+
+## TakeResult
+
+::: info
+
+此方法无视购买/出售限量、条件检查等限制。如果你需要插件检查是否能购买或出售这个物品，你需要使用 BuyProductMethod SellProductMethod 方法。
+
+:::
+
+``` Java
+int buyUseTimes = ShopHelper.getBuyUseTimes(item, player);
+TakeResult takeResult = ShopHelper.getBuyPrices(items, player, 1);
+if (!takeResult.getResultBoolean) return "金额不足";
+takeResult.take(sellUseTimes, 1, player.getInventory(), player);
+```
+
+## 从商品获取 TakeResult
+
+```java
+ObjectItem item = takeResult.getThings().getItem();
 ```

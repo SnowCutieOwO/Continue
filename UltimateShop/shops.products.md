@@ -7,6 +7,7 @@ items:
   A:
     price-mode: CLASSIC_ALL
     product-mode: CLASSIC_ALL
+    sell-all: true
     products:
       1:
         material: STRING
@@ -52,10 +53,6 @@ items:
         start-apply: 0
 ```
 
-## 物品/商品 ID
-
-鉴于我们需要在商店的 `layout` 部分填入物品，其 ID 必须为单字符。
-
 ## 全局选项
 
 - `display-item`：展示在商店菜单中的物品，可以与玩家实际获得的物品不同。虚拟物品必须设置 `display-item` 选项，否则它们就无法在商店菜单中显示。真实物品必须设置 `config.yml` 文件中 `display-item` 下的 `auto-set-first-product` 为 `true` 以允许你删除这个选项。启用后，若 `display-item` 未设置，那么出售的第一个真实物品将会被当做图标。该部分配置会使用到“[物品格式](format.itemformat.md)”的配置。**可选（若不设置则使用首个物品）**
@@ -64,8 +61,15 @@ items:
 - `add-lore`：为该物品设置[额外描述](menus.display-item-add-lore.md)，若不设置则使用配置文本中的默认值。**可选。**
 - `bedrock`：[见此](menus.bedrock-menus-premium.md)。
 - `buy-more`：设置该商品是否可以打开增量购买菜单，**必须先删除商店的 `buy-more` 选项才可以让该设置生效！可选。**
+- `sell-all`：决定商品是否可以使用一键出售模式。**可选，默认为 true。（3.9.0 新增）**
 - `price-mode`：价格模式。可填入 `ANY`、`ALL`、`CLASSIC_ANY` 和 `CLASSIC_ALL`。**必选。**
 - `product-mode`：物品模式，可填入的参数与上述相同。**若设置了物品部分则必选。**
+
+::: info
+
+你只应在商品与价格配置带有动态值时使用 **ANY** 与 **ALL**。如果你的配置使用的是静态值，则我们会自动为你将模式切换为 **CLASSIC**，避免性能浪费。
+
+:::
 
 |模式|`ANY`|`ALL`|`CLASSIC_ANY`|`CLASSIC_ALL`|
 |---|---|---|---|---|
