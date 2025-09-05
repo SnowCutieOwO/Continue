@@ -277,6 +277,7 @@ export default defineConfig({
           { text: 'Shopkeepers', link: '/Shopkeepers/index' },
           { text: 'spark', link: '/spark/index' },
           { text: 'SuperiorSkyblock2', link: '/SuperiorSkyblock2/index' },
+          { text: 'Terra', link: '/Terra/index' },
           { text: 'UltimateShop', link: '/UltimateShop/index' },
           { text: 'WorldEdit', link: '/WorldEdit/index' },
           { text: 'WorldGuard', link: '/WorldGuard/index' },
@@ -1382,6 +1383,164 @@ export default defineConfig({
                 { text: '插件源码', link: 'https://github.com/BG-Software-LLC/SuperiorSkyblock2' },
                 { text: '漏洞跟踪', link: 'https://github.com/BG-Software-LLC/SuperiorSkyblock2/issues' },
                 { text: '插件下载', link: 'https://bg-software.com/superiorSkyblock/' },
+              ]
+            }
+          ]
+        }
+      ],
+      '/Terra/': [
+        { text: '返回首页', link: '/index' },
+        { text: '前言', link: '/Terra/index' },
+        {
+          text: 'Terra 中文维基', items: [
+            {
+              text: '开始', link: '/Terra/getting-started', collapsed: true, items: [
+                { text: 'Fabric 平台安装', link: '/Terra/getting-started.fabric-installation' },
+                { text: 'Forge 平台安装', link: '/Terra/getting-started.forge-installation' },
+                { text: 'Quilt 平台安装', link: '/Terra/getting-started.quilt-installation' },
+                { text: 'Fabric、Forge 和 Quilt 客户端世界创建', link: '/Terra/getting-started.fabric-forge-and-quilt-client-world-creation' },
+                { text: 'Fabric、Forge 和 Quilt 服务端世界创建', link: '/Terra/getting-started.fabric-forge-and-quilt-server-world-creation' },
+                {
+                  text: 'Bukkit 平台安装', link: '/Terra/getting-started.bukkit-installation', collapsed: true, items: [
+                    { text: 'Bukkit 世界创建', link: '/Terra/getting-started.bukkit-installation.bukkit-world-creation' },
+                    { text: '世界管理插件创建', link: '/Terra/getting-started.bukkit-installation.worldmanager-world-creation' }
+                  ]
+                },
+                { text: '版本列表', link: '/Terra/getting-started.versions' }
+              ]
+            },
+            { text: '联系与支持', link: '/Terra/contact-and-support' },
+            {
+              text: '配置包', link: '/Terra/config-packs', collapsed: true, items: [
+                { text: '社区地形包', link: '/Terra/config-packs.community-packs' },
+                { text: '安装地形包', link: '/Terra/config-packs.pack-installation' },
+                {
+                  text: '配置开发', link: '/Terra/config-packs.config-development', collapsed: true, items: [
+                    { text: '配置开发简介', link: '/Terra/config-packs.config-development.config-development-introduction' },
+                    { text: '配置文件', link: '/Terra/config-packs.config-development.config-files' },
+                    { text: '在配置中设置数据', link: '/Terra/config-packs.config-development.defining-data-in-configs' },
+                    { text: '配置系统', link: '/Terra/config-packs.config-development.the-config-system' },
+                    { text: '元配置', link: '/Terra/config-packs.config-development.meta-configuration' },
+                    {
+                      text: '从零编写地形包', link: '/Terra/config-packs.config-development.creating-a-pack-from-scratch', collapsed: true, items: [
+                        { text: '从零编写地形包', link: '/Terra/config-packs.config-development.creating-a-pack-from-scratch.creating-a-pack-from-scratch' },
+                        { text: '从零编写调色板', link: '/Terra/config-packs.config-development.creating-a-pack-from-scratch.creating-a-palette-from-scratch' },
+                        { text: '从零编写地形生成', link: '/Terra/config-packs.config-development.creating-a-pack-from-scratch.creating-terrain-from-scratch' },
+                        { text: '从零编写地物生成', link: '/Terra/config-packs.config-development.creating-a-pack-from-scratch.creating-a-feature-from-scratch' },
+                        { text: '从零编写地物结构生成', link: '/Terra/config-packs.config-development.creating-a-pack-from-scratch.creating-a-feature-with-a-structure-from-scratch' },
+                        { text: '从零编写群系提供器', link: '/Terra/config-packs.config-development.creating-a-pack-from-scratch.creating-a-biome-provider-from-scratch' },
+                        { text: '从零编写海洋生成', link: '/Terra/config-packs.config-development.creating-a-pack-from-scratch.creating-oceans-from-scratch' },
+                        { text: '从零编写洞穴生成', link: '/Terra/config-packs.config-development.creating-a-pack-from-scratch.creating-carving-from-scratch' },
+                        { text: '从零编写矿物生成', link: '/Terra/config-packs.config-development.creating-a-pack-from-scratch.creating-ores-from-scratch' },
+                      ]
+                    },
+                    { text: '编辑现有地形包', link: '/Terra/config-packs.config-development.modifying-an-existing-pack' },
+                    { text: '地形表达式列表', link: '/Terra/config-packs.config-development.list-of-terrain-expressions' },
+                    { text: '多层地形', link: '/Terra/config-packs.config-development.multi-layered-terrain' },
+                    {
+                      text: '噪声', link: '/Terra/config-packs.config-development.noise', collapsed: true, items: [
+                        { text: '配置噪声采样器', link: '/Terra/config-packs.config-development.noise.configuring-noise-samplers' },
+                        { text: '噪声地物散布原理', link: '/Terra/config-packs.config-development.noise.how-noise-distributes-things' },
+                        { text: '噪声采样器的工作原理', link: '/Terra/config-packs.config-development.noise.how-noise-samplers-work' }
+                      ]
+                    },
+                    { text: '图片配置', link: '/Terra/config-packs.config-development.image-configuration' }
+                  ]
+                },
+                {
+                  text: '配置文档', link: '/Terra/config-packs.config-documentation', collapsed: true, items: [
+                    {
+                      text: '配置文件', link: '/Terra/config-packs.config-documentation.config-files', collapsed: true, items: [
+                        { text: 'BIOME', link: '/Terra/config-packs.config-documentation.config-files.biome' },
+                        { text: 'FEAUTRE', link: '/Terra/config-packs.config-documentation.config-files.feature' },
+                        { text: 'ORE', link: '/Terra/config-packs.config-documentation.config-files.ore' },
+                        { text: 'PALETTE', link: '/Terra/config-packs.config-documentation.config-files.palette' },
+                        { text: 'SCATTERED_ORE', link: '/Terra/config-packs.config-documentation.config-files.scattered-ore' },
+                        { text: 'pack.yml', link: '/Terra/config-packs.config-documentation.config-files.pack-yml' },
+                      ]
+                    },
+                    {
+                      text: '配置对象', link: '/Terra/config-packs.config-documentation.config-objects', collapsed: true, items: [
+                        { text: '浮点数', link: '/Terra/config-packs.config-documentation.config-objects.float' },
+                        { text: '整数', link: '/Terra/config-packs.config-documentation.config-objects.intenger' },
+                        { text: '噪声采样器', link: '/Terra/config-packs.config-documentation.config-objects.noisesampler' },
+                        { text: '字符串', link: '/Terra/config-packs.config-documentation.config-objects.string' },
+                        { text: '列表', link: '/Terra/config-packs.config-documentation.config-objects.list' },
+                        { text: '映射表', link: '/Terra/config-packs.config-documentation.config-objects.map' },
+                        { text: '布尔值', link: '/Terra/config-packs.config-documentation.config-objects.boolean' },
+                        { text: '范围', link: '/Terra/config-packs.config-documentation.config-objects.range' },
+                        { text: '权重列表', link: '/Terra/config-packs.config-documentation.config-objects.weightedlist' },
+                        { text: '方块', link: '/Terra/config-packs.config-documentation.config-objects.block' },
+                        { text: '标签', link: '/Terra/config-packs.config-documentation.config-objects.tag' },
+                        { text: '流水线群系', link: '/Terra/config-packs.config-documentation.config-objects.pipelinebiome' },
+                        { text: '颜色采样器', link: '/Terra/config-packs.config-documentation.config-objects.colorsampler' },
+                        { text: '样式', link: '/Terra/config-packs.config-documentation.config-objects.pattern' },
+                        { text: '集合', link: '/Terra/config-packs.config-documentation.config-objects.set' },
+                        { text: '分布器', link: '/Terra/config-packs.config-documentation.config-objects.distributor' },
+                        { text: '定位器', link: '/Terra/config-packs.config-documentation.config-objects.locator' },
+                        { text: '图像', link: '/Terra/config-packs.config-documentation.config-objects.image' },
+                        { text: '表达式', link: '/Terra/config-packs.config-documentation.config-objects.expression' },
+                        { text: '群系', link: '/Terra/config-packs.config-documentation.config-objects.biome' },
+                        { text: '维度适用采样器', link: '/Terra/config-packs.config-documentation.config-objects.dimensionapplicablesampler' },
+                        { text: '数学函数', link: '/Terra/config-packs.config-documentation.config-objects.mathfunction' },
+                        { text: '挤出可替换群系', link: '/Terra/config-packs.config-documentation.config-objects.extrusionreplaceablebiome' },
+                        { text: '群系颜色映射表', link: '/Terra/config-packs.config-documentation.config-objects.biomecolormapping' },
+                        { text: '颜色字符串', link: '/Terra/config-packs.config-documentation.config-objects.colorstring' },
+                        { text: '群系提供器', link: '/Terra/config-packs.config-documentation.config-objects.biomeprovider' },
+                        { text: '调色板', link: '/Terra/config-packs.config-documentation.config-objects.palette' },
+                        { text: '倾斜层', link: '/Terra/config-packs.config-documentation.config-objects.slantlayer' },
+                        { text: '点位', link: '/Terra/config-packs.config-documentation.config-objects.point' },
+                        { text: '挤压', link: '/Terra/config-packs.config-documentation.config-objects.extrusion' },
+                        { text: '群系颜色转化器', link: '/Terra/config-packs.config-documentation.config-objects.biomecolorconverter' },
+                        { text: '调色板层', link: '/Terra/config-packs.config-documentation.config-objects.palettelayer' },
+                        { text: '地物', link: '/Terra/config-packs.config-documentation.config-objects.feature' },
+                        { text: '结构', link: '/Terra/config-packs.config-documentation.config-objects.structure' },
+                        { text: '生成阶段', link: '/Terra/config-packs.config-documentation.config-objects.generationstage' },
+                        { text: '平台群系', link: '/Terra/config-packs.config-documentation.config-objects.platformbiome' },
+                        { text: '区块生成器', link: '/Terra/config-packs.config-documentation.config-objects.chunkgenerator' },
+                        { text: '流水线群系颜色转化器', link: '/Terra/config-packs.config-documentation.config-objects.pipelinebiomecolorconverter' },
+                        { text: '源', link: '/Terra/config-packs.config-documentation.config-objects.source' },
+                        { text: '阶段', link: '/Terra/config-packs.config-documentation.config-objects.stage' },
+                        { text: '立体样条点', link: '/Terra/config-packs.config-documentation.config-objects.cubicsplinepoint' },
+                        { text: '数字预测', link: '/Terra/config-packs.config-documentation.config-objects.numberpredicate' },
+                      ]
+                    },
+                    {
+                      text: 'TerraScript', link: '/Terra/config-packs.config-documentation.terra-script', collapsed: true, items: [
+                        { text: 'TerraScript 功能', link: '/Terra/config-packs.config-documentation.terra-script.what-terrascript-can-do' },
+                        { text: 'TerraScript 格式', link: '/Terra/config-packs.config-documentation.terra-script.terrascript-syntax' },
+                        { text: 'TerraScript 函数', link: '/Terra/config-packs.config-documentation.terra-script.terrascript-functions' },
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              text: 'Terra API', link: '/Terra/terra-api', collapsed: true, items: [
+                {
+                  text: 'Terra API 介绍', link: '/Terra/terra-api.introduction-to-the-terra-api', collapsed: true, items: [
+                    { text: 'Terra 依赖载入', link: '/Terra/terra-api.introduction-to-the-terra-api.terra-addon-loading' },
+                    { text: '搭建开发环境', link: '/Terra/terra-api.introduction-to-the-terra-api.setting-up-a-development-environment' },
+                    { text: '创建简单附属', link: '/Terra/terra-api.introduction-to-the-terra-api.create-a-simple-addon' },
+                    { text: '监听事件', link: '/Terra/terra-api.introduction-to-the-terra-api.listening-for-an-event' },
+                    { text: '添加结构', link: '/Terra/terra-api.introduction-to-the-terra-api.adding-a-structure' },
+                    { text: '注册配置类型', link: '/Terra/terra-api.introduction-to-the-terra-api.registering-a-config-type' },
+
+                  ]
+                },
+                {
+                  text: 'API 概念', link: '/Terra/terra-api.api-concepts', collapsed: true, items: [
+                    { text: '验证拓展', link: '/Terra/terra-api.api-concepts.manifest-addons' },
+                    { text: '依赖注入', link: '/Terra/terra-api.api-concepts.dependency-injection' },
+                    { text: 'SLF4J 记录', link: '/Terra/terra-api.api-concepts.logging-with-slf4j' },
+                    { text: '事件', link: '/Terra/terra-api.api-concepts.events' },
+                    { text: '类型键', link: '/Terra/terra-api.api-concepts.type-keys' },
+                    { text: '注册条目', link: '/Terra/terra-api.api-concepts.registries' },
+                    { text: '架构', link: '/Terra/terra-api.api-concepts.tectonic' },
+                    { text: '云注册命令', link: '/Terra/terra-api.api-concepts.registering-commands-with-cloud' },
+                  ]
+                }
               ]
             }
           ]
