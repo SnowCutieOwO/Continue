@@ -27,5 +27,5 @@ LuckPerms 所有在游戏内的语言都可以自定义或通过翻译系统切�
 * 创建文件夹 `/plugins/LuckPerms/translations/`
 * 导出修改后的 `.properties` 玩家，并将其重命名为 `<语言 ID>.properties`
     * 支持的语言 ID 可以在[这里](https://www.localeplanet.com/java/)找到。
-    * 例如，若要载入*西班牙语*的翻译，则文件名为 `es.properties`，*葡萄牙语（巴西）*的文件名为 `pt_BR.properties`
+    * 例如，若要载入*西班牙语*的翻译，则文件名为 `es.properties`，*葡萄牙语（巴西）* 的文件名为 `pt_BR.properties`
 * 重启服务器。
