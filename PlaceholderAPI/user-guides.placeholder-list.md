@@ -179,8 +179,8 @@
 %checkitem_getinfo:<槽位>_<条件修饰符1>,<条件修饰符2>,<...>% - 返回指定格子内的物品信息。返回顺序与下文介绍相同。列表会以“&r”符号分隔（如：%checkitem_getinfo:0_mat:）
 ```
 
-*注意：*
-\- `mainhand` 和 `offhand` 在 `getinfo:<格子>` 中有效
+*注意：*\
+\- `mainhand` 和 `offhand` 在 `getinfo:<格子>` 中有效\
 \- `give` 和 `remove` 变量出于安全考虑而默认禁用。可在 PlaceholderAPI 的 `config.yml` 中启用。
 
 **条件修饰符：**
