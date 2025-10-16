@@ -10,7 +10,7 @@
 
 子命令 `profiler` 可以控制 spark 的分析器。
 
-执行命令所需权限为 `spark 或 `spark.profiler`。
+执行命令所需权限为 `spark` 或 `spark.profiler`。
 
 如果分析器已经启动，你可以输入下面这些命令：
 
@@ -44,9 +44,9 @@
 * `/spark profiler start --not-combined` 开始分析，但禁用来自同一线程池的线程组；
 * `/spark profiler start --force-java-sampler` 开始分析，并强制使用 Java 采样而非异步采样；
 * `/spark profiler start --alloc --alloc-live-only` 开始分析内存分配，且只保留在结束时仍未被内存回收清理的对象数据；
-* `/spark profiler start --interval <字节>` 开始分析内存分配，且只按给定速度采样（默认值是 `524287`，即 [i]512 KB[/i]）；
+* `/spark profiler start --interval <字节>` 开始分析内存分配，且只按给定速度采样（默认值是 `524287`，即 *512 KB*）；
 * `/spark profiler stop --comment <注释>` 停止分析，并在浏览界面中填写注释；
-* `/spark profiler stop --separate-parent-calls` 停止分析，并在浏览界面中将不同父方法调用的内容分开显示。（[i]已弃用[/i]）
+* `/spark profiler stop --separate-parent-calls` 停止分析，并在浏览界面中将不同父方法调用的内容分开显示。（*已弃用*）
 * `/spark profiler stop --save-to-file` 将文件保存至本地文件夹而非上传至网络。
 
 :::
@@ -61,9 +61,8 @@
 
 你可以使用以下命令：
 
-
-* `/spark health --memory` 会让报告中附带 JVM 内存的使用情况； 
-* `/spark health --network` 会让报告中附带系统网络的使用情况。
+* `/spark health --memory` 会在报告中附带 JVM 内存的使用情况； 
+* `/spark health --network` 会在报告中附带系统网络的使用情况。
 
 
 ### `/spark ping`
@@ -72,13 +71,13 @@
 
 你可以使用以下命令：
 
-
-* `/spark ping` 来浏览有关所有玩家平均延迟的信息；
+* `/spark ping` 浏览有关所有玩家平均延迟的信息；
 * `/spark ping --player <玩家名称>` 返回指定玩家的延迟循环时间。
 
 执行命令所需权限为 `spark` 或 `spark.ping`。
 
 ### `/spark tps`
+
 子命令 `tps` 会输出服务器 TPS（每秒刻数）比率和 CPU 的使用情况。
 
 执行命令所需权限为 `spark` 或 `spark.tps`。
@@ -93,15 +92,14 @@
 
 你可以使用以下命令：
 
-
 * `/spark tickmonitor --threshold <比例>` 启动刻监视器，但只记录超过刻时间间隔一定百分比的刻；
 * `/spark tickmonitor --threshold-tick <毫秒>` 启动刻监视器，但只记录 MSPT（每刻毫秒数，Milliseconds per Tick）超过给定参数的刻；
 * `/spark tickmonitor --without-gc` 启动刻监视器，但禁用 GC（内存垃圾收集，Garbage Collection）活动的记录。
 
-
 ## 内存使用
 
 ### `/spark gc`
+
 子命令 `gc` 会显示服务器 GC（内存垃圾收集，Garbage Collection）的历史记录。
 
 执行命令所需权限为 `spark` 或 `spark.gc`。
@@ -124,10 +122,9 @@
 
 你可以使用以下命令：
 
-
 * `/spark heapdump --compress <类型>` 可以指定堆转储文件压缩为的格式。支持的未见类型有 gzip、xz 以及 lzma；
-* `/spark heapdump --include-non-live` 可以指定所要包含的“非活跃”对象（不可访问且符合 GC 回收条件的对象）；[i]（已弃用）[/i]
-* `/spark heapdump --run-gc-before` 可以让 JVM 在堆转储生成前启用 GC。[i]（已弃用）[/i]
+* `/spark heapdump --include-non-live` 可以指定所要包含的“非活跃”对象（不可访问且符合 GC 回收条件的对象）；*（已弃用）*
+* `/spark heapdump --run-gc-before` 可以让 JVM 在堆转储生成前启用 GC。*（已弃用）*
 
 
 ## 杂项
@@ -140,9 +137,7 @@
 
 你可以使用以下命令：
 
-
 * `/spark activity --page <页码>` 可以浏览指定页面。
-
 
 ## 另见
 
