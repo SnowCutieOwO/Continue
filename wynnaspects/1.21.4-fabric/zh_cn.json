@@ -1,0 +1,38 @@
+{
+  "text.autoconfig.wynnaspects.title": "WynnAspects",
+  "text.autoconfig.wynnaspects.option.credentials": "登录凭据 (https://wynnaspects.com)",
+
+  "text.autoconfig.wynnaspects.category.Authentication": "认证",
+  "text.autoconfig.wynnaspects.option.credentials.email": "邮箱",
+  "text.autoconfig.wynnaspects.option.credentials.password": "密码",
+  "text.autoconfig.wynnaspects.option.loginInfoEnabled": "在加入游戏时显示 WynnAspect API 登录消息",
+
+  "text.autoconfig.wynnaspects.category.Raid": "Raid",
+  "text.autoconfig.wynnaspects.option.enableMythicTomeAnnouncement": "启用神话 Tome 提醒（声音）",
+  "text.autoconfig.wynnaspects.option.enableMythicAspectAnnouncement": "启用神话 Aspect 提醒（声音）",
+  "text.autoconfig.wynnaspects.option.enableRaidChestMythicAspectScan": "启用 Raid 战利品箱 Mythic Aspect 检测",
+  "text.autoconfig.wynnaspects.option.enableDryStreakAnnouncementIfNoMythic": "未获得 Mythic 时显示连续空盒次数提示（声音）",
+  "text.autoconfig.wynnaspects.option.enableMaxedMythicAnnouncement": "启用 Aspcet 满级提醒（声音）",
+
+  "text.autoconfig.wynnaspects.category.Outer Void": "虚空外域（Outer Void）",
+  "text.autoconfig.wynnaspects.option.enableItemSizeAmplifier": "放大物品",
+  "text.autoconfig.wynnaspects.option.itemSizeAmplificationRatio": "物品缩放比例",
+
+  "text.autoconfig.wynnaspects.category.Crowd Sourcing": "玩家信息来源",
+  "text.autoconfig.wynnaspects.option.enableGambitDataCollection": "启用 Gambit 信息收集",
+
+  "text.autoconfig.wynnaspects.category.Ping System": "Ping 功能",
+  "text.autoconfig.wynnaspects.option.pingSystemEnabled": "启用 Ping 功能",
+  "text.autoconfig.wynnaspects.option.pingAuthMode": "Ping 模式（队伍/全体）",
+  "text.autoconfig.wynnaspects.option.defaultWheelPing": "默认轮环 Ping",
+  "text.autoconfig.wynnaspects.option.pingWheelHoldDelay": "Ping 轮环长按延迟（刻）",
+  "text.autoconfig.wynnaspects.option.pingFeedEnabled": "启用 Ping 反馈",
+  "text.autoconfig.wynnaspects.option.pingMarkerSize": "Ping 标点大小",
+  "text.autoconfig.wynnaspects.option.pingFeedSize": "Ping 反馈大小",
+  "text.autoconfig.wynnaspects.option.pingSoundEnabled": "启用 Ping 音效",
+  "text.autoconfig.wynnaspects.option.pingPartyFeedEnabled": "启用队伍 Ping 反馈",
+  "text.autoconfig.wynnaspects.option.offScreenPingEnabled": "启用侧屏 Ping 标记",
+  "text.autoconfig.wynnaspects.option.maxActivePings": "最大 Ping 数量",
+  "text.autoconfig.wynnaspects.option.pingMaxDistance": "全体 Ping 最大距离",
+  "text.autoconfig.wynnaspects.option.pingDuration": "Ping 持续时间（秒）"
+}
