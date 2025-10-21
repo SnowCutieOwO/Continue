@@ -1,0 +1,34 @@
+{
+  "category.wynnventory.keybinding": "WynnVentory",
+  "key.wynnventory.open_config": "打开配置",
+  "key.wynnventory.toggle_tooltips": "切换提示栏",
+  "key.wynnventory.toggle_boxed_item_tooltips": "切换未鉴定物品显示",
+
+  "text.autoconfig.wynnventory.title": "Wynnventory 配置",
+
+  "text.autoconfig.wynnventory.category.general": "全局",
+  "text.autoconfig.wynnventory.category.tooltip": "提示框属性",
+
+  "text.autoconfig.wynnventory.option.showTooltips": "显示提示框",
+  "text.autoconfig.wynnventory.option.showBoxedItemTooltips": "显示未鉴定物品提示框",
+  "text.autoconfig.wynnventory.option.showPriceFluctuation": "显示价格变动百分比（与上周均价比较值）",
+  "text.autoconfig.wynnventory.option.anchorTooltips": "显示提示框的锚点位置",
+
+  "text.autoconfig.wynnventory.option.colorSettings": "颜色设置",
+  "text.autoconfig.wynnventory.option.colorSettings.showColors": "高亮显示高于指定价格",
+  "text.autoconfig.wynnventory.option.colorSettings.colorMinPrice": "高亮高于次价格的物品（单位为绿宝石）",
+  "text.autoconfig.wynnventory.option.colorSettings.highlightColor": "高亮颜色",
+
+  "text.autoconfig.wynnventory.option.favouriteNotifierSettings": "收藏物品提醒设置",
+  "text.autoconfig.wynnventory.option.favouriteNotifierSettings.enableNotifier": "出现收藏物品时提醒",
+  "text.autoconfig.wynnventory.option.favouriteNotifierSettings.maxToasts": "提醒最大数量",
+  "text.autoconfig.wynnventory.option.favouriteNotifierSettings.mythicsOnly": "只提示 Mythic 物品",
+
+  "text.autoconfig.wynnventory.option.displayDropdown": "显示价格格式",
+  "text.autoconfig.wynnventory.option.showMaxPrice": "显示物品最高价格",
+  "text.autoconfig.wynnventory.option.showMinPrice": "显示物品最低价格",
+  "text.autoconfig.wynnventory.option.showAveragePrice": "显示物品均价（不推荐）",
+  "text.autoconfig.wynnventory.option.showAverage80Price": "显示物品 80% 位均价（去除最高与最低 10% 价格）",
+  "text.autoconfig.wynnventory.option.showUnidAveragePrice": "显示未鉴定物品的均价（不推荐）",
+  "text.autoconfig.wynnventory.option.showUnidAverage80Price": "显示未鉴定物品 80% 位均价（去除最高与最低 10% 价格）"
+}
