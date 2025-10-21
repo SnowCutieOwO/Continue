@@ -1,12 +1,3 @@
-node_modules
-.vitepress/dist
-.vitepress/cache
-.vscode
+wynntils
 
-# working plugins' wikis should be ignored temproraily
-
-Terra
-Dynmap
-TownyAdvanced
-
-# 应该没有人会抽象到把 gitignore 文件当笔记用吧...
+# temporarily ignore this mod
