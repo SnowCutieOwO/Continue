@@ -342,6 +342,11 @@ export default defineConfig({
             { text: '在火狐及分支上使用 Motrix 接管下载', link: '/common/personal-guides.motrix-setup-firefox' },
             { text: 'FCL 服务器手机端制作简述（电脑）', link: '/common/personal-guides.fcl-pc-setup' },
             { text: 'FCL 服务器手机端制作简述（手机）', link: '/common/personal-guides.fcl-moble-setup' },
+            {
+              text: 'TrMenu 菜单实战', items: [
+                { text: 'VIP 升级路线', link: '/common/personal-guides.trmenu-example-vip-menu' }
+              ]
+            },
           ]
         }
       ],
