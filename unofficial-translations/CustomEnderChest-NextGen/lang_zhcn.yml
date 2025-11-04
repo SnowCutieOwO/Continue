@@ -1,0 +1,35 @@
+# 所有消息的前缀
+prefix: "<gray>[<gradient:#C0FFEE:#B4D0FF>EnderChest</gradient>]</gray> "
+messages:
+  no-permission: "<red>你没有权限使用这个。</red>"
+  players-only: "<red>该命令只能由玩家执行。</red>"
+  reload-success: "<green>配置与语言文件重载完毕。</green>"
+  data-still-loading: "<yellow>数据仍在载入，请稍候...</yellow>"
+  data-busy: "<red>玩家数据库繁忙，请稍后再试。</red>"
+  enderchest-click-disabled: "<red>请使用命令打开高级末影箱。</red>"
+  save-error: "<red>保存数据时出错，请检查控制台。</red>"
+  invalid-player: "<red>玩家名称无效。</red>"
+  # 迁移相关消息
+  migration-data-incompatible: "<yellow>警告：末影箱数据与新服务器版本（1.21.5+）不兼容。"
+  migration-data-cleared: "<yellow>出于兼容性考虑，你的末影箱数据已被重置。旧数据仍然保留在数据库中。"
+  migration-contact-admin: "<gray>若需要恢复丢失的物品，请联系管理员。"
+  # 溢出相关消息
+  overflow-items-saved: "<yellow>⚠ 部分当前权限不能存取的物品已转移到溢出仓库。"
+  overflow-will-restore: "<gray>升级末影箱后会自动回到普通仓库中。"
+  overflow-items-restored: "<green>✓ 成功从溢出仓库中取回了 <count> 个物品！"
+command:
+  usage: "<red>命令用法：<gray>/<label> <usage>"
+  player-not-found: "<red>玩家 '<player>' 未找到或没有数据。"
+  delete-usage: "<red>命令用法：<gray>/<label> delete <player>"
+  delete-success: "<green>成功删除了玩家 <white><player></white> 的末影箱数据。"
+  loading-chest: "<yellow>正在载入 <white><player> 的</white> 末影箱..."
+titles:
+  enderchest: "<level> - <light_purple><player> 的箱子"
+  admin_view: "<dark_red>管理员浏览：<white><player>"
+levels:
+  '0': "&f一阶" # 1 行（9 格）
+  '1': "&a二阶" # 2 行（18 格）
+  '2': "&b三阶" # 3 行（27 格）
+  '3': "&e四阶" # 4 行（36 格）
+  '4': "&6五阶" # 5 行（45 格）
+  '5': "&d&l六阶" # 6 行（54 格）
