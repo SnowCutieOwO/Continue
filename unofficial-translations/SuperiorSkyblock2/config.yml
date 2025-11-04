@@ -90,6 +90,13 @@ default-values:
 
   # 默认岛屿的刷石机方块产生几率
   # 示例: 'DIAMOND_BLOCK:50' 将有 50% 的几率生成钻石块.
+  #   generator:
+  #     normal:
+  #       DIAMOND_BLOCK: 1
+  #       STONE: 199
+  #     nether:
+  #       GOLD_BLOCK: 1
+  #       NETHERRACK: 1
   # 可在这里找到完整的材料列表: https://bg-software.com/materials/
   generator:
     normal:
@@ -99,6 +106,14 @@ default-values:
   # 默认岛屿的成员职位限制.
   # 实例: '1:5' 表示将 ID 为 1(即管理员) 的职位限制为 5.
   role-limits: [ ]
+
+  # 设置所有岛屿的默认药水效果。
+  # 如下示例会为所有岛屿施加速度 III 效果：
+  #   island-effects:
+  #     SPEED: 4
+  # 完整药水效果列表见此：
+  # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/potion/PotionEffectType.html
+  island-effects: { }
 
 # 设置岛屿的高度限制.
 islands-height: 100
@@ -147,12 +162,31 @@ island-level-formula: '{} / 2'
 # 岛屿等级是否应当取整?
 rounded-island-level: false
 
+# 启用 rounded-island-level 功能时岛屿等级应当如何取整?
+# 可填入：UP, DOWN, CEILING, FLOOR, HALF_UP, HALF_DOWN 或 HALF_EVEN。
+# 更多信息见此：
+# https://docs.oracle.com/javase/8/docs/api/java/math/RoundingMode.html
+island-level-rounding-mode: 'HALF_UP'
+
+# 是否在玩家放置和破坏方块时自动追踪计数。
+# 设置为 true 时，方块数量、价值与等级会在放置或破坏方块时自动刷新。
+auto-blocks-tracking: true
+
 # 岛屿排行榜以什么数据为根据进行排序?
-# 可用设置有 WORTH, LEVEL, RATING 或 PLAYERS. 
+# 可用设置有 WORTH, LEVEL, RATING 或 PLAYERS.。
 island-top-order: 'WORTH'
+
+# 全局传送点的默认排序方式？
+# 可填入：WORTH, LEVEL, RATING 或 PLAYERS.
+global-warps-order: 'WORTH'
 
 # 是否启用岛屿合作成员功能.
 coop-members: true
+
+
+# 是否允许玩家编辑其他玩家的岛屿权限?
+# 设置为 false 时, 岛屿权限只能被对应岛屿职位编辑.
+edit-player-permissions: true
 
 # 所有与岛屿职位有关的功能.
 # 你可以在这里找到完整岛屿权限: https://wiki.bg-software.com/superiorskyblock/island-permissions
@@ -196,10 +230,13 @@ island-roles:
       - PICKUP_DROPS
       - PICKUP_FISH
       - PICKUP_LECTERN_BOOK
+      - SADDLE_ENTITY
       - SIGN_INTERACT
+      - SCULK_SENSOR
       - TURTLE_EGG_TRAMPING
       - USE
       - VILLAGER_TRADING
+      - WIND_CHARGE
 
   # 岛屿成员的权限设置.
   # 所有的岛屿成员默认权限都是这些.
@@ -378,6 +415,10 @@ spawn:
   # 玩家是否能在主城受伤?
   players-damage: false
 
+# 处于岛屿世界内, 但不在岛屿上的玩家拥有的权限列表。
+# 将权限加入此列表后，玩家可以破坏世界中的方块，但无法破坏其他岛屿的方块，因此请谨慎使用。
+world-permissions: [ ]
+
 # 当启用后, 玩家将在落入虚空后被传送.
 # 如果他们不在岛屿附近坠入虚空, 则他们将会被传送至出生点.
 void-teleport:
@@ -389,10 +430,6 @@ visitors-damage: false
 
 # 当被禁用时, 合作玩家不会在他们合作的岛屿中受伤.
 coop-damage: true
-
-# 玩家可以解散岛屿的次数.
-# 若你要禁用该功能, 请将其设置为 0.
-disband-count: 5
 
 # 岛屿成员限制是否包括岛屿领袖?
 island-top-include-leader: true
@@ -417,6 +454,9 @@ kick-confirm: true
 # 是否在执行命令 /is leave 时发送确认界面.
 leave-confirm: true
 
+# 是否在执行命令 /is transfer 时发送确认界面.
+transfer-confirm: true
+
 # 若你需要使用一个指定的刷怪笼提供者, 请在这里指定.
 # 可用提供者有: Auto, WildStacker, EpicSpawners, MergedSpawner, PvpingSpawners, SilkSpawners, RoseStacker
 spawners-provider: 'AUTO'
@@ -424,9 +464,6 @@ spawners-provider: 'AUTO'
 # 若你需要使用一个指定的堆叠功能提供者, 请在这里指定.
 # 可用提供者有: Auto, WildStacker, RoseStacker
 stacked-blocks-provider: 'AUTO'
-
-# 在解散时是否清理岛屿成员的背包?
-disband-inventory-clear: true
 
 # 与岛屿名称有关的设置.
 island-names:
@@ -455,17 +492,45 @@ island-names:
   # 插件是否应当阻止玩家将岛屿名称设置为玩家名称?
   prevent-player-names: false
 
+# 创建岛屿后是否将玩家传送至岛屿？
+teleport-on-create: true
+
 # 当同意请求后玩家是否应该立即传送至岛屿?
 teleport-on-join: false
 
 # 当从岛屿被踢出后玩家是否应当被传送回主城?
 teleport-on-kick: true
 
-# 当同意请求后玩家是否应该清空背包?
-clear-on-join: false
+# 解散岛屿时清除原岛屿成员的指定内容。
+# 可用操作：EFFECTS, ENDER_CHEST, EXPERIENCE, HEALTH, HUNGER, INVENTORY
+# 设置为 'clear-on-disband: []' 可禁用该功能。
+clear-on-disband:
+  - ENDER_CHEST
+  - INVENTORY
+
+# 接受邀请请求时对新岛屿成员改动的指定内容。
+# 可用操作：EFFECTS, ENDER_CHEST, EXPERIENCE, HEALTH, HUNGER, INVENTORY
+# 设置为 'clear-on-join: []' 可禁用该功能。
+clear-on-join: [ ]
+
+# 被踢出岛屿时清除岛屿成员的指定内容。
+# 可用操作：EFFECTS, ENDER_CHEST, EXPERIENCE, HEALTH, HUNGER, INVENTORY
+# 设置为 'clear-on-kick: []' 可禁用该功能。
+clear-on-kick: [ ]
+
+# 离开岛屿时清除原岛屿成员的指定内容。
+# Available actions: EFFECTS, ENDER_CHEST, EXPERIENCE, HEALTH, HUNGER, INVENTORY
+# 设置为 'clear-on-leave: []' 可禁用该功能。
+clear-on-leave: [ ]
+
+# 离开岛屿后是否传送回主城？
+teleport-on-leave: false
 
 # 玩家是否允许为自己的岛屿打分?
 rate-own-island: false
+
+# 是否允许其他玩家更改岛屿评分?
+change-island-rating: true
 
 # 新岛屿的默认设置.
 # 可以在这里找到完整的设置列表: https://wiki.bg-software.com/superiorskyblock/island-settings
@@ -606,7 +671,7 @@ liquid-update: false
 
 # 是否在黏贴结构时更新光照?
 # 启用该功能可能会让性能略微下降.
-lights-update: false
+lights-update: true
 
 # 对岛屿间成员启用 PVP 的世界.
 pvp-worlds:
@@ -621,31 +686,46 @@ values-menu: true
 # 允许被作物生长速率影响的作物.
 # 可在这里找到有关材料的列表: https://bg-software.com/materials/
 crops-to-grow:
-  - 'CACTUS'
+  - 'SAPLING'
+  - 'OAK_SAPLING'
+  - 'SPRUCE_SAPLING'
+  - 'BIRCH_SAPLING'
+  - 'JUNGLE_SAPLING'
+  - 'ACACIA_SAPLING'
+  - 'DARK_OAK_SAPLING'
+  - 'MANGROVE_PROPAGULE'
+  - 'CHERRY_SAPLING'
+  - 'PALE_OAK_SAPLING'
+  - 'BROWN_MUSHROOM'
+  - 'RED_MUSHROOM'
+  - 'BAMBOO'
+  - 'BAMBOO_SAPLING'
   - 'SUGAR_CANE_BLOCK'
   - 'SUGAR_CANE'
-  - 'MELON_STEM'
-  - 'ATTACHED_MELON_STEM'
-  - 'RED_MUSHROOM'
-  - 'BROWN_MUSHROOM'
+  - 'CACTUS'
+  - 'WEEPING_VINES'
+  - 'TWISTING_VINES'
+  - 'VINE'
+  - 'CHORUS_FLOWER'
+  - 'WHEAT'
+  - 'COCOA'
   - 'PUMPKIN_STEM'
   - 'ATTACHED_PUMPKIN_STEM'
-  - 'VINE'
-  - 'COCOA'
-  - 'SAPLING'
-  - 'DARK_OAK_SAPLING'
-  - 'JUNGLE_SAPLING'
-  - 'OAK_SAPLING'
-  - 'ACACIA_SAPLING'
-  - 'BIRCH_SAPLING'
-  - 'SPRUCE_SAPLING'
-  - 'CROPS'
-  - 'WHEAT'
+  - 'MELON_STEM'
+  - 'ATTACHED_MELON_STEM'
+  - 'BEETROOTS'
+  - 'TORCHFLOWER_CROP'
+  - 'PITCHER_CROP'
+  - 'CAVE_VINES'
+  - 'SWEET_BERRY_BUSH'
+  - 'NETHER_WART'
+  - 'NETHER_WARTS'
+  - 'KELP'
   - 'CARROT'
   - 'CARROTS'
   - 'POTATO'
   - 'POTATOES'
-  - 'BEETROOTS'
+  - 'CROPS'
 
 # 作物任务执行的频率是多少? (单位为刻)
 # 可通过将该选项设置为 0 以禁用该功能.
@@ -659,6 +739,10 @@ only-back-button: false
 # 所有岛屿的极限边界为其最大大小的 1.5 倍, 这意味着岛屿之间可以相互连接.
 # 推荐在启用该功能的时候将岛屿大小调整到较小值
 build-outside-island: false
+
+# 玩家解散岛屿的最大次数.
+# 若要禁用该功能, 将其设置为 -1.
+default-disband-count: 5
 
 # 使用的默认语言.
 # 应当与语言文件夹中的文件名称相同.
@@ -732,13 +816,25 @@ command-aliases:
 # 这些方块需要 "VALUABLE_BREAK" 权限才可破坏.
 valuable-blocks: [ ]
 
-# 设置结构的预览位置.
-# 你可以通过将该选项设置为 'preview-islands: {}' 来禁用该功能
-# 若设置, 请确保按照下列格式: '<世界名称>, <x>, <y>, <z>'
-preview-islands:
-  normal: world, 0, 100, 0
-  mycel: world, 0, 100, 0
-  desert: world, 0, 100, 0
+# 岛屿预览相关设置。
+island-previews:
+  # 预览模式的游戏模式。
+  # 可填入 ADVENTURE（冒险模式）, CREATIVE（创造模式）, SPECTATOR（旁观模式）或 SURVIVAL（生存模式）.
+  game-mode: SPECTATOR
+
+  # 离开岛屿该距离会让玩家自动退出预览模式。
+  max-distance: 100
+
+  # 玩家处于预览模式时不可执行的命令列表.
+  blocked-commands: [ ]
+
+  # 设置结构的预览位置.
+  # 你可以通过将该选项设置为 'locations: {}' 来禁用该功能
+  # 若设置, 请确保按照下列格式: '<世界名称>, <x>, <y>, <z>'
+  locations:
+    normal: world, 0, 100, 0
+    mycel: world, 0, 100, 0
+    desert: world, 0, 100, 0
 
 # 隐身玩家是否应该在 tab 补全中隐藏?
 tab-complete-hide-vanished: true
@@ -746,8 +842,17 @@ tab-complete-hide-vanished: true
 # 当启用后, 掉落物翻倍将只会对玩家击杀的生物生效.
 drops-upgrade-players-multiply: false
 
-# 显示保护消息的间隔 (单位为刻)
-protected-message-delay: 60
+# 显示指定消息的延迟 (单位为毫秒)
+message-delays:
+  BUILD_OUTSIDE_ISLAND: 3000
+  ISLAND_BEING_CALCULATED: 3000
+  ISLAND_PROTECTED: 3000
+  ISLAND_PROTECTED_OPPED: 3000
+  SCHEMATIC_NOT_ADDED: 3000
+  SPAWN_PROTECTED: 3000
+  SPAWN_PROTECTED_OPPED: 3000
+  WORLD_NOT_ENABLED: 3000
+  WORLD_NOT_UNLOCKED: 3000
 
 # 是否允许玩家创建传送分类?
 warp-categories: true
@@ -763,6 +868,9 @@ charge-on-warp: 0
 
 # 岛屿传送点是否默认公开?
 public-warps: false
+
+# 岛屿是否默认锁定?
+locked-islands: false
 
 # 计算任务算作超时的时间, 单位为秒.
 # 若你需要禁用超时, 则将其设置为 0 或负数.
@@ -804,7 +912,31 @@ player-respawn:
   - SPAWN_TELEPORT
 
 # 在将方块数量更新至数据库时所需要放置或破坏的方块数量.
-# This means that if the threshold is at 100, it will require 100 blocks to be added/removed before updating the
-# 这意味着如果阈值设置为了 150, 则它需要在岛屿上至少破坏/放置 100 个方块才可以将新的方块数量更新至数据库.
+# 这意味着如果阈值设置为了 100, 则它需要在岛屿上至少破坏/放置 100 个方块才可以将新的方块数量更新至数据库.
 # 如果服务器被关闭且方块数量有变, 那么插件将会无视上述限制将更新后的数量保存至数据库. 
 block-counts-save-threshold: 100
+
+# 支持 1.19+ 聊天签名相关功能.
+# 设置为 true 时，插件将会正确处理消息以避免与聊天消息签名冲突.
+# 但是，这可能会导致其他未正确处理签名消息的插件出现问题，在这种情况下，最好将其禁用.
+chat-signing-support: true
+
+# 显示 `/is help` 和 `/is admin` 命令中的命令数量.
+# 设置为小于 0 的值表示将所有命令显示在同一页中.
+commands-per-page: 7
+
+# Configure custom entity categories.
+# 配置自定义实体类别.
+# 默认情况下只有两种分类 - ANIMALS 和 MONSTER
+# 你可以在这里自行添加自定义分类, 并配置哪些实体属于该分类.
+# 自定义分类中的实体在攻击与生成方面拥有各自的权限及标志.
+# 你可以向菜单手动添加自定义权限与岛屿标志.
+# 例如:
+#   entity-categories:
+#     VILLAGERS:
+#     - VILLAGER
+# The `VILLAGERS` category will have VILLAGER entities in it.
+# `VILLAGERS` 分类中就会包含村民.
+# 玩家生成或攻击村民时会需要对应权限 `VILLAGERS_SPAWN` 以及 `VILLAGERS_DAMAGE`
+# 且岛屿需要启用对应的岛屿标志 `SPAWNER_VILLAGERS_SPAWN` 和 `NATURAL_VILLAGERS_SPAWN`.
+entity-categories: { }
