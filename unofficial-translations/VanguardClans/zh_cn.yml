@@ -1,0 +1,314 @@
+# 玩家命令
+user:
+  console_command_only: "&c 控制台命令: &f/clanadmin reload."
+  no_permission: "&c 你没有权限使用这个命令."
+  commands_blocked_world: "&c你不能在这个世界使用这个命令."
+
+
+  invalid_page_number: "&c 无效页码."
+  only_players_help: "&c 只有玩家可以浏览帮助界面."
+  already_in_clan: "&c 你已经加入工会了."
+  usage_report: "&c &l命令用法:&f&f /clan report <工会名称> <理由>"
+  usage_join: "&c &l命令用法:&f&f /clan join <工会名称>"
+  usage_invite: "&c &l命令用法:&f&f /clan invite <玩家名称>"
+  usage_ff: "&c &l命令用法:&f&f /clan ff <on|off>"
+  usage_ally: "&c &l命令用法:&f&f /clan ally <request|accept|decline|remove> <工会名称>"
+  no_clan: "&c 你没有加入任何工会."
+
+  # 帮助命令
+  invalid_page_help: "&c 页码无效. 请输入命令 /clan help <1-{total_pages}>"
+  help_header: "&6&m====================================="
+  help_title: "&6&l» &a&lᴠᴀɴɢᴜᴀʀᴅ&6&lᴄʟᴀɴꜱ &e&l命令列表 &7(第 {page}/{total_pages} 页)"
+  help_footer: "&6&m====================================="
+  help_previous_page: "&e« 上一页 "
+  help_next_page: "&e 下一页 »"
+  help_click_to_page: "点击翻到第 {page} 页"
+  help_lines:
+    - "&e➤ &f&lCREATE &7» &f创建新工会, 开始你的冒险."
+    - "&e➤ &f&lJOIN &7» &f加入现有工会结交盟友."
+    - "&e➤ &f&lINVITE &7» &f邀请受信任的玩家加入你的工会."
+    - "&e➤ &f&lLEAVE &7» &f深藏功与名, 离开工会."
+    - "&e➤ &f&lDISBAND &7» &f解散你的工会."
+    - "&e➤ &f&lKICK &7» &f踢出存在问题的玩家."
+    - "&e➤ &f&lFF &7» &f开启或关闭友军伤害."
+    - "&e➤ &f&lALLY &7» &f与其他工会结盟."
+    - "&e➤ &f&lCHAT &7» &f与工会内成员聊天."
+    - "&e➤ &f&lSTATS &7» &f浏览工会进度及成就."
+    - "&e➤ &f&lLIST &7» &f浏览服务器上的工会."
+    - "&e➤ &f&lREPORT &7» &f举报存在问题的工会."
+    - "&e➤ &f&lEDIT &7» &f编辑细节与守则."
+    - "&e➤ &f&lECONOMY &7» &f管理工会资金."
+    - "&e➤ &f&lRESIGN &7» &f转移工会领袖职位."
+    - "&e➤ &f&lHELP &7» &f显示本帮助菜单."
+
+  # 踢出命令
+  usage_kick: "&c &l命令用法:&f&f /clan kick <玩家名称>"
+  kick_only_leader: "&c 只有工会领袖可以踢出玩家."
+  kick_cant_kick_self: "&c 你不能踢出自己. 若需要离开工会, 请使用命令 /clan leave."
+  kick_player_not_member: "&c 这个玩家不属于工会."
+  kick_success: "&2 玩家 &e&l{player} &2已被踢出工会 &e&l{clan}"
+  kick_clan_deleted: "&2 工会为空. 它已被删除."
+  kick_error: "&c 尝试踢出玩家时发生错误."
+
+  # 转移命令
+  resign_not_leader: "&c 你不是工会领袖."
+  resign_success: "&c 你转让了领袖职位! 新的领袖为 {newLeader}"
+  resign_clan_deleted: "&c 工会已因缺少成员而删除."
+  resign_error: "&c 转移领袖时出现错误."
+
+  # 属性命令
+  stats_not_found: "&c 没有该名称的工会存在."
+  stats_border: "&8&m===================================================="
+  stats_title: "&8&l» &e&l统计数据: &b{clan} &8&l «"
+  stats_founder: "&7创建者: &f{founder}"
+  stats_leader: "&7当前领袖: &f{leader}"
+  stats_privacy: "&7工会守则: &f{privacy}"
+  stats_money: "&7工会资金: &a${money}"
+  stats_members_title: "&2成员列表:"
+  stats_member_line: "&f- &l{member}"
+  stats_footer: "&2================== &7 [&a&lᴠᴀɴɢᴜᴀʀᴅ&6&lᴄʟᴀɴꜱ&7] &2=================="
+  stats_error: "&c 读取工会信息时出现错误."
+  stats_avg_kd: "&e工会平均 KD 比: &b{avgKD}"
+# stats_member_line: "&7- &f{member} &8| &eK/D: &b{kd}"
+
+  # 邀请命令
+  only_players_invite: "&c 只有玩家可以发送邀请."
+# no_clan: "&c You are not in any clan."
+  invite_only_leader: "&c 只有工会领袖可以邀请其他玩家!"
+  cant_invite_self: "&c 你不能邀请你自己!"
+  player_not_online: "&c 该玩家不在线."
+  player_in_other_clan: "&c 该玩家已经加入了其他工会."
+  invite_pending: "&c 该玩家已有待处理的邀请请求."
+  invite_sent: "&a 邀请已发送给玩家 &f{player}"
+  invite_received: "&e 你收到了加入 &f{clan} &e工会的邀请."
+  invite_usage: "&8 命令用法: /clan join {clan} &7- 加入工会"
+  invite_error: "&c 发送请求时出现错误."
+
+  # 聊天命令
+  chat_format: "&7[&6&l工会聊天&7] {clan} &f{player}&f: &7{message}"
+  chat_error: "&c 在工会内聊天发送消息时出现错误."
+  chat_enabled: "&a工会聊天已打开. 你的所有消息都会显示在工会聊天中."
+  chat_disabled: "&c工会聊天已关闭. 正在返回公开聊天."
+    
+  # 退出命令
+  clan_deleted_empty: "&c 工会内没有玩家, 已自动解散."
+  leader_left: "&c 你已离开. 新的工会领袖为 {newLeader}"
+  left_clan: "&2 你成功离开了工会."
+  leave_error: "&c 离开工会时出现错误."
+
+  # 加入命令
+  only_players_join: "&c 只有玩家可以加入工会."
+# already_in_clan: "&c 你已经在工会中了."
+  clan_not_exist: "&c 工会不存在."
+  invite_expired: "&c 加入工会的请求已过期."
+  clan_private: "&c 这个工会被设置为&l不对外开放&c."
+  joined_clan: "&2 你成功加入了工会: &e{clan}"
+  join_error: "&c 加入工会时出现错误."
+
+  # 工会列表命令
+  no_clans: "&c 服务器上没有工会."
+  clans_header: "&2&l 工会列表:"
+  clans_footer: "&2&m=================="
+  clans_error: "&c 获取工会列表时出现错误."
+
+  # 举报命令
+  report_no_reason: "&c 请提供举报的有效理由."
+  report_clan_not_exist: "&c 被举报工会不存在."
+  report_already_sent: "&c 已经发送了举报请求."
+  report_success: "&2 成功举报了工会: &e{clan}&2. 理由: {reason}"
+  report_error: "&c 发送举报请求时出现错误."
+
+  # 编辑命令
+  edit_no_leader: "&c 只有工会领袖可以编辑工会信息!"
+  edit_usage: "&c &l命令用法:&f&f /clan edit <name|privacy> <内容>"
+  edit_name_success: "&3 工会名称已改为: &f{name}"
+  edit_name_error: "&c 修改工会名称时遇到错误."
+  edit_privacy_success: "&3 工会介绍已修改为: &f{privacy}"
+  edit_error: "&c 编辑工会时遇到错误."
+  edit_name_too_long: "&c工会名称长度超出了 {max} 字符长度."
+  edit_name_blocked: "&c工会名称存在违禁词, 请换用其他名称."
+
+  # 解散命令
+  disband_not_leader: "&c 你不是该工会的领袖."
+  disband_success: "&2 工会已被解散."
+  disband_success_earn: "&2 公会已被解散. 你获得了: &e${money}"
+  disband_error: "&c 删除工会时出错."
+
+  # 创建命令
+  create_usage: "&c&l 命令用法:&f /clan create <工会名称>"
+  create_exists: "&c 已存在同名工会."
+  create_limit: "&c 已达到创建工会的数量限制 ({max})."
+  create_no_money: "&c 你没有足够的钱. 你至少需要: &2&l${cost}"
+  create_success: "&2 你成功创建了工会 &e{clan}&2."
+  create_error: "&c 创建工会时遇到问题."
+  create_name_too_long: "&c 公会名称过长. 最长为 {max} 个可见字符."
+  create_name_blocked: "&c 名称存在违禁词."
+
+  # 工会据点命令
+  home_cooldown: "&c你需要等待 {seconds} 秒才可再次使用 /clan home 命令."
+  teleporting_home: "&e将在 {seconds} 秒内传送至工会据点..."
+  home_teleported: "&a你已被传送至工会据点!"
+  home_not_set: "&c工会尚未设置据点."
+  home_set: "&a成功设置工会据点."
+  home_deleted: "&a该据点已被删除."
+  teleport_cancelled: "&c你移动了. 传送取消."
+  on_teleport: "&c你已有待处理的传送请求."
+
+
+# 处理器
+command:
+  # 工会友伤命令
+  ff_usage: "&c &l命令用法:&f&f /clan ff <on|off>"
+  ff_status: "&a 工会友伤状态: &e{status}"
+  ff_error: "&c 更新工会友伤设置时遇到错误."
+
+  # 盟友友伤命令
+  allyff_usage: "&c &l命令用法:&f&f /clan allyff <on|off>"
+  allyff_status: "&a 盟友友伤状态: &e{status}"
+  allyff_error: "&c 更新盟友友伤设置时遇到错误.."
+
+  # 盟友命令
+  ally_usage: "&c &l命令用法:&f&f /clan ally <request|accept|decline|remove|ff> [<工会名称>|<on|off>]"
+  ally_request_usage: "&c &l命令用法:&f /clan ally request <工会名称>"
+  ally_accept_usage: "&c &l命令用法:&f /clan ally accept <工会名称>"
+  ally_decline_usage: "&c &l命令用法:&f /clan ally decline <工会名称>"
+  ally_remove_usage: "&c &l命令用法:&f /clan ally remove <工会名称>"
+  ally_ff_usage: "&c &l命令用法:&f /clan ally ff <on|off>"
+  ally_invalid_subcommand: "&c 无效子命令. 有效子命令为 request, accept, decline, remove 或 ff."
+
+  # 盟友请求
+  ally_same_clan: "&c 你不能对自己的工会执行这个操作."
+  ally_target_not_exist: "&c 不存在名为 &e{target} &c的工会."
+  ally_already_requested: "&c 你已向该工会发送了结盟请求."
+  ally_request_sent: "&a 结盟请求已发送至工会 &e{target}"
+  ally_request_received: "&e你收到了来自 &a{clan} &e工会的结盟请求."
+  ally_request_error: "&c 发送结盟请求时遇到错误."
+
+  # 盟友接受请求
+  ally_accept_same_clan: "&c 你不能对自己的工会执行这个操作."
+  ally_accept_no_pending: "&c 你没有来自此工会的待处理请求."
+  ally_accept_success: "&a 你接受了 &e{requester} &a的结盟邀请."
+  ally_accepted_notify: "&a 工会 &e{clan} &a接受了你的结盟邀请."
+  ally_accept_error: "&c 结盟时遇到错误."
+
+  # 盟友拒绝请求
+  ally_decline_same_clan: "&c 你不能对自己的工会执行这个操作."
+  ally_decline_no_pending: "&c 你没有来自此工会的待处理请求."
+  ally_decline_success: "&a 你拒绝了 &e{requester} &a的结盟邀请."
+  ally_declined_notify: "&c 工会 &e{clan} &c拒绝了你的结盟邀请."
+  ally_decline_error: "&c 拒绝结盟时遇到错误."
+
+  # 盟友移除
+  ally_remove_same_clan: "&c 你不能对自己的工会执行这个操作."
+  ally_remove_success: "&a 你已移除了与工会 &e{target} &a的盟友关系."
+  ally_remove_none: "&c 你与这个工会并不是盟友关系."
+  ally_remove_error: "&c 解除盟友关系时遇到错误."
+
+# 状态消息
+status:
+  enabled: "启用"
+  disabled: "禁用"
+
+# 管理员命令
+msg:
+  no_permission: "&c你没有权限使用此命令."
+  only_in_game: "&c这个命令只能在游戏内使用."
+  usage_lang: "&e &l命令用法:&f&f /clanadmin lang"
+  console_reload_only: "&c仅控制台可用: &f/cla reload"
+  reloading: "&e正在重载插件..."
+  plugin_reloaded: "&a✔ 插件重载完毕."
+
+  # 重载命令
+  confirm_clear_1: "&e你确定要删除所有数据?"
+  confirm_clear_2: "&e请再次输入命令 &c&l/clanadmin clear &e确认操作."
+  data_cleared: "&a所有工会数据已从数据库中删除."
+  error_clearing_data: "&c从数据库中删除数据出错."
+
+
+  # 修复命令
+  admin_fix_usage_1: "&e请输入命令 &b/clanadmin fix confirm &e开始修复工会颜色显示问题."
+  admin_fix_usage_2: "&7这会移除所有工会 &fname_colored &7中的颜色字符, 避免邀请及显示问题."
+  admin_fix_start: "&e正在开始异步修复工会颜色显示问题..."
+  
+  # 修复命令
+  admin_repair_usage_1: "&e请输入命令 &b/clanadmin repair confirm &e开始修复工会领袖问题."
+  admin_repair_usage_2: "&7这可以修复工会领袖改名后无法被识别的问题."
+  admin_repair_start: "&e正在修复工会领袖问题..."
+  admin_repair_success: "&a修复完毕! 成功修复了 &f{count} &a个可能存在问题的工会领袖."
+  admin_repair_error: "&c尝试修复工会领袖问题时遇到错误. 请检查控制台."
+
+
+  # 帮助命令
+  help:
+    commands:
+      - "&8&m====================================="
+      - "&8&l» &a&lᴠᴀɴɢᴜᴀʀᴅ&6&lᴄʟᴀɴꜱ &c&l管理员界面 &8&l«"
+      - "&8&m====================================="
+      - "&e/clanadmin reports &7» &f显示有未处理举报的所有工会."
+      - "&e/clanadmin reload &7» &f重载插件配置."
+      - "&e/clanadmin ban <工会名称> [理由] &7» &f永久封禁工会 (默认权限)."
+      - "&e/clanadmin unban <工会名称> &7» &f解除工会封禁."
+      - "&e/clanadmin clear &7» &c⚠ 删除整个数据库 (需注意!)."
+      - "&8&m====================================="
+  
+  # 举报命令
+  no_reports: "&a没有待处理的举报."
+  reports_title: "&e--- &6工会举报 &e---"
+  clan_colon: "&6{clan}:"
+  report_reason: "  &7- &f{reason}"
+  error_loading_reports: "&c载入举报时失败."
+
+  # 封禁/解封命令
+  usage_ban: "&c &l命令用法:&f&f /clanadmin ban <工会名称> [理由]"
+  usage_unban: "&c &l命令用法:&f&f /clanadmin unban <工会名称>"
+  default_ban_reason: "被管理员封禁"
+
+  clan_banned: "&c工会 &e{clan} &c已被封禁. 理由: &f{reason}"
+  clan_unbanned: "&a工会 &e{clan} &a已成功解封."
+  clan_already_banned: "&c工会 &e{clan} &c已经处于封禁状态."
+  clan_not_banned: "&c工会 &e{clan} &c没有被封禁."
+  clan_name_banned: "&c你不能使用被封禁的工会名称 &e{clan}&c."
+
+  kicked_ban_message: "&c你已被踢出服务器, 因为 &e{clan} &c被封禁.\n&c理由: &f{reason}"
+  error_banning_clan: "&c尝试封禁工会时遇到错误."
+  error_unbanning_clan: "&c尝试解封工会时遇到错误."
+  clan_not_exist: "&c名为 &e{clan} &c的工会不存在."
+
+ # 强制加入/解散工会
+  clan_forced_joined: "&a 成功强制玩家加入了工会 {clan}."
+  clan_forcejoin_usage: "&c &l命令用法:&f&f /clanadmin forcejoin <玩家名称> <工会名称>"
+  clan_forced_left: "&e 成功强制玩家离开了工会."
+  clan_forceleave_usage: "&c &l命令用法:&f&f /clanadmin forceleave <玩家名称>"
+  clan_deleted: "&c 成功强制解散了工会."
+  clan_force_delete: "&c &l命令用法:&f&f /clanadmin delete <工会名称>"
+  clan_not_found: "&c 工会不存在."
+  player_not_in_clan: "&d 该玩家不属于任何工会."
+
+
+# 统计数据命令
+stats:
+  usage_stats: "&c &l命令用法:&f &f/clans stats <玩家名称>"
+  no_clan: "无工会"
+  error_database: "&c查询数据库时出错."
+  stats_header_line: "&6&m========================================"
+  stats_footer_line: "&6&m========================================"
+  stats_title: "&e&l玩家 &f%player% &e&l的统计数据"
+  stats_money: "&7• &e余额: &a$%money%"
+  stats_current_clan: "&7• &e所属工会: &f%clan%"
+  stats_history: "&7• &e工会历史:"
+  stats_no_history: "&8  - 无"
+  stats_history_entry: "&8  - &7%clan%"
+
+
+# 语言命令
+lang:
+  usage: "&e &l命令用法:&f&f /clanadmin lang (select) <语言代码>"
+  lang_list_title: "&e可用语言:"
+  current_lang: "&e当前语言: &a{lang}"
+  actual_lang: "选定语言"
+  select_lang: "点击选择"
+  lang_changed: "&a语言已切换为 {lang}"
+  no_permission: "&c你没有权限使用此命令."
+  lang_not_found: "&c语言不存在."
+  menu_header: "&6&m-----------------------------"
+  menu_footer: "&6&m-----------------------------"
