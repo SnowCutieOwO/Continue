@@ -32,7 +32,7 @@
 * [📝 语言贡献](setup/config/locales.md)
 * [✍️ 变量集群](hooks/placeholderapi-hook.md)
 ## 开发者
-* [📦 API](developers/index.md)
+* [📦 API](developers/api/index.md)
   * [💡 API 示例](developers/api/api-examples.md)
   * [❗ API 事件](developers/api/api-events.md)
 ## 链接

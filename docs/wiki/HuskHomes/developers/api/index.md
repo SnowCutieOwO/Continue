@@ -105,5 +105,5 @@ softdepend: # 或在这里使用 'depend' 将其设置为硬依赖
 
 现在一切都已准备妥当，你可以着手使用 HuskHomes API 了！
 
-* [API 示例](api/api-examples.md)
-* [API 事件](api/api-events.md)
+* [API 示例](api-examples.md)
+* [API 事件](api-events.md)

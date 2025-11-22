@@ -30,7 +30,7 @@ HuskHomes 提供了一系列的 API 事件供你的插件监听，用于检测�
 ## Sponge 和 Fabric 上的事件
 
 ::: info 提示
-浏览 [API 介绍页](../index.md)来获取目标平台上的相关内容。
+浏览 [API 介绍页](index.md)来获取目标平台上的相关内容。
 :::
 
 Sponge，有着和 Bukkit 相似的事件 API，拥有与上述相同的事件，前缀为 `Sponge`（所以在 Bukkit 上的 HomeCreateEvent 在 Sponge 上为 SpongeHomeCreateEvent。）
