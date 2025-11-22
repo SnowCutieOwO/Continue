@@ -26,5 +26,10 @@ export default {
       document.head.appendChild(iconifyScript);
     }
   },
-  Layout
+  Layout: () => {
+    return h(DefaultTheme.Layout, null, {
+      'doc-before': () => h(NolebaseBreadcrumbs),
+      }
+    )
+  }
 } satisfies Theme
