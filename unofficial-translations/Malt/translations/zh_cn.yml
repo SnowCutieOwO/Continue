@@ -1,0 +1,105 @@
+prefix: '<#b986f9><b>Malts</b></#b986f9> <dark_gray>»</dark_gray> '
+
+warehouse:
+  notEnoughMaterial: 你没有足够的<aqua><b>{material}</b></aqua>。
+  notEnoughStock: 你的仓库已满！
+  inventoryFull: 你的背包已满。
+  containerFull: 这里已经放满了。
+  removedCompartment: 成功从仓库中清理了<aqua><b>{material}</b></aqua>。
+  cannotRemoveCompartment: 这个收集筐数量不为零，无法移除。
+  addedCompartment: 成功在仓库中添加了<aqua><b>{material}</b></aqua>收集筐。
+  compartmentAlreadyExists: 仓库里已经有这个物品的收集筐了。
+  compartmentDoesNotExist: 仓库里没有这个物品的收集筐。
+  changedMode: 已将仓库模式切换为<aqua><b>{mode}</b></aqua>。
+  replenishedItem: '<yellow>从仓库中拿出了<aqua><b>{amount}x {material}</b></aqua>填充到你的背包中。<gray>（剩余数量：{stock}）</gray>'
+  autoStoredItem: '<yellow>成功将<aqua><b>{amount}x {material}</b></aqua>存入仓库。<gray>（当前数量：{stock}）</gray>'
+  depositedItem: '<yellow>成功将<aqua><b>{amount}x {material}</b></aqua>存入仓库。<gray>（当前数量：{stock}）</gray>'
+  cannotDepositItem: 你不能把物品存进这里。
+  blacklistedItem: 你不能把<aqua><b>{material}</b></aqua>存进仓库。
+  addedItem: '成功将<aqua><b>{amount}x {material}</b></aqua>存入仓库。<gray>（当前数量：{stock}）</gray>'
+  withdrewItem: '成功从仓库中取出<aqua><b>{amount}x {material}</b></aqua>。<gray>（剩余数量：{stock}）</gray>'
+
+
+vaults:
+  opening: 正在开启保险箱<aqua><b>{vaultName}</b></aqua>...
+  nameChanged: 保险箱名称已改为<aqua><b>{vaultName}</b></aqua>.
+  noAccess: 你不能打开这个保险箱。
+  alreadyOpen: 这个保险箱当前被其他玩家占用。
+  trustListMaxed: 你不能再信任更多玩家了。（{trustedListSize}）
+  playerNeverOnServer: '{name} 从未加入过服务器。'
+  playerTrusted: '{name} 已添加至你的信任列表。'
+  playerUntrusted: '{name} 已从你的信任列表中移除。'
+  playerNotTrusted: '{name} 不在你的信任列表中。'
+  noVaultsFound: 找不到这个保险箱！
+  noVaultsAccessible: 你没有访问任何名为 {name} 的保险箱权限。你确定保险箱的拥有者为你开放权限了吗？
+  noVaultFound: '<aqua><b>保险箱 #{id}</b></aqua> 不存在。'
+  vaultDeleted: '<aqua><b>保险箱 #{id}</b></aqua> 已被删除。'
+  vaultNameTooLong: 保险箱名称不能长于 {maxLength} 个字符。
+  transferred: 成功从 {name} 转移了 {amount} 个保险箱到 {otherName}。从 {otherName} 转移了 {otherAmount} 个保险箱到 {name}。
+  cannotTransfer: 不能在同一玩家之间转移保险箱。
+
+gui:
+  firstPage: 你已经在第一页了。
+  lastPage: 你已经在最后一页了。
+  viewExpired: 浏览界面已失效。（读取超时，请尝试重新打开界面）
+  promptInputTimeOut: 输入超时。
+
+
+economy:
+  vaults:
+    created: 你花费了 <aqua><b>${cost}</b></aqua> 购置了新仓库！
+    cannotAffordCreation: 你无法支付 <aqua><b>${cost}</b></aqua> 购置新仓库的费用。
+    accessed: 你花费了 <aqua><b>${cost}</b></aqua> 打开了仓库！
+    cannotAffordAccess: 你无法支付 <aqua><b>${cost}</b></aqua> 打开仓库的费用。
+
+command:
+  help: |
+    
+    <gold>---- <b>Malts</b> <gray>v{version}</gray> ----</gold>
+    <aqua>{description}</aqua>
+    <gray>---- <b>Commands</b> ----</gray>
+    <green>/malts help - <gray>显示帮助菜单。
+    <green>/malts import <导入插件> - <gray>从其他插件导入仓库数据。
+    <green>/malts max <vaults|stock> <add|set|remove> <保险箱名称> <新上限> - <gray>动态调整保险箱或物品的数量上限。
+    <green>/malts reload - <gray>重载插件配置。
+    <green>/malts vaultadmin <delete|open> <保险箱名称> <页码?> - <gray>管理其他玩家的保险箱。
+    <green>/malts vaultother <保险箱名称> <页码?> - <gray>浏览其他玩家的保险箱。
+    <green>/malts vaults <页码?> - <gray>打开自己的保险箱。
+    <green>/malts warehouseadmin <仓库名称> - <gray>管理其他玩家的仓库。
+    <green>/malts warehouse - <gray>打开你的仓库。
+    <green>/malts quickreturn <left|middle|right|none> - <gray>设置快捷返回点击选项。
+    <green>/malts vaultname <保险箱名称> - <gray>通过名称打开保险箱。
+  base:
+    unknownCommand: 未知命令。请输入 <aqua>/malts help</aqua> 浏览完整命令列表。
+    playerOnly: 该命令只能由玩家执行。
+    noPermission: 你没有权限执行该命令。
+    invalidUsage: 命令无效。你确定参数正确吗？
+  max:
+    invalidType: 类型无效，必须为 'vaults'（保险箱）或者 'stock'（物品数量）。
+    success: '将 {name} 的 {type} 数量上限设置为了 {newMax} <gray>（理论上限：{calculatedMax}）</gray>'
+  import:
+    cannotImport: 从 {importer} 导入保险箱数据失败。（是否安装和/或启用？）
+    startImport: 正在从 {importer} 导入保险箱数据...（可能得等上一会！）
+    importComplete: 成功导入了 {amount} 个玩家的保险箱，另外有 {failedAmount} 个导入失败。
+    failedImport: '导入失败：{uuid} -> {result}'
+  vaultOther:
+    noVaultFound: '{name} 没有名为 {id} 的保险箱。'
+  reload:
+    success: 成功重载了配置文件。
+    failed: 试图重载一个或多个配置文件时出错。检查控制台获取更多信息。
+    newDatabaseDriverSet: 配置文件的数据库设置已被更改。Malts 重载后将会从 <red>{driver}</red>通过新方式读取数据。请注意，本插件不会以任何方式转换不同存储方式之间的数据。
+  quickReturn:
+    success: 已设置快捷返回选项。
+    failed: 你没有输入有效参数或选项。
+  search:
+    playerNotFound: 玩家不存在，或你没有权限搜索他们的保险箱。
+    noAccessibleVaults: 你不拥有或可以打开名为 {name} 的保险箱。保险箱拥有者是否给你开放了权限？
+    noResults: 找不到任何匹配结果 '<aqua><b>{query}</b></aqua>' 的物品。试着搜索 <yellow>名称、描述或物品材质</yellow> 的关键词。
+    resultFormat: '<#7b75aa>•<b><aqua>{vaultName}</aqua></b> 存有的 {amount}x {itemName}'
+    results: |-
+      <gray>找到了 {amount} 个符合'<aqua><b>{query}</b></aqua>' 的物品。</gray>
+      <gold>---- <aqua><b>搜索结果</b></aqua> ----</gold>
+      {results}
+      <gold>----- <green>{previousPage} <gray>第 {page}/{maxPages} 页</gray> {nextPage}</green> -----</gold>
+    previousPage: '«'
+    nextPage: '»'
