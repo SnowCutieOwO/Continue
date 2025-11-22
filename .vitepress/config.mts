@@ -335,22 +335,22 @@ export default defineConfig({
           ]
         },
       ],
-      'wiki/common/': [
-        { text: '返回首页', link: 'wiki/index' },
-        { text: '通例', link: 'wiki/common/index' },
-        { text: '支持 Folia 的插件列表', link: 'wiki/common/folia-plugins' },
-        { text: '翻译插件目录', link: 'wiki/common/translation-index' },
+      'common/': [
+        { text: '返回首页', link: '/index' },
+        { text: '通例', link: 'common/index' },
+        { text: '支持 Folia 的插件列表', link: 'common/folia-plugins' },
+        { text: '翻译插件目录', link: 'common/translation-index' },
         {
-          text: '🌟 个人向教程', link: 'wiki/common/personal-guides', collapsed: true, items: [
-            { text: '安装教程', link: 'wiki/common/personal-guides/installtion' },
-            { text: '实用链接', link: 'wiki/common/personal-guides/useful-links' },
-            { text: '分世界显示玩家的 TAB', link: 'wiki/common/personal-guides/tab-based-world-seperation' },
-            { text: '在火狐及分支上使用 Motrix 接管下载', link: 'wiki/common/personal-guides/motrix-setup-firefox' },
-            { text: 'FCL 服务器手机端制作简述（电脑）', link: 'wiki/common/personal-guides/fcl-pc-setup' },
-            { text: 'FCL 服务器手机端制作简述（手机）', link: 'wiki/common/personal-guides/fcl-moble-setup' },
+          text: '🌟 个人向教程', link: 'common/personal-guides', collapsed: true, items: [
+            { text: '安装教程', link: 'common/personal-guides/installtion' },
+            { text: '实用链接', link: 'common/personal-guides/useful-links' },
+            { text: '分世界显示玩家的 TAB', link: 'common/personal-guides/tab-based-world-seperation' },
+            { text: '在火狐及分支上使用 Motrix 接管下载', link: 'common/personal-guides/motrix-setup-firefox' },
+            { text: 'FCL 服务器手机端制作简述（电脑）', link: 'common/personal-guides/fcl-pc-setup' },
+            { text: 'FCL 服务器手机端制作简述（手机）', link: 'common/personal-guides/fcl-moble-setup' },
             {
               text: 'TrMenu 菜单实战', collapsed: true, items: [
-                { text: 'VIP 升级路线', link: 'wiki/common/personal-guides/trmenu-example-vip-menu' }
+                { text: 'VIP 升级路线', link: 'common/personal-guides/trmenu-example-vip-menu' }
               ]
             },
           ]
