@@ -2,6 +2,7 @@ node_modules
 .vitepress/dist
 .vitepress/cache
 .vscode
+.vitepress/.temp
 
 # working plugins' wikis should be ignored temproraily
 
