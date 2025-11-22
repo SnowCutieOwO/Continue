@@ -19,6 +19,9 @@ export default {
     app.component('Tab', Tab);
     app.component('Tabs', Tabs);
     app.use(NolebaseGitChangelogPlugin);
+    const iconifyScript = document.createElement('script');
+    iconifyScript.src = 'https://code.iconify.design/3/3.1.0/iconify.min.js';
+    document.head.appendChild(iconifyScript);
   },
   Layout
 } satisfies Theme

@@ -104,6 +104,7 @@ const customElements = [
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  srcDir: 'docs/',
   lang: 'zh-Hans',
   title: "Continue Project",
   description: "插件维基译文仓库",
@@ -121,6 +122,11 @@ export default defineConfig({
         s.parentNode.insertBefore(hm, s);
       })();
       `
+    ],
+    [
+      'script',
+      {defer: '', async: '', src: 'https://cn.vercount.one/js'},
+      ``
     ]
   ],
   markdown: {
@@ -249,38 +255,38 @@ export default defineConfig({
       { text: '🔙 返回首页', link: '/' },
       {
         text: '🔖 友链页面', items: [
-          { text: 'CSKB - 日冕知识库', link: '/other-sites/cskb' },
-          { text: 'HiMCBBS', link: '/other-sites/himcbbs' }
+          { text: 'CSKB - 日冕知识库', link: 'wiki/other-sites/cskb' },
+          { text: 'HiMCBBS', link: 'wiki/other-sites/himcbbs' }
         ]
       },
       {
         text: '📘 维基列表',
         items: [
-          { text: 'ajLeaderboards', link: '/ajLeaderboards/index' },
-          { text: 'AuraSkills', link: '/AuraSkills/index' },
-          { text: 'AureliumSkills（旧）', link: '/AureliumSkills/index' },
-          { text: 'Codex', link: '/Codex/index' },
-          { text: 'CommandTimer', link: '/CommandTimer/index' },
-          { text: 'CoreProtect', link: '/CoreProtect/index' },
-          { text: 'DecentHolograms', link: 'DecentHolograms/index' },
-          { text: 'ExcellentCrates', link: '/ExcellentCrates/index' },
-          { text: 'ExcellentEnchants', link: '/ExcellentEnchants/index' },
-          { text: 'FallbackServer', link: '/FallbackServer/index' },
-          { text: 'FastAsyncWorldEdit', link: '/FastAsyncWorldEdit/index' },
-          { text: 'HuskHomes', link: '/HuskHomes/index' },
-          { text: 'HuskSync', link: '/HuskSync/index' },
-          { text: 'LibreLogin', link: '/LibreLogin/index' },
-          { text: 'LuckPerms', link: '/LuckPerms/index' },
-          { text: 'Oraxen', link: '/Oraxen/index' },
-          { text: 'PlaceholderAPI', link: '/PlaceholderAPI/index' },
-          { text: 'PlayerPoints', link: '/PlayerPoints/index' },
-          { text: 'Shopkeepers', link: '/Shopkeepers/index' },
-          { text: 'spark', link: '/spark/index' },
-          { text: 'SuperiorSkyblock2', link: '/SuperiorSkyblock2/index' },
-          { text: 'Terra', link: '/Terra/index' },
-          { text: 'UltimateShop', link: '/UltimateShop/index' },
-          { text: 'WorldEdit', link: '/WorldEdit/index' },
-          { text: 'WorldGuard', link: '/WorldGuard/index' },
+          { text: 'ajLeaderboards', link: 'wiki/ajLeaderboards/index' },
+          { text: 'AuraSkills', link: 'wiki/AuraSkills/index' },
+          { text: 'AureliumSkills（旧）', link: 'wiki/AureliumSkills/index' },
+          { text: 'Codex', link: 'wiki/Codex/index' },
+          { text: 'CommandTimer', link: 'wiki/CommandTimer/index' },
+          { text: 'CoreProtect', link: 'wiki/CoreProtect/index' },
+          { text: 'DecentHolograms', link: 'wiki/DecentHolograms/index' },
+          { text: 'ExcellentCrates', link: 'wiki/ExcellentCrates/index' },
+          { text: 'ExcellentEnchants', link: 'wiki/ExcellentEnchants/index' },
+          { text: 'FallbackServer', link: 'wiki/FallbackServer/index' },
+          { text: 'FastAsyncWorldEdit', link: 'wiki/FastAsyncWorldEdit/index' },
+          { text: 'HuskHomes', link: 'wiki/HuskHomes/index' },
+          { text: 'HuskSync', link: 'wiki/HuskSync/index' },
+          { text: 'LibreLogin', link: 'wiki/LibreLogin/index' },
+          { text: 'LuckPerms', link: 'wiki/LuckPerms/index' },
+          { text: 'Oraxen', link: 'wiki/Oraxen/index' },
+          { text: 'PlaceholderAPI', link: 'wiki/PlaceholderAPI/index' },
+          { text: 'PlayerPoints', link: 'wiki/PlayerPoints/index' },
+          { text: 'Shopkeepers', link: 'wiki/Shopkeepers/index' },
+          { text: 'spark', link: 'wiki/spark/index' },
+          { text: 'SuperiorSkyblock2', link: 'wiki/SuperiorSkyblock2/index' },
+          { text: 'Terra', link: 'wiki/Terra/index' },
+          { text: 'UltimateShop', link: 'wiki/UltimateShop/index' },
+          { text: 'WorldEdit', link: 'wiki/WorldEdit/index' },
+          { text: 'WorldGuard', link: 'wiki/WorldGuard/index' },
         ]
       }
     ],
@@ -288,298 +294,298 @@ export default defineConfig({
     sidebar: {
       // 首页之外的维基注释，下文根据插件名称单独列出注释
       // 写这段内容是为了防蠢备忘
-      '/': [
+      'wiki/': [
         {
           text: '维基列表',
           items: [
-            { text: 'ajLeaderboards', link: '/ajLeaderboards/index' },
-            { text: 'AuraSkills', link: '/AuraSkills/index' },
-            { text: 'AureliumSkills（旧）', link: '/AureliumSkills/index' },
-            { text: 'Codex', link: '/Codex/index' },
-            { text: 'CommandTimer', link: '/CommandTimer/index' },
-            { text: 'CoreProtect', link: '/CoreProtect/index' },
+            { text: 'ajLeaderboards', link: 'wiki/ajLeaderboards/index' },
+            { text: 'AuraSkills', link: 'wiki/AuraSkills/index' },
+            { text: 'AureliumSkills（旧）', link: 'wiki/AureliumSkills/index' },
+            { text: 'Codex', link: 'wiki/Codex/index' },
+            { text: 'CommandTimer', link: 'wiki/CommandTimer/index' },
+            { text: 'CoreProtect', link: 'wiki/CoreProtect/index' },
             { text: 'DecentHolograms', link: 'DecentHolograms/index' },
-            { text: 'ExcellentCrates', link: '/ExcellentCrates/index' },
-            { text: 'ExcellentEnchants', link: '/ExcellentEnchants/index' },
-            { text: 'FallbackServer', link: '/FallbackServer/index' },
-            { text: 'FastAsyncWorldEdit', link: '/FastAsyncWorldEdit/index' },
-            { text: 'HuskHomes', link: '/HuskHomes/index' },
-            { text: 'HuskSync', link: '/HuskSync/index' },
-            { text: 'LibreLogin', link: '/LibreLogin/index' },
-            { text: 'LuckPerms', link: '/LuckPerms/index' },
-            { text: 'Oraxen', link: '/Oraxen/index' },
-            { text: 'PlaceholderAPI', link: '/PlaceholderAPI/index' },
-            { text: 'PlayerPoints', link: '/PlayerPoints/index' },
-            { text: 'Shopkeepers', link: '/Shopkeepers/index' },
-            { text: 'spark', link: '/spark/index' },
-            { text: 'SuperiorSkyblock2', link: '/SuperiorSkyblock2/index' },
-            { text: 'UltimateShop', link: '/UltimateShop/index' },
-            { text: 'WorldEdit', link: '/WorldEdit/index' },
-            { text: 'WorldGuard', link: '/WorldGuard/index' },
+            { text: 'ExcellentCrates', link: 'wiki/ExcellentCrates/index' },
+            { text: 'ExcellentEnchants', link: 'wiki/ExcellentEnchants/index' },
+            { text: 'FallbackServer', link: 'wiki/FallbackServer/index' },
+            { text: 'FastAsyncWorldEdit', link: 'wiki/FastAsyncWorldEdit/index' },
+            { text: 'HuskHomes', link: 'wiki/HuskHomes/index' },
+            { text: 'HuskSync', link: 'wiki/HuskSync/index' },
+            { text: 'LibreLogin', link: 'wiki/LibreLogin/index' },
+            { text: 'LuckPerms', link: 'wiki/LuckPerms/index' },
+            { text: 'Oraxen', link: 'wiki/Oraxen/index' },
+            { text: 'PlaceholderAPI', link: 'wiki/PlaceholderAPI/index' },
+            { text: 'PlayerPoints', link: 'wiki/PlayerPoints/index' },
+            { text: 'Shopkeepers', link: 'wiki/Shopkeepers/index' },
+            { text: 'spark', link: 'wiki/spark/index' },
+            { text: 'SuperiorSkyblock2', link: 'wiki/SuperiorSkyblock2/index' },
+            { text: 'UltimateShop', link: 'wiki/UltimateShop/index' },
+            { text: 'WorldEdit', link: 'wiki/WorldEdit/index' },
+            { text: 'WorldGuard', link: 'wiki/WorldGuard/index' },
           ]
         }
       ],
-      '/other-sites/': [
-        { text: '返回首页', link: '/index' },
+      'wiki/other-sites/': [
+        { text: '返回首页', link: 'wiki/index' },
         {
           text: '友链页面', items: [
-            { text: '布丁的个人博客', link: '/other-sites/puddingkc-s-blog' },
-            { text: 'CSKB - 日冕知识库', link: '/other-sites/cskb' },
-            { text: 'HiMCBBS', link: '/other-sites/himcbbs' },
+            { text: '布丁的个人博客', link: 'wiki/other-sites/puddingkc-s-blog' },
+            { text: 'CSKB - 日冕知识库', link: 'wiki/other-sites/cskb' },
+            { text: 'HiMCBBS', link: 'wiki/other-sites/himcbbs' },
           ]
         },
       ],
-      '/common/': [
-        { text: '返回首页', link: '/index' },
-        { text: '通例', link: '/common/index' },
-        { text: '支持 Folia 的插件列表', link: '/common/folia-plugins' },
-        { text: '翻译插件目录', link: '/common/translation-index' },
+      'wiki/common/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '通例', link: 'wiki/common/index' },
+        { text: '支持 Folia 的插件列表', link: 'wiki/common/folia-plugins' },
+        { text: '翻译插件目录', link: 'wiki/common/translation-index' },
         {
-          text: '🌟 个人向教程', link: '/common/personal-guides', collapsed: true, items: [
-            { text: '安装教程', link: '/common/personal-guides.installtion' },
-            { text: '实用链接', link: '/common/personal-guides.useful-links' },
-            { text: '分世界显示玩家的 TAB', link: '/common/personal-guides.tab-based-world-seperation' },
-            { text: '在火狐及分支上使用 Motrix 接管下载', link: '/common/personal-guides.motrix-setup-firefox' },
-            { text: 'FCL 服务器手机端制作简述（电脑）', link: '/common/personal-guides.fcl-pc-setup' },
-            { text: 'FCL 服务器手机端制作简述（手机）', link: '/common/personal-guides.fcl-moble-setup' },
+          text: '🌟 个人向教程', link: 'wiki/common/personal-guides', collapsed: true, items: [
+            { text: '安装教程', link: 'wiki/common/personal-guides/installtion' },
+            { text: '实用链接', link: 'wiki/common/personal-guides/useful-links' },
+            { text: '分世界显示玩家的 TAB', link: 'wiki/common/personal-guides/tab-based-world-seperation' },
+            { text: '在火狐及分支上使用 Motrix 接管下载', link: 'wiki/common/personal-guides/motrix-setup-firefox' },
+            { text: 'FCL 服务器手机端制作简述（电脑）', link: 'wiki/common/personal-guides/fcl-pc-setup' },
+            { text: 'FCL 服务器手机端制作简述（手机）', link: 'wiki/common/personal-guides/fcl-moble-setup' },
             {
-              text: 'TrMenu 菜单实战', items: [
-                { text: 'VIP 升级路线', link: '/common/personal-guides.trmenu-example-vip-menu' }
+              text: 'TrMenu 菜单实战', collapsed: true, items: [
+                { text: 'VIP 升级路线', link: 'wiki/common/personal-guides/trmenu-example-vip-menu' }
               ]
             },
           ]
         }
       ],
-      '/AureliumSkills/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/AureliumSkills/index' },
+      'wiki/AureliumSkills/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/AureliumSkills/index' },
         {
           text: 'AureliumSkills 维基',
           items: [
-            { text: '欢迎', link: '/AureliumSkills/welcome' },
+            { text: '欢迎', link: 'wiki/AureliumSkills/welcome' },
             {
               text: '配置',
               collapsed: true,
               items: [
                 {
                   text: '主配置',
-                  link: '/AureliumSkills/configuration.main-config',
+                  link: 'wiki/AureliumSkills/configuration/main-config/index',
                   items: [
-                    { text: 'MySQL', link: '/AureliumSkills/configuration.main-config.mysql' },
+                    { text: 'MySQL', link: 'wiki/AureliumSkills/configuration/main-config/mysql' },
                   ]
                 },
               ]
             },
-            { text: '消息文本', link: '/AureliumSkills/configuration.messages' },
-            { text: '奖励配置', link: '/AureliumSkills/configuration.rewards' },
-            { text: '战利品配置', link: '/AureliumSkills/configuration.loot' },
-            { text: '经验来源', link: '/AureliumSkills/configuration.sources' },
-            { text: '技能设置', link: '/AureliumSkills/configuration.abilities' },
+            { text: '消息文本', link: 'wiki/AureliumSkills/configuration/messages' },
+            { text: '奖励配置', link: 'wiki/AureliumSkills/configuration/rewards' },
+            { text: '战利品配置', link: 'wiki/AureliumSkills/configuration/loot' },
+            { text: '经验来源', link: 'wiki/AureliumSkills/configuration/sources' },
+            { text: '技能设置', link: 'wiki/AureliumSkills/configuration/abilities' },
             {
               text: '菜单',
-              link: '/AureliumSkills/configuration.menu',
+              link: 'wiki/AureliumSkills/configuration/menu',
               items: [
-                { text: '菜单格式变动', link: '/AureliumSkills/configuration.menu.menu-format-changes' },
+                { text: '菜单格式变动', link: 'wiki/AureliumSkills/configuration/menu/menu-format-changes' },
               ]
             },
-            { text: '经验条件', link: '/AureliumSkills/configuration.xp-requirements' },
+            { text: '经验条件', link: 'wiki/AureliumSkills/configuration/xp-requirements' },
             {
               text: '游戏体验',
               collapsed: true,
               items: [
                 {
                   text: '属性',
-                  link: '/AureliumSkills/gameplay.stats',
+                  link: 'wiki/AureliumSkills/gameplay/stats',
                   items: [
-                    { text: '属性修饰语', link: '/AureliumSkills/gameplay.stats.stat-modifier' },
-                    { text: '生命值相关', link: '/AureliumSkills/gameplay.stats.health' },
+                    { text: '属性修饰语', link: 'wiki/AureliumSkills/gameplay/stats/stat-modifier' },
+                    { text: '生命值相关', link: 'wiki/AureliumSkills/gameplay/stats/health' },
                   ]
                 },
               ]
             },
-            { text: '魔法技能', link: '/AureliumSkills/gameplay.stats' },
-            { text: '经验翻倍', link: '/AureliumSkills/gameplay.multipliers' },
-            { text: '条件', link: '/AureliumSkills/gameplay.requirements' },
+            { text: '魔法技能', link: 'wiki/AureliumSkills/gameplay/stats' },
+            { text: '经验翻倍', link: 'wiki/AureliumSkills/gameplay/multipliers' },
+            { text: '条件', link: 'wiki/AureliumSkills/gameplay/requirements' },
             {
               text: '用法',
               collapsed: true,
               items: [
-                { text: '命令列表', link: '/AureliumSkills/usage.commands' },
-                { text: '权限列表', link: '/AureliumSkills/usage.perimissions' },
-                { text: '变量集群', link: '/AureliumSkills/usage.placeholders' },
+                { text: '命令列表', link: 'wiki/AureliumSkills/usage/commands' },
+                { text: '权限列表', link: 'wiki/AureliumSkills/usage/permissions' },
+                { text: '变量集群', link: 'wiki/AureliumSkills/usage/placeholders' },
               ]
             },
             {
               text: '其他',
               collapsed: true,
               items: [
-                { text: '常见问题', link: '/AureliumSkills/other.faq' },
-                { text: '冲突内容', link: '/AureliumSkills/other.incompabilities' },
+                { text: '常见问题', link: 'wiki/AureliumSkills/other/faq' },
+                { text: '冲突内容', link: 'wiki/AureliumSkills/other/incompabilities' },
               ]
             }
           ]
         },
       ],
-      '/AuraSkills/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/AuraSkills/index' },
+      'wiki/AuraSkills/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/AuraSkills/index' },
         {
           text: 'AuraSkills 维基', items: [
-            { text: 'AuraSkills', link: '/AuraSkills/auraskills' },
+            { text: 'AuraSkills', link: 'wiki/AuraSkills/auraskills' },
             {
-              text: '主配置', collapsed: true, link: '/AuraSkills/main-config', items: [
-                { text: 'SQL', link: '/AuraSkills/main-config.sql' }
+              text: '主配置', collapsed: true, link: 'wiki/AuraSkills/main-config', items: [
+                { text: 'SQL', link: 'wiki/AuraSkills/main-config/sql' }
               ]
             },
             {
-              text: '技能', collapsed: true, link: '/AuraSkills/skills', items: [
-                { text: '经验条件', link: '/AuraSkills/skills.xp-requirements' },
-                { text: '经验倍率', link: '/AuraSkills/skills.xp-multipliers' },
-                { text: '物品条件', link: '/AuraSkills/skills.item-requirements' },
+              text: '技能', collapsed: true, link: 'wiki/AuraSkills/skills', items: [
+                { text: '经验条件', link: 'wiki/AuraSkills/skills/xp-requirements' },
+                { text: '经验倍率', link: 'wiki/AuraSkills/skills/xp-multipliers' },
+                { text: '物品条件', link: 'wiki/AuraSkills/skills/item-requirements' },
               ]
             },
             {
-              text: '属性', collapsed: true, link: '/AuraSkills/stats', items: [
-                { text: '属性修饰符', link: '/AuraSkills/stats.stat-modifiers' }
+              text: '属性', collapsed: true, link: 'wiki/AuraSkills/stats', items: [
+                { text: '属性修饰符', link: 'wiki/AuraSkills/stats/stat-modifiers' }
               ]
             },
-            { text: '能力', link: '/AuraSkills/abilities' },
-            { text: '魔法能力', link: '/AuraSkills/mana-abilities' },
-            { text: '经验来源', link: '/AuraSkills/sources' },
-            { text: '奖励', link: '/AuraSkills/rewards' },
-            { text: '战利品', link: '/AuraSkills/loot' },
-            { text: '菜单', link: '/AuraSkills/menus' },
-            { text: '消息', link: '/AuraSkills/messages' },
-            { text: '命令', link: '/AuraSkills/commands' },
-            { text: '权限', link: '/AuraSkills/permissions' },
-            { text: '变量', link: '/AuraSkills/placeholders' },
-            { text: '兼容插件', link: '/AuraSkills/compatible-plugins' },
-            { text: '迁移', link: '/AuraSkills/migration' },
-            { text: 'API', link: '/AuraSkills/api' },
-            { text: '常见问题', link: '/AuraSkills/faq' },
-            { text: '服务器要求', link: '/AuraSkills/server-requirements' },
-            { text: '不兼容内容', link: '/AuraSkills/incompatibilities' },
+            { text: '能力', link: 'wiki/AuraSkills/abilities' },
+            { text: '魔法能力', link: 'wiki/AuraSkills/mana-abilities' },
+            { text: '经验来源', link: 'wiki/AuraSkills/sources' },
+            { text: '奖励', link: 'wiki/AuraSkills/rewards' },
+            { text: '战利品', link: 'wiki/AuraSkills/loot' },
+            { text: '菜单', link: 'wiki/AuraSkills/menus' },
+            { text: '消息', link: 'wiki/AuraSkills/messages' },
+            { text: '命令', link: 'wiki/AuraSkills/commands' },
+            { text: '权限', link: 'wiki/AuraSkills/permissions' },
+            { text: '变量', link: 'wiki/AuraSkills/placeholders' },
+            { text: '兼容插件', link: 'wiki/AuraSkills/compatible-plugins' },
+            { text: '迁移', link: 'wiki/AuraSkills/migration' },
+            { text: 'API', link: 'wiki/AuraSkills/api' },
+            { text: '常见问题', link: 'wiki/AuraSkills/faq' },
+            { text: '服务器要求', link: 'wiki/AuraSkills/server-requirements' },
+            { text: '不兼容内容', link: 'wiki/AuraSkills/incompatibilities' },
             {
               text: '更新日志', items: [
-                { text: '2.0', link: '/AuraSkills/release-notes.2-0' },
-                { text: '2.1', link: '/AuraSkills/release-notes.2-1' },
-                { text: '2.2', link: '/AuraSkills/release-notes.2-2' },
-                { text: '2.3', link: '/AuraSkills/release-notes.2-3' }
+                { text: '2.0', link: 'wiki/AuraSkills/release-notes/2-0' },
+                { text: '2.1', link: 'wiki/AuraSkills/release-notes/2-1' },
+                { text: '2.2', link: 'wiki/AuraSkills/release-notes/2-2' },
+                { text: '2.3', link: 'wiki/AuraSkills/release-notes/2-3' }
               ]
             }
           ]
         },
       ],
-      '/ajLeaderboards/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/ajLeaderboards/index' },
+      'wiki/ajLeaderboards/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/ajLeaderboards/index' },
         {
           text: 'ajLeaderboards 中文维基',
           items: [
-            { text: '概览', link: '/ajLeaderboards/overview' },
+            { text: '概览', link: 'wiki/ajLeaderboards/overview' },
             {
               text: '安装',
               collapsed: true,
               items: [
-                { text: '安装', link: '/ajLeaderboards/setup.setup' },
-                { text: '变量参考', link: '/ajLeaderboards/setup.good-boards' },
-                { text: '变量', link: '/ajLeaderboards/setup.placeholders' },
-                { text: '权限', link: '/ajLeaderboards/setup.permissions' },
-                { text: '消息变量', link: '/ajLeaderboards/setup.message-placeholders' },
-                { text: 'LuckPerms 情境（Context）', link: '/ajLeaderboards/setup.luckperms-contexts' },
-                { text: '额外内容', link: '/ajLeaderboards/setup.extras' },
+                { text: '安装', link: 'wiki/ajLeaderboards/setup/setup' },
+                { text: '变量参考', link: 'wiki/ajLeaderboards/setup/good-boards' },
+                { text: '变量', link: 'wiki/ajLeaderboards/setup/placeholders' },
+                { text: '权限', link: 'wiki/ajLeaderboards/setup/permissions' },
+                { text: '消息变量', link: 'wiki/ajLeaderboards/setup/message-placeholders' },
+                { text: 'LuckPerms 情境（Context）', link: 'wiki/ajLeaderboards/setup/luckperms-contexts' },
+                { text: '额外内容', link: 'wiki/ajLeaderboards/setup/extras' },
               ]
             },
             {
               text: '配置',
               collapsed: true,
               items: [
-                { text: '主配置', link: '/ajLeaderboards/configs.main-config' },
-                { text: '缓存', link: '/ajLeaderboards/configs.cache-storage' }
+                { text: '主配置', link: 'wiki/ajLeaderboards/configs/main-config' },
+                { text: '缓存', link: 'wiki/ajLeaderboards/configs/cache-storage' }
               ]
             },
-            { text: '切换存储方法', link: '/ajLeaderboards/moving-storage-methods' },
-            { text: '常见问题', link: '/ajLeaderboards/faq' },
-            { text: '少见问题', link: '/ajLeaderboards/less-faq' },
-            { text: '名词解释', link: '/ajLeaderboards/glossary' }
+            { text: '切换存储方法', link: 'wiki/ajLeaderboards/moving-storage-methods' },
+            { text: '常见问题', link: 'wiki/ajLeaderboards/faq' },
+            { text: '少见问题', link: 'wiki/ajLeaderboards/less-faq' },
+            { text: '名词解释', link: 'wiki/ajLeaderboards/glossary' }
           ]
         },
       ],
-      '/Codex/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/Codex/index' },
+      'wiki/Codex/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/Codex/index' },
         {
           text: 'Codex 维基',
           items: [
-            { text: '首页', link: '/Codex/codex-wiki' },
-            { text: '如何开始', link: '/Codex/how-to-start' },
-            { text: '分类教程', link: '/Codex/discoveries-categories-tutorial' },
-            { text: '物品教程', link: '/Codex/items-tutorial' },
-            { text: 'config.yml 教程', link: '/Codex/config-yml-tutorial' },
-            { text: 'inventory.yml 教程', link: '/Codex/inventory-yml-tutorial' },
-            { text: '动作', link: '/Codex/actions' },
-            { text: '命令与权限', link: '/Codex/commands-and-permissions' },
-            { text: 'PlaceholderAPI 变量', link: '/Codex/placeholderapi-variables' },
-            { text: '自定义日志条目教程', link: '/Codex/customized-discoveries-tutorial' },
+            { text: '首页', link: 'wiki/Codex/codex-wiki' },
+            { text: '如何开始', link: 'wiki/Codex/how-to-start' },
+            { text: '分类教程', link: 'wiki/Codex/discoveries-categories-tutorial' },
+            { text: '物品教程', link: 'wiki/Codex/items-tutorial' },
+            { text: 'config.yml 教程', link: 'wiki/Codex/config-yml-tutorial' },
+            { text: 'inventory.yml 教程', link: 'wiki/Codex/inventory-yml-tutorial' },
+            { text: '动作', link: 'wiki/Codex/actions' },
+            { text: '命令与权限', link: 'wiki/Codex/commands-and-permissions' },
+            { text: 'PlaceholderAPI 变量', link: 'wiki/Codex/placeholderapi-variables' },
+            { text: '自定义日志条目教程', link: 'wiki/Codex/customized-discoveries-tutorial' },
             {
               text: '默认文件', collapsed: true, items: [
-                { text: 'messages.yml', link: '/Codex/default-files.messages-yml' },
-                { text: 'inventory.yml', link: '/Codex/default-files.inventory-yml' }
+                { text: 'messages.yml', link: 'wiki/Codex/default-files/messages-yml' },
+                { text: 'inventory.yml', link: 'wiki/Codex/default-files/inventory-yml' }
               ]
             }
           ]
         },
       ],
-      '/CommandTimer/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/CommandTimer/index' },
+      'wiki/CommandTimer/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/CommandTimer/index' },
         {
           text: 'CommandTimer 维基',
           items: [
-            { text: '初次使用', link: '/CommandTimer/getting-started' },
+            { text: '初次使用', link: 'wiki/CommandTimer/getting-started' },
             {
               text: '配置详解',
               collapsed: true,
-              link: '/CommandTimer/configuration',
+              link: 'wiki/CommandTimer/configuration',
               items: [
-                { text: '命令', link: '/CommandTimer/configuration.commands' },
-                { text: '计划表', link: '/CommandTimer/configuration.schedules' },
-                { text: '条件', link: '/CommandTimer/configuration.conditions' },
-                { text: '其他', link: '/CommandTimer/configuration.others' },
+                { text: '命令', link: 'wiki/CommandTimer/configuration/commands' },
+                { text: '计划表', link: 'wiki/CommandTimer/configuration/schedules' },
+                { text: '条件', link: 'wiki/CommandTimer/configuration/conditions' },
+                { text: '其他', link: 'wiki/CommandTimer/configuration/others' },
               ]
             },
-            { text: '拓展模块', link: '/CommandTimer/extensions' },
-            { text: '事件', link: '/CommandTimer/events' },
-            { text: '变量', link: '/CommandTimer/placeholders' },
-            { text: 'JSON 格式', link: '/CommandTimer/json-schema' },
-            { text: '开发者相关', link: '/CommandTimer/configuration.schedules' },
-            { text: '常见问题', link: '/CommandTimer/faq' },
-            { text: '术语', link: '/CommandTimer/jargon' },
-            { text: '杂项', link: '/CommandTimer/miscellaneous' },
+            { text: '拓展模块', link: 'wiki/CommandTimer/extensions' },
+            { text: '事件', link: 'wiki/CommandTimer/events' },
+            { text: '变量', link: 'wiki/CommandTimer/placeholders' },
+            { text: 'JSON 格式', link: 'wiki/CommandTimer/json-schema' },
+            { text: '开发者相关', link: 'wiki/CommandTimer/configuration/schedules' },
+            { text: '常见问题', link: 'wiki/CommandTimer/faq' },
+            { text: '术语', link: 'wiki/CommandTimer/jargon' },
+            { text: '杂项', link: 'wiki/CommandTimer/miscellaneous' },
           ]
         },
       ],
-      '/CoreProtect/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/CoreProtect/index' },
+      'wiki/CoreProtect/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/CoreProtect/index' },
         {
           text: 'CoreProtect 维基', items: [
-            { text: '欢迎', link: '/CoreProtect/welcome' },
-            { text: '命令', link: '/CoreProtect/commands' },
-            { text: '配置', link: '/CoreProtect/configuration' },
-            { text: '语言', link: '/CoreProtect/languages' },
-            { text: '权限', link: '/CoreProtect/permissions' },
-            { text: '工具与集成', link: '/CoreProtect/tools-intergrations' },
+            { text: '欢迎', link: 'wiki/CoreProtect/welcome' },
+            { text: '命令', link: 'wiki/CoreProtect/commands' },
+            { text: '配置', link: 'wiki/CoreProtect/configuration' },
+            { text: '语言', link: 'wiki/CoreProtect/languages' },
+            { text: '权限', link: 'wiki/CoreProtect/permissions' },
+            { text: '工具与集成', link: 'wiki/CoreProtect/tools-intergrations' },
             {
               text: 'API', collapsed: true, items: [
-                { text: 'CoreProtect API', link: '/CoreProtect/api.coreprotect-api' },
-                { text: '网络通信 API', link: '/CoreProtect/api.networking-api' },
+                { text: 'CoreProtect API', link: 'wiki/CoreProtect/api/coreprotect-api' },
+                { text: '网络通信 API', link: 'wiki/CoreProtect/api/networking-api' },
                 {
                   text: '版本', collapsed: true, items: [
-                    { text: 'API v10', link: '/CoreProtect/version.api-version-10' },
-                    { text: 'API v7', link: '/CoreProtect/version.api-version-7' },
-                    { text: 'API v8', link: '/CoreProtect/version.api-version-8' },
-                    { text: 'API v9', link: '/CoreProtect/version.api-version-9' },
+                    { text: 'API v10', link: 'wiki/CoreProtect/api/version/api-version-10' },
+                    { text: 'API v7', link: 'wiki/CoreProtect/api/version/api-version-7' },
+                    { text: 'API v8', link: 'wiki/CoreProtect/api/version/api-version-8' },
+                    { text: 'API v9', link: 'wiki/CoreProtect/api/version/api-version-9' },
                   ]
                 },
 
@@ -589,61 +595,61 @@ export default defineConfig({
           ]
         },
       ],
-      '/DecentHolograms/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/DecentHolograms/index' },
+      'wiki/DecentHolograms/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/DecentHolograms/index' },
         {
           text: 'DecentHolograms 维基', items: [
-            { text: '欢迎', link: '/DecentHolograms/welcome' },
+            { text: '欢迎', link: 'wiki/DecentHolograms/welcome' },
             {
               text: '通用', collapsed: true, items: [
-                { text: '安装', link: '/DecentHolograms/general.setup' },
-                { text: '兼容性', link: '/DecentHolograms/general.compatibility' },
-                { text: '格式与颜色', collapsed: true, link: '/DecentHolograms/general.formats-colors', items: [{ text: '颜色', link: '/DecentHolograms/general.formats-and-colors.colors' }] },
+                { text: '安装', link: 'wiki/DecentHolograms/general/setup' },
+                { text: '兼容性', link: 'wiki/DecentHolograms/general/compatibility' },
+                { text: '格式与颜色', collapsed: true, link: 'wiki/DecentHolograms/general/formats-colors', items: [{ text: '颜色', link: 'wiki/DecentHolograms/general/formats-colors/colors' }] },
                 {
-                  text: '命令', collapsed: true, link: '/DecentHolograms/general.commands', items: [
-                    { text: '通用', link: '/DecentHolograms/general.commands.general' },
-                    { text: '特性', link: '/DecentHolograms/general.commands.features' },
-                    { text: '悬浮字', link: '/DecentHolograms/general.commands.hologram' },
-                    { text: '悬浮字行', link: '/DecentHolograms/general.commands.hologram-line' },
-                    { text: '悬浮字页', link: '/DecentHolograms/general.commands.hologram-pages' }
+                  text: '命令', collapsed: true, link: 'wiki/DecentHolograms/general/commands', items: [
+                    { text: '通用', link: 'wiki/DecentHolograms/general/commands/general' },
+                    { text: '特性', link: 'wiki/DecentHolograms/general/commands/features' },
+                    { text: '悬浮字', link: 'wiki/DecentHolograms/general/commands/hologram' },
+                    { text: '悬浮字行', link: 'wiki/DecentHolograms/general/commands/hologram-line' },
+                    { text: '悬浮字页', link: 'wiki/DecentHolograms/general/commands/hologram-pages' }
                   ]
                 },
                 {
-                  text: '配置', collapsed: true, link: '/DecentHolograms/general.configuration', items: [
-                    { text: '主配置', link: '/DecentHolograms/general.configuration.config' },
-                    { text: '动画配置', link: '/DecentHolograms/general.configuration.animation' },
-                    { text: '特色配置', link: '/DecentHolograms/general.commands.features' },
-                    { text: '悬浮字配置', link: '/DecentHolograms/general.configuration.hologram' },
-                    { text: '语言配置', link: '/DecentHolograms/general.configuration.lang' },
-                  ]
-                },
-
-                {
-                  text: '示例悬浮字', collapsed: true, link: '/DecentHolograms/general.example-holograms', items: [
-                    { text: '示例 - 演示', link: '/DecentHolograms/general.example-holograms.example-demo' },
-                    { text: '示例 - 实体', link: '/DecentHolograms/general.example-holograms.example-entity' },
-                    { text: '示例 - 带偏置的配方', link: '/DecentHolograms/general.example-holograms.example-recipe-with-offsets' },
-                    { text: '示例 - 树', link: '/DecentHolograms/general.example-holograms.example-tree' },
-                    { text: '示例 - 动作', link: '/DecentHolograms/general.example-holograms.example-actions' },
+                  text: '配置', collapsed: true, link: 'wiki/DecentHolograms/general/configuration', items: [
+                    { text: '主配置', link: 'wiki/DecentHolograms/general/configuration/config' },
+                    { text: '动画配置', link: 'wiki/DecentHolograms/general/configuration/animation' },
+                    { text: '特色配置', link: 'wiki/DecentHolograms/general/commands/features' },
+                    { text: '悬浮字配置', link: 'wiki/DecentHolograms/general/configuration/hologram' },
+                    { text: '语言配置', link: 'wiki/DecentHolograms/general/configuration/lang' },
                   ]
                 },
 
-                { text: '动画', link: '/DecentHolograms/general.animations' },
-                { text: '动作', link: '/DecentHolograms/general.actions' },
-                { text: '标志', link: '/DecentHolograms/general.flags' },
+                {
+                  text: '示例悬浮字', collapsed: true, link: 'wiki/DecentHolograms/general/example-holograms', items: [
+                    { text: '示例 - 演示', link: 'wiki/DecentHolograms/general/example-holograms/example-demo' },
+                    { text: '示例 - 实体', link: 'wiki/DecentHolograms/general/example-holograms/example-entity' },
+                    { text: '示例 - 带偏置的配方', link: 'wiki/DecentHolograms/general/example-holograms/example-recipe-with-offsets' },
+                    { text: '示例 - 树', link: 'wiki/DecentHolograms/general/example-holograms/example-tree' },
+                    { text: '示例 - 动作', link: 'wiki/DecentHolograms/general/example-holograms/example-actions' },
+                  ]
+                },
+
+                { text: '动画', link: 'wiki/DecentHolograms/general/animations' },
+                { text: '动作', link: 'wiki/DecentHolograms/general/actions' },
+                { text: '标志', link: 'wiki/DecentHolograms/general/flags' },
               ]
             },
             {
               text: 'API', collapsed: true, items: [
-                { text: '开始', link: '/DecentHolograms/api.get-started' },
+                { text: '开始', link: 'wiki/DecentHolograms/api/get-started' },
                 {
-                  text: '基本用法', collapsed: true, link: '/DecentHolograms/api.basic-usage', items: [
-                    { text: 'DHAPI', link: '/DecentHolograms/api.basic-usage.dhapi' },
-                    { text: '常见问题', link: '/DecentHolograms/api.basic-usage.faq' },
+                  text: '基本用法', collapsed: true, link: 'wiki/DecentHolograms/api/basic-usage', items: [
+                    { text: 'DHAPI', link: 'wiki/DecentHolograms/api/basic-usage/dhapi' },
+                    { text: '常见问题', link: 'wiki/DecentHolograms/api/basic-usage/faq' },
                   ]
                 },
-                { text: '事件', link: '/DecentHolograms/api.events' },
+                { text: '事件', link: 'wiki/DecentHolograms/api/events' },
               ]
             },
             { text: 'Spigot', link: 'http://decentholograms.eu/' },
@@ -651,187 +657,187 @@ export default defineConfig({
           ]
         },
       ],
-      '/ExcellentCrates/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/ExcellentCrates/index' },
+      'wiki/ExcellentCrates/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/ExcellentCrates/index' },
         {
           text: 'ExcellentCrates 维基', items: [
-            { text: '🏠 欢迎', link: '/ExcellentCrates/welcome' },
-            { text: '🖥️ 命令', link: '/ExcellentCrates/commands' },
-            { text: '⛔ 权限', link: '/ExcellentCrates/permissions' },
+            { text: '🏠 欢迎', link: 'wiki/ExcellentCrates/welcome' },
+            { text: '🖥️ 命令', link: 'wiki/ExcellentCrates/commands' },
+            { text: '⛔ 权限', link: 'wiki/ExcellentCrates/permissions' },
             {
               text: '🔌 集成', collapsed: true, items: [
-                { text: '自定义物品', link: '/ExcellentCrates/intergrations.custom-items' },
-                { text: '悬浮字', link: '/ExcellentCrates/intergrations.holograms' },
-                { text: 'PlaceholderAPI', link: '/ExcellentCrates/intergrations.placeholderapi' }
+                { text: '自定义物品', link: 'wiki/ExcellentCrates/intergrations/custom-items' },
+                { text: '悬浮字', link: 'wiki/ExcellentCrates/intergrations/holograms' },
+                { text: 'PlaceholderAPI', link: 'wiki/ExcellentCrates/intergrations/placeholderapi' }
               ]
             },
-            { text: '⚠️ 常见插件问题', link: '/ExcellentCrates/common-issues' },
-            { text: '❓ 常见功能问题', link: '/ExcellentCrates/common-questions' },
-            { text: '🔧 编辑器界面', link: '/ExcellentCrates/editor-gui' },
+            { text: '⚠️ 常见插件问题', link: 'wiki/ExcellentCrates/common-issues' },
+            { text: '❓ 常见功能问题', link: 'wiki/ExcellentCrates/common-questions' },
+            { text: '🔧 编辑器界面', link: 'wiki/ExcellentCrates/editor-gui' },
             {
               text: '⚙️ 配置文件', collapsed: true, items: [
-                { text: '跨服', link: '/ExcellentCrates/configuration.cross-server' },
-                { text: '兑换', link: '/ExcellentCrates/configuration.exchange' }
+                { text: '跨服', link: 'wiki/ExcellentCrates/configuration/cross-server' },
+                { text: '兑换', link: 'wiki/ExcellentCrates/configuration/exchange' }
               ]
             },
             {
               text: '🧊 宝箱', collapsed: true, items: [
-                { text: '➕ 设置宝箱', link: '/ExcellentCrates/crates.setup-crates' },
-                { text: '💎 外观', link: '/ExcellentCrates/crates.appearance' },
-                { text: '🖼️ 预览', link: '/ExcellentCrates/crates.previews' },
-                { text: '👁️ 开箱动画', link: '/ExcellentCrates/crates.openings' },
-                { text: '🧱 放置', link: '/ExcellentCrates/crates.placement' },
-                { text: '🛑 开箱权限', link: '/ExcellentCrates/crates.open-permission' },
-                { text: '💲 开箱收费', link: '/ExcellentCrates/crates.open-cost' },
-                { text: '⌛ 开箱冷却', link: '/ExcellentCrates/crates.open-cooldown' },
-                { text: '🔑 钥匙需求', link: '/ExcellentCrates/crates.key-requirements' },
-                { text: '🪧 累抽奖励', link: '/ExcellentCrates/crates.milestones' },
+                { text: '➕ 设置宝箱', link: 'wiki/ExcellentCrates/crates/setup-crates' },
+                { text: '💎 外观', link: 'wiki/ExcellentCrates/crates/appearance' },
+                { text: '🖼️ 预览', link: 'wiki/ExcellentCrates/crates/previews' },
+                { text: '👁️ 开箱动画', link: 'wiki/ExcellentCrates/crates/openings' },
+                { text: '🧱 放置', link: 'wiki/ExcellentCrates/crates/placement' },
+                { text: '🛑 开箱权限', link: 'wiki/ExcellentCrates/crates/open-permission' },
+                { text: '💲 开箱收费', link: 'wiki/ExcellentCrates/crates/open-cost' },
+                { text: '⌛ 开箱冷却', link: 'wiki/ExcellentCrates/crates/open-cooldown' },
+                { text: '🔑 钥匙需求', link: 'wiki/ExcellentCrates/crates/key-requirements' },
+                { text: '🪧 累抽奖励', link: 'wiki/ExcellentCrates/crates/milestones' },
               ]
             },
             {
               text: '🔑 钥匙', collapsed: true, items: [
-                { text: '➕ 设置钥匙', link: '/ExcellentCrates/keys.setup-keys' },
-                { text: '*️⃣ 虚拟钥匙', link: '/ExcellentCrates/keys.virtual-keys' }
+                { text: '➕ 设置钥匙', link: 'wiki/ExcellentCrates/keys/setup-keys' },
+                { text: '*️⃣ 虚拟钥匙', link: 'wiki/ExcellentCrates/keys/virtual-keys' }
               ]
             },
-            { text: '🔤 变量', link: '/ExcellentCrates/placeholders' },
-            { text: '🔧 开发者 API', link: '/ExcellentCrates/developer-api' }
+            { text: '🔤 变量', link: 'wiki/ExcellentCrates/placeholders' },
+            { text: '🔧 开发者 API', link: 'wiki/ExcellentCrates/developer-api' }
           ]
         }
       ],
-      '/ExcellentEnchants/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/ExcellentEnchants/index' },
+      'wiki/ExcellentEnchants/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/ExcellentEnchants/index' },
         {
           text: 'ExcellentEnchants 维基', items: [
-            { text: '从 v4 升级', link: '/ExcellentEnchants/upgrading-from-v4' },
-            { text: '欢迎', link: '/ExcellentEnchants/welcome' },
-            { text: '命令', link: '/ExcellentEnchants/commands' },
-            { text: '权限', link: '/ExcellentEnchants/permissions' },
+            { text: '从 v4 升级', link: 'wiki/ExcellentEnchants/upgrading-from-v4' },
+            { text: '欢迎', link: 'wiki/ExcellentEnchants/welcome' },
+            { text: '命令', link: 'wiki/ExcellentEnchants/commands' },
+            { text: '权限', link: 'wiki/ExcellentEnchants/permissions' },
             {
               text: '集成', collapsed: true, items: [
-                { text: 'PlaceholderAPI 支持', link: '/ExcellentEnchants/intergrations.placeholderapi' }
+                { text: 'PlaceholderAPI 支持', link: 'wiki/ExcellentEnchants/intergrations/placeholderapi' }
               ]
             },
-            { text: '常见插件问题', link: '/ExcellentEnchants/common-issues' },
-            { text: '常见问题', link: '/ExcellentEnchants/common-questions' },
+            { text: '常见插件问题', link: 'wiki/ExcellentEnchants/common-issues' },
+            { text: '常见问题', link: 'wiki/ExcellentEnchants/common-questions' },
             {
               text: '功能', collapsed: true, items: [
-                { text: '兼容性', link: '/ExcellentEnchants/features.compatibility' },
-                { text: '分布', link: '/ExcellentEnchants/features.distribution' },
-                { text: '附魔列表', link: '/ExcellentEnchants/features.enchantments' },
-                { text: '附魔描述', link: '/ExcellentEnchants/features.description' },
-                { text: '禁用附魔', link: '/ExcellentEnchants/features.disabling' },
-                { text: '物品集', link: '/ExcellentEnchants/features.item-sets' },
-                { text: '充能', link: '/ExcellentEnchants/features.charges' },
+                { text: '兼容性', link: 'wiki/ExcellentEnchants/features/compatibility' },
+                { text: '分布', link: 'wiki/ExcellentEnchants/features/distribution' },
+                { text: '附魔列表', link: 'wiki/ExcellentEnchants/features/enchantments' },
+                { text: '附魔描述', link: 'wiki/ExcellentEnchants/features/description' },
+                { text: '禁用附魔', link: 'wiki/ExcellentEnchants/features/disabling' },
+                { text: '物品集', link: 'wiki/ExcellentEnchants/features/item-sets' },
+                { text: '充能', link: 'wiki/ExcellentEnchants/features/charges' },
               ]
             },
-            { text: '修饰符', link: '/ExcellentEnchants/modifiers' },
-            { text: '内部变量', link: '/ExcellentEnchants/placeholders' },
-            { text: '开发者 API', link: '/ExcellentEnchants/developer-api' }
+            { text: '修饰符', link: 'wiki/ExcellentEnchants/modifiers' },
+            { text: '内部变量', link: 'wiki/ExcellentEnchants/placeholders' },
+            { text: '开发者 API', link: 'wiki/ExcellentEnchants/developer-api' }
           ]
         },
       ],
-      '/FallbackServer/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/FallbackServer/index' },
+      'wiki/FallbackServer/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/FallbackServer/index' },
         {
           text: 'FallbackServer 维基', items: [
-            { text: '👋 欢迎来到 FallbackServer 维基', link: '/FallbackServer/welcome-to-fallbackserver-wiki' },
+            { text: '👋 欢迎来到 FallbackServer 维基', link: 'wiki/FallbackServer/welcome-to-fallbackserver-wiki' },
             {
               text: '概览', collapsed: true, items: [
-                { text: '🌐 初次使用', link: '/FallbackServer/overview.first-startup-guide' },
-                { text: '📔 插件功能', link: '/FallbackServer/overview.features' },
-                { text: '💥 已知问题', link: '/FallbackServer/overview.known-errors-issues' },
-                { text: '🧬 版本类型', link: '/FallbackServer/overview.version-type' },
+                { text: '🌐 初次使用', link: 'wiki/FallbackServer/overview/first-startup-guide' },
+                { text: '📔 插件功能', link: 'wiki/FallbackServer/overview/features' },
+                { text: '💥 已知问题', link: 'wiki/FallbackServer/overview/known-errors-issues' },
+                { text: '🧬 版本类型', link: 'wiki/FallbackServer/overview/version-type' },
               ]
             },
             {
               text: '文件', collapsed: true, items: [
-                { text: '📑 配置', link: '/FallbackServer/files.configuration' },
-                { text: '📖 消息文本', link: '/FallbackServer/files.messages' },
+                { text: '📑 配置', link: 'wiki/FallbackServer/files/configuration' },
+                { text: '📖 消息文本', link: 'wiki/FallbackServer/files/messages' },
               ]
             },
 
             {
               text: '用法', collapsed: true, items: [
-                { text: '💻 命令', link: '/FallbackServer/usage.commands' },
+                { text: '💻 命令', link: 'wiki/FallbackServer/usage/commands' },
               ]
             },
 
             {
               text: '其他', collapsed: true, items: [
-                { text: '🚁 支持', link: '/FallbackServer/other.support' },
+                { text: '🚁 支持', link: 'wiki/FallbackServer/other/support' },
                 { text: '📸 视频（暂不开放）' }
               ]
             },
           ]
         },
       ],
-      '/FastAsyncWorldEdit/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/FastAsyncWorldEdit/index' },
+      'wiki/FastAsyncWorldEdit/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/FastAsyncWorldEdit/index' },
         {
           text: 'FastAsyncWorldEdit 维基', items: [
-            { text: '介绍页', link: '/FastAsyncWorldEdit/readme' },
+            { text: '介绍页', link: 'wiki/FastAsyncWorldEdit/readme' },
             {
-              text: '开始', items: [
-                { text: '安装', link: '/FastAsyncWorldEdit/getting-started.installation' }
+              text: '开始', collapsed: true, items: [
+                { text: '安装', link: 'wiki/FastAsyncWorldEdit/getting-started/installation' }
               ]
             },
             {
-              text: '插件功能', items: [
-                { text: '命令概览', link: '/FastAsyncWorldEdit/features.command-overview' },
-                { text: '工具物品', link: '/FastAsyncWorldEdit/features.tool-item' }
+              text: '插件功能', collapsed: true, items: [
+                { text: '命令概览', link: 'wiki/FastAsyncWorldEdit/features/command-overview' },
+                { text: '工具物品', link: 'wiki/FastAsyncWorldEdit/features/tool-item' }
               ]
             },
             {
-              text: '实用命令', items: [
-                { text: '笔刷', link: '/FastAsyncWorldEdit/command-utilties.brushes' },
-                { text: '蒙版', link: '/FastAsyncWorldEdit/command-utilties.masks' },
-                { text: '图案', link: '/FastAsyncWorldEdit/command-utilties.patterns' },
-                { text: '变形', link: '/FastAsyncWorldEdit/command-utilties.transforms' }
+              text: '实用命令', collapsed: true, items: [
+                { text: '笔刷', link: 'wiki/FastAsyncWorldEdit/command-utilties/brushes' },
+                { text: '蒙版', link: 'wiki/FastAsyncWorldEdit/command-utilties/masks' },
+                { text: '图案', link: 'wiki/FastAsyncWorldEdit/command-utilties/patterns' },
+                { text: '变形', link: 'wiki/FastAsyncWorldEdit/command-utilties/transforms' }
               ]
             },
             {
-              text: 'API', items: [
-                { text: 'API 用法', link: '/FastAsyncWorldEdit/api.api-usage' }
+              text: 'API', collapsed: true, items: [
+                { text: 'API 用法', link: 'wiki/FastAsyncWorldEdit/api/api-usage' }
               ]
             },
             {
-              text: '自定义', items: [
-                { text: '配置', link: '/FastAsyncWorldEdit/customization.configuration' },
-                { text: '权限', link: '/FastAsyncWorldEdit/customization.permissions' }
+              text: '自定义', collapsed: true, items: [
+                { text: '配置', link: 'wiki/FastAsyncWorldEdit/customization/configuration' },
+                { text: '权限', link: 'wiki/FastAsyncWorldEdit/customization/permissions' }
               ]
             }
           ]
         },
       ],
-      '/HuskHomes/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/HuskHomes/index' },
+      'wiki/HuskHomes/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/HuskHomes/index' },
         {
           text: 'HuskHomes 维基', items: [
-            { text: '首页', link: '/HuskHomes/home' },
+            { text: '首页', link: 'wiki/HuskHomes/home' },
             {
               text: '安装', items: [
                 {
-                  text: '📚 安装教程', link: '/HuskHomes/setup.setup', collapsed: true, items: [
-                    { text: '📩 导入数据', link: '/HuskHomes/setup.setup.importing-data' }
+                  text: '📚 安装教程', link: 'wiki/HuskHomes/setup/setup', collapsed: true, items: [
+                    { text: '📩 导入数据', link: 'wiki/HuskHomes/setup/setup/importing-data' }
                   ]
                 },
                 {
-                  text: '📄 配置文件', link: '/HuskHomes/setup.config', collapsed: true, items: [
-                    { text: '📁 数据库', link: '/HuskHomes/setup.config.database' },
-                    { text: '⛅ Redis', link: '/HuskHomes/setup.config.redis' },
-                    { text: '📝 语言贡献', link: '/HuskHomes/setup.config.locales' },
+                  text: '📄 配置文件', link: 'wiki/HuskHomes/setup/config', collapsed: true, items: [
+                    { text: '📁 数据库', link: 'wiki/HuskHomes/setup/config/database' },
+                    { text: '⛅ Redis', link: 'wiki/HuskHomes/setup/config/redis' },
+                    { text: '📝 语言贡献', link: 'wiki/HuskHomes/setup/config/locales' },
                   ]
                 },
-                { text: '⚠️ 兼容性', link: '/HuskHomes/setup.compatibility' },
+                { text: '⚠️ 兼容性', link: 'wiki/HuskHomes/setup/compatibility' },
                 {
-                  text: '❓ 常见问题', link: '/HuskHomes/setup.faqs', collapsed: true, items: [
-                    { text: '⚙️ 问题排查', link: '/HuskHomes/setup.faqs.troubleshooting' },
+                  text: '❓ 常见问题', link: 'wiki/HuskHomes/setup/faqs', collapsed: true, items: [
+                    { text: '⚙️ 问题排查', link: 'wiki/HuskHomes/setup/faqs/troubleshooting' },
                   ]
                 }
               ]
@@ -839,40 +845,40 @@ export default defineConfig({
             {
               text: '功能', items: [
                 {
-                  text: '🖥️ 命令列表', link: '/HuskHomes/features.commands', collapsed: true, items: [
-                    { text: '📜 冲突命令', link: '/HuskHomes/features.commands.command-conflicts' },
-                    { text: '⏰ 冷却', link: '/HuskHomes/features.commands.command-cooldowns' },
-                    { text: '◀️ /back 命令', link: '/HuskHomes/features.commands.back-command' },
-                    { text: '⚠️ 严格 /tpahere', link: '/HuskHomes/features.commands.strict-tpahere' },
+                  text: '🖥️ 命令列表', link: 'wiki/HuskHomes/features/commands', collapsed: true, items: [
+                    { text: '📜 冲突命令', link: 'wiki/HuskHomes/features/commands/command-conflicts' },
+                    { text: '⏰ 冷却', link: 'wiki/HuskHomes/features/commands/command-cooldowns' },
+                    { text: '◀️ /back 命令', link: 'wiki/HuskHomes/features/commands/back-command' },
+                    { text: '⚠️ 严格 /tpahere', link: 'wiki/HuskHomes/features/commands/strict-tpahere' },
                   ]
                 },
                 {
-                  text: '⛔ 访问控制', link: '/HuskHomes/features.managing-access', collapsed: true, items: [
-                    { text: '🚫 地标限制', link: '/HuskHomes/features.managing-access.restricted-warps' },
+                  text: '⛔ 访问控制', link: 'wiki/HuskHomes/features/managing-access', collapsed: true, items: [
+                    { text: '🚫 地标限制', link: 'wiki/HuskHomes/features/managing-access/restricted-warps' },
                   ]
                 },
                 {
-                  text: '🌎 全局主城', link: '/HuskHomes/features.global-spawn', collapsed: true, items: [
-                    { text: '🛏️ 全局重生', link: '/HuskHomes/features.global-spawn.global-respawning' },
+                  text: '🌎 全局主城', link: 'wiki/HuskHomes/features/global-spawn', collapsed: true, items: [
+                    { text: '🛏️ 全局重生', link: 'wiki/HuskHomes/features/global-spawn/global-respawning' },
                   ]
                 },
               ]
             },
             {
               text: '联动', items: [
-                { text: '🏷️ PlaceholderAPI 联动', link: '/HuskHomes/hooks.placeholderapi-hook' },
-                { text: '💵 Vault 经济', link: '/HuskHomes/hooks.vault-economy' },
-                { text: '🟩 Plan 统计', link: '/HuskHomes/hooks.player-analytics' },
-                { text: '🍀 LuckPerms', link: '/HuskHomes/hooks.luckperms' },
-                { text: '🗺️ Dynmap, BlueMap, Pl3xMap', link: '/HuskHomes/hooks.dynmap-bluemap-pl3xmap' },
+                { text: '🏷️ PlaceholderAPI 联动', link: 'wiki/HuskHomes/hooks/placeholderapi-hook' },
+                { text: '💵 Vault 经济', link: 'wiki/HuskHomes/hooks/vault-economy' },
+                { text: '🟩 Plan 统计', link: 'wiki/HuskHomes/hooks/player-analytics' },
+                { text: '🍀 LuckPerms', link: 'wiki/HuskHomes/hooks/luckperms' },
+                { text: '🗺️ Dynmap, BlueMap, Pl3xMap', link: 'wiki/HuskHomes/hooks/dynmap-bluemap-pl3xmap' },
               ]
             },
             {
               text: '开发者', collapsed: true, items: [
                 {
-                  text: '📦 API', link: '/HuskHomes/developers.api', collapsed: true, items: [
-                    { text: '💡 API 示例', link: '/HuskHomes/developers.api.api-examples' },
-                    { text: '⚡ API 事件', link: '/HuskHomes/developers.api.api-events' },
+                  text: '📦 API', link: 'wiki/HuskHomes/developers/api', collapsed: true, items: [
+                    { text: '💡 API 示例', link: 'wiki/HuskHomes/developers/api/api-examples' },
+                    { text: '⚡ API 事件', link: 'wiki/HuskHomes/developers/api/api-events' },
                     { text: '💻 源码', link: 'https://github.com/WiIIiam278/HuskHomes' },
                   ]
                 },
@@ -891,254 +897,254 @@ export default defineConfig({
           ]
         },
       ],
-      '/HuskSync/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/HuskSync/index' },
+      'wiki/HuskSync/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/HuskSync/index' },
         {
           text: 'HuskSync 维基', items: [
-            { text: '首页', link: '/HuskSync/home' },
+            { text: '首页', link: 'wiki/HuskSync/home' },
             {
               text: '安装', items: [
                 {
-                  text: '📚 安装教程', link: '/HuskSync/setup.setup', collapsed: true, items: [
-                    { text: '✨ MPDB 迁移', link: '/HuskSync/setup.setup.mpdb-migration' },
-                    { text: '↗️ 旧版迁移', link: '/HuskSync/setup.setup.legacy-migration' },
+                  text: '📚 安装教程', link: 'wiki/HuskSync/setup/setup', collapsed: true, items: [
+                    { text: '✨ MPDB 迁移', link: 'wiki/HuskSync/setup/setup/mpdb-migration' },
+                    { text: '↗️ 旧版迁移', link: 'wiki/HuskSync/setup/setup/legacy-migration' },
                   ]
                 },
                 {
-                  text: '📄 配置文件', link: '/HuskSync/setup.config', collapsed: true, items: [
-                    { text: '💾 数据库', link: '/HuskSync/setup.config.database' },
-                    { text: '✨ Redis', link: '/HuskSync/setup.config.redis' },
-                    { text: '🎏 语言贡献', link: '/HuskSync/setup.config.locales' },
+                  text: '📄 配置文件', link: 'wiki/HuskSync/setup/config', collapsed: true, items: [
+                    { text: '💾 数据库', link: 'wiki/HuskSync/setup/config/database' },
+                    { text: '✨ Redis', link: 'wiki/HuskSync/setup/config/redis' },
+                    { text: '🎏 语言贡献', link: 'wiki/HuskSync/setup/config/locales' },
                   ]
                 },
-                { text: '⚠️ 兼容相关', link: '/HuskSync/setup.compatbility' },
+                { text: '⚠️ 兼容相关', link: 'wiki/HuskSync/setup/compatbility' },
                 {
-                  text: '❓ 常见问题', link: '/HuskSync/setup.faqs', collapsed: true, items: [
-                    { text: '🔗 问题排查', link: '/HuskSync/setup.faqs.troubleshooting' },
+                  text: '❓ 常见问题', link: 'wiki/HuskSync/setup/faqs', collapsed: true, items: [
+                    { text: '🔗 问题排查', link: 'wiki/HuskSync/setup/faqs/troubleshooting' },
                   ]
                 },
               ]
             },
             {
               text: '功能', items: [
-                { text: '🖥️ 命令列表', link: '/HuskSync/features.commands' },
+                { text: '🖥️ 命令列表', link: 'wiki/HuskSync/features/commands' },
                 {
-                  text: '✅ 同步功能', link: '/HuskSync/features.sync-features', collapsed: true, items: [
-                    { text: '⚙️ 同步模式', link: '/HuskSync/features.sync-features.sync-features.sync-modes' },
-                    { text: '↪️ 数据切换', link: '/HuskSync/features.sync-features.sync-features.data-rotation' },
+                  text: '✅ 同步功能', link: 'wiki/HuskSync/features/sync-features', collapsed: true, items: [
+                    { text: '⚙️ 同步模式', link: 'wiki/HuskSync/features/sync-features/sync-modes' },
+                    { text: '↪️ 数据切换', link: 'wiki/HuskSync/features/sync-features/data-rotation' },
                   ]
                 },
-                { text: '🟩 Plan 统计联动', link: '/HuskSync/features.player-analytics-hook' },
+                { text: '🟩 Plan 统计联动', link: 'wiki/HuskSync/features/player-analytics-hook' },
               ]
             },
             {
               text: '教程', collapsed: true, items: [
-                { text: '☂️ 用户数据缓存', link: '/HuskSync/guides.dumping-userdata' },
-                { text: '⚔️ 背包保存', link: '/HuskSync/guides.keep-inventory' },
-                { text: '📋 事件优先级', link: '/HuskSync/guides.event-priorties' },
+                { text: '☂️ 用户数据缓存', link: 'wiki/HuskSync/guides/dumping-userdata' },
+                { text: '⚔️ 背包保存', link: 'wiki/HuskSync/guides/keep-inventory' },
+                { text: '📋 事件优先级', link: 'wiki/HuskSync/guides/event-priorties' },
               ]
             },
             {
               text: '开发者', collapsed: true, items: [
                 {
-                  text: '📦 API v3', link: '/HuskSync/developers.api-v3', collapsed: true, items: [
-                    { text: '📝 数据快照 API', link: '/HuskSync/developers.api-v3.data-snapshot-api' },
-                    { text: '📝 自定义数据 API', link: '/HuskSync/developers.api-v3.custom-data-api' },
-                    { text: '❗ API 事件', link: '/HuskSync/developers.api-v3.api-events' },
+                  text: '📦 API v3', link: 'wiki/HuskSync/developers/api-v3', collapsed: true, items: [
+                    { text: '📝 数据快照 API', link: 'wiki/HuskSync/developers/api-v3/data-snapshot-api' },
+                    { text: '📝 自定义数据 API', link: 'wiki/HuskSync/developers/api-v3/custom-data-api' },
+                    { text: '❗ API 事件', link: 'wiki/HuskSync/developers/api-v3/api-events' },
                   ]
                 },
-                { text: '🕸️ API v2<i>（旧版）</i>', link: '/HuskSync/developers.api-v2-legacy-legacy' },
-                { text: '💻 源码', link: '/HuskSync/https://github.com/WiIIiam278/HuskSync' },
+                { text: '🕸️ API v2<i>（旧版）</i>', link: 'wiki/HuskSync/developers/api-v2-legacys' },
+                { text: '💻 源码', link: 'https://github.com/WiIIiam278/HuskSync' },
               ]
             },
             {
               text: '链接', collapsed: true, items: [
-                { text: '🚰 Spigot', link: '/HuskSync/https://www.spigotmc.org/resources/husksync.97144/' },
-                { text: '🛒 Polymart', link: '/HuskSync/https://polymart.org/resource/husksync.1634' },
-                { text: '🛒 BuiltByBit', link: '/HuskSync/https://craftaro.com/marketplace/product/husksync.758' },
+                { text: '🚰 Spigot', link: 'https://www.spigotmc.org/resources/husksync.97144/' },
+                { text: '🛒 Polymart', link: 'https://polymart.org/resource/husksync.1634' },
+                { text: '🛒 BuiltByBit', link: 'https://craftaro.com/marketplace/product/husksync.758' },
                 { text: '📊 bStats', link: 'https://bstats.org/plugin/bukkit/HuskSync%20-%20Bukkit/13140' }
               ]
             },
           ]
         },
       ],
-      '/LibreLogin/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/LibreLogin/index' },
+      'wiki/LibreLogin/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/LibreLogin/index' },
         {
           text: 'LibreLogin 维基', items: [
-            { text: '插件功能', link: '/LibreLogin/features' },
-            { text: '插件命令', link: '/LibreLogin/commands' },
+            { text: '插件功能', link: 'wiki/LibreLogin/features' },
+            { text: '插件命令', link: 'wiki/LibreLogin/commands' },
             {
               text: '教程', collapsed: true, items: [
-                { text: '安装', link: '/LibreLogin/guides.installtion' },
-                { text: '数据库迁移', link: '/LibreLogin/guides.database-migration' },
-                { text: 'UUID 创建器', link: '/LibreLogin/guides.uuid-creators' },
-                { text: '配置服务器', link: '/LibreLogin/guides.configuring-servers' },
+                { text: '安装', link: 'wiki/LibreLogin/guides/installtion' },
+                { text: '数据库迁移', link: 'wiki/LibreLogin/guides/database-migration' },
+                { text: 'UUID 创建器', link: 'wiki/LibreLogin/guides/uuid-creators' },
+                { text: '配置服务器', link: 'wiki/LibreLogin/guides/configuring-servers' },
               ]
             },
-            { text: '顾虑', link: '/LibreLogin/considerations' },
+            { text: '顾虑', link: 'wiki/LibreLogin/considerations' },
             {
               text: 'API', collapsed: true, items: [
-                { text: '基础 API 信息', link: '/LibreLogin/api.basic-api-information' },
-                { text: 'API 事件', link: '/LibreLogin/api.api-events' },
+                { text: '基础 API 信息', link: 'wiki/LibreLogin/api/basic-api-information' },
+                { text: 'API 事件', link: 'wiki/LibreLogin/api/api-events' },
               ]
             },
             {
               text: '实用链接', collapsed: true, items: [
-                { text: '配置文件', link: '/LibreLogin/useful-stuff.config' },
-                { text: '消息文件', link: '/LibreLogin/useful-stuff.messages' },
+                { text: '配置文件', link: 'wiki/LibreLogin/useful-stuff/config' },
+                { text: '消息文件', link: 'wiki/LibreLogin/useful-stuff/messages' },
               ]
             },
           ]
         },
 
       ],
-      '/LuckPerms/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/LuckPerms/index' },
+      'wiki/LuckPerms/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/LuckPerms/index' },
         {
           text: 'LuckPerms 维基', items: [
-            { text: '主页', link: '/LuckPerms/home' },
-            { text: '安装（单服）', link: '/LuckPerms/install-on-a-single-server' },
-            { text: '安装（群组服）', link: '/LuckPerms/install-on-multiple-servers.md' },
-            { text: '开始', link: '/LuckPerms/getting-started' },
-            { text: '存储', link: '/LuckPerms/storage' },
-            { text: '配置文件', link: '/LuckPerms/configuration' },
-            { text: '常见问题', link: '/LuckPerms/faq' },
+            { text: '主页', link: 'wiki/LuckPerms/home' },
+            { text: '安装（单服）', link: 'wiki/LuckPerms/install-on-a-single-server' },
+            { text: '安装（群组服）', link: 'wiki/LuckPerms/install-on-multiple-servers.md' },
+            { text: '开始', link: 'wiki/LuckPerms/getting-started' },
+            { text: '存储', link: 'wiki/LuckPerms/storage' },
+            { text: '配置文件', link: 'wiki/LuckPerms/configuration' },
+            { text: '常见问题', link: 'wiki/LuckPerms/faq' },
             {
-              text: '命令用法', link: '/LuckPerms/command-usage', collapsed: true, items: [
-                { text: '通用', link: '/LuckPerms/command-usage.general' },
-                { text: '玩家', link: '/LuckPerms/command-usage.user' },
-                { text: '权限组', link: '/LuckPerms/command-usage.group' },
-                { text: '权限', link: '/LuckPerms/command-usage.permission' },
-                { text: '继承', link: '/LuckPerms/command-usage.parent' },
-                { text: '元数据', link: '/LuckPerms/command-usage.meta' },
-                { text: '路线', link: '/LuckPerms/command-usage.track' },
-                { text: '记录', link: '/LuckPerms/command-usage.log' },
-                { text: '权限参考', link: '/LuckPerms/command-usage.permissions-reference' },
+              text: '命令用法', link: 'wiki/LuckPerms/command-usage', collapsed: true, items: [
+                { text: '通用', link: 'wiki/LuckPerms/command-usage/general' },
+                { text: '玩家', link: 'wiki/LuckPerms/command-usage/user' },
+                { text: '权限组', link: 'wiki/LuckPerms/command-usage/group' },
+                { text: '权限', link: 'wiki/LuckPerms/command-usage/permission' },
+                { text: '继承', link: 'wiki/LuckPerms/command-usage/parent' },
+                { text: '元数据', link: 'wiki/LuckPerms/command-usage/meta' },
+                { text: '路线', link: 'wiki/LuckPerms/command-usage/track' },
+                { text: '记录', link: 'wiki/LuckPerms/command-usage/log' },
+                { text: '权限参考', link: 'wiki/LuckPerms/command-usage/permissions-reference' },
               ]
             },
             {
               text: '功能', collapsed: true, items: [
-                { text: '网页编辑器', link: '/LuckPerms/features.web-editor' },
-                { text: '情境', link: '/LuckPerms/features.context' },
-                { text: '权重', link: '/LuckPerms/features.weight' },
-                { text: '前缀、后缀与元数据', link: '/LuckPerms/features.prefix-suffix-meta' },
-                { text: '权限检查系统', link: '/LuckPerms/features.verbose' },
-                { text: '路线', link: '/LuckPerms/features.tracks' },
-                { text: '默认组', link: '/LuckPerms/features.default-groups' },
+                { text: '网页编辑器', link: 'wiki/LuckPerms/features/web-editor' },
+                { text: '情境', link: 'wiki/LuckPerms/features/context' },
+                { text: '权重', link: 'wiki/LuckPerms/features/weight' },
+                { text: '前缀、后缀与元数据', link: 'wiki/LuckPerms/features/prefix-suffix-meta' },
+                { text: '权限检查系统', link: 'wiki/LuckPerms/features/verbose' },
+                { text: '路线', link: 'wiki/LuckPerms/features/tracks' },
+                { text: '默认组', link: 'wiki/LuckPerms/features/default-groups' },
               ]
             },
 
             {
               text: '教程', collapsed: true, items: [
-                { text: '在服务器间<b>同步数据</b>', link: '/LuckPerms/how-to.sync-data-between-servers' },
-                { text: '修复<b>存储错误</b>', link: '/LuckPerms/how-to.fix-storage-errors' },
-                { text: '从其他插件<b>迁移</b>', link: '/LuckPerms/how-to.migrate-from-other-plugins' },
-                { text: '更改<b>存储方式</b>', link: '/LuckPerms/how-to.switch-storage-types' },
-                { text: '执行<b>零散编辑</b>', link: '/LuckPerms/how-to.perform-bulk-edits' },
-                { text: '<b>叠加前缀</b>', link: '/LuckPerms/how-to.stack-prefixes' },
-                { text: '安装<b>拓展</b>', link: '/LuckPerms/how-to.install-extensions' },
-                { text: '设置<b>基于参数的命令权限</b>', link: '/LuckPerms/how-to.setup-argument-based-command-permissions' },]
+                { text: '在服务器间<b>同步数据</b>', link: 'wiki/LuckPerms/how-to/sync-data-between-servers' },
+                { text: '修复<b>存储错误</b>', link: 'wiki/LuckPerms/how-to/fix-storage-errors' },
+                { text: '从其他插件<b>迁移</b>', link: 'wiki/LuckPerms/how-to/migrate-from-other-plugins' },
+                { text: '更改<b>存储方式</b>', link: 'wiki/LuckPerms/how-to/switch-storage-types' },
+                { text: '执行<b>零散编辑</b>', link: 'wiki/LuckPerms/how-to/perform-bulk-edits' },
+                { text: '<b>叠加前缀</b>', link: 'wiki/LuckPerms/how-to/stack-prefixes' },
+                { text: '安装<b>拓展</b>', link: 'wiki/LuckPerms/how-to/install-extensions' },
+                { text: '设置<b>基于参数的命令权限</b>', link: 'wiki/LuckPerms/how-to/setup-argument-based-command-permissions' },]
             },
 
             {
               text: '开发者', collapsed: true, items: [
-                { text: 'API 概述', link: '/LuckPerms/developers.api-introduction' },
-                { text: 'API 用法', link: '/LuckPerms/developers.api-usage' },
-                { text: '独立 APP&REST API', link: '/LuckPerms/developers.standalone-app-rest-api' },
-                { text: '贡献', link: '/LuckPerms/developers.contributing' },
+                { text: 'API 概述', link: 'wiki/LuckPerms/developers/api-introduction' },
+                { text: 'API 用法', link: 'wiki/LuckPerms/developers/api-usage' },
+                { text: '独立 APP&REST API', link: 'wiki/LuckPerms/developers/standalone-app-rest-api' },
+                { text: '贡献', link: 'wiki/LuckPerms/developers/contributing' },
               ]
             },
 
             {
               text: '参考', collapsed: true, items: [
-                { text: '从 v4 升级至 v5', link: '/LuckPerms/reference.upgrading-from-v4-to-v5' },
-                { text: '从 GM 或 PEX 迁移', link: '/LuckPerms/reference.migrating-from-gm-or-pex' },
-                { text: '权限计算的运作方式', link: '/LuckPerms/reference.how-permission-calculation-works' },
-                { text: '网页编辑器的技术细节', link: '/LuckPerms/reference.web-editor-technical-details' },
-                { text: '自托管网页界面', link: '/LuckPerms/reference.self-hosting-the-web-interfaces' },
+                { text: '从 v4 升级至 v5', link: 'wiki/LuckPerms/reference/upgrading-from-v4-to-v5' },
+                { text: '从 GM 或 PEX 迁移', link: 'wiki/LuckPerms/reference/migrating-from-gm-or-pex' },
+                { text: '权限计算的运作方式', link: 'wiki/LuckPerms/reference/how-permission-calculation-works' },
+                { text: '网页编辑器的技术细节', link: 'wiki/LuckPerms/reference/web-editor-technical-details' },
+                { text: '自托管网页界面', link: 'wiki/LuckPerms/reference/self-hosting-the-web-interfaces' },
               ]
             },
             {
               text: '项目信息', collapsed: true, items: [
-                { text: '为何选择 LuckPerms？', link: '/LuckPerms/project-info.why-luckperms' },
-                { text: '鸣谢', link: '/LuckPerms/project-info.credits' },
-                { text: '本地化与翻译', link: '/LuckPerms/project-info.locale-and-translations' },
-                { text: '变量', link: '/LuckPerms/project-info.placeholders' },
-                { text: '外部连接', link: '/LuckPerms/project-info.external-connections' },
+                { text: '为何选择 LuckPerms？', link: 'wiki/LuckPerms/project-info/why-luckperms' },
+                { text: '鸣谢', link: 'wiki/LuckPerms/project-info/credits' },
+                { text: '本地化与翻译', link: 'wiki/LuckPerms/project-info/locale-and-translations' },
+                { text: '变量', link: 'wiki/LuckPerms/project-info/placeholders' },
+                { text: '外部连接', link: 'wiki/LuckPerms/project-info/external-connections' },
               ]
             },
           ]
         },
       ],
-      '/Oraxen/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/Oraxen/index' },
+      'wiki/Oraxen/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/Oraxen/index' },
         {
           text: 'Oraxen 维基', items: [
-            { text: '初次使用', link: '/Oraxen/getting-started' },
-            { text: '常见问题', link: '/Oraxen/frequently-asked-questions' },
+            { text: '初次使用', link: 'wiki/Oraxen/getting-started' },
+            { text: '常见问题', link: 'wiki/Oraxen/frequently-asked-questions' },
             {
               text: '用法', collapsed: true, items: [
-                { text: '命令', link: '/Oraxen/usage.commands' },
-                { text: '默认物品', link: '/Oraxen/usage.default-items' },
-                { text: '配方', link: '/Oraxen/usage.recipes' },
+                { text: '命令', link: 'wiki/Oraxen/usage/commands' },
+                { text: '默认物品', link: 'wiki/Oraxen/usage/default-items' },
+                { text: '配方', link: 'wiki/Oraxen/usage/recipes' },
               ]
             },
 
             {
               text: '配置', collapsed: true, items: [
-                { text: '基础学习', link: '/Oraxen/configuration.unserstanding-the-basics' },
-                { text: '插件设置', link: '/Oraxen/configuration.plugin-settings' },
-                { text: '（初学者）物品', link: '/Oraxen/configuration.items-beginners' },
+                { text: '基础学习', link: 'wiki/Oraxen/configuration/unserstanding-the-basics' },
+                { text: '插件设置', link: 'wiki/Oraxen/configuration/plugin-settings' },
+                { text: '（初学者）物品', link: 'wiki/Oraxen/configuration/items-beginners' },
                 {
-                  text: '（进阶）物品', link: '/Oraxen/configuration.items-advanced', collapsed: true, items: [
-                    { text: '可染色物品', link: '/Oraxen/configuration.items-advanced.dyeable-items' },
+                  text: '（进阶）物品', link: 'wiki/Oraxen/configuration/items-advanced', collapsed: true, items: [
+                    { text: '可染色物品', link: 'wiki/Oraxen/configuration/items-advanced/dyeable-items' },
                   ]
                 },
-                { text: '自定义盔甲', link: '/Oraxen/configuration.custom-armors' },
-                { text: '自定义 HUD', link: '/Oraxen/configuration.custom-hud' },
-                { text: '手势动作', link: '/Oraxen/configuration.gestures' },
-                { text: '物品外观', link: '/Oraxen/configuration.item-appearance' },
+                { text: '自定义盔甲', link: 'wiki/Oraxen/configuration/custom-armors' },
+                { text: '自定义 HUD', link: 'wiki/Oraxen/configuration/custom-hud' },
+                { text: '手势动作', link: 'wiki/Oraxen/configuration/gestures' },
+                { text: '物品外观', link: 'wiki/Oraxen/configuration/item-appearance' },
                 {
-                  text: '自定义字符', link: '/Oraxen/configuration.glyphs', collapsed: true, items: [
-                    { text: '自定义界面', link: '/Oraxen/configuration.glyphs.custom-gui' },
+                  text: '自定义字符', link: 'wiki/Oraxen/configuration/glyphs', collapsed: true, items: [
+                    { text: '自定义界面', link: 'wiki/Oraxen/configuration/glyphs/custom-gui' },
                   ]
                 },
               ]
             },
             {
               text: '机制', collapsed: true, items: [
-                { text: '介绍', link: '/Oraxen/mechanics.introduction' },
+                { text: '介绍', link: 'wiki/Oraxen/mechanics/introduction' },
                 {
-                  text: '所有机制', link: '/Oraxen/mechanics.all-mechanics', collapsed: true, items: [
-                    { text: '自定义机制', link: '/Oraxen/mechanics.all-mechanics.custom-mechanics' },
-                    { text: '点击动作（clickAction）机制', link: '/Oraxen/mechanics.all-mechanics.clickaction-mechanic' },
+                  text: '所有机制', link: 'wiki/Oraxen/mechanics/all-mechanics', collapsed: true, items: [
+                    { text: '自定义机制', link: 'wiki/Oraxen/mechanics/all-mechanics/custom-mechanics' },
+                    { text: '点击动作（clickAction）机制', link: 'wiki/Oraxen/mechanics/all-mechanics/clickaction-mechanic' },
                   ]
                 },
 
                 {
-                  text: '家具机制', link: '/Oraxen/mechanics.furniture-mechanic', collapsed: true, items: [
-                    { text: '家具位置', link: '/Oraxen/mechanics.furniture-mechanic.furniture-position' },
-                    { text: '展示实体家具', link: '/Oraxen/mechanics.furniture-mechanic.display-entity-furniture' },
-                    { text: '耕作机制', link: '/Oraxen/mechanics.furniture-mechanic.farming-mechanic' },
+                  text: '家具机制', link: 'wiki/Oraxen/mechanics/furniture-mechanic', collapsed: true, items: [
+                    { text: '家具位置', link: 'wiki/Oraxen/mechanics/furniture-mechanic/furniture-position' },
+                    { text: '展示实体家具', link: 'wiki/Oraxen/mechanics/furniture-mechanic/display-entity-furniture' },
+                    { text: '耕作机制', link: 'wiki/Oraxen/mechanics/furniture-mechanic/farming-mechanic' },
                   ]
                 },
 
                 {
-                  text: '音符盒机制', link: '/Oraxen/mechanics.noteblock-mechanic', collapsed: true, items: [
-                    { text: '去皮木头机制', link: '/Oraxen/mechanics.noteblock-mechanic.stripped-log-mechanic' },
-                    { text: '方向机制', link: '/Oraxen/mechanics.noteblock-mechanic.directional-mechanic' },
-                    { text: '耕地机制', link: '/Oraxen/mechanics.noteblock-mechanic.farmblock-mechanic' },
+                  text: '音符盒机制', link: 'wiki/Oraxen/mechanics/noteblock-mechanic', collapsed: true, items: [
+                    { text: '去皮木头机制', link: 'wiki/Oraxen/mechanics/noteblock-mechanic/stripped-log-mechanic' },
+                    { text: '方向机制', link: 'wiki/Oraxen/mechanics/noteblock-mechanic/directional-mechanic' },
+                    { text: '耕地机制', link: 'wiki/Oraxen/mechanics/noteblock-mechanic/farmblock-mechanic' },
                   ]
                 },
 
                 {
-                  text: '绊线方块机制', link: '/Oraxen/mechanics.stringblock-mechanic', collapsed: true, items: [
-                    { text: '树苗机制', link: '/Oraxen/mechanics.stringblock-mechanic.sapling-mechanic' },
+                  text: '绊线方块机制', link: 'wiki/Oraxen/mechanics/stringblock-mechanic', collapsed: true, items: [
+                    { text: '树苗机制', link: 'wiki/Oraxen/mechanics/stringblock-mechanic/sapling-mechanic' },
                   ]
                 },
               ]
@@ -1147,26 +1153,26 @@ export default defineConfig({
 
             {
               text: '➕ 附属', collapsed: true, items: [
-                { text: 'CustomBlockExpansion', link: '/Oraxen/addons.customblockexpansion' },
+                { text: 'CustomBlockExpansion', link: 'wiki/Oraxen/addons/customblockexpansion' },
               ]
             },
 
             {
               text: '兼容性', collapsed: true, items: [
-                { text: 'BossShopPro - 商店', link: '/Oraxen/compatibility.bossshoppro-shop' },
-                { text: 'CrateReloaded - 抽奖箱', link: '/Oraxen/compatbility.cratereloaded-crates' },
-                { text: 'ModelEngine - 自定义生物', link: '/Oraxen/compatibility.modelengine-custom-mobs' },
-                { text: 'MythicMobs - 自定义生物', link: '/Oraxen/compatibility.mythicmobs-custom-mobs' },
-                { text: 'TrMenu - 自定义界面', link: '/Oraxen/compatibility.trmenu-custom-inventories' },
-                { text: 'MMOItems', link: '/Oraxen/compatibility.mmoitems' },
-                { text: 'MythicCrucible', link: '/Oraxen/compatibility.mythiccrucible' },
-                { text: 'HappyHUD', link: '/Oraxen/compatibility.happyhud' },
+                { text: 'BossShopPro - 商店', link: 'wiki/Oraxen/compatibility/bossshoppro-shop' },
+                { text: 'CrateReloaded - 抽奖箱', link: 'wiki/Oraxen/compatbility.cratereloaded-crates' },
+                { text: 'ModelEngine - 自定义生物', link: 'wiki/Oraxen/compatibility/modelengine-custom-mobs' },
+                { text: 'MythicMobs - 自定义生物', link: 'wiki/Oraxen/compatibility/mythicmobs-custom-mobs' },
+                { text: 'TrMenu - 自定义界面', link: 'wiki/Oraxen/compatibility/trmenu-custom-inventories' },
+                { text: 'MMOItems', link: 'wiki/Oraxen/compatibility/mmoitems' },
+                { text: 'MythicCrucible', link: 'wiki/Oraxen/compatibility/mythiccrucible' },
+                { text: 'HappyHUD', link: 'wiki/Oraxen/compatibility/happyhud' },
                 {
-                  text: '世界生成器', link: '/Oraxen/compatibility.world-generators', collapsed: true, items: [
-                    { text: 'Iris', link: '/Oraxen/compatibility.world-generators.iris-world-generator' },
-                    { text: 'EpicWorldGenerator', link: '/Oraxen/compatibility.world-generators.epicworldgenerator' },
-                    { text: 'Custom Ore Generator', link: '/Oraxen/compatibility.world-generators.custom-ore-generator' },
-                    { text: 'RealisticWorldGenerator', link: '/Oraxen/compatibility.world-generators.realisticworldgenerator' },
+                  text: '世界生成器', link: 'wiki/Oraxen/compatibility/world-generators', collapsed: true, items: [
+                    { text: 'Iris', link: 'wiki/Oraxen/compatibility/world-generators/iris-world-generator' },
+                    { text: 'EpicWorldGenerator', link: 'wiki/Oraxen/compatibility/world-generators/epicworldgenerator' },
+                    { text: 'Custom Ore Generator', link: 'wiki/Oraxen/compatibility/world-generators/custom-ore-generator' },
+                    { text: 'RealisticWorldGenerator', link: 'wiki/Oraxen/compatibility/world-generators/realisticworldgenerator' },
                   ]
                 },
               ]
@@ -1174,16 +1180,16 @@ export default defineConfig({
 
             {
               text: '创作者相关', collapsed: true, items: [
-                { text: '创作者指导', link: '/Oraxen/vendors.vendor-guidelines' },
+                { text: '创作者指导', link: 'wiki/Oraxen/vendors/vendor-guidelines' },
               ]
             },
 
             {
               text: '开发者相关', collapsed: true, items: [
-                { text: '编写自定义机制', link: '/Oraxen/developers.create-your-own-mechanic' },
-                { text: '与其他插件兼容', link: '/Oraxen/developers.add-compability-with-a-plugin' },
-                { text: '自定义托管服务', link: '/Oraxen/developers.custom-hosting-service' },
-                { text: 'API', link: '/Oraxen/developers.api' },
+                { text: '编写自定义机制', link: 'wiki/Oraxen/developers/create-your-own-mechanic' },
+                { text: '与其他插件兼容', link: 'wiki/Oraxen/developers/add-compability-with-a-plugin' },
+                { text: '自定义托管服务', link: 'wiki/Oraxen/developers/custom-hosting-service' },
+                { text: 'API', link: 'wiki/Oraxen/developers/api' },
               ]
             },
 
@@ -1191,126 +1197,126 @@ export default defineConfig({
         },
 
       ],
-      '/PlaceholderAPI/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/PlaceholderAPI/index' },
+      'wiki/PlaceholderAPI/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/PlaceholderAPI/index' },
         {
           text: 'PlaceholderAPI 维基', items: [
-            { text: '欢迎', link: '/PlaceholderAPI/welcome' },
+            { text: '欢迎', link: 'wiki/PlaceholderAPI/welcome' },
             {
-              text: '用户教程', collapsed: true, link: '/PlaceholderAPI/user-guides', items: [
-                { text: '命令', link: '/PlaceholderAPI/user-guides.commands' },
-                { text: '使用变量', link: '/PlaceholderAPI/user-guides.using-placeholders' },
-                { text: '变量列表', link: '/PlaceholderAPI/user-guides.placeholder-list' },
-                { text: '使用 PlaceholderAPI 的插件', link: '/PlaceholderAPI/user-guides.plugins-using-placeholderapi' }
+              text: '用户教程', collapsed: true, link: 'wiki/PlaceholderAPI/user-guides', items: [
+                { text: '命令', link: 'wiki/PlaceholderAPI/user-guides/commands' },
+                { text: '使用变量', link: 'wiki/PlaceholderAPI/user-guides/using-placeholders' },
+                { text: '变量列表', link: 'wiki/PlaceholderAPI/user-guides/placeholder-list' },
+                { text: '使用 PlaceholderAPI 的插件', link: 'wiki/PlaceholderAPI/user-guides/plugins-using-placeholderapi' }
               ]
             },
             {
-              text: '开发者教程', collapsed: true, link: '/PlaceholderAPI/dev-guides', items: [
-                { text: '使用 PlaceholderAPI', link: '/PlaceholderAPI/dev-guides.using-placeholderapi' },
-                { text: '创建变量拓展', link: '/PlaceholderAPI/dev-guides.creating-a-placeholderexpansion' },
-                { text: 'eCloud', link: '/PlaceholderAPI/dev-guides.ecloud' }
+              text: '开发者教程', collapsed: true, link: 'wiki/PlaceholderAPI/dev-guides', items: [
+                { text: '使用 PlaceholderAPI', link: 'wiki/PlaceholderAPI/dev-guides/using-placeholderapi' },
+                { text: '创建变量拓展', link: 'wiki/PlaceholderAPI/dev-guides/creating-a-placeholderexpansion' },
+                { text: 'eCloud', link: 'wiki/PlaceholderAPI/dev-guides/ecloud' }
               ]
             },
-            { text: '常见问题', link: '/PlaceholderAPI/common-issues' },
-            { text: '常被问到的问题', link: '/PlaceholderAPI/faq' },
+            { text: '常见问题', link: 'wiki/PlaceholderAPI/common-issues' },
+            { text: '常被问到的问题', link: 'wiki/PlaceholderAPI/faq' },
           ]
         },
       ],
-      '/PlayerPoints/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/PlayerPoints/index' },
+      'wiki/PlayerPoints/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/PlayerPoints/index' },
         {
           text: 'PlayerPoints 维基', items: [
-            { text: '介绍', link: '/PlayerPoints/introduction' },
-            { text: 'PlaceholderAPI 支持', link: '/PlayerPoints/placeholderapi-support' },
-            { text: '命令与权限', link: '/PlayerPoints/commands-permissions' },
+            { text: '介绍', link: 'wiki/PlayerPoints/introduction' },
+            { text: 'PlaceholderAPI 支持', link: 'wiki/PlayerPoints/placeholderapi-support' },
+            { text: '命令与权限', link: 'wiki/PlayerPoints/commands-permissions' },
             {
               text: 'API 用法', collapsed: true, items: [
-                { text: '开始使用', link: '/PlayerPoints/api-usage.getting-started' }
+                { text: '开始使用', link: 'wiki/PlayerPoints/api-usage/getting-started' }
               ]
             },
           ]
         },
       ],
-      '/Shopkeepers/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/Shopkeepers/index' },
+      'wiki/Shopkeepers/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/Shopkeepers/index' },
         {
           text: 'Shopkeepers 维基', items: [
-            { text: '首页', link: '/Shopkeepers/home' },
+            { text: '首页', link: 'wiki/Shopkeepers/home' },
             {
-              text: '安装与更新', collapsed: true, link: '/Shopkeepers/installtion-updating', items: [
-                { text: '配置', link: '/Shopkeepers/installtion-updating.configuration' },
-                { text: '语言文件', link: '/Shopkeepers/installtion-updating.language-files' },
-                { text: '权限', link: '/Shopkeepers/installtion-updating.permissions' },
-                { text: '统计数据', link: '/Shopkeepers/installtion-updating.plugin-statistics' },
+              text: '安装与更新', collapsed: true, link: 'wiki/Shopkeepers/installtion-updating', items: [
+                { text: '配置', link: 'wiki/Shopkeepers/installtion-updating/configuration' },
+                { text: '语言文件', link: 'wiki/Shopkeepers/installtion-updating/language-files' },
+                { text: '权限', link: 'wiki/Shopkeepers/installtion-updating/permissions' },
+                { text: '统计数据', link: 'wiki/Shopkeepers/installtion-updating/plugin-statistics' },
               ]
             },
             {
-              text: '创建商店', collapsed: true, link: '/Shopkeepers/creating-shops', items: [
-                { text: '编辑商店', link: '/Shopkeepers/creating-shops.editing-shops' },
-                { text: '设置管理员商店', link: '/Shopkeepers/creating-shops.admin-shop-setup' },
-                { text: '设置玩家商店', link: '/Shopkeepers/creating-shops.setup-player-shop' },
-                { text: '变量物品', link: '/Shopkeepers/creating-shops.placeholder-items' },
-                { text: 'Citizens 村民商店', link: '/Shopkeepers/creating-shops.citizens-shopkeepers' },
+              text: '创建商店', collapsed: true, link: 'wiki/Shopkeepers/creating-shops', items: [
+                { text: '编辑商店', link: 'wiki/Shopkeepers/creating-shops/editing-shops' },
+                { text: '设置管理员商店', link: 'wiki/Shopkeepers/creating-shops/admin-shop-setup' },
+                { text: '设置玩家商店', link: 'wiki/Shopkeepers/creating-shops/setup-player-shop' },
+                { text: '变量物品', link: 'wiki/Shopkeepers/creating-shops/placeholder-items' },
+                { text: 'Citizens 村民商店', link: 'wiki/Shopkeepers/creating-shops/citizens-shopkeepers' },
               ]
             },
-            { text: '命令列表', link: '/Shopkeepers/commands' },
+            { text: '命令列表', link: 'wiki/Shopkeepers/commands' },
             {
               text: '其他功能', collapsed: true, items: [
-                { text: '交易记录', link: '/Shopkeepers/other-features.trade-notifications' },
-                { text: '交易提醒', link: '/Shopkeepers/other-features.trade-notifications' },
-                { text: '购买时执行命令', link: '/Shopkeepers/other-features.selling-commands' },
-                { text: '普通村民编辑', link: '/Shopkeepers/other-features.editor-for-regular-villagers' },
-                { text: '附属插件', link: '/Shopkeepers/other-features.third-party-add-on-plugins' },
+                { text: '交易记录', link: 'wiki/Shopkeepers/other-features/trade-notifications' },
+                { text: '交易提醒', link: 'wiki/Shopkeepers/other-features/trade-notifications' },
+                { text: '购买时执行命令', link: 'wiki/Shopkeepers/other-features/selling-commands' },
+                { text: '普通村民编辑', link: 'wiki/Shopkeepers/other-features/editor-for-regular-villagers' },
+                { text: '附属插件', link: 'wiki/Shopkeepers/other-features/third-party-add-on-plugins' },
               ]
             },
             {
               text: '更多信息', collapsed: true, items: [
-                { text: '创建经济', link: '/Shopkeepers/more-information.creating-an-economy' },
-                { text: '物品序列化', link: '/Shopkeepers/more-information.item-serialization' },
-                { text: '已知漏洞', link: '/Shopkeepers/more-information.known-issues' },
-                { text: '常见问题', link: '/Shopkeepers/more-information.frequently-asked-questions' },
+                { text: '创建经济', link: 'wiki/Shopkeepers/more-information/creating-an-economy' },
+                { text: '物品序列化', link: 'wiki/Shopkeepers/more-information/item-serialization' },
+                { text: '已知漏洞', link: 'wiki/Shopkeepers/more-information/known-issues' },
+                { text: '常见问题', link: 'wiki/Shopkeepers/more-information/frequently-asked-questions' },
               ]
             }
           ]
         },
       ],
-      '/spark/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/spark/index' },
+      'wiki/spark/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/spark/index' },
         {
           text: 'spark 维基', items: [
             {
               text: 'spark', collapsed: true, items: [
-                { text: '主页', link: '/spark/spark.home' },
-                { text: '安装', link: '/spark/spark.installation' },
-                { text: '命令用法', link: '/spark/spark.command-usage' },
-                { text: '正确使用报告浏览器', link: '/spark/spark.using-the-viewer' },
-                { text: '开发者 API', link: '/spark/spark.developer-api' },
-                { text: '配置文件', link: '/spark/spark.configuration' },
-                { text: '独立代理', link: '/spark/spark.standalone-agent' }
+                { text: '主页', link: 'wiki/spark/spark/home' },
+                { text: '安装', link: 'wiki/spark/spark/installation' },
+                { text: '命令用法', link: 'wiki/spark/spark/command-usage' },
+                { text: '正确使用报告浏览器', link: 'wiki/spark/spark/using-the-viewer' },
+                { text: '开发者 API', link: 'wiki/spark/spark/developer-api' },
+                { text: '配置文件', link: 'wiki/spark/spark/configuration' },
+                { text: '独立代理', link: 'wiki/spark/spark/standalone-agent' }
               ]
             },
 
             {
               text: 'spark 教程', collapsed: true, items: [
-                { text: '排查卡顿问题', link: '/spark/spark-guides.finding-the-cause-of-lag-spikes' },
-                { text: '刻循环', link: '/spark/spark-guides.the-tick-loop' },
-                { text: 'TPS 与 MSPT', link: '/spark/spark-guides.tps-and-mspt' },
+                { text: '排查卡顿问题', link: 'wiki/spark/spark-guides/finding-the-cause-of-lag-spikes' },
+                { text: '刻循环', link: 'wiki/spark/spark-guides/the-tick-loop' },
+                { text: 'TPS 与 MSPT', link: 'wiki/spark/spark-guides/tps-and-mspt' },
               ]
             },
 
             {
               text: 'spark 其他内容', collapsed: true, items: [
-                { text: '优势何在？', link: '/spark/spark-misc.spark-vs.-others' },
-                { text: '使用 async-profiler 引擎', link: '/spark/spark-misc.using-async-profiler-engine' },
-                { text: '关于 spark 的统计信息', link: '/spark/spark-misc.about-spark-metrics' },
-                { text: 'spark 的原数据', link: '/spark/spark-misc.raw-spark-data' },
-                { text: '变量', link: '/spark/spark-misc.placeholders' },
-                { text: '信息点', link: '/spark/spark-misc.info-points' },
-                { text: '鸣谢', link: '/spark/spark-misc.credits' },
+                { text: '优势何在？', link: 'wiki/spark/spark-misc/spark-vs-others' },
+                { text: '使用 async-profiler 引擎', link: 'wiki/spark/spark-misc/using-async-profiler-engine' },
+                { text: '关于 spark 的统计信息', link: 'wiki/spark/spark-misc/about-spark-metrics' },
+                { text: 'spark 的原数据', link: 'wiki/spark/spark-misc/raw-spark-data' },
+                { text: '变量', link: 'wiki/spark/spark-misc/placeholders' },
+                { text: '信息点', link: 'wiki/spark/spark-misc/info-points' },
+                { text: '鸣谢', link: 'wiki/spark/spark-misc/credits' },
               ]
             },
 
@@ -1319,70 +1325,70 @@ export default defineConfig({
 
 
       ],
-      '/SuperiorSkyblock2/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/SuperiorSkyblock2/index' },
+      'wiki/SuperiorSkyblock2/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/SuperiorSkyblock2/index' },
         {
           text: 'SuperiorSkyblock2 维基', items: [
             {
-              text: '概览', link: '/SuperiorSkyblock2/overview', collapsed: false, items: [
+              text: '概览', link: 'wiki/SuperiorSkyblock2/overview', collapsed: false, items: [
                 {
                   text: '命令与权限', collapsed: true, items: [
-                    { text: '玩家命令', link: '/SuperiorSkyblock2/overview.commands-and-permissions.player-commands' },
-                    { text: '管理员命令', link: '/SuperiorSkyblock2/overview.commands-and-permissions.admin-commands' },
-                    { text: '权限', link: '/SuperiorSkyblock2/overview.commands-and-permissions.permissions' }
+                    { text: '玩家命令', link: 'wiki/SuperiorSkyblock2/overview/commands-and-permissions/player-commands' },
+                    { text: '管理员命令', link: 'wiki/SuperiorSkyblock2/overview/commands-and-permissions/admin-commands' },
+                    { text: '权限', link: 'wiki/SuperiorSkyblock2/overview/commands-and-permissions/permissions' }
                   ]
                 },
                 {
-                  text: '变量', link: '/SuperiorSkyblock2/overview.placeholders', collapsed: true, items: [
-                    { text: '全局变量', link: '/SuperiorSkyblock2/overview.placeholders.global-placeholders' },
-                    { text: '岛屿变量', link: '/SuperiorSkyblock2/overview.placeholders.island-placeholders' },
-                    { text: '玩家变量', link: '/SuperiorSkyblock2/overview.placeholders.player-placeholders' },
-                    { text: '聊天变量', link: '/SuperiorSkyblock2/overview.placeholders.chat-placeholders' },
+                  text: '变量', link: 'wiki/SuperiorSkyblock2/overview/placeholders', collapsed: true, items: [
+                    { text: '全局变量', link: 'wiki/SuperiorSkyblock2/overview/placeholders/global-placeholders' },
+                    { text: '岛屿变量', link: 'wiki/SuperiorSkyblock2/overview/placeholders/island-placeholders' },
+                    { text: '玩家变量', link: 'wiki/SuperiorSkyblock2/overview/placeholders/player-placeholders' },
+                    { text: '聊天变量', link: 'wiki/SuperiorSkyblock2/overview/placeholders/chat-placeholders' },
                   ]
                 },
-                { text: '配置文件', link: '/SuperiorSkyblock2/overview.configuration-files' },
-                { text: '消息文件', link: '/SuperiorSkyblock2/overview.messages' },
-                { text: '岛屿标志', link: '/SuperiorSkyblock2/overview.island-flags' },
-                { text: '岛屿权限', link: '/SuperiorSkyblock2/overview.island-privileges' },
-                { text: '结构', link: '/SuperiorSkyblock2/overview.schematics' },
+                { text: '配置文件', link: 'wiki/SuperiorSkyblock2/overview/configuration-files' },
+                { text: '消息文件', link: 'wiki/SuperiorSkyblock2/overview/messages' },
+                { text: '岛屿标志', link: 'wiki/SuperiorSkyblock2/overview/island-flags' },
+                { text: '岛屿权限', link: 'wiki/SuperiorSkyblock2/overview/island-privileges' },
+                { text: '结构', link: 'wiki/SuperiorSkyblock2/overview/schematics' },
                 {
-                  text: '岛屿升级', link: '/SuperiorSkyblock2/overview.upgrades', collapsed: true, items: [
-                    { text: '岛屿翻倍卡', link: '/SuperiorSkyblock2/overview.upgrades.island-multipliers' }
-                  ]
-                },
-                {
-                  text: '菜单', link: '/SuperiorSkyblock2/overview.menus', collapsed: true, items: [
-                    { text: '银行日志菜单', link: '/SuperiorSkyblock2/overview.menus.bank-logs-menu' },
-                    { text: '群系菜单', link: '/SuperiorSkyblock2/overview.menus.biomes-menu' }
+                  text: '岛屿升级', link: 'wiki/SuperiorSkyblock2/overview/upgrades', collapsed: true, items: [
+                    { text: '岛屿翻倍卡', link: 'wiki/SuperiorSkyblock2/overview/upgrades/island-multipliers' }
                   ]
                 },
                 {
-                  text: '任务', link: '/SuperiorSkyblock2/overview.missions', collapsed: true, items: [
-                    { text: '方块任务', link: '/SuperiorSkyblock2/overview.missions.blocksmissions' },
-                    { text: '酿造任务', link: '/SuperiorSkyblock2/overview.missions.brewingmissions' },
-                    { text: '合成任务', link: '/SuperiorSkyblock2/overview.missions.craftingmissions' },
-                    { text: '附魔任务', link: '/SuperiorSkyblock2/overview.missions.enchantingmissions' },
-                    { text: '耕作任务', link: '/SuperiorSkyblock2/overview.missions.farmingmissions' },
-                    { text: '钓鱼任务', link: '/SuperiorSkyblock2/overview.missions.fishingmissions' },
-                    { text: '岛屿任务', link: '/SuperiorSkyblock2/overview.missions.islandmissions' },
-                    { text: '物品任务', link: '/SuperiorSkyblock2/overview.missions.itemsmissions' },
-                    { text: '击杀任务', link: '/SuperiorSkyblock2/overview.missions.killsmissions' },
-                    { text: '统计数据任务', link: '/SuperiorSkyblock2/overview.missions.statisticsmissions' },
-                  ]
-                },
-                { text: 'JavaScript 引擎', link: '/SuperiorSkyblock2/overview.javascript-engine' },
-                { text: '自定义方块', link: '/SuperiorSkyblock2/overview.custom-blocks' },
-                {
-                  text: 'API', link: '/SuperiorSkyblock2/overview.api', collapsed: true, items: [
-                    { text: '注册命令', link: '/SuperiorSkyblock2/overview.api.register-your-own-command' },
-                    { text: '注册方块键', link: '/SuperiorSkyblock2/overview.api.register-your-own-block-keys' }
+                  text: '菜单', link: 'wiki/SuperiorSkyblock2/overview/menus', collapsed: true, items: [
+                    { text: '银行日志菜单', link: 'wiki/SuperiorSkyblock2/overview/menus/bank-logs-menu' },
+                    { text: '群系菜单', link: 'wiki/SuperiorSkyblock2/overview/menus/biomes-menu' }
                   ]
                 },
                 {
-                  text: '附属', link: '/SuperiorSkyblock2/overview.addons', collapsed: true, items: [
-                    { text: 'SSBOneBlock', link: '/SuperiorSkyblock2/overview.addons.ssboneblock' },
-                    { text: 'SSBProxyBridge', link: '/SuperiorSkyblock2/overview.addons.ssbproxybridge' },
+                  text: '任务', link: 'wiki/SuperiorSkyblock2/overview/missions', collapsed: true, items: [
+                    { text: '方块任务', link: 'wiki/SuperiorSkyblock2/overview/missions/blocksmissions' },
+                    { text: '酿造任务', link: 'wiki/SuperiorSkyblock2/overview/missions/brewingmissions' },
+                    { text: '合成任务', link: 'wiki/SuperiorSkyblock2/overview/missions/craftingmissions' },
+                    { text: '附魔任务', link: 'wiki/SuperiorSkyblock2/overview/missions/enchantingmissions' },
+                    { text: '耕作任务', link: 'wiki/SuperiorSkyblock2/overview/missions/farmingmissions' },
+                    { text: '钓鱼任务', link: 'wiki/SuperiorSkyblock2/overview/missions/fishingmissions' },
+                    { text: '岛屿任务', link: 'wiki/SuperiorSkyblock2/overview/missions/islandmissions' },
+                    { text: '物品任务', link: 'wiki/SuperiorSkyblock2/overview/missions/itemsmissions' },
+                    { text: '击杀任务', link: 'wiki/SuperiorSkyblock2/overview/missions/killsmissions' },
+                    { text: '统计数据任务', link: 'wiki/SuperiorSkyblock2/overview/missions/statisticsmissions' },
+                  ]
+                },
+                { text: 'JavaScript 引擎', link: 'wiki/SuperiorSkyblock2/overview/javascript-engine' },
+                { text: '自定义方块', link: 'wiki/SuperiorSkyblock2/overview/custom-blocks' },
+                {
+                  text: 'API', link: 'wiki/SuperiorSkyblock2/overview/api', collapsed: true, items: [
+                    { text: '注册命令', link: 'wiki/SuperiorSkyblock2/overview/api/register-your-own-command' },
+                    { text: '注册方块键', link: 'wiki/SuperiorSkyblock2/overview/api/register-your-own-block-keys' }
+                  ]
+                },
+                {
+                  text: '附属', link: 'wiki/SuperiorSkyblock2/overview/addons', collapsed: true, items: [
+                    { text: 'SSBOneBlock', link: 'wiki/SuperiorSkyblock2/overview/addons/ssboneblock' },
+                    { text: 'SSBProxyBridge', link: 'wiki/SuperiorSkyblock2/overview/addons/ssbproxybridge' },
                   ]
                 },
                 { text: '插件源码', link: 'https://github.com/BG-Software-LLC/SuperiorSkyblock2' },
@@ -1393,128 +1399,128 @@ export default defineConfig({
           ]
         }
       ],
-      '/Terra/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/Terra/index' },
+      'wiki/Terra/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/Terra/index' },
         {
           text: 'Terra 中文维基', items: [
             {
-              text: '开始', link: '/Terra/getting-started', collapsed: true, items: [
-                { text: 'Fabric 平台安装', link: '/Terra/getting-started.fabric-installation' },
-                { text: 'Forge 平台安装', link: '/Terra/getting-started.forge-installation' },
-                { text: 'Quilt 平台安装', link: '/Terra/getting-started.quilt-installation' },
-                { text: 'Fabric、Forge 和 Quilt 客户端世界创建', link: '/Terra/getting-started.fabric-forge-and-quilt-client-world-creation' },
-                { text: 'Fabric、Forge 和 Quilt 服务端世界创建', link: '/Terra/getting-started.fabric-forge-and-quilt-server-world-creation' },
+              text: '开始', link: 'wiki/Terra/getting-started', collapsed: true, items: [
+                { text: 'Fabric 平台安装', link: 'wiki/Terra/getting-started/fabric-installation' },
+                { text: 'Forge 平台安装', link: 'wiki/Terra/getting-started/forge-installation' },
+                { text: 'Quilt 平台安装', link: 'wiki/Terra/getting-started/quilt-installation' },
+                { text: 'Fabric、Forge 和 Quilt 客户端世界创建', link: 'wiki/Terra/getting-started/fabric-forge-and-quilt-client-world-creation' },
+                { text: 'Fabric、Forge 和 Quilt 服务端世界创建', link: 'wiki/Terra/getting-started/fabric-forge-and-quilt-server-world-creation' },
                 {
-                  text: 'Bukkit 平台安装', link: '/Terra/getting-started.bukkit-installation', collapsed: true, items: [
-                    { text: 'Bukkit 世界创建', link: '/Terra/getting-started.bukkit-installation.bukkit-world-creation' },
-                    { text: '世界管理插件创建', link: '/Terra/getting-started.bukkit-installation.worldmanager-world-creation' }
+                  text: 'Bukkit 平台安装', link: 'wiki/Terra/getting-started/bukkit-installation', collapsed: true, items: [
+                    { text: 'Bukkit 世界创建', link: 'wiki/Terra/getting-started/bukkit-installation/bukkit-world-creation' },
+                    { text: '世界管理插件创建', link: 'wiki/Terra/getting-started/bukkit-installation/worldmanager-world-creation' }
                   ]
                 },
-                { text: '版本列表', link: '/Terra/getting-started.versions' }
+                { text: '版本列表', link: 'wiki/Terra/getting-started/versions' }
               ]
             },
-            { text: '联系与支持', link: '/Terra/contact-and-support' },
+            { text: '联系与支持', link: 'wiki/Terra/contact-and-support' },
             {
-              text: '配置包', link: '/Terra/config-packs', collapsed: true, items: [
-                { text: '社区地形包', link: '/Terra/config-packs.community-packs' },
-                { text: '安装地形包', link: '/Terra/config-packs.pack-installation' },
+              text: '配置包', link: 'wiki/Terra/config-packs', collapsed: true, items: [
+                { text: '社区地形包', link: 'wiki/Terra/config-packs/community-packs' },
+                { text: '安装地形包', link: 'wiki/Terra/config-packs/pack-installation' },
                 {
-                  text: '配置开发', link: '/Terra/config-packs.config-development', collapsed: true, items: [
-                    { text: '配置开发简介', link: '/Terra/config-packs.config-development.config-development-introduction' },
-                    { text: '配置文件', link: '/Terra/config-packs.config-development.config-files' },
-                    { text: '在配置中设置数据', link: '/Terra/config-packs.config-development.defining-data-in-configs' },
-                    { text: '配置系统', link: '/Terra/config-packs.config-development.the-config-system' },
-                    { text: '元配置', link: '/Terra/config-packs.config-development.meta-configuration' },
+                  text: '配置开发', link: 'wiki/Terra/config-packs/config-development', collapsed: true, items: [
+                    { text: '配置开发简介', link: 'wiki/Terra/config-packs/config-development/config-development-introduction' },
+                    { text: '配置文件', link: 'wiki/Terra/config-packs/config-development/config-files' },
+                    { text: '在配置中设置数据', link: 'wiki/Terra/config-packs/config-development/defining-data-in-configs' },
+                    { text: '配置系统', link: 'wiki/Terra/config-packs/config-development/the-config-system' },
+                    { text: '元配置', link: 'wiki/Terra/config-packs/config-development/meta-configuration' },
                     {
-                      text: '从零编写地形包', link: '/Terra/config-packs.config-development.creating-a-pack-from-scratch', collapsed: true, items: [
-                        { text: '从零编写地形包', link: '/Terra/config-packs.config-development.creating-a-pack-from-scratch.creating-a-pack-from-scratch' },
-                        { text: '从零编写调色板', link: '/Terra/config-packs.config-development.creating-a-pack-from-scratch.creating-a-palette-from-scratch' },
-                        { text: '从零编写地形生成', link: '/Terra/config-packs.config-development.creating-a-pack-from-scratch.creating-terrain-from-scratch' },
-                        { text: '从零编写地物生成', link: '/Terra/config-packs.config-development.creating-a-pack-from-scratch.creating-a-feature-from-scratch' },
-                        { text: '从零编写地物结构生成', link: '/Terra/config-packs.config-development.creating-a-pack-from-scratch.creating-a-feature-with-a-structure-from-scratch' },
-                        { text: '从零编写群系提供器', link: '/Terra/config-packs.config-development.creating-a-pack-from-scratch.creating-a-biome-provider-from-scratch' },
-                        { text: '从零编写海洋生成', link: '/Terra/config-packs.config-development.creating-a-pack-from-scratch.creating-oceans-from-scratch' },
-                        { text: '从零编写洞穴生成', link: '/Terra/config-packs.config-development.creating-a-pack-from-scratch.creating-carving-from-scratch' },
-                        { text: '从零编写矿物生成', link: '/Terra/config-packs.config-development.creating-a-pack-from-scratch.creating-ores-from-scratch' },
+                      text: '从零编写地形包', link: 'wiki/Terra/config-packs/config-development/creating-a-pack-from-scratch', collapsed: true, items: [
+                        { text: '从零编写地形包', link: 'wiki/Terra/config-packs/config-development/creating-a-pack-from-scratch/creating-a-pack-from-scratch' },
+                        { text: '从零编写调色板', link: 'wiki/Terra/config-packs/config-development/creating-a-pack-from-scratch/creating-a-palette-from-scratch' },
+                        { text: '从零编写地形生成', link: 'wiki/Terra/config-packs/config-development/creating-a-pack-from-scratch/creating-terrain-from-scratch' },
+                        { text: '从零编写地物生成', link: 'wiki/Terra/config-packs/config-development/creating-a-pack-from-scratch/creating-a-feature-from-scratch' },
+                        { text: '从零编写地物结构生成', link: 'wiki/Terra/config-packs/config-development/creating-a-pack-from-scratch/creating-a-feature-with-a-structure-from-scratch' },
+                        { text: '从零编写群系提供器', link: 'wiki/Terra/config-packs/config-development/creating-a-pack-from-scratch/creating-a-biome-provider-from-scratch' },
+                        { text: '从零编写海洋生成', link: 'wiki/Terra/config-packs/config-development/creating-a-pack-from-scratch/creating-oceans-from-scratch' },
+                        { text: '从零编写洞穴生成', link: 'wiki/Terra/config-packs/config-development/creating-a-pack-from-scratch/creating-carving-from-scratch' },
+                        { text: '从零编写矿物生成', link: 'wiki/Terra/config-packs/config-development/creating-a-pack-from-scratch/creating-ores-from-scratch' },
                       ]
                     },
-                    { text: '编辑现有地形包', link: '/Terra/config-packs.config-development.modifying-an-existing-pack' },
-                    { text: '地形表达式列表', link: '/Terra/config-packs.config-development.list-of-terrain-expressions' },
-                    { text: '多层地形', link: '/Terra/config-packs.config-development.multi-layered-terrain' },
+                    { text: '编辑现有地形包', link: 'wiki/Terra/config-packs/config-development/modifying-an-existing-pack' },
+                    { text: '地形表达式列表', link: 'wiki/Terra/config-packs/config-development/list-of-terrain-expressions' },
+                    { text: '多层地形', link: 'wiki/Terra/config-packs/config-development/multi-layered-terrain' },
                     {
-                      text: '噪声', link: '/Terra/config-packs.config-development.noise', collapsed: true, items: [
-                        { text: '配置噪声采样器', link: '/Terra/config-packs.config-development.noise.configuring-noise-samplers' },
-                        { text: '噪声地物散布原理', link: '/Terra/config-packs.config-development.noise.how-noise-distributes-things' },
-                        { text: '噪声采样器的工作原理', link: '/Terra/config-packs.config-development.noise.how-noise-samplers-work' }
+                      text: '噪声', link: 'wiki/Terra/config-packs/config-development/noise', collapsed: true, items: [
+                        { text: '配置噪声采样器', link: 'wiki/Terra/config-packs/config-development/noise/configuring-noise-samplers' },
+                        { text: '噪声地物散布原理', link: 'wiki/Terra/config-packs/config-development/noise/how-noise-distributes-things' },
+                        { text: '噪声采样器的工作原理', link: 'wiki/Terra/config-packs/config-development/noise/how-noise-samplers-work' }
                       ]
                     },
-                    { text: '图片配置', link: '/Terra/config-packs.config-development.image-configuration' }
+                    { text: '图片配置', link: 'wiki/Terra/config-packs/config-development/image-configuration' }
                   ]
                 },
                 {
-                  text: '配置文档', link: '/Terra/config-packs.config-documentation', collapsed: true, items: [
+                  text: '配置文档', link: 'wiki/Terra/config-packs/config-documentation', collapsed: true, items: [
                     {
-                      text: '配置文件', link: '/Terra/config-packs.config-documentation.config-files', collapsed: true, items: [
-                        { text: 'BIOME', link: '/Terra/config-packs.config-documentation.config-files.biome' },
-                        { text: 'FEAUTRE', link: '/Terra/config-packs.config-documentation.config-files.feature' },
-                        { text: 'ORE', link: '/Terra/config-packs.config-documentation.config-files.ore' },
-                        { text: 'PALETTE', link: '/Terra/config-packs.config-documentation.config-files.palette' },
-                        { text: 'SCATTERED_ORE', link: '/Terra/config-packs.config-documentation.config-files.scattered-ore' },
-                        { text: 'pack.yml', link: '/Terra/config-packs.config-documentation.config-files.pack-yml' },
+                      text: '配置文件', link: 'wiki/Terra/config-packs/config-documentation/config-files', collapsed: true, items: [
+                        { text: 'BIOME', link: 'wiki/Terra/config-packs/config-documentation/config-files/biome' },
+                        { text: 'FEAUTRE', link: 'wiki/Terra/config-packs/config-documentation/config-files/feature' },
+                        { text: 'ORE', link: 'wiki/Terra/config-packs/config-documentation/config-files/ore' },
+                        { text: 'PALETTE', link: 'wiki/Terra/config-packs/config-documentation/config-files/palette' },
+                        { text: 'SCATTERED_ORE', link: 'wiki/Terra/config-packs/config-documentation/config-files/scattered-ore' },
+                        { text: 'pack.yml', link: 'wiki/Terra/config-packs/config-documentation/config-files/pack-yml' },
                       ]
                     },
                     {
-                      text: '配置对象', link: '/Terra/config-packs.config-documentation.config-objects', collapsed: true, items: [
-                        { text: '浮点数', link: '/Terra/config-packs.config-documentation.config-objects.float' },
-                        { text: '整数', link: '/Terra/config-packs.config-documentation.config-objects.intenger' },
-                        { text: '噪声采样器', link: '/Terra/config-packs.config-documentation.config-objects.noisesampler' },
-                        { text: '字符串', link: '/Terra/config-packs.config-documentation.config-objects.string' },
-                        { text: '列表', link: '/Terra/config-packs.config-documentation.config-objects.list' },
-                        { text: '映射表', link: '/Terra/config-packs.config-documentation.config-objects.map' },
-                        { text: '布尔值', link: '/Terra/config-packs.config-documentation.config-objects.boolean' },
-                        { text: '范围', link: '/Terra/config-packs.config-documentation.config-objects.range' },
-                        { text: '权重列表', link: '/Terra/config-packs.config-documentation.config-objects.weightedlist' },
-                        { text: '方块', link: '/Terra/config-packs.config-documentation.config-objects.block' },
-                        { text: '标签', link: '/Terra/config-packs.config-documentation.config-objects.tag' },
-                        { text: '流水线群系', link: '/Terra/config-packs.config-documentation.config-objects.pipelinebiome' },
-                        { text: '颜色采样器', link: '/Terra/config-packs.config-documentation.config-objects.colorsampler' },
-                        { text: '样式', link: '/Terra/config-packs.config-documentation.config-objects.pattern' },
-                        { text: '集合', link: '/Terra/config-packs.config-documentation.config-objects.set' },
-                        { text: '分布器', link: '/Terra/config-packs.config-documentation.config-objects.distributor' },
-                        { text: '定位器', link: '/Terra/config-packs.config-documentation.config-objects.locator' },
-                        { text: '图像', link: '/Terra/config-packs.config-documentation.config-objects.image' },
-                        { text: '表达式', link: '/Terra/config-packs.config-documentation.config-objects.expression' },
-                        { text: '群系', link: '/Terra/config-packs.config-documentation.config-objects.biome' },
-                        { text: '维度适用采样器', link: '/Terra/config-packs.config-documentation.config-objects.dimensionapplicablesampler' },
-                        { text: '数学函数', link: '/Terra/config-packs.config-documentation.config-objects.mathfunction' },
-                        { text: '挤出可替换群系', link: '/Terra/config-packs.config-documentation.config-objects.extrusionreplaceablebiome' },
-                        { text: '群系颜色映射表', link: '/Terra/config-packs.config-documentation.config-objects.biomecolormapping' },
-                        { text: '颜色字符串', link: '/Terra/config-packs.config-documentation.config-objects.colorstring' },
-                        { text: '群系提供器', link: '/Terra/config-packs.config-documentation.config-objects.biomeprovider' },
-                        { text: '调色板', link: '/Terra/config-packs.config-documentation.config-objects.palette' },
-                        { text: '倾斜层', link: '/Terra/config-packs.config-documentation.config-objects.slantlayer' },
-                        { text: '点位', link: '/Terra/config-packs.config-documentation.config-objects.point' },
-                        { text: '挤压', link: '/Terra/config-packs.config-documentation.config-objects.extrusion' },
-                        { text: '群系颜色转化器', link: '/Terra/config-packs.config-documentation.config-objects.biomecolorconverter' },
-                        { text: '调色板层', link: '/Terra/config-packs.config-documentation.config-objects.palettelayer' },
-                        { text: '地物', link: '/Terra/config-packs.config-documentation.config-objects.feature' },
-                        { text: '结构', link: '/Terra/config-packs.config-documentation.config-objects.structure' },
-                        { text: '生成阶段', link: '/Terra/config-packs.config-documentation.config-objects.generationstage' },
-                        { text: '平台群系', link: '/Terra/config-packs.config-documentation.config-objects.platformbiome' },
-                        { text: '区块生成器', link: '/Terra/config-packs.config-documentation.config-objects.chunkgenerator' },
-                        { text: '流水线群系颜色转化器', link: '/Terra/config-packs.config-documentation.config-objects.pipelinebiomecolorconverter' },
-                        { text: '源', link: '/Terra/config-packs.config-documentation.config-objects.source' },
-                        { text: '阶段', link: '/Terra/config-packs.config-documentation.config-objects.stage' },
-                        { text: '立体样条点', link: '/Terra/config-packs.config-documentation.config-objects.cubicsplinepoint' },
-                        { text: '数字预测', link: '/Terra/config-packs.config-documentation.config-objects.numberpredicate' },
+                      text: '配置对象', link: 'wiki/Terra/config-packs/config-documentation/config-objects', collapsed: true, items: [
+                        { text: '浮点数', link: 'wiki/Terra/config-packs/config-documentation/config-objects/float' },
+                        { text: '整数', link: 'wiki/Terra/config-packs/config-documentation/config-objects/intenger' },
+                        { text: '噪声采样器', link: 'wiki/Terra/config-packs/config-documentation/config-objects/noisesampler' },
+                        { text: '字符串', link: 'wiki/Terra/config-packs/config-documentation/config-objects/string' },
+                        { text: '列表', link: 'wiki/Terra/config-packs/config-documentation/config-objects/list' },
+                        { text: '映射表', link: 'wiki/Terra/config-packs/config-documentation/config-objects/map' },
+                        { text: '布尔值', link: 'wiki/Terra/config-packs/config-documentation/config-objects/boolean' },
+                        { text: '范围', link: 'wiki/Terra/config-packs/config-documentation/config-objects/range' },
+                        { text: '权重列表', link: 'wiki/Terra/config-packs/config-documentation/config-objects/weightedlist' },
+                        { text: '方块', link: 'wiki/Terra/config-packs/config-documentation/config-objects/block' },
+                        { text: '标签', link: 'wiki/Terra/config-packs/config-documentation/config-objects/tag' },
+                        { text: '流水线群系', link: 'wiki/Terra/config-packs/config-documentation/config-objects/pipelinebiome' },
+                        { text: '颜色采样器', link: 'wiki/Terra/config-packs/config-documentation/config-objects/colorsampler' },
+                        { text: '样式', link: 'wiki/Terra/config-packs/config-documentation/config-objects/pattern' },
+                        { text: '集合', link: 'wiki/Terra/config-packs/config-documentation/config-objects/set' },
+                        { text: '分布器', link: 'wiki/Terra/config-packs/config-documentation/config-objects/distributor' },
+                        { text: '定位器', link: 'wiki/Terra/config-packs/config-documentation/config-objects/locator' },
+                        { text: '图像', link: 'wiki/Terra/config-packs/config-documentation/config-objects/image' },
+                        { text: '表达式', link: 'wiki/Terra/config-packs/config-documentation/config-objects/expression' },
+                        { text: '群系', link: 'wiki/Terra/config-packs/config-documentation/config-objects/biome' },
+                        { text: '维度适用采样器', link: 'wiki/Terra/config-packs/config-documentation/config-objects/dimensionapplicablesampler' },
+                        { text: '数学函数', link: 'wiki/Terra/config-packs/config-documentation/config-objects/mathfunction' },
+                        { text: '挤出可替换群系', link: 'wiki/Terra/config-packs/config-documentation/config-objects/extrusionreplaceablebiome' },
+                        { text: '群系颜色映射表', link: 'wiki/Terra/config-packs/config-documentation/config-objects/biomecolormapping' },
+                        { text: '颜色字符串', link: 'wiki/Terra/config-packs/config-documentation/config-objects/colorstring' },
+                        { text: '群系提供器', link: 'wiki/Terra/config-packs/config-documentation/config-objects/biomeprovider' },
+                        { text: '调色板', link: 'wiki/Terra/config-packs/config-documentation/config-objects/palette' },
+                        { text: '倾斜层', link: 'wiki/Terra/config-packs/config-documentation/config-objects/slantlayer' },
+                        { text: '点位', link: 'wiki/Terra/config-packs/config-documentation/config-objects/point' },
+                        { text: '挤压', link: 'wiki/Terra/config-packs/config-documentation/config-objects/extrusion' },
+                        { text: '群系颜色转化器', link: 'wiki/Terra/config-packs/config-documentation/config-objects/biomecolorconverter' },
+                        { text: '调色板层', link: 'wiki/Terra/config-packs/config-documentation/config-objects/palettelayer' },
+                        { text: '地物', link: 'wiki/Terra/config-packs/config-documentation/config-objects/feature' },
+                        { text: '结构', link: 'wiki/Terra/config-packs/config-documentation/config-objects/structure' },
+                        { text: '生成阶段', link: 'wiki/Terra/config-packs/config-documentation/config-objects/generationstage' },
+                        { text: '平台群系', link: 'wiki/Terra/config-packs/config-documentation/config-objects/platformbiome' },
+                        { text: '区块生成器', link: 'wiki/Terra/config-packs/config-documentation/config-objects/chunkgenerator' },
+                        { text: '流水线群系颜色转化器', link: 'wiki/Terra/config-packs/config-documentation/config-objects/pipelinebiomecolorconverter' },
+                        { text: '源', link: 'wiki/Terra/config-packs/config-documentation/config-objects/source' },
+                        { text: '阶段', link: 'wiki/Terra/config-packs/config-documentation/config-objects/stage' },
+                        { text: '立体样条点', link: 'wiki/Terra/config-packs/config-documentation/config-objects/cubicsplinepoint' },
+                        { text: '数字预测', link: 'wiki/Terra/config-packs/config-documentation/config-objects/numberpredicate' },
                       ]
                     },
                     {
-                      text: 'TerraScript', link: '/Terra/config-packs.config-documentation.terra-script', collapsed: true, items: [
-                        { text: 'TerraScript 功能', link: '/Terra/config-packs.config-documentation.terra-script.what-terrascript-can-do' },
-                        { text: 'TerraScript 格式', link: '/Terra/config-packs.config-documentation.terra-script.terrascript-syntax' },
-                        { text: 'TerraScript 函数', link: '/Terra/config-packs.config-documentation.terra-script.terrascript-functions' },
+                      text: 'TerraScript', link: 'wiki/Terra/config-packs/config-documentation/terra-script', collapsed: true, items: [
+                        { text: 'TerraScript 功能', link: 'wiki/Terra/config-packs/config-documentation/terra-script/what-terrascript-can-do' },
+                        { text: 'TerraScript 格式', link: 'wiki/Terra/config-packs/config-documentation/terra-script/terrascript-syntax' },
+                        { text: 'TerraScript 函数', link: 'wiki/Terra/config-packs/config-documentation/terra-script/terrascript-functions' },
                       ]
                     }
                   ]
@@ -1522,28 +1528,28 @@ export default defineConfig({
               ]
             },
             {
-              text: 'Terra API', link: '/Terra/terra-api', collapsed: true, items: [
+              text: 'Terra API', link: 'wiki/Terra/terra-api', collapsed: true, items: [
                 {
-                  text: 'Terra API 介绍', link: '/Terra/terra-api.introduction-to-the-terra-api', collapsed: true, items: [
-                    { text: 'Terra 依赖载入', link: '/Terra/terra-api.introduction-to-the-terra-api.terra-addon-loading' },
-                    { text: '搭建开发环境', link: '/Terra/terra-api.introduction-to-the-terra-api.setting-up-a-development-environment' },
-                    { text: '创建简单附属', link: '/Terra/terra-api.introduction-to-the-terra-api.create-a-simple-addon' },
-                    { text: '监听事件', link: '/Terra/terra-api.introduction-to-the-terra-api.listening-for-an-event' },
-                    { text: '添加结构', link: '/Terra/terra-api.introduction-to-the-terra-api.adding-a-structure' },
-                    { text: '注册配置类型', link: '/Terra/terra-api.introduction-to-the-terra-api.registering-a-config-type' },
+                  text: 'Terra API 介绍', link: 'wiki/Terra/terra-api/introduction-to-the-terra-api', collapsed: true, items: [
+                    { text: 'Terra 依赖载入', link: 'wiki/Terra/terra-api/introduction-to-the-terra-api/terra-addon-loading' },
+                    { text: '搭建开发环境', link: 'wiki/Terra/terra-api/introduction-to-the-terra-api/setting-up-a-development-environment' },
+                    { text: '创建简单附属', link: 'wiki/Terra/terra-api/introduction-to-the-terra-api/create-a-simple-addon' },
+                    { text: '监听事件', link: 'wiki/Terra/terra-api/introduction-to-the-terra-api/listening-for-an-event' },
+                    { text: '添加结构', link: 'wiki/Terra/terra-api/introduction-to-the-terra-api/adding-a-structure' },
+                    { text: '注册配置类型', link: 'wiki/Terra/terra-api/introduction-to-the-terra-api/registering-a-config-type' },
 
                   ]
                 },
                 {
-                  text: 'API 概念', link: '/Terra/terra-api.api-concepts', collapsed: true, items: [
-                    { text: '验证拓展', link: '/Terra/terra-api.api-concepts.manifest-addons' },
-                    { text: '依赖注入', link: '/Terra/terra-api.api-concepts.dependency-injection' },
-                    { text: 'SLF4J 记录', link: '/Terra/terra-api.api-concepts.logging-with-slf4j' },
-                    { text: '事件', link: '/Terra/terra-api.api-concepts.events' },
-                    { text: '类型键', link: '/Terra/terra-api.api-concepts.type-keys' },
-                    { text: '注册条目', link: '/Terra/terra-api.api-concepts.registries' },
-                    { text: '架构', link: '/Terra/terra-api.api-concepts.tectonic' },
-                    { text: '云注册命令', link: '/Terra/terra-api.api-concepts.registering-commands-with-cloud' },
+                  text: 'API 概念', link: 'wiki/Terra/terra-api/api-concepts', collapsed: true, items: [
+                    { text: '验证拓展', link: 'wiki/Terra/terra-api/api-concepts/manifest-addons' },
+                    { text: '依赖注入', link: 'wiki/Terra/terra-api/api-concepts/dependency-injection' },
+                    { text: 'SLF4J 记录', link: 'wiki/Terra/terra-api/api-concepts/logging-with-slf4j' },
+                    { text: '事件', link: 'wiki/Terra/terra-api/api-concepts/events' },
+                    { text: '类型键', link: 'wiki/Terra/terra-api/api-concepts/type-keys' },
+                    { text: '注册条目', link: 'wiki/Terra/terra-api/api-concepts/registries' },
+                    { text: '架构', link: 'wiki/Terra/terra-api/api-concepts/tectonic' },
+                    { text: '云注册命令', link: 'wiki/Terra/terra-api/api-concepts/registering-commands-with-cloud' },
                   ]
                 }
               ]
@@ -1551,261 +1557,261 @@ export default defineConfig({
           ]
         }
       ],
-      '/UltimateShop/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/UltimateShop/index' },
+      'wiki/UltimateShop/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/UltimateShop/index' },
         {
           text: 'UltimateShop 中文维基', items: [
-            { text: '🎉 欢迎', link: '/UltimateShop/welcome' },
+            { text: '🎉 欢迎', link: 'wiki/UltimateShop/welcome' },
             {
               text: '📦 信息', collapsed: true, items: [
-                { text: '✅ 插件需求', link: '/UltimateShop/info.requirements' },
-                { text: '⚙️ 安装', link: '/UltimateShop/info.install' },
-                { text: '🔗 兼容性', link: '/UltimateShop/info.compatibility' },
-                { text: '🛠️ 配置文件', link: '/UltimateShop/info.configuration-files' },
-                { text: '⌨️ 命令', link: '/UltimateShop/info.commands' },
-                { text: '📊 数据', link: '/UltimateShop/info.data' },
-                { text: '🚀 性能', link: '/UltimateShop/info.performance' },
-                { text: '❓ 常见问题', link: '/UltimateShop/info.faq' },
-                { text: '🆚 比较', link: '/UltimateShop/info.compare' }
+                { text: '✅ 插件需求', link: 'wiki/UltimateShop/info/requirements' },
+                { text: '⚙️ 安装', link: 'wiki/UltimateShop/info/install' },
+                { text: '🔗 兼容性', link: 'wiki/UltimateShop/info/compatibility' },
+                { text: '🛠️ 配置文件', link: 'wiki/UltimateShop/info/configuration-files' },
+                { text: '⌨️ 命令', link: 'wiki/UltimateShop/info/commands' },
+                { text: '📊 数据', link: 'wiki/UltimateShop/info/data' },
+                { text: '🚀 性能', link: 'wiki/UltimateShop/info/performance' },
+                { text: '❓ 常见问题', link: 'wiki/UltimateShop/info/faq' },
+                { text: '🆚 比较', link: 'wiki/UltimateShop/info/compare' }
               ]
             },
             {
               text: '📋 格式', collapsed: true, items: [
-                { text: '🛒 物品格式™ 的信息', link: '/UltimateShop/format.info-of-itemformat' },
+                { text: '🛒 物品格式™ 的信息', link: 'wiki/UltimateShop/format/info-of-itemformat' },
                 {
-                  text: '📝 物品格式™', link: '/UltimateShop/format.itemformat', collapsed: true, items: [
-                    { text: '物品组件格式', link: '/UltimateShop/format.itemformat.component-format' }
+                  text: '📝 物品格式™', link: 'wiki/UltimateShop/format/itemformat', collapsed: true, items: [
+                    { text: '物品组件格式', link: 'wiki/UltimateShop/format/itemformat/component-format' }
                   ]
                 },
-                { text: '💹 经济格式™', link: '/UltimateShop/format.economyformat' },
-                { text: '🖼️ 展示物品格式', link: '/UltimateShop/format.display-item-format' },
-                { text: '🎬 动作格式', link: '/UltimateShop/format.action-format' },
-                { text: '⚖️ 条件格式', link: '/UltimateShop/format.condition-format' },
-                { text: '➗ 数学运算格式', link: '/UltimateShop/format.math-calculate-format' },
+                { text: '💹 经济格式™', link: 'wiki/UltimateShop/format/economyformat' },
+                { text: '🖼️ 展示物品格式', link: 'wiki/UltimateShop/format/display-item-format' },
+                { text: '🎬 动作格式', link: 'wiki/UltimateShop/format/action-format' },
+                { text: '⚖️ 条件格式', link: 'wiki/UltimateShop/format/condition-format' },
+                { text: '➗ 数学运算格式', link: 'wiki/UltimateShop/format/math-calculate-format' },
               ]
             },
             {
               text: '🔌 菜单', collapsed: true, items: [
-                { text: '🔲 全局菜单', link: '/UltimateShop/menus.general-menus' },
-                { text: '🔽 增量购买菜单', link: '/UltimateShop/menus.buy-more-menus' },
-                { text: '🛏️ 基岩版菜单 - 仅付费版', link: '/UltimateShop/menus.bedrock-menus-premium' },
-                { text: '🥉 额外物品描述', link: '/UltimateShop/menus.display-item-add-lore' },
+                { text: '🔲 全局菜单', link: 'wiki/UltimateShop/menus/general-menus' },
+                { text: '🔽 增量购买菜单', link: 'wiki/UltimateShop/menus/buy-more-menus' },
+                { text: '🛏️ 基岩版菜单 - 仅付费版', link: 'wiki/UltimateShop/menus/bedrock-menus-premium' },
+                { text: '🥉 额外物品描述', link: 'wiki/UltimateShop/menus/display-item-add-lore' },
               ]
             },
             {
               text: '🛍️ 商店', collapsed: true, items: [
-                { text: '📂 商店', link: '/UltimateShop/shops.shops' },
-                { text: '🛒 物品', link: '/UltimateShop/shops.products' },
-                { text: '💰 物品配置：单条目', link: '/UltimateShop/shops.products-config-single-thing' },
-                { text: '♻️ 物品配置：交易次数重置', link: '/UltimateShop/shops.product-config-buy-sell-times-reset' },
-                { text: '📚 普通示例', link: '/UltimateShop/shops.common-examples' },
-                { text: '⚡ 示例：普通用法', link: '/UltimateShop/shops.example-common-usage' },
-                { text: '🌱 示例：真实库存', link: '/UltimateShop/shops.example-stock-like-in-life' },
-                { text: '📅 示例：每日商店', link: '/UltimateShop/shops.example-daily-shops' },
-                { text: '🏆 示例：每日奖励', link: '/UltimateShop/shops.example-daily-rewards' },
+                { text: '📂 商店', link: 'wiki/UltimateShop/shops/shops' },
+                { text: '🛒 物品', link: 'wiki/UltimateShop/shops/products' },
+                { text: '💰 物品配置：单条目', link: 'wiki/UltimateShop/shops/products-config-single-thing' },
+                { text: '♻️ 物品配置：交易次数重置', link: 'wiki/UltimateShop/shops/product-config-buy-sell-times-reset' },
+                { text: '📚 普通示例', link: 'wiki/UltimateShop/shops/common-examples' },
+                { text: '⚡ 示例：普通用法', link: 'wiki/UltimateShop/shops/example-common-usage' },
+                { text: '🌱 示例：真实库存', link: 'wiki/UltimateShop/shops/example-stock-like-in-life' },
+                { text: '📅 示例：每日商店', link: 'wiki/UltimateShop/shops/example-daily-shops' },
+                { text: '🏆 示例：每日奖励', link: 'wiki/UltimateShop/shops/example-daily-rewards' },
               ]
             },
             {
               text: '📍 变量', collapsed: true, items: [
-                { text: '🔧 内置变量', link: '/UltimateShop/placeholders.built-in-placeholder' },
-                { text: '🔀 随机变量 - 仅付费版', link: '/UltimateShop/placeholders.random-placeholder-premium' },
-                { text: '⛓️ 条件变量 - 仅付费版', link: '/UltimateShop/placeholders.conditional-placeholder-premium' },
-                { text: '🔖 示例：折扣', link: '/UltimateShop/placeholders.example-discount' },
+                { text: '🔧 内置变量', link: 'wiki/UltimateShop/placeholders/built-in-placeholder' },
+                { text: '🔀 随机变量 - 仅付费版', link: 'wiki/UltimateShop/placeholders/random-placeholder-premium' },
+                { text: '⛓️ 条件变量 - 仅付费版', link: 'wiki/UltimateShop/placeholders/conditional-placeholder-premium' },
+                { text: '🔖 示例：折扣', link: 'wiki/UltimateShop/placeholders/example-discount' },
               ]
             },
             {
               text: '💰 动态定价', collapsed: true, items: [
-                { text: '🔄 动态定价', link: '/UltimateShop/dynamic-prices.dynamic-price' },
-                { text: '🔴 动态定价状态 - 仅付费版', link: '/UltimateShop/dynamic-prices.dynamic-price-status-premium' },
+                { text: '🔄 动态定价', link: 'wiki/UltimateShop/dynamic-prices/dynamic-price' },
+                { text: '🔴 动态定价状态 - 仅付费版', link: 'wiki/UltimateShop/dynamic-prices/dynamic-price-status-premium' },
               ]
             },
             {
               text: '✨ 特色功能', collapsed: true, items: [
-                { text: '🎨 颜色代码', link: '/UltimateShop/features.color-code' },
-                { text: '💴 简单定价', link: '/UltimateShop/features.easy-prices' },
-                { text: '🪄 出售魔杖 - 仅付费版', link: '/UltimateShop/features.sell-stick-premium' },
-                { text: '💾 保存物品（物品管理器）', link: '/UltimateShop/features.saved-item-itemmanager' },
-                { text: '🌍 本地化物品名称 - 仅付费版', link: '/UltimateShop/features.localized-item-name' },
-                { text: '🌐 多服同步 - 仅付费版', link: '/UltimateShop/features.multi-server-sync-premium' },
-                { text: '🔢 数字格式', link: '/UltimateShop/features.number-format' },
-                { text: '✏️ 游戏内编辑器 - 仅付费版', link: '/UltimateShop/features.in-game-editor-premium' },
-                { text: '🎮 自定义点击事件 - 仅付费版', link: '/UltimateShop/features.custom-click-event-premium' },
-                { text: '🔍 自定义物品匹配方法', link: '/UltimateShop/features.custom-item-match-method' },
-                { text: '🔑 物品给予方法', link: '/UltimateShop/features.give-item-method' },
-                { text: '💳 日志记录 - 仅付费版', link: '/UltimateShop/features.log-transaction-premium' },
+                { text: '🎨 颜色代码', link: 'wiki/UltimateShop/features/color-code' },
+                { text: '💴 简单定价', link: 'wiki/UltimateShop/features/easy-prices' },
+                { text: '🪄 出售魔杖 - 仅付费版', link: 'wiki/UltimateShop/features/sell-stick-premium' },
+                { text: '💾 保存物品（物品管理器）', link: 'wiki/UltimateShop/features/saved-item-itemmanager' },
+                { text: '🌍 本地化物品名称 - 仅付费版', link: 'wiki/UltimateShop/features/localized-item-name' },
+                { text: '🌐 多服同步 - 仅付费版', link: 'wiki/UltimateShop/features/multi-server-sync-premium' },
+                { text: '🔢 数字格式', link: 'wiki/UltimateShop/features/number-format' },
+                { text: '✏️ 游戏内编辑器 - 仅付费版', link: 'wiki/UltimateShop/features/in-game-editor-premium' },
+                { text: '🎮 自定义点击事件 - 仅付费版', link: 'wiki/UltimateShop/features/custom-click-event-premium' },
+                { text: '🔍 自定义物品匹配方法', link: 'wiki/UltimateShop/features/custom-item-match-method' },
+                { text: '🔑 物品给予方法', link: 'wiki/UltimateShop/features/give-item-method' },
+                { text: '💳 日志记录 - 仅付费版', link: 'wiki/UltimateShop/features/log-transaction-premium' },
               ]
             },
             {
               text: '💻 开发相关', collapsed: true, items: [
-                { text: '开发教程', link: '/UltimateShop/develop.develop-guide' },
-                { text: '与 UltimateShop 挂钩', link: '/UltimateShop/develop.hook-into-ultimateshop' },
+                { text: '开发教程', link: 'wiki/UltimateShop/develop/develop-guide' },
+                { text: '与 UltimateShop 挂钩', link: 'wiki/UltimateShop/develop/hook-into-ultimateshop' },
               ]
             },
           ]
         },
       ],
-      '/WorldEdit/': [
-        { text: '返回首页', link: '/index' },
-        { text: '更新日志', link: '/WorldEdit/changelogs' },
-        { text: '前言', link: '/WorldEdit/index' },
+      'wiki/WorldEdit/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '更新日志', link: 'wiki/WorldEdit/changelogs' },
+        { text: '前言', link: 'wiki/WorldEdit/index' },
         {
           text: 'WorldEdit 中文维基',
           items: [
             {
-              text: '目录', link: '/WorldEdit/table-of-contents', items: [
-                { text: '安装', link: '/WorldEdit/installtion' },
-                { text: '快速开始', link: '/WorldEdit/quick-start' },
-                { text: '配置文件', link: '/WorldEdit/configuration' },
-                { text: '权限', link: '/WorldEdit/permissions' },
-                { text: '命令', link: '/WorldEdit/commands' },
+              text: '目录', link: 'wiki/WorldEdit/table-of-contents', items: [
+                { text: '安装', link: 'wiki/WorldEdit/installtion' },
+                { text: '快速开始', link: 'wiki/WorldEdit/quick-start' },
+                { text: '配置文件', link: 'wiki/WorldEdit/configuration' },
+                { text: '权限', link: 'wiki/WorldEdit/permissions' },
+                { text: '命令', link: 'wiki/WorldEdit/commands' },
                 {
                   text: '用法',
-                  link: '/WorldEdit/usage.main',
+                  link: 'wiki/WorldEdit/usage',
                   collapsed: true,
                   items: [
                     {
                       text: '通用',
-                      link: '/WorldEdit/usage.general.main',
+                      link: 'wiki/WorldEdit/usage/general',
                       collapsed: true,
                       items: [
-                        { text: '历史', link: '/WorldEdit/usage.general.history' },
-                        { text: '会话', link: '/WorldEdit/usage.general.sessions' },
-                        { text: '图案', link: '/WorldEdit/usage.general.patterns' },
-                        { text: '蒙版', link: '/WorldEdit/usage.general.masks' },
+                        { text: '历史', link: 'wiki/WorldEdit/usage/general/history' },
+                        { text: '会话', link: 'wiki/WorldEdit/usage/general/sessions' },
+                        { text: '图案', link: 'wiki/WorldEdit/usage/general/patterns' },
+                        { text: '蒙版', link: 'wiki/WorldEdit/usage/general/masks' },
                       ]
                     },
-                    { text: '导航', link: '/WorldEdit/usage.navigation' },
+                    { text: '导航', link: 'wiki/WorldEdit/usage/navigation' },
                     {
                       text: '区域',
-                      link: '/WorldEdit/usage.regions.main',
+                      link: 'wiki/WorldEdit/usage/regions',
                       collapsed: true,
                       items: [
-                        { text: '选区', link: '/WorldEdit/usage.regions.selection' },
-                        { text: '区域操作', link: '/WorldEdit/usage.regions.region-operations' },
+                        { text: '选区', link: 'wiki/WorldEdit/usage/regions/selection' },
+                        { text: '区域操作', link: 'wiki/WorldEdit/usage/regions/region-operations' },
                       ]
                     },
-                    { text: '剪贴板', link: '/WorldEdit/usage.clipboard' },
-                    { text: '生成', link: '/WorldEdit/usage.generation' },
-                    { text: '绑定工具', link: '/WorldEdit/usage.tools' },
-                    { text: '笔刷', link: '/WorldEdit/usage.brushes' },
-                    { text: '实用工具', link: '/WorldEdit/usage.utilities' },
-                    { text: '快照', link: '/WorldEdit/usage.snapshots' },
+                    { text: '剪贴板', link: 'wiki/WorldEdit/usage/clipboard' },
+                    { text: '生成', link: 'wiki/WorldEdit/usage/generation' },
+                    { text: '绑定工具', link: 'wiki/WorldEdit/usage/tools' },
+                    { text: '笔刷', link: 'wiki/WorldEdit/usage/brushes' },
+                    { text: '实用工具', link: 'wiki/WorldEdit/usage/utilities' },
+                    { text: '快照', link: 'wiki/WorldEdit/usage/snapshots' },
                     {
                       text: '其他',
-                      link: '/WorldEdit/usage.other.main',
+                      link: 'wiki/WorldEdit/usage/other',
                       collapsed: true,
                       items: [
-                        { text: '表达式', link: '/WorldEdit/usage.other.expression-syntax' },
-                        { text: '快速脚本', link: '/WorldEdit/usage.other.craftscripts' },
+                        { text: '表达式', link: 'wiki/WorldEdit/usage/other/expression-syntax' },
+                        { text: '快速脚本', link: 'wiki/WorldEdit/usage/other/craftscripts' },
                       ]
                     },
                   ]
                 },
                 {
                   text: '开发者 API',
-                  link: '/WorldEdit/developer-api.main',
+                  link: 'wiki/WorldEdit/developer-api',
                   collapsed: true,
                   items: [
                     {
                       text: 'API 概念',
-                      link: '/WorldEdit/developer-api.api-concepts.main',
+                      link: 'wiki/WorldEdit/developer-api/api-concepts',
                       collapsed: true,
                       items: [
-                        { text: '操作方', link: '/WorldEdit/developer-api.api-concepts.actors' },
-                        { text: '本地会话', link: '/WorldEdit/developer-api.api-concepts.local-sessions' },
-                        { text: '方块', link: '/WorldEdit/developer-api.api-concepts.blocks' },
-                        { text: '图案与蒙版', link: '/WorldEdit/developer-api.api-concepts.patterns-and-masks' },
-                        { text: '区段', link: '/WorldEdit/developer-api.api-concepts.extents' },
-                        { text: '区域', link: '/WorldEdit/developer-api.api-concepts.regions' },
-                        { text: '注册项', link: '/WorldEdit/developer-api.api-concepts.registries' },
-                        { text: '会话编辑', link: '/WorldEdit/developer-api.api-concepts.edit-sessions' },
-                        { text: '适配器', link: '/WorldEdit/developer-api.api-concepts.adapters' },
+                        { text: '操作方', link: 'wiki/WorldEdit/developer-api/api-concepts/actors' },
+                        { text: '本地会话', link: 'wiki/WorldEdit/developer-api/api-concepts/local-sessions' },
+                        { text: '方块', link: 'wiki/WorldEdit/developer-api/api-concepts/blocks' },
+                        { text: '图案与蒙版', link: 'wiki/WorldEdit/developer-api/api-concepts/patterns-and-masks' },
+                        { text: '区段', link: 'wiki/WorldEdit/developer-api/api-concepts/extents' },
+                        { text: '区域', link: 'wiki/WorldEdit/developer-api/api-concepts/regions' },
+                        { text: '注册项', link: 'wiki/WorldEdit/developer-api/api-concepts/registries' },
+                        { text: '会话编辑', link: 'wiki/WorldEdit/developer-api/api-concepts/edit-sessions' },
+                        { text: '适配器', link: 'wiki/WorldEdit/developer-api/api-concepts/adapters' },
                       ]
                     },
                     {
                       text: 'API 示例',
-                      link: '/WorldEdit/developer-api.api-examples.main',
+                      link: 'wiki/WorldEdit/developer-api/api-examples',
                       collapsed: true,
                       items: [
-                        { text: '剪贴板示例', link: '/WorldEdit/developer-api.api-examples.clipboard-examples' },
-                        { text: '结构示例', link: '/WorldEdit/developer-api.api-examples.schematic-examples' },
-                        { text: 'LocalSession 示例', link: '/WorldEdit/developer-api.api-examples.localsession-examples' },
+                        { text: '剪贴板示例', link: 'wiki/WorldEdit/developer-api/api-examples/clipboard-examples' },
+                        { text: '结构示例', link: 'wiki/WorldEdit/developer-api/api-examples/schematic-examples' },
+                        { text: 'LocalSession 示例', link: 'wiki/WorldEdit/developer-api/api-examples/localsession-examples' },
                       ]
                     },
-                    { text: '内部 API', link: '/WorldEdit/developer-api.internal-apis' },
+                    { text: '内部 API', link: 'wiki/WorldEdit/developer-api/internal-apis' },
                   ]
                 },
-                { text: '常见问题', link: '/WorldEdit/common-questions' },
-                { text: '获取帮助', link: '/WorldEdit/getting-help' },
-                { text: '源码', link: '/WorldEdit/source-code' },
+                { text: '常见问题', link: 'wiki/WorldEdit/common-questions' },
+                { text: '获取帮助', link: 'wiki/WorldEdit/getting-help' },
+                { text: '源码', link: 'wiki/WorldEdit/source-code' },
               ]
             },
           ]
         }
       ],
-      '/WorldGuard/': [
-        { text: '返回首页', link: '/index' },
-        { text: '前言', link: '/WorldGuard/index' },
+      'wiki/WorldGuard/': [
+        { text: '返回首页', link: 'wiki/index' },
+        { text: '前言', link: 'wiki/WorldGuard/index' },
         {
           text: 'WorldGuard 维基', items: [
             {
-              text: '目录', link: '/WorldGuard/table-of-contents', items: [
-                { text: '安装', link: '/WorldGuard/installation' },
+              text: '目录', link: 'wiki/WorldGuard/table-of-contents', items: [
+                { text: '安装', link: 'wiki/WorldGuard/installation' },
                 {
-                  text: '配置', link: '/WorldGuard/configuration.main', collapsed: true, items: [
-                    { text: '域名秘钥', link: '/WorldGuard/configuration.host-keys' },
+                  text: '配置', link: 'wiki/WorldGuard/configuration', collapsed: true, items: [
+                    { text: '域名秘钥', link: 'wiki/WorldGuard/configuration/host-keys' },
                   ]
                 },
                 {
-                  text: '权限列表', link: '/WorldGuard/permissions', collapsed: true, items: [
-                    { text: '建筑权限', link: '/WorldGuard/permissions.build-permissions' },
+                  text: '权限列表', link: 'wiki/WorldGuard/permissions', collapsed: true, items: [
+                    { text: '建筑权限', link: 'wiki/WorldGuard/permissions/build-permissions' },
                   ]
                 },
-                { text: '命令列表', link: '/WorldGuard/commands' },
-                { text: '黑名单', link: '/WorldGuard/blacklist' },
+                { text: '命令列表', link: 'wiki/WorldGuard/commands' },
+                { text: '黑名单', link: 'wiki/WorldGuard/blacklist' },
                 {
-                  text: '区域', link: '/WorldGuard/regions.main', collapsed: true, items: [
-                    { text: '快速开始', link: '/WorldGuard/regions.quick-start' },
-                    { text: '区域魔杖', link: '/WorldGuard/regions.region-wand' },
-                    { text: '区域标志', link: '/WorldGuard/regions.region-flags' },
-                    { text: '优先级与继承', link: '/WorldGuard/regions.priority-and-inheritance' },
-                    { text: '全局区域', link: '/WorldGuard/regions.global-region' },
-                    { text: '区域命令', link: '/WorldGuard/regions.region-commands' },
-                    { text: '区域认领', link: '/WorldGuard/regions.claiming' },
-                    { text: '存储方式', link: '/WorldGuard/regions.storage-drivers' },
-                    { text: '保护什么？', link: '/WorldGuard/regions.whats-protected' },
-                    { text: '常见场景', link: '/WorldGuard/regions.common-scenarios' },
+                  text: '区域', link: 'wiki/WorldGuard/regions', collapsed: true, items: [
+                    { text: '快速开始', link: 'wiki/WorldGuard/regions/quick-start' },
+                    { text: '区域魔杖', link: 'wiki/WorldGuard/regions/region-wand' },
+                    { text: '区域标志', link: 'wiki/WorldGuard/regions/region-flags' },
+                    { text: '优先级与继承', link: 'wiki/WorldGuard/regions/priority-and-inheritance' },
+                    { text: '全局区域', link: 'wiki/WorldGuard/regions/global-region' },
+                    { text: '区域命令', link: 'wiki/WorldGuard/regions/region-commands' },
+                    { text: '区域认领', link: 'wiki/WorldGuard/regions/claiming' },
+                    { text: '存储方式', link: 'wiki/WorldGuard/regions/storage-drivers' },
+                    { text: '保护什么？', link: 'wiki/WorldGuard/regions/whats-protected' },
+                    { text: '常见场景', link: 'wiki/WorldGuard/regions/common-scenarios' },
                   ]
                 },
-                { text: '箱子保护', link: '/WorldGuard/chest-protection' },
+                { text: '箱子保护', link: 'wiki/WorldGuard/chest-protection' },
                 {
-                  text: 'WorldGuard API', link: '/WorldGuard/worldguard-api.main', collapsed: true, items: [
-                    { text: '作为依赖', link: '/WorldGuard/worldguard-api.as-a-dependency' },
+                  text: 'WorldGuard API', link: 'wiki/WorldGuard/worldguard-api', collapsed: true, items: [
+                    { text: '作为依赖', link: 'wiki/WorldGuard/worldguard-api/as-a-dependency' },
                     {
-                      text: '区域开发相关', link: '/WorldGuard/worldguard-api.working-with-regions.main', collapsed: true, items: [
-                        { text: '区域管理模块', link: '/WorldGuard/worldguard-api.working-with-regions.managers' },
-                        { text: '区域对象', link: '/WorldGuard/worldguard-api.working-with-regions.regions' },
-                        { text: '自定义标志与选区处理模块', link: '/WorldGuard/worldguard-api.working-with-regions.custom-flags-and-session-handlers' },
-                        { text: '区域查询', link: '/WorldGuard/worldguard-api.working-with-regions.querying-protection' },
-                        { text: '标志计算', link: '/WorldGuard/worldguard-api.working-with-regions.flag-calculation' },
-                        { text: '保护查询', link: '/WorldGuard/worldguard-api.working-with-regions.querying-protection' },
-                        { text: '区域事件', link: '/WorldGuard/worldguard-api.working-with-regions.region-events' },
+                      text: '区域开发相关', link: 'wiki/WorldGuard/worldguard-api/working-with-regions/main', collapsed: true, items: [
+                        { text: '区域管理模块', link: 'wiki/WorldGuard/worldguard-api/working-with-regions/managers' },
+                        { text: '区域对象', link: 'wiki/WorldGuard/worldguard-api/working-with-regions/regions' },
+                        { text: '自定义标志与选区处理模块', link: 'wiki/WorldGuard/worldguard-api/working-with-regions/custom-flags-and-session-handlers' },
+                        { text: '区域查询', link: 'wiki/WorldGuard/worldguard-api/working-with-regions/querying-protection' },
+                        { text: '标志计算', link: 'wiki/WorldGuard/worldguard-api/working-with-regions/flag-calculation' },
+                        { text: '保护查询', link: 'wiki/WorldGuard/worldguard-api/working-with-regions/querying-protection' },
+                        { text: '区域事件', link: 'wiki/WorldGuard/worldguard-api/working-with-regions/region-events' },
                       ]
                     },
-                    { text: '引自 Bukkit 的对象', link: '/WorldGuard/worldguard-api.from-bukkit-objects' },
-                    { text: '内部 API', link: '/WorldGuard/worldguard-api.internal-apis' },
+                    { text: '引自 Bukkit 的对象', link: 'wiki/WorldGuard/worldguard-api/from-bukkit-objects' },
+                    { text: '内部 API', link: 'wiki/WorldGuard/worldguard-api/internal-apis' },
                   ]
                 },
 
                 {
-                  text: '高级话题', link: '/WorldGuard/advanced-topics.main', collapsed: true, items: [
-                    { text: '事件记录', link: '/WorldGuard/advanced-topics.evet-logging' },
+                  text: '高级话题', link: 'wiki/WorldGuard/advanced-topics/index', collapsed: true, items: [
+                    { text: '事件记录', link: 'wiki/WorldGuard/advanced-topics/evet-logging' },
                   ]
                 },
-                { text: '常见问题', link: '/WorldGuard/common-questions' },
-                { text: '获取帮助', link: '/WorldGuard/getting-help' },
-                { text: '插件源码', link: '/WorldGuard/source-code' },
+                { text: '常见问题', link: 'wiki/WorldGuard/common-questions' },
+                { text: '获取帮助', link: 'wiki/WorldGuard/getting-help' },
+                { text: '插件源码', link: 'wiki/WorldGuard/source-code' },
               ]
             },
 

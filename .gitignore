@@ -5,7 +5,7 @@ node_modules
 
 # working plugins' wikis should be ignored temproraily
 
-Dynmap
-TownyAdvanced
+docs/wiki/Dynmap
+docs/wiki/TownyAdvanced
 
 # 应该没有人会抽象到把 gitignore 文件当笔记用吧...
