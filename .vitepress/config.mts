@@ -127,6 +127,11 @@ export default defineConfig({
       'script',
       {defer: '', async: '', src: 'https://cn.vercount.one/js'},
       ``
+    ],
+    [
+      'script',
+      {src: 'https://code.iconify.design/3/3.1.0/iconify.min.js'},
+      ``
     ]
   ],
   markdown: {

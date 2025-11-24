@@ -19,12 +19,6 @@ export default {
     app.component('Tab', Tab);
     app.component('Tabs', Tabs);
     app.use(NolebaseGitChangelogPlugin);
-    // SSR 环境下没有 document，需要判定再动态注入脚本
-    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
-      const iconifyScript = document.createElement('script');
-      iconifyScript.src = 'https://code.iconify.design/3/3.1.0/iconify.min.js';
-      document.head.appendChild(iconifyScript);
-    }
   },
   Layout
 } satisfies Theme
