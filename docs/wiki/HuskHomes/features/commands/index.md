@@ -31,8 +31,8 @@ HuskHomes 提供了一系列你可使用的命令。本章节将会为列出所�
 |`/edithome`|`/edithome <名称>`|浏览或编辑家传送点的相关内容。|`huskhomes.command.edithome`|✅|
 |`/edithome`|`/edithome <名称> rename <新名称>`|重命名指定的家传送点。|`huskhomes.command.edithome.rename`|✅|
 |`/edithome`|`/edithome <名称> description <描述>`|为家传送点设置自定义描述。|`huskhomes.command.edithome.description`|✅|
-|`/edithome`|`/edithome <name> relocate`|将家传送点所在的位置移动至你的当前位置。|`huskhomes.command.edithome.relocate`|✅|
-|`/edithome`|`/edithome <名称> privacy [public(公开)|private(私有)]`|为家传送点设置开放状态（对外开放或设为私有）|`huskhomes.command.edithome.privacy`|✅|
+|`/edithome`|`/edithome <名称> relocate`|将家传送点所在的位置移动至你的当前位置。|`huskhomes.command.edithome.relocate`|✅|
+|`/edithome`|`/edithome <名称> privacy [public(公开)\|private(私有)]`|为家传送点设置开放状态（对外开放或设为私有）|`huskhomes.command.edithome.privacy`|✅|
 |`/edithome`|`/edithome <玩家名称.家名称>`|浏览或编辑其他玩家的家传送点相关内容。|`huskhomes.command.edithome.other`|❌|
 |`/phome`|`/phome [<玩家名称.家名称>]`|传送至指定的公开传送点。|`huskhomes.command.phome`|✅|
 |`/phomelist`|`/phomelist [页码]`|浏览公开传送点列表。|`huskhomes.command.phomelist`|✅|
