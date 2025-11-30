@@ -47,6 +47,10 @@ HuskHomes 提供了一系列你可使用的命令。本章节将会为列出所�
 |`/editwarp`|`/editwarp <名称> description <描述文本>`|设置地标的描述文本。|`huskhomes.command.editwarp.description`|❌|
 |`/editwarp`|`/editwarp <名称> relocate`|将地标传送点所在位置移动到你的当前位置。|❌|
 |主城命令||||
+|`/spawn`|`/spawn`|传送至出生点|`huskhomes.command.spawn`|✅|
+|`/spawn`|`/spawn [玩家名称]`|将其他在线玩家传送至出生点|`huskhomes.command.spawn.other`|❌|
+|`/setspawn`|`/setspawn`|将出生点位置移动到脚下|`huskhomes.command.setspawn`|❌|
+|传送命令||||
 |`/tp`|`/tp <目标玩家>`|传送到其他玩家的位置。|`huskhomes.command.tp`|❌|
 |`/tp`|`/tp <玩家名称> <目标玩家>`|将指定玩家传送至目标玩家的位置。|`huskhomes.command.tp.other`|❌|
 |`/tp`|`/tp <(x) (y) (z) [水平视角] [仰角] [世界名称] [服务器名称]>`|传送至指定位置。|`huskhomes.command.tp.coordinates`|❌|
@@ -66,7 +70,9 @@ HuskHomes 提供了一系列你可使用的命令。本章节将会为列出所�
 |随机传送命令|||||
 |`/rtp`|`/rtp`|在世界内随机传送。|`huskhomes.command.rtp`|✅|
 |`/rtp`|`/rtp <玩家名称>`|将指定用户在世界内随机传送。|`huskhomes.command.rtp.other`|❌|
-|`/rtp`|`/rtp <玩家名称> <世界名称>`|将指定用户在指定世界内随机传送。|`huskhomes.command.rtp.world`|❌|
+|`/rtp`|`/rtp <世界名称>`|将指定用户在指定世界内随机传送。|`huskhomes.command.rtp.world`|❌|
+|`/rtp`|`/rtp <世界名称> <服务器名称>`|将指定用户在指定服务器的世界内随机传送。|`huskhomes.command.rtp.world`|❌|
+|`/rtp`|`/rtp <服务器名称>`|将指定用户在指定服务器的随机世界内传送。|`huskhomes.command.rtp.world`|❌|
 |返回传送命令|||||
 |`/back`|`/back`|传送至你的上一个位置（见下）|`huskhomes.command.back`|✅|
 |`/back`|`/back`|传送至你上一个被传送到的位置|`huskhomes.command.back.previous`|✅|
@@ -75,13 +81,15 @@ HuskHomes 提供了一系列你可使用的命令。本章节将会为列出所�
 |`/huskhomes`|`/huskhomes`|使用插件管理命令。|`huskhomes.command.huskhomes`|✅|
 |`/huskhomes`|`/huskhomes about`|浏览插件的关于信息。|`huskhomes.command.huskhomes.about`|✅|
 |`/huskhomes`|`/huskhomes help [页码]`|浏览启用的插件命令列表。|`huskhomes.command.huskhomes.help`|✅|
-|`/huskhomes`|`/huskhomes update`|检查插件更新。|`huskhomes.command.huskhomes.update`|
-|`/huskhomes`|`/huskhomes reload`|重载插件语言文本和配置文件。|`huskhomes.command.huskhomes.reload`|
-|`/huskhomes`|`/huskhomes import`|从其他插件导入数据。|`huskhomes.command.huskhomes.import`|
+|`/huskhomes`|`/huskhomes update`|检查插件更新。|`huskhomes.command.huskhomes.update`|❌|
+|`/huskhomes`|`/huskhomes reload`|重载插件语言文本和配置文件。|`huskhomes.command.huskhomes.reload`|❌|
+|`/huskhomes`|`/huskhomes homeslots <玩家名称> [view(浏览)\|set(设置)\|add(添加)\|remove(移除)]`|浏览管理玩家的家传送点槽位（需安装经济前置）|`huskhomes.command.huskhomes.homeslots`|❌|
+|`/huskhomes`|`/huskhomes import`|从其他插件导入数据。|`huskhomes.command.huskhomes.import`|❌|
 |`/huskhomes`|`/huskhomes delete player <玩家名称> [确认操作]`|从系统数据库中删除指定玩家的所有家传送点。|`huskhomes.command.huskhomes.delete`|❌|
 |`/huskhomes`|`/huskhomes delete homes <世界名称> [服务器名称] [确认操作]`|删除指定世界和/或服务器上的所有家传送点。|`huskhomes.command.huskhomes.delete`|❌|
 |`/huskhomes`|`/huskhomes delete warps <世界名称> [服务器名称] [确认操作]`|删除指定世界和/或服务器上的所有地标传送点。|`huskhomes.command.huskhomes.delete`|❌|
 |`/huskhomes`|`/huskhomes status`|浏览服务器调试信息界面。|`huskhomes.command.huskhomes.status`|❌|
+|`/huskhomes`|`/huskhomes dump`|生成插件系统与服务器信息的调试用报告链接。|`huskhomes.command.huskhomes.dump`|❌|
 
 ### 注释
 
