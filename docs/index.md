@@ -13,14 +13,15 @@ hero:
       text: QQ 群
       link: '/common/group'
     - theme: alt
-      text: 爱发电
-      link: https://afdian.com/a/SnowCutieOwO
+      text: 开服杂谈
+      link: '/guide/index'
+    - theme: alt
+      text: 凡例
+      link: '/common/index'
     - theme: alt
       text: 友链页面
       link: '/other-sites/'
-    - theme: alt
-      text: 凡例
-      link: '/common/'
+
 
 features:
   - icon: <span class="iconify" data-icon="ic:outline-leaderboard"></span>

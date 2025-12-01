@@ -361,6 +361,24 @@ export default defineConfig({
           ]
         }
       ],
+      'guide/': [
+        { text: '返回首页', link: '/index' },
+        { text: '🌟 开服杂谈', collapsed: false, items: [
+          { text: '不求人篇', link: 'guide/self-help/index', collapsed: true, items: [
+            { text: '手机端制作教程', link: 'guide/self-help/fcl-setup/index', items: [
+              { text: '电脑制作手机端', link: 'guide/self-help/fcl-setup/fcl-pc-setup' },
+              { text: '手机制作手机端', link: 'guide/self-help/fcl-setup/fcl-mobile-setup' },
+            ] },
+          ] },
+          { text: '自求福篇', collapsed: true, items: [
+            { text: '插件安全性鉴别（即将推出）' },
+          ] },
+          { text: '进阶学篇', collapsed: true, items: [
+            { text: 'TrMenu 菜单实战', link: 'guide/advanced/trmenu-example-vip-menu' },
+            { text: '分世界显示玩家的 TAB', link: 'guide/advanced/tab-based-world-seperation' },
+          ] }
+        ] },
+      ],
       'wiki/AureliumSkills/': [
         { text: '返回首页', link: 'wiki/index' },
         { text: '前言', link: 'wiki/AureliumSkills/index' },
