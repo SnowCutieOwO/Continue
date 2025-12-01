@@ -1,0 +1,122 @@
+###############################################
+##                                           ##
+##           WildStacker 消息文本            ##
+##            插件作者 Ome_R                 ##
+##            翻译作者 SnowCutieOwO          ##
+##                                           ##
+###############################################
+
+# 当玩家挖掘堆叠方块后显示
+BARREL_BREAK: '&6&lWildStacker &7你破坏了装着 x{0} 个 {1} 的桶'
+BARREL_PLACE: '&6&lWildStacker &7你创建了一个用于存放 {0} 的桶'
+BARREL_UPDATE: '&6&lWildStacker &7你将 {0} 放入了桶中 (目前有 x{1} 个)'
+
+# 当玩家输入切换命令后显示
+BARREL_TOGGLE_ON: '&6&lWildStacker &7堆叠桶功能已开启.'
+BARREL_TOGGLE_OFF: '&6&lWildStacker &7堆叠桶功能已关闭.'
+
+# 当玩家尝试放置堆叠桶但没有所需权限时显示.
+BARREL_NO_PERMISSION: '&6&lWildStacker &7你没有权限使用这个.'
+
+# 当玩家达到区块数量限制时显示.
+CHUNK_LIMIT_EXCEEDED: '&6&lWildStacker &7你最多只能在一个区块中放置 {0} 个该物品.'
+
+# 当玩家输入不正确的命令时显示
+COMMAND_USAGE: '&6&lWildStacker &7命令用法: /{0}'
+
+# 当玩家输入实体名称切换命令时显示.
+ENTITY_NAMES_TOGGLE_ON: '&6&lWildStacker &7实体名称可见已开启.'
+ENTITY_NAMES_TOGGLE_OFF: '&6&lWildStacker &7实体名称可见已关闭.'
+
+# 当玩家输入了无效的插件子命令时显示.
+HELP_COMMAND_HEADER: '&8&m---------------&6&l WildStacker &8&m---------------'
+HELP_COMMAND_LINE: '&7- &6/{0} &8- &f{1}'
+HELP_COMMAND_FOOTER: '&8&m---------------&6&l WildStacker &8&m---------------'
+
+# 当玩家输入了包含无效参数的给予命令时显示.
+INVALID_BARREL: '&6&lWildStacker &7没有找到名为 {0} 的堆叠桶.'
+INVALID_ENTITY: '&6&lWildStacker &7没有找到名为 {0} 的堆叠实体.'
+INVALID_NUMBER: '&6&lWildStacker &7请输入有效数字.'
+INVALID_PLAYER: '&6&lWildStacker &7没有找到名为 {0} 的玩家.'
+INVALID_SPAWN_CAUSE: '&6&lWildStacker &7没有找到名为 {0} 的出生点.'
+INVALID_TYPE: '&6&lWildStacker &7请指定给予物品的类(刷怪笼或刷怪蛋).'
+INVALID_UPGRADE: '&6&lWildStacker &7没有找到名为 {0} 的升级.'
+
+# 当玩家切换背包调整时显示.
+INVENTORY_TWEAKS_TOGGLE_ON: '&6&lWildStacker &7背包调整已开启.'
+INVENTORY_TWEAKS_TOGGLE_OFF: '&6&lWildStacker &7背包调整已关闭.'
+
+# 当玩家成功执行查询工具给予命令后显示.
+INSPECT_GIVE_PLAYER: '&6&lWildStacker &7成功将 x{1} 个查询工具发送给了玩家 {0}.'
+INSPECT_RECEIVE: '&6&lWildStacker &7你从玩家 {1} 收到了 x{0} 个查询工具.'
+
+# 当玩家成功执行测量工具给予命令后显示.
+SIMULATE_GIVE_PLAYER: '&6&lWildStacker &7成功将 x{1} 个测量工具发送给了玩家 {0}.'
+SIMULATE_RECEIVE: '&6&lWildStacker &7你从玩家 {1} 收到了 x{0} 个测量工具.'
+
+# 当玩家切换物品名称功能时显示.
+ITEM_NAMES_TOGGLE_ON: '&6&lWildStacker &7物品名可见已开启.'
+ITEM_NAMES_TOGGLE_OFF: '&6&lWildStacker &7物品名可见已关闭.'
+
+# 当全部击杀任务正在执行时显示
+KILL_ALL_ANNOUNCEMENT: '&6&lWildStacker &7所有堆叠实体和物品已被成功击杀!'
+KILL_ALL_REMAINING_TIME: '&6&lWildStacker &7所有堆叠实体和物品将会在 {0} 秒内被清除!'
+KILL_ALL_OPS: '&7&o[WildStacker: 清理了堆叠实体]'
+
+# 当玩家在配置文件已禁止的情况下尝试相邻放置刷怪笼时显示.
+NEXT_SPAWNER_PLACEMENT: '&6&lWildStacker &7你不可以相邻放置刷怪笼.'
+
+# 没有权限时显示的内容.
+NO_PERMISSION: '&f未知命令. 请输入 "/help" 获取帮助.'
+
+# 当玩家尝试放置刷怪笼但附近有其他已放置的可堆叠刷怪笼时显示.
+ONLY_ONE_SPAWNER: '&6&lWildStacker &7该刷怪笼 1 格范围附近不能有其他种类的可堆叠刷怪笼.'
+
+# 当玩家成功使用命令重载了所有配置文件时显示.
+RELOAD_SUCCESS: '&6&lWildStacker &7成功重载了所有配置文件.'
+
+# 当玩家放置或破坏刷怪笼时显示
+SPAWNER_BREAK: '&6&lWildStacker &7You broke a {0} spawner (x{1}) and were charged for ${2}.'
+SPAWNER_BREAK_NOT_ENOUGH_MONEY: '&6&lWildStacker &fYou need {0} in order to break this amount of spawners.'
+SPAWNER_BREAK_WITHOUT_SILK: '&6&lWildStacker &7You must have a silk touch in order to break spawners.'
+SPAWNER_PLACE: '&6&lWildStacker &7You placed a {0} spawner (x{1}) and were charged for ${2}.'
+SPAWNER_PLACE_NOT_ENOUGH_MONEY: '&6&lWildStacker &fYou need {0} in order to place this amount of spawners.'
+SPAWNER_PLACE_BLOCKED: '&6&lWildStacker &7You don''t have the required permission to place this spawner! ({0})'
+SPAWNER_UPDATE: '&6&lWildStacker &7You updated the spawner (x{0}).'
+
+# 当玩家尝试升级刷怪笼时显示.
+SPAWNER_UPGRADE_NOT_ENOUGH_MONEY: '&6&lWildStacker &7你仍需 ${0} 来升级此刷怪笼.'
+SPAWNER_UPGRADE_SUCCESS: '&6&lWildStacker &7成功升级了刷怪笼!'
+
+# 当玩家成功执行给予命令时显示.
+STACK_GIVE_PLAYER: '&6&lWildStacker &7成功给予了玩家 {0} x{1} {2} {3}.'
+STACK_RECEIVE: '&6&lWildStacker &7你从玩家 {2} 处收到了 x{0} {1}.'
+
+# 当玩家输入查询命令时分别显示的内容
+STACK_INFO_INVALID: '&6&lWildStacker &7未能找到有效的堆叠.'
+BARREL_INFO_HEADER: '&8&m---------------&6&l WildStacker &8&m---------------'
+BARREL_INFO_TYPE: '&6 堆叠桶物品&7: &f{0}'
+BARREL_INFO_AMOUNT: '&6 S堆叠数量&7: &f{0}'
+BARREL_INFO_FOOTER: '&8&m---------------&6&l WildStacker &8&m---------------'
+SPAWNER_INFO_HEADER: '&8&m---------------&6&l WildStacker &8&m---------------'
+SPAWNER_INFO_TYPE: '&6 刷怪笼种类&7: &f{0}'
+SPAWNER_INFO_AMOUNT: '&6 堆叠数量&7: &f{0}'
+SPAWNER_INFO_UPGRADE: '&6 升级状态&7: &f{0}'
+SPAWNER_INFO_FOOTER: '&8&m---------------&6&l WildStacker &8&m---------------'
+ENTITY_INFO_HEADER: '&8&m---------------&6&l WildStacker &8&m---------------'
+ENTITY_INFO_UUID: '&6 实体 UUID&7: &f{0}'
+ENTITY_INFO_TYPE: '&6 实体种类&7: &f{0}'
+ENTITY_INFO_AMOUNT: '&6 堆叠数量&7: &f{0}'
+ENTITY_INFO_SPAWN_REASON: '&6 生成原因&7: &f{0}'
+ENTITY_INFO_NERFED: '&6 禁用AI&7: &f{0}'
+ENTITY_INFO_UPGRADE: '&6 升级状态&7: &f{0}'
+ENTITY_INFO_FOOTER: '&8&m---------------&6&l WildStacker &8&m---------------'
+
+# 测试两个不同的目标是否可堆叠时返回的文本
+OBJECT_SIMULATE_CHOOSE_SECOND: '&6&lWildStacker &7请点击其他物品.'
+OBJECT_SIMULATE_SUCCESS_RESULT: '&6&lWildStacker &7结果: &a成功&7. 该目标可堆叠.'
+OBJECT_SIMULATE_FAIL_RESULT: '&6&lWildStacker &7结果: &c{0}&7. 该目标不可堆叠.'
+
+# 在升级菜单中使用的文本
+UPGRADE_CURRENT: '&6当前升级: &7'
+UPGRADE_NEXT: '&6下一升级: &7'

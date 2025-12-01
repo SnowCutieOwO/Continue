@@ -1,0 +1,62 @@
+###############################################
+##                                           ##
+##         WildStacker Configuration         ##
+##            Developed by Ome_R             ##
+##                                           ##
+###############################################
+
+# 菜单标题.
+title: '刷怪笼数量'
+
+# 菜单布局.
+pattern:
+  - '@ # & $ $ $ $ $ $'
+  - '# & $ ! $ * $ $ $'
+  - '& $ % $ $ $ - $ &'
+  - '$ $ $ ^ $ + $ & #'
+  - '$ $ $ $ $ $ & # @'
+
+# 玩家成功修改刷怪笼刷怪数量时播放的音效
+success-sound:
+  type: ENTITY_EXPERIENCE_ORB_PICKUP
+  volume: 0.2
+  pitch: 0.2
+
+# 玩家修改刷怪笼刷怪数量失败时播放的音效
+failure-sound: {}
+
+# 菜单物品
+items:
+  '@':
+    type: BLACK_STAINED_GLASS_PANE
+    name: '&f'
+  '#':
+    type: YELLOW_STAINED_GLASS_PANE
+    name: '&f'
+  '&':
+    type: ORANGE_STAINED_GLASS_PANE
+    name: '&f'
+  '!':
+    type: LIME_STAINED_GLASS_PANE
+    deposit: 1
+    name: '&a数量 +1'
+  '%':
+    type: LIME_STAINED_GLASS_PANE
+    deposit: 16
+    name: '&a数量 +16'
+  '^':
+    type: LIME_STAINED_GLASS_PANE
+    deposit: 64
+    name: '&a数量 +64'
+  '*':
+    type: RED_STAINED_GLASS_PANE
+    withdraw: 1
+    name: '&c数量 -1'
+  '-':
+    type: RED_STAINED_GLASS_PANE
+    withdraw: 16
+    name: '&c数量 -16'
+  '+':
+    type: RED_STAINED_GLASS_PANE
+    withdraw: 64
+    name: '&c数量 -64'

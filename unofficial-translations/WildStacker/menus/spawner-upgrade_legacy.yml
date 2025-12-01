@@ -1,0 +1,57 @@
+###############################################
+##                                           ##
+##         WildStacker Configuration         ##
+##            Developed by Ome_R             ##
+##                                           ##
+###############################################
+
+# 菜单标题.
+title: '刷怪笼升级'
+
+# 菜单布局.
+pattern:
+  - '@ # & $ $ $ $ $ $'
+  - '# & $ $ $ $ $ $ $'
+  - '& $ $ ! $ ^ $ $ &'
+  - '$ $ $ $ $ $ $ & #'
+  - '$ $ $ $ $ $ & # @'
+
+# 玩家成功升级刷怪笼时播放的音效.
+success-sound:
+  type: ENTITY_EXPERIENCE_ORB_PICKUP
+  volume: 0.2
+  pitch: 0.2
+
+# 玩家升级刷怪笼失败时播放的音效.
+failure-sound:
+  type: BLOCK_ANVIL_PLACE
+  volume: 0.2
+  pitch: 0.2
+
+current-upgrade: '!'
+next-upgrade: '^'
+
+# 菜单物品
+items:
+  '@':
+    type: STAINED_GLASS_PANE
+    data: 15
+    name: '&f'
+  '#':
+    type: STAINED_GLASS_PANE
+    data: 4
+    name: '&f'
+  '&':
+    type: STAINED_GLASS_PANE
+    data: 1
+    name: '&f'
+  '!':
+    type: BARRIER
+    name: '&c不可升级'
+    lore:
+      - '&7你不能再给这个刷怪笼升级了..'
+  '^':
+    type: BARRIER
+    name: '&c不可升级'
+    lore:
+      - '&7你不能再给这个刷怪笼升级了..'

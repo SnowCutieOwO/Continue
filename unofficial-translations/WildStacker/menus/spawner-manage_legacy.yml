@@ -1,0 +1,72 @@
+###############################################
+##                                           ##
+##         WildStacker Configuration         ##
+##            Developed by Ome_R             ##
+##                                           ##
+###############################################
+
+# 菜单标题.
+title: '刷怪笼信息'
+
+# 菜单布局.
+pattern:
+  - '@ # & $ $ $ $ $ $'
+  - '# & $ $ $ $ $ $ $'
+  - '& $ % $ ^ $ ! $ &'
+  - '$ $ $ $ $ $ $ & #'
+  - '$ $ $ $ $ $ & # @'
+
+# 数量菜单格子.
+amounts-menu: '^'
+# 统计物品格子.
+statistics: '%'
+# 升级菜单格子.
+upgrade-menu: '!'
+
+# 菜单物品
+items:
+  '@':
+    type: STAINED_GLASS_PANE
+    data: 15
+    name: '&f'
+  '#':
+    type: STAINED_GLASS_PANE
+    data: 4
+    name: '&f'
+  '&':
+    type: STAINED_GLASS_PANE
+    data: 1
+    name: '&f'
+  '%':
+    type: BOOK
+    name: '&e统计内容'
+    lore:
+      - '&7距离下次生成&e: &f%ticks-left%s'
+      - '&c%failure-reason%'
+      - '&7 '
+      - '&7生成间隔范围&e: &f%min-spawn-delay%-%max-spawn-delay%'
+      - '&7生成数量&e: &f%spawn-count%'
+      - '&7最大邻近实体&e: &f%max-nearby-entities%'
+      - '&7玩家激活范围&e: &f%required-player-range%'
+      - '&7实体生成半径&e: &f%spawn-range%'
+  '^':
+    type: EMERALD
+    name: '&e数量菜单'
+  '!':
+    type: GOLD_INGOT
+    name: '&e升级菜单'
+
+# 物品音效
+sounds:
+  '%':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2
+  '^':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2
+  '!':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2

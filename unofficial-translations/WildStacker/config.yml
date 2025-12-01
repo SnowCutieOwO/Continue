@@ -1,0 +1,887 @@
+###############################################
+##                                           ##
+##         WildStacker Configuration         ##
+##            Developed by Ome_R             ##
+##                                           ##
+###############################################
+
+# 如何显示给予命令给玩家的物品格式?
+# {0} 返回堆叠数量
+# {1} 代表实体种类
+# {2} 代表物品种类 (刷怪蛋 / 刷怪笼 / 堆叠桶)
+give-item-name: '&6x{0} &f&o{1} {2}'
+
+# 本插件的查询工具.
+# 当点击物品/实体或堆叠桶时，有关信息将会全部显示给玩家.
+inspect-tool:
+  type: STICK
+  name: '&6查询工具'
+  lore:
+    - '&7点击堆叠实体/物品或堆叠桶来查询详细信息.'
+
+# 本插件的堆叠检查工具.
+# 可用该工具检查物品是否可堆叠.
+simulate-tool:
+  type: STICK
+  name: '&6堆叠检查工具'
+  lore:
+    - '&7点击实体可查询相邻实体是否可堆叠.'
+
+# 数据库相关内容.
+database:
+  # 是否删除无效世界的相关数据?
+  delete-invalid-worlds: false
+
+# 自动清理的相关数据
+kill-task:
+  # 自动清理的间隔? (单位为秒)
+  # 设置为 0 禁用该特性.
+  interval: 0
+  # 自动清理是否清理堆叠实体?
+  stacked-entities: true
+  # 自动清理是否清理未堆叠的实体?
+  unstacked-entities: true
+  # 自动清理是否清理堆叠物品?
+  stacked-items: true
+  # 自动清理是否清理未堆叠的物品?
+  unstacked-items: true
+  # 若启用, 插件将会自动清除堆叠实体, 与此同时 clearlagg 将会负责清理未堆叠的物品与实体.
+  # 仅在 interval 项设置为 0 时启用 - 这是两个不同的功能!
+  sync-clear-lagg: true
+  # 获取距离下一次自动清理的剩余时间.
+  # 可通过英文逗号 "," 设置多个等价用法.
+  # 设置为 '' 可禁用此特性.
+  time-command: 'stacker timeleft'
+  # 所有与定时清理实体相关的设置.
+  kill-entities:
+    # 会被清除的实体列表.
+    # 实体种类列表: https://bg-software.com/entities/
+    # 生成原因列表: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html
+    # 可通过格式 "实体种类:生成原因" 来同时使用两个合成表.
+    # 若需要清除所有种类的实体, 可将该值设置为 []
+    whitelist: []
+    # A list of entities that won't be cleared.
+    # 实体种类列表: https://bg-software.com/entities/
+    # 生成原因列表: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html
+    # 可通过格式 "实体种类:生成原因" 来同时使用两个合成表.
+    # 若需要清除所有种类的实体, 请使用 "blacklist: []"
+    blacklist: []
+    # 在下列列表中的世界将会被定期清理.
+    # 设置为 [] 使清理功能默认清理整个世界
+    worlds: []
+  # 所有与定时清理物品实体相关的设置.
+  kill-items:
+    # 会被清除的物品实体列表.
+    # 有效材料名列表: https://bg-software.com/materials/
+    # 若需要清理所有种类的物品, 可将该值设置为 []
+    whitelist: []
+    # 不会被清理的物品实体列表.
+    # 有效材料名列表: https://bg-software.com/materials/
+    # 若需要清理所有种类的物品, 请使用 "blacklist: []"
+    blacklist: []
+    # 在下列列表中的世界将会被定期清理.
+    # 设置为 [] 使清理功能默认清理整个世界
+    worlds: []
+
+# 在这里可设置堆叠物品相关的内容.
+items:
+  # 服务器是否启用物品堆叠特性?
+  enabled: true
+
+  # 堆叠物品检查半径为多少格?
+  # 有效材料名列表: https://bg-software.com/materials/
+  # 请确保你按照 "种类" 和 "种类:数据值" 的格式填写.
+  merge-radius:
+    all: 5
+
+  # 堆叠物品显示的自定义名称.
+  # 若不需要显示, 请输入 "custom-name: ''"
+  # {0} 代表堆叠数量
+  # {1} 代表显示名称
+  # {2} 代表物品的大写开头显示名称
+  custom-name: '&6x{0} &f&o{1}'
+
+  # 黑名单中的物品将不会被堆叠.
+  # 有效材料名列表: https://bg-software.com/materials/
+  # 请确保你按照 "种类" 和 "种类:数据值" 的格式填写.
+  # 若要禁用所有的黑名单物品, 请使用 "blacklist: []"
+  blacklist:
+    - EXAMPLE_ITEM
+
+  # 白名单中的物品将会被堆叠.
+  # 有效材料名列表: https://bg-software.com/materials/
+  # 请确保你按照 "种类" 和 "种类:数据值" 的格式填写.
+  # 若需要所有物品都可以堆叠, 请使用 "whitelist: []"
+  whitelist: []
+
+  # 设置一个物品的最大堆叠量.
+  # 请确保你按照 "种类" 和 "种类:数据值" 的格式填写.
+  # 你可以使用保留词 'all' 作为全局限制 (all: 20 将会限制每个堆叠的物品的最大数量为 20)
+  # 若不需要该选项可随机设置一个种类.
+  limits:
+    EXAMPLE_ITEM: 1024
+
+  # 物品不会被堆叠的世界 (大小写敏感)
+  disabled-worlds:
+    - disabled_world
+
+  # 设置单区块内最大堆叠物品实体数量.
+  # 若要禁用此特性, 将该值设置为 0 即可.
+  chunk-limit: 0
+
+  # 物品堆叠时是否产生粒子效果?
+  # 若要编辑粒子效果, 请转到 particles.yml 文件.
+  particles: true
+
+  # 若启用, 所有物品都会拥有一个自定义名称 (即使未被堆叠)
+  unstacked-custom-name: false
+
+  # 若 fix-stack 项被禁用, 最大堆叠数为 1 的物品将直接进入背包.
+  # 当最大堆叠量为 64 时. 玩家捡起一个含有 80 个物品的堆叠物品, 他会在背包中得到 64 + 16 个已堆叠好的物品, 而不是八十个不同的物品.
+  fix-stack: false
+
+  # 若 item-display 项被弃用, 物品名称将会代替物品种类显示
+  # 这会应用于所有物品, 仅可以被 custom-display.yml 中的自定义名称覆盖.
+  item-display: false
+
+  # 是否允许玩家自行切换物品名称可见性?
+  # 若要使用该功能, 请先安装 ProtocolLib.
+  names-toggle:
+    # 物品名称是否可切换?
+    enabled: false
+
+    # 切换命令是什么?
+    command: 'stacker names item'
+
+  # 堆叠物品是否启用拾起播放音效?
+  pickup-sound: true
+
+  # 是否允许有最大拾起延时的物品被堆叠 (最后被丢下的物品, 即不能最先被捡起, 堆叠会导致拾取延时被刷新)
+  max-pickup-delay: false
+
+  # 自动堆叠消耗的时间? (单位为刻)
+  # 若要禁用此功能, 请将 stack-interval 项设置为 0.
+  # 默认情况下, 所有物品在生成即被堆叠至对应的物品堆.
+  stack-interval: 0
+
+  # 实体是否储存至数据库?
+  store-items: true
+
+# 在这里你可以修改所有堆叠实体相关的功能.
+entities:
+  # 服务器是否启用堆叠实体特性?
+  enabled: true
+
+  # 检查堆叠实体的半径应为多少格?
+  # 实体种类列表: https://bg-software.com/entities/
+  # 生成原因列表: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html
+  # 可通过格式 "实体种类:生成原因" 来同时使用两个合成表.
+  merge-radius:
+    all: 10
+
+  # 实体的自定义显示名称.
+  # 若不需要显示, 请将下面一行的内容修改为 "custom-name: ''"
+  # {0} 代表堆叠数量
+  # {1} 代表实体类型
+  # {2} 代表大写的实体种类
+  # {3} 代表实体的战士名称
+  custom-name: '&6x{0} &f&o{1}{3}'
+
+  # 黑名单中的实体将不会被堆叠.
+  # 实体种类列表: https://bg-software.com/entities/
+  # 生成原因列表: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html
+  # 可通过格式 "实体种类:生成原因" 来同时使用两个合成表.
+  # 若要使所有实体均可被堆叠, 请使用 "blacklist: []"
+  blacklist:
+    - EXAMPLE_MOB
+
+  # 白名单中的实体将会被堆叠.
+  # 实体种类列表: https://bg-software.com/entities/
+  # 生成原因列表: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html
+  # 可通过格式 "实体种类:生成原因" 来同时使用两个合成表.
+  # 若要使所有实体均可被堆叠, 请使用 "whitelist: []"
+  whitelist: []
+
+  # 设置实体的最大堆叠数量.
+  # 请确保你按照了 "实体名称" 的格式.
+  # 可在此处使用保留词 'all' 来设置全局限制 (all: 20 将会把所有实体的堆叠上限都设置为20)
+  # 若不想要此功能, 改为 [] 即可.
+  limits:
+    EXAMPLE_ENTITY: 10
+
+  # 设置特定实体的堆叠功能触发数量.
+  # 请确保你按照了 "实体名称" 的格式.
+  # 可在此处使用保留词 'all' 来设置全局限制 (all: 20 表示需要有20个相同实体时才会触发堆叠)
+  # 若不想要此功能, 改为 [] 即可.
+  minimum-required:
+    EXAMPLE_ENTITY: 10
+
+  # 不使用实体堆叠功能的世界列表 (大小写敏感)
+  disabled-worlds:
+    - disabled_world
+
+  # 设置一个区块内的最大堆叠实体数量.
+  # 若要禁用此特性, 将该值设置为 0 即可
+  chunk-limit: 0
+
+  # 当实体被堆叠时是否产生粒子效果?
+  # 若你要编辑粒子效果, 请编辑 particles.yml 文件.
+  particles: true
+
+  # 不会被堆叠实体的 WorldGuard 区域名称列表 (大小写敏感)
+  disabled-regions: []
+
+  # 当实体有黑名单中的名称时它们将不会被堆叠.
+  # 颜色字符和正则表达式均支持.
+  # 若要基于名称来设置实体是否可堆叠, 请将下面一行改成 "name-blacklist: []"
+  name-blacklist: []
+
+  # 自动堆叠的事件间隔? (单位为刻)
+  # 若你需要禁用自动堆叠功能, 请将 stack-interval 的值设置为 0.
+  stack-interval: 0
+
+  # 在实体被堆叠在一起之前插件检查的所有内容.
+  stack-checks:
+    AGE: true
+    ANIMAL_OWNER: true
+    AXOLOTL_TYPE: true
+    AXOLOTL_PLAYING_DEAD: false
+    BAT_AWAKE: false
+    CAN_BREED: true
+    CAT_COLLAR_COLOR: true
+    CAT_TYPE: true
+    CREEPER_CHARGED: true
+    ENDERMAN_CARRIED_BLOCK: true
+    EXACT_AGE: false
+    FROG_TOUNGE_TARGET: false
+    FROG_TYPE: true
+    GLOW_SQUID_DARK_TICKS: false
+    GOAT_SCREAMING: false
+    GUARDIAN_ELDER: true
+    HORSE_CARRYING_CHEST: true
+    HORSE_COLOR: true
+    HORSE_JUMP: true
+    HORSE_MAX_TAME_PROGRESS: true
+    HORSE_STYLE: true
+    HORSE_TAME_PROGRESS: true
+    HORSE_TYPE: true
+    IS_IN_LOVE: true
+    IS_TAMED: true
+    LLAMA_COLOR: true
+    LLAMA_STRENGTH: true
+    MOOSHROOM_TYPE: true
+    NAME_TAG: true
+    NERFED: true
+    OCELOT_TYPE: true
+    PARROT_TYPE: true
+    PHANTOM_SIZE: true
+    PIG_SADDLE: true
+    PUFFERFISH_STATE: true
+    RABBIT_TYPE: true
+    SHEEP_COLOR: true
+    SHEEP_SHEARED: true
+    SKELETON_TYPE: true
+    SLIME_SIZE: true
+    SPAWN_REASON: false
+    TROPICALFISH_BODY_COLOR: true
+    TROPICALFISH_TYPE: true
+    TROPICALFISH_TYPE_COLOR: true
+    UPGRADE: true
+    VILLAGER_PROFESSION: true
+    WOLF_ANGRY: false
+    WOLF_COLLAR_COLOR: true
+    ZOMBIE_BABY: true
+    ZOMBIE_PIGMAN_ANGRY: false
+
+  # 解除实体堆叠之前的检查原因.
+  stack-split:
+    BEE_AGRO: false
+    ENTITY_BREED: true
+    ENTER_VEHICLE: true
+    IRON_GOLEM_AGRO: false
+    MUSHROOM_SHEAR: true
+    NAME_TAG: true
+    PIGMAN_AGRO: false
+    SHEEP_DYE: true
+    SHEEP_SHEAR: true
+    VILLAGER_INFECTION: true
+    WOLF_AGRO: false
+
+  # 连接实体会将其连接至一个或多个刷怪笼.
+  # 被连接的实体将会将堆叠目标设定为刷怪笼产生的第一个被连接的实体.
+  # 若 entities-stacking 项被禁用, 此项不可用.
+  linked-entities:
+    # 实体是否连接至刷怪笼?
+    enabled: true
+
+    # 实体和刷怪笼的最大距离.
+    # 若实体距离过远会自动解除链接.
+    max-distance: 10
+
+  # 立即清除功能将会击杀堆叠内的所有实体而不只是一个.
+  # 掉落物同样会翻倍.
+  # 实体种类列表: https://bg-software.com/entities/
+  # 受伤原因列表:  https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/EntityDamageEvent.DamageCause.html
+  # 可通过使用 "实体种类:受伤原因" 或 "实体种类:生成原因" 结合两个过滤名单
+  # 若不需要使用此功能, 可将下列文本替换为 "instant-kill: []"
+  instant-kill:
+    - FALL
+
+  # 去除 AI 实体将不会主动攻击其他生物或玩家.
+  # 实体种类列表: https://bg-software.com/entities/
+  # 生成原因列表: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html
+  # 可通过使用 "实体种类:受伤原因" 结合两个过滤名单
+  nerfed-entities:
+    # 将会被去除 AI 的实体列表.
+    # 若需要所有生物均被去除 AI, 请将此项改为 [].
+    whitelist:
+    - EXAMPLE_MOB
+    # 不会被去除 AI 的实体列表.
+    blacklist: []
+    # 被去除 AI 的实体的世界列表.
+    # 若要所有实体都被去除 AI, 请将下面的值改为 [].
+    worlds: []
+    # 是否允许去除 AI 的实体能够传送?
+    teleport: false
+
+  # 向下堆叠功能会强制将低于目标实体的同种类实体堆叠在一起.
+  # 该功能对飞行实体很有效, 例如恶魂和烈焰人.
+  stack-down:
+    # 服务器是否启用向下堆叠特性?
+    enabled: true
+    # 列表中的实体将会使用向下堆叠模式.
+    # 可通过使用 "实体种类:受伤原因" 结合两个过滤名单
+    stack-down-types:
+      - BLAZE
+      - GHAST
+
+  # 若堆叠实体着火后被烧死, 下一个实体是否继续着火?
+  keep-fire: true
+
+  # 若启用, 花括号变量符 '{}' 将会被替换为 MythicMobs 实体的名称.
+  mythic-mobs-custom-name: true
+
+  # 实体被堆叠所需的最低生命值.
+  # 实体种类列表: https://bg-software.com/entities/
+  # 生成原因列表: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html
+  # 可通过使用 "实体种类:受伤原因" 结合两个过滤名单
+  keep-lowest-health: []
+
+  # 若设置为 true, 参与繁殖的双亲都会被堆叠在一起.
+  stack-after-breed: true
+
+  # 当该项启用时, 玩家可消耗两个物品在一个含两个生物以上的堆叠中繁殖.
+  # 不会播放繁殖动画, 新的动物会在堆叠中产生.
+  # 可防止繁殖出现大量实体导致卡服, 可提升性能.
+  smart-breeding:
+    enabled: false
+    # 若启用, 背包内的所有物品都会被消耗用于繁殖, 而不只是手上符合要求的物品.
+    consume-entire-inventory: false
+
+  # 仅当玩家看向这些实体的时候显示名称.
+  hide-names: false
+
+  # 玩家是否可以切换实体名称可见性?
+  # 若要使此功能正常运转, 需要先安装 ProtocolLib.
+  names-toggle:
+    # 实体名称可见性是否可以切换?
+    enabled: false
+
+    # 切换命令内容是?
+    command: 'stacker names entity'
+
+  # 堆叠实体是否可被玩家快速击杀 (无攻击冷却)?
+  fast-kill: false
+
+  # 默认解除堆叠的实体数量.
+  # 请使用 "实体种类:数量" 或 "实体种类:生成原因:数量" 的合适
+  default-unstack:
+    all: 1
+
+  # 击杀生物掉落的经验值是否直接给予击杀者而不是掉落?
+  # 实体种类列表: https://bg-software.com/entities/
+  # 生成原因列表: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html
+  # 可通过格式 "实体种类:生成原因" 来同时使用两个合成表.
+  auto-exp-pickup: []
+
+  # 若 auto-exp-pickup 启用, 该项为获得经验的音效.
+  # 若要禁用此功能, 设置为 '' 即可.
+  exp-pickup-sound: ENTITY_EXPERIENCE_ORB_PICKUP
+
+  # 鸡下的蛋是否会随堆叠实体数量变化而变化?
+  egg-lay-multiply: true
+
+  # 乌龟掉落的龟壳数量是否会随堆叠实体数量变化而变化?
+  scute-multiply: true
+
+  # 解除堆叠后的实体是否清除它们身上的护甲?
+  clear-equipment: false
+
+  # 实体死亡时是否显示死亡动画?
+  spawn-corpses: true
+
+  # 若被启用, 堆叠实体可被某些工具一击全部击杀.
+  one-shot:
+    # 是否启用此特性?
+    enabled: false
+    # 可一击全清实体的工具列表.
+    tools:
+      - DIAMOND_SWORD
+      - DIAMOND_AXE
+    # 可被一击全清的实体列表.
+    # 实体种类列表: https://bg-software.com/entities/
+    # 生成原因列表: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html
+    # 可通过格式 "实体种类:生成原因" 来同时使用两个合成表.
+    whitelist:
+      - ALL
+
+  # 实体数据是否要存入数据库?
+  store-entities: true
+
+  # 是否使 WildStacker 添加一个 entities-stacking 选项至 SuperiorSkyblock?
+  # 若启用, 请确保你添加了 "entities_stacking" 项至设置菜单.
+  superiorskyblock-hook: false
+
+  # 掉落物数量是否与堆叠实体数量挂钩?
+  multiply-drops: true
+
+  # 掉落经验数量是否与堆叠实体数量挂钩?
+  multiply-exp: true
+
+  # 溢出的伤害是否传递至下一个实体?
+  # 若造成伤害多余当前实体的最大生命值, 剩余部分的伤害会传递给下一个实体.
+  spread-damage: false
+
+  # WildStacker 要监听的实体转变类型?
+  # 以下列原因之一转变为其他种类实体的实体,
+  # 插件将会同步转化它的实体数据.
+  # 转化原因可在下列网站中查询:
+  # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityTransformEvent.TransformReason.html
+  filtered-transforms:
+  - 'DROWNED'
+  - 'CURED'
+  - 'PIGLIN_ZOMBIFIED'
+
+  # 是否使载具完全装满堆叠实体?
+  # 若启用, 载具将尽可能填满实体.
+  # 这会导致玩家无法进入这些矿车.
+  entities-fill-vehicles: false
+
+# 这里可以设置所有与自动堆叠刷怪笼相关的设置.
+spawners:
+  # 服务器是否启用自动堆叠刷怪笼的特性?
+  enabled: true
+
+  # 刷怪笼合并实体的半径?
+  # 实体种类列表: https://bg-software.com/entities/
+  merge-radius:
+    all: 1
+
+  # 刷怪笼的自定义悬浮字.
+  # 悬浮字特性仅会在下列插件启用的时候显示: HolographicDisplay, Holograms, Arconix
+  # 若要禁用此特性, 请将下行内容更改为 "custom-name: ''"
+  # {0} 代表堆叠数量
+  # {1} 代表实体种类
+  # {2} 代表大写字母开头的实体种类名称
+  # {3} 代表升级名称
+  custom-name: '&6x{0} &f&o{1}{3}'
+
+  # 黑名单中的刷怪笼将不会被自动堆叠.
+  # 实体种类列表: https://bg-software.com/entities/
+  # 若你要禁用刷怪笼黑名单, 请使用 "blacklist: []"
+  blacklist:
+    - BLAZE
+
+  # 白名单中的刷怪笼将会被自动堆叠.
+  # 实体种类列表: https://bg-software.com/entities/
+  # 若你要禁用刷怪笼白名单, 请使用 "whitelist: []"
+  whitelist: []
+
+  # 为特定的刷怪笼设置最大堆叠数量.
+  # 请确保你按照了 "实体名称" 的格式.
+  # 可在此处使用保留词 'all' 来设置全局限制 (all: 20 表示所有的刷怪笼将会被限制在 20 个的最大堆叠量)
+  # 若不需要该设置, 可随意设置该值.
+  limits:
+    EXAMPLE_ENTITY: 10
+
+  # 不会堆叠刷怪笼的世界列表 (大小写敏感)
+  disabled-worlds:
+    - disabled_world
+
+  # 设置一个区块里最大的刷怪笼数量.
+  # 若要禁用此特性, 将该值设置为 0 即可.
+  chunk-limit: 0
+
+  # 刷怪笼区块限制是否对单种刷怪笼分别生效?
+  per-spawner-limit: false
+
+  # 当生成实体被堆叠时是否生成粒子效果?
+  # 若你要编辑粒子效果, 请编辑 particles.yml 文件..
+  particles: true
+
+  # 当启用, 插件会在所有区块寻找可合并的刷怪笼而不是只寻找给定范围内的刷怪笼. 
+  # merge-radius 项会被覆盖, 仅会被用作寻找刷怪笼的判断高度.
+  chunk-merge: false
+
+  # 与刷怪笼物品有关的所有设置.
+  spawner-item:
+    # 显示物品的自定义名称.
+    # 若你不需要显示名称, 请将下列内容修改为 "custom-name: ''"
+    # {0} 代表堆叠数量
+    # {1} 表示实体种类
+    # {2} 表示升级的显示名称
+    name: '&6x{0} &f&o{1} 刷怪笼{2}'
+
+    # 显示物品的自定义描述.
+    # 若你不需要显示自定义描述, 请将下列内容修改为 "custom-lore: []"
+    # {0} 代表堆叠数量
+    # {1} 表示实体种类
+    lore: []
+
+  # 在这里你可以修改所有与精准采集相关的设置.
+  # 其他刷怪笼插件例如 SilkSpawners 和 MineableSpawners, 会覆盖本插件的设置.
+  silk-touch:
+    # 当玩家使用精准采集工具挖掘刷怪笼的时候是否掉落刷怪笼?
+    enabled: true
+
+    # 是否直接将掉落的刷怪笼发送至玩家背包而不是掉落在地上?
+    drop-to-inventory: true
+
+    # 精准采集能正常采集本插件的刷怪笼的世界.
+    # 若要使精准采集在全世界正常工作, 请将下列内容修改为 "worlds: []"
+    worlds: []
+
+    # 是否允许刷怪笼在没有精准采集的情况下掉落?
+    # 若启用, 只有拥有 wildstacker.nosilkdrop 的玩家才可掉落刷怪笼.
+    drop-without-silk: false
+
+    # 精准采集挖掘后的掉落几率.
+    break-chance: 100
+
+    # 触发精准采集的对应最小附魔等级.
+    minimum-level: 1
+
+  # 这里可以设置与爆炸破坏的刷怪笼有关的内容.
+  # 其他插件, 例如 SilkSpawners, 会覆盖这一部分的选项.
+  explosions:
+    # 当被 TNT 或爬行者摧毁时是否掉落?
+    enabled: true
+
+    # 掉落物是否直接进入玩家背包而不是掉落在地上?
+    drop-to-inventory: true
+
+    # 爆炸将会启用的世界名称.
+    # 若要使该功能在全世界可用, 请将下行内容改为 "worlds: []"
+    worlds: []
+
+    # 被炸毁的刷怪笼掉落几率.
+    break-chance: 100
+
+  # 设置爆炸破坏减少的刷怪笼堆叠量比例.
+  # 设置为 -1 可使刷怪笼总是被爆炸破坏.
+  explosions-break-percentage: 100
+
+  # 解除刷怪笼堆叠的最小数量.
+  # 用于修复爆炸破坏所掉落的
+  # `explosions-amount-percentage` 低于 100 的物品.
+  explosions-break-minimum: 1
+
+  # 爆炸掉落的刷怪笼物品百分比.
+  explosions-amount-percentage: 100
+
+  # 掉落的刷怪笼最小数量.
+  # 用于修复爆炸破坏所掉落的
+  # `explosions-amount-percentage` 低于 100 的物品.
+  explosions-amount-minimum: 1
+
+  # 挖掘刷怪笼时是否兼容精准采集?
+  mine-require-silk: false
+
+  # 蹲下时是否挖掘一组堆叠的刷怪笼（挖掘后减少 64 个堆叠量）?
+  shift-get-whole-stack: true
+
+  # 堆叠生成器是否掉落一个而不是多个物品?
+  # 该功能不与其他刷怪笼插件兼容, 例如 SilkSpawners
+  drop-stacked-item: true
+
+  # 若启用, 仅会在鼠标左键点击后显示悬浮字.
+  # 将会显示 3 秒.
+  # 必须为其设置有效的自定义名称才可使其正常工作.
+  floating-names: false
+
+  # 启用时, 你必须拥有权限 wildstacker.place.<entity> 才可放置实体.
+  # 可使用权限节点 wildstacker.place.* 使玩家不受此项限制
+  placement-permission: false
+
+  # shift 右键时, 刷怪笼将会堆叠一组而不是一个.
+  shift-place-stack: true
+
+  # 解除堆叠收费的相关内容.
+  # break-charge:
+  #   EXAMPLE_MOB:                     实体名称.
+  #     price: 0                       解除堆叠时耗费的经济单位数量.
+  #     multiply-stack-amount: false   总价是否计算为单价x数量?设置为 false 则一次解除堆叠只需收费 price 设置的值。
+  break-charge:
+    EXAMPLE_MOB:
+      price: 0
+      multiply-stack-amount: false
+
+  # 堆叠收费的线管内容.
+  # place-charge:
+  #   EXAMPLE_MOB:                     实体名称.
+  #     price: 0                       堆叠时耗费的经济单位数量.
+  #     multiply-stack-amount: false   总价是否计算为单价x数量?设置为 false 则一次堆叠只需收费 price 设置的值。
+  place-charge:
+    EXAMPLE_MOB:
+      price: 0
+      multiply-stack-amount: false
+
+  # 若启用, 玩家可使用刷怪蛋修改刷怪笼种类.
+  change-using-eggs: true
+
+  # 刷怪蛋数量是否影响刷怪笼单次生成怪物的堆叠量.
+  eggs-stack-multiply: true
+
+  # 是否允许刷怪笼相邻放置?
+  next-spawner-placement: true
+
+  # 合并半径内是否只允许一个刷怪笼存在?
+  only-one-spawner: true
+
+  # 与背包调整相关的所有设置.
+  # 例如, 右键一个堆叠的物品可将其分成正常数量的物品.
+  inventory-tweaks:
+    # 生成的物品是否受到堆叠影响?
+    enabled: true
+    # 使用该功能的权限节点.
+    # 若要禁用该功能请留空.
+    permission: ''
+    # 设置切换命令所需的参数.
+    # 以逗号 "," 分隔命令的等价用法.
+    # 设置为空可禁用此特性.
+    toggle-command: 'stacker inventorytweaks,stacker it'
+
+  # 与刷怪笼菜单相关的设置.
+  # 所有子菜单被禁用后主菜单将不能打开.
+  manage-menu:
+    # 打开菜单是否需要按住 shift.
+    sneaking-open-menu: true
+    # 数量菜单是否启用?
+    amounts-menu: true
+    # 升级菜单是否启用?
+    upgrade-menu: true
+
+  # 覆盖原版刷怪笼的设定.
+  spawners-override:
+    # 原版刷怪笼的行为是否需要被 WildStacker 修改?
+    # 若启用, 刷怪笼的性能将会提升.
+    enabled: true
+    # 控制刷怪笼生成怪物的详细条件
+    # 可在官方维基下找到更多有关内容:
+    # https://wiki.bg-software.com/#/wildstacker/spawn-conditions/
+    spawn-conditions:
+      EXAMPLE_MOB: []
+
+  # 刷怪笼升级的相关设置.
+  spawner-upgrades:
+    # 刷怪笼升级总价是否计算为单价乘以刷怪笼一次性生成的实体数量?
+    multiply-stack-amount: true
+    # 升级内容
+    ladders:
+      '1':
+        entities:
+          - EXAMPLE_MOB
+        default:
+          next-upgrade: coal
+          nearby-players: 16
+          icon:
+            type: STONE
+            name: '&f基础'
+            lore:
+              - '&f该升级免费'
+              - '&7 '
+              - '&7生成间隔&f: %min-spawn-delay%-%max-spawn-delay%'
+              - '&7生成数量&f: %spawn-count%'
+              - '&7最大邻近实体数量&f: %max-nearby-entities%'
+              - '&7需求玩家距离范围&f: %required-player-range%'
+              - '&7生成半径&f: %spawn-range%'
+        coal:
+          id: 1
+          next-upgrade: iron
+          display: '&7 (&8煤&7)'
+          cost: 10000
+          icon:
+            type: COAL
+            name: '&8煤'
+            lore:
+              - '&8该升级耗费 $%cost%'
+              - '&7 '
+              - '&7生成间隔&f: &8%min-spawn-delay%-%max-spawn-delay%'
+              - '&7生成数量&f: &8%spawn-count%'
+              - '&7最大邻近实体数量&f: &8%max-nearby-entities%'
+              - '&7需求玩家距离范围&f: &8%required-player-range%'
+              - '&7生成半径&f: &8%spawn-range%'
+        iron:
+          id: 2
+          next-upgrade: gold
+          display: '&7 (铁)'
+          cost: 25000
+          icon:
+            type: IRON_INGOT
+            name: '&7铁'
+            lore:
+              - '&7该升级耗费 $%cost%'
+              - '&7 '
+              - '&7生成间隔&f: &7%min-spawn-delay%-%max-spawn-delay%'
+              - '&7生成数量&f: &7%spawn-count%'
+              - '&7最大邻近实体数量&f: &7%max-nearby-entities%'
+              - '&7需求玩家距离范围&f: &7%required-player-range%'
+              - '&7生成半径&f: &7%spawn-range%'
+        gold:
+          id: 3
+          next-upgrade: diamond
+          display: '&7 (&6金&7)'
+          cost: 75000
+          icon:
+            type: GOLD_INGOT
+            name: '&6金'
+            lore:
+              - '&6该升级耗费 $%cost%'
+              - '&7 '
+              - '&7生成间隔&f: &6%min-spawn-delay%-%max-spawn-delay%'
+              - '&7生成数量&f: &6%spawn-count%'
+              - '&7最大邻近实体数量&f: &6%max-nearby-entities%'
+              - '&7需求玩家距离范围&f: &6%required-player-range%'
+              - '&7生成半径&f: &6%spawn-range%'
+        diamond:
+          id: 4
+          display: '&7 (&b钻石&7)'
+          cost: 120000
+          icon:
+            type: DIAMOND
+            name: '&b钻石'
+            lore:
+              - '&b该升级耗费 $%cost%'
+              - '&7 '
+              - '&7生成间隔&f: &b%min-spawn-delay%-%max-spawn-delay%'
+              - '&7生成数量&f: &b%spawn-count%'
+              - '&7最大邻近实体数量&f: &b%max-nearby-entities%'
+              - '&7需求玩家距离范围&f: &b%required-player-range%'
+              - '&7生成半径&f: &b%spawn-range%'
+
+  # 插件是否监听 Paper 的 PreSpawnerSpawnEvent 并从这个事件开始就堆叠实体?
+  # 若此项启用, 实体属性将不会被检查, 仅会检查实体种类是否符合堆叠要求.
+  listen-paper-pre-spawn-event: true
+
+  # 若启用, 所有刷怪笼都会显示自定义名称 (即使不堆叠)
+  unstacked-custom-name: false
+
+# 在这里你可以设置堆叠桶的相关内容 (又称方块堆叠).
+barrels:
+  # 是否在服务器上启用堆叠桶的功能?
+  enabled: true
+
+  # 堆叠入桶的方块的检查范围?
+  # 有效材料名列表: https://bg-software.com/materials/
+  # 请确保你按照 "种类" 和 "种类:数据值" 的格式填写.
+  merge-radius:
+    all: 1
+
+  # 堆叠桶显示的悬浮字.
+  # 仅会在下列插件启用时显示悬浮字: HolographicDisplay, Holograms, Arconix
+  # 若要禁用此特性, 可将下行内容替换为 "custom-name: ''"
+  # {0} 代表堆叠数量
+  # {1} 代表堆叠桶种类
+  # {2} 代表代表大写字母开头的堆叠桶种类
+  custom-name: '&6x{0} &f&o{1}'
+
+  # 黑名单中的方块将不会被堆叠桶堆叠.
+  # 有效材料名列表: https://bg-software.com/materials/
+  # 请确保你按照 "种类" 和 "种类:数据值" 的格式填写.
+  # 若要禁用此项设置, 请使用 "blacklist: []"
+  blacklist: []
+
+  # 白名单中的方块是会被堆叠的方块.
+  # 有效材料名列表: https://bg-software.com/materials/
+  # 请确保你按照 "种类" 和 "种类:数据值" 的格式填写.
+  # 若要禁用此项设置, 请使用 "whitelist: []"
+  whitelist:
+    - EXAMPLE_BARREL
+
+  # 为特定的堆叠桶设置最大堆叠量.
+  # 请确保你按照 "种类" 和 "种类:数据值" 的格式填写.
+  # 可使用 'all' 保留词来限制所有堆叠桶的堆叠上限 (all: 20 代表所有种类的桶最高可堆叠 20 个物品)
+  # 若你不想要限制堆叠上限, 你可以随机填写种类.
+  limits:
+    EXAMPLE_BARREL: 100
+
+  # 不启用堆叠桶特性的世界 (大小写敏感)
+  disabled-worlds:
+    - disabled_world
+
+  # 设置区块内的堆叠桶最大数量.
+  # 若要禁用此特性, 请将该值设置为 0.
+  chunk-limit: 0
+
+  # 堆叠实体时是否产生粒子效果?
+  # 若要编辑粒子效果, 请检查 particles.yml 文件.
+  particles: true
+
+  # 启用后, 插件将会在所有区块中寻找目标方块, 而非给定半径中的区域.
+  # merge-radius 参数项将会被无视, 仅会限制 y 轴范围.
+  chunk-merge: false
+
+  # 爆炸破坏一整组物品, 还是只破坏一个物品?
+  explosions-break-stack: true
+
+  # 这里你可以设置所有与切换命令相关的设置.
+  toggle-command:
+    # 是否启用切换命令?
+    enabled: false
+
+    # 切换命令的具体内容?
+    command: 'stacker toggle'
+
+  # 当玩家 shift 右键一个桶时将会打开一个 GUI,
+  # 他可以通过这个 GUI 向桶中添加物品.
+  place-inventory:
+    enabled: true
+    title: '在此处添加物品 ({0})'
+
+  # 除非开发者要求, 否则绝不允许启用此项.
+  # 启用后将强制将堆叠桶种类设置为坩埚.
+  force-cauldron: false
+
+  # 使用堆叠桶的权限.
+  # 若要禁用, 请将下面这行替换为 "required-permission: ''" (去掉双引号)
+  required-permission: ''
+
+  # 堆叠桶中的物品是否直接进入玩家背包?
+  auto-pickup: false
+
+  # 破坏堆叠桶的时候是否直接掉落其中的所有物品?
+  drop-stacked-item: false
+
+  # 按住 shift 并持有对应物品右键堆叠桶时,
+  # 玩家将会向桶中放入一组物品.
+  shift-place-stack: false
+
+# 在这里你可以管理所有与堆叠空桶相关的内容
+buckets:
+  # 服务器是否允许桶类物品的堆叠?
+  enabled: true
+
+  # 禁止堆叠的桶名称.
+  name-blacklist:
+    - '&fGenbucket'
+
+  # 桶的新最大堆叠数. 必须是在 1 - 64 之间的整数.
+  max-stack: 16
+
+# Here you can configurable all features related to stacked stews
+stews:
+  # 服务器是否允许蘑菇煲/迷之炖菜等的堆叠?
+  enabled: true
+
+  # 允许该类物品的最大堆叠数. 必须是在 1 - 64 之间的整数.
+  max-stack: 16
