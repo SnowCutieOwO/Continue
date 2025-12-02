@@ -156,8 +156,8 @@ Netlify 网站构建状态：![](https://api.netlify.com/api/v1/badges/6e69d526-
 
 ### 维基数量与字数
 
-![](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-25-93fdf9) ![](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-492177-84f5bb)
-（最后更新：2025/9/5）
+![](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-25-93fdf9) ![](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-641581-84f5bb)
+（最后更新：2025/12/2）
 
 ### 贡献者列表
 

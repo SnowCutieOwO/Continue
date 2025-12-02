@@ -3,6 +3,7 @@ node_modules
 .vitepress/cache
 .vscode
 .vitepress/.temp
+cwim-win.exe
 
 # working plugins' wikis should be ignored temproraily
 
