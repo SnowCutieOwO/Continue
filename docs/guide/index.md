@@ -9,8 +9,9 @@
 * 不求人篇
   - [如何使用 WorldEdit/FastAsyncWorldEdit 制作简易的封闭式副本地形？](self-help/how-to-make-easy-landscape-using-we.md)
   - [如何通过手机/电脑制作供移动平台玩家游玩的整合包？](self-help/fcl-setup/index.md)
-* 自求福篇
   - 如何简单鉴别服务器的插件是否安全？（即将推出）
+* 自求福篇
+  - 开服之前：你究竟要开什么样的服？
 * 进阶学篇
   - TrMenu 菜单实战
     - [配合 LuckPerms 的 VIP 升级路线菜单](advanced/trmenu-example-vip-menu.md)

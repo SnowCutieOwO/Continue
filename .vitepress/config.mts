@@ -368,10 +368,11 @@ export default defineConfig({
             { text: '手机端制作教程', link: 'guide/self-help/fcl-setup/index', items: [
               { text: '电脑制作手机端', link: 'guide/self-help/fcl-setup/fcl-pc-setup' },
               { text: '手机制作手机端', link: 'guide/self-help/fcl-setup/fcl-mobile-setup' },
+              { text: '插件安全性鉴别（即将推出）' },
             ] },
           ] },
           { text: '自求福篇', collapsed: true, items: [
-            { text: '插件安全性鉴别（即将推出）' },
+            { text: '开始之前：你要开什么？', link: 'guide/logical-questions/before-start-what-server-you-want' },
           ] },
           { text: '进阶学篇', collapsed: true, items: [
             { text: 'TrMenu 菜单实战', link: 'guide/advanced/trmenu-example-vip-menu' },
