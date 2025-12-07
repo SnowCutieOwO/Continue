@@ -375,7 +375,9 @@ export default defineConfig({
             { text: '开始之前：你要开什么？', link: 'guide/logical-questions/before-start-what-server-you-want' },
           ] },
           { text: '进阶学篇', collapsed: true, items: [
-            { text: 'TrMenu 菜单实战', link: 'guide/advanced/trmenu-example-vip-menu' },
+            { text: 'TrMenu 菜单实战', link: 'guide/advanced/trmenu-examples/index', collapsed: true, items: [
+              { text: 'VIP 升级路线', link: 'guide/advanced/trmenu-examples/vip-menu' }
+            ] },
             { text: '分世界显示玩家的 TAB', link: 'guide/advanced/tab-based-world-seperation' },
           ] }
         ] },
