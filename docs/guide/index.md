@@ -14,6 +14,6 @@
   - 开服之前：你究竟要开什么样的服？
 * 进阶学篇
   - TrMenu 菜单实战
-    - [配合 LuckPerms 的 VIP 升级路线菜单](advanced/trmenu-example-vip-menu.md)
+    - [配合 LuckPerms 的 VIP 升级路线菜单](advanced/trmenu-examples/vip-menu.md)
   - TAB Reborn 实战
     - [基于世界显示的玩家列表](advanced/tab-based-world-seperation.md)
