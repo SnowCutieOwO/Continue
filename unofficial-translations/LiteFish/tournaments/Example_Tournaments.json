@@ -1,0 +1,67 @@
+{
+  "displayName": "{#FFF955}鳕鱼垂钓比赛",
+  "description": "{#FFAE3B}钓上三条鳕鱼!\n{#86FF55}奖励内容:\n §e1 §f- §21000$\n §e2-10 §f- §2500$",
+  "descConditions": "§f条件: ",
+  "announcementStart": [
+    "§3鳕鱼垂钓赛开始了!"
+  ],
+  "sounds": [],
+  "joinToTournamentButton": "§8[§6立即参加§8]",
+  "joinToTournamentButtonHover": "§8[§6立即参加§8]",
+  "announcementEnd": [
+    "§3鳕鱼垂钓赛结束了!"
+  ],
+  "scheduled": [],
+  "winnersAnnouncement": [
+    "Winners: ",
+    "§7%pos_1%. §3%player_name% §6%result%",
+    "§7%pos_2%. §3%player_name% §6%result%",
+    "§7%pos_3%. §3%player_name% §6%result%",
+    "§7%pos_4%. §3%player_name% §6%result%",
+    "§7%pos_5%. §3%player_name% §6%result%"
+  ],
+  "time": 1000,
+  "autoJoin": false,
+  "conditions": [
+    {
+      "type": "CATCH",
+      "random": false,
+      "ids": [],
+      "materials": [
+        "COD"
+      ],
+      "count": 3,
+      "color": "BLUE",
+      "style": "SOLID",
+      "displayText": "捕捉到了 %fish% 条鱼 [%now_catch%/3]"
+    }
+  ],
+  "rewards": [
+    {
+      "place": "1",
+      "command": [
+        "give %player_name% minecraft:diamond 10"
+      ],
+      "rewardMessage": "你在比赛中获得了第 %position% 名",
+      "sounds": [
+        "ENTITY_FIREWORK_ROCKET_LAUNCH"
+      ],
+      "particles": [
+        "CRIT"
+      ]
+    },
+    {
+      "place": "2-10",
+      "command": [
+        "give %player_name% minecraft:diamond 5"
+      ],
+      "rewardMessage": "你在比赛中获得了第 %position% 名",
+      "sounds": [
+        "ENTITY_FIREWORK_ROCKET_LAUNCH"
+      ],
+      "particles": [
+        "FLAME"
+      ]
+    }
+  ]
+}

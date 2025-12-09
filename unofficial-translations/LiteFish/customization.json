@@ -1,0 +1,224 @@
+{
+  "translation": {
+    "gui.sizeBar": "大小状态条",
+    "gui.luckDrop": "稀有掉落率",
+    "gui.randomEnchantments": "随机附魔",
+    "gui.monsterCatch": "钓上怪物",
+    "gui.server_maxWeight": "全服最大尺寸记录",
+    "gui.back": "Back",
+    "gui.sell_action": "{#FFB47E}• 左键点击 §7- 售出",
+    "gui.put_item": "将物品放在这里",
+    "game.title.failCaught": "它逃走了...",
+    "gui.on": "§a开",
+    "gui.youHere": "你在这儿!",
+    "gui.add_world": "添加世界",
+    "gui.off": "§c关",
+    "gui.chance": "几率",
+    "gui.biomes": "群系",
+    "gui.sellMessage": "你出售了物品, 并得到了: §6%money%",
+    "gui.amount": "数量",
+    "gui.setStatDesc": "{#FFB47E}• 左键点击 §7- 设置值\n{#FFB47E}• 右键点击 §7- 设置几率\n{#FFB47E}• 键盘 Q 键 §7- 重置",
+    "gui.naturalModification": "自然倍率",
+    "gui.server_caught": "服务器捕捞记录",
+    "gui.temperature": "温度",
+    "gui.night": "夜间",
+    "gui.speed": "速度",
+    "gui.category": "类别",
+    "game.title.monsterText3": "嘎吱嘎吱...",
+    "gui.fullMoon": "满月",
+    "game.title.monsterText1": "嗷呜嗷呜...",
+    "game.title.monsterText2": "真好吃呀~",
+    "gui.add": "添加",
+    "gui.weather": "天气",
+    "gui.group": "组别",
+    "gui.delete": "删除",
+    "chat.noTournaments": "无进行活动",
+    "gui.remove": "{#FFB47E}• 右键点击 §7- 删除",
+    "gui.healthFish": "鱼的生命值",
+    "gui.day": "天数",
+    "game.title.lvlUp": "渔获物品质已提升为: ",
+    "gui.customDrop": "自定义掉落物",
+    "gui.durability": "耐久度",
+    "gui.catalog": "钓鱼日志",
+    "gui.disableDefaultCategory": "禁用默认分类下的钓鱼小游戏",
+    "game.bait_info": "{#26C6FF}鱼饵: %bait_name% §7%amount%",
+    "gui.rarity.epic": "史诗",
+    "gui.price": "价格",
+    "gui.edit": "{#FFB47E}• 左键点击 §7- edit",
+    "gui.acceptedValue": "成功接收了新的值",
+    "gui.custom_fishing": "自定义钓鱼",
+    "chat.cfgUpdateErr": "更新配置时出错",
+    "chat.cfgUpdate": "配置更新成功",
+    "gui.failedFish": "总计失败次数",
+    "gui.maxWeight": "最大重量",
+    "gui.additional_item": "你钓上了一个额外物品",
+    "gui.add_desc": "额外描述",
+    "gui.next": "下一个",
+    "gui.notificationNewItems": "新物品提示",
+    "gui.enchantments": "附魔",
+    "gui.statistic": "你的数据",
+    "gui.rarity.rare": "稀有",
+    "gui.rarity.immortal": "永恒",
+    "chat.avgPrice": "每次捕获均价",
+    "gui.level": "等级",
+    "chat.setTarget": "目标",
+    "gui.rarity.common": "普通",
+    "gui.sell": "出售",
+    "gui.settings": "设置",
+    "chat.openCatalog": "打开日志",
+    "gui.rarity.legendary": "传奇",
+    "gui.timeOfDay": "当天时间",
+    "gui.randomDurability": "随机耐久",
+    "gui.health": "生命值",
+    "gui.rod": "自定义鱼竿",
+    "gui.chance_limit": "概率之和不得大于 100%",
+    "gui.thunder": "打雷",
+    "gui.default": "默认",
+    "gui.addCountDesc": "{#FFB47E}• 左键点击/R-Click §7- 增加/减少\n{#FFB47E}• Shift 键 §7- x10\n{#FFB47E}• 键盘 Q 键 §7- 写入值",
+    "gui.weight_info": "§7重量: %weight% kg",
+    "gui.bait": "鱼饵",
+    "gui.newFishMessage": "{#06BEFF}你发现了新物品 §7[%now_fish%§7]\n§7[%chat.openCatalog%]",
+    "gui.bigLootCatch": "钓到宝藏",
+    "gui.exp": "经验值",
+    "gui.high": "高度",
+    "chat.noPermission": "你不能钓这个",
+    "gui.region": "添加区域",
+    "gui.weight": "重量",
+    "gui.page": "页码",
+    "gui.luckRare": "增加稀有度",
+    "gui.rain": "下雨",
+    "gui.treasure": "宝藏",
+    "gui.realistic_fishing": "真实钓鱼",
+    "game.catch_lore": "§7钓上了: {#FFB47E}%player_name%\n§8%year%/%month%/%day%",
+    "gui.acceptDelete": "确认删除",
+    "gui.enterChat": "在聊天栏中输入内容",
+    "gui.goodFish": "总捕获次数",
+    "gui.invalidValue": "输入的数据无效",
+    "game.noDrop": "sendTitle(什么也没钓上...)",
+    "gui.setDropEntityFromEgg": "从刷怪蛋生成实体",
+    "gui.setMiniGame": "小游戏",
+    "gui.example": "示例",
+    "gui.monster": "怪我",
+    "gui.rod_desk": "⁑ 不同的钓鱼竿\n  §7可能会有特殊效果",
+    "gui.healthPlayer": "玩家生命值",
+    "gui.minWeight": "最小重量"
+  },
+  "guis": {
+    "catalogGui": {
+      "sound": "ENTITY_EXPERIENCE_ORB_PICKUP:0.5:2",
+      "title": "%gui.catalog%: %player_name%",
+      "icons": [
+        {
+          "id": "2",
+          "displayName": "{#41FFE9}%gui.statistic%",
+          "lore": [
+            "{#21BBFF}%gui.level%: %rank%",
+            "{#21BBFF}%gui.exp%: {#FFB47E}%exp%{#21BBFF}/{#FFB47E}%need_exp%",
+            "{#21BBFF}%gui.goodFish%: {#0BFF9F}%goodFish%",
+            "{#21BBFF}%gui.failedFish%: {#FF1D4B}%failedFish%",
+            "{#21BBFF}%gui.monsterCatch%: {#FF1D4B}%monsterCatch%",
+            "{#21BBFF}%gui.bigLootCatch%: {#FFC30E}%bigLootCatch%",
+            "{#21BBFF}%gui.custom_fishing%: {#FFB47E}%custom_fishing%"
+          ],
+          "pattern": "head"
+        },
+        {
+          "id": "3",
+          "lore": [
+            "%is_here%",
+            "%category_lore%"
+          ],
+          "pattern": "category"
+        },
+        {
+          "id": "0",
+          "displayName": " ",
+          "material": "LIGHT_BLUE_STAINED_GLASS_PANE"
+        }
+      ],
+      "map": [
+        "0 0 0 0 2 0 0 0 0",
+        "0 3 3 3 3 3 3 3 0",
+        "0 0 0 3 3 3 0 0 0",
+        "0 0 0 0 0 0 0 0 0"
+      ]
+    },
+    "shop": {
+      "sound": "ENTITY_EXPERIENCE_ORB_PICKUP:0.5:2",
+      "title": "%gui.sell%: %amount%",
+      "icons": [
+        {
+          "id": "1",
+          "displayName": "§f%amount%",
+          "material": "PUFFERFISH_BUCKET",
+          "lore": [
+            "%gui.sell_action%"
+          ],
+          "pattern": "sell"
+        }
+      ],
+      "map": [
+        "0 0 0 0 0 0 0 0 0",
+        "0 0 0 0 0 0 0 0 0",
+        "0 0 0 0 1 0 0 0 0"
+      ]
+    },
+    "categoryGui": {
+      "sound": "ENTITY_EXPERIENCE_ORB_PICKUP:0.5:2",
+      "title": "%gui.catalog%: %player_name% %page%",
+      "icons": [
+        {
+          "id": "1",
+          "displayName": "§f%gui.back%",
+          "material": "BLACK_STAINED_GLASS_PANE",
+          "pattern": "back"
+        },
+        {
+          "id": "3",
+          "displayName": "§f%gui.next%",
+          "material": "BLACK_STAINED_GLASS_PANE",
+          "pattern": "next"
+        },
+        {
+          "id": "2",
+          "displayName": "§f%name%",
+          "lore": [
+            "%rarity%",
+            "%level%",
+            "{#93cfec}%gui.goodFish%: {#FFB47E}%total_caught%",
+            "{#93cfec}%gui.chance%: {#FFB47E}%chance%%",
+            "{#93cfec}%gui.healthFish%: {#FFB47E}%health%",
+            "{#93cfec}%gui.exp%: {#FFB47E}%exp%",
+            "{#93cfec}%gui.maxWeight%: {#FFB47E}%max_size%",
+            "{#93cfec}%gui.minWeight%: {#FFB47E}%min_size%",
+            "%bait%",
+            "{#FFB47E} ⁑ %bait_name%：{#E1A5E9}%bait_adder%%",
+            "%naturalModification%",
+            "{#FFB47E} ⁑ %condition_name% [{#93cfec}%condition%{#FFB47E}]: {#E1A5E9}%condition_adder%%",
+            "\n{#82A7C3}• %gui.server_maxWeight%: {#FFB47E}%server_max_size% {#E1A5E9}%best_player_name%",
+            "{#82A7C3}• %gui.server_caught%: {#FFB47E}%server_amount% {#E1A5E9}%amount_player_name%"
+          ],
+          "pattern": "item",
+          "data": {
+            "unknown": "§8???",
+            "unknown_item": "STRUCTURE_VOID",
+            "unknown_lore": "%rarity%\n%level%",
+            "naturalModification": "{#82A7C3}%gui.naturalModification%",
+            "bait": "{#82A7C3}%gui.bait%"
+          }
+        },
+        {
+          "id": "0",
+          "displayName": " ",
+          "material": "LIGHT_BLUE_STAINED_GLASS_PANE"
+        }
+      ],
+      "map": [
+        "0 0 0 0 0 0 0 0 0",
+        "0 2 2 2 2 2 2 2 0",
+        "0 2 2 2 2 2 2 2 0",
+        "1 0 0 0 0 0 0 0 3"
+      ]
+    }
+  }
+}

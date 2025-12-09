@@ -1,0 +1,35 @@
+{
+  "levels": [
+    {
+      "display_name": "{#707173}D 级",
+      "need_exp": 0,
+      "rewards": []
+    },
+    {
+      "display_name": "{#97ADA5}C 级",
+      "need_exp": 200,
+      "rewards": []
+    },
+    {
+      "display_name": "{#C5DB6D}B 级",
+      "need_exp": 500,
+      "rewards": []
+    },
+    {
+      "display_name": "{#EFA216}A 级",
+      "need_exp": 1000,
+      "rewards": []
+    },
+    {
+      "display_name": "{#44BCC9}S 级",
+      "need_exp": 2000,
+      "rewards": []
+    },
+    {
+      "display_name": "{#8F5ACB}SS 级",
+      "need_exp": 5000,
+      "rewards": []
+    }
+  ],
+  "new_level_msg": "§7恭喜! 你升到了 %level_name%!"
+}
