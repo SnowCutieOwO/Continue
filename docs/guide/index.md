@@ -11,7 +11,7 @@
   - [如何通过手机/电脑制作供移动平台玩家游玩的整合包？](self-help/fcl-setup/index.md)
   - 如何简单鉴别服务器的插件是否安全？（即将推出）
 * 自求福篇
-  - 开服之前：你究竟要开什么样的服？
+  - [开服之前：你究竟要开什么样的服？](logical-questions/before-start-what-server-you-want.md)
 * 进阶学篇
   - TrMenu 菜单实战
     - [配合 LuckPerms 的 VIP 升级路线菜单](advanced/trmenu-examples/vip-menu.md)
