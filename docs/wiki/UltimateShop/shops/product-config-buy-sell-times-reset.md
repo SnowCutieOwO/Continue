@@ -9,6 +9,14 @@
 
 这些措施是为了保证重置数据时插件的性能优化，我们不会修改它们的底层逻辑。如果你不喜欢，你可能需要考虑更换其他插件。
 
+## 重置
+
+插件只会在如下情况中尝试重置：
+
+* 玩家购买/出售物品前
+* 玩家打开商店界面时
+* 自动重置时（需在 `config.yml` 中启用 `use-times.auto-reset-mode` 选项，会消耗更多服务器性能）
+
 ## 选项类型
 
 购买次数有如下选项：
@@ -17,6 +25,7 @@
 * `buy-times-reset-time`（3.3.0 前为 `buy-limits-reset-time`，功能相同）
 * `buy-times-reset-time-format`
 * `buy-times-reset-value`
+* `buy-times-max-value`
 
 出售次数有如下选项：
 
@@ -24,6 +33,7 @@
 * `sell-times-reset-time`（3.3.0 前为 `sell-limits-reset-time`，功能相同）
 * `sell-times-reset-time-format`
 * `sell-times-reset-value`
+* `sell-times-max-value`
 
 若你想要启用对所有物品的交易次数重置，只需打开 `config.yml` 文件进行修改即可：
 
@@ -34,14 +44,21 @@ use-times:
   # 仅对 CUSTOM 重置模式有效.
   default-reset-time-format: 'yyyy-MM-dd HH:mm:ss'
   default-reset-value: 0
+  # 设置为 -1 表示禁用。
+  default-max-value: -1
+  # 若设置为 true，商品的默认购买/出售次数会重置为商品配置或上述设置的默认值。
+  set-reset-value-by-default: true
+  # 若设置为 true，商品配置或上述设置的最大值将只在统计变量中生效。
+  max-value-for-total-only: true
 ```
 
-无论你使用了什么方法，我们都可以发现其由三个选项类型组成：
+无论你使用了什么方法，我们都可以发现其由五个选项类型组成：
 
 * 重置模式
 * 重置时间
 * 重置时间格式（只在使用 `CUSTOM` 类型时需要填入）
 * 重置值
+* 最大值
 
 ## 重置模式
 
@@ -121,7 +138,23 @@ use-times:
 
 默认情况下，重置值为 0，但如果你想要做出一些改变，那你就可以修改这个值。另外，这个值也支持填入变量。若与随机变量组合，它可以在玩家每次重置之后使用不同的重置值。
 
+重置值会在每次重置后使用，如果玩家从未购买或出售过对应的物品，你可能需要先在设置重置值前设置默认值。更多信息请见下文“默认值”部分。
+
 <font color="red">这个选项非常危险，你必须谨慎设置。</font>你<font color="red">**必须**</font>确保**交易限制的值大于交易重置的值。**这表示一旦重置，玩家就可以再次购买/出售物品，否则你会发现物品不可逆地无法交易，**除非**在配置文件中重置交易限制或使用命令手动重置交易次数，<font color="red">切记</font>！
+
+## 默认值 <font color="red">- 仅付费版</font>
+
+上文的重置值只会在购买或出售次数重置时重置。部分情况下，如果你还需要将其设为默认值，可以在 `config.yml` 中 `times.set-reset-value-by-default` 处启用这个功能。如果你需要像默认库存这样的设定，那么这个功能非常适合你使用。
+
+## 最大值 <font color="red">- 仅付费版</font>
+
+你可以设置购买与出售次数的最大值。当达到这个值时，插件将不会继续对玩家的交易行为进行统计。
+
+请注意：
+
+* 到达限制后，玩家仍然可以购买或出售商品，但插件不会再记录他们的交易次数。如果你需要禁止玩家出售或收购物品，请使用“[商品](products.md)”配置中的 `buy-limits` 或 `sell-limits` 选项，而不是这个功能。
+* 因为超出限制的购买次数将不再参与统计，如果这里的值大于限制值，购买和出售限制将会无效。也可能影响到其他未提及的功能。
+* 你可以修改 `config.yml` 中的 `use-times.max-value-for-total-only` 选项确保次数变量能在到达最大值之后正常显示，而统计变量则能按预期停止增加。有关这两个变量的更多信息，请浏览[这里](../placeholders/built-in-placeholder.md)。
 
 ## 动态重置时间 <font color="red">- 仅付费版</font>
 

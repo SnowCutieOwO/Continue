@@ -35,3 +35,38 @@ conditions:
 ## 使用变量
 
 通过 `{conditional_<ID>}` 变量显示器值。更多信息请见[变量](../placeholders/built-in-placeholder.md)章节。例如：`{conditional_buy}`。
+
+## 示例：条件商品
+
+* 像这样新建一个条件变量：
+
+``` YAML
+mode: DEFAULT
+value:
+  default: A # 商品 ID
+  vip: B # 商品 ID
+  mvp: C # 商品 ID
+conditions:
+  vip:
+    1:
+      type: permission
+      permission: 'group.vip'
+  mvp:
+    1:
+      type: permission
+      permission: 'group.mvp'
+```
+
+* 确保你的商店有 ID 为 `A, B, C` 的商品。
+* 打开商店菜单配置，找到 `layout` 部分：
+
+``` YAML
+dynamic-layout: true
+layout:
+  - '000000000'
+  - '000`{conditional_变量名称}``{conditional_变量名称}``{conditional_变量名称}`000'
+  - '000000000'
+  - 'a0003000b'
+```
+
+将 `变量名称` 替换为你使用的条件变量名称。

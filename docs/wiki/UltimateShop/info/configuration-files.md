@@ -35,13 +35,18 @@ debug: false
 
 config-files:
   language: en_US
+  force-parse-mini-message: true
   # 仅付费版本。
   minecraft-locate-file:
     # 启用后插件会尝试在填入物品本地化名称时载入 Minecraft 的本地化语言文件。
     # 因文件过大，开服时需要下载，可能会导致卡顿。
-    enabled: true
+    enabled: false
     generate-new-one: false
     file: 'zh_cn.json'
+
+cache:
+  # 如果遇到多服同步问题，请尝试增加这个设置的值。
+  load-delay: 7
 
 sell:
   # 可填入的值: Bukkit 或 ItemFormat.
@@ -71,9 +76,9 @@ sell:
 give-item:
   # 可填入的值: BUKKIT, SMART
   # SMART 会增加服务器的性能消耗, 但可以按原版堆叠数量给予玩家物品, 还能检查背包是否已满.
-  give-method: BUKKIT
+  give-method: SMART
   # 仅支持 SMART 给予方法.
-  check-full: false
+  check-full: true
 
 menu:
   # 如果运行规模较大的服务器时，使用此项可避免玩家频繁点击或重复开启本插件的商店导致的卡顿。
@@ -81,6 +86,10 @@ menu:
   cooldown:
     click: -1
     reopen: -1
+  # 仅付费版本，启用后可自动更新界面标题中的动态值。
+  title-update:
+    enabled: false
+    resend-items-pack: false
   ignore-click-outside: false
   shop:
     # 商店菜单是否每隔 1 秒自动刷新一次。
@@ -95,6 +104,13 @@ menu:
     size: 54
     title: '&f全部出售 &7- 按 ESC 键确认!'
     black-slots: []
+    dynamic-title:
+      enabled: false
+      titles:
+        - "§aUltimateShop §7| §f一键出售界面"
+        - "§bUltimateShop §7| §f一键出售界面"
+        - "§dUltimateShop §7| §f一键出售界面"
+      interval: 15
   # 仅付费版本
   bedrock:
     enabled: true
@@ -123,6 +139,8 @@ menu:
         # 若不需要可自行删除.
         back: '&c返回'
   buy-more-menu:
+    not-open-when-invalid: true
+    display-item-max-stack: true
     default:
       menu: buy-more
       max-amount: 64
@@ -149,11 +167,25 @@ menu:
   # 仅付费版本。
   click-event-actions:
     buy-one-stack:
+      display-name: '购买一组'
+      buy-only: true
       1:
         type: buy
         shop: '{shop}'
         item: '{item}'
         amount: 64
+    sell-one-stack:
+      display-name: '出售一组'
+      sell-only: true
+      1:
+        type: sell
+        shop: '{shop}'
+        item: '{item}'
+        amount: 64
+
+secret-shop-items:
+  require-display-in-menu: true
+  require-meet-menu-open-conditions: true
 
 use-times:
   default-reset-mode: 'NEVER'
@@ -161,6 +193,13 @@ use-times:
   # 仅对 CUSTOM 类型重置模式有效.
   default-reset-time-format: 'yyyy-MM-dd HH:mm:ss'
   default-reset-value: 0
+  # 设置为 -1 表示禁用。
+  default-max-value: -1
+  # 若设置为 true，商品的默认购买/出售次数会设置为商品配置或上述默认值设置的内容。
+  set-reset-value-by-default: true
+  # 若设置为 true，商品在商品配置或上述默认值中设置的最大值只会在统计变量中生效。
+  max-value-for-total-only: true
+  auto-reset-mode: true
 
 math:
   enabled: true
@@ -172,9 +211,14 @@ log-transaction:
   enabled: false
   # 若留空，则只在控制台输出日志。
   file: 'log.txt'
-  format: '{player} | {shop} | {buy-or-sell} | {item-name}x{amount} | {price}'
+  format: '{time} | {player} | {shop} | {buy-or-sell} | {item-name} x{amount} | {price}'
+  time-format: "yyyy-MM-dd HH:mm:ss"
 
 display-item:
+  # 仅支持 Paper 1.17.1+ 版本。
+  auto-translate-item-name: true
+  # 若设置为 true，如果商品的默认数量为 10，且一次购买一组的话，购买数量变量会显示 640 个。
+  calculate-amount: true
   auto-set-first-product: true
   # @+小写字符 表示条件描述，请勿将其移除
   # 不带有条件的描述会一直显示
@@ -199,13 +243,13 @@ display-item:
     - '@j&#ff3300不能再向服务器出售了!'
     - '@j&8补货时间: {sell-refresh-server}'
     - '@n '
-    - '@a{buy-click}-b'
-    - '@b{sell-click}-b'
-    - '@k&#FFFACDShift + 鼠标右键 选择数量!-b'
-    - '@b&#FFFACD丢弃键（Q）出售全部!-b'
-    - '@n&c&l:( 无法执行-i'
-    - '@a&c该物品无法出售-i-m'
-    - '@b&c该物品无法购买-i-m'
+    - '@a@u@y{buy-click}'
+    - '@b@v@y{sell-click}'
+    - '@k@q@y&#FFFACDShift + 鼠标右键选择数量！'
+    - '@m@y&#FFFACD键盘 Q 键选择全部！'
+    - '(@n)&c&l:( 不能这么做'
+    - '(@a)@u@p&c物品无法购买'
+    - '(@b)@v@p&c物品无法出售'
 
 placeholder:
   auto-settings:
@@ -240,6 +284,8 @@ placeholder:
     can-used-everywhere: false
   math:
     scale: 0
+  cron:
+    format: "yyyy-MM-dd HH:mm:ss"
   data:
     # 如果服务器从不使用动态定价等类似功能, 则你可以将其设置为 false.
     # 可略微提升服务器性能.
@@ -308,6 +354,13 @@ conditions:
   buy-prices-key: 'buy-prices-conditions'
   sell-prices-key: 'sell-prices-conditions'
   display-item-key: 'display-item-conditions'
+
+
+time-offset:
+  enabled: false
+  offset-hours: 0
+  offset-minutes: 0
+  offset-seconds: 0
 
 auto-save:
   enabled: true

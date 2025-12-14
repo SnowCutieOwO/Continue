@@ -108,6 +108,35 @@
         message: 'Hello!'
 ```
 
+## 标题
+
+向玩家发送标题消息，支持颜色代码。
+
+``` YAML
+    actions:
+      1:
+        type: title
+        main-title: '好日子'
+        sub-title: '不错'
+        fade-in: 10
+        stay: 70
+        fade-out: 30
+```
+
+## 粒子效果
+
+``` YAML
+    actions:
+      1: 
+        type: particle
+        particle: HEART
+        count: 20
+        offset-x: 0.3
+        offset-y: 1.0
+        offset-z: 0.3
+        speed: 0.01
+```
+
 ## 效果
 
 给予玩家药水效果。
@@ -222,6 +251,38 @@
       1:
         type: shop_menu
         shop: farming
+```
+
+
+## 打开增量购买菜单
+
+``` YAML
+    actions:
+      1:
+        type: buy_more_menu
+        shop: farming
+        item: A
+```
+
+## 带自定义设置打开增量购买菜单 <font color="red">- 仅付费版</font>
+
+``` YAML
+    actions:
+      1:
+        type: buy_more_menu
+        shop: farming
+        item: A
+        buy-more-menu:
+          menu: buy-more-buy
+          max-amount: 128
+```
+
+## 打开一键出售菜单
+
+``` YAML
+    actions:
+      1:
+        type: sell_all_menu
 ```
 
 ## 购买物品

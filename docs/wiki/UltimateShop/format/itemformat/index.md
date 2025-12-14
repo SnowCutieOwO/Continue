@@ -65,7 +65,7 @@ amount: 5
 
 ## 最低价/最高价 - 仅支持价格/物品
 
-用于动态定价。
+在 `amount` 中使用动态定价时，你可以填入 `min-amount` 和 `max-amount` 选项限制它的最小值和最大值。适合动态定价。
 
 ``` YAML
 min-amount: 1

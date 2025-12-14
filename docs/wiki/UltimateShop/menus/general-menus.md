@@ -13,6 +13,7 @@
 ## 配置
 
 * `title`：菜单界面的标题。对于商店菜单，可填入 `{shop-name}` 以显示其在配置中设置的商店名称。
+* `dynamic-title`：[见此](../features/dynamic-title-premium.md).
 * `size`：菜单大小。仅支持填入如下数字：**9、18、27、36、45、54**。
 * `layout`：按钮排版，参数类型为列表。更多信息见下。
 * `dynamic-layout`：如果你在 `layout` 选项中使用了诸如变量这样的动态值，则需要启用该选项。对性能有一定影响。<font color="red">**仅付费版**</font>
@@ -183,3 +184,18 @@ layout:
   - '000000000'
   - 'a0003000b'
 ```
+
+## 点击更新 <font color="red">- 仅付费版</font>
+
+需要服务器安装 [packetevents](https://modrinth.com/plugin/packetevents) 和[付费版的 MythicChanger](https://www.spigotmc.org/resources/115913/)。
+
+将 `config.yml` 下 `menu.title-update.enabled` 的值设置为 `true`。之后，每次点击菜单中的按钮都会刷新标题，可以一并更新标题中包含的变量。
+
+``` YAML
+  # 仅付费版本
+  title-update:
+    enabled: true # <--- 设置为 true
+    resend-items-pack: false
+```
+
+Minecraft 客户端本身不支持在打开界面后修改它的标题，因此你会看到物品在快速闪烁，这是我们无法解决的问题。你可以尝试将 `config.yml` 中的 `menu.title-update.resend-items-pack` 设置为 true。但这也只能略微缓解这种情况。

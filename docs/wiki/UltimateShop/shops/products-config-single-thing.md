@@ -17,7 +17,14 @@
 * 匹配物品：通过“[自定义物品匹配方法](../features/custom-item-match-method.md)”来让我们知道你需要匹配什么物品。**（购买/物品）**
 * 原版经济/挂钩经济：通过“[经济格式](../format/economyformat.md)”让我们知道你需要在商店中给予或收取玩家什么货币。
 * 自定义：若上述类型都没能满足你的要求，你可以创建自己的单条目！你需要在单条目配置中添加一个 `match-placeholder` 选项，让插件知道这个自定义物品/价格当前的数量，然后我们会比较你在这里设置的数值。在上述的示例中，我们会比较玩家的生命值。**如果你的经济插件不受支持，只需将其的经济变量放入这里即可解决！（出售/物品）**<font color="red">**（仅付费版）**</font>
-* 免费：不包含物品格式、经济格式、`match-item` 部分和 `match-placeholder` 部分的物品视作免费。
+* 免费/空：不包含物品格式、经济格式、`match-item` 部分和 `match-placeholder` 部分的物品视作免费。
+
+
+
+
+## 动态值
+
+你可以在单条目的数量部分使用动态值。可用变量[见此](products.md#dynamic-value)。数学计算格式[见此](../format/math-calculate-format.md)。
 
 ## 选项
 
@@ -30,6 +37,10 @@
         material: emerald
       2:
         material: diamond
+        conditions:
+          1:
+            type: permission
+            permission: group.vip
     buy-prices:
       1:
         economy-plugin: Vault
@@ -83,6 +94,41 @@
             message: 'eco give {player} {amount} 1'
         amount: 500
         placeholder: '{amount}$'
+  C:
+    display-item:
+      material: PAPER
+      custom-model-data: 200
+      name: '&f魔法悬浮纸 &c(一阶)'
+      lore:
+        - '&f拿着这个可以让你飘起来!'
+    products:
+      1:
+        # 自定义出售匹配规则 - 解释物品匹配规则!
+        match-item:
+          contains-lore:
+            - '魔法悬浮纸'
+        # 购买给予命令
+        give-actions:
+          1:
+            multi-once: true
+            type: console_command
+            command: 'flyitem give {player} {amount}' # 在这里填入给予物品的命令！
+          2:
+            type: message
+            message: '测试消息'
+        amount: 64
+    buy-prices:
+      1:
+        economy-type: exp
+        amount: 1
+        start-apply: 0
+        placeholder: '1 经验值'
+    sell-prices:
+      1:
+        economy-type: exp
+        amount: 1
+        start-apply: 0
+        placeholder: '1 经验值'
 ```
 
 在物品配置中，我们通过几个选项配置了对应类型的单条目。根据你需要的类型，在这些选项中填入了对应的内容。部分选项有一些额外内容可填入，如下：
@@ -104,6 +150,28 @@
     * 它也支持所有能填入 `buy-prices` 下的选项。
     * `sell-prices.give-actions`：物品给予玩家后执行的动作，使用“[动作格式](../format/action-format.md)”。**可选。**
 
+
+在 `buy-prices` 和 `sell-prices` 部分，有两个新的设置：
+
+* `max-amount`：价格最大值，用于限制动态定价。**可选。**
+* `min-amount`：价格最小值，用于限制动态定价。**可选。**
+
+在 `amount` 中使用动态定价时，你可以填入 `min-amount` 和 `max-amount` 选项限制它的最小值和最大值。适合动态定价。
+
+请注意，如果你需要使用 PlaceholderAPI 变量拓展的变量，你需要按照新格式，如下所示：
+
+``` YAML
+    buy-prices:
+      1:
+        economy-plugin: Vault
+        amount: '15 - {sell-times-player} * 0.1 + %ultimateshop_farming_B_sell-times-player% * 0.1'
+        # 我们会用没有 { 和 } 符号的新格式。
+        placeholder: '{amount}$'
+        start-apply: 0
+```
+
+另外，如果菜单中有其他商品，你需要将 `menu.shop.click-update` 设置为 `true`，否则它们不会在你售出物品后更新。
+
 ## 单条目下的动作与条件
 
 你可能注意到，你可以设置在单条目给予玩家时触发的动作，以及设置玩家使用该单条目的条件。这对于你播放声音或在玩家交易后执行命令时非常有用。
@@ -116,6 +184,85 @@
 * `give-actions` 只会在单条目触发且给予玩家时执行。`buy-actions`/`sell-actions` 总是会在玩家成功购买或出售物品时给予。
 * `give-actions` 的 `{amount}` 变量会返回单价格/物品数量，而 `buy-actions`/`sell-actions` 则会返回玩家此次购买或出售的物品数量。
     例如，玩家出售了一组苹果并获得了 100 硬币，则 `give-actions` 的 `{amount}` 变量会返回 100，而 `buy-actions`/`sell-actions` 的变量会返回 64。
+
+## 示例：命令商店
+
+``` YAML
+  A:
+    price-mode: CLASSIC_ALL
+    product-mode: CLASSIC_ALL
+    display-item:
+      name: '魔法宝箱钥匙'
+      material: PAPER
+      custom-model-data: 500
+      amount: 1
+    buy-prices:
+      1:
+        economy-plugin: Vault
+        amount: 150
+        placeholder: '{amount}⛂'
+    buy-actions: # 在商品配置中
+      1:
+        type: console_command
+        command: "crate give %player_name% magic" # 在这里填入命令。
+B:
+    price-mode: CLASSIC_ALL
+    product-mode: CLASSIC_ALL
+    products:
+      1:
+        name: '魔法宝箱钥匙'
+        material: PAPER
+        custom-model-data: 500
+        amount: 1
+        give-item: false # 你需要确保这个假物品不会给予玩家
+        give-actions: # 在单条目配置中
+          1:
+            type: console_command
+            command: "crate give %player_name% magic"
+    buy-prices:
+      1:
+        economy-plugin: Vault
+        amount: 150
+        placeholder: '{amount}⛂'
+```
+
+在上述的两个示例中，最终执行效果是相同的。但你能想到吗？如果将其与 `connditions` 选项结合，通过**给予动作**方法可以为满足不同条件的玩家执行不同的命令！
+
+``` YAML
+  B:
+    price-mode: CLASSIC_ALL
+    product-mode: CLASSIC_ALL
+    products:
+      1:
+        name: '魔法宝箱钥匙'
+        material: PAPER
+        custom-model-data: 500
+        amount: 1
+        give-item: false # 你需要确保这个假物品不会给予玩家
+        give-actions: # 在单条目配置中
+          1:
+            type: console_command
+            command: "crate give %player_name% magic"
+      2:
+        name: '魔法宝箱钥匙（VIP 免费赠一份）'
+        material: PAPER
+        custom-model-data: 500
+        amount: 1
+        give-item: false # 你需要确保这个假物品不会给予玩家
+        give-actions: # 在单条目配置中
+          1:
+            type: console_command
+            command: "crate give %player_name% magic"
+        conditions:
+          1:
+            type: permission
+            permission: group.vip
+    buy-prices:
+      1:
+        economy-plugin: Vault
+        amount: 150
+        placeholder: '{amount}⛂'
+```
 
 ## 相似选项
 

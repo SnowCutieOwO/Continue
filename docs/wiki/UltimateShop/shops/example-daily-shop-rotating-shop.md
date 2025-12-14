@@ -1,8 +1,10 @@
-# 📅 示例：每日商店
+# 📅 示例：每日商店/轮换商店
 
 ::: info
 
-此示例只会在<font color="red">**付费版**</font>的 **UltimateShop** 上工作！
+此示例只在<font color="red">**付费版**</font>的 **UltimateShop** 环境下有效！
+
+这个示例利用随机变量在商店中展示不同物品，你也可以利用条件变量实现不同条件展示不同物品。有关示例请见[这里](../placeholders/conditional-placeholder-premium.md#示例条件商品)。
 
 :::
 
@@ -23,6 +25,8 @@
 ``` YAML
 reset-mode: TIMED
 reset-time: '00:00:00'
+per-player-element: false
+element-sort: true
 element-amount: 5
 elements:
   - 'A'

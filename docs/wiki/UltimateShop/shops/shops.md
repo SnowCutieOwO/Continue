@@ -8,6 +8,7 @@ settings:
   buy-more: true
   shop-name: '食物商店'
   hide-message: false
+  secret-shop-items: true
   custom-command:
     name: 'mineral'
     description: '自定义描述'
@@ -151,6 +152,14 @@ buttons:
 - `buy-more`：该商店中的商品是否能打开增量购买菜单。
 - `shop-name`：商店的显示名称，会被内置变量 `{shop-name}` 使用。
 - `hide-message`：是否隐藏玩家在商店中进行交易后显示的消息。
+- `secret-shop-items`：启用后，自动隐藏不满足商店中对应条件的商品，玩家无法与其交易。你可以在 `config.yml` 中设置隐藏物品的规则。
+
+``` YAML
+secret-shop-items:
+  require-display-in-menu: true
+  require-meet-menu-open-conditions: true
+```
+
 - `custom-command`: 该商店的自定义开启命令设置。若不设置，则商店只能通过 `/shop menu` 命令打开。<font color="red">**（仅付费版）**</font>
 
 ## 全局配置

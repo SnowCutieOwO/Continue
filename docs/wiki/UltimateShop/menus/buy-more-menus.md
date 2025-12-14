@@ -97,6 +97,7 @@ confirm-items:
 
 ``` YAML
   buy-more-menu:
+    not-open-when-invalid: true
     default:
       menu: buy-more
       max-amount: 64
@@ -111,3 +112,11 @@ confirm-items:
 你也可以在每个物品配置中设置单独的 `buy-more-menu`。在“商店”章节中，我们会详细讲述它的步骤。
 
 若你想要为指定物品或商店设置禁用增量购买菜单，只需使用商店配置或物品配置中的 `buy-more` 选项。“商店”章节中也有提及。
+
+其他选项：
+
+* `not-open-when-invalid`：如果增量购买菜单中只有用于购买的按钮，且物品本身无法购买（即不显示买价），则这个增量购买菜单无效，不能打开。增量出售菜单亦是如此。（3.12.1 新增）
+
+## 常见问题：我们能将增量购买与出售菜单分离吗？
+
+A：此功能于 3.12.1 引入，仅付费版可用，示例请见[此处](../features/custom-click-event-premium.md#example-only-buy-more-menu)。

@@ -103,19 +103,23 @@ global 参数表示为 `{buy-times-server}` 或 `{sell-times-server}` 变量设�
 
 需要权限 `ultimateshop.getplaceholdervalue`。
 
-## /shop resetrandomplaceholder <变量 ID> **<font color="Red">（仅付费版本）</font>**
+## /shop resetrandomplaceholder <变量 ID> \[玩家名称\] **<font color="Red">（仅付费版本）</font>**
 
 重置随机变量的值。
 
+如果需要刷新分玩家的随机变量，请在命令中填入玩家的名称，否则插件会报错。
+
 需要权限 `ultimateshop.resetrandomplaceholder`。
 
-## /shop setrandomplaceholder <变量 ID> \[元素\] **<font color="Red">（仅付费版本）</font>**
+## /shop setrandomplaceholder <变量 ID> \[元素\] \[玩家名称\] **<font color="Red">（仅付费版本）</font>**
 
 设置随机变量的值。
 
 与上一条命令不同的是，它不会重设刷新时间，并允许玩家选择指定的元素。
 
-可在命令末尾添加 `-b` 参数来绕过元素存在性检查，即你可自行设置自定义元素。例如，一个随机变量只有 `A,B,C` 三个元素，若在此填入元素 **D**，则插件会报错，如果在命令末尾添加了 `-b` 参数，则变量值会被设置为 **D**，且插件不会报错，但不推荐你这么干。
+如果需要设置分玩家的随机变量，请在命令中填入玩家的名称，否则插件会报错。
+
+~~可在命令末尾添加 `-b` 参数来绕过元素存在性检查，即你可自行设置自定义元素。例如，一个随机变量只有 `A,B,C` 三个元素，若在此填入元素 **D**，则插件会报错，如果在命令末尾添加了 `-b` 参数，则变量值会被设置为 **D**，且插件不会报错，但不推荐你这么干。~~（3.12.0 后被移除，这个命令不再检查元素是否存在）
 
 需要权限 `ultimateshop.setrandomplaceholder`。
 
@@ -138,3 +142,9 @@ global 参数表示为 `{buy-times-server}` 或 `{sell-times-server}` 变量设�
 出售手持的所有物品。
 
 需要权限 `ultimateshop.sellallhand permission`。
+
+## /shop updategui \[玩家名称\]
+
+更新指定玩家的商店界面。只会更新按钮，标题界面不受影响。
+
+需要权限 `ultimateshop.updategui`。

@@ -10,30 +10,64 @@
 ``` YAML
 reset-mode: TIMED
 reset-time: '00:00:00'
+per-player-element: true
+element-sort: true
+element-amount: 5
 elements:
-  - 'A'
-  - 'B'
-  - 'C'
+  A:
+    rate: 1
+    conditions:
+      1:
+        type: permission
+        permission: 'test.permission'
+  B:
+    rate: 5
+  C:
+    rate: 2
+  D:
+    rate: 5
+  E:
+    rate: 2
+  F:
+    rate: 15
+  G:
+    rate: 7
 ```
 
+- `per-player-elemennt`：设置为 `false` 时，所有玩家使用同一个随机出的结果。例如，玩家 1 和 2 都会得到 **A**，不论玩家数量，他们只会得到这一个值。设置为 `true` 时，每个玩家获取的随机值都是不一样的。如果玩家没有满足返回元素的条件，那么玩家就无法使用它。
+
+::: info
+
+<font color="red">**不推荐**</font>在启用对应变量之后再次修改这个设置的值，这可能会导致插件检测出错误（如玩家随机变量数据溢出到全局数据库），然后在控制台显示无法关闭的输出。
+
+每个玩家的随机变量无法应用到全服，反之亦然。不启用分玩家返回的随机变量也不能分配到单独的玩家身上。例如，使用 `/resetrandomplaceholder` 命令时，分玩家的随机变量必须在命令中输入玩家的名称，否则会导致插件报错。
+
+:::
+
+- `element-sort`：若设置为 `false`，随机变量的结果会乱序输出。例如，若 `elements` 中包含 `A, B, C, D, E`，随机生成的结果为 `B, D`，那么随机变量的实际顺序可能是 `B, D` 或 `D, B`。如果设置为 `true`，随机结果将会自动排序，即只能返回 `B, D`。**（3.12.2 新增）**
 - `reset-mode`/`reset-time`：见下。
-- `element-amount`：选择元素的数量。**（在 3.1.0 被加入）**
+- `element-amount`：在此变量中选择元素的数量。**（3.1.0 新增）**
 - `elements`：可随机的元素列表。
     * **支持使用 `~` 符号选择随机数。例如，`5~100` 表示从 5 到 100 之间选择一个随机数。**
 
 ``` YAML
-reset-mode: TIMED
-reset-time: '00:00:00'
-element-amount: 2
 elements:
   - 'A'
   - 'B'
   - 'C'
 ```
 
+```yaml
+elements:
+# 从 5 到 100 的随机整数。
+  - '5~100'
+```
+
+第二种配置用到了子区的形式，每个元素都可以设置 `rate` 与 `conditions`。`conditions` 是可选设置，且只在 `per-player-element` 为 `true` 时有效。**（3.12.0 新增）**
+
 ## 使用变量
 
-通过内置变量 `{random_<ID>;;<数字>}` 来显示其值，如 `{random_daily;;2}` 会查询 `daily` 随机变量选出的**第二个**随机元素。更多信息可浏览“[变量](../placeholders/built-in-placeholder.md)”。有关此变量的用法，请浏览“[每日商店](../shops/example-daily-shops.md)”章节。
+通过内置变量 `{random_<ID>;;<数字>}` 来显示其值，如 `{random_daily;;2}` 会查询 `daily` 随机变量选出的**第二个**随机元素。更多信息可浏览“[变量](../placeholders/built-in-placeholder.md)”。有关此变量的用法，请浏览“[每日商店](../shops/example-daily-shop-rotating-shop.md)”章节。
 
 ## 重置变量
 
@@ -55,9 +89,15 @@ elements:
 ``` YAML
 reset-mode: TIMED
 reset-time: '00:00:00'
+element-sort: true
+element-amount: 50 
 elements:
 # 生成 5 至 100 的随机数.
   - '5~100'
+  - '4~40'
+  - '53~530'
+  - '32~140'
+  - '55~140'
 ```
 
 ### 在物品配置中设置动态值
@@ -76,7 +116,7 @@ items:
     buy-prices:
       1:
         economy-plugin: Vault
-        amount: '{random_price}' # <--- 修改的内容
+        amount: '{random_price;;1}' # <--- 修改的内容
         placeholder: '&6{amount} 硬币'
         start-apply: 0
     buy-limits:

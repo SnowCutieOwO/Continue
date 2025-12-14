@@ -55,12 +55,27 @@ items:
 
 ## 全局选项
 
+::: info
+
+点[这里](shops.md)浏览这些选项的详细示例配置。
+
+:::
+
 - `display-item`：展示在商店菜单中的物品，可以与玩家实际获得的物品不同。虚拟物品必须设置 `display-item` 选项，否则它们就无法在商店菜单中显示。真实物品必须设置 `config.yml` 文件中 `display-item` 下的 `auto-set-first-product` 为 `true` 以允许你删除这个选项。启用后，若 `display-item` 未设置，那么出售的第一个真实物品将会被当做图标。该部分配置会使用到“[物品格式](../format/itemformat/index.md)”的配置。**可选（若不设置则使用首个物品）**
     - `display-item.modify-lore`：是否尝试修改展示物品的描述，为其添加价格与出售限制等内容。你可以在 `config.yml` 文件中设置。**可选（默认为 true）**。
-- `display-name`：设置物品在 `{product}` 与增量购买菜单中显示的名称。**可选。**
-- `add-lore`：为该物品设置[额外描述](../menus/display-item-add-lore.md)，若不设置则使用配置文本中的默认值。**可选。**
+- `display-name`：设置物品在 `{product}` 与增量购买菜单中显示的名称。**可选。（若未设置，则以展示物品的名称作为商品的展示名称）**
+- `add-lore`：为该物品设置[额外描述](../menus/display-item-add-lore/index.md)，若不设置则使用配置文本中的默认值。**可选。**
 - `bedrock`：[见此](../menus/bedrock-menus-premium.md)。
-- `buy-more`：设置该商品是否可以打开增量购买菜单，**必须先删除商店的 `buy-more` 选项才可以让该设置生效！可选。**
+- `buy-more`：设置该商品是否可以打开增量购买菜单，**必须先删除商店的 `buy-more` 选项才可以让该设置生效！可选。（默认为 true）**
+- `buy-more-menu`：为商品设置单独的增量购买菜单。**可选。需要 2.2.10+。（若未设置，则使用 `config.yml` 中的默认值）**
+
+``` YAML
+    buy-more: true
+    buy-more-menu:
+      menu: buy-more-2
+      max-amount: 16
+```
+
 - `sell-all`：决定商品是否可以使用一键出售模式。**可选，默认为 true。（3.9.0 新增）**
 - `price-mode`：价格模式。可填入 `ANY`、`ALL`、`CLASSIC_ANY` 和 `CLASSIC_ALL`。**必选。**
 - `product-mode`：物品模式，可填入的参数与上述相同。**若设置了物品部分则必选。**
@@ -130,6 +145,8 @@ buy-limits-conditions:
 
 你可以在商店配置的 `buy-prices`、`sell-prices` 的 `amount` 部分与 `buy-limits`、`sell-limits` 的值中插入变量与[数学计算格式](../format/math-calculate-format.md)。
 
+默认情况下，动态值是实时计算而非定期刷新。但是，玩家不会在界面中看见这些值实时更新。我们只会在玩家打开菜单或者点击其中物品后刷新显示的动态值。例如，如果你在买价设置了动态值，且玩家打开界面后这个值产生了更新，则玩家无法通过展示物品注意到，但插件会根据变化后的值计算新价格。这是基于服务器性能与节省开销的权衡之策。
+
 可用的内建变量如下。更多信息请浏览“[内建变量](../placeholders/built-in-placeholder.md)”章节。
 
 * `{buy-times-player}`
@@ -149,18 +166,44 @@ buy-limits-conditions:
 * `{sell-total-player}` <font color="red">**- 仅付费版，3.9.0+ 引入**</font>
 * `{sell-total-server}` <font color="red">**- 仅付费版，3.9.0+ 引入**</font>
 * `{last-buy-player}` <font color="red">**- 仅付费版**</font>
+
+显示最后一次由玩家购买的时间间隔，单位为秒。若玩家先前没有购买过这个物品，或购买时间已经重置，则它会返回 `0`。
+
 * `{last-buy-server}` <font color="red">**- 仅付费版**</font>
+
+显示最后一次由全服玩家购买的时间间隔，单位为秒。若没有玩家先前购买过这个物品，或购买时间已经重置，则它会返回 `0`。
+
 * `{last-sell-player}` <font color="red">**- 仅付费版**</font>
+
+显示最后一次由玩家出售的时间间隔，单位为秒。若玩家先前没有出售过这个物品，或出售时间已经重置，则它会返回 `0`。
+
 * `{last-sell-server}` <font color="red">**- 仅付费版**</font>
+
+显示最后一次由全服玩家出售的时间间隔，单位为秒。若没有玩家先前出售过这个物品，或出售时间已经重置，则它会返回 `0`。
+
 * `{last-buy-reset-player}` <font color="red">**- 仅付费版，3.9.0+ 引入**</font>
+
+展示单个玩家重置后最近或最后（取决于选择的重置模式，更多信息详见[此处](product-config-buy-sell-times-reset.md)）一次购买的时间间隔，单位为秒。若玩家先前没有购买过这个物品，或购买时间已经重置，则它会返回上次购买的时间。
+
 * `{last-buy-reset-server}` <font color="red">**- 仅付费版，3.9.0+ 引入**</font>
+
+展示全服玩家重置后最近或最后（取决于选择的重置模式，更多信息详见[此处](product-config-buy-sell-times-reset.md)）一次购买的时间间隔，单位为秒。若先前没有玩家购买过这个物品，或购买时间已经重置，则它会返回上次购买的时间。
+
 * `{last-sell-reset-player}` <font color="red">**- 仅付费版，3.9.0+ 引入**</font>
+
+展示单个玩家重置后最近或最后（取决于选择的重置模式，更多信息详见[此处](product-config-buy-sell-times-reset.md)）一次出售的时间间隔，单位为秒。若玩家先前没有出售过这个物品，或出售时间已经重置，则它会返回上次出售的时间。
+
+
 * `{last-sell-reset-server}` <font color="red">**- 仅付费版，3.9.0+ 引入**</font>
+
+展示全服玩家重置后最近或最后（取决于选择的重置模式，更多信息详见[此处](product-config-buy-sell-times-reset.md)）一次出售的时间间隔，单位为秒。若先前没有玩家出售过这个物品，或出售时间已经重置，则它会返回上次出售的时间。
 
 另外在 `buy-prices` 与 `sell-prices` 部分下，你还可以设置两个新的选项：
 
 * `max-amount`：最高价格。用于动态定价。**可选。**
 * `min-amount`：最低价格。用于动态定价。**可选。**
+
+在 `amount` 中使用动态定价时，你可以填入 `min-amount` 和 `max-amount` 选项限制它的最小值和最大值。适合动态定价。
 
 需要注意的是，如果你需要使用 PlaceholderAPI 拓展的变量，则你需要使用新格式。如下所示：
 

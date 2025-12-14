@@ -1589,6 +1589,7 @@ export default defineConfig({
         {
           text: 'UltimateShop 中文维基', items: [
             { text: '🎉 欢迎', link: 'wiki/UltimateShop/welcome' },
+            { text: '💬 配置包', link: 'wiki/UltimateShop/config-pack' }
             {
               text: '📦 信息', collapsed: true, items: [
                 { text: '✅ 插件需求', link: 'wiki/UltimateShop/info/requirements' },
@@ -1604,6 +1605,7 @@ export default defineConfig({
             },
             {
               text: '📋 格式', collapsed: true, items: [
+                { text: '📊 理解 YAML/维基', link: 'wiki/UltimateShop/format/understanding-yaml-this-wiki' },
                 { text: '🛒 物品格式™ 的信息', link: 'wiki/UltimateShop/format/info-of-itemformat' },
                 {
                   text: '📝 物品格式™', link: 'wiki/UltimateShop/format/itemformat', collapsed: true, items: [
@@ -1622,7 +1624,9 @@ export default defineConfig({
                 { text: '🔲 全局菜单', link: 'wiki/UltimateShop/menus/general-menus' },
                 { text: '🔽 增量购买菜单', link: 'wiki/UltimateShop/menus/buy-more-menus' },
                 { text: '🛏️ 基岩版菜单 - 仅付费版', link: 'wiki/UltimateShop/menus/bedrock-menus-premium' },
-                { text: '🥉 额外物品描述', link: 'wiki/UltimateShop/menus/display-item-add-lore' },
+                { text: '🥉 物品描述追加', link: 'wiki/UltimateShop/menus/display-item-add-lore/index', collapsed: true, items: [
+                  { text: '额外物品描述（旧）', link: 'wiki/UltimateShop/menus/display-item-add-lore/display-item-add-lore-legacy' }
+                ] },
               ]
             },
             {
@@ -1634,7 +1638,7 @@ export default defineConfig({
                 { text: '📚 普通示例', link: 'wiki/UltimateShop/shops/common-examples' },
                 { text: '⚡ 示例：普通用法', link: 'wiki/UltimateShop/shops/example-common-usage' },
                 { text: '🌱 示例：真实库存', link: 'wiki/UltimateShop/shops/example-stock-like-in-life' },
-                { text: '📅 示例：每日商店', link: 'wiki/UltimateShop/shops/example-daily-shops' },
+                { text: '📅 示例：每日商店/轮换商店', link: 'wiki/UltimateShop/shops/example-daily-shop-rotating-shop' },
                 { text: '🏆 示例：每日奖励', link: 'wiki/UltimateShop/shops/example-daily-rewards' },
               ]
             },
@@ -1666,6 +1670,7 @@ export default defineConfig({
                 { text: '🔍 自定义物品匹配方法', link: 'wiki/UltimateShop/features/custom-item-match-method' },
                 { text: '🔑 物品给予方法', link: 'wiki/UltimateShop/features/give-item-method' },
                 { text: '💳 日志记录 - 仅付费版', link: 'wiki/UltimateShop/features/log-transaction-premium' },
+                { text: '🌈 动态标题 - 仅付费版', link: 'wiki/UltimateShop/features/dynamic-title-premium' }
               ]
             },
             {

@@ -1,5 +1,17 @@
 # 欢迎
 
+::: tip
+
+想要一款炫酷的实体战利品插件吗？来看看我们的新插件吧：**MythicRewards**！
+
+链接：[https://www.spigotmc.org/resources/129453/](https://www.spigotmc.org/resources/129453/)
+
+如果你已经购买了付费版本的 UltimateShop，你可以免费获取它的付费版本！（免费版本同样包含付费版代码，安装付费版本的 UltimateShop 自动解锁）。
+
+赶快去试试吧！
+
+:::
+
 ## 付费版本和免费版本的区别
 
 * 付费版增加如下新功能：

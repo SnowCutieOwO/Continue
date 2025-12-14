@@ -22,6 +22,7 @@ log-transaction:
 * `{shop-name}` - 商店显示名称
 * `{buy-or-sell}`
 * `{price}`
+* `{time}` - 显示日志记录时间
 
 ## 示例图片
 

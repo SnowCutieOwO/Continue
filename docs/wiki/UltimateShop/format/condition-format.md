@@ -36,6 +36,34 @@
         click-type: LEFT
 ```
 
+#### 动作 <font color="red">- 仅付费版</font>
+
+``` YAML
+    conditions:
+      1:
+        not-meet-actions:
+          1: 
+            type: message
+            message: '条件未达成'
+        meet-actions:
+          1: 
+            type: message
+            message: '条件已满足'
+```
+
+你可以为整个条件设置动作，如下所示：
+
+``` YAML
+conditions:
+  not-meet-actions:
+      1: 
+        type: message
+        message: '你必须在指定世界中使用这个物品！'
+  1:
+    type: world
+    world: 'test'
+```
+
 ## 支持变量
 
 * `{world}`
