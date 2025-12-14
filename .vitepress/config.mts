@@ -1589,7 +1589,7 @@ export default defineConfig({
         {
           text: 'UltimateShop 中文维基', items: [
             { text: '🎉 欢迎', link: 'wiki/UltimateShop/welcome' },
-            { text: '💬 配置包', link: 'wiki/UltimateShop/config-pack' }
+            { text: '💬 配置包', link: 'wiki/UltimateShop/config-pack' },
             {
               text: '📦 信息', collapsed: true, items: [
                 { text: '✅ 插件需求', link: 'wiki/UltimateShop/info/requirements' },
