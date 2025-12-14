@@ -149,7 +149,7 @@ items: # 有效。
 * `amount: '0.63'` -> 价格。
 * `placeholder: '{amount}$'` -> 价格展示样式。
 
-这里使用的是“[经济格式](economyformat-tm.md)”和价格部分的变量选项。
+这里使用的是“[经济格式](economyformat.md)”和价格部分的变量选项。
 
 ![](_images/image18.jpeg)
 
