@@ -107,7 +107,7 @@ items:
 
 在这里你可以找到 `settings.menu` 选项，它是连接商店与菜单的通道，至关重要。在本示例中，我们将其设置为 `example-shop-menu`。
 
-你可以在 `menus` 文件夹中找到菜单文件，名称为 `example=shop-menu.yml`。
+你可以在 `menus` 文件夹中找到菜单文件，名称为 `example-shop-menu.yml`。
 
 ``` YAML
 title: '{shop-name}'
