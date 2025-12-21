@@ -187,7 +187,7 @@ layout:
 
 ## 点击更新 <font color="red">- 仅付费版</font>
 
-需要服务器安装 [packetevents](https://modrinth.com/plugin/packetevents) 和[付费版的 MythicChanger](https://www.spigotmc.org/resources/115913/)。
+需要服务器安装 [packetevents](https://modrinth.com/plugin/packetevents) 和 [MythicChanger](https://www.spigotmc.org/resources/115913/)。
 
 将 `config.yml` 下 `menu.title-update.enabled` 的值设置为 `true`。之后，每次点击菜单中的按钮都会刷新标题，可以一并更新标题中包含的变量。
 
