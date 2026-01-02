@@ -12,13 +12,13 @@
 
 ## 目录
 
-* [`info`](#lp-usergroup-usergroup-permission-info-页码-排序方式)
-* [`set` <权限> <true/false> [情境...]](#lp-usergroup-usergroup-permission-set-权限-truefalse-情境)
-* [`unset` <权限> [情境...]](#lp-usergroup-usergroup-permission-unset-权限-情境)
-* [`settemp` <权限> <true/false> <时间> [施加模式] [情境...]](#lp-usergroup-usergroup-permission-settemp-权限-truefalse-时间-施加模式-情境)
-* [`unsettemp` <权限> [时间] [情境...]](#lp-usergroup-usergroup-permission-unsettemp-权限-时间-情境)
-* [`check` <权限>](#lp-usergroup-usergroup-permission-check-权限)
-* [`clear` [情境...]](#lp-usergroup-usergroup-permission-clear-情境)
+* [`info`](#lp-usergroup-玩家权限组-permission-info-页码-排序方式)
+* [`set` <权限> <true/false> [情境...]](#lp-usergroup-玩家权限组-permission-set-权限-truefalse-情境)
+* [`unset` <权限> [情境...]](#lp-usergroup-玩家权限组-permission-unset-权限-情境)
+* [`settemp` <权限> <true/false> <时间> [施加模式] [情境...]](#lp-usergroup-玩家权限组-permission-settemp-权限-truefalse-时间-施加模式-情境)
+* [`unsettemp` <权限> [时间] [情境...]](#lp-usergroup-玩家权限组-permission-unsettemp-权限-时间-情境)
+* [`check` <权限>](#lp-usergroup-玩家权限组-permission-clear-情境)
+* [`clear` [情境...]](#lp-usergroup-玩家权限组-permission-clear-情境)
 
 ## `/lp user/group <玩家|权限组> permission info [页码] [排序方式]`
 
