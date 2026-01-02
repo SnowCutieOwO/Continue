@@ -331,7 +331,7 @@ export default defineConfig({
         }
       ],
       'wiki/other-sites/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         {
           text: '友链页面', items: [
             { text: '布丁的个人博客', link: 'wiki/other-sites/puddingkc-s-blog' },
@@ -368,7 +368,10 @@ export default defineConfig({
             { text: '手机端制作教程', link: 'guide/self-help/fcl-setup/index', collapsed: true, items: [
               { text: '电脑制作手机端', link: 'guide/self-help/fcl-setup/fcl-pc-setup' },
               { text: '手机制作手机端', link: 'guide/self-help/fcl-setup/fcl-mobile-setup' },
+              { text: 'Recaf 内核汉化', link: 'guide/self-help/localize-jars-with-recaf' },
+              { text: '用 Gradle/Maven 从源代码构建', link: 'guide/self-help/build-jars-with-gradle-or-maven' },
               { text: '插件安全性鉴别（即将推出）' },
+              { text: 'JEnv 多版本管理（即将推出）' },
             ] },
           ] },
           { text: '自求福篇', collapsed: true, items: [
@@ -379,11 +382,13 @@ export default defineConfig({
               { text: 'VIP 升级路线', link: 'guide/advanced/trmenu-examples/vip-menu' }
             ] },
             { text: '分世界显示玩家的 TAB', link: 'guide/advanced/tab-based-world-seperation' },
+            { text: 'WorldEdit 制作简单地形', link: 'guide/advanced/how-to-make-easy-landscape-using-we' },
+            { text: 'LuckPerms 月卡权限与时间段权限', link: 'guide/advanced/luckperms-temp-permissions-example' },
           ] }
         ] },
       ],
       'wiki/AureliumSkills/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/AureliumSkills/index' },
         {
           text: 'AureliumSkills 维基',
@@ -453,7 +458,7 @@ export default defineConfig({
         },
       ],
       'wiki/AuraSkills/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/AuraSkills/index' },
         {
           text: 'AuraSkills 维基', items: [
@@ -503,7 +508,7 @@ export default defineConfig({
         },
       ],
       'wiki/ajLeaderboards/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/ajLeaderboards/index' },
         {
           text: 'ajLeaderboards 中文维基',
@@ -538,7 +543,7 @@ export default defineConfig({
         },
       ],
       'wiki/Codex/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/Codex/index' },
         {
           text: 'Codex 维基',
@@ -563,7 +568,7 @@ export default defineConfig({
         },
       ],
       'wiki/CommandTimer/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/CommandTimer/index' },
         {
           text: 'CommandTimer 维基',
@@ -592,7 +597,7 @@ export default defineConfig({
         },
       ],
       'wiki/CoreProtect/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/CoreProtect/index' },
         {
           text: 'CoreProtect 维基', items: [
@@ -622,7 +627,7 @@ export default defineConfig({
         },
       ],
       'wiki/DecentHolograms/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/DecentHolograms/index' },
         {
           text: 'DecentHolograms 维基', items: [
@@ -684,7 +689,7 @@ export default defineConfig({
         },
       ],
       'wiki/ExcellentCrates/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/ExcellentCrates/index' },
         {
           text: 'ExcellentCrates 维基', items: [
@@ -733,7 +738,7 @@ export default defineConfig({
         }
       ],
       'wiki/ExcellentEnchants/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/ExcellentEnchants/index' },
         {
           text: 'ExcellentEnchants 维基', items: [
@@ -766,7 +771,7 @@ export default defineConfig({
         },
       ],
       'wiki/FallbackServer/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/FallbackServer/index' },
         {
           text: 'FallbackServer 维基', items: [
@@ -802,7 +807,7 @@ export default defineConfig({
         },
       ],
       'wiki/FastAsyncWorldEdit/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/FastAsyncWorldEdit/index' },
         {
           text: 'FastAsyncWorldEdit 维基', items: [
@@ -841,7 +846,7 @@ export default defineConfig({
         },
       ],
       'wiki/HuskHomes/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/HuskHomes/index' },
         {
           text: 'HuskHomes 维基', items: [
@@ -924,7 +929,7 @@ export default defineConfig({
         },
       ],
       'wiki/HuskSync/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/HuskSync/index' },
         {
           text: 'HuskSync 维基', items: [
@@ -996,7 +1001,7 @@ export default defineConfig({
         },
       ],
       'wiki/LibreLogin/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/LibreLogin/index' },
         {
           text: 'LibreLogin 维基', items: [
@@ -1028,7 +1033,7 @@ export default defineConfig({
 
       ],
       'wiki/LuckPerms/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/LuckPerms/index' },
         {
           text: 'LuckPerms 维基', items: [
@@ -1107,7 +1112,7 @@ export default defineConfig({
         },
       ],
       'wiki/Oraxen/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/Oraxen/index' },
         {
           text: 'Oraxen 维基', items: [
@@ -1224,7 +1229,7 @@ export default defineConfig({
 
       ],
       'wiki/PlaceholderAPI/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/PlaceholderAPI/index' },
         {
           text: 'PlaceholderAPI 维基', items: [
@@ -1250,7 +1255,7 @@ export default defineConfig({
         },
       ],
       'wiki/PlayerPoints/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/PlayerPoints/index' },
         {
           text: 'PlayerPoints 维基', items: [
@@ -1266,7 +1271,7 @@ export default defineConfig({
         },
       ],
       'wiki/Shopkeepers/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/Shopkeepers/index' },
         {
           text: 'Shopkeepers 维基', items: [
@@ -1310,7 +1315,7 @@ export default defineConfig({
         },
       ],
       'wiki/spark/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/spark/index' },
         {
           text: 'spark 维基', items: [
@@ -1352,7 +1357,7 @@ export default defineConfig({
 
       ],
       'wiki/SuperiorSkyblock2/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/SuperiorSkyblock2/index' },
         {
           text: 'SuperiorSkyblock2 维基', items: [
@@ -1426,7 +1431,7 @@ export default defineConfig({
         }
       ],
       'wiki/Terra/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/Terra/index' },
         {
           text: 'Terra 中文维基', items: [
@@ -1584,7 +1589,7 @@ export default defineConfig({
         }
       ],
       'wiki/UltimateShop/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/UltimateShop/index' },
         {
           text: 'UltimateShop 中文维基', items: [
@@ -1683,7 +1688,7 @@ export default defineConfig({
         },
       ],
       'wiki/WorldEdit/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '更新日志', link: 'wiki/WorldEdit/changelogs' },
         { text: '前言', link: 'wiki/WorldEdit/index' },
         {
@@ -1782,7 +1787,7 @@ export default defineConfig({
         }
       ],
       'wiki/WorldGuard/': [
-        { text: '返回首页', link: 'wiki/index' },
+        { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/WorldGuard/index' },
         {
           text: 'WorldGuard 维基', items: [
