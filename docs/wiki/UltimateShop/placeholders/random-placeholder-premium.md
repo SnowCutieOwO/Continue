@@ -57,7 +57,7 @@ elements:
   - 'C'
 ```
 
-```yaml
+``` YAML
 elements:
 # 从 5 到 100 的随机整数。
   - '5~100'
@@ -68,6 +68,7 @@ elements:
 ## 使用变量
 
 通过内置变量 `{random_<ID>;;<数字>}` 来显示其值，如 `{random_daily;;2}` 会查询 `daily` 随机变量选出的**第二个**随机元素。更多信息可浏览“[变量](../placeholders/built-in-placeholder.md)”。有关此变量的用法，请浏览“[每日商店](../shops/example-daily-shop-rotating-shop.md)”章节。
+通过内置变量 `{random_times_<ID>}` 来显示下一次重置的时间，如 `{random_times_daily}`。
 
 ## 重置变量
 
@@ -129,3 +130,8 @@ items:
     buy-limits-reset-mode: 'TIMED'
     buy-limits-reset-time: '00:00:00'
 ```
+
+## 测试
+
+你可以通过这个指令测试当前变量下次重置时间： `/shop getplaceholdvalue {random times_<placeholdID>}`。
+然后，你还可以通过这个指令： `/shop getplaceplaceervalue {random_<placeholdID>}` 显示变量当前的值，你可以在重置前后各输入一次这个指令测试重置是否生效。

@@ -12,7 +12,7 @@
 
 默认示例：
 
-```yaml
+``` YAML
   add-lore:
     - '@n '
     - '@a&e购买价格: {buy-price}'
@@ -46,6 +46,19 @@
 ## 单物品设置
 
 各个商品也可以独立设置额外物品描述，只需在物品配置中添加 `add-lore` 部分即可。详见“[商店](../../shops/shops.md)”一节中的物品 B 示例。
+
+```yaml
+items:
+  B:
+    display-item:
+      material: BREAD
+      name: '&c超级面包'
+    display-name: "面包"
+    add-lore: # <--- 为这个商品单独设置的额外物品描述
+      - '@a&e买价: {buy-price}'
+      - '@b&e卖价: {sell-price}'
+      - '&eQ键购买，右键回收'
+```
 
 ## 前缀 - 条件符
 
@@ -85,10 +98,10 @@
 
 使用 `;;` 表示换行，对于需要使用多行表示价格的用户来说很有用。
 
-```yaml
+``` YAML
 placeholder:
   price:
     split-symbol-any: ';;' # <--- 在 config.yml 中修改
     split-symbol-all: ';;' # <--- 在 config.yml 中修改
-    unknown: "Unknown"
+    unknown: "未知"
 ```

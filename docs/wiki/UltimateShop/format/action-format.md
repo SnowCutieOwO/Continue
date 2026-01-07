@@ -29,6 +29,7 @@
 #### 一次全售/多次单售
 
 当多个物品被出售时，添加这个选项可以表示只触发首个物品的动作。在设计播放音效等行为时非常有用，如果不添加这个选项，则所有物品出售时都会播放一次音效。
+可选，若不设置，此每次都会执行。
 
 ``` YAML
     actions:
@@ -56,6 +57,20 @@
       1:
         click-type: LEFT
 ```
+
+### 筛选Java或者基岩版玩家 <font color="red">- 仅付费版</font>
+
+让这个动作只对Java版玩家或者基岩版玩家生效。
+
+可选，如果未设置，则对所有玩家生效。
+
+``` YAML
+    actions:
+      1:
+        java-only: true
+        bedrock-only: true
+``` 
+
 
 ## 支持变量
 
@@ -388,7 +403,7 @@
             entity: ZOMBIE
 ```
 
-## 连接 <font color="red">- 仅付费版</font>
+## 跨服 <font color="red">- 仅付费版</font>
 
 需要启用 config.yml 中的 `bungeecord-sync.enabled` 选项，并正确配置 BungeeCord 的设置。更多信息请参阅“多服同步”章节。
 
@@ -397,4 +412,24 @@
       1:
         type: connect
         server: 'lobby'
+```
+
+## 更新 GUI
+
+更新 GUI 内的所有按钮，但是标题不会更新。
+
+``` YAML
+    actions:
+      1:
+        type: update_gui
+```
+
+## 更新 GUI 标题 <font color="red">- 仅付费版</font>
+
+需要服务器启用标题更新功能，有关具体信息，可见 [此页面](../menus/general-menus.md)。
+
+```yaml
+    actions:
+      1:
+        type: update_title
 ```

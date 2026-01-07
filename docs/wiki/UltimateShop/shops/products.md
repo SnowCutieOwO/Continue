@@ -65,6 +65,18 @@ items:
     - `display-item.modify-lore`：是否尝试修改展示物品的描述，为其添加价格与出售限制等内容。你可以在 `config.yml` 文件中设置。**可选（默认为 true）**。
 - `display-name`：设置物品在 `{product}` 与增量购买菜单中显示的名称。**可选。（若未设置，则以展示物品的名称作为商品的展示名称）**
 - `add-lore`：为该物品设置[额外描述](../menus/display-item-add-lore/index.md)，若不设置则使用配置文本中的默认值。**可选。**
+- `click-event`: 为这个商品单独设置点击事件，如果没有设置，则使用 `config.yml` 中的默认值。记得也要修改 `add-lore` 选项来添加符合此点击事件配置的额外物品描述。**可选**
+
+``` YAML
+    add-lore:
+      - '@a&e买价: {buy-price}'
+      - '@b&e卖价: {sell-price}'
+      - '&eQ键购买，右键回收'
+    click-event:
+      buy: 'DROP'
+      sell: 'RIGHT'
+```
+
 - `bedrock`：[见此](../menus/bedrock-menus-premium.md)。
 - `buy-more`：设置该商品是否可以打开增量购买菜单，**必须先删除商店的 `buy-more` 选项才可以让该设置生效！可选。（默认为 true）**
 - `buy-more-menu`：为商品设置单独的增量购买菜单。**可选。需要 2.2.10+。（若未设置，则使用 `config.yml` 中的默认值）**

@@ -116,7 +116,7 @@ items:
 
 这是商品配置，你可以在“[商品](../shops/products.md)”章节浏览各个设置的详细信息。
 
-```yaml
+``` YAML
 items: # 有效。
   B: # 有效。
     products: # 有效。

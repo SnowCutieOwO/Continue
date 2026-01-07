@@ -84,6 +84,10 @@ items:
     add-lore:
       - '@a&e买价: {buy-price}'
       - '@b&e卖价: {sell-price}'
+      - '&eQ键购买，右键回收'
+    click-event:
+      buy: 'DROP'
+      sell: 'RIGHT'
     bedrock:
       hide: false
       icon: 'url;;https://raw.githubusercontent.com/Jens-Co/MinecraftItemImages/main/1.20/bread.png'
@@ -148,10 +152,10 @@ buttons:
 
 ## 设置
 
-- `menu`：商店的菜单名称，也就是菜单的文件名称。
+- `menu`：商店的菜单名称，也就是菜单的文件名称。每个商店都需要关联一个菜单，这里代表关联了 `example-shop-menu` 菜单。
 - `buy-more`：该商店中的商品是否能打开增量购买菜单。
 - `shop-name`：商店的显示名称，会被内置变量 `{shop-name}` 使用。
-- `hide-message`：是否隐藏玩家在商店中进行交易后显示的消息。
+- `hide-message`：是否隐藏玩家在商店中进行交易后显示的消息。交易失败，如达到限制，钱不够等，默认这个选项无法隐藏。你需要在 `config.yml` 中找到 `placeholder.click.enabled` 选项，并将其设置为 `true` 来隐藏这些失败提示。
 - `secret-shop-items`：启用后，自动隐藏不满足商店中对应条件的商品，玩家无法与其交易。你可以在 `config.yml` 中设置隐藏物品的规则。
 
 ``` YAML
