@@ -1650,9 +1650,11 @@ export default defineConfig({
             },
             {
               text: '✨ 特色功能', collapsed: true, items: [
+                { text: '🌏 高级语言管理', link: 'wiki/UltimateShop/features/advanced-language-management' },
                 { text: '🎨 颜色代码', link: 'wiki/UltimateShop/features/color-code' },
                 { text: '💴 简单定价', link: 'wiki/UltimateShop/features/easy-prices' },
                 { text: '🪄 出售魔杖 - 仅付费版', link: 'wiki/UltimateShop/features/sell-stick-premium' },
+                { text: '🎁 出售魔箱 - 仅付费版', link: 'wiki/UltimateShop/features/sell-chest-premium' },
                 { text: '💾 保存物品（物品管理器）', link: 'wiki/UltimateShop/features/saved-item-itemmanager' },
                 { text: '🌍 本地化物品名称 - 仅付费版', link: 'wiki/UltimateShop/features/localized-item-name' },
                 { text: '🌐 多服同步 - 仅付费版', link: 'wiki/UltimateShop/features/multi-server-sync-premium' },
