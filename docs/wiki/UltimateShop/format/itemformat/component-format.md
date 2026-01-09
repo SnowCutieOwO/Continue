@@ -2,7 +2,7 @@
 
 ::: info
 
-该功能仅对 **1.21.5+** 的 **Paper** 系服务端有效。
+该功能仅对 **1.21.6+** 的 **Paper** 系服务端有效。
 
 :::
 
@@ -219,4 +219,48 @@ component:
     damage-per-attack: 5
     disable-blocking-seconds: 3
   skull: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2YzZmVkMTZmZDU1MTkwOWZhNWUyOWNkZDY5N2VlMzQ2ZTYzMzkwYjM4M2E0MzAwYTY2MmE4MGI2NGQ5ZWIxNyJ9fX0=
+```
+
+## 1.21.11 新增的物品 Component
+```yaml
+material: DIAMOND_SWORD
+component:
+  name: <aqua>Test Kinetic Sword
+  lore:
+    - <gray>This is a test weapon
+    - <gray>With all possible 1.21 components
+  damage-type: minecraft:player_attack
+  kinetic-weapon:
+    contact-cooldown-ticks: 10
+    delay-ticks: 2
+    forward-movement: 0.3
+    damage-multiplier: 1.5
+    sound: minecraft:item.axe.swing
+    hit-sound: minecraft:entity.player.attack.knockback
+    damage-conditions:
+      max-duration-ticks: 20
+      min-speed: 0.15
+      min-relative-speed: 0.1
+    knockback-conditions:
+      max-duration-ticks: 30
+      min-speed: 0.12
+      min-relative-speed: 0.08
+    dismount-conditions:
+      max-duration-ticks: 15
+      min-speed: 0.2
+      min-relative-speed: 0.1
+  minimum-attack-charge: 0.65
+  piercing-weapon:
+    deals-knockback: true
+    dismounts: true
+    sound: minecraft:item.crossbow.shoot
+    hit-sound: minecraft:item.crossbow.hit
+  swing-animation:
+    type: NONE
+    duration: 7
+  use-effects:
+    can-sprint: true
+    interact-vibrations: false
+    speed-multiplier: 0.4
+
 ```

@@ -9,7 +9,7 @@ Mojang 非常喜欢修改物品（物品类型）、附魔、药水以及其他�
 ### 对接插件
 
 可用的值：
-`EcoItems`、`EcoArmor`、`MMOItems`、`ItemsAdder`、`Oraxen`、`MythicMobs`、`eco`、`NeigeItems`、`ExecutableItems`、`Nexo`。
+`EcoItems`、`EcoArmor`、`MMOItems`、`ItemsAdder`、`Oraxen`、`MythicMobs`、`eco`、`NeigeItems`、`ExecutableItems`、`Nexo`、`CraftEngine`。
 
 ``` YAML
 hook-plugin: MMOItems
@@ -17,7 +17,7 @@ hook-plugin: MMOItems
 
 ### 对接物品
 
-对于 `EcoItems`、`Oraxen` 以及 `MythicMobs`，请直接填入 `物品 ID`。
+对于 `EcoItems`、`Oraxen`、`Nexo` 以及 `MythicMobs`，请直接填入 `物品 ID`。
 
 对于 `ItemsAdder` 和 `eco`，请填入 `命名空间:物品 ID`。
 
@@ -72,7 +72,7 @@ min-amount: 1
 max-amount: 15
 ```
 
-## 物品属性组件（仅 1.21.5+，需要 Paper 系服务端）<font color="red">- 仅付费版</font>
+## 物品属性组件（仅 1.21.6+，需要 Paper 系服务端）<font color="red">- 仅付费版</font>
 
 通过 Paper 的 DataComponent API 而非 Spigot 的 ItemMeta API，达到轻松修改物品的目的。除此之外，所有 1.21.5+ 的物品属性都只会在 `component` 设置部分中生效，如 **weapon**。更多信息[见此](component-format.md)。
 

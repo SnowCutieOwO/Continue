@@ -186,7 +186,7 @@ elements:
       #
     buy-limits:
       default: '2'
-    buy-times-reset-mode: 'TIMED'
+    buy-times-reset-mode: 'COOLDOWN_TIMED'
     buy-times-reset-time: '{random_reset}' # <--- 在这里使用, 出售次数同样有效!
 ```
 
@@ -194,7 +194,7 @@ elements:
 
 默认情况下，每次重置都会将玩家的购买或出售次数重置为 0，但你也可以将其设置为其他固定或随机值！
 
-按如下示例在 `random_placeholder` 中创建一个随机变量：
+按如下示例在 `random_placeholders` 中创建一个随机变量：
 
 ``` YAML
 # 仅付费版本。

@@ -15,7 +15,9 @@
 * `title`：菜单界面的标题。对于商店菜单，可填入 `{shop-name}` 以显示其在配置中设置的商店名称。
 * `dynamic-title`：[见此](../features/dynamic-title-premium.md).
 * `size`：菜单大小。仅支持填入如下数字：**9、18、27、36、45、54**。
-* `layout`：按钮排版，参数类型为列表。更多信息见下。
+* `layout`：按钮排版，参数类型为列表。更多信息见下。`layout` 选项和 `size` 选项必须一致。
+  如果你的 `layout` 使用的是 **4×9** 布局，那么 `size` 就必须设置为 **36**，
+  否则插件会出现错误。
 * `dynamic-layout`：如果你在 `layout` 选项中使用了诸如变量这样的动态值，则需要启用该选项。对性能有一定影响。<font color="red">**仅付费版**</font>
 * `buttons`：按钮配置，按钮 ID 会用在 `layout` 选项中，决定按钮显示的位置。
 * `conditions`：只有达到指定条件的玩家才可以打开该菜单。需要在此使用“[条件格式](../format/condition-format.md)”。
@@ -185,17 +187,41 @@ layout:
   - 'a0003000b'
 ```
 
-## 点击更新 <font color="red">- 仅付费版</font>
-
-需要服务器安装 [packetevents](https://modrinth.com/plugin/packetevents) 和 [MythicChanger](https://www.spigotmc.org/resources/115913/)。
-
-将 `config.yml` 下 `menu.title-update.enabled` 的值设置为 `true`。之后，每次点击菜单中的按钮都会刷新标题，可以一并更新标题中包含的变量。
+## 标题更新<font color="red"> - 仅付费版，Paper服务器</font>
+需要你的服务器同时安装 **packetevents 和 MythicChanger** 插件，只支持 Paper 服务器用户。  
+在 `config.yml` 中将 `menu.title-update.enabled` 设置为 `true`，然后将 `menu.title-update.click-update` 或 `menu.title-update.circle-update` 设置为 `true` 来启用标题更新功能。  
+启用后，每次点击菜单按钮时，标题都会刷新，非常适合展示含有占位符的标题，并在每次点击或每秒自动更新数值。
 
 ``` YAML
-  # 仅付费版本
+  # 仅限PREMIUM版本，如果启用，则可以更新GUI标题中的动态值。
   title-update:
-    enabled: true # <--- 设置为 true
+    enabled: true # <--- 将其设置为 true
+    # 是否每秒刷新一次整个GUI标题。
+    # 将刷新菜单标题中显示的占位符。
+    circle-update: false
+    # 是否在点击任意按钮时刷新GUI标题。
+    # 将刷新菜单标题中显示的占位符。
+    click-update: true # <--- 将其设置为 true
     resend-items-pack: false
 ```
 
-Minecraft 客户端本身不支持在打开界面后修改它的标题，因此你会看到物品在快速闪烁，这是我们无法解决的问题。你可以尝试将 `config.yml` 中的 `menu.title-update.resend-items-pack` 设置为 true。但这也只能略微缓解这种情况。
+Minecraft 客户端本身不支持在打开容器后更改其标题，因此你可能会看到物品闪烁和重新出现的情况，这是无法完全解决的。
+你可以尝试将 `menu.title-update.resend-items-pack` 设置为 `true`，它只能稍微缓解这种现象。
+
+## 界面更新
+在玩家打开 GUI 后，设置是否持续刷新 GUI 中按钮的物品。你可以在 `config.yml` 中找到这些设置。不建议开启，因为会消耗额外性能。
+
+如果你只是想在重置买卖次数时刷新按钮，可以改用 `use-times.auto-reset-mode`。
+这个选项能帮助你只在发生重置时刷新按钮显示，以此节省服务器性能。
+
+``` YAML
+  menu-update:
+    # 是否每秒刷新一次所有按钮。
+    # 将刷新显示物品 lore 上的占位符。
+    # 但如果在线玩家很多，并且都打开商店GUI，可能会导致服务器卡顿。
+    circle-update: false
+    # 是否在点击任意按钮时刷新所有按钮。
+    # 将刷新显示物品 lore 上的占位符。
+    # 但如果在线玩家很多，并且都打开商店GUI，可能会导致服务器卡顿。
+    click-update: false
+```
