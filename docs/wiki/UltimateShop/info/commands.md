@@ -1,4 +1,4 @@
-# ⌨️ 命令
+# ⌨️ 命令 & 权限
 
 ## 常见问题
 
@@ -13,6 +13,10 @@
 ## ultimateshop.bypassprice
 
 这个权限可以绕过价格检查，购买任何东西都无需付款。
+
+## ultimateshop.bypass.protection
+
+这个权限可以绕过使用出售魔杖时的保护检查。
 
 ## /shop menu <菜单ID>/<商店ID>
 
@@ -45,7 +49,13 @@
 
 ## /shop givesellstick <物品 ID> <玩家 ID> \[数量\] **<font color="Red">（仅付费版本）</font>**
 
-给予指定玩家指定数量（不填则默认为 **1**）的出售魔杖。
+给予指定玩家指定数量（不填则默认为 **1**）的 [出售魔杖](../features/sell-stick-premium.md)。
+
+需要权限 `ultimateshop.givesellstick`。
+
+## /shop givesellchest <物品 ID> <玩家 ID> \[数量\] **<font color="Red">（仅付费版本）</font>**
+
+给予指定玩家指定数量（不填则默认为 **1**）的 [出售魔箱](../features/sell-chest-premium.md)。
 
 需要权限 `ultimateshop.givesellstick`。
 
@@ -119,8 +129,6 @@ global 参数表示为 `{buy-times-server}` 或 `{sell-times-server}` 变量设�
 
 如果需要设置分玩家的随机变量，请在命令中填入玩家的名称，否则插件会报错。
 
-~~可在命令末尾添加 `-b` 参数来绕过元素存在性检查，即你可自行设置自定义元素。例如，一个随机变量只有 `A,B,C` 三个元素，若在此填入元素 **D**，则插件会报错，如果在命令末尾添加了 `-b` 参数，则变量值会被设置为 **D**，且插件不会报错，但不推荐你这么干。~~（3.12.0 后被移除，这个命令不再检查元素是否存在）
-
 需要权限 `ultimateshop.setrandomplaceholder`。
 
 ## /shop editor **<font color="Red">（仅付费版本）</font>**
@@ -145,6 +153,12 @@ global 参数表示为 `{buy-times-server}` 或 `{sell-times-server}` 变量设�
 
 ## /shop updategui \[玩家名称\]
 
-更新指定玩家的商店界面。只会更新按钮，标题界面不受影响。
+更新指定玩家的商店界面。只会更新按钮，标题不受影响。
 
 需要权限 `ultimateshop.updategui`。
+
+## /shop updateguititle \[玩家名称\]
+
+更新指定玩家的商店界面的标题。只会更新标题，商店界面不受影响。
+
+需要权限 `ultimateshop.updateguititle`。
