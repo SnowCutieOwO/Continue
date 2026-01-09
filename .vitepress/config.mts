@@ -345,21 +345,7 @@ export default defineConfig({
         { text: '通例', link: 'common/index' },
         { text: '支持 Folia 的插件列表', link: 'common/folia-plugins' },
         { text: '翻译插件目录', link: 'common/translation-index' },
-        {
-          text: '🌟 个人向教程', link: 'common/personal-guides', collapsed: true, items: [
-            { text: '安装教程', link: 'common/personal-guides/installtion' },
-            { text: '实用链接', link: 'common/personal-guides/useful-links' },
-            { text: '分世界显示玩家的 TAB', link: 'common/personal-guides/tab-based-world-seperation' },
-            { text: '在火狐及分支上使用 Motrix 接管下载', link: 'common/personal-guides/motrix-setup-firefox' },
-            { text: 'FCL 服务器手机端制作简述（电脑）', link: 'common/personal-guides/fcl-pc-setup' },
-            { text: 'FCL 服务器手机端制作简述（手机）', link: 'common/personal-guides/fcl-moble-setup' },
-            {
-              text: 'TrMenu 菜单实战', collapsed: true, items: [
-                { text: 'VIP 升级路线', link: 'common/personal-guides/trmenu-example-vip-menu' }
-              ]
-            },
-          ]
-        }
+        { text: '实用链接', link: 'common/personal-guides/useful-links' },
       ],
       'guide/': [
         { text: '返回首页', link: '/index' },
@@ -372,6 +358,7 @@ export default defineConfig({
               { text: '用 Gradle/Maven 从源代码构建', link: 'guide/self-help/build-jars-with-gradle-or-maven' },
               { text: '插件安全性鉴别（即将推出）' },
               { text: 'JEnv 多版本管理（即将推出）' },
+              { text: 'Node.js 多版本管理安装', link: 'guide/self-help/fnm-installtion' },
             ] },
           ] },
           { text: '自求福篇', collapsed: true, items: [

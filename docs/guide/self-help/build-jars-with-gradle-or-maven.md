@@ -75,6 +75,14 @@ Maven：<https://maven.apache.org/download.cgi?.>
 
 另外，有些源代码构建时需要修改构建脚本。例如，PlotSquared v7 会提醒你 fork 再修改代码，还会自动提交 commit，而本地构建是不需要这些功能的。此时需要进入构建脚本 `build.gradle.kts` 文件中去除相关代码，才可以顺利构建插件。
 
+::: warning
+
+不要在没有安装 Gradle 的情况下试图构建插件/模组等需要 Gradle 参与构建的源码，这会导致其缓存文件生成在 C 盘挤占空间。
+
+如果你不小心这么做了，请使用诸如 WizTree 等的软件将 C 盘的 `.gradle` 文件夹删除。
+
+:::
+
 ### 02. 关于构建类型的判别
 
 这个还是很好分辨的。使用 Gradle 构建的项目，一般会存在上述的 `gradlew.bat` 文件，除此之外，还会有 `build.gradle.kts`（构建脚本）、`gradle.properties`（Gradle 设置）这样的文件。
