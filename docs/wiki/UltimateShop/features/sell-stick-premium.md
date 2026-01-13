@@ -29,6 +29,6 @@ conditions: []
 * `actions`：使用魔杖后触发的动作。可以在此使用[动作格式](../format/action-format.md)
 * `conditions`：玩家使用该出售魔杖所需达到的条件。可以在此使用[条件格式](../format/condition-format.md)。
 
-配置完成后，请重启插件，然后可以通过指令 `/shop givesellstick` 来获得出售魔杖，有关具体信息，可见 [此页面](../info/commands-and-permissions.md#shop-givesellstick-less-than-itemid-greater-than-less-than-playerid-greater-than-amount-premium-vers)。
+配置完成后，请重启插件，然后可以通过指令 `/shop givesellstick` 来获得出售魔杖，有关具体信息，可见[此页面](../info/commands.md#shop-givesellstick-物品-id-玩家-id-数量-仅付费版本)。
 
-UltimateShop 支持阻止玩家在受保护的区域和其他玩家的领地中使用出售魔杖，有关具体信息，可见 [此页面](../info/compatibility.md#directly-supported-protection-plugins-list-premium)。你可以给自己 `ultimateshop.bypass.protection` 权限或者给自己 OP 以绕过此检查。
+UltimateShop 支持阻止玩家在受保护的区域和其他玩家的领地中使用出售魔杖，有关具体信息，可见[此页面](../info/compatibility.md#直接支持的保护插件列表)。你可以给自己 `ultimateshop.bypass.protection` 权限或者给自己 OP 以绕过此检查。
