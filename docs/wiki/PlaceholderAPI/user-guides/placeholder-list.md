@@ -734,10 +734,10 @@
 它会返回指定位数的随机数。若不指定比例，则会自动计算。若指定的最大最小值都是整数，则返回的整数也会是整数。
 
 ``` txt
-%randomnumber_值%
-%randomnumber_值_位数%
-%randomnumber_值_最小值_最大值%
-%randomnumber_值_最小值_最大值_位数%
+%randomnumber_value%
+%randomnumber_value_位数%
+%randomnumber_value_最小值_最大值%
+%randomnumber_value_最小值_最大值_位数%
 ```
 
 ### RedisBungee
