@@ -125,12 +125,12 @@ export default defineConfig({
     ],
     [
       'script',
-      {defer: '', async: '', src: 'https://cn.vercount.one/js'},
+      { defer: '', async: '', src: 'https://cn.vercount.one/js' },
       ``
     ],
     [
       'script',
-      {src: 'https://code.iconify.design/3/3.1.0/iconify.min.js'},
+      { src: 'https://code.iconify.design/3/3.1.0/iconify.min.js' },
       ``
     ]
   ],
@@ -349,30 +349,44 @@ export default defineConfig({
       ],
       'guide/': [
         { text: '返回首页', link: '/index' },
-        { text: '🌟 开服杂谈', collapsed: false, items: [
-          { text: '不求人篇', link: 'guide/self-help/index', collapsed: true, items: [
-            { text: '手机端制作教程', link: 'guide/self-help/fcl-setup/index', collapsed: true, items: [
-              { text: '电脑制作手机端', link: 'guide/self-help/fcl-setup/fcl-pc-setup' },
-              { text: '手机制作手机端', link: 'guide/self-help/fcl-setup/fcl-mobile-setup' },
-              { text: 'Recaf 内核汉化', link: 'guide/self-help/localize-jars-with-recaf' },
-              { text: '用 Gradle/Maven 从源代码构建', link: 'guide/self-help/build-jars-with-gradle-or-maven' },
-              { text: '插件安全性鉴别（即将推出）' },
-              { text: 'JEnv 多版本管理（即将推出）' },
-              { text: 'Node.js 多版本管理安装', link: 'guide/self-help/fnm-installtion' },
-            ] },
-          ] },
-          { text: '自求福篇', collapsed: true, items: [
-            { text: '开始之前：你要开什么？', link: 'guide/logical-questions/before-start-what-server-you-want' },
-          ] },
-          { text: '进阶学篇', collapsed: true, items: [
-            { text: 'TrMenu 菜单实战', link: 'guide/advanced/trmenu-examples/index', collapsed: true, items: [
-              { text: 'VIP 升级路线', link: 'guide/advanced/trmenu-examples/vip-menu' }
-            ] },
-            { text: '分世界显示玩家的 TAB', link: 'guide/advanced/tab-based-world-seperation' },
-            { text: 'WorldEdit 制作简单地形', link: 'guide/advanced/how-to-make-easy-landscape-using-we' },
-            { text: 'LuckPerms 月卡权限与时间段权限', link: 'guide/advanced/luckperms-temp-permissions-example' },
-          ] }
-        ] },
+        {
+          text: '🌟 开服杂谈', collapsed: false, items: [
+            {
+              text: '不求人篇', link: 'guide/self-help/index', collapsed: true, items: [
+                {
+                  text: '手机端制作教程', link: 'guide/self-help/fcl-setup/index', collapsed: true, items: [
+                    { text: '电脑制作手机端', link: 'guide/self-help/fcl-setup/fcl-pc-setup' },
+                    { text: '手机制作手机端', link: 'guide/self-help/fcl-setup/fcl-mobile-setup' },
+                    { text: 'Recaf 内核汉化', link: 'guide/self-help/localize-jars-with-recaf' },
+                    { text: '用 Gradle/Maven 从源代码构建', link: 'guide/self-help/build-jars-with-gradle-or-maven' },
+                    { text: '插件安全性鉴别（即将推出）' },
+                    { text: 'JEnv 多版本管理（即将推出）' },
+                    { text: 'Node.js 多版本管理安装', link: 'guide/self-help/fnm-installtion' },
+                  ]
+                },
+              ]
+            },
+            {
+              text: '自求福篇', collapsed: true, items: [
+                { text: '开始之前：你要开什么？', link: 'guide/logical-questions/before-start-what-server-you-want' },
+              ]
+            },
+            {
+              text: '进阶学篇', collapsed: true, items: [
+                {
+                  text: 'TrMenu 菜单实战', link: 'guide/advanced/trmenu-examples/index', collapsed: true, items: [
+                    { text: 'VIP 升级路线', link: 'guide/advanced/trmenu-examples/vip-menu' },
+                    { text: '战令菜单', link: 'guide/advanced/trmenu-examples/battlepass' },
+                    { text: '撬锁小游戏', link: 'guide/advanced/trmenu-examples/lockpicking-minigame' },
+                  ]
+                },
+                { text: '分世界显示玩家的 TAB', link: 'guide/advanced/tab-based-world-seperation' },
+                { text: 'WorldEdit 制作简单地形', link: 'guide/advanced/how-to-make-easy-landscape-using-we' },
+                { text: 'LuckPerms 月卡权限与时间段权限', link: 'guide/advanced/luckperms-temp-permissions-example' },
+              ]
+            }
+          ]
+        },
       ],
       'wiki/AureliumSkills/': [
         { text: '返回首页', link: 'index' },
@@ -1616,9 +1630,11 @@ export default defineConfig({
                 { text: '🔲 全局菜单', link: 'wiki/UltimateShop/menus/general-menus' },
                 { text: '🔽 增量购买菜单', link: 'wiki/UltimateShop/menus/buy-more-menus' },
                 { text: '🛏️ 基岩版菜单 - 仅付费版', link: 'wiki/UltimateShop/menus/bedrock-menus-premium' },
-                { text: '🥉 物品描述追加', link: 'wiki/UltimateShop/menus/display-item-add-lore/index', collapsed: true, items: [
-                  { text: '额外物品描述（旧）', link: 'wiki/UltimateShop/menus/display-item-add-lore/display-item-add-lore-legacy' }
-                ] },
+                {
+                  text: '🥉 物品描述追加', link: 'wiki/UltimateShop/menus/display-item-add-lore/index', collapsed: true, items: [
+                    { text: '额外物品描述（旧）', link: 'wiki/UltimateShop/menus/display-item-add-lore/display-item-add-lore-legacy' }
+                  ]
+                },
               ]
             },
             {
@@ -1814,7 +1830,7 @@ export default defineConfig({
                   text: 'WorldGuard API', link: 'wiki/WorldGuard/worldguard-api', collapsed: true, items: [
                     { text: '作为依赖', link: 'wiki/WorldGuard/worldguard-api/as-a-dependency' },
                     {
-                      text: '区域开发相关', link: 'wiki/WorldGuard/worldguard-api/working-with-regions/main', collapsed: true, items: [
+                      text: '区域开发相关', link: 'wiki/WorldGuard/worldguard-api/working-with-regions/index', collapsed: true, items: [
                         { text: '区域管理模块', link: 'wiki/WorldGuard/worldguard-api/working-with-regions/managers' },
                         { text: '区域对象', link: 'wiki/WorldGuard/worldguard-api/working-with-regions/regions' },
                         { text: '自定义标志与选区处理模块', link: 'wiki/WorldGuard/worldguard-api/working-with-regions/custom-flags-and-session-handlers' },
