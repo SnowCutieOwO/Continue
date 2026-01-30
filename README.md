@@ -24,7 +24,6 @@
 
 * [TownyAdvanced](https://github.com/TownyAdvanced/Towny/wiki) (Rework)
 * [Dynmap](https://github.com/webbukkit/dynmap/wiki) (Rework)
-* [Terra](https://terra.polydev.org/)
 * [Slate](https://wiki.aurelium.dev/slate)
 
 * [*HelpChat (Plugin Wiki)*](https://wiki.helpch.at/) (Rework)
@@ -34,39 +33,39 @@
 
 ![Netlify 构建状态](https://api.netlify.com/api/v1/badges/6e69d526-ea60-4ff8-9bfe-e0b9e4d028f0/deploy-status)
 
-![img](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-25-93fdf9) ![img](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-492177-84f5bb)
-（最后更新：2025/9/5）
+![](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-25-93fdf9) ![](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-641581-84f5bb)
+（最后更新：2025/12/2）
 
 > [!NOTE]
 > 本维基一开始使用 MDWiki 和[自行魔改的 Docsify](https://github.com/SnowCutieOwO/Docsify-Template)，后选择了 VitePress。
 
-- [ajLeaderboards](https://continue-project.netlify.app/ajLeaderboards)
-- [AuraSkills](https://continue-project.netlify.app/AuraSkills)
-- [AureliumSkills](https://continue-project.netlify.app/AureliumSkills)
-- [Codex](https://continue-project.netlify.app/Codex)
-- [CommandTimer](https://continue-project.netlify.app/CommandTimer)
-- [CoreProtect](https://continue-project.netlify.app/CoreProtect)
-- [DecentHolograms](https://continue-project.netlify.app/DecentHolograms)
-- [ExcellentCrates](https://continue-project.netlify.app/ExcellentCrates)
-- [ExcellentEnchants](https:continue-project.netlify.app/ExcellentEnchants)
-- [Fallback Server](https://continue-project.netlify.app/FallbackServer)
-- [FastAsyncWorldEdit](https://continue-project.netlify.app/FastAsyncWorldEdit)
-- [HuskHomes](https://continue-project.netlify.app/HuskHomes)
-- [HuskSync](https://continue-project.netlify.app/HuskSync)
-- [LibreLogin](https://continue-project.netlify.app/LibreLogin)
+- [ajLeaderboards](https://continue-project.netlify.app/wiki/ajLeaderboards)
+- [AuraSkills](https://continue-project.netlify.app/wiki/AuraSkills)
+- [AureliumSkills](https://continue-project.netlify.app/wiki/AureliumSkills)
+- [Codex](https://continue-project.netlify.app/wiki/Codex)
+- [CommandTimer](https://continue-project.netlify.app/wiki/CommandTimer)
+- [CoreProtect](https://continue-project.netlify.app/wiki/CoreProtect)
+- [DecentHolograms](https://continue-project.netlify.app/wiki/DecentHolograms)
+- [ExcellentCrates](https://continue-project.netlify.app/wiki/ExcellentCrates)
+- [ExcellentEnchants](https:continue-project.netlify.app/wiki/ExcellentEnchants)
+- [Fallback Server](https://continue-project.netlify.app/wiki/FallbackServer)
+- [FastAsyncWorldEdit](https://continue-project.netlify.app/wiki/FastAsyncWorldEdit)
+- [HuskHomes](https://continue-project.netlify.app/wiki/HuskHomes)
+- [HuskSync](https://continue-project.netlify.app/wiki/HuskSync)
+- [LibreLogin](https://continue-project.netlify.app/wiki/LibreLogin)
   * 配置文本的翻译算作维基内容，故不计入第二部分的配置总字数。
-- [LuckPerms](https://continue-project.netlify.app/LuckPerms)
-- [Oraxen](https://continue-project.netlify.app/Oraxen)
-- [PlaceholderAPI](https://continue-project.netlify.app/PlaceholderAPI)
-- [PlayerPoints](https://continue-project.netlify.app/PlayerPoints)
-- [Shopkeepers](https://continue-project.netlify.app/Shopkeepers)
-- [Spark](https://continue-project.netlify.app/spark)
-- [SuperiorSkyBlock2](https://continue-project.netlify.app/SuperiorSkyblock2)
-- [Terra](https://continue-project.betlify.app/Terra)
-- [UltimateShop](https://continue-project.netlify.app/UltimateShop)（简体中文维基重汉化）
+- [LuckPerms](https://continue-project.netlify.app/wiki/LuckPerms)
+- [Oraxen](https://continue-project.netlify.app/wiki/Oraxen)
+- [PlaceholderAPI](https://continue-project.netlify.app/wiki/PlaceholderAPI)
+- [PlayerPoints](https://continue-project.netlify.app/wiki/PlayerPoints)
+- [Shopkeepers](https://continue-project.netlify.app/wiki/Shopkeepers)
+- [Spark](https://continue-project.netlify.app/wiki/spark)
+- [SuperiorSkyBlock2](https://continue-project.netlify.app/wiki/SuperiorSkyblock2)
+- [Terra](https://continue-project.betlify.app/wiki/Terra)
+- [UltimateShop](https://continue-project.netlify.app/wiki/UltimateShop)（简体中文维基重汉化）
   * 完整版维基原本由我翻译，经过交涉后同意迁回此处继续维护。
-- [WorldEdit](https://continue-project.netlify.app/WorldEdit)
-- [WorldGuard](https://continue-project.netlify.app/WorldGuard)
+- [WorldEdit](https://continue-project.netlify.app/wiki/WorldEdit)
+- [WorldGuard](https://continue-project.netlify.app/wiki/WorldGuard)
 
 ### 参与翻译的插件&模组
 
