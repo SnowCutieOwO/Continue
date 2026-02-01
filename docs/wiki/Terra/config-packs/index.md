@@ -12,7 +12,7 @@
   * Substratum
   * Origen
 * [配置包安装](pack-installation.md)
-  * 载配置包
+  * 载入配置包
   * 将地形包放入包目录
   * 确保目录结构正确
   * 验证地形包是否载入
