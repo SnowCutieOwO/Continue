@@ -1,4 +1,3 @@
-
 # 在这里你可以选择将部分其他插件的数据转化为本插件的数据.
 # 确保在转化后卸载这些插件!
 converters:
@@ -6,35 +5,64 @@ converters:
     # 若该项启用, 插件将会将 Welcome Warp Signs (https://www.spigotmc.org/resources/12256/) 的数据转化至本插件.
     # 重启服务器才可使改动生效并开始数据转化.
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
   pwarp:
     # 若该项启用, 插件将会将 PWarp (https://www.spigotmc.org/resources/64542/) 的数据转化至本插件.
     # 重启服务器才可使改动生效并开始数据转化.
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
   playerwarps:
     # 若该项启用, 插件将会将 PLAYERWARPS (https://www.spigotmc.org/resources/79089/) 的数据转化至本插件.
-    # 处于某些冲突, 你需要将被转化插件的文件夹 (plugins/PlayerWarps) 重命名为 "PlayerWarp"
+    # 出于某些冲突, 你需要将被转化插件的文件夹 (plugins/PlayerWarps) 重命名为 "PlayerWarp"
     # 你也需要修改插件的名称, 使用诸如 WinRAR 的压缩包软件将此插件的 .jar 文件打开, 找到 plugin.yml 并将插件的名称改为 "PlayerWarp".
     # 重启服务器才可使改动生效并开始数据转化.
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
 
 # 在这部分配置中你可以设置按需配置其他支持本插件的拓展相关功能.
 expansions:
+  # 是否启用 ProtocolLib 支持？通常用于告示牌搜索功能。
+  protocollib:
+    enabled: true
+    # 需要下载/使用这个拓展的什么版本？
+    version: 0
+
+  # 是否启用 PacketEvents 支持？通常用于告示牌搜索功能。
+  packetevents:
+    enabled: true
+    # 需要下载/使用这个拓展的什么版本？
+    version: 0
+
   essentials:
     # 是否启用 Essentials 拓展?
     # 该拓展会为玩家在进行地标传送前记住他们最后上线的位置.
     # 你需要安装 Essentials 才可使该变量拓展生效!
     enabled: true
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
   huskhomes:
     # 是否启用 HuskHomes 拓展?
     # 该拓展会为玩家在进行地标传送前记住他们最后上线的位置.
     # 你需要安装 HuskHomes 才可使该变量拓展生效!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+  patches:
+    # 包含对其他插件可能的冲突修复补丁。
+    enabled: true
+    # 需要下载/使用这个拓展的什么版本？
+    version: 0
 
   # 该部分配置通过 Webhook 向你的 Discord 发送提醒消息.
   # 你可以参考 https://docs.olziedev.com/projects/playerwarps/features#discord-alerts 来学习如何配置该部分内容.
   warpdiscord:
     # 是否要启用 discord 挂钩拓展?
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
     webhook:
       # 根据你的选择填入对应 Discord 频道的 Webhook 的链接.
       url: ""
@@ -53,13 +81,12 @@ expansions:
           # 若物品包含了值为 101 的自定义模型数据, 那么插件就会在内嵌式消息中使用该图片.
           101: "https://cdn.olziedev.com/playerwarps/images/PlayerWarpsIcon.png"
 
-    # 若你正在使用离线模式, 你可以使用内建变量 [name] 来获取玩家名称.
-    author-url: "https://www.mc-heads.net/head/[uuid]/100/.png"
-
     embeds:
       set:
         enabled: true
         author: "[owner] 创建了一个名为 [warp_display] 的地标"
+        # 如果你使用的是离线模式，你可以通过 [trigger_name] 变量获取玩家名称。
+        author-image: "https://www.mc-heads.net/head/[trigger_uuid]/100/.png"
         color: "#4287f5"
         title: "地标提醒"
         footer: "地标 ID: [id]"
@@ -91,6 +118,8 @@ expansions:
       tp:
         enabled: true
         author: "[teleporter] 访问了地标 [warp_display]"
+        # 如果你使用的是离线模式，你可以通过 [trigger_name] 变量获取玩家名称。
+        author-image: "https://www.mc-heads.net/head/[trigger_uuid]/100/.png"
         color: "#c90076"
         title: "地标提醒"
         footer: "地标 ID: [id]"
@@ -123,6 +152,8 @@ expansions:
       remove:
         enabled: true
         author: "[warp_display] 已被移除!"
+        # 如果你使用的是离线模式，你可以通过 [trigger_name] 变量获取玩家名称。
+        author-image: "https://www.mc-heads.net/head/[trigger_uuid]/100/.png"
         color: "#bf2a2a"
         title: "地标提醒"
         footer: "地标 ID: [id]"
@@ -160,6 +191,10 @@ addons:
     # 是否启用 PlotSquared 支持?
     # 需要安装 PlotSquared 才可正常使用本功能!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 地皮成员是否视作拥有者？
+    plot-members: true
     # 是否在创建地皮时自动生成一个地标?
     create: false
     # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
@@ -172,12 +207,28 @@ addons:
       not-in-plot: "%prefix% &c抱歉, 你不能在这里设置地标, &c你必须处于地皮内!"
       dont-own-plot: "%prefix% &c抱歉, 你不能在不属于自己的地皮上设置地标!"
 
+  virtualrealty:
+    # 是否启用 virtualrealty 兼容?
+    # 需要安装 virtualrealty 才可使该功能正常启用!
+    enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # （拥有放置权限的）受信任玩家是否视作地皮拥有者？
+    trusted-members: true
+    # 是否只允许在领地内设置地标？如果禁用，他们可以在郊区或领地内设置地标。
+    only-land: true
+    lang:
+      not-in-plot: "%prefix% &c你不能在这里设置地标, &c你没有在地皮中!"
+      dont-own-plot: "%prefix% &c你不能在这里设置地标, 你没有权限."
+
   worldguard:
     # 是否启用 WorldGuard 支持? (仅在服务器安装了较新版本的 WorldGuard 时有效)
     # 需要安装 WorldGuard 才可使该功能正常启用!
     # 该插件会自动向 WorldGuard 注册一个名为"set-warp"的标志.
     # 若你是第一次启用该功能, 你需要重启服务器才可让改动生效.
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
     # 若设置了标志, 被设置标志的区域就允许玩家设置地标. 若区域未设置该标志, 则它的默认值是什么?
     # 若此处设置为 false, 那么玩家默认不能在任何区域内设置地标. 这也包括 __global__ 全局区域! 所以请确保为该区域设置了允许标志 (别忘了全局区域只针对一个世界, 每个世界的全局区域标志设置是独立的)
     # 若此处设置为 true, 那么玩家可以在未设置该标志的区域内自由设置地标.
@@ -186,14 +237,23 @@ addons:
     # 是否在区域被删除时一并删除地标?
     # 出于 WorldGuard 的限制, 该设置只会在你安装了ProtectionStones 或 AdvancedRegionMarket 时生效.
     delete: false
+    # 什么标志可以防止玩家传送至地标？你只能使用状态类型的标志，也就是只有“ALLOW”和“DENY”两个值的标志。
+    # 例如，你可以禁止玩家传送至“PVP”标志设置为“ALLOW”的区域中的地标。
+#    disallowed-state-flags:
+#      PVP: ALLOW    
     lang:
       not-in-region: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你不在任何区域内!"
       in-region: "%prefix% &c抱歉, 你不能在这个区域内设置地标!"
+      disallowed-state-flag: "%prefix% &c抱歉, 你不能前往这个地标, &c区域内特定的标志设置阻止了传送功能."
 
   askyblock:
     # 是否启用 ASkyBlock 支持?
     # 需要安装 ASkyBlock 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 岛屿成员是否视作拥有者？
+    island-members: true
     # 是否在创建岛屿时一并创建一个地标?
     create: false
     # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
@@ -210,6 +270,10 @@ addons:
     # 是否启用 BentoBox 支持?
     # 需要安装 BentoBox 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 岛屿成员是否视作拥有者？
+    island-members: true
     # 是否在创建岛屿时一并创建一个地标?
     create: false
     # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
@@ -226,6 +290,10 @@ addons:
     # 是否启用 griefprevention 支持?
     # 需要安装 griefprevention 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 受信任玩家是否视作领地拥有者？
+    trusted-players: true
     # 是否在创建岛屿时一并创建一个地标?
     create: false
     # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
@@ -244,6 +312,10 @@ addons:
     # 是否启用 griefdefender 支持?
     # 需要安装 griefdefender 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 受信任玩家是否视作领地拥有者？
+    trusted-players: true
     # 是否在创建占领区时一并创建一个地标?
     create: false
     # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
@@ -260,6 +332,10 @@ addons:
     # 是否启用 fabledskyblock 支持?
     # 需要安装 fabledskyblock 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 岛屿成员是否视作拥有者？
+    island-members: true
     # 是否在创建岛屿时一并创建一个地标?
     create: false
     # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
@@ -276,6 +352,10 @@ addons:
     # 是否启用 iridiumskyblock 支持?
     # 需要安装 iridiumskyblock 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 受信任玩家是否视作岛屿拥有者？
+    trusted-members: true
     # 是否在创建岛屿时一并创建一个地标?
     create: false
     # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
@@ -292,6 +372,13 @@ addons:
     # 是否启用 lands 支持?
     # 需要安装 lands 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 可以通过这个设置限制土地内传送点最大数量。
+    # 设置为 -1 表示不作限制。
+    limit-per-lands: -1
+    # 受信任玩家是否视作领地拥有者？
+    trusted-players: true
     # 是否在创建土地时一并创建一个地标?
     create: false
     # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称 or %land%
@@ -309,11 +396,16 @@ addons:
     lang:
       not-in-land: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于土地内!"
       dont-own-land: "%prefix% &c抱歉, 你不能在不属于你的土地中设置地标."
+      limit-reached: "%prefix% &c抱歉, 你不能在这里设置地标, &c土地内地标设置数量已到达上限."
 
   landlord:
     # 是否启用 landlord 支持?
     # 需要安装 landlord 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 受信任的好友是否视作领地拥有者？
+    trusted-friends: true
     # 是否在创建土地时一并创建一个地标?
     create: false
     # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
@@ -330,6 +422,10 @@ addons:
     # 是否启用 kingdomsx 支持?
     # 需要安装 kingdomsx 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 受信任的成员是否视作领地拥有者？
+    trusted-members: true
     # 是否在创建土地时一并创建一个地标?
     create: false
     # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
@@ -346,6 +442,8 @@ addons:
     # 是否启用 Residence 支持?
     # 需要安装 Residence 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
     # 是否在创建土地时一并创建一个地标?
     create: false
     # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
@@ -363,7 +461,11 @@ addons:
     # 是否启用 ultimateclaims 支持?
     # 需要安装 ultimateclaims 才可使该功能正常启用!
     enabled: false
-    # 是否在创建岛屿时一并创建一个地标?
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 受信任玩家是否视作区域拥有者？
+    trusted-players: true
+    # 是否在创建占领区时一并创建一个地标?
     create: false
     # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
     warp-name-creation: "%player%"
@@ -379,6 +481,10 @@ addons:
     # 是否启用 claimchunk 支持?
     # 需要安装 claimchunk 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 受信任玩家是否视作区域拥有者？
+    trusted-players: true
     # 是否在创建岛屿时一并创建一个地标?
     # 是否允许玩家在土地内设置地标? 若关闭, 玩家可以在任意地点设置地标.
     only-land: true
@@ -390,6 +496,10 @@ addons:
     # 是否启用 xclaim 支持?
     # 需要安装 xclaim 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 受信任玩家是否视作区域拥有者？
+    trusted-players: true
     # 是否在创建岛屿时一并创建一个地标?
     # 是否允许玩家在土地内设置地标? 若关闭, 玩家可以在任意地点设置地标.
     only-land: true
@@ -401,6 +511,10 @@ addons:
     # 是否启用 crashclaims 支持?
     # 需要安装 crashclaims 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 受信任玩家是否视作区域拥有者？
+    trusted-players: true
     # 是否允许玩家在土地内设置地标? 若关闭, 玩家可以在任意地点设置地标.
     only-land: true
     lang:
@@ -411,6 +525,10 @@ addons:
     # 是否启用 simpleskyblock 支持?
     # 需要安装 simpleskyblock 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 岛屿成员是否视作岛屿拥有者？
+    island-members: true
     # 是否允许玩家在岛屿内设置地标? 若关闭, 玩家可以在任意地点设置地标.
     only-land: true
     lang:
@@ -421,6 +539,10 @@ addons:
     # 是否启用 superiorskyblock 支持?
     # 需要安装 superiorskyblock 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 岛屿成员是否视作岛屿拥有者？
+    island-members: true
     # 是否在创建岛屿时一并创建一个地标?
     create: false
     # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
@@ -439,6 +561,10 @@ addons:
     # 是否启用 factions 支持?
     # 需要安装 factions 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 受信任玩家是否视作公会领袖？
+    trusted-players: true
     # 是否在公会删除后一并删除地标?
     delete: true
     # 是否只允许玩家在公会占地内设置地标? 若禁用, 玩家可以在任意地点设置地标.
@@ -451,6 +577,10 @@ addons:
     # 是否启用 saberfactions 支持?
     # 需要安装 saberfactions 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 受信任玩家是否视作公会领袖？
+    trusted-players: true
     # 是否在公会删除后一并删除地标?
     delete: true
     # 是否只允许玩家在公会占地内设置地标? 若禁用, 玩家可以在任意地点设置地标.
@@ -463,6 +593,10 @@ addons:
     # 是否启用 factionsx 支持?
     # 需要安装 factionsx 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 公会成员是否视作公会领袖？
+    faction-members: true
     # 是否在公会删除后一并删除地标?
     delete: true
     # 是否只允许玩家在公会占地内设置地标? 若禁用, 玩家可以在任意地点设置地标.
@@ -475,6 +609,10 @@ addons:
     # 是否启用 factionsuuid 支持?
     # 需要安装 factionsuuid 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 公会成员是否视作公会领袖？
+    faction-members: true
     # 是否在公会删除后一并删除地标?
     delete: true
     # 是否只允许玩家在公会占地内设置地标? 若禁用, 玩家可以在任意地点设置地标.
@@ -487,21 +625,41 @@ addons:
     # 是否启用 towny 支持?
     # 需要安装 towny 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 城镇居民是否视作城镇拥有者？
+    town-residents: true
     # 是否在城镇删除后一并删除地标?
     delete: true
     # 是否只允许玩家在城镇占地内设置地标? 若禁用, 玩家可以在任意地点设置地标.
     only-land: true
     # 是否在玩家尝试传送至敌方城镇的地标时阻止传送请求?
     cancel-enemy-teleport: false
+    # 插件是否只允许城镇居民传送？
+    # 需要注意的是，启用这个设置会忽略上一个设置。
+    only-town-members-teleport: false
+    # 是否允许国家盟友传送？
+    # 仅在 only-town-members-teleport 启用时有效。
+    allow-nation-members: false
+    # 防止流浪者传送至城镇。
+    block-outlaw-teleport: false
+    # 如果地标处于 pvp 区域，是否将其标记为不安全？
+    mark-warp-unsafe-if-pvp: true
     lang:
       not-in-town: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于城镇内!"
       dont-own-town: "%prefix% &c抱歉, 你不能在不属于你的城镇中设置地标."
-      town-teleport-enemy: "%prefix% &c抱歉, 你不能传送到敌方的地标中."
+      town-teleport-enemy: "%prefix% &c抱歉, 你不能前往敌方的地标."
+      town-not-member: "%prefix% &c抱歉, 你不是城镇居民, 不能直接前往这个地标."
+      town-outlaw: "%prefix% &c抱歉, 你不能直接前往这个地标."
 
   civs:
     # 是否启用 civs 支持?
     # 需要安装 towny 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 受信任玩家是否视作城镇拥有者？
+    trusted-people: true
     # 是否在城镇删除后一并删除地标?
     delete: true
     # 是否只允许玩家在城镇占地内设置地标? 若禁用, 玩家可以在任意地点设置地标.
@@ -510,10 +668,15 @@ addons:
       not-in-town: "%prefix% &c抱歉, 你不能在这里设置地标, &c请确保你处于城镇内!"
       dont-own-town: "%prefix% &c抱歉, 你不能在不属于你的城镇中设置地标."
 
+
   husktowns:
     # 是否启用 husktowns 支持?
     # 需要安装 husktowns 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 受信任成员是否视作城镇拥有者？
+    trusted-members: true
     # 是否在城镇创建时一并创建一个地标?
     create: false
     # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
@@ -529,10 +692,52 @@ addons:
       dont-own-town: "%prefix% &c抱歉, 你不能在不属于你的城镇中设置地标."
       not-required-level: "%prefix% &c抱歉, 你的城镇尚未达到能设置地标的等级."
 
+  huskclaims:
+    # 是否启用 huskclaims 支持?
+    # 需要安装 huskclaims 才可使该功能正常启用!
+    enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 受信任成员是否视作领地拥有者？
+    trusted-members: true
+    # 是否在城镇创建时一并创建一个地标?
+    create: false
+    # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
+    warp-name-creation: "%player%"
+    # 是否在城镇删除后一并删除地标?
+    delete: true
+    # 是否只允许玩家在城镇占地内设置地标? 若禁用, 玩家可以在任意地点设置地标.
+    only-land: true
+    lang:
+      not-in-claim: "%prefix% &c抱歉, 你不能在这里设置地标, &c你需要在领地里设置!"
+      dont-own-claim: "%prefix% &c抱歉, 你不能在这里设置地标, 你没有这个领地的权限."
+
+  uxmclaims:
+    # 是否启用 uxmclaims 支持?
+    # 需要安装 uxmclaims 才可使该功能正常启用!
+    enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 受信任成员是否视作领地拥有者？
+    trusted-members: true
+    # 是否在城镇创建时一并创建一个地标?
+    create: false
+    # 创建该类型地标时它的名称应当是什么? 目前为止你能在这里使用的内建变量只有 %player%, 它返回的是玩家名称
+    warp-name-creation: "%player%"
+    # 是否在城镇删除后一并删除地标?
+    delete: true
+    # 是否只允许玩家在城镇占地内设置地标? 若禁用, 玩家可以在任意地点设置地标.
+    only-land: true
+    lang:
+      not-in-claim: "%prefix% &c抱歉, 你不能在这里设置地标, &c你需要在领地里设置!"
+      dont-own-claim: "%prefix% &c抱歉, 你不能在这里设置地标, 你没有这个领地的权限."
+
   dynmap:
     # 是否启用 dynmap 支持?
     # 需要安装 dynmap 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
     # 标志的样式是什么?
     marker-icon: star
     # 显示层名称是什么?
@@ -546,22 +751,68 @@ addons:
       - "分类: [category]"
       - "评分: [rates]"
       - "平均评分: [rates_average] ([rates_stars])"
-
+    # 你可以通过变量条件过滤不需要显示在地图上的地标.
+    # 仅安装 PlaceholderAPI 后有效。
+    # 在这个例子中，只有未锁定地标才会展示在地图上。
+    placeholder-condition:
+      # 是否启用变量检查?
+      enabled: false
+      # 检查的变量
+      placeholder: "%pw_warp_name_%warp%_locked%"
+      # 变量比较符只能是: ==, >, <
+      condition: "=="
+      # 变量比较的值
+      value: "false"
   bluemap:
     # 是否启用 bluemap 支持?
     # 需要安装 bluemap 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
     # 显示层名称是什么?
     layer-name: "PlayerWarps"
+    # 标志的描述是什么?
+    description:
+      - "[warp_display]"
+      - " "
+      - "拥有者: [owner]"
+      - "访问量: [visits]"
+      - "描述: [desc]"
+      - "创建时间: [date]"
+      - "分类: [category]"
+      - "评分: [rates]"
+      - "平均评分: [rates_average] ([rates_stars])"
+    # 锚点的 x 轴位置?
+    icon-x: 0
+    # 锚点的 z 轴位置?
+    icon-z: 0
+    # 图标的图片/链接?
+    icon-link: ""
     # 是否默认隐藏该显示层?
     default-hidden: false
+    # 你可以通过变量条件过滤不需要显示在地图上的地标.
+    # 仅安装 PlaceholderAPI 后有效。
+    # 在这个例子中，只有未锁定地标才会展示在地图上。
+    placeholder-condition:
+      # 是否启用变量检查?
+      enabled: false
+      # 检查的变量
+      placeholder: "%pw_warp_name_%warp%_locked%"
+      # 变量比较符只能是: ==, >, <
+      condition: "=="
+      # 变量比较的值
+      value: "false"
 
   pl3xmap:
     # 是否启用 pl3xmap/squaremap 支持?
     # 需要安装 pl3xmap/squaremap 才可使该功能正常启用!
     enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
     # 显示层名称是什么?
     layer-name: "PlayerWarps"
+    # 标志显示的标题是什么？
+    title: "[warp_display]"
     # 标志的描述内容是什么?
     description:
       - "[warp_display]"
@@ -583,3 +834,123 @@ addons:
     icon-link: "https://cdn.olziedev.com/playerwarps/images/warp_icon.png"
     # 是否默认隐藏该显示层?
     default-hidden: false
+    # 你可以通过变量条件过滤不需要显示在地图上的地标.
+    # 仅安装 PlaceholderAPI 后有效。
+    # 在这个例子中，只有未锁定地标才会展示在地图上。
+    placeholder-condition:
+      # 是否启用变量检查?
+      enabled: false
+      # 检查的变量
+      placeholder: "%pw_warp_name_%warp%_locked%"
+      # 变量比较符只能是: ==, >, <
+      condition: "=="
+      # 变量比较的值
+      value: "false"
+
+# 在这里你可以与其他经济对接，按需修改。
+currencies:
+  vault:
+    # 是否启用 vault 经济？
+    enabled: true
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 价格变量的前缀，即使用 vault 货币时显示的名称.
+    # 价格变量的前缀，即使用
+    name: "vault"
+    # 价格变量的前缀，即使用 money 货币时显示的前缀.
+    prefix: "$%price%"
+    # 插件如何与 vault 交互，默认情况下出于限制，插件使用玩家名称。
+    # 如果使用这个拓展时遇到问题，请将这个设置改为 false。
+    use-name: true
+    # 支持这个经济插件的银行拓展，如果需要为这个经济启用拓展，那么将其设置为 true。
+    # 启用后，如果玩家没有足够的钱，插件会试图从银行中取出玩家所需的货币。
+    banks:
+      bankplus:
+        # 是否为这个类型的经济启用 bankplus 兼容？
+        enabled: true
+        # 应当使用什么作为玩家的默认银行账户？未设置时使用默认银行。
+        bank: ""
+
+  tokenmanager:
+    # 是否启用 TokenManager 经济？
+    enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 价格变量的前缀，即使用 tokenmanager 货币时显示的名称.
+    prefix: "%price% 代币"
+  playerpoints:
+    # 是否启用 PlayerPoints 经济？
+    enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 价格变量的前缀，即使用 playerpoints 货币时显示的名称.
+    prefix: "%price% 点券"
+  beasttoken:
+    # 是否启用 BeastToken 经济？
+    enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 价格变量的前缀，即使用 beasttoken 货币时显示的名称.
+    prefix: "%price% 代币"
+  gemseconomy:
+    # 是否启用 GemsEconomy 经济？
+    enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 价格变量的前缀，即使用 gemseconomy 货币时显示的名称.
+    prefixes:
+      currency_name: "%price% 宝石"
+  ultraeconomy:
+    # 是否启用 UltraEconomy 经济？
+    enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 价格变量的前缀，即使用 ultraeconomy 货币时显示的名称.
+    prefixes:
+      currency_name: "%price% 宝石"
+  ecobits:
+    # 是否启用 EcoBits 经济？
+    enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 价格变量的前缀，即使用 ecobits 货币时显示的名称.
+    prefixes:
+      currency_name: "%price% 像素点"
+  coinsengine:
+    # 是否启用 CoinsEngine 经济？
+    enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 价格变量的前缀，即使用 coinsengine 货币时显示的名称.
+    prefixes:
+      currency_name: "%price% 硬币"
+  rivalcredits:
+    # 是否启用 RivalCredits 经济？
+    enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 价格变量的前缀，即使用 rivalcredits 货币时显示的名称.
+    prefix: "%price% 积分"
+  rivalharvesterhoes:
+    # 是否启用 RivalHarvesterHoes 经济？
+    enabled: false
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 价格变量的前缀，即使用 rivalharvesterhoes 货币时显示的名称.
+    prefix: "%price% 积分"
+  item:
+    # 是否启用 Item 经济？
+    enabled: true
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 价格变量的前缀，即使用 item 货币时显示的名称.
+    prefix: "%price% %item%"
+  xp:
+    # 是否启用 XP 经济？
+    enabled: true
+    # 需要下载/使用这个拓展的什么版本？
+    version: latest
+    # 价格变量的前缀，即使用 xp 货币时显示的名称.
+    prefix: "%price% XP"
+    # 插件收取的是经验值还是等级？
+    strictly-use-levels: false

@@ -1,5 +1,5 @@
 # PlayerWarps, 插件作者 Olzie-12
-# https://www.spigotmc.org/resources/66692/
+# https://www.spigotmc.org/resources/115286/
 # 我们也有可以提供帮助的 Discord 聊天群组: https://olziedev.com/discord 和插件维基 https://docs.olziedev.com/projects/playerauctions
 # 如果你找到任何 BUG, 我很乐意第一时间修复它们 :)
 # 为爱发电
@@ -23,8 +23,7 @@ bannedplayers:
   show-needed-page-items: false
   # 物品不会出现在本菜单界面的哪些格子中?
   # 若你想在界面中央加入一些元素的话会很有用.
-  blacklisted-slots:
-    - ""
+  blacklisted-slots: ["30", "32"]
 
   # 通过界面查找玩家
   search:
@@ -101,8 +100,8 @@ bannedplayers:
       material: ARROW
       data: 0
       lore:
-        - "&e点击&b翻到下一页."
-      slot: 50
+        - "&d点击&b翻到下一页."
+      slot: 32
       amount: 1
       glowing: false
       # 仅在头颅种类为 PLAYER_HEAD 且数据值为 3 时有效!
@@ -113,8 +112,8 @@ bannedplayers:
       material: BARRIER
       data: 0
       lore:
-        - "&e点击&b翻到上一页."
-      slot: 48
+        - "&d点击&b翻到上一页."
+      slot: 30
       amount: 1
       glowing: false
     menu:
@@ -122,8 +121,8 @@ bannedplayers:
       material: BOOK
       data: 0
       lore:
-        - "&e点击&b返回至菜单."
-      slot: 49
+        - "&d点击&b返回至菜单."
+      slot: 31
       amount: 1
       glowing: false
 
@@ -139,7 +138,7 @@ bannedplayers:
       # 示例配置:
       # lore:
       #   - "&b这是一个玻璃板."
-      slot: 0
+      slot: [27, 29, 33, 35]
       # 此为物品数量
       amount: 1
       # 点击时执行的命令.

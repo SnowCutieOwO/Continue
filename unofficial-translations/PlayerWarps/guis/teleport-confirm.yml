@@ -1,0 +1,98 @@
+# PlayerWarps, 插件作者 Olzie-12
+# https://www.spigotmc.org/resources/115286/
+# 我们也有可以提供帮助的 Discord 聊天群组: https://olziedev.com/discord 和插件维基 https://docs.olziedev.com/projects/playerauctions
+# 如果你找到任何 BUG, 我很乐意第一时间修复它们 :)
+# 为爱发电
+
+teleport-confirm:
+  # 启用分类界面表示玩家可以分类排序地标.
+  enabled: false
+  # 该界面的名称是什么?
+  name: "teleport-confirm"
+  # 该界面的显示标题是什么? (可以使用彩色代码)
+  title: "&b&l确认传送"
+  # 界面的大小? (填入 9 的倍数, 最大为 54)
+  size: 27
+  # 打开该界面的时候执行哪些额外的操作?
+  open-actions: []
+  # 关闭该界面的时候执行哪些额外的操作?
+  close-actions: []
+  # 玩家正要前往的地标图标显示在哪里？
+  slot-warping: 13
+  # 是否在关闭这个菜单时显示上一个打开的菜单界面？
+  open-previous: true
+
+  icon:
+    # 菜单界面中头颅的名称。
+    name: "&b[warp_display]"
+    # 这个物品在菜单中显示的描述内容是什么？
+    lore:
+      - "&b位置: &d[world], [location]"
+      - "&b访问量: &d[visits]"
+      - "&b介绍: "
+      - "&d[desc]"
+      - "&b创建时间: &d[date]"
+      - "&b分类: &d[category]"
+      - "&b评分: &d[rates]"
+      - "&b平均评分: &d[rates_average]"
+      - "&b传送价格: &d[cost]"
+      - "&b密码: &d[password]"
+    # 物品是否自带附魔光效？
+    glowing: false
+
+  clickable-items:
+    accept:
+      # 如果不需要显示这样的格子，请将材料设置为 "AIR"。
+      name: "&a确认传送"
+      # 此为翻页物品的材料名称. 有效材料名称可见此: https://javadocs.olziedev.com/spigot/latest/org/bukkit/Material.html
+      material: LIME_WOOL
+      data: 5
+      lore:
+        - "&d点击&b花费 &d[cost]&b 传送至地标 &d[warp_display]&b!"
+      amount: 1
+      slot: 11
+      glowing: false
+      # 仅在头颅种类为 SKULL_ITEM 且数据值为 3 时有效!
+      #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWE0ZjY4YzhmYjI3OWU1MGFiNzg2ZjlmYTU0Yzg4Y2E0ZWNmZTFlYjVmZDVmMGMzOGM1NGM5YjFjNzIwM2Q3YSJ9fX0= - 头颅材质
+      #owner: Next - 头颅对应玩家名称
+    deny:
+      name: "&c拒绝传送"
+      material: RED_WOOL
+      data: 14
+      lore:
+        - "&c点击取消传送."
+      amount: 1
+      slot: 15
+      glowing: false
+
+  items:
+    # 放在界面装饰的物品
+    1:
+      # 物品的名称。
+      name: " "
+      # 物品的材料。
+      material: LIGHT_BLUE_STAINED_GLASS_PANE
+      # 物品的数据值。
+      data: 3
+      # 可以添加多行描述！
+      # 示例配置：
+      # lore:
+      #   - "&b这是一片玻璃板."
+      slot: [0, 2, 4, 6, 8, 18, 20, 22, 24, 26]
+      # 物品的堆叠数量。
+      amount: 1
+      # 点击时执行的命令。
+      # [server] 表示以控制台身份执行
+      # [player] 表示以玩家身份执行
+      # commands:
+      #   - "[server] msg %player% 你点击了这个物品！"
+      glowing: false
+      # 仅在头颅种类为 SKULL_ITEM 且数据值为 3 时有效!
+      #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTZmOGFmYjI3YmFmYzc3YzJiODI1OTljMmY3YjhmMWY2ODMxMGU2YWE5MDRmMDUxYjA3YWIxYzJiNmIifX19 - 头颅材质
+      #owner: Glass - 头颅对应玩家名称
+    2:
+      name: " "
+      material: MAGENTA_STAINED_GLASS_PANE
+      data: 2
+      slot: [1, 3, 5, 7, 9, 17, 19, 21, 23, 25]
+      amount: 1

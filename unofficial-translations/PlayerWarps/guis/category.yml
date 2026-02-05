@@ -1,127 +1,187 @@
-# PlayerWarps by Olzie-12
-# https://www.spigotmc.org/resources/66692/
-# We also have a discord server for help: https://olziedev.com/discord or check docs https://docs.olziedev.com/projects/playerwarps
-# Also if you find any bugs be happy to report them I will fix them :)
-# Made with love
+# PlayerWarps, 插件作者 Olzie-12
+# https://www.spigotmc.org/resources/115286/
+# 我们也有可以提供帮助的 Discord 聊天群组: https://olziedev.com/discord 和插件维基 https://docs.olziedev.com/projects/playerauctions
+# 如果你找到任何 BUG, 我很乐意第一时间修复它们 :)
+# 为爱发电
 
 category:
-  # Should you enable a category gui meaning players will have to sort their warp into a category?
+  # 启用分类界面表示玩家可以分类排序地标.
   enabled: true
   # If you don't want the category menu to be disabled entirely, but you don't want it to open up on prompt
   # then you can select the default category it'll open up or set it to main if you want the main menu.
   prompt-category: main
-  # What is the name of the gui? 
+  # 该界面的名称是什么?
   name: "category"
-  # The title of the gui (Can use color codes)
-  title: "&b&lPlayer Warps"
-  # What is the size of this GUI? (multiples of 9 can only go up to 54)
-  size: 27
-  # What are the actions when this menu is opened up?
+  # 该界面的显示标题是什么? (可以使用彩色代码)
+  title: "&b&lPlayer地标"
+  # 界面的大小? (填入 9 的倍数, 最大为 54)
+  size: 54
+  # 打开该界面的时候执行哪些额外的操作?
   open-actions: []
-  # What are the actions when this menu is closed?
+  # 关闭该界面的时候执行哪些额外的操作?
   close-actions: []
-  # What is the default category for a warp to be placed into?
+  # 地标默认处于的分类是什么？
   default: "other"
-  # For when a player doesn't have permission for that category.
+  # 无权限进入分类时的显示内容
   no-permission:
-    # If a player does not have access to view the category, should the item be replaced?
+    # 如果玩家没有权限进入分类，是否将物品替换为权限不足的样式？
     enabled: true
     item:
-      # Set the material to AIR if you dont want the item to appear.
-      name: "&cNo permission!"
+      # 如果要隐藏物品，请将其设置为 AIR。
+      name: "&c权限不足!"
       material: BARRIER
       data: 0
       lore:
-        - "&cYou cannot view this category."
+        - "&c你不能浏览这个分类."
       amount: 1
-  # Do you want the plugin to automatically create sub commands for each category? for example /pw <category> to open that category gui.
+  # 是否允许插件为每个分类自动创建子命令？输入 /pw <类别名称> 命令即可打开分类
   register-category-commands: false
 
   sponsor:
-    # Should sponsor warps be enabled?
+    # 是否启用捐赠者栏位的地标传送？
     enabled: true
-    # If enabled, should the sponsor warps show in the main player warp menu?
+    # 启用后，捐赠者地标是否会显示在玩家地标主界面？
     appear-playerwarp: false
-    # When a player cancels the sponsor with the permission "pw.admin.sponsor", should it refund the players money?
-    # This will only work if you have the economy as money and not items.
+    # 当玩家用 "pw.admin.sponsor" 权限取消捐赠者地标，是否将钱退还？
+    # 仅当经济类型设置为钱而非实体物品时有效。
     cancel-refund: false
-    # The item that will appear when the warp is being sponsored.
+    # 地标收到赞助时显示的样式。
     item:
-      # Should the icon show the customized icon by the player via /pwarp icon if its been set?
+      # 玩家通过 /pwarp icon 命令打开的界面是否显示自定义图标？
       show-custom-icon: true
       name: "&b[warp_display]"
       lore:
         - "&b[delsponsor]"
         - " "
-        - "&bOwner: &d[owner]"
-        - "&bLocation: &d[world], [location]"
-        - "&bVisits: &d[visits]"
-        - "&bDescription: "
+        - "&b拥有者: &d[owner]"
+        - "&b位置: &d[world], [location]"
+        - "&b访问量: &d[visits]"
+        - "&b介绍: "
         - "&d[desc]"
-        - "&bTeleport Cost: &d[cost]"
+        - "&b传送价格: &d[cost]"
         - " "
-        - "&bTime: &d[time]"
-      # The variable "[delsponsor]" will display the message below if they do have permission to delete the sponsor warp.
-      del-sponsor: "&dShift+Right&b to remove this sponsor.\n[safe]"
-      # The variable "[delsponsor]" will display the message below if they don't have permission to delete the sponsor warp.
+        - "&b时间: &d[time]"
+#      override-item:
+#        material: DIAMOND
+#        data: 0
+
+      # "[banned]" 变量会在玩家被封禁时显示如下内容
+      player-banned: "&c你已被地标封禁, 时长为 [timeleft]"
+      # "[banned]" 变量会在玩家没有被封禁时显示如下内容
+      player-not-banned: ""
+      # "[timeleft]" 变量会在玩家被封禁时显示剩余时长
+      time-left: "&cuntil &4[timeleft]"
+      # "[delsponsor]" 变量会在玩家没有权限删除捐赠者地标时显示如下内容.
+      del-sponsor: "&dShift+Right&b 点击移除该捐赠者地标.\n[safe]"
+      # "[delsponsor]" 变量会在玩家没有权限删除非捐赠者地标时显示如下内容.
       del-not-sponsor: "&c[safe]"
 
-    # The item that will appear when the player is on cooldown.
+    # 玩家处于冷却时显示的物品样式.
     cooldown:
-      name: "&cSponsor cooldown"
+      name: "&c捐赠者冷却"
       material: BARRIER
       data: 0
       lore:
-        - "&cYou are currently on cooldown! You have [cooldown] left."
+        - "&c你正处于冷却状态! 剩余 [cooldown]."
+      amount: 1
+
+  leaderboard:
+    # 是否启用排行榜？基本上会显示近几日的最佳地标，不过并不是实时刷新。
+    # 即使你启用了分世界设置，这个排行榜也不会受到影响，它只会照常显示。
+    enabled: true
+    # 启用后，是否在玩家地标主界面显示排行榜？
+    appear-playerwarp: false
+    # 排行榜的排序方式是什么？
+    # 可用选项：
+    # - HIGHEST_VISITS = 浏览量从高到低
+    # - LOWEST_VISITS = 浏览量从低到高
+    # - ALPHABETICAL = 字母顺序 A-Z
+    # - OLDEST_DATE = 创建时间从早到晚
+    # - NEWEST_DATE = 创建时间从晚到早
+    # - RATES = 评分从高到低
+    # - RATES_AVERAGE = 平均评分从高到低
+    # - RANDOM = 每 X 秒随机显示
+    # - FAVOURITE_COUNT = “标为喜欢”数量从高到低
+    # - PURGED_HIGHEST_VISITS = 访问量从高到低，定时清理
+    # - PURGED_LOWEST_VISITS = 访问量从低到高，定时清理
+    leaderboard-sort: RATES_AVERAGE
+    # 排行榜更新间隔？（单位为天）
+    update-days: 7
+    # 排行榜物品显示在界面里的位置？
+    # 如果添加新格子，排行榜会在更新后自适应。
+    leaderboard-slots: ["37", "38", "39", "40", "41", "42", "43"]
+    # 锁定地标是否参与排行？
+    # 这个选项只会在排行榜更新后生效。
+    count-locked: false
+    # 被捐赠地标显示的样式
+    item:
+      # 是否显示玩家通过命令 /pwarp icon 设置的自定义地标图标？
+      show-custom-icon: true
+      name: "&b[warp_display] #[position]"
+      lore:
+        - "&b拥有者: &d[owner]"
+        - "&b位置: &d[world], [location]"
+        - "&b访问量: &d[visits]"
+        - "&b介绍: "
+        - "&d[desc]"
+        - "&b传送价格: &d[cost]"
+
+    # 排行榜条目为空时显示的内容。
+    no-entry-item:
+      name: "&c无排行榜条目"
+      material: BARRIER
+      data: 0
+      lore:
+        - "&c#[position] 名次没有内容."
       amount: 1
 
   items:
-    # What are the items that are placed into the GUI to make it more pretty?
+    # 放在界面装饰的物品
     1:
-      # This is the name of the item.
+      # 物品的名称。
       name: "&bFavourite"
-      # This is the item material.
+      # 物品的材料。
       material: NETHER_STAR
-      # This is the data item
+      # 物品的数据值。
       data: 0
-      # What is the lore of item?
+      # 物品的描述。
       lore:
-        - "&dClick&b to view your favourite warps."
-      # You can add lores!
-      # example of what you can do:
+        - "&d点击&b 浏览你喜欢的地标."
+      # 可以添加多行描述！
+      # 示例配置：
       # lore:
-      #   - "&bThis is a pane."
+      #   - "&b这是一片玻璃板."
       slot: 0
-      # What is the stack amount?
+      # 物品的堆叠数量。
       amount: 1
-      # commands that will be executed on click.
-      # [server] means the command is executed as the console
-      # [player] means the command is executed as the player
+      # 点击时执行的命令。
+      # [server] 表示以控制台身份执行
+      # [player] 表示以玩家身份执行
       commands:
         - "[player] %cmd% open favourite"
       glowing: false
       all: true
-      # These only work if the skull is a PLAYER_HEAD and the data is 3!
-      #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTZmOGFmYjI3YmFmYzc3YzJiODI1OTljMmY3YjhmMWY2ODMxMGU2YWE5MDRmMDUxYjA3YWIxYzJiNmIifX19 - Skull texture
-      #owner: Glass - Skull owner
+      # 仅在头颅种类为 PLAYER_HEAD 且数据值为 3 时有效!
+      #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTZmOGFmYjI3YmFmYzc3YzJiODI1OTljMmY3YjhmMWY2ODMxMGU2YWE5MDRmMDUxYjA3YWIxYzJiNmIifX19 - 头颅材质
+      #owner: Glass - 头颅对应玩家名称
     2:
       name: " "
       material: MAGENTA_STAINED_GLASS_PANE
       data: 2
-      slot: [1, 3, 5, 7, 9, 17, 19, 21, 23, 25]
+      slot: [1, 3, 5, 7, 9, 17, 19, 21, 23, 25, 27, 35, 45, 47, 49, 51, 53]
       amount: 1
     3:
       name: " "
       material: LIGHT_BLUE_STAINED_GLASS_PANE
       data: 3
-      slot: [2, 6, 18, 20, 22, 24, 26]
+      slot: [2, 6, 18, 20, 22, 24, 26, 28, 34, 36, 44, 46, 48, 50, 52]
       amount: 1
     4:
-      name: "&bVisited Warps"
+      name: "&bVisited地标"
       material: ENDER_EYE
       data: 0
       lore:
-        - "&dClick&b to view your visited warps."
+        - "&d点击&bto view your visited地标."
       slot: 8
       amount: 1
       commands:
@@ -133,40 +193,40 @@ category:
 
     all: # This is the name of category.
       displayname: "All" # This is the display name of the category. This is what will be used to show to the player.
-      name: "&bAll Warps"
+      name: "&bAll地标"
       material: BOOK
       data: 0
       lore:
-        - "&dClick&b to view all the warps."
+        - "&d点击&b浏览所有warps."
       slot: 4
       amount: 1
-      # commands that will be executed on click.
-      # [server] means the command is executed as the console
-      # [player] means the command is executed as the player
+      # 点击时执行的命令。
+      # [server] 表示以控制台身份执行
+      # [player] 表示以玩家身份执行
       #commands:
-      #  - "[server] msg %player% you clicked this item!"
+      #  - "[server] msg %player% 你点击了这个物品！"
       glowing: false
-      # These only work if the skull is a PLAYER_HEAD and the data is 3!
-      #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzIzZDFjNDVmNDlkZTllOGE4YTEzZDViOWMyYTU4ZDYxZjcyNTljZDQ2OGYzM2M0NzI0Njg2Y2FlODlhOTMifX19 - Skull texture
-      #owner: All - Skull owner
-      # All teleport prices by default will be 50 in this category menu.
+      # 仅在头颅种类为 PLAYER_HEAD 且数据值为 3 时有效!
+      #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzIzZDFjNDVmNDlkZTllOGE4YTEzZDViOWMyYTU4ZDYxZjcyNTljZDQ2OGYzM2M0NzI0Njg2Y2FlODlhOTMifX19 - 头颅纹理
+      #owner: All - 头颅拥有者
+      # 分类菜单下的所有地标默认传送价格都为 50。
       #teleport-price: 50
     houses:
       displayname: "Houses"
-      name: "&bHouse Warps"
+      name: "&b房屋地标"
       material: OAK_PLANKS
       data: 0
       lore:
-        - "&dClick&b to view all the house warps."
+        - "&d点击&b浏览所有房屋地标."
       slot: 11
       amount: 1
     shops:
       displayname: "Shops"
-      name: "&bShop Warps"
+      name: "&b商店地标"
       material: CHEST
       data: 0
       lore:
-        - "&dClick&b to view all the shop warps."
+        - "&d点击&b浏览所有商店地标."
       slot: 12
       amount: 1
       permission: pw.view.shop
@@ -175,165 +235,219 @@ category:
       remove-days-time: 40
     farms:
       displayname: "Farms"
-      name: "&bFarm Warps"
+      name: "&b农场地标"
       material: DIAMOND_HOE
       data: 0
       lore:
-        - "&dClick&b to view all the farm warps."
+        - "&d点击&b浏览所有农场地标."
       slot: 13
       amount: 1
     pvp:
       displayname: "PvP"
-      name: "&bPvP Warps"
+      name: "&bPVP 地标"
       material: DIAMOND_SWORD
       data: 0
       lore:
-        - "&dClick&b to view all the pvp warps."
+        - "&d点击&b浏览所有 PVP 地标."
       slot: 14
       amount: 1
     other:
       displayname: "Other"
-      name: "&bOther Warps"
+      name: "&b其他地标"
       material: PAPER
       data: 0
       lore:
-        - "&dClick&b to view all the other warps."
+        - "&d点击&b浏览所有其他地标."
       slot: 15
       amount: 1
 
   sponsor-items:
     1:
-      # How should the player pay in for this sponsor? If the option below is disabled, the player will have to pay using an item
-      pay-in-price: true
-      pay-item:
-        material: DIAMOND
-        amount: 100
-      price: 100000
-      # Time in seconds
+      # 单位为秒
       time: 172800
-      message: "&bPlease enter the warp name you would like to set."
+      message: "&b请输入你要设置的地标名称."
       available-commands: []
       sponsored-commands: []
+      # 若为空，则显示所有分类。
+      # 如果需要捐赠者栏位只显示在某个分类下，那么可以将其加在这里。
+      restricted-categories: []
       auto: false:online=true
       repeat:
         time: 86400
         commands: []
       item:
-        name: "&bSponsor slot #1"
+        name: "&b捐赠者栏位 #1"
         material: NETHER_STAR
         data: 0
         lore:
-          - "&dClick&b to purchase this sponsor slot."
+          - "&d点击&b购买这个捐赠者栏位."
           - " "
-          - "&bPrice: &d$100,000"
-          - "&bTime for: &d2 days"
-        slot: 20
+          - "&b价格: &d$100,000"
+          - "&b持续时间: &d2 天"
+        slot: 29
         amount: 1
+      economy:
+        price: 100000
+        rank-prices: {}
+        # 玩家可以使用什么类型的货币支付。留空表示使用默认的 vault 货币。
+        # 若需要使用物品实体货币，确保你在下面的物品部分对其进行了预定义。
+        # 如果你的插件支持多经济，你也可以使用冒号“:”来区分内置经济类型。例如 EcoBits:Market
+        # currencies: ["vault", "item"]
+        currencies: ["vault"]
+
+        item:
+          name: ""
+          material: DIAMOND
+          data: 0
+          lore: []
     2:
-      # How should the player pay in for this sponsor? If the option below is disabled, the player will have to pay using an item
-      pay-in-price: true
-      pay-item:
-        material: DIAMOND
-        amount: 50
-      price: 50000
-      # Time in seconds
+      # 单位为秒
       time: 86400
-      message: "&bPlease enter the warp name you would like to set."
+      message: "&b请输入你要设置的地标名称."
       available-commands: []
       sponsored-commands: []
+      # 若为空，则显示所有分类。
+      # 如果需要捐赠者栏位只显示在某个分类下，那么可以将其加在这里。
+      restricted-categories: []
       auto: false:online=true
       repeat:
         time: 43200
         commands: []
       item:
-        name: "&bSponsor slot #2"
+        name: "&b捐赠者栏位 #2"
         material: NETHER_STAR
         data: 0
         lore:
-          - "&dClick&b to purchase this sponsor slot."
+          - "&d点击&b购买这个捐赠者栏位."
           - " "
-          - "&bPrice: &d$50,000"
-          - "&bTime for: &d1 day"
-        slot: 21
+          - "&b价格: &d$50,000"
+          - "&b持续时间: &d1 天"
+        slot: 30
         amount: 1
+      economy:
+        price: 50000
+        rank-prices: {}
+        # 玩家可以使用什么类型的货币支付。留空表示使用默认的 vault 货币。
+        # 若需要使用物品实体货币，确保你在下面的物品部分对其进行了预定义。
+        # 如果你的插件支持多经济，你也可以使用冒号“:”来区分内置经济类型。例如 EcoBits:Market
+        # currencies: ["vault", "item"]
+        currencies: ["vault"]
+
+        item:
+          name: ""
+          material: DIAMOND
+          data: 0
+          lore: []
     3:
-      # How should the player pay in for this sponsor? If the option below is disabled, the player will have to pay using an item
-      pay-in-price: true
-      pay-item:
-        material: DIAMOND
-        amount: 35
-      price: 35000
-      # Time in seconds
+      # 单位为秒
       time: 43200
-      message: "&bPlease enter the warp name you would like to set."
+      message: "&b请输入你要设置的地标名称."
       available-commands: []
       sponsored-commands: []
+      # 若为空，则显示所有分类。
+      # 如果需要捐赠者栏位只显示在某个分类下，那么可以将其加在这里。
+      restricted-categories: []
       auto: false:online=true
       repeat:
         time: 21600
         commands: []
       item:
-        name: "&bSponsor slot #3"
+        name: "&b捐赠者栏位 #3"
         material: NETHER_STAR
         data: 0
         lore:
-          - "&dClick&b to purchase this sponsor slot."
+          - "&d点击&b购买这个捐赠者栏位."
           - " "
-          - "&bPrice: &d$35,000"
-          - "&bTime for: &d12 hours"
-        slot: 22
+          - "&b价格: &d$35,000"
+          - "&b持续时间: &d12 小时"
+        slot: 31
         amount: 1
+      economy:
+        price: 35000
+        rank-prices: {}
+        # 玩家可以使用什么类型的货币支付。留空表示使用默认的 vault 货币。
+        # 若需要使用物品实体货币，确保你在下面的物品部分对其进行了预定义。
+        # 如果你的插件支持多经济，你也可以使用冒号“:”来区分内置经济类型。例如 EcoBits:Market
+        # currencies: ["vault", "item"]
+        currencies: ["vault"]
+
+        item:
+          name: ""
+          material: DIAMOND
+          data: 0
+          lore: []
     4:
-      # How should the player pay in for this sponsor? If the option below is disabled, the player will have to pay using an item
-      pay-in-price: true
-      pay-item:
-        material: DIAMOND
-        amount: 10
-      price: 100000
-      # Time in seconds
       time: 21600
-      message: "&bPlease enter the warp name you would like to set."
+      message: "&b请输入你要设置的地标名称."
       available-commands: []
       sponsored-commands: []
+      # 若为空，则显示所有分类。
+      # 如果需要捐赠者栏位只显示在某个分类下，那么可以将其加在这里。
+      restricted-categories: []
       auto: false:online=true
       repeat:
         time: 10800
         commands: []
       item:
-        name: "&bSponsor slot #4"
+        name: "&b捐赠者栏位 #4"
         material: NETHER_STAR
         data: 0
         lore:
-          - "&dClick&b to purchase this sponsor slot."
+          - "&d点击&b购买这个捐赠者栏位."
           - " "
-          - "&bPrice: &d$25,000"
-          - "&bTime for: &d6 hours"
-        slot: 23
+          - "&b价格: &d$25,000"
+          - "&b持续时间: &d6 小时"
+        slot: 32
         amount: 1
+      economy:
+        price: 25000
+        rank-prices: {}
+        # 玩家可以使用什么类型的货币支付。留空表示使用默认的 vault 货币。
+        # 若需要使用物品实体货币，确保你在下面的物品部分对其进行了预定义。
+        # 如果你的插件支持多经济，你也可以使用冒号“:”来区分内置经济类型。例如 EcoBits:Market
+        # currencies: ["vault", "item"]
+        currencies: ["vault"]
+
+        item:
+          name: ""
+          material: DIAMOND
+          data: 0
+          lore: []
     5:
-      # How should the player pay in for this sponsor? If the option below is disabled, the player will have to pay using an item
-      pay-in-price: true
-      pay-item:
-        material: DIAMOND
-        amount: 1
-      price: 10000
-      # Time in seconds
+      # 单位为秒
       time: 3600
-      message: "&bPlease enter the warp name you would like to set."
+      message: "&b请输入你要设置的地标名称."
       available-commands: []
       sponsored-commands: []
+      # 若为空，则显示所有分类。
+      # 如果需要捐赠者栏位只显示在某个分类下，那么可以将其加在这里。
+      restricted-categories: []
       auto: false:online=true
       repeat:
         time: 1800
         commands: []
       item:
-        name: "&bSponsor slot #5"
+        name: "&b捐赠者栏位 #5"
         material: NETHER_STAR
         data: 0
         lore:
-          - "&dClick&b to purchase this sponsor slot."
+          - "&d点击&b购买这个捐赠者栏位."
           - " "
-          - "&bPrice: &d$10,000"
-          - "&bTime for: &d1 hour"
-        slot: 24
+          - "&b价格: &d$10,000"
+          - "&b持续时间: &d1 小时"
+        slot: 33
         amount: 1
+      economy:
+        price: 10000
+        rank-prices: {}
+        # 玩家可以使用什么类型的货币支付。留空表示使用默认的 vault 货币。
+        # 若需要使用物品实体货币，确保你在下面的物品部分对其进行了预定义。
+        # 如果你的插件支持多经济，你也可以使用冒号“:”来区分内置经济类型。例如 EcoBits:Market
+        # currencies: ["vault", "item"]
+        currencies: ["vault"]
+
+        item:
+          name: ""
+          material: DIAMOND
+          data: 0
+          lore: []

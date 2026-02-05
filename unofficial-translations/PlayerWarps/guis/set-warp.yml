@@ -4,13 +4,13 @@
 # 如果你找到任何 BUG, 我很乐意第一时间修复它们 :)
 # 为爱发电
 
-visitedit:
+setwarp:
   # 是否启用这个菜单界面？
-  enabled: true
-  # 该界面的名称是什么?
-  name: "visitedit"
+  enabled: false
+  # 这个界面的名称是什么？
+  name: "setwarp"
   # 该界面的显示标题是什么? (可以使用彩色代码)
-  title: "&b&lManage visit"
+  title: "&b&l地标设置"
   # 界面的大小? (填入 9 的倍数, 最大为 54)
   size: 27
   # 打开该界面的时候执行哪些额外的操作?
@@ -19,12 +19,76 @@ visitedit:
   close-actions: []
 
   clickable-items:
-    menu:
-      name: "&b返回菜单"
+    name:
+      name: "&b设置名称"
+      material: OAK_SIGN
+      data: 0
+      lore:
+        - "&d点击&b设置地标名称."
+        - " "
+        - "&7当前名称: &b[warp_display]"
+      slot: 4
+      amount: 1
+      glowing: false
+      sign:
+        lines:
+          - "%search%"
+          - "----------------"
+          - "请输入新的地标名称"
+          - "----------------"
+    description:
+      name: "&b设置描述"
+      material: PAPER
+      data: 0
+      lore:
+        - "&d点击&b修改地标的描述."
+        - " "
+        - "&7当前描述: &b[desc]"
+      slot: 11
+      amount: 1
+      glowing: false
+      message: "&b请输入地标描述."
+    cost:
+      name: "&b设置地标价格"
+      material: GOLD_INGOT
+      data: 0
+      lore:
+        - "&d点击&b设置地标价格."
+        - " "
+        - "&7当前价格: &b[cost_set]"
+      slot: 13
+      amount: 1
+      glowing: false
+      sign:
+        lines:
+          - "%search%"
+          - "----------------"
+          - "请输入价格"
+          - "----------------"
+    category:
+      name: "&b设置分类"
       material: BOOK
       data: 0
       lore:
-        - "&d点击&b返回至菜单."
+        - "&d左键点击&b为地标添加分类."
+        - "&d右键点击&b为地标移除分类."
+        - " "
+        - "&7当前类别: &b[category]"
+      slot: 15
+      amount: 1
+      glowing: false
+      sign:
+        lines:
+          - "%search%"
+          - "----------------"
+          - "请输入分类名称"
+          - "----------------"
+    set:
+      name: "&b设置地标"
+      material: LIME_WOOL
+      data: 5
+      lore:
+        - "&d点击&b花费 &d[set_cost]&b 创建地标!"
       slot: 22
       amount: 1
       glowing: false
@@ -42,7 +106,7 @@ visitedit:
       # 示例配置：
       # lore:
       #   - "&b这是一片玻璃板."
-      slot: [0, 2, 4, 6, 8, 18, 20, 24, 26]
+      slot: [0, 2, 6, 8, 18, 20, 24, 26]
       # 物品的堆叠数量。
       amount: 1
       # 点击时执行的命令。
@@ -60,56 +124,3 @@ visitedit:
       data: 2
       slot: [1, 3, 5, 7, 9, 17, 19, 21, 23, 25]
       amount: 1
-    3:
-      name: "&b评分"
-      material: DIAMOND
-      data: 0
-      slot: 10
-      amount: 1
-      lore:
-        - "&b点击评价&d[warp_display]"
-      # [server] 表示命令以控制台身份执行
-      # [player] 表示命令以玩家身份执行
-      commands:
-        - "[chat_wait] &b请输入评分分值 (0-5):[player] !color pwarp rate %warp% %value%"
-        - "[close]"
-      back: false
-    4:
-      name: "&b评分"
-      material: EMERALD
-      data: 0
-      slot: 12
-      amount: 1
-      lore:
-        - "&b点击浏览地标 &d[warp_display] &b的评价列表"
-      # [server] 表示命令以控制台身份执行
-      # [player] 表示命令以玩家身份执行
-      commands:
-        - "[server] %cmd% open rate -warp %warp% -player %player%"
-      back: false
-    5:
-      name: "&b传送"
-      material: ENDER_EYE
-      data: 0
-      slot: 14
-      amount: 1
-      lore:
-        - "&b点击传送至 &d[warp_display]"
-      # [server] 表示命令以控制台身份执行
-      # [player] 表示命令以玩家身份执行
-      commands:
-        - "[player] %cmd% %warp%"
-      back: false
-    6:
-      name: "&b喜欢"
-      material: NETHER_STAR
-      data: 0
-      slot: 16
-      amount: 1
-      lore:
-        - "&b点击将 &d[warp_display] &b设为喜欢"
-      # [server] 表示命令以控制台身份执行
-      # [player] 表示命令以玩家身份执行
-      commands:
-        - "[player] %cmd% favourite %warp%"
-      back: false

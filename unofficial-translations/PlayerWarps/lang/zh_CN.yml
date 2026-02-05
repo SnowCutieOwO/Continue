@@ -1,5 +1,5 @@
 # PlayerWarps, 插件作者 Olzie-12
-# https://www.spigotmc.org/resources/66692/
+# https://www.spigotmc.org/resources/115286/
 # 我们也有用于寻求帮助的 Discord 聊天群组: https://olziedev.com/discord, 你也可以来查阅文档 https://docs.olziedev.com/projects/playerwarps
 # 若你找到了漏洞且愿意报告它们, 我很乐意修复 :)
 # 为爱发电
@@ -18,6 +18,7 @@ lang:
   console-name: "&d服务器传送点"
   console-uuid: "f78a4d8d-d51b-4b39-98a3-230f2de0c670"
   cancel-chat-wait: "取消"
+  chat-wait-cancelled: "&c待处理的传送请求已取消!"
   friendly-max-auctions: "无限" # 若你需要显示实际数量, 请将它替换为 %amount%
   prefix: "&b&lPA &7»" # 可以使用 %prefix% 将前缀插入消息中!
   list: "%prefix% &b地标列表 &d(%page%&b/&d%pages%&b):&d\n* %list%\n%previous%      %next%"
@@ -33,14 +34,13 @@ lang:
   warp-removed: "%prefix% &a成功! 你的地标已被移除!"
   teleported: "%prefix% &a成功传送至 &d%warp_display%&a!"
   someone-teleported: "%prefix% &a玩家 &d%player%&a 已传送至地标 &d%warp_display%&a!" # 若玩家传送到了属于自己的地标, 则该消息不会显示!
-  warp-set-confirmation: "%prefix% &a设置地标 %name% 将会花费你 &d$%price%&a, 请重新输入命令来确认本次操作."
-  warp-teleport-confirmation: "%prefix% &a传送至 %warp_display% 将会花费你 $%price%, 请重新输入命令来确认本次操作."
+  warp-set-confirmation: "%prefix% &a设置地标 %name% 将会花费你 &d%price%&a, 请重新输入命令来确认本次操作."
+  warp-teleport-confirmation: "%prefix% &a传送至 %warp_display% 将会花费你 %price%, 请重新输入命令来确认本次操作."
   warp-remove-confirmation: "%prefix% &a你确定你要删除地标 %warp_display% 吗? 重新输入命令来确认本次操作."
   warp-set: "%prefix% &a成功创建了名为 &d%name%&a 的地标!"
   reloaded: "%prefix% &a成功重载了所有配置文件!"
-  money-taken: "%prefix% &a$%price% 已从你的账户中支出."
-  items-taken-set: "%prefix% &a钻石已从你的背包中扣除."
-  items-taken-teleport: "%prefix% &a钻石已从你的背包中扣除."
+  reloading: "%prefix% &a正在重载配置..."
+  currency-taken: "%prefix% &a%price% 已从你的账户中支出."
   teleporting-dont-move: "%prefix% &a将在 &d%time%&a 秒内传送至地标 &d%warp_display%&a!"
   desc-set-success: "%prefix% &a成功为地标 &d%warp_display%&a 设置了描述 &d%desc%&a."
   desc-remove-success: "%prefix% &a成功清除了地标 &d%warp_display% &a的描述."
@@ -49,6 +49,7 @@ lang:
   removed-warp-icon: "%prefix% &a成功清除了地标 &d%warp_display%&a 的图标!"
   category-set: "%prefix% &a你成功将地标 &d%warp_display%&a 的所属分类设置为了 &d%category%&a!"
   category-remove: "%prefix% &a你成功取消设置了地标 &d%warp_display%&a 的分类!"
+  category-clear: "%prefix% &a成功清除了所有地标分类!"
   rate-set: "%prefix% &a你成功为地标 &d%warp_display%&a 打出了 &d%rate%&a 的评分!"
   rate-set-desc: "%prefix% &a你成功为地标 &d%warp_display%&a 打出了 &d%rate%&a (&d%description%&a) 的评分!"
   warps-removed: "%prefix% &a成功! 玩家 &d%player%&a 的所有地标已被移除!"
@@ -92,7 +93,6 @@ lang:
     - "%prefix% &d%player%&b 最多可设置 &d%warpsmax%&b (&b总计 &d%staticwarps%&b) 个地标."
     - "%prefix% &d%player%&b 当前已使用了 &d%warpsused%&b 个地标."
     - "%prefix% &7&l&m----------&7&l[ &b&lPlayer Warps &7&l]&m----------"
-  amount-warps-others-alert: "&c%player% 当前不在线, 仅显示他们当前已有的地标数量."
   locked-gui: "&c&l已锁定"
   unlocked-gui: "&a&l已解锁"
   no-password-gui: "&a&l无密码"
@@ -106,9 +106,13 @@ lang:
   dbexec-successful: "%prefix% &a成功更新了 &d%count%&a 行数据. &a请执行命令 &d/%cmd% reload&a 来确认更新."
   removed-rating: "%prefix% &a成功撤销了对地标 &d%warp_display%&a 的评分!"
   warp-info: "%prefix% &b&d%warp_display%&b 的相关信息:\n%prefix% &b拥有者: &d%owner%\n%prefix% &b位置: &d%world%, %location%\n%prefix% &b访问量: &d%visits%\n%prefix% &b描述:\n%prefix% &d%desc%\n%prefix% &b创建时间: &d%date%\n%prefix% &b所属分类: &d%category%\n%prefix% &b地标评分: &d%rates%\n%prefix% &b平均评分: &d%rates_average% &7(&e%rates_stars%&7)\n%prefix% &b传送价格: &d%cost%"
-  refunded-items: "%prefix% &a你的物品已退还."
-  refunded-money: "%prefix% &a你的钱款已退还."
-  
+  refunded-currency: "%prefix% &a收取的费用已退还给你."
+  tags-set: "%prefix% &a成功将 &d%warp_display% 的&a标签 &d%tag%&a 设置为 &d%value%&a!"
+  tags-remove: "%prefix% &成功移除了 &d%warp_display%&a 的标签 &d%tag%&a!"
+  tags-clear: "%prefix% &a成功清除了 &d%warp_display%&a 的所有标签!"
+  tags-list: "%prefix% &d%warp_display% &b的所有标签:\n%tags%"
+  placeholder-tag-format: "&d%tag%&b: &d%value%"
+
   # 普通玩家视角的帮助菜单
   # 内建变量 %cmd% 会返回 config.yml 中的命令 :)
   help-player:
@@ -121,11 +125,12 @@ lang:
     - "%prefix% &d/%cmd% desc set/remove <地标> <描述> &7&l- &b修改地标描述."
     - "%prefix% &d/%cmd% list [页码] [玩家] &7&l- &b列出所有玩家地标."
     - "%prefix% &d/%cmd% open [菜单] [选项] &7&l- &b打开本插件的菜单界面."
-    - "%prefix% &d/%cmd% amount &7&l- &b浏览你的地标数量."
+    - "%prefix% &d/%cmd% search [搜索内容] [选项] &7&l- &b搜索玩家/地标."
+    - "%prefix% &d/%cmd% amount [玩家名称] &7&l- &b浏览你的地标数量."
     - "%prefix% &d/%cmd% reload &7&l- &b重载所有配置文件."
     - "%prefix% &d/%cmd% icon set/remove <地标> &7&l- &b设置地标图标."
     # 若你想要在商店中出售玩家设置地标数量上限的内容会很有用
-    # 这可以给予他们设置地表的权利. 例如如果玩家可以设置 10 个地标 (pw.limit.10), 你再输入命令 /pw addwarps 玩家名称 10, 那么他们可以设置 20 个地标.
+    # 这可以给予他们设置地标的权利. 例如如果玩家可以设置 10 个地标 (pw.limit.10), 你再输入命令 /pw addwarps 玩家名称 10, 那么他们可以设置 20 个地标.
     - "%prefix% &d/%cmd% addwarps <玩家> <数量> &7&l- &b通过命令增加玩家可设置的地标数量上限."
     - "%prefix% &d/%cmd% category set/remove/list <地标> [分类] &7&l- &b设置一个地标分类."
     - "%prefix% &d/%cmd% rate <地标> <分值> &7&l- &b为指定地标评分."
@@ -136,6 +141,8 @@ lang:
     - "%prefix% &d/%cmd% setowner <地标> <玩家> &7&l- &b转移地标所有权."
     - "%prefix% &d/%cmd% favourite <地标> &7&l- &b收藏地标."
     - "%prefix% &d/%cmd% info <地标> &7&l- &b获取指定地标的有关信息."
+    - "%prefix% &d/%cmd% settings <地标> &7&l- &b打开地标设置界面."
+    - "%prefix% &d/%cmd% tags set/remove/list/clear <地标> <标签> <值> &7&l- &b设置地标标签."
     - "%prefix% &7&l&m----------&7&l[ &b&lPlayer Warps &7&l]&m----------"
 
   # 控制台的帮助界面
@@ -144,11 +151,13 @@ lang:
     - "%prefix% &7&l&m----------&7&l[ &b&lPlayer Warps &7&l]&m----------"
     - "%prefix% &d/%cmd% help &7&l- &b显示本菜单."
     - "%prefix% &d/%cmd% open [菜单] [选项] &7&l- &b打开本插件的菜单界面."
+    - "%prefix% &d/%cmd% search [搜索内容] [选项] &7&l- &b搜索玩家/地标."
+    - "%prefix% &d/%cmd% amount [玩家名称] &7&l- &b浏览你的地标数量."
     - "%prefix% &d/%cmd% remove <地标> &7&l- &b移除指定地标."
     - "%prefix% &d/%cmd% list [页码] [玩家] &7&l- &b列出所有玩家地标."
     - "%prefix% &d/%cmd% reload &7&l- &b重载所有配置文件"
     # 若你想要在商店中出售玩家设置地标数量上限的内容会很有用
-    # 这可以给予他们设置地表的权利. 例如如果玩家可以设置 10 个地标 (pw.limit.10), 你再输入命令 /pw addwarps 玩家名称 10, 那么他们可以设置 20 个地标.
+    # 这可以给予他们设置地标的权利. 例如如果玩家可以设置 10 个地标 (pw.limit.10), 你再输入命令 /pw addwarps 玩家名称 10, 那么他们可以设置 20 个地标.
     - "%prefix% &d/%cmd% addwarps <玩家> <数量> &7&l- &b通过命令增加玩家可设置的地标数量上限."
     - "%prefix% &d/%cmd% category set/remove/list <地标> [分类] &7&l- &b设置一个地标分类."
     - "%prefix% &d/%cmd% ban set/remove/list <地标> [玩家] [时长] [理由] &7&l- &b管理指定地标的玩家封禁."
@@ -157,13 +166,14 @@ lang:
     - "%prefix% &d/%cmd% setowner <地标> <玩家> &7&l- &b转移地标所有权."
     - "%prefix% &d/%cmd% dbexec <请求内容> &7&l- &b执行查询请求."
     - "%prefix% &d/%cmd% info <地标> &7&l- &b获取地标的有关信息."
+    - "%prefix% &d/%cmd% settings <地标> [玩家名称] &7&l- &bOpen the warp settings gui."
     - "%prefix% &7&l&m----------&7&l[ &b&lPlayer Warps &7&l]&m----------"
 
   # 错误消息.
   errors:
     command-syntax: "%prefix% &c格式不正确, 请使用:\n%syntax%"
     player-only: "%prefix% &c只有玩家才可执行该命令!"
-    console-only: "%prefix% &C只有控制台才可执行该命令!"
+    console-only: "%prefix% &c只有控制台才可执行该命令!"
     name-too-long-set: "%prefix% &c你设置的地标名称不可以多于 &4%max%&c 个字符!"
     desc-too-long-set: "%prefix% &c你设置的地标描述不可以多于 &4%max%&c 个字符!"
     rate-too-long-set: "%prefix% &c你评分的内容不可以多于 &4%max%&c 个字符!"
@@ -191,15 +201,13 @@ lang:
     already-setowner: "%prefix% &c你已经发起了一个传送至地标 %warp_display% 的请求"
     not-setowner: "%prefix% &c你尚未收到来自该地标的拥有权转移请求!"
     warp-not-safe: "%prefix% &c传送点不安全. 若你想要传送, 请再次输入命令."
-    money-not-enough-teleport: "%prefix% &c你缺少传送至该地标的费用 $%price%!"
-    money-not-enough-reset: "%prefix% &c你缺少重设该地标的费用 $%price%!"
-    money-not-enough-rename: "%prefix% &c你缺少重命名该地标的费用 $%price%!"
-    items-not-enough-set: "%prefix% &c你没有足够的钻石设置该地标!"
-    items-not-enough-teleport: "%prefix% &c你没有足够的钻石传送至该地标!"
-    money-not-enough-set: "%prefix% &c你缺少设置该地标的费用 $%price%!"
-    money-not-enough-sponsor: "%prefix% &c你缺少赞助该地标的费用 $%price%!"
-    item-not-enough-sponsor: "%prefix% &c你缺少足够的 %item% 赞助该地标!"
+    money-not-enough-teleport: "%prefix% &c你缺少传送至该地标的费用 %price%!"
+    money-not-enough-reset: "%prefix% &c你缺少重设该地标的费用 %price%!"
+    money-not-enough-rename: "%prefix% &c你缺少重命名该地标的费用 %price%!"
+    money-not-enough-set: "%prefix% &c你缺少设置该地标的费用 %price%!"
+    money-not-enough-sponsor: "%prefix% &c你缺少赞助该地标的费用 %price%!"
     moved-while-teleporting: "%prefix% &c传送请求已取消, 请不要移动!"
+    damaged-while-teleporting: "%prefix% &c传送请求已取消, 你受伤了!"
     desc-no-desc-gui: "&c无"
     desc-no-desc: "%prefix% &a地标 &c%warp_display% 没有设置描述!"
     cost-no-cost: "%prefix% &a地标 &c%warp_display% 没有设置传送价格!"
@@ -239,6 +247,32 @@ lang:
     dbexec-failed: "%prefix% &c发送请求时出现错误. %error%"
     already-sponsored-other: "%prefix% &c其他玩家已经购买了该赞助栏位!"
     warp-max-categories: "%prefix% &c你不能拥有超过 %max% 个分类!"
+    sponsor-cooldown: "%prefix% &c你必须再等待 %time% 才可以再次购买这个地标的赞助者栏位!"
+    sponsor-restricted-category: "%prefix% &c你不能在这个格子中成为赞助者. 这个只能在指定分类中进行!"
+    sign-editor-out-of-bounds: "%prefix% &c你不能在这里使用告示牌编辑功能 (超出世界范围)!"
+    invalid-location: "%prefix% &c位置无效, 你的位置太高或太低了!"
+    unsafe-location-set: "%prefix% &c这个位置不安全, 请为你的地标选择一个更安全的位置!"
+    tag-not-exist: "%prefix% &c标签不存在!"
+    tag-name-not-allowed: "%prefix% &c这个标签无效!"
+    tag-name-too-long: "%prefix% &c你的标签不能长于 &4%max_length%&c 个字符!"
+    tag-value-too-long: "%prefix% &c你的标签值不能长于 &4%max_length%&c 个字符!"
+
+  restapi:
+    help:
+      - "%prefix% &7&l&m----------&7&l[ &b&lPlayer Warps &7&l]&m----------"
+      - "%prefix% &d/%cmd% apitokens &7&l- &b显示这个菜单."
+      - "%prefix% &d/%cmd% apitokens generate &7&l- &b生成一个新的 API token."
+      - "%prefix% &d/%cmd% apitokens delete &7&l- &b删除当前的 API token."
+      - "%prefix% &7&l&m----------&7&l[ &b&lPlayer Warps &7&l]&m----------"
+    no-api-token: "%prefix% &c你尚未拥有 API token, 请输入命令 /%cmd% apitokens generate 生成一个."
+    no-api-token-other: "%prefix% &c这个玩家没有任何 API token."
+    no-confirmation: "%prefix% &c无法确认此操作, 可能是它已经过期了?"
+    confirmation-expired: "%prefix% &c待处理的操作请求已过期.."
+    deleted-api-token: "%prefix% &a成功删除了 API token!"
+    confirm-delete: "%prefix% <green>你确定要删除你的 API token 吗? 点击<red><hover:show_text:'<red>确认</red>'><click:run_command:'/%cmd% apitokens delete confirm'>这里</click></hover></red>确认你的操作.</green>"
+    confirm-delete-other: "%prefix% <green>你确定要删除 <red>%player%'s</red> 的 API token 吗? 点击<red><hover:show_text:'<red>确认</red>'><click:run_command:'/%cmd% apitokens delete %player% confirm'>这里</click></hover></red>确认你的操作.</green>"
+    confirm-generate: "%prefix% <green>你确定要生成新的 API token 吗? 这会覆盖旧的 API token. 点击<red><hover:show_text:'<red>确认</red>'><click:run_command:'/%cmd% apitokens generate %player% confirm'>这里</click></hover></red>确认你的操作.</green>"
+    generated-api-token: "%prefix% <green>成功生成了新的 API token! 点击<click:copy_to_clipboard:'%token%'><hover:show_text:'<red>复制 API token</red>'><red>这里</red></hover></click>复制你的 API token!"
 
 # 在这里你可以通过指定权限指定不同类型的无权限消息.
 # 或者你也可以将它们设置为空字符串以使其不提醒.
@@ -258,3 +292,5 @@ n/a:
   no-category: "N/A"
   no-managers: "N/A"
   no-displayname: "%player%" # 显示玩家名称
+  no-rate-desc: "N/A"
+  no-tags: "尚未设置标签"

@@ -1,159 +1,166 @@
-# PlayerWarps by Olzie-12
-# https://www.spigotmc.org/resources/66692/
-# We also have a discord server for help: https://olziedev.com/discord or check docs https://docs.olziedev.com/projects/playerwarps
-# Also if you find any bugs be happy to report them I will fix them :)
-# Made with love
+# PlayerWarps, 插件作者 Olzie-12
+# https://www.spigotmc.org/resources/115286/
+# 我们也有可以提供帮助的 Discord 聊天群组: https://olziedev.com/discord 和插件维基 https://docs.olziedev.com/projects/playerauctions
+# 如果你找到任何 BUG, 我很乐意第一时间修复它们 :)
+# 为爱发电
 
 favourite:
-  # Should you enable a warps gui?
+  # 是否启用这个菜单界面？
   enabled: true
-  # What is the name of the gui? 
+  # 该界面的名称是什么?
   name: "favourite"
-  # The title of the gui (Can use color codes)
-  title: "&b&lFavourite Warps ([page]/[pages])"
-  # What is the size of this GUI? (multiples of 9 can only go up to 54)
+  # 该界面的显示标题是什么? (可以使用彩色代码)
+  title: "&b&l喜欢的地标 ([page]/[pages])"
+  # 界面的大小? (填入 9 的倍数, 最大为 54)
   size: 54
-  # What are the actions when this menu is opened up?
+  # 打开该界面的时候执行哪些额外的操作?
   open-actions: []
-  # What are the actions when this menu is closed?
+  # 关闭该界面的时候执行哪些额外的操作?
   close-actions: []
-  # What are the max warps that are shown in the GUI? (If it reaches the max it will delete the first one every time)
-  # Set to -1 to disable.
+  # 菜单中最多显示几个地标？（如果达到最大，每次会删除前几个地标）
+  # 设置为 -1 表示禁用。
   max-warps: -1
-  # Should the page items be removed if there is page for that button. E.g. you're on page 0, it won't show the previous item.
-  # You can also put an item where this page item is, and it'll only show if the page item isn't there.
+  # 是否在无法翻页的情况下隐藏翻页按钮。例如，如果你在第一页，那么不显示向前翻页的按钮。
+  # 你也可以用一个物品替代原本的翻页按钮，这样它只会在无法翻页时显示。
   show-needed-page-items: false
-  # What are the blacklisted slots that warps will not appear in the GUI?
-  # This is useful if you want to add empty slots in the middle of the GUI instead of having an item there instead.
-  blacklisted-slots:
-    - ""
+  # 物品不会出现在本菜单界面的哪些格子中?
+  # 若你想在界面中央加入一些元素的话会很有用.
+  blacklisted-slots: ["48", "50"]
 
-  # Searching for warps through the GUI
+  # 通过界面搜索地标
   search:
-    # Should the feature be enabled?
-    # You will need ProtocolLib for this to work.
+    # 是否启用这个功能？
+    # 需要安装 ProtocolLib 才可以生效。
     enabled: true
-    # What is the title for the inventory?
-    title: "&b&lSearch [search] - ([page]/[pages])"
-    # What are the premade lines in the sign?
-    # %search% is the variable they have to enter the warp in, so please make sure that line doesn't contain anything else.
-    # If it doesn't contain the variable, then the plugin will just assume line 1 is user input. Colour codes will not work either.
+    # 界面的标题是什么？
+    title: "&b&l搜索 [search] - ([page]/[pages])"
+    # 告示牌中的预设文本内容
+    # %search% 表示输入搜索的关键词，确保这个变量所在行没有其他文本
+    # 如果这里没有变量，插件会假设第一行是玩家输入的搜索词。颜色代码在这里不会生效。
     lines:
       - "%search%"
       - "----------------"
-      - "Please enter a"
-      - "search result."
-    # This is the sign material that will be used for the search. This is only allowed to be a sign.
+      - "请输入玩家名称."
+      - "----------------"
+    # 用于展开搜索界面的物品名称. 仅支持填入告示牌.
     material: OAK_SIGN
 
     item:
       material: OAK_SIGN
       data: 0
-      name: "&bSearch"
+      name: "&b搜索"
       lore:
-        - "&dClick&b to search for a warp."
+        - "&d点击&b搜索指定地标."
         - " "
-        - "&bYou can search for warps by:"
-        - "&d* Full IGN"
-        - "&d* Warp name"
+        - "&b你可以搜索地标的这些信息:"
+        - "&d* 完整名称"
+        - "&d* 地标名称"
       slot: 45
       amount: 1
       glowing: false
 
   icon:
-    # This is the name of the skull in the gui.
+    # 菜单界面中头颅的名称。
     name: "&b[warp_display]"
-    # you can add multiple lores bc i god <3
-    # If you're using SQL you can use the placeholder [server] to tell the player the server.
+     # 支持多行描述
+     # 如果你正在使用 SQL，你还可以通过变量 [server] 返回玩家所在服务器
     lore:
       - "&b[banned]"
       - "&b[safe]"
       - " "
-      - "&bOwner: &d[owner]"
-      - "&bLocation: &d[world], [location]"
-      - "&bVisits: &d[visits]"
-      - "&bDescription: "
+      - "&b拥有者: &d[owner]"
+      - "&b位置: &d[world], [location]"
+      - "&b访问量: &d[visits]"
+      - "&b介绍: "
       - "&d[desc]"
-      - "&bTime Created: &d[date]"
-      - "&bCategory: &d[category]"
-      - "&bRates: &d[rates]"
-      - "&bRates Average: &d[rates_average] &7(&e[rates_stars]&7)"
-      - "&bTeleport Cost: &d[cost]"
+      - "&b创建时间: &d[date]"
+      - "&b所属分类: &d[category]"
+      - "&b评分: &d[rates]"
+      - "&b平均评分e: &d[rates_average] &7(&e[rates_stars]&7)"
+      - "&b传送费用: &d[cost]"
       - " "
-      - "&dRight click&b for more."
-    # Should the item appear with the glowing effect?
+      - "&d右键点击&b了解详情."
+    # 物品是否自带附魔光效？
     glowing: false
-    # What are the commands that are ran when a player clicks on a warp?
+
+    # 内建变量 "[banned]" 会在玩家被封禁时显示如下内容
+    player-banned: "&c你已被该地标封禁, 剩余时间 [timeleft]"
+    # 内建变量 "[banned]" 会在玩家未被封禁时显示如下内容
+    player-not-banned: ""
+    # 内建变量 "[timeleft]" 会在玩家被封禁时显示剩余时间
+    time-left: "&c直到 &4[timeleft]"
+
+    # 玩家点击地标时执行什么命令？
     commands: []
 
   clickable-items:
     next-page:
-      # This is the name of the next page item
-      # If you wish to disable any of these please set them the material to "AIR"
-      name: "&bNext Page"
-      # this is the material of the next page item. valid material names: https://javadocs.olziedev.com/spigot/latest/org/bukkit/Material.html
+      # 此为翻页物品的名称
+      # 若你想要禁用这些物品, 只需将它设置为 "AIR"
+      name: "&b下一页"
+      # 此为翻页物品的材料名称. 有效材料名称可见此: https://javadocs.olziedev.com/spigot/latest/org/bukkit/Material.html
       material: ARROW
       data: 0
       lore:
-        - "&dClick&b to go to the next page."
+        - "&d点击&b翻到下一页."
       slot: 50
       amount: 1
       glowing: false
-      # These only work if the skull is a PLAYER_HEAD and the data is 3!
-      #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWE0ZjY4YzhmYjI3OWU1MGFiNzg2ZjlmYTU0Yzg4Y2E0ZWNmZTFlYjVmZDVmMGMzOGM1NGM5YjFjNzIwM2Q3YSJ9fX0= - Skull texture
-      #owner: Next - Skull owner
+      # 仅在头颅种类为 PLAYER_HEAD 且数据值为 3 时有效!
+      #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWE0ZjY4YzhmYjI3OWU1MGFiNzg2ZjlmYTU0Yzg4Y2E0ZWNmZTFlYjVmZDVmMGMzOGM1NGM5YjFjNzIwM2Q3YSJ9fX0= - 头颅材质
+      #owner: Next - 头颅对应玩家名称
     previous-page:
-      name: "&bPrevious page"
+      name: "&b上一页"
       material: BARRIER
       data: 0
       lore:
-        - "&dClick&b to go to the previous page."
+        - "&d点击&b翻到上一页."
       slot: 48
       amount: 1
       glowing: false
     menu:
-      name: "&bGo back to menu"
+      name: "&b返回菜单"
       material: BOOK
       data: 0
       lore:
-        - "&dClick&b to go back to the menu."
+        - "&d点击&b返回至菜单."
       slot: 49
       amount: 1
       glowing: false
     sort:
-      name: "&bSort"
+      name: "&b排序"
       material: HOPPER
       data: 0
       lore:
-        - "&dClick&b to sort the GUI in a specific format."
-        - "&bCurrent: &d%sort%"
+        - "&d点击&b按指定顺序为界面中的地标进行排序."
+        - "&b当前: &d%sort%"
       slot: 53
       amount: 1
       glowing: false
 
   items:
     1:
-      # This is the name of the item.
+      # 物品的名称。
       name: " "
-      # This is the item material. To disable set this to AIR
+      # 物品的材料。若需要禁用，请将其设置为 AIR
       material: LIGHT_BLUE_STAINED_GLASS_PANE
-      # This is the data item
+      # 物品的数据值。
       data: 3
-      # You can add lores!
+      # 可以添加多行描述！
       # lore:
-      #   - "&bThis is a pane."
+      #   - "&b这是一片玻璃板."
       slot: [45, 47, 51, 53]
-      # What is the stack amount?
+      # 物品的堆叠数量。
       amount: 1
-      # commands that will be executed on click.
-      # [server] means the command is executed as the console
-      # [player] means the command is executed as the player
+      # 点击时执行的命令。
+      # [server] 表示以控制台身份执行
+      # [player] 表示以玩家身份执行
       # commands:
-      #   - "[server] msg %player% you clicked this item!"
+      #   - "[server] msg %player% 你点击了这个物品！"
       glowing: false
-      # These only work if the skull is a PLAYER_HEAD and the data is 3!
-      #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTZmOGFmYjI3YmFmYzc3YzJiODI1OTljMmY3YjhmMWY2ODMxMGU2YWE5MDRmMDUxYjA3YWIxYzJiNmIifX19 - Skull texture
-      #owner: Glass - Skull owner
+      # 仅在头颅种类为 PLAYER_HEAD 且数据值为 3 时有效!
+      #texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTZmOGFmYjI3YmFmYzc3YzJiODI1OTljMmY3YjhmMWY2ODMxMGU2YWE5MDRmMDUxYjA3YWIxYzJiNmIifX19 - 头颅材质
+      #owner: Glass - 头颅对应玩家名称
     2:
       name: " "
       material: MAGENTA_STAINED_GLASS_PANE

@@ -1,169 +1,191 @@
-# PlayerWarps by Olzie-12
-# https://www.spigotmc.org/resources/66692/
-# We also have a discord server for help: https://olziedev.com/discord or check docs https://docs.olziedev.com/projects/playerwarps
-# Also if you find any bugs be happy to report them I will fix them :)
-# Made with love
+# PlayerWarps 插件作者 Olzie-12
+# https://www.spigotmc.org/resources/115286/
+# 遇到问题也可以在 discord 服务器求助：https://olziedev.com/discord，或者浏览插件文档 https://docs.olziedev.com/projects/playerwarps
+# 如果发现任何 BUG，请及时上报它们，我很乐意为你修复 :)
+# 用爱发电
 
-# If you wish to remove a list completely from the configuration, don't remove it otherwise the configuration updater
-# will add it back to the config, and you'll be back to square one. To solve this, make sure you set the list to []
-# For example:
+# 如果你需要完全删除配置中的某个列表选项，不要删除键名，否则配置检查器会把它连同默认配置加回去
+# 你只需要将它设置为 [] 即可，如下所示：
 # list: []
 
-# DO NOT TOUCH THIS!
-config-version: 212
+# 请勿修改此项！
+config-version: 220
 
 settings:
-  # What language do you want the plugin to read? The list langs are in the lang/ folder.
+  # 你需要让插件显示什么语言？支持的语言列表取决于 lang/ 文件夹中存在的语言文件。
   lang: en_US
-  # Very useful to tell if there are any memory leaks or if the author needs
-  # information.
-  # Current debug levels are:
-  # - NONE = No debug
-  # - MINOR = Debug for info on what the plugin is doing
-  # - MAJOR - High level of debug info (which is normally used by developers)
+  # 是否允许插件检测玩家客户端语言？
+  # 在未找到玩家客户端语言对应的译文时选择默认设置的语言。
+  attempt-detect-lang: true
+  # 作者要求提供相关信息时使用的设置。
+  # 当前可使用的调试等级：
+  # - NONE = 不开启调试模式
+  # - MINOR = 仅显示插件行为
+  # - MAJOR = 更高级的调试信息 (通常开发者使用)
   debug: NONE
-  # Notifies you if there is an update (Only people with pw.admin.update can see this when they join)
+  # 是否提醒有更新可用 (仅拥有 pw.admin.update 权限的玩家在上线时可见)
   notify-update: true
-  # Should the plugin automatically download the latest version from spigot if your plugin version is out of date?
-  download-update: true
-  # Plugin metrics, this is very useful for the author to
-  # see information about the server. Please keep it enabled,
-  # it makes me more encouraged to make plugins like this.
-  # YOU WILL NEED TO RESTART THE SERVER!
+  # 参与数据统计，可以帮助作者更好地了解用户群体。
+  # 这可以帮助作者更好地开发插件！
+  # 修改此项后需要重启服务器才可生效！
   metrics: true
-  # This is the main command for the plugin.
+  # 插件的主命令。
   main-command: "pwarp"
-  # Extra aliases for the main command.
+  # 插件主命令的别名。
   command-aliases:
     - "playerwarp"
     - "pw"
-  # What order should the warps be listed?
-  # Options:
-  # - HIGHEST_VISITS = The order will be from the warp most visits.
-  # - LOWEST_VISITS = The order will be from the warp less visits.
-  # - ALPHABETICAL = The order will be from alphabetical order.
-  # - OLDEST_DATE = The order will be when the warp was created the oldest.
-  # - NEWEST_DATE = The order will be when the warp was created the newest.
-  # - RATES = The order will be from the most rates.
-  # - RATES_AVERAGE = The order will be from the highest average rates.
-  # - RANDOM = The order will be random every x seconds.
-  # - FAVOURITE_COUNT = The order will be from the most favourites.
-  # - PURGED_HIGHEST_VISITS = The order will be from the warp most visits, but purged.
-  # - PURGED_LOWEST_VISITS = The order will be from the warp less visits, but purged.
+  # 地标的排列顺序？
+  # 可用选项：
+  # - HIGHEST_VISITS = 浏览量从高到低
+  # - LOWEST_VISITS = 浏览量从低到高
+  # - ALPHABETICAL = 字母顺序 A-Z
+  # - OLDEST_DATE = 创建时间从早到晚
+  # - NEWEST_DATE = 创建时间从晚到早
+  # - RATES = 评分从高到低
+  # - RATES_AVERAGE = 平均评分从高到低
+  # - RANDOM = 每 X 秒随机显示
+  # - FAVOURITE_COUNT = “标为喜欢”数量从高到低
+  # - PURGED_HIGHEST_VISITS = 访问量从高到低，定时清理
+  # - PURGED_LOWEST_VISITS = 访问量从低到高，定时清理
   order: OLDEST_DATE
-  # How should the order be displayed instead of HIGHEST_VISITS etc...
-  # Set to "" to disable that specific order when using the sort item change cycle.
+  # 显示顺序等排序方式的显示文本
+  # 设置为空字符串 "" 时表示在点击切换排列顺序的按钮中禁用。
   order-name:
-    HIGHEST_VISITS: "Highest Visits"
-    LOWEST_VISITS: "Lowest Visits"
-    ALPHABETICAL: "Alphabetical"
-    OLDEST_DATE: "Oldest Date"
-    NEWEST_DATE: "Newest Date"
-    RATES: "Rates"
-    RATES_AVERAGE: "Rates Average"
-    FAVOURITE_COUNT: "Favourite Count"
-    RANDOM: "Random"
-    SERVER: "Server Warps"
-    # Only un-comment these out if you wish to take advantage of the last visits purge.
-    # This will sort the warps out on the amount of visits since the purge.
-#    PURGED_HIGHEST_VISITS: "Current Highest Visits"
-#    PURGED_LOWEST_VISITS: "Current Lowest Visits"
+    HIGHEST_VISITS: "浏览量从高到低"
+    LOWEST_VISITS: "浏览量从低到高"
+    ALPHABETICAL: "字母顺序"
+    OLDEST_DATE: "创建时间从玩到早"
+    NEWEST_DATE: "创建时间从早到晚"
+    RATES: "评分高低"
+    RATES_AVERAGE: "平均评分高低"
+    FAVOURITE_COUNT: "喜欢数量"
+    RANDOM: "随机显示"
+    SERVER: "服务器地标"
+	# 若需要利用最近访问清理功能，那么将如下内容的注释符号去除。
+	# 这会按定时清理后的访问量对地标进行排序。
+  #    PURGED_HIGHEST_VISITS: "近期浏览量从高到低"
+  #    PURGED_LOWEST_VISITS: "近期浏览量从低到高"
 
-  # How often should the random sort actually randomize?
+  # 若选择随机显示，那么地标多久更新一次？
   order-random-time: 86400
 
-  # What should the world type look like? [world_type]
+  # 世界类型的显示样式 [世界类型]
   world-type:
-    # (If you wish for it to display the world name, just enter %world%)
-    # When the world is the end
-    end: "&dThe End"
-    # When the world is the nether
-    nether: "&cNether"
-    # When the world is the overworld
+    # (若只需要显示世界名称，填入 %world% 即可)
+    # 当世界名称为 end 时：
+    end: "&d末地"
+    # 当世界名称为 nether 时：
+    nether: "&c下界"
+    # 当世界名称为 overworld 时：
     overworld: "%world%"
 
-  # How should the timer look like?
+  # 计时器样式
   timer-display:
-    # Where there is one day
-    day: "%day%d "
-    # When there is more than one day
-    days: "%day%d "
-    # Where there is one hour
-    hour: "%hour%h "
-    # Where there is more than one hour
-    hours: "%hour%h "
-    # Where there is a minute
-    minute: "%minute%m "
-    # Where there is more than a minute
-    minutes: "%minute%m "
-    # Where there is a second
-    second: "%second%s "
-    # Where there is more than a second
-    seconds: "%second%s "
+    # 时间少于一天
+    day: "%day%日"
+    # 时间多于一天
+    days: "%day%日"
+    # 时间少于一小时
+    hour: "%hour%时"
+    # 时间多于一小时
+    hours: "%hour%时"
+    # 时间少于一分钟
+    minute: "%minute%分"
+    # 时间多于一分钟
+    minutes: "%minute%分"
+    # 时间少于一秒
+    second: "%second%秒"
+    # 时间多于一秒
+    seconds: "%second%秒"
 
-  # Should offline messages be pending? If the player is offline and the plugin tries to send a message, it will send it to them when they're online again.
+  # 是否暂存离线消息？插件试图发给离线玩家的消息会在他们下次上线时显示。
   offline-message-pending: true
 
-  # if a line in the lore is empty should it be removed?
+  # 是否去除描述中的空行？
   empty-line-removed: true
 
-  # Choose what locale the formatters should use, make sure to use language codes https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html.
+  # 数字等格式使用的地区代码，完整列表可在 https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html 浏览。
   format-locale: "en"
 
-  # How should the plugin format numbers?
-  # Should the plugin use the short number format? (1.2k instead of 1,200)
+  # 插件是否要对数字进行格式化显示？
+  # 是否对大数值进行缩写？（1,200 缩写为 1.2k）
   number-format-short: false
-  # If the above option is true, how should the format look like?
-  number-format-short-suffix: ["", "K", "M", "B", "T", "Q", "s", "S"]
+  # 若上述设置为 true, 缩写如何显示?
+  number-format-short-suffix: [ "", "K", "M", "B", "T", "Q", "s", "S" ]
+  # 判断缩写数值时，是否检查大小写？
+  # 推荐设置为 true，可以避免与预设前缀冲突。
+  number-format-case-sensitive: true
 
-  # You can see the java documentation on how to use the decimal format here:
+  # 有关小数格式的相关文档，可以参考如下的 java 文档：
   # https://docs.oracle.com/javase/8/docs/api/java/text/DecimalFormat.html
-  number-format: "#,###.##" # Formatting full number
-  number-format-decimal: "#,##0.00" # Formatting decimal number
+  number-format: "#,###.##" # 完整数字显示格式
+  number-format-decimal: "#,##0.00" # 小数显示格式
+  # 取余模式的相关文档可以参考如下的 java 文档：
+  # https://docs.oracle.com/javase/8/docs/api/java/math/RoundingMode.html
+  number-format-rounding-mode: "HALF_UP" # 完整数字显示格式 (留空则使用默认模式)
+  number-format-decimal-rounding-mode: "HALF_UP" # 小数显示格式 (留空则使用默认模式)
 
   # How should the plugin format dates?
-  # You can see the java documentation on how to use the simple date format here:
+  # 日期显示格式
+  # 使用简单日期格式的相关 java 文档如下：
   # https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html
-  date-format: "dd/MM/yyy" # Formatting dates with no time
-  date-format-time: "dd/MM/yyy HH:mm:ss" # Formatting dates with time
-  # What timezone should the plugin format dates in? If you wish to use the server timezone, leave it as ""
-  # You can see the java documentation on how to use the time zone here: https://docs.oracle.com/javase/8/docs/api/java/util/TimeZone.html
+  date-format: "dd/MM/yyy" # 不带时间点的格式
+  date-format-time: "dd/MM/yyy HH:mm:ss" # 有时间点的格式
+  # 插件处理时间时使用哪个时区？留空表示跟随系统时区设置。
+  # 关于时区功能相关使用方法的方法请见这份 java 文档：
+  # https://docs.oracle.com/javase/8/docs/api/java/util/TimeZone.html
   date-format-timezone: ""
 
-  # Instead of having pw.warp for all warps. Do you want to toggle the feature for requiring a player to have pw.warp.<name> to teleport to the warp?
+  # 是否要求玩家拥有 `pw.warp.<地标名称>` 而非 `pw.warp` 权限才可传送到对应地标？
   pwarp-limit-specific: false
 
-  # Should the plugin ignore the op limit permission and focus on the actual limit permission itself.
+  # 是否忽略 OP 限制权限，只检查实际限制权限
   pwarp-limit-op: false
+  # 插件是否叠加限制权限？若设置为 false，则使用数值最大的权限。
+  # 若设置为 true，则它会将所有不同数值的同类权限叠加计算。
+  pwarp-limit-stack: false
 
-  # Should the plugin only limit the warp names to be the players' names?
-  # The only downfall for this is that the plugin will not change the warp name when they change their name.
-  # If you want to make sure players cant rename their warps, set the rename command to false below.
+  # 是否只允许玩家将地标命名为自己的游戏名？
+  # 玩家改变自己的名称时，插件不会自动同步。
+  # 若需要禁止玩家重命名自己的地标，你需要将下面的 rename 命令禁用。
   pwarp-only-use-names: false
 
-  # Should the plugin split different worlds and separate every single warp in each world?
-  # This will include, the warp limit (per world)
-  # This will also include warps in the menu and in commands.
+  # 插件是否要分离不同世界，并分世界归类其中的地标？
+  # 这会影响到（分世界的）地标数量限制
+  # 以及菜单和命令中的地标。
   pwarp-separate-worlds: false
-  # If the above option is true, do u want to have the separate worlds in groups?
-  # For example, world, world_nether, world_the_end will technically be in the same world
+  # 若上述选项为 true，是否需要为分世界的地标设置分组？
+  # 例如 world, world_nether, world_the_end 技术上讲是同一世界。
   pauction-separate-group-worlds: true
 
+  # 是否将插件完全转为私有地标系统，禁止玩家与其他玩家的地标交互
+  # 管理员也会受到同样的限制。
+  # 控制台将无法与地标进行交互，因为这个功能会允许不同玩家设置同名地标。
+  # 这会自动禁用广告位地标、排行榜界面以及转移拥有权功能。
+  # 服务器地标无视上述限制，始终保持可见。
+  # 需要注意的是，如果开启了这个功能，一旦玩家创建了地标，你就无法将其关闭。
+  # 这可能会破坏数据库结构，请小心对待。你已经被警告过了。
+  pwarp-private-warps: false
+
   sub-commands:
-    # If you disable any of these, it will just show the help menu.
+    # 禁用后输入对应子命令时只显示帮助菜单。
     desc-command: true
     list-command: true
-    # If the open command is disabled, the only way to open the MENU is to actually type /pwarp. (Only if you have it overridden in playerwarp.yml).
-    # If you have this command disabled, and /pwarp is not overridden in the gui. No one will be able to use the GUI.
-    # If you wish to disable a GUI just turn it off in the gui.
+    near-command: true
+    # 若禁用 open 命令，打开菜单界面的唯一方式是 /pwarp 命令。（仅在 playerwarp.yml 中覆盖设置后有效）。
+    # 否则没有玩家可以打开这个菜单界面。 
+    # 若只需要禁用菜单界面，请前往 gui 设置调整。
     open-command: true
-    # Yes,I know. Someone wanted for these to be disabled. Don't ask.
+    search-command: true
+    # 是的，我知道。但是有人需要。别多问。
     remove-command: true
     set-command: true
     teleport-command: true
     amount-command: true
     icon-command: true
     category-command: true
+    tags-command: true
     rate-command: true
     password-command: false
     whitelist-command: false
@@ -177,19 +199,23 @@ settings:
     managers-command: true
     favourite-command: true
     info-command: true
+    settings-command: true
 
-    # Here the sub command syntax's please know that you cannot have spaces in these otherwise you will break everything
+    # 这里可以修改子命令的格式，切勿插入任何空格。
     help-command-name: "help"
     desc-command-name: "desc"
     list-command-name: "list"
+    near-command-name: "near"
     open-command-name: "open"
+    search-command-name: "search"
     remove-command-name: "remove"
     set-command-name: "set"
-    # Please leave this empty if you wish to not have it as a sub command and just have it part of the main command.
+    # 若需要将其作为主命令的一部分，请将其留空。
     teleport-command-name: ""
     amount-command-name: "amount"
     icon-command-name: "icon"
     category-command-name: "category"
+    tags-command-name: "tags"
     rate-command-name: "rate"
     password-command-name: "password"
     whitelist-command-name: "whitelist"
@@ -203,41 +229,47 @@ settings:
     managers-command-name: "managers"
     favourite-command-name: "favourite"
     info-command-name: "info"
+    settings-command-name: "settings"
 
-    # Remember, you can always add command aliases, just please use this.
-    # This example is for the set command, but you can add any command.
-    # set-command-aliases:
-    #   - "create"
+    # 记住，你随时可以添加命令别称，当然是在这些设置里。
+    # 这个是 set 命令的示例，你也可以为其他命令添加。
+    custom-command-aliases:
+      set-command-aliases:
+        - "create"
 
-    desc-command-syntax: "%prefix% &b/%label% %args-0% set/remove <warp> <desc>"
-    remove-command-syntax: "%prefix% &b/%label% %args-0% <warp>"
-    set-command-syntax: "%prefix% &b/%label% %args-0% <name> [owner]"
-    teleport-command-syntax: "%prefix% &b/%label% %args-0% <warp> [player]"
-    icon-command-syntax: "%prefix% &b/%label% %args-0% set/remove <warp> [material]"
-    category-command-syntax: "%prefix% &b/%label% %args-0% set/remove/list <warp> [category]"
-    rate-command-syntax: "%prefix% &b/%label% %args-0% <warp> <rate> <description>"
-    password-command-syntax: "%prefix% &b/%label% %args-0% set/remove <warp> <password>"
-    whitelist-command-syntax: "%prefix% &b/%label% %args-0% set/remove/list/enable <warp> [player]"
-    lock-command-syntax: "%prefix% &b/%label% %args-0% <warp>"
-    cost-command-syntax: "%prefix% &b/%label% %args-0% set/remove <warp> <cost>"
-    reset-command-syntax: "%prefix% &b/%label% %args-0% <warp>"
-    rename-command-syntax: "%prefix% &b/%label% %args-0% <warp> <name>"
-    setowner-command-syntax: "%prefix% &b/%label% %args-0% <warp> <player>"
-    ban-command-syntax: "%prefix% &b/%label% %args-0% set/remove/list <warp> [player] [time] [reason]"
-    managers-command-syntax: "%prefix% &b/%label% %args-0% set/remove/list <warp> [player]"
-    favourite-command-syntax: "%prefix% &b/%label% %args-0% <warp>"
-    removeall-command-syntax: "%prefix% &b/%label% %args-0% <player>"
-    addwarps-command-syntax: "%prefix% &b/%label% %args-0% <player> <amount>"
-    dbexec-command-syntax: "%prefix% &b/%label% %args-0% <query>"
+    desc-command-syntax: "%prefix% &b/%label% %args-0% set/remove <地标名称> <描述文本>"
+    remove-command-syntax: "%prefix% &b/%label% %args-0% <地标名称>"
+    set-command-syntax: "%prefix% &b/%label% %args-0% <名称> [拥有者]"
+    teleport-command-syntax: "%prefix% &b/%label% %args-0% <地标名称> [玩家名称]"
+    icon-command-syntax: "%prefix% &b/%label% %args-0% set/remove <地标名称> [物品名称]"
+    category-command-syntax: "%prefix% &b/%label% %args-0% set/remove/list <地标名称> [类别名称]"
+    tags-command-syntax: "%prefix% &b/%label% %args-0% set/remove/list <地标名称> <标签名称> <值>"
+    rate-command-syntax: "%prefix% &b/%label% %args-0% <地标名称> <评分> <描述>"
+    password-command-syntax: "%prefix% &b/%label% %args-0% set/remove <地标名称> <密码>"
+    whitelist-command-syntax: "%prefix% &b/%label% %args-0% set/remove/list/enable <地标名称> [玩家名称]"
+    lock-command-syntax: "%prefix% &b/%label% %args-0% <地标名称>"
+    cost-command-syntax: "%prefix% &b/%label% %args-0% set/remove <地标名称> <价格>"
+    reset-command-syntax: "%prefix% &b/%label% %args-0% <地标名称>"
+    rename-command-syntax: "%prefix% &b/%label% %args-0% <地标名称> <名称>"
+    setowner-command-syntax: "%prefix% &b/%label% %args-0% <地标名称> <玩家名称>"
+    ban-command-syntax: "%prefix% &b/%label% %args-0% set/remove/list <地标名称> [玩家名称] [时间] [理由]"
+    managers-command-syntax: "%prefix% &b/%label% %args-0% set/remove/list <地标名称> [玩家名称]"
+    favourite-command-syntax: "%prefix% &b/%label% %args-0% <地标名称>"
+    removeall-command-syntax: "%prefix% &b/%label% %args-0% <玩家名称>"
+    addwarps-command-syntax: "%prefix% &b/%label% %args-0% <玩家名称> <数量>"
+    dbexec-command-syntax: "%prefix% &b/%label% %args-0% <查询内容>"
+    info-command-syntax: "%prefix% &b/%label% %args-0% <地标名称>"
+    search-command-syntax: "%prefix% &b/%label% %args-0% <查询内容> [选项]"
+    settings-command-syntax: "%prefix% &b/%label% %args-0% <地标名称> [玩家名称]"
 
-    # This will replace %reason% with in the no permission message, this is to avoid confusion with players adding a space
-    # as setting a wap with spaces means you're setting a warp for that player.
+    # 将 %reason% 的内容替换为无权限消息，避免玩家因设置带空格的地标而产生混淆。
     set-command-reason: "You cannot set warps with a space!"
 
-    # Here are some of the sub commands names for some commands
+    # 子命令名称
     set-subcommand-name: "set"
     remove-subcommand-name: "remove"
     list-subcommand-name: "list"
+    clear-subcommand-name: "clear"
 
     accept-subcommand-name: "accept"
     cancel-subcommand-name: "cancel"
@@ -245,77 +277,98 @@ settings:
     enable-subcommand-name: "enable"
     disable-subcommand-name: "disable"
 
-    # Should players also need "pw.set" to access the /pw set command?
-    # They'll also need the limit permission as well to set a warp.
+    # 若需要禁用 teleport 命令的 tab 补全，请将此项设置为 false。
+    teleport-command-disable-tab-complete: false
+
+    # 玩家是否需要 "pw.set" 权限才能使用 /pw set 命令？
+    # 设置地标时同样需要这个权限。
     set-command-permission: false
-    # Should players need "pw.open" to access the menu when using override-pwarp?
+    # 玩家是否需要 "pw.open" 权限才能使用覆盖主命令打开菜单界面？
     open-command-permission: false
+    # 使用 open 命令时可用的选项
+    open-command-options:
+      # 基于 pw.admin.open 权限的选项
+      player-option: true
+      # 基于 pw.admin.open 权限的选项
+      view-option: true
+      search-option: true
+      warp-option: true
+      page-option: true
+      sort-option: true
+
+    # 使用搜索界面时，选择哪种菜单？默认全选。
+    # 如果修改了分类或菜单的名称，请相应地修改此项。
+    search-command-menu: "all"
 
   database:
-    # When the plugin starts up, should it automatically convert the opposite database connected?
-    # Make sure to disable this once done!
+    # 当插件启动时，是否应自动转换连接的相反数据库？
+    # 完成后请禁用！
     convert: false
-    # This checks if the database connection is valid. If it's not, it will find a new connection.
-    # If the plugin is crashing your server with the stacktrace containing "com.mysql.cj.jdbc.ConnectionImpl.isValid". Then please disable this.
-    # When this is disabled, it will instead check if the connection is closed. If it is, it will find a new connection.
-    # SQLite users should not have to worry about this.
+    # 检查数据库连接有效性。否则尝试建立新连接。
+    # 若插件导致服务器崩溃，且堆栈包含 "com.mysql.cj.jdbc.ConnectionImpl.isValid" 字样。那么禁用此项。
+    # 禁用后，只检查连接是否已关闭。如果是，那么建立新连接。
+    # 使用 SQLite 的用户无需担心此项。
     use-is-valid: true
+    # 数据库表前缀
+    # 需要注意的是，如果在数据库中保存了数据，修改后缀之后原本的数据将无法被读取。
+    table-prefix: "playerwarps_"
 
     sqlite:
       backups:
-        # Should backups be enabled? I highly recommenced you keep this enabled.
+        # 是否启用备份功能？非常建议启用。
         enabled: true
-        # What are the maximum amount of backups allowed in the backup folder until the first one is deleted? Set this to -1 to keep unlimited backups
+        # 备份文件夹中最大备份数量，超过后最早的备份将被删除。设置为 -1 表示数量不限。
         maximum: 10
 
     mysql:
-      # Should MySQL be enabled?
+      # 是否启用 MySQL？
       enabled: false
-      # Should the connection to the database be closed periodically?
-      # If you're having issues with "No operations allowed after connection closed.". Make sure this is disabled and add autoReconnect=true in your arguments below.
+      # 是否定期关闭数据库连接？
+      # 若遇到了诸如 "连接关闭后不允许操作（No operations allowed after connection closed.）"，确保这项设置被禁用，且下方 arguments 设置中添加了 autoReconnect=true 参数。
       close: false
-      # Please enter the server name on your proxy, otherwise the plugin will not be able to redirect you to that server.
-      # If you don't want to set up this database as a network, please leave this blank.
-      # If you do not have this blank, and you do want to enable cross server support. Unfortunately as of now checking if warps are safe
-      # is currently not supported!
+      # 请输入群组中的服务器名称，否则插件无法将你重定向到对应服务器。
+      # 若不需要搭建群组服数据库，保持留空即可。
+      # 若不留空且启用了跨服支持，那么很遗憾，目前插件无法在这种情况下检查地标附近是否安全！
       server-name: ""
-      # Whats the pending warp timeout? This is recommended to be 3-4 seconds.
-      # This is for when a player teleports to a warp in a different server and if the teleport was not successful
-      # and they teleport to a different server the pending warp they tried teleporting to is still saved.
-      # This option then removed the pending warp after x amount of seconds on attempt of teleport.
-      # This is in seconds.
+      # 使用的数据库类型？（mysql 或 postgresql）？
+      server: "mysql"
+      # 传送超时时间，建议设置为 3-4 秒。
+      # 当玩家跨服传送时，如果传送失败但玩家跨服成功，则插件会重新传送玩家。
+      # 这个选项会尝试在 x 秒后取消传送请求，单位为秒。
       pending-warp-timeout: 3
-      # How much delay should the plugin wait before it actually teleports the player to the warp after they have been teleported to the server?
-      # By default, this is 1 second. You may add more time if you wish to then override other plugins that may teleport the player after PlayerWarps does.
-      # This is in ticks.
+      # 跨服后传送至地标的延时，默认为一秒。若需要覆盖其他插件的传送行为，可以适当增加此值。
+      # 单位为刻。
       teleport-delay: 20
 
-      # If MySQL is enabled PlayerWarps needs to be connected to the MySQL database, please enter your details.
-      # I am not responsible for any leakage of these details. (If an admin accesses it etc...)
+      # 若启用了 MySQL，PlayerWarps 需要连接到 MySQL 数据库，请在如下配置中正确填写登录凭据。
+      # 出现管理员擅自访问并泄露密码等情况时，作者概不负责。
 
-      # What is the hostname?
+      # 服务器域名
       hostname: "spigotmc.org"
-      # What is the port? Most database ports are 3306.
+      # 端口号，默认为 3306
       port: 3306
-      # What is your database name?
+      # 数据库名称
       database: "PlayerWarps"
-      # What is your database username?
+      # 数据库用户名
       username: "root"
-      # What is your database password?
+      # 数据库密码
       password: "root"
-      # Add extra arguments to your MySQL connect URL.
+      # 数据库连接地址附加参数
       arguments: "?characterEncoding=utf8&useSSL=true"
 
-    # How often should the GUI refresh in every server? If the time is low the more lag the plugin could produce. This is in seconds.
+    # 子服菜单界面刷新间隔。更低的值会导致卡顿。单位为秒。
     refresh-time: 60
 
   icon:
-    # Set the icon as an item in a player's hand. If this is disabled the player will need to enter the item name manually.
+    # 将图标设置为玩家手中的物品。如果禁用此选项，玩家需要手动输入物品名称。
     icon-set-item-in-hand: true
-    # What are the blacklisted items that players cannot set to their warp icon to?
+    # 玩家不能将地标图标设置为哪些物品？
     blacklisted-items:
       - "AIR"
-    # What are the hidden attributes that should be displayed?
+    # 上述列表用作白名单还是黑名单？默认为黑名单，即禁止使用列表中的物品。
+    # 启用此选项后，则表示只允许使用列表中的物品。
+    whitelist: false
+    # 对物品附加的隐藏属性标签
     hidden-attributes:
       - "HIDE_ENCHANTS"
       - "HIDE_ATTRIBUTES"
@@ -323,579 +376,740 @@ settings:
       - "HIDE_DESTROYS"
       - "HIDE_PLACED_ON"
       - "HIDE_POTION_EFFECTS"
+      - "HIDE_STORED_ENCHANTS"
+      - "HIDE_ADDITIONAL_TOOLTIP"
 
   set:
-    # Should there be a confirmation before setting a warp?
+    # 设置地标前是否需要确认？
     confirmation: false
-    # How many seconds, should the confirmation expire. This means how many seconds they have to
-    # set to a warp. Recommended is 10
+    # 确认操作请求过期时间。表示玩家有多久时间确认设置地标。推荐值为 10。
     confirmation-expire-time: 10
-    # The amount of characters a warp name atleast needs to have.
+    # 地标名称最小字数
     min-warp-name-chars: 1
-    # The amount of characters a warp name can have.
+    # 地标名称最大字数
     max-warp-name-chars: 10
-    # Blacklist any names from anyone setting a playerwarp called that.
-    # This uses a regex pattern compiler to detect the names. 
-    # So please escape regex characters if you're using them.
+    # 黑名单词汇列表
+    # 插件通过正则表达式检测名称
+    # 请尝试避免使用正则表达式的特殊字符
     blacklisted-names:
       - "olzieisbad"
-    # What should represent a space in a warp name? This is mainly used for the commands.
-    # If you do not want to use a space, please use ""
+    # 用什么字符表示地标中的空格？用于在命令中表示带空格的地标名称。
+    # 若不需要使用空格，留空即可。
     display-space: "_"
-    # What is the cooldown in seconds for setting a warp? Set this to -1 to disable.
+    # 创建地标的冷却，设置为 -1 表示禁用。
     cooldown: 5
-    # Should players not be able to set warps in these worlds?
+    # 阻止玩家在下列世界中设置地标。
     disabled-worlds:
       - "world_nether"
-    # Should a warp be automatically locked by default when the player has created the warp?
+    # 是否将上述禁用世界列表作为白名单使用？
+    disabled-worlds-whitelist: false
+    # 是否阻止玩家在指定 y 轴高度以下的位置设置地标？
+    # 设置为 -1 表示禁用。
+    min-y: -1
+    # 是否阻止玩家在指定 y 轴高度以上的位置设置地标？
+    # 设置为 -1 表示禁用。
+    max-y: -1
+    # 若地标所处位置不安全，是否阻止玩家设置地标？
+    prevent-unsafe-warps: false
+    # 玩家创建的地标是否默认锁定？
     automatically-lock: false
-
-    # What are the commands that should be executed upon setting?
-    # [server] means the command is executed as the console
-    # [player] means the command is executed as the player
-    commands: []
+    # 设置时一并执行的命令
+    # [server] 表示命令以控制台身份执行
+    # [player] 表示命令以玩家身份执行
+    commands: [ ]
 
     renting:
-      # Should renting warps be enabled?
+      # 是否启用地标租赁功能？
       enabled: false
-      # What is the price they have to pay x amount of days? If they don't have this in their bank, the warp will be removed.
-      renting-price: 500
-      # Here you can choose specific ranks that have the renting price, if you have not put a rank there the max will be above.
-      # WARNING This will not work if you're using the default Bukkit Permissions system due to vault not supporting groups.
-      # Please list the ranks from the highest to the lowest, as if your groups inherit each other than it'll find the first one on the list instead of the highest one.
-      # Depending on your permissions plugin this may be really performance heavy.
-      renting-ranks-price: {}
-#        # The rank VIP's rent will cost  $1000.
-#        vip: 1000
-#        # The rank MVP doesn't have rent.
-#        MVP: -1
+      economy:
+        # 每 x 天需要支付的租金。如果玩家余额无力支付租金，地标将被移除。
+        price: 500
+        # 你可以为特定权限组设置租金。如果权限组不在列表中，则使用上方的默认租金。
+        # 警告！若你正在使用 Bukkit 自带的权限系统，则这个功能无效，因为 vault 不支持这样的权限实现方式。
+        # 请将组别等级从高到低排列，如果某个组别继承多个组，则插件会默认选择最上方的组别优惠。
+        # 取决于你使用的权限插件，这个设置的性能影响有所差别。
+        rank-prices: { }
+      #        # VIP 组的玩家租金为 $1000.
+      #        vip: 1000
+      #        # MVP 组的玩家不需要支付租金。
+      #        MVP: -1
+      #
+      # 玩家可以使用什么类型的货币支付。留空表示使用默认的 vault 货币。
+      # 若需要使用物品实体货币，确保你在下面的物品部分对其进行了预定义。
+      # 如果你的插件支持多经济，你也可以使用冒号“:”来区分内置经济类型。例如 EcoBits:Market
+      # currencies: ["vault", "item"]
+      currencies: ["vault"]
 
-      # Every x days do they have to pay?
+      # 每隔几天收一次租金？
       time: 1
-      # How much time left until they rent, to be reminded? Set to [] to disable this. (These times are in hours)
-      time-reminding: [24, 12, 6, 1]
-      # Should these players not get charged for rent Please put UUIDS otherwise it will not work.
-      # here is an uuid converter (https://mcuuid.net/), make sure to get the "full uuid" not the "trimmed uuid".
+      # 剩余时长不足多少小时后提醒玩家续租？设置为 [] 表示禁用。（单位为小时）
+      time-reminding: [ 24, 12, 6, 1 ]
+      # 不受租金影响的玩家 UUID 列表。不接受除 UUID 以外的值。
+      # 可以使用 UUID 转化器（https://mcuuid.net），确保复制的是“完整 UUID（full uuid）”而非“缩写 UUID（trimmed uuid）”
       restricted-players:
         - "5ca251ab-589d-4f04-8f0c-28404d0686b0"
 
-      # If a warp is in this category below then the warp will not be rented.
+      # 禁止租赁这个分类下的地标。
       restricted-categories:
         - ""
 
-      # If a warp is in this world below then the warp will not be rented.
+      # 禁止租赁这些世界中的地标。
       restricted-worlds:
         - ""
 
-      # To prevent warps from being rented, you can use a placeholder condition.
-      # This will only work if you have the PlaceholderAPI plugin installed.
-      # In this example, this will only rent warps if the warp is not locked.
+      # 禁止租赁满足指定条件的地标。
+      # 只在安装了 PlaceholderAPI 插件时生效。
+      # 在这个例子中，只有未锁定的地标才会被租赁。
       placeholder-condition:
-        # Should the condition be checked?
+        # 是否启用这个变量检查？
         enabled: false
-        # The placeholder to check
-        placeholder: "%pw_warp_name_%warp%_locked%"
-        # Condition can only be: ==, >, <
+        # 检查的变量
+        placeholder: "%pw_warp_name_%warp%_locked_raw%"
+        # 比较符号只能为：==, >, <
         condition: "=="
-        # The value that the condition needs to be.
+        # 变量比较的值。
         value: "false"
 
     economy:
-      # This is how much they will need to set a warp, otherwise if they don't have that it will not set the warp and send the message
-      # in lang folder. Make sure you have an economy plugin and vault supports that economy plugin!
-      # Set this to -1 to disable.
-      set-price: 500
-      # Here you can choose specific ranks that the price they need to pay, if you have not put a rank there the payment will be the payment will be above.
-      # WARNING This will not work if you're using the default Bukkit Permissions system due to vault not supporting groups.
-      # Please list the ranks from the highest to the lowest, as if your groups inherit each other than it'll find the first one on the list instead of the highest one.
-      # Depending on your permissions plugin this may be really performance heavy.
-      set-ranks-price: {}
-#        # The rank MVP does not need to pay.
-#        MVP: -1
-#        # The rank VIP only needs to pay $1.
-#        vip: 1
+      # 设置地标的价格，余额不足的玩家会收到创建失败的消息。
+      # 确保你安装了 vault 和支持它的经济插件！
+      # 设置为 -1 表示禁用。
+      price: 500
+      # 设置不同组别设置地标的价格，不在列表中的组别默认使用上述的价格。
+      # 警告！若你正在使用 Bukkit 自带的权限系统，则这个功能无效，因为 vault 不支持这样的权限实现方式。
+      # 请将组别等级从高到低排列，如果某个组别继承多个组，则插件会默认选择最上方的组别优惠。
+      # 取决于你使用的权限插件，这个设置的性能影响有所差别。
+      rank-prices: { }
+      #        # MVP 玩家无需支付费用。
+      #        MVP: -1
+      #        # VIP 玩家只需支付 1 游戏币。
+      #        vip: 1
 
-      items:
+      # 玩家可以使用什么类型的货币支付。留空表示使用默认的 vault 货币。
+      # 若需要使用物品实体货币，确保你在下面的物品部分对其进行了预定义。
+      # 如果你的插件支持多经济，你也可以使用冒号“:”来区分内置经济类型。例如 EcoBits:Market
+      # currencies: ["vault", "item"]
+      currencies: ["vault"]
+      item:
         name: ""
         material: DIAMOND
         data: 0
-        lore: []
-        # set the amount to -1 to disable
-        amount: -1
+        lore: [ ]
 
-      # If you want players to be able to set a certain amount of warps for free above they actually start to pay for creating them
-      # Set this to -1 to disable or set this the amount of warps they can set for free.
+      # 是否允许玩家免费设置一定数量的地标，之后才开始为其付费？
+      # 设置为 -1 表示禁用，除此之外的正整数表示从这个数字开始的地标收费。
       price-free-limit: -1
-      # Here you can choose specific ranks that the price will be free, if you have not put a rank there the amount will be the amount will be above.
-      # WARNING This will not work if you're using the default Bukkit Permissions system due to vault not supporting groups.
-      # Please list the ranks from the highest to the lowest, as if your groups inherit each other than it'll find the first one on the list instead of the highest one.
-      # Depending on your permissions plugin this may be really performance heavy.
-      free-ranks-limit: {}
-#        # The rank MVP will not pay until they set 5 warps.
-#        MVP: 5
-#        # The rank VIP only needs to pay after 1 warp.
-#        vip: 1
+      # 在这里设置指定组别中的玩家的免费地标数量上限，所属组别不在列表中的玩家则使用上述的默认设置。
+      # 警告！若你正在使用 Bukkit 自带的权限系统，则这个功能无效，因为 vault 不支持这样的权限实现方式。
+      # 请将组别等级从高到低排列，如果某个组别继承多个组，则插件会默认选择最上方的组别优惠。
+      # 取决于你使用的权限插件，这个设置的性能影响有所差别。
+      free-ranks-limit: { }
+    #        # MVP 组的玩家可以免费设置 5 个地标后才开始付费。
+    #        MVP: 5
+    #        # The 组的玩家可以免费设置 1 个地标后才开始付费。
+    #        vip: 1
 
     sign:
-      # Should players be able to set warps from signs?
-      # Warning: Players cannot break the sign if they aren't the owner, so it could be used as an "annoying" block
-      # If enabled, a player will need "pw.set.sign" to create a warp from a sign.
+      # 是否允许玩家通过告示牌设置地标？
+      # 警告：非地标拥有者无法破坏告示牌，可能会用作围堵其他玩家领地的方块
+      # 启用后，玩家需要 "pw.set.sign" 权限才可以创建告示牌地标。
       enabled: false
-      # What are the needed lines for the player to put down? %warp% is where the warp name needs to be.
+      # 玩家放置地标告示牌需要填入的内容？%warp% 即为对应地标的名字。
       lines:
         - "[pwarp]"
         - "%warp%"
-      # What the lines that will look like once the player has placed down a warp sign?
+      # 玩家放置地标告示牌后显示的内容
       finished-lines:
-        - "&b&lPLAYER WARP"
+        - "&b&l地标传送点"
         - "&d%warp_display%"
-      # What is the block off set from the sign? This is the location where the player will be teleported to.
-      # The offset takes away the x amount of blocks from the face of the sign.
-      # Keep in mind wallsigns also exist. This will only work for 1.13+ due to the new BlockData API.
+      # 传送到地标时目的地与告示牌的距离？
+      # 表示目的地为距离告示牌 x 格远的附近位置。
+      # 需要注意的是贴墙告示牌也在考虑范围内。因为只有 1.13+ 的新版本有 BlockData API，因此这个设置只在 1.13+ 生效。
       teleport-offset: 1
 
   remove:
-    # Should there be a confirmation before removing a warp?
+    # 删除地标前是否需要确认？
     confirmation: false
-    # How many seconds, should the confirmation expire for the warp. This means how many seconds they have to wait
-    # to remove to a warp. Recommended is 10
+    # 确认删除请求的有效操作时间。
+    # 推荐值为 10。
     confirmation-expire-time: 10
-    # If the players' set price is bigger than 0. Should they get refunded when they remove a warp?
+    # 玩家设置的价格大于 0 时，是否在删除地标时退款？
     refund-player: true
 
-    # What are the commands that should be executed upon removal?
-    # [server] means the command is executed as the console
-    # [player] means the command is executed as the player
-    commands: []
+    # 移除时一并执行的命令
+    # [server] 表示命令以控制台身份执行
+    # [player] 表示命令以玩家身份执行
+    commands: [ ]
 
-    # Should commands get executed if the player's warp's owner are offline for x amount of days?
-    # THIS IS NOT RECOMMEND BEING ENABLED DUE TO THIS IS RISK OF WARPS BEING DELETED!
+    # 清理间隔时间，单位为秒。
+    # 仅适用于清理系统，而非 remove 命令。
+    # 推荐设置为 -1，这样插件在启动时会尝试清理地标。
+    # 这是一个非常消耗资源的操作，因此请谨慎设置较低的数值。请谨慎配置。
+    remove-interval: -1
+
+    # 玩家长时间不上线时，是否删除他创建的地标？
+    # 非常不推荐开启，可能会导致地标被误删！
     purge:
-      # Should it be enabled?
+      # 是否启用该功能？
       enabled: false
-      # How many days should a player be offline for?
+      # 触发删除的时间，单位为天。
       time: 30
 
-      # Should these players not get removed if they are offline for x amount of days? Please put UUIDS otherwise it will not work.
-      # here is an uuid converter (https://mcuuid.net/), make sure to get the "full uuid" not the "trimmed uuid".
+      # 不受删除影响的玩家 UUID 列表。不接受除 UUID 以外的值。
+      # 可以使用 UUID 转化器（https://mcuuid.net），确保复制的是“完整 UUID（full uuid）”而非“缩写 UUID（trimmed uuid）”
       restricted-players:
         - "5ca251ab-589d-4f04-8f0c-28404d0686b0"
 
-      # If a warp is in this category below then the warp will not be purged.
+      # 这些分类下的地标不会被清理。
       restricted-categories:
         - ""
 
-      # If a warp is in this world below then the warp will not be purged.
+      # 这些世界中的地标不会被清理。
       restricted-worlds:
         - ""
 
-      # To prevent warps from being purged, you can use a placeholder condition.
-      # This will only work if you have the PlaceholderAPI plugin installed.
-      # In this example, this will only purge warps if the warp is not locked.
+      # 可以通过变量条件决定哪些地标不会被清理。
+      # 只在安装了 PlaceholderAPI 插件时生效。
+      # 在这个例子中，只有未锁定的地标才会被清理。
       placeholder-condition:
-        # Should the condition be checked?
+        # 是否启用这个变量检查？
         enabled: false
-        # The placeholder to check
-        placeholder: "%pw_warp_name_%warp%_locked%"
-        # Condition can only be: ==, >, <
+        # 检查的变量
+        placeholder: "%pw_warp_name_%warp%_locked%_raw"
+        # 比较符号只能为：==, >, <
         condition: "=="
-        # The value that the condition needs to be.
+        # 变量比较的值。
         value: "false"
 
-      # Commands to be executed on this purge. (Cannot use player action types)
+      # 此次清理时同步执行的命令。（不能使用玩家身份执行命令）
       commands:
         - "[server] %cmd% remove %warp%"
-        - "[server<delay=3>] %cmd% remove %warp%" # only twice if confirmation is enabled
+        - "[server<delay=3>] %cmd% remove %warp%" # 只在启用了确认删除时需要执行两次
 
-    # Should a warp be deleted after x amount of days when it was set even though the player has logged on?
-    # THIS IS NOT RECOMMEND BEING ENABLED DUE TO THIS IS RISK OF WARPS BEING DELETED!
+    # 是否删除长时间不登录的玩家创建的地标？
+    # 非常不推荐开启，可能会导致地标被误删！
     remove-days:
-      # Should it be enabled?
+      # 是否启用？
       enabled: false
-      # How many days after the warp has been set should the warp be deleted?
+      # 新建的地标在玩家持续不上线多久后将被删除？
       time: 30
 
-      # Should these players not get removed if they are offline for x amount of days? Please put UUIDS otherwise it will not work.
-      # here is an uuid converter (https://mcuuid.net/), make sure to get the "full uuid" not the "trimmed uuid".
+      # 不受删除影响的玩家 UUID 列表。不接受除 UUID 以外的值。
+      # 可以使用 UUID 转化器（https://mcuuid.net），确保复制的是“完整 UUID（full uuid）”而非“缩写 UUID（trimmed uuid）”
       restricted-players:
         - "5ca251ab-589d-4f04-8f0c-28404d0686b0"
 
-      # If a warp is in this category below then the warp will not be purged.
+      # 在这个分类中的地标不会被删除。
       restricted-categories:
         - ""
 
-      # If a warp is in this world below then the warp will not be purged.
+      # 在这个世界中的地标不会被删除。
       restricted-worlds:
         - ""
 
-      # To prevent warps from being purged, you can use a placeholder condition.
-      # This will only work if you have the PlaceholderAPI plugin installed.
-      # In this example, this will only purge warps if the warp is not locked.
+      # 为了防止地标被删除，我们还有变量条件。
+      # 只在安装了 PlaceholderAPI 插件时生效。
       placeholder-condition:
-        # Should the condition be checked?
+        # 是否启用这个变量检查？
         enabled: false
-        # The placeholder to check
-        placeholder: "%pw_warp_name_%warp%_locked%"
-        # Condition can only be: ==, >, <
+        # 检查的变量
+        placeholder: "%pw_warp_name_%warp%_locked_raw%"
+        # 比较符号只能为：==, >, <
         condition: "=="
-        # The value that the condition needs to be.
+        # 变量比较的值。
         value: "false"
 
-      # Commands to be executed on this purge. (Cannot use player action types)
+      # 此次清理时同步执行的命令。（不能使用玩家身份执行命令）
       commands:
         - "[server] %cmd% remove %warp%"
-        - "[server<delay=3>] pwarp remove %warp%" # only twice if confirmation is enabled
+        - "[server<delay=3>] %cmd% remove %warp%" # 只在启用了确认删除时需要执行两次
 
-    # Should the warps be deleted if the player no longer has permission to set that many.
-    # THIS IS NOT RECOMMEND BEING ENABLED DUE TO THIS IS RISK OF WARPS BEING DELETED!
+    # 如果玩家失去权限后超出了地标数量上限，是否清理多余的地标。
+    # 非常不推荐开启，可能会导致地标被误删！
     limit-purge:
-      # Should it be enabled?
+      # 是否启用该功能？
       enabled: false
 
-    # Should the warps be completed deleted if the world no longer exists? (only works if you have MySQL disabled)
-    # If this purge is not enabled, the warp will still be saved but not loaded on startup.
-    # THIS IS NOT RECOMMEND BEING ENABLED DUE TO THIS IS RISK OF WARPS BEING DELETED!
+    # 是否在世界不存在时删除其中的地标？（仅禁用了 MySQL 时可用）
+    # 没有启用清理功能的情况下，地标数据仍然存在，但不会加载。
+    # 非常不推荐开启，可能会导致地标被误删！
     world-purge:
-      # Should it be enabled?
+      # 是否启用该功能？
       enabled: false
 
-      # Should the warps in these worlds be ignored even if the world has been deleted?
+      # 这些世界中的地标不会被删除。
       restricted-worlds:
         - "warp_world"
 
   teleport:
     # Should there be a confirmation before teleporting to a warp?
+    # 传送至地标前是否需要确认？
     confirmation: false
-    # if you have confirmations enabled, and you want to choose when you want a confirmation enabled, you can use a placeholder condition.
-    # This will only work if you have the PlaceholderAPI plugin installed.
-    # In this example, this will only bring up a confirmation if the warp cost is more than 10.
+    # 如果启用确认传送，且只需要某些地标确认，那么你可以用变量条件进行筛选。
+    # 只在安装了 PlaceholderAPI 插件时生效。
+    # 在这个例子中，只有传送费用大于 10 的地标才需要再次确认传送。
     confirm-placeholder-condition:
-      # Should the condition be checked?
+      # 是否启用这个变量检查？
       enabled: true
-      # The placeholder to check
+      # 检查的变量
       placeholder: "%pw_warp_name_%warp%_cost_raw%"
-      # Condition can only be: ==, >, <
+      # 比较符号只能为：==, >, <
       condition: ">"
-      # The value that the condition needs to be.
+      # 变量比较的值。
       value: "10"
 
-    # How many seconds, should the confirmation expire for the warp. This means how many seconds they have to wait
-    # to teleport to a warp. Recommended is 10
+    # 确认传送请求等待的时间，单位为秒。推荐设置为 10。
     confirmation-expire-time: 10
-    # Should we enable the unsafe-block feature, meaning that a player can set a warp to trap players and kill them innocently.
+    # 是否启用 unsafe-block 功能，防止玩家传送后落入陷阱被杀死。
     unsafe-block: true
-    # This is how many blocks down it checks.
+    # 若上述选项为 true，插件每隔多久检查一次地标目的地是否安全？单位为秒。
+    # 如果检查到地标不总是安全，会在一段时间后尽可能重设传送目的地。
+    # 只是额外检查一下地标目的地是否安全。
+    # 需要注意的是，这个功能非常消耗性能（尤其对于 Spigot 服务端），因此不要将其填得太高。
+    # 任何由此导致的卡顿后果自行承担。
+    safe-periodic-check: -1
+    # 向下检查多少格方块
     blocks-down-check: 1
-    # If the blocks-down-check hits the minimum y level, should it automatically mark the warp as unsafe?
-    # This is only if the blocks-down-check finds the minimum y level from the location.
-    # This helps prevent players from "glitching" into the void.
+    # 向上检查多少格方块。若设置为 10，则插件会试图检查传送目的地上方 10 格高的空间，确保目的地不会导致玩家窒息。如果没能满足条件，那么传送点会被视为不安全。
+    # 若不需要，请设置为 0。
+    # 设置为 1 表示只检查目的地是否有方块会卡进玩家的头。
+    blocks-up-check: 1
+    # 如果 blocks-down-check 探测到了世界最低 y 轴，是否标记为不安全？
+    # 只有插件在目的地检查到世界最低 y 轴时触发。
+    # 这可以防止玩家传送进虚空。
     unsafe-y-level: true
-    # The plugin will check before they warp to see if the warp is unsafe, these are the blocks that get checked below the warp.
-    # Valid material names: https://javadocs.olziedev.com/spigot/latest/org/bukkit/Material.html
+    # 是否自动检查目的地为地底？若确认则标记为不安全？
+    #（玩家目的地位于指定 x/z 位置最高方块下）
+    unsafe-underground: false
+    # 插件会提前检查这些方块，若有则标记为不安全。
+    # 有效材料名称列表：https://javadocs.olziedev.com/spigot/latest/org/bukkit/Material.html
     unsafe-blocks:
       - "STATIONARY_LAVA"
       - "AIR"
-      - "MAGMA" # This is a 1.12+ block, so this won't work for 1.11- so remove it :)
-    unsafe-blocks-air: # This is for used when checking if the warp will suffocate the player, put blocks here that will not suffocate the player.
+      - "MAGMA" # 这个是 1.12+ 的方块，如果 1.11- 的服务器需要使用配置，请将其删除 :)
+    unsafe-blocks-air: # 用于检查目的地是否会卡住玩家，这里填入的是不会导致玩家窒息的透明或不完整方块。
       - "AIR"
       - "CAVE_AIR"
       - "VOID_AIR"
-    # How many seconds, show the timer expire for the unsafe warp. This means how many seconds they have to click
-    # the warp again to teleport to an unsafe warp. Recommended is 3. Set to -1 to disable
+    # 标记为不安全后点击确认传送的等待时间。
+    # 推荐设置为 3。设置为 -1 表示禁用。
     time-expire-unsafe: 3
-    # Should the visits only be counted once per player, or be counted every time a player teleports to it. This is HIGHLY recommended as true so players cannot farm it.
+    # 是否访问量每个玩家只计入一次，还是玩家每次传送都算作一次访问。推荐设置为 true，以避免玩家刷取访问量。
     protect-boost-visits: true
-    # If the option above is false, you can add a cooldown in seconds per player for the visits to go up again. Set to -1 to disable, meaning there won't be a cooldown.
+    # 若上述选项为 false，你可以在这里调整玩家访问计为有效的时间间隔。设置为 -1 表示禁用，表示没有冷却。
     visits-cooldown: 60
-    # Here you can decide if the visit count should go up or not using a placeholder condition.
-    # This will only work if you have the PlaceholderAPI plugin installed.
-    # In this example, this will only increase the visits if the player has played for more than 10 hours.
+    # 用变量判断指定玩家访问算入的条件。
+    # 只在安装了 PlaceholderAPI 插件时生效。
+    # 在这个例子中，只有在线游玩时间超过 10 小时的玩家访问量才会被统计。
     visits-placeholder-condition:
-      # Should the condition be checked?
+      # 是否启用这个变量检查？
       enabled: false
-      # The placeholder to check
+      # 检查的变量
       placeholder: "%statistic_hours_played%"
-      # Condition can only be: ==, >, <
+      # 比较符号只能为：==, >, <
       condition: ">"
-      # The value that the condition needs to be.
+      # 变量比较的值。
       value: "9"
-    # How many x days should the visits of all player warps be cleared? Set to -1 to disable.
-    # Put a date in the date format set in the config above and the interval in days you want the visits to reset in the following manner: "date:interval"
-    # Example: 01/01/YEAR_HERE:30 will start a purge at January 1 and reset every 30 days
-    # It will use your date formatting classified in your config at the top.
-    # Use [visits_purged] in the gui to get the purged visits, as [visits] will never change no matter the purge!
+    # 每隔几天清理所有玩家地标的访问量数据？设置为 -1 表示禁用。
+    # 在上述的日期格式设置中填入时间格式，并在这里可以按 "日期:间隔" 的格式进行设置。
+    # 例如：01/01/年份:30 表示 1 月 1 日重置，每 30 天触发一次。
+    # 会用到上述配置中的日期格式。
+    # 在界面中可以使用 [visits_purged] 浏览清理后的访问量，[visits] 不会受访问量清理影响！
     visits-purge: -1
-    # Should the purge completely wipe the visits of players that are stored in the database. If this is false, then if a player visits, and they visited last purge
-    # depending on your visit settings, the visit might not go up
+    # 清理是否完全抹去存储在数据库中的内容。若为 false，则玩家在清理后访问地标可能会因为条件限制而不算入访问量。
     visit-purge-reset: false
-    # How much time does the player need to stay still, till they get teleported to a warp? Set this to -1 to disable.
-    # You can bypass this by giving the permission 'pw.warp.delay'
+    # 玩家需要原地站定多久才会被传送，设置为 -1 表示立即传送。
+    # 可通过给予权限 'pw.warp.delay' 权限绕过。
     teleport-wait: 3
-    # Should the wait bypass specific warps?
+    # 玩家开始等待时一并执行的命令列表。
+    wait-commands: []
+    # 等待图中若玩家受伤是否取消传送请求？
+    cancel-if-damaged-while-waiting: true
+    # 是否为特定地标禁用传送等待？
     specific-wait: false
-    # If the above option is true, what are the names of the warps that bypass the wait?
+    # 若上述选项为 true，那么请在这里填入无视传送等待的地标列表。
     specific-wait-list:
       - ""
-    # Here you can choose specific ranks of the waiting time, if you have not put a rank there the waiting time will be above.
-    # WARNING This will not work if you're using the default Bukkit Permissions system due to vault not supporting groups.
-    # Please list the ranks from the highest to the lowest, as if your groups inherit each other than it'll find the first one on the list instead of the highest one.
-    # Depending on your permissions plugin this may be really performance heavy.
-    teleport-ranks-wait: {}
-#       # The rank MVP doesn't have a wait
-#       MVP: -1
-#       # The rank VIP only waits for 1 second.
-#       vip: 1
-    # What is the cooldown in seconds for teleporting to a warp? Set this to -1 to disable.
+    # 在这里设置指定组别玩家的等待时间，若玩家所属的组不处于列表中，则使用默认值。
+    # 警告！若你正在使用 Bukkit 自带的权限系统，则这个功能无效，因为 vault 不支持这样的权限实现方式。
+    # 请将组别等级从高到低排列，如果某个组别继承多个组，则插件会默认选择最上方的组别优惠。
+    # 取决于你使用的权限插件，这个设置的性能影响有所差别。
+    teleport-ranks-wait: { }
+    #       # MVP 组玩家没有传送等待
+    #       MVP: -1
+    #       # VIP 组玩家传送只需等待 1 秒
+    #       vip: 1
+    # 传送至地标的冷却时间，单位为秒。设置为 -1 表示禁用。
     cooldown: 5
-    # Should the cooldown have specific warps listed?
+    # 是否显示指定地标的冷却时间？
     specific-cooldown: false
-    # If the above option is true, what are the names of the warps?
+    # 若上述选项为 true，那么地标的名称是什么？
     specific-cooldown-list:
       - ""
-    # Should the specific cooldown option be reversed? So instead of a whitelist to have a cooldown, it's a blacklist
+    # 是否反转上述冷却选项为黑名单？
     reverse: false
-    # Can players only teleport to warp's that are in the same world?
+    # 是否只能传送至同一世界的其他地标？
     same-world: false
-    # Should the passengers for the player be teleported too?
+    # 骑乘玩家的实体是否一并传送？
     keep-passenger: false
-    # Should the vehicles the player is riding/in be teleported too?
+    # 玩家骑乘的实体是否一并传送？
     keep-vehicles: false
-    # Should the passengers for the vehicle be teleported too? (only works if keep-vehicles is true)
+    # 是否保持骑乘状态？（仅在 keep-vehicles 为 true 时有效。）
     keep-vehicle-passenger: false
-    # Should players not be able to teleport warps in these worlds?
+    # 禁止玩家在这些世界中传送至地标。
     disabled-worlds: []
+    # 上述禁用世界是否反转为白名单？
+    disabled-worlds-whitelist: false
 
-    # What are the commands that should be executed upon teleportation?
-    # [server] means the command is executed as the console
-    # [player] means the command is executed as the player
+    # 传送时执行的命令
+    # [server] 表示命令以控制台身份执行
+    # [player] 表示命令以玩家身份执行
     commands:
-      - "[broadcast] &d%player%&b has just teleported to the warp &d%warp_display%&b (/pwarp)!"
+      - "[broadcast] &d%player%&b has just teleported to the warp &d%warp_display%&b (/%cmd%)!"
+    # 传送前执行的命令
+    pre-commands: []
+    # 插件是否只执行命令？设置为 true 时，玩家不会被传送。
+    only-execute-commands-dont-teleport: false
 
-    # When teleported to a warp and a password is prompted
+    # 传送至地标时输入密码
     password:
-      # The amount of characters a password atleast needs to have.
+      # 密码最小长度
       min-warp-pass-chars: 1
-      # The amount of characters a password can have.
+      # 密码最大长度
       max-warp-pass-chars: 15
-      # How much time should the password listen for the players input until it expires in seconds?
+      # 输入密码的时间，单位为秒
       password-expire-time: 20
-      # Should the owner of the warp bypass the password prompt?
+      # 地标拥有者是否不需要输入密码即可传送？
       password-owner-bypass: true
 
-    # For the particles please use this! https://javadocs.olziedev.com/spigot/latest/org/bukkit/Particle.html
-    # For the sounds please use this! https://javadocs.olziedev.com/spigot/latest/org/bukkit/Sound.html
+    # 粒子效果完整列表：https://javadocs.olziedev.com/spigot/latest/org/bukkit/Particle.html
+    # 声音名称完整列表：https://javadocs.olziedev.com/spigot/latest/org/bukkit/Sound.html
     particles:
-      # What particle should be shown when they are teleporting to a playerwarp? Set this too none to disable.
-      # YOU WILL NEED TO CHANGE THE PARTICLE IF YOU ARE ON A DIFFERENT VERSION!
+      # 传送至地标时显示的粒子效果
+      # 设置为 none 表示不显示
+      # 如果跨版本使用，请修改粒子效果名称避免报错！
       particle-teleport: none
-      # How many particles should there be?
+      # 粒子效果的数量？
       particle-count: 2
-      # Should the player see the particle, or should everyone see the particle? This is recommended as just the player.
+      # 粒子效果是否只有传送的玩家可以看见，或者附近的所有玩家都可见？建议设置为仅自己可见。
       particle-only-player: true
 
     sounds:
-      # What sound should be played when they are teleporting to a playerwarp? Set this too none to disable.
-      # YOU WILL NEED TO CHANGE THE SOUND IF YOU ARE ON A DIFFERENT VERSION!
+      # 传送至地标时播放的声音
+      # 设置为 none 表示不播放
+      # 如果跨版本使用，请修改声音名称避免报错！
       sound-teleport: none
-      # What should the volume be when the sound is played?
+      # 播放声音的音量
       volume-teleport: 1.0
-      # What should the pitch be when the sound is played?
+      # 播放声音的音高
       pitch-teleport: 1.0
 
     economy:
-      # This is how much they will need to teleport to a warp, otherwise if they don't have that, they won't teleport to the warp and send the message
-      # in lang folder. Make sure you have an economy plugin and vault supports that economy plugin!
-      # Set this to -1 to disable.
-      teleport-price: 5
-      # Here you can choose specific ranks that the price they need to pay, if you have not put a rank there the payment will be the payment will be above.
-      # WARNING This will not work if you're using the default Bukkit Permissions system due to vault not supporting groups.
-      # This can also cause freezing in the menu if you're using LuckPerms even with caching, not sure why but that's the current case.
-      # Please list the ranks from the highest to the lowest, as if your groups inherit each other than it'll find the first one on the list instead of the highest one.
-      # Depending on your permissions plugin this may be really performance heavy.
-      teleport-ranks-price: {}
-#        # The rank MVP does not need to pay.
-#        MVP: -1
-#        # The rank VIP only needs to pay $1.
-#        vip: 1
+      # 传送至地标时收取的费用，无力支付时显示 lang 文件夹中的余额不足消息。
+      # 确保你安装了 vault 和支持 vault 的经济插件！
+      # 设置为 -1 表示禁用。
+      price: 5
+      # 在这里设置不同组别玩家支付的费用，若玩家所属组不在列表中，则使用默认价格。
+      # 警告！若你正在使用 Bukkit 自带的权限系统，则这个功能无效，因为 vault 不支持这样的权限实现方式。
+      # 如果使用了 LuckPerms，即便开启了缓存也可能导致菜单冻结，原因尚不明确。
+      # 请将组别等级从高到低排列，如果某个组别继承多个组，则插件会默认选择最上方的组别优惠。
+      # 取决于你使用的权限插件，这个设置的性能影响有所差别。
+      rank-prices: { }
+      #        # MVP 玩家无需支付费用。
+      #        MVP: -1
+      #        # VIP 玩家只需支付 1 游戏币。
+      #        vip: 1
 
-      items:
+      # 玩家可以使用什么类型的货币支付。留空表示使用默认的 vault 货币。
+      # 若需要使用物品实体货币，确保你在下面的物品部分对其进行了预定义。
+      # 如果你的插件支持多经济，你也可以使用冒号“:”来区分内置经济类型。例如 EcoBits:Market
+      # currencies: ["vault", "item"]
+      currencies: ["vault"]
+
+      item:
         name: ""
         material: DIAMOND
         data: 0
-        lore: []
-        # set the amount to -1 to disable
-        amount: -1
+        lore: [ ]
 
-      # Should the money be given to the owner of the warp?
+      # 是否将收取的费用汇入地标拥有者账户？
       give-to-owner: true
-      # If the above option is true, what is the amount that should be taken away from the cut when someone teleports. Set to -1 to ignore splitting a cut.
+      # 若上述选项为 true，汇入账户时克扣多少比例的钱？设置为 -1 表示不拿取。
       percentage-cut: -1
-      # Should the owner pay when teleporting to their warp?
+      # 若上述选项不为 -1，是否只需要玩家通过命令 /pw cost 设置的价格才出现克扣的情况？
+      only-set-cost: false
+      # 拥有者传送至地标时是否收取费用？
       owner-pay: false
-      # Should the owner still be charged even if you have give-to-owner true and owner-pay true?
-      # If you have give-to-owner, the owner will pay but then receive the money. This will just take away the money completely.
+      # 若 give-to-owner 和 owner-pay 为 true 时，是否仍然收取拥有者传送的费用？
+      # 如果将 give-to-owner 设置为 true，那么拥有者仍然会收回传送费用。这个功能会直接将钱销毁。
       bypass-give-to-owner-pay: true
-      # Should the teleport pay only once for that warp?
+      # 是否只需要为传送付一次费？
       pay-once: false
-      # If the option above is true, do you want there to be a timer until they have to pay again? Set to -1 to never pay again.
-      # In seconds.
+      # 若上述选项为 true，是否需要只在一段时间内免费，之后便要再次收费？设置为 -1 表示永不再次收取。
+      # 单位为秒。
       pay-once-time: -1
-      # If you have the cost command enabled, do you want to be able to limit your players to set maximum warp costs? Set to -1 for unlimited.
+      # 若启用了 cost 命令，是否需要限制玩家收取的传送费用上限？设置为 -1 表示不限制。
       max-cost: 500
-      # Here you can choose specific ranks that have the max cost, if you have not put a rank there the max will be above.
-      # WARNING This will not work if you're using the default Bukkit Permissions system due to vault not supporting groups.
-      # Please list the ranks from the highest to the lowest, as if your groups inherit each other than it'll find the first one on the list instead of the highest one.
-      # Depending on your permissions plugin this may be really performance heavy.
-      max-ranks-cost: {}
-#        # The rank MVP doesn't have a limit.
-#        MVP: -1
-#        # The rank VIP can only set a cost of $1000.
-#        vip: 1000
+      # 在这里设置指定组别的传送收费上限。如果玩家所在组没有在列表中，那么使用默认的传送收费上限。
+      # 警告！若你正在使用 Bukkit 自带的权限系统，则这个功能无效，因为 vault 不支持这样的权限实现方式。
+      # 请将组别等级从高到低排列，如果某个组别继承多个组，则插件会默认选择最上方的组别优惠。
+      # 取决于你使用的权限插件，这个设置的性能影响有所差别。
+      max-ranks-cost: { }
+      #        # MVP 玩家设置的传送费用没有上限。
+      #        MVP: -1
+      #        # VIP 玩家最高只能设置 $1000 传送费用。
+      #        vip: 1000
 
-      # if you have the cost command enabled, do you want to be able to limit your players to set the minimum warp costs? Set to -1 for no minumum.
+      # 如果启用了 cost 命令，是否需要限制玩家最低设置的传送费用？设置为 -1 表示不限制。
       min-cost: -1
-      # Here you can choose specific ranks that have the min cost, if you have not put a rank there the min will be above.
-      # WARNING This will not work if you're using the default Bukkit Permissions system due to vault not supporting groups.
-      # Please list the ranks from the highest to the lowest, as if your groups inherit each other than it'll find the first one on the list instead of the highest one.
-      # Depending on your permissions plugin this may be really performance heavy.
-      min-ranks-cost: {}
-#        # The rank MVP doesn't have a minimum.
-#        MVP: -1
-#        # The rank VIP can only set a min cost of $1000.
-#        vip: 1000
+      # 在这里设置指定组别的传送收费下限。如果玩家所在组没有在列表中，那么使用默认的传送收费下限。
+      # 警告！若你正在使用 Bukkit 自带的权限系统，则这个功能无效，因为 vault 不支持这样的权限实现方式。
+      # 请将组别等级从高到低排列，如果某个组别继承多个组，则插件会默认选择最上方的组别优惠。
+      # 取决于你使用的权限插件，这个设置的性能影响有所差别。
+      min-ranks-cost: { }
+    #        # MVP 玩家设置的传送费用没有下限。
+    #        MVP: -1
+    #        # VIP 玩家最低只能设置 $1000 传送费用。
+    #        vip: 1000
 
     sign:
-      # Should players be able to make signs to teleport to warps?
-      # If enabled, a player will need "pw.warp.sign" to create a sign to warp from.
+      # 是否允许玩家放置传送至地标的告示牌？
+      # 启用后，玩家需要拥有 "pw.warp.sign" 权限才可以放置传送告示牌。
       enabled: false
-      # What are the needed lines for the player to put down? %warp% is where the warp name needs to be.
+      # 玩家生成传送告示牌时需要填入什么内容？%warp% 表示地标名称。
       lines:
         - "[teleport]"
         - "%warp%"
-      # What the lines that will look like once the player has placed down a teleport sign?
+      # 放置成功后，告示牌显示什么内容？
       finished-lines:
-        - "&b&lTELEPORT WARP"
+        - "&b&l传送至地标"
         - "&d%warp_display%"
 
   ban:
-    # The amount of characters a ban atleast needs to have.
-    # Set this to -1 to make reasons optional!
+    # 封禁理由最短字数。
+    # 设置为 -1 表示可以不填写理由！
     min-ban-reason-chars: -1
-    # The amount of characters a ban reason can have.
+    # 封禁理由最长字数。
     max-ban-reason-chars: 50
-    # The description will automatically go onto the next line if there is x amount of characters on that line
-    # How many characters should a reason be par line?
+    # 若一行上字数超过 x，则自动换行
+    # 每行可以容纳多少字符？
     characters-per-line: 15
-    # Should the characters wrap long words?
-    # This means, should the world be split onto the next line and not let the word finish and then go on the next line
+    # 是否自动为长词换行？
+    # 即让较长词汇单独一行。
     wrap-long-words: false
 
   desc:
-    # The amount of characters a desc atleast needs to have.
+    # 描述文本最短字符数。
     min-warp-desc-chars: 1
-    # The amount of characters a desc can have.
+    # 描述文本最长字符数。
     max-warp-desc-chars: 50
-    # The description will automatically go onto the next line if there is x amount of characters on that line
-    # How many characters should a description be par line?
+    # 若一行上字数超过 x，则自动换行
+    # 每行可以容纳多少字符？
     characters-per-line: 15
-    # Should the characters wrap long words?
-    # This means, should the world be split onto the next line and not let the word finish and then go on the next line
+    # 是否自动为长词换行？
+    # 即让较长词汇单独一行。
     wrap-long-words: false
-    # What should the first line of the descriptions prefix be?
+    # 第一行描述的前缀
     first-prefix: ""
-    # What is the line prefkx of tbe description? (this excluses the first line)
+    # 每行描述的前缀？（包括第一行）
     line-prefix: ""
-    # Blacklist any keywords from anyone setting a description set that.
-    # This uses a regex pattern compiler to detect the names.
-    # So please escape regex characters if you're using them.
+    # 禁止玩家在描述中填写黑名单的词汇。
+    # 可以使用正则表达式检测名称。
+    # 如果用到了正则，请避免使用正则字符。
     blacklisted-desc:
       - "bad"
 
   rate:
-    # What is the maximum amount a player can rate for a warp?
+    # 玩家可以最多为一个地标评分几次？
     max-rates: 5
-    # Can a player rate their own warp?
+    # 玩家是否可以给自己的地标评分？
     owner-rate: false
-    # The amount of characters a rate desc atleast needs to have.
+    # 评分评价内容最少需要多少字符？
     min-rate-desc-chars: 1
-    # The amount of characters a rate desc can have.
+    # 评分评价内容最长多少字符？
     max-rate-desc-chars: 50
-    # The description will automatically go onto the next line if there is x amount of characters on that line
-    # How many characters should a description be par line?
+    # 描述满 x 字符后自动换行
+    # 每行描述字符应当是多少？
     characters-per-line: 15
-    # Should the characters wrap long words?
-    # This means, should the world be split onto the next line and not let the word finish and then go on the next line
+    # 是否为长词汇自动换行？
+    # 即较长词汇单独一行显示
     wrap-long-words: false
-    # What's the cooldown in seconds a player can rate a warp? Set to -1 to disable
+    blacklisted-desc:
+      - "bad"
+    # 玩家为地标评分的冷却时间。设置为 -1 表示不限制
     rate-cooldown: -1
-    # Should a player only be able to rate a warp once?
+    # 是否只允许玩家对地标评分一次？
     rate-once: false
-    # To prevent anyone from abusing the rate system on alt accounts, you can set a specific condition for the player to be able to rate using placeholdersapi
-    # This will only work if you have the PlaceholderAPI plugin installed.
-    # In this example, the player will be able to rate if they have 50 or more in their balance.
+    # 被地标封禁的玩家是否仍然可以给地标评分？
+    # 在封禁前对地标的评分不会被删除
+    disallow-banned-rates: true
+    # 防止玩家通过小号刷分，可以在这里用变量设置评分条件
+    # 只在安装了 PlaceholderAPI 插件时生效
+    # 在这个例子中，玩家只有拥有 50 或更多游戏币时才可以参与评分
     placeholder-condition:
-      # Should the condition be checked?
+      # 是否启用条件检查？
       enabled: false
-      # The placeholder to check
+      # 检查的变量
       placeholder: "%vault_eco_balance%"
-      # Condition can only be: ==, >, <
+      # 检查条件只能是：==, >, <
       condition: ">"
-      # The value that the condition needs to be.
+      # 条件比较的值
       value: "49"
-    # Here you can create rewards that the owner of the warp will receive.
+    # 设置地标拥有者的评分奖励
     rate-rewards-owner:
-      1: # the reward id, this is what the DB will save
-        required-amount: 50 # the amount of total stars
-        maximum-amount: -1 # If this is not -1, the player will only be able to get this amount of rewards. This will ignore the required-amount.
-        allowed-ratings: [ 4, 5 ] # only these ratings will work for the requirement amount. So for example either 5 stars by 10 people or 4 stars by 12/13 people.
-        commands: [] # The player may not be online when the reward is given, so make sure to use [server] as the command action. %warp% and %player% are valid placeholder.
+      1: # 奖励 id，这是数据库保存的内容
+        average-rates-instead-of-sum: false # 若设置为 true，required-amount 会用于计算平均评分而非星星总数。
+        required-amount: 50 # 总星星数
+        maximum-amount: -1 # 若设置为非 -1 的值, 玩家只能得到对应数量的奖励。无视 required-amount 的设置。
+        allowed-ratings: [ 4, 5 ] # 只有这个范围内的评分可以获得奖励。例如每 10 个人给出的 5 分或者 12/13 人给出的 4 分评价。
+        commands: [ ] # 被给予奖励时，玩家不一定在线，因此尽可能使用 [server] 用作命令执行方。有效内建变量为 %warp% 和 %player%。
 
-    # Here you can create rewards that the player who rated the warp will receive.
+    # 在这里你可以设置评分玩家的奖励。
     rate-rewards-rater:
-      1: # the reward id, this is what the DB will save
-        required-amount: 50 # The amount of total stars a player needs to rate.
-        maximum-amount: -1 # If this is not -1, the player will only be able to get this amount of rewards. This will ignore the required-amount.
-        allowed-ratings: [ 4, 5 ] # Only these ratings will work for the required amount.
-        commands: [] # Player will always be online, so you may use [player] as the command action. %warp% and %player% are valid placeholders.
+      1: # 奖励 id，这是数据库保存的内容
+        average-rates-instead-of-sum: false # 若设置为 true，required-amount 会用于计算平均评分而非星星总数。
+        required-amount: 50 # 总星星数
+        maximum-amount: -1 # 若设置为非 -1 的值, 玩家只能得到对应数量的奖励。无视 required-amount 的设置。
+        allowed-ratings: [ 4, 5 ] # 只有这个范围内的评分可以获得奖励。
+        commands: [ ] # 被给予奖励时，玩家一定在线，因此尽可能使用 [player] 用作命令执行方。有效内建变量为 %warp% 和 %player%。
 
   reset:
-    # What is the cost for someone to re-set their warps' location. Set to -1 to disable.
-    reset-cost: -1
+    economy:
+      # 重设地标位置的费用。设置为 -1 表示禁用。
+      price: -1
+      # 设置指定组别玩家享受的价格折扣，不设置或组别不在其中则默认使用上述价格。
+      # 警告！若你正在使用 Bukkit 自带的权限系统，则这个功能无效，因为 vault 不支持这样的权限实现方式。
+      # 如果使用了 LuckPerms，即便开启了缓存也可能导致菜单冻结，原因尚不明确。
+      # 请将组别等级从高到低排列，如果某个组别继承多个组，则插件会默认选择最上方的组别优惠。
+      # 取决于你使用的权限插件，这个设置的性能影响有所差别。
+      rank-prices: { }
+      #        # MVP 组玩家不需要付费。
+      #        MVP: -1
+      #        # VIP 组玩家只需要付 1 游戏币。
+      #        vip: 1
+
+      # 玩家可以使用什么类型的货币支付。留空表示使用默认的 vault 货币。
+      # 若需要使用物品实体货币，确保你在下面的物品部分对其进行了预定义。
+      # 如果你的插件支持多经济，你也可以使用冒号“:”来区分内置经济类型。例如 EcoBits:Market
+      # currencies: ["vault", "item"]
+      currencies: ["vault"]
+
+      item:
+        name: ""
+        material: DIAMOND
+        data: 0
+        lore: [ ]
 
   rename:
-    # What is the cost for someone to rename their warp. Set to -1 to disable.
-    rename-cost: -1
+    economy:
+      # 重命名地标位置的费用。设置为 -1 表示禁用。
+      price: -1
+      # 设置指定组别玩家享受的价格折扣，不设置或组别不在其中则默认使用上述价格。
+      # 警告！若你正在使用 Bukkit 自带的权限系统，则这个功能无效，因为 vault 不支持这样的权限实现方式。
+      # 如果使用了 LuckPerms，即便开启了缓存也可能导致菜单冻结，原因尚不明确。
+      # 请将组别等级从高到低排列，如果某个组别继承多个组，则插件会默认选择最上方的组别优惠。
+      # 取决于你使用的权限插件，这个设置的性能影响有所差别。
+      rank-prices: { }
+      #        # MVP 组玩家不需要付费。
+      #        MVP: -1
+      #        # VIP 组玩家只需要付 1 游戏币。
+      #        vip: 1
+
+      # 玩家可以使用什么类型的货币支付。留空表示使用默认的 vault 货币。
+      # 若需要使用物品实体货币，确保你在下面的物品部分对其进行了预定义。
+      # 如果你的插件支持多经济，你也可以使用冒号“:”来区分内置经济类型。例如 EcoBits:Market
+      # currencies: ["vault", "item"]
+      currencies: ["vault"]
+
+      item:
+        name: ""
+        material: DIAMOND
+        data: 0
+        lore: [ ]
 
   sponsor:
-    # What is the cooldown in seconds the player can have until have another sponsor ? (Time starts when the sponsor time expires) Set to -1 to disable
+    # 玩家设置捐赠者感谢位的时间间隔（单位为秒）？（从捐赠者感谢位使用完毕开始的计时）设置为 -1 表示禁用。
     sponsor-cooldown: 3600
-    # How many sponsors can a player have?
+    # 冷却对玩家还是地标本身生效？切记，如果针对的是玩家，玩家可以通过转移地标所有权的方式绕过限制。
+    # 如果针对的是地标本身，玩家可以捐赠其他地标，但不能重复捐赠同一个地标。
+    # 设置为 false 时表示冷却对地标生效，否则表示对玩家生效。
+    cooldown-applied-to-player: true
+    # 玩家最多能拥有多少捐赠者感谢位？
     sponsor-per-player: 1
+    # 全局捐赠者感谢位重复命令执行间隔（单位为秒）。设置为 -1 表示禁用。
+    # 启用后，插件会每隔指定时间依次为每个捐赠者感谢位执行其重复命令。
+    # 除此之外，插件会忽略捐赠者感谢位设置中的重复时间。
+    repeat-global-interval: -1
+    # 全局重复功能是否采用轮询系统？
+    # 若禁用该功能，且仅存在一个捐赠者感谢位，则重复命令将按照全局重复间隔执行。
+    # 若启用该功能，则每个捐赠者感谢位的重复命令将依次执行，即便当前没有任何捐赠者感谢位。
+    round-robin: false
 
   setowner:
-    # Should there be a confirmation for the person who is receiving the warp?
-    # If this gets enabled, the syntax for the command will be changed. (You will need to change the syntax at the start of the config as well as mamagewarp.)
-    # For example, to set an owner it will now be: /pwarp setowner set <warp> <player>
-    # Then to accept the request, it'll be /pwarp setowner accept <warp>
-    # Then to cancel the request as the warp owner, it'll be /pwarp setowner cancel <warp>
+    # 接受地标所有权转移的玩家是否需要确认？
+    # 启用后，命令的格式会发生变化。（需要在配置开头进行相应修改，与 managewarp 命令类似）
+    # 例如，设置拥有者的命令会变为：/pwarp setowner set <地标名称> <玩家名称>
+    # 接受请求的命令为 /pwarp setowner accept <地标名称>
+    # 取消请求的命令为 /pwarp setowner cancel <地标名称>
     confirmation: false
-    # How many seconds should the confirmation expire. This means how many seconds they have to
-    # accept the transfer. Recommended is 60
+    # 确认请求超时时间，即玩家有多少时间接受所有权转移请求。推荐值为 60（一分钟）。
     confirmation-expire-time: 60
 
   category:
-    # Whats the maximum amount of categories a warp can have?
-    # Set to -1 to disable
+    # 每个分类下最多容纳多少个地标？
+    # 设置为 -1 表示数量不限
     max-categories: -1
 
   list:
     # How many warps should appear in one page?
+    # 每页容纳的地标数量
     page-length: 10
+    # 当使用附近地标命令（/pwarp near）时，搜索附近地标的距离
+    near-distance: 100
 
-  # This updates the players inventory when the player exits a menu. This is to prevent any issues with the inventory
-  # to take away any items that shouldn't be in the players inventory. This is recommended to be disabled.
-  # If you are having issues with plugins like Cosmetics, you may enable it to fix some issues. But you will not receive
-  # any support for duplicate items.
+  tags:
+    # 是否允许玩家自定义地标的标签名称或值？
+    # 设置为 true 时，玩家可以自定义标签名称和值。
+    # 设置为 false 时，玩家只能使用预定义的标签名称，但可以自定义标签值。
+    restrict-tag-names: false
+    # 若上述设置为 false，标签名称的最大长度是多少？
+    max-tag-name-length: 15
+    # 标签值的最大长度
+    max-tag-value-length: 30
+    # 若 restrict-tag-names 设置为 true，玩家可以使用哪些预定义的标签名称？
+    predefined-tag-names: ["Status"]
+
+  restapi:
+    # 是否启用 REST API 功能？
+    # 启用后，玩家可以通过 API 与插件交互，例如编辑地标等功能……
+    # 玩家需要通过命令创建 API 密钥，因此 API 仅对玩家有权限访问的功能开放。
+    # 这是一个非常强大的功能，请谨慎使用。
+    # 启用后会在插件文件夹中创建一个新文件（restapi.yml）。
+    enabled: false
+
+  # 玩家退出菜单时更新物品栏。防止物品栏中出现不应存在的物品。建议禁用此选项。
+  # 如果出现了 Comestics 等插件的兼容性问题，可以启用此选项以修复部分问题。但你将不会获得任何关于物品复制的支持。
   dangerous-ignore-update-inventory: false
-  # This is to change the priority of the chat wait action, if you have any issues with the chat wait action, you may want to change this from HIGHEST to LOWEST.
+  # 插件会将不应存在于玩家物品栏中的物品移除，防止物品栏出现问题。
+  # 是否异步更新物品栏？由于 Bukkit 和 Spigot 对物品处理的方式很糟糕，检查物品可能会导致卡顿。
+  # 因此建议启用此选项，但 Spigot 也不建议异步修改物品栏。
+  clean-inventory-asynchronously: true
+  # 修改聊天等待事件的优先级，如果遇到任何有关聊天事件等待的问题，可以将此选项从 HIGHEST 改为 LOWEST。
   wait-chat-event-priority: HIGHEST
+  # 如果你使用的是 paper 服务端，启用后会使用 paper 事件来处理聊天的等待动作。建议启用此选项。
+  # 若遇到相关问题，可尝试禁用此选项，可能是你的聊天插件仍在使用 bukkit 事件。
+  use-paper-event: true
+  # 如果你正在使用非 spigot 的 forge 混合端，这个选项可以避免一些物品 NBT 标签丢失的问题。
+  # 需安装 ProtocolLib 插件。
+  use-modded-serialization: false
+  # 处理物品时，是否删除其公共的 Bukkit 值？如果你遇到物品丢失描述等问题，请将此项设置为 false。
+  # 某些插件可能会在此项为 false 时从菜单中移除物品，如果你遇到此问题，请将其设置为 true。
+  remove-item-pbv: true
+  # 插件是否尝试解析旧版 JSON 消息？如果你在插件中用到了 JSON 消息，那么请启用此项。
+  # JSON 消息已不再受支持，建议使用 MiniMessage。
+  use-legacy-json-message: false
+  # MiniMessage 不兼容旧版颜色代码，是否要让插件识别并转化所有旧版颜色格式代码为颜色标签？ 
+  convert-legacy-colours: true
+  # 若需要完全禁止使用旧版颜色，可以启用这个选项。
+  # 禁用后，插件将不会在上述设置启用的情况下尝试转化旧版颜色代码为 minimessage 风格的标签。
+  allow-legacy-colours: true
