@@ -33,8 +33,8 @@
 
 ![Netlify 构建状态](https://api.netlify.com/api/v1/badges/6e69d526-ea60-4ff8-9bfe-e0b9e4d028f0/deploy-status)
 
-![](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-25-93fdf9) ![](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-641581-84f5bb)
-（最后更新：2025/12/2）
+> [!NOTE]
+> 维基字数统计已经移动到网站主页，请点击[这里](https://continue-project.netlify.app/)查看。
 
 > [!NOTE]
 > 本维基一开始使用 MDWiki 和[自行魔改的 Docsify](https://github.com/SnowCutieOwO/Docsify-Template)，后选择了 VitePress。
