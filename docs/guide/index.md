@@ -13,6 +13,7 @@
   - 如何简单鉴别服务器的插件是否安全？（即将推出）
 * 自求福篇
   - [开服之前：你究竟要开什么样的服？](logical-questions/before-start-what-server-you-want.md)
+  - [开服之前：如何选择好插件？](logical-questions/choose-plugins-wisely.md)
 * 进阶学篇
   - [如何使用 WorldEdit/FastAsyncWorldEdit 制作简易的封闭式副本地形？](advanced/how-to-make-easy-landscape-using-we.md)
   - TrMenu 菜单实战
