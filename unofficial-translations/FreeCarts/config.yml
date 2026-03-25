@@ -1,0 +1,299 @@
+# FreeCarts 配置文件
+# 允许你自定义 FreeCarts 插件的不同功能
+
+# 语言设置 (请前往 Discord 联系我添加新的语言)
+# 可用语言: 英语 : en_us, 泰米尔语 : ta_in, 德语 : de_de
+language: en_us
+
+# 更新检查
+# 启用后, FreeCarts 将会在启动时访问 Modrinth API
+# 检查是否有新版本可以使用.
+update-checker:
+  enabled: true
+
+freecarts:
+  # 载具移动的速度设置
+  speed:
+    base: 0.8               # 按 WASD 时每刻加速的量
+    max-speed: 1.0          # 载具可以达到的最大速度
+    reverse-multiplier: 0.2 # 倒挡速度为基础速度的 20% (0.8 × 0.2 = 0.16 格/刻)
+    strafe-multiplier: 0.7  # 漂移速度为基础速度的 70% (0.8 × 0.7 = 0.56 格/刻)
+
+  #-------------------------------------------------------------------------------#
+
+  # 物理设置
+  physics:
+    friction: 0.9                 # 不移动时的摩擦力 (0.9 = 每刻降低 10% 速度)
+    step-height: 0.35             # 载具可以跨上多高的方块
+    step-down-speed: 0.3          # 下坡时的下降速度
+    step-smooth: true             # 是否平滑地垂直移动
+    safe-fall-height: 7.0         # 不受损的最大坠落高度 (单位为格) (对驾驶者与载具本身都生效)
+    fall-damage-multiplier: 0.2   # 坠落伤害倍率 -> 0.0 = 无伤害, 1.0 = 正常伤害
+
+  #-------------------------------------------------------------------------------#
+
+  # 交互设置
+  interaction:
+    search-radius: 3.0      # 看向载具时的最大交互距离
+    movement-timeout: 100   # 移动输入超时的时间
+
+  #-------------------------------------------------------------------------------#
+
+  # 外观设置
+  appearance:
+    display-block: "NONE"           # 显示在载具上的方块 (填入 "NONE" 表示原版外观)
+    item-name: "载具"         # 载具物品的名称
+
+  #-------------------------------------------------------------------------------#
+
+  # 燃油系统设置
+  fuel:
+    enabled: true                       # 完全启用/禁用系统
+    station-search-radius: 5.0          # 使用加油站功能时自动搜索附近加油站的半径
+    max-fuel-level: 100                 # 油箱上限 (0-100)
+    consumption-rate: 0.5               # 移动时每秒消耗油量
+    refuel-amount: 50                   # 每次加油填充的油量
+    refuel-cost: 10.0                   # 每次加油的价格 (0 表示不收费, 需安装 Vault + 任意支持的经济插件)
+    low-fuel-warning: true              # 启用油量低警告
+    low-fuel-threshold: 20              # 低于这个油量时发送警告
+
+    station-block: "BARRIER"            # 加油站的方块类型 (用作碰撞箱/交互方块)
+
+    # 基岩版 (间歇泉) 玩家无法看到展示实体.
+    # 加油站碰撞箱有两种不同的显示方式:
+    #   bedrock-base-block — 碰撞箱底层方块 (靠近地面那一层)
+    #   bedrock-top-block  — 底层之上的方块
+    # 对任意大小的碰撞箱均适用 (1x1x2, 2x2x3, 4x1x4, etc.)
+    # 可填入任意有效的原版方块名称. 不安装间歇泉的情况下无效.
+    bedrock-base-block: "RED_SHULKER_BOX"
+    bedrock-top-block: "RED_MUSHROOM_BLOCK"
+
+    # 加油站爆炸设置
+    explosion:
+      enabled: true                      # 启用后, 使用打火石或载具撞向加油站会导致爆炸
+      collision-explosion-min-velocity: 0.3  # 导致加油站爆炸的最小载具撞击速度
+      power: 5.0                         # 爆炸强度 (4.0 = TNT 爆炸强度)
+      break-blocks: true                # 是否允许爆炸破坏方块
+      set-fire: true                    # 是否允许爆炸点燃附近地形
+
+    respawn:
+      enabled: true                         # 启用加油站自我修复功能
+      delay-seconds: 20                    # 修复完毕的间隔 (20 秒)
+      notify-nearby: true                   # 是否在修复完毕时提醒附近玩家
+      notify-radius: 20.0                   # 提醒附近玩家的半径
+
+    # 默认加油站碰撞箱设置
+    # 也可以输入命令 "/freecart fuel x,y,z" 调整. 示例用法: "/freecart fuel 1,2,4"
+    hitbox:
+      width-x: 2                         # 碰撞箱宽度, 单位为格 (X 轴)
+      width-z: 1                         # 碰撞箱宽度, 单位为格 (Z 轴)
+      height: 2                          # 碰撞箱高度, 单位为格 (Y 轴)
+
+    # 加油站模型使用方块展示实体:
+    # 1. 在 BDEngine 中创建你的模型, 复制 /summon 开头的命令
+    # 2. 将其保存至如下路径:
+    #    plugins/FreeCarts/models/fuelstation/模型名称.txt
+    # 3. 输入命令: /freecart model station import 模型名称
+    # 4. 新的加油站就会使用这个模型!
+
+  #-------------------------------------------------------------------------------#
+
+  # 汽油桶设置
+  fuel-can:
+    enabled: true                           # 是否启用汽油桶
+    custom-model-data: 0                    # 汽油桶物品的自定义模型数据 (0 = 不使用, 需要资源包)
+    refuel-amount: 50                       # 每桶汽油补充的油量
+    cost: 25.0                              # 每桶汽油的价格
+    delivery-cost: 50.0                     # 运送费用
+    max-delivery-amount: 10                 # 每次最多运送几桶汽油
+    delivery-chest-despawn-time: 30         # 快递箱存在的时间
+    delivery-delay-seconds: 10              # 快递送达的等待时间
+    delivery-cooldown-seconds: 10           # 快递下单的间隔
+    delivery-spawn-distance: 30             # 运输恶魂生成的距离
+
+  #-------------------------------------------------------------------------------#
+
+  # 拥有者设置
+  ownership:
+    enabled: true                    # 是否启用拥有者
+    allow-guest-riding: false        # 允许非拥有者无需权限即可驾驶载具
+    notify-owner-on-use: true        # 是否在其他玩家驾驶载具时提醒拥有者
+    max-carts-per-player: 5          # 单个玩家可放置在世界中的最大载具数量 (-1 表示不限制)
+
+  #-------------------------------------------------------------------------------#
+
+  # 载具耐久度系统
+  health:
+    enabled: true
+    max-health: 100
+    speed-reduction-threshold: 20        # 低于这个百分比耐久度时载具行驶速度下降
+    speed-reduction-multiplier: 0.5      # 受损后的行驶速度 (50% 基础速度)
+    instant-break-fall-height: 11.0      # 车辆判定为坠毁的高度 (直接将耐久度设置为 0%)
+    repair-kit-cost: 50.0                # 每个应急修复工具的价格 (与油桶相同的快递费)
+
+    damage:
+      player: 5                           # 玩家攻击造成的耐久损耗
+      entity: 1                           # 实体攻击造成的耐久损耗
+      arrow: 4                            # 弹射物造成的耐久损耗
+      explosion: 20                       # 爆炸造成的耐久损耗
+      fall:
+        min: 5                            # 最小伤害 (从 safe-fall-height + 0.1 格开始计算)
+        max: 25                           # 最大伤害 (造成 instant-break-fall-height 判定的坠毁之前受到的损耗)
+
+    allowed-weapons:                      # 可以损坏载具的物品列表
+      - NETHERITE_SWORD
+      - DIAMOND_SWORD
+      - IRON_SWORD
+      - NETHERITE_AXE
+      - DIAMOND_AXE
+      - IRON_AXE
+
+  #-------------------------------------------------------------------------------#
+  #||                         载具升级                                            ||
+  #-------------------------------------------------------------------------------#
+  # 对于 "material" - 设置为 "none" 或 "" 表示不收取物品
+  # 对于 "amount" - 设置为 0 表示不收取物品
+  # 对于 "cost" - 设置为 0.0 表示免费
+  #
+  # 示例 - 1 :
+  #   material: none         # 无需任何物品
+  #   amount: 0
+  #   cost: 250.0            # 只收费
+  #
+  # 示例 - 2 :
+  #   material: NETHERITE_INGOT
+  #   amount: 2
+  #   cost: 0.0              # 只收取物品, 不收钱
+
+  upgrades:
+    engine:
+      level-2:
+        material: IRON_BLOCK
+        amount: 5
+        cost: 100.0
+      level-3:
+        material: DIAMOND
+        amount: 3
+        cost: 250.0
+      level-4:
+        material: NETHERITE_INGOT
+        amount: 2
+        cost: 500.0
+    brake:
+      level-2:
+        material: IRON_INGOT
+        amount: 10
+        cost: 75.0
+      level-3:
+        material: GOLD_INGOT
+        amount: 8
+        cost: 200.0
+      level-4:
+        material: DIAMOND
+        amount: 4
+        cost: 400.0
+    nitro:
+      level-1:
+        material: REDSTONE_BLOCK
+        amount: 3
+        cost: 150.0
+      level-2:
+        material: GLOWSTONE
+        amount: 5
+        cost: 300.0
+      level-3:
+        material: DIAMOND_BLOCK
+        amount: 2
+        cost: 450.0
+      level-4:
+        material: NETHERITE_BLOCK
+        amount: 1
+        cost: 600.0
+    storage:
+      level-1:
+        material: CHEST
+        amount: 2
+        cost: 100.0
+      level-2:
+        material: BARREL
+        amount: 5
+        cost: 200.0
+      level-3:
+        material: ENDER_CHEST
+        amount: 1
+        cost: 350.0
+      level-4:
+        material: SHULKER_BOX
+        amount: 2
+        cost: 500.0
+
+  #-------------------------------------------------------------------------------#
+  #                             车库设置
+  #-------------------------------------------------------------------------------#
+
+  garage:
+    enabled: true                # 启用/禁用车库系统
+
+    upgrades:
+      enabled: true              # 启用车库升级系统
+      # 升级条件可在 'garage/garage-upgrades.yml' 中配置
+
+    finder:
+      enabled: true              # 启用车库搜索界面
+      show-offline: true         # 在搜索界面显示离线玩家
+
+    # 注意: 最大槽位数只能为 18, 玩家权限决定了解锁限制
+    # 权限为 freecarts.garage.slots.X permission (X = 1-18)
+    # 以 LuckPerms 为例:
+    # /lp group vip permission set freecarts.garage.slots.5 true
+    # /lp group premium permission set freecarts.garage.slots.9 true
+
+    # 槽位解锁条件可在 'plugins/freecarts/garage/garage-slots.yml' 中配置
+
+  #-------------------------------------------------------------------------------#
+  #                           数据库设置
+  #-------------------------------------------------------------------------------#
+
+  # 所有需要 SQL 的功能共用
+  # 目前使用的模块有: 车库, 更多功能还在路上!
+  database:
+    enabled: false                # 启用/禁用数据库 (支持使用 MySQL & MariaDB)
+    host: localhost
+    port: 3306
+    database: freecarts
+    username: root
+    password: ""
+
+    # 所有表的前缀 (多服共用数据库时很有用)
+    # 表前缀 - 注意:只支持英文小写字母与下划线 (最长 20 个字符)
+    # 示例: "fc_", "freecarts_", "plugin_fc_"
+    table-prefix: "fc_"
+
+    # 存储类型: "yaml" or "sql"
+    # 注意: 如果你使用的是 SQL, 必须在上方启用数据库!
+    # 警告: yaml 为本地存储, 请勿在群组服环境下使用
+    storage-type: yaml
+
+    # 迁移命令:
+    # - /freecart import - 从 SQL 将数据导入 YAML
+    # - /freecart export - 从 YAML 将数据导出 YAML
+    # 切换存储数据类型时善用这些命令
+
+  # 连接池设置 (仅进阶用户)
+  # 取消注释可覆盖默认设置
+  # pool:
+  #   maximum-size: 10            # 池内最大连接数
+  #   minimum-idle: 2             # 最小挂机连接数
+  #   connection-timeout: 30000   # 超时时间, 单位为毫秒
+  #   idle-timeout: 600000        # 挂机超时时间 (10 分钟)
+  #   max-lifetime: 1800000       # 连接最大持续时间 (30 分钟)
+
+  #-------------------------------------------------------------------------------#
+  #                   多服载具仓库设置
+  #-------------------------------------------------------------------------------#
+  # 需要启用: 车库与数据库功能
+  # 警告: 启用/禁用这个功能可能会导致载具仓库中的内容不显示, 直到还原存储方式.
+  # 请在启用/禁用此功能前备份载具仓库内容/清空仓库
+  multi-server:
+    enabled: false                    # 启用子服独立车库
+    server-name: "survival"          # 本服独立名称 (每个子服不可重复)

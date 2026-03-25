@@ -1,0 +1,37 @@
+models:
+  simple_blue:
+    name: 简约蓝
+    custom-model-data: 11189801
+  simple_black:
+    name: 简约黑
+    custom-model-data: 11189802
+  simple_green:
+    name: 简约绿
+    custom-model-data: 11189803
+  simple_red:
+    name: 简约红
+    custom-model-data: 11189804
+  simple_yellow:
+    name: 简约黄
+    custom-model-data: 11189805
+  simple_purple:
+    name: 简约紫
+    custom-model-data: 11189806
+  hatchback_blue:
+    name: 掀背蓝色车
+    custom-model-data: 11189807
+  hatchback_black:
+    name: 掀背黑色车
+    custom-model-data: 11189808
+  hatchback_green:
+    name: 掀背绿色车
+    custom-model-data: 11189809
+  hatchback_red:
+    name: 掀背红d色车
+    custom-model-data: 11189810
+  hatchback_yellow:
+    name: 掀背黄色车
+    custom-model-data: 11189811
+  hatchback_purple:
+    name: 掀背紫色车
+    custom-model-data: 11189812

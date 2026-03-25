@@ -1,0 +1,21 @@
+garage-upgrades:
+  level-1:
+    material: IRON_BLOCK
+    amount: 5
+    cost: 1000.0
+    unlocks: Cart Renaming
+  level-2:
+    material: GOLD_BLOCK
+    amount: 5
+    cost: 2500.0
+    unlocks: Name Color Customization
+  level-3:
+    material: DIAMOND_BLOCK
+    amount: 3
+    cost: 5000.0
+    unlocks: Custom Lore
+  level-4:
+    material: NETHERITE_BLOCK
+    amount: 2
+    cost: 10000.0
+    unlocks: Paint Customization

@@ -1,0 +1,76 @@
+# 车库槽位解锁条件
+
+# 配置每个槽位解锁所需的物品、数量以及价格
+# 将物品设置为 "none" 或 "" 表示不收取
+# 数量设置为 0 同样表示不收取
+# 设置价格为 0.0 表示免费
+
+slot-unlock:
+  slot-2:
+    material: IRON_BLOCK
+    amount: 2
+    cost: 100.0
+  slot-3:
+    material: GOLD_BLOCK
+    amount: 3
+    cost: 250.0
+  slot-4:
+    material: DIAMOND
+    amount: 2
+    cost: 500.0
+  slot-5:
+    material: NETHERITE_INGOT
+    amount: 1
+    cost: 1000.0
+  slot-6:
+    material: DIAMOND_BLOCK
+    amount: 2
+    cost: 1500.0
+  slot-7:
+    material: NETHERITE_BLOCK
+    amount: 1
+    cost: 2000.0
+  slot-8:
+    material: EMERALD_BLOCK
+    amount: 3
+    cost: 2500.0
+  slot-9:
+    material: NETHERITE_INGOT
+    amount: 5
+    cost: 3000.0
+  slot-10:
+    material: DIAMOND_BLOCK
+    amount: 5
+    cost: 4000.0
+  slot-11:
+    material: NETHERITE_BLOCK
+    amount: 2
+    cost: 5000.0
+  slot-12:
+    material: EMERALD_BLOCK
+    amount: 5
+    cost: 6000.0
+  slot-13:
+    material: NETHERITE_INGOT
+    amount: 10
+    cost: 7500.0
+  slot-14:
+    material: NETHERITE_BLOCK
+    amount: 3
+    cost: 9000.0
+  slot-15:
+    material: DIAMOND_BLOCK
+    amount: 10
+    cost: 11000.0
+  slot-16:
+    material: NETHERITE_BLOCK
+    amount: 5
+    cost: 13000.0
+  slot-17:
+    material: EMERALD_BLOCK
+    amount: 10
+    cost: 15000.0
+  slot-18:
+    material: NETHERITE_BLOCK
+    amount: 10
+    cost: 20000.0
