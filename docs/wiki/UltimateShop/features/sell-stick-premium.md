@@ -1,5 +1,13 @@
 # 🪄 出售魔杖 - 仅付费版
 
+::: info
+
+难以计算出售魔杖的总价，因为 UltimateShop 支持多种货币形式，而不是像其他插件那样只支持单一的 **Vault** 货币。这种情况下只需简单相加，然而 UltimateShop 并不只支持一种形式的货币，你也可以使用假价格，错综复杂的情况让统计总价几乎不可能。
+
+使用了动态定价的物品同样支持出售魔箱。例如，每次售价 -1 单位，基础价格为 10 单位的时候，出售 X 个物品获得的总价格为 $10+9+8+7+6+...$ 单位。
+
+:::
+
 所有出售魔杖都存储在 `random_placeholder` 文件夹下。文件名即为其 ID，例如，`A.yml` 即其 ID 为 `A`。示例配置如下：
 
 ``` YAML
@@ -29,6 +37,6 @@ conditions: []
 * `actions`：使用魔杖后触发的动作。可以在此使用[动作格式](../format/action-format.md)
 * `conditions`：玩家使用该出售魔杖所需达到的条件。可以在此使用[条件格式](../format/condition-format.md)。
 
-配置完成后，请重启插件，然后可以通过指令 `/shop givesellstick` 来获得出售魔杖，有关具体信息，可见[此页面](../info/commands.md#shop-givesellstick-物品-id-玩家-id-数量-仅付费版本)。
+配置完成后，请重启插件，然后可以通过指令 `/shop givesellstick` 来获得出售魔杖，有关具体信息，可见[此页面](../info/commands-and-permissions.md#shop-givesellstick-物品-id-玩家-id-数量-仅付费版本)。
 
 UltimateShop 支持阻止玩家在受保护的区域和其他玩家的领地中使用出售魔杖，有关具体信息，可见[此页面](../info/compatibility.md#直接支持的保护插件列表)。你可以给自己 `ultimateshop.bypass.protection` 权限或者给自己 OP 以绕过此检查。

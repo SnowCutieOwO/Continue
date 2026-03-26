@@ -1,5 +1,11 @@
 # 🔽 增量购买菜单
 
+::: info
+
+增量购买意味着选择需要的份数，而不是打开再次购买物品的菜单。
+
+:::
+
 ## 配置文件
 
 增量购买菜单相较于普通菜单，多出了一些选项。
@@ -58,7 +64,7 @@ confirm-items:
       name: '&a确认'
       lore:
         - '&7点此确认交易!'
-      modify-lore: true
+    modify-lore: true
   D:
     display-item:
       material: PAPER

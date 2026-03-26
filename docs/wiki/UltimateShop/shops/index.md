@@ -5,6 +5,16 @@
 ``` YAML
 settings:
   menu: 'example-shop-menu'
+  # 可选：商店的行内菜单配置，可以在没有 settings.menu 选项的情况下使用。
+  menu-settings:
+    dynamic-layout: false
+    layout:
+      - '000000000'
+      - '0ABCDEFG0'
+      - '0HIJKLMN0'
+      - '0OPQRSTU0'
+      - '000000000'
+      - 'a0003000b'
   buy-more: true
   shop-name: '食物商店'
   hide-message: false
@@ -12,6 +22,7 @@ settings:
   custom-command:
     name: 'mineral'
     description: '自定义描述'
+
 
 general-configs:
   # 这表示所有物品都会使用这些价格与物品模式.
@@ -152,10 +163,21 @@ buttons:
 
 ## 设置
 
-- `menu`：商店的菜单名称，也就是菜单的文件名称。每个商店都需要关联一个菜单，这里代表关联了 `example-shop-menu` 菜单。
+- `menu`：商店的菜单名称，也就是菜单的文件名称。每个商店都需要关联一个菜单，上文的示例配置关联了 `example-shop-menu` 菜单。
+  你应该能在 `menus` 文件夹下找到名为 `example-shop-menu.yml` 的菜单文件。有关菜单的更多信息[见此](../menus/general-menus.md)。
+- `menu-settings`：你可以在商店配置内单独设置这个商店的菜单排版。这部分会覆盖对应的菜单配置。如果这部分包含了你需要的菜单选项，你也可以去掉 `menu` 选项。
 - `buy-more`：该商店中的商品是否能打开增量购买菜单。
 - `shop-name`：商店的显示名称，会被内置变量 `{shop-name}` 使用。
-- `hide-message`：是否隐藏玩家在商店中进行交易后显示的消息。交易失败，如达到限制，钱不够等，默认这个选项无法隐藏。你需要在 `config.yml` 中找到 `placeholder.click.enabled` 选项，并将其设置为 `true` 来隐藏这些失败提示。
+- `hide-message`：是否隐藏玩家在商店中进行交易后显示的消息。
+
+::: warning
+
+默认情况下，只能隐藏交易成功、到达上限和余额不足的失败消息，隐藏其他消息有两种方法：\
+首先试着将 `config.yml` 中的 `placeholder.click.enabled` 设置为 `true`。这会在物品描述中添加购买失败的原因，但是有额外性能消耗。
+其次试着将 `config.yml` 中的 `force-display-fail-message` 设置为 `true`。推荐这种方式。（4.2.11+）
+
+:::
+
 - `secret-shop-items`：启用后，自动隐藏不满足商店中对应条件的商品，玩家无法与其交易。你可以在 `config.yml` 中设置隐藏物品的规则。
 
 ``` YAML
@@ -179,3 +201,10 @@ secret-shop-items:
 ## 按钮
 
 商店中同样可以插入与菜单功能相同的按钮，详见“[菜单](../menus/general-menus.md)”章节获取更多信息。
+
+每个按钮都有这些选项：
+
+* `display-item`：按钮的展示物品，使用[展示物品格式](../format/display-item-format)。
+* `actions`：点击按钮后的动作，使用[动作格式](../format/action-format)。
+* `fail-actions`：没有达到点击按钮的条件时触发的动作，使用[动作格式](../format/action-format)。
+* `conditions`：按钮的条件，如果玩家没有满足，则执行 `fail-action` 部分的操作，使用[条件格式](../format/condition-format)。

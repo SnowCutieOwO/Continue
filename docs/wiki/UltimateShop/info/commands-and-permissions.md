@@ -1,4 +1,4 @@
-# ⌨️ 命令 & 权限
+# ⌨️ 命令与权限
 
 ## 常见问题
 
@@ -40,6 +40,12 @@
 与快速购买相同，将 `quickbuy` 替换为 `quicksell` 即可。
 
 `amount` 可替换为 `*` 符号，此时插件会将背包中所有符合条件的物品出售。**<font color="Red">（仅付费版本）</font>**
+
+::: warning
+
+如果对应物品没有显示在商店菜单中，或者玩家没有达成打开对应商店的条件，那么这个物品将不能参与交易。如果你不想要这样，可以将商店配置中的 `settings.secret-shop-items` 选项的值改为 `false`。
+
+:::
 
 ## /shop reload
 
@@ -130,14 +136,6 @@ global 参数表示为 `{buy-times-server}` 或 `{sell-times-server}` 变量设�
 如果需要设置分玩家的随机变量，请在命令中填入玩家的名称，否则插件会报错。
 
 需要权限 `ultimateshop.setrandomplaceholder`。
-
-## /shop editor **<font color="Red">（仅付费版本）</font>**
-
-打开商店编辑器。
-
-需要附属插件 **UltimateShopEditor**，你可在 SpigotMC 下载它。
-
-需要权限 `ultimateshop.editor`。
 
 ## /shop search
 

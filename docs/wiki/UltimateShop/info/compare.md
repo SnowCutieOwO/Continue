@@ -2,9 +2,8 @@
 
 ||免费版本|付费版本|
 |---|---|---|
-|**更多命令**<br>部分命令只在付费版中可用。更多信息请见[命令](commands.md)章节。||
-|**更多命令参数**<br>付费版支持更多命令参数。例如用 `*` 指代所有物品。更多信息请见[命令](commands.md)。|❌|✅|
-|**UltimateShopEditor 附属**<br>付费版本能使用 UltimateShopEditor。更多信息请见[游戏内编辑器](../features/in-game-editor-premium.md)章节。|❌|✅|
+|**更多命令**<br>部分命令只在付费版中可用。更多信息请见[命令](commands-and-permissions.md)章节。||
+|**更多命令参数**<br>付费版支持更多命令参数。例如用 `*` 指代所有物品。更多信息请见[命令](commands-and-permissions.md)。|❌|✅|
 |**基岩版菜单**<br>付费版支持将 Java 版菜单转化为基岩版 UI。更多信息请见[基岩版菜单](../menus/bedrock-menus-premium.md)章节。|❌|✅|
 |**多服同步**<br>付费版支持同步群组服数据。更多信息请见[多服同步](../features/multi-server-sync-premium.md)章节。|❌|✅|
 |**本地化物品名称**<br>付费版无需添加展示名称即可设置物品本地化名称。更多信息请见[本地化物品名称](../features/localized-item-name.md)章节。|❌|✅|
@@ -19,8 +18,10 @@
 |**更多物品格式键支持**<br>付费版本可使用更多物品格式键，例如添加来自 AdvancedEnchantments 的附魔等。更多信息请见[物品格式](../format/itemformat/index.md)章节。|❌|✅|
 |**日志记录**<br>付费版本允许你通过该功能记录所有交易信息，可借此检查价格设置是否是正确设置，更多信息请见[交易日志](../features/log-transaction-premium.md)章节。|❌|✅|
 |**自定义点击事件**<br>付费版允许你自定义玩家使用不同按键点击物品时触发的操作。更多信息请见[自定义点击事件](../features/custom-click-event-premium.md)章节。|❌|✅|
-|**自定义单条目类型**<br>付费版允许使用 `CUSTOM` 单条目类型。更多信息请见[单条目](../shops/products-config-single-thing.md)章节。|❌|✅|
+|**自定义单条目类型**<br>付费版允许使用 `CUSTOM` 单条目类型。更多信息请见[单条目](../shops/products-config-single-thing/index.md)章节。|❌|✅|
 |**物品子按钮**<br>付费版允许在多个格子或菜单中显示同一物品。更多信息请见[物品](../shops/products.md)章节。|❌|✅|
 |**动态排版**<br>付费版菜单可以使用动态排版。更多信息请见[全局菜单](../menus/general-menus.md)章节|❌|✅|
 |**自定义命令**<br>付费版可添加打开普通菜单或商店菜单的自定义命令。更多信息请见[全局菜单](../menus/general-menus.md)章节。|❌|✅|
+|**菜单标题自动刷新**<br>付费版支持在每次点击或每秒自动刷新菜单的标题。更多信息请见[全局菜单](../menus/general-menus.md#标题更新---仅付费版paper-服务器)章节。|❌|✅|
+|**分玩家语言显示**<br>高级语言消息支持（可以在消息中嵌入 BossBar、ActionBar、声音、标题），[点此](../features/advanced-language-managment.md)了解更多！||
 |**更多...**<br>更多上述未提及的小差异，我没有将其放在这里。还有更多功能等待更新，敬请期待！|❌|✅|

@@ -4,7 +4,8 @@
 
 * 需要在你的**Spigot 子服**中同时安装 Geyser 和 Floodgate。若你正在使用 BungeeCord 群组，则你需要同时在代理端和子服中同时安装。
 * 你必须将 Geyser 中的 `auth-type` 设置为 **`floodgate`**。
-* 如果你正在使用 BungeeCord，你需要在后端服务器中按照[这些步骤](https://wiki.geysermc.org/floodgate/setup/)谨慎安装。
+* 如果你正在使用 BungeeCord，你需要在后端服务器中按照[这些步骤](https://geysermc.org/wiki/floodgate/setup/?platform=proxy-servers
+)谨慎安装。
 
 ::: info
 

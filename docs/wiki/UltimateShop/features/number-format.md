@@ -1,7 +1,8 @@
 # 🔢 数字格式
 
-* 下载 PlaceholderAPI，通过 `/papi ecloud download` 命令 Formatter 变量拓展。[点此](../../PlaceholderAPI/user-guides/placeholder-list.md#formatter)了解详情。
+* 下载并安装 PlaceholderAPI。
 
+* 通过 `/papi ecloud download` 命令下载 Formatter 变量拓展。[点此](../../PlaceholderAPI/user-guides/placeholder-list.md#formatter)了解详情。
 * 编辑物品价格选项，将其改为如下内容：
     `%formatter_number_format_{amount}%`
 
@@ -25,7 +26,7 @@
 
 ![](_images/image11.png)
 
-* 自 3.3.2 版本开始，你可以在 `config.yml` 中让插件帮你修改 `{amount}` 变量，而非手动修改！
+* 自 2.3.2 版本开始，你可以在 `config.yml` 中让插件帮你修改 `{amount}` 变量，而非手动修改！
 
 ``` YAML
 placeholder:

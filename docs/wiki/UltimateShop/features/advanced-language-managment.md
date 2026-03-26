@@ -6,7 +6,7 @@
 ``` YAML
 config-files:
   language: en_US
-  # Premium version only.
+  # 仅付费版。
   per-player-language: true
 ```
 在这里输入的应该是不带后缀的语言文件名称。所有的语言文件都储存在 `languages` 文件夹。你也可以自行通过复制 `en_US.yml` 文件并将复制后的文件重命名为对应语言代码。例如 `zh_CN.yml`。
@@ -16,7 +16,6 @@ config-files:
 以下内容仅在 **4.2.0** 版本后提供。
 
 :::
-
 
 ## 分玩家区分语言 <font color="red">- 仅付费版</font>
 

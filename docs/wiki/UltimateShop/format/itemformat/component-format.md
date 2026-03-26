@@ -221,8 +221,9 @@ component:
   skull: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2YzZmVkMTZmZDU1MTkwOWZhNWUyOWNkZDY5N2VlMzQ2ZTYzMzkwYjM4M2E0MzAwYTY2MmE4MGI2NGQ5ZWIxNyJ9fX0=
 ```
 
-## 1.21.11 新增的物品 Component
-```yaml
+## 1.21.11 新增的物品属性组件
+
+``` YAML
 material: DIAMOND_SWORD
 component:
   name: <aqua>Test Kinetic Sword

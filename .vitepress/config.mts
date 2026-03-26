@@ -1603,7 +1603,7 @@ export default defineConfig({
                 { text: '⚙️ 安装', link: 'wiki/UltimateShop/info/install' },
                 { text: '🔗 兼容性', link: 'wiki/UltimateShop/info/compatibility' },
                 { text: '🛠️ 配置文件', link: 'wiki/UltimateShop/info/configuration-files' },
-                { text: '⌨️ 命令', link: 'wiki/UltimateShop/info/commands' },
+                { text: '⌨️ 命令与权限', link: 'wiki/UltimateShop/info/commands-and-permissions' },
                 { text: '📊 数据', link: 'wiki/UltimateShop/info/data' },
                 { text: '🚀 性能', link: 'wiki/UltimateShop/info/performance' },
                 { text: '❓ 常见问题', link: 'wiki/UltimateShop/info/faq' },
@@ -1630,19 +1630,16 @@ export default defineConfig({
               text: '🔌 菜单', collapsed: true, items: [
                 { text: '🔲 全局菜单', link: 'wiki/UltimateShop/menus/general-menus' },
                 { text: '🔽 增量购买菜单', link: 'wiki/UltimateShop/menus/buy-more-menus' },
+                { text: '🔀 条件显示 - 仅付费版', link: 'wiki/UltimateShop/menus/conditional-display' },
                 { text: '🛏️ 基岩版菜单 - 仅付费版', link: 'wiki/UltimateShop/menus/bedrock-menus-premium' },
-                {
-                  text: '🥉 物品描述追加', link: 'wiki/UltimateShop/menus/display-item-add-lore/index', collapsed: true, items: [
-                    { text: '额外物品描述（旧）', link: 'wiki/UltimateShop/menus/display-item-add-lore/display-item-add-lore-legacy' }
-                  ]
-                },
+                { text: '🥉 物品描述追加', link: 'wiki/UltimateShop/menus/display-item-add-lore/index' },
               ]
             },
             {
               text: '🛍️ 商店', collapsed: true, items: [
-                { text: '📂 商店', link: 'wiki/UltimateShop/shops/shops' },
+                { text: '📂 商店', link: 'wiki/UltimateShop/shops/index' },
                 { text: '🛒 物品', link: 'wiki/UltimateShop/shops/products' },
-                { text: '💰 物品配置：单条目', link: 'wiki/UltimateShop/shops/products-config-single-thing' },
+                { text: '💰 物品配置：单条目', link: 'wiki/UltimateShop/shops/products-config-single-thing/index' },
                 { text: '♻️ 物品配置：交易次数重置', link: 'wiki/UltimateShop/shops/product-config-buy-sell-times-reset' },
                 { text: '📚 普通示例', link: 'wiki/UltimateShop/shops/common-examples' },
                 { text: '⚡ 示例：普通用法', link: 'wiki/UltimateShop/shops/example-common-usage' },
@@ -1654,7 +1651,7 @@ export default defineConfig({
             {
               text: '📍 变量', collapsed: true, items: [
                 { text: '🔧 内置变量', link: 'wiki/UltimateShop/placeholders/built-in-placeholder' },
-                { text: '🔀 随机变量 - 仅付费版', link: 'wiki/UltimateShop/placeholders/random-placeholder-premium' },
+                { text: '🎲 随机变量 - 仅付费版', link: 'wiki/UltimateShop/placeholders/random-placeholder-premium' },
                 { text: '⛓️ 条件变量 - 仅付费版', link: 'wiki/UltimateShop/placeholders/conditional-placeholder-premium' },
                 { text: '🔖 示例：折扣', link: 'wiki/UltimateShop/placeholders/example-discount' },
               ]
@@ -1687,7 +1684,9 @@ export default defineConfig({
             {
               text: '💻 开发相关', collapsed: true, items: [
                 { text: '开发教程', link: 'wiki/UltimateShop/develop/develop-guide' },
-                { text: '与 UltimateShop 挂钩', link: 'wiki/UltimateShop/develop/hook-into-ultimateshop' },
+                // { text: '开发教程（旧）', link: ''},
+                // { text: '事件', link: 'wiki/UltimateShop/develop/events' }
+                // { text: '与 UltimateShop 挂钩', link: 'wiki/UltimateShop/develop/hook-into-ultimateshop' },
               ]
             },
           ]

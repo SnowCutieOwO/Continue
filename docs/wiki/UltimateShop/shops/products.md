@@ -57,38 +57,52 @@ items:
 
 ::: info
 
-点[这里](shops.md)浏览这些选项的详细示例配置。
+点[这里](index.md)浏览这些选项的详细示例配置。
 
 :::
 
 - `display-item`：展示在商店菜单中的物品，可以与玩家实际获得的物品不同。虚拟物品必须设置 `display-item` 选项，否则它们就无法在商店菜单中显示。真实物品必须设置 `config.yml` 文件中 `display-item` 下的 `auto-set-first-product` 为 `true` 以允许你删除这个选项。启用后，若 `display-item` 未设置，那么出售的第一个真实物品将会被当做图标。该部分配置会使用到“[物品格式](../format/itemformat/index.md)”的配置。**可选（若不设置则使用首个物品）**
-    - `display-item.modify-lore`：是否尝试修改展示物品的描述，为其添加价格与出售限制等内容。你可以在 `config.yml` 文件中设置。**可选（默认为 true）**。
+    - `display-item.modify-lore`：是否尝试修改展示物品的描述，为其添加价格与出售限制等内容。你可以在 `config.yml` 文件或物品配置中的 `add-lore` 中设置，有关信息请参阅[展示物品描述追加](../menus/display-item-add-lore/index.md)部分。**可选（默认为 true）**。
 - `display-name`：设置物品在 `{product}` 与增量购买菜单中显示的名称。**可选。（若未设置，则以展示物品的名称作为商品的展示名称）**
 - `add-lore`：为该物品设置[额外描述](../menus/display-item-add-lore/index.md)，若不设置则使用配置文本中的默认值。**可选。**
-- `click-event`: 为这个商品单独设置点击事件，如果没有设置，则使用 `config.yml` 中的默认值。记得也要修改 `add-lore` 选项来添加符合此点击事件配置的额外物品描述。**可选**
+- `click-event`: 为这个商品单独设置点击事件，如果没有设置，则使用 `config.yml` 中的默认值。记得也要修改 `add-lore` 选项来添加符合此点击事件配置的额外物品描述。**可选。**
 
 ``` YAML
     add-lore:
       - '@a&e买价: {buy-price}'
       - '@b&e卖价: {sell-price}'
-      - '&eQ键购买，右键回收'
+      - '&eQ 键购买，右键回收'
     click-event:
       buy: 'DROP'
       sell: 'RIGHT'
 ```
 
 - `bedrock`：[见此](../menus/bedrock-menus-premium.md)。
-- `buy-more`：设置该商品是否可以打开增量购买菜单，**必须先删除商店的 `buy-more` 选项才可以让该设置生效！可选。（默认为 true）**
+- `buy-more`：设置该商品是否可以打开增量购买菜单。**可选。（默认为 true）**
 - `buy-more-menu`：为商品设置单独的增量购买菜单。**可选。需要 2.2.10+。（若未设置，则使用 `config.yml` 中的默认值）**
 
 ``` YAML
     buy-more: true
+    sell-all: true
+    hide-message: false
     buy-more-menu:
       menu: buy-more-2
       max-amount: 16
 ```
 
 - `sell-all`：决定商品是否可以使用一键出售模式。**可选，默认为 true。（3.9.0 新增）**
+
+- `hide-message`: 是否隐藏交易后插件显示的消息。**可选，默认为 false。（4.2.11 新增）**
+
+::: warning
+
+默认情况下，只能隐藏交易成功、到达上限和余额不足的失败消息，隐藏其他消息有两种方法：\
+首先试着将 `config.yml` 中的 `placeholder.click.enabled` 设置为 `true`。这会在物品描述中添加购买失败的原因，但是有额外性能消耗。
+其次试着将 `config.yml` 中的 `force-display-fail-message` 设置为 `true`。推荐这种方式。（4.2.11+）
+
+:::
+
+- `buy-prices`/`sell-prices`/`products`：[见此](products-config-single-thing/index.md).
 - `price-mode`：价格模式。可填入 `ANY`、`ALL`、`CLASSIC_ANY` 和 `CLASSIC_ALL`。**必选。**
 - `product-mode`：物品模式，可填入的参数与上述相同。**若设置了物品部分则必选。**
 
@@ -104,7 +118,7 @@ items:
 |收取货币/物品|收取符合条件且数量足够的首个货币/物品。|玩家需要满足所有条件并拥有所有对应物品或货币才可出售。|与 `ANY` 相同。|与 `ALL` 相同。|
 |给予货币（即出售）|发放符合条件的货币。|给予所有种类货币。|与 `ANY` 相同。|与 `ALL` 相同。|
 |货币支持|支持动态定价与 `apply` 设置。|与 `ALL` 相同。|价格必须每次相同。|与 `CLASSIC_ALL` 相同。|
-|一键出售支持|**否**<br>价格本身存在浮动，插件无从得知最大出售次数。|**否**<br>价格本身存在浮动，插件无从得知最大出售次数。|是|是|
+|在 `amount` 中使用动态变量时的一键出售支持|**否**<br>价格本身存在浮动，插件无从得知最大出售次数。|**否**<br>价格本身存在浮动，插件无从得知最大出售次数。|是|是|
 |性能影响|在出现大量买卖操作时可能占用较高。|与 `ALL` 相同。|与其他商店插件相差无几！|与 `CLASSIC_ANY` 相同。|
 
 - `buy-actions`：购买商品后执行的一系列动作。使用“[动作格式](../format/action-format.md)”。**可选。**
@@ -138,7 +152,7 @@ buy-limits-conditions:
 * `sell-prices`
 * `products`
 
-这些选项会单独介绍，请[点此](products-config-single-thing.md)浏览。
+这些选项会单独介绍，请[点此](products-config-single-thing/index.md)浏览。
 
 ## 交易次数重置选项
 
@@ -147,17 +161,21 @@ buy-limits-conditions:
 * `buy-times-reset-mode`
 * `buy-times-reset-time`
 * `buy-times-reset-time-format`
+* `buy-times-reset-value`
+* `buy-times-max-value`
 * `sell-times-reset-mode`
 * `sell-times-reset-time`
 * `sell-times-reset-time-format`
+* `sell-times-reset-value`
+* `sell-times-max-value`
 
 这些选项会单独介绍，请[点此](product-config-buy-sell-times-reset.md)浏览。
 
 ## 动态值
 
-你可以在商店配置的 `buy-prices`、`sell-prices` 的 `amount` 部分与 `buy-limits`、`sell-limits` 的值中插入变量与[数学计算格式](../format/math-calculate-format.md)。
+你可以在物品配置的 `buy-prices`、`sell-prices` 的 `amount` 部分与 `buy-limits`、`sell-limits` 的值中插入变量与[数学计算格式](../format/math-calculate-format.md)。
 
-默认情况下，动态值是实时计算而非定期刷新。但是，玩家不会在界面中看见这些值实时更新。我们只会在玩家打开菜单或者点击其中物品后刷新显示的动态值。例如，如果你在买价设置了动态值，且玩家打开界面后这个值产生了更新，则玩家无法通过展示物品注意到，但插件会根据变化后的值计算新价格。这是基于服务器性能与节省开销的权衡之策。
+默认情况下，动态值实时计算而非定期刷新。但是，玩家不会在界面中看见这些值实时更新。我们只会在玩家打开菜单或者点击其中物品后刷新显示的动态值。例如，如果你在买价设置了动态值，且玩家打开界面后这个值产生了更新，则玩家无法通过展示物品注意到，但插件会根据变化后的值计算新价格。这是基于服务器性能与节省开销的权衡之策。
 
 可用的内建变量如下。更多信息请浏览“[内建变量](../placeholders/built-in-placeholder.md)”章节。
 
@@ -238,4 +256,11 @@ buy-limits-conditions:
 * `display-item`：支持为子按钮设置不同的显示物品。
 * `as-sub-button`：可以在此填入 `物品 ID` 或 `商店 ID;;物品 ID`。
 
-**子按钮**的示例可以在“[商店](shops.md)”章节找到，你可以在其开头示例配置 `items` 中的 `C` 部分见到。
+**子按钮**的示例配置可以在“[商店](index.md)”章节找到，你可以在其开头示例配置 `items` 中的 `C` 部分见到。
+
+
+::: warning
+
+如果对应子按钮没有显示在商店菜单中，或者玩家没有达成打开对应商店的条件，那么这个物品将不能参与交易。如果你不想要这样，可以将商店配置中的 `settings.secret-shop-items` 选项的值改为 `false`。
+
+:::

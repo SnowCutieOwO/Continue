@@ -40,3 +40,11 @@ database:
     user: root
     password: 123456
 ```
+
+|数据库|JDBC URL 示例|JDBC 类|
+|---|---|---|
+|MySQL| jdbc:mysql://localhost:3306/ultimateshop      | com.mysql.cj.jdbc.Driver |
+|MariaDB（4.1.4 添加）| jdbc:mariadb://localhost:3306/ultimateshop    | org.mariadb.jdbc.Driver  |
+|PostgreSQL（4.1.4 添加）| jdbc:postgresql://localhost:5432/ultimateshop | org.postgresql.Driver    |
+|SQLLite（4.1.4 添加）| jdbc:sqlite:plugins/UltimateShop/data.db      | org.sqlite.JDBC          |
+|h2（4.1.4 添加）| jdbc:h2:file:./plugins/UltimateShop/data      | org.h2.Driver            |

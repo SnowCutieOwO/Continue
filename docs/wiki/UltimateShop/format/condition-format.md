@@ -38,6 +38,12 @@
 
 #### 动作 <font color="red">- 仅付费版</font>
 
+::: info
+
+如果需要修改交易物条件未达到的消息提示，你需要在交易物配置中使用 `fail-actions` 选项。
+
+:::
+
 ``` YAML
     conditions:
       1:
@@ -68,6 +74,39 @@ conditions:
 
 * `{world}`
 * `{amount}`
+
+### 物品层面的 `buy-conditions` 与 `sell-conditions`
+
+在物品上使用 `buy-conditions` 或 `sell-conditions` 时，`{amount}` 表示玩家尝试交易物品的次数。
+
+如果玩家购买了 5 个物品，那么 `{amount}` 就是 `5`。
+
+
+### 单条目的 `apply-conditions` 与旧版 `conditions`
+
+当你在单条目中使用 `apply-conditions`，`{amount}` 总是为 `1`。
+
+旧版的 `conditions` 同样如此，因为在代码中它们是旧形式的 `apply-conditions`。
+
+为什么？
+
+* `apply-conditions` 会在插件选择最终条目时优先判定
+* 此时实际物品数量尚未结算
+
+因此：
+
+* `{amount}` 不代表最终价格
+* `{amount}` 也不代表最终物品数量
+* `{amount}` 只会返回 `1`
+
+这表示 `apply-conditions` 用于决定分支，而非检查实际计算数量。
+
+### 单条目的 `require-conditions`
+
+当你在单条目中使用 `require-conditions`，`{amount}` 表示条目物品的最终结算量。
+
+这是它与 `apply-conditions` 的最大区别。
+
 * `{player_x}`
 * `{player_y}`
 * `{player_z}`

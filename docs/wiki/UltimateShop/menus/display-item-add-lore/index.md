@@ -2,7 +2,7 @@
 
 ::: info
 
-本页展示的是 4.0.0 后的物品描述追加，若你仍在使用旧版本，请[点此](display-item-add-lore-legacy.md)浏览旧页面。
+本页展示的是 4.0.0 后的物品描述追加。
 
 :::
 
@@ -45,7 +45,7 @@
 
 ## 单物品设置
 
-各个商品也可以独立设置额外物品描述，只需在物品配置中添加 `add-lore` 部分即可。详见“[商店](../../shops/shops.md)”一节中的物品 B 示例。
+各个商品也可以独立设置额外物品描述，只需在物品配置中添加 `add-lore` 部分即可。详见“[商店](../../shops/index.md)”一节中的物品 B 示例。
 
 ```yaml
 items:
@@ -96,7 +96,7 @@ items:
 
 ## 换行符
 
-使用 `;;` 表示换行，对于需要使用多行表示价格的用户来说很有用。
+使用 `;;` 表示换行，适合用于表示多行价格。
 
 ``` YAML
 placeholder:
@@ -104,4 +104,15 @@ placeholder:
     split-symbol-any: ';;' # <--- 在 config.yml 中修改
     split-symbol-all: ';;' # <--- 在 config.yml 中修改
     unknown: "未知"
+```
+
+同时需要更新 `add-lore` 设置：
+
+``` YAML
+  add-lore:
+    - '@n '
+    - '@a&e购买：'
+    - '@a   &7[-] &f{buy-price}'
+    - '@b&e出售：'
+    - '@a   &7[-] &f {sell-price}'
 ```

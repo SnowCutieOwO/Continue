@@ -162,7 +162,7 @@ $\frac { 购买基础价 - 出售基础价 }  { 购买最高价 - 出售最低�
 
 ## 单玩家动态定价
 
-只要你可以确保在公式中使用的变量随玩家变化而变化，计算的价格自然也会如此。在上文的示例中，我们使用了诸如 `{buy-times-server}`，你只需要将 `server` 替换为 `player` 即可显示玩家自己的购买价格。相关内容也在“[变量](../placeholders/built-in-placeholder.md)”中有所解释。
+只要你可以确保在公式中使用的变量输出值随玩家变化而变化，计算的价格自然也会如此。在上文的示例中，我们使用了诸如 `{buy-times-server}`，你只需要将 `server` 替换为 `player` 即可显示玩家自己的购买价格。相关内容也在“[变量](../placeholders/built-in-placeholder.md)”中有所解释。
 
 ## 为物品设置交易限制
 
@@ -172,4 +172,4 @@ $\frac { 购买基础价 - 出售基础价 }  { 购买最高价 - 出售最低�
 
 许多人都问了这个问题，问这些问题的人肯定没有了解 UltimateShop 的基础。动态定价是由公式决定的，所以你不能直接重置定价。若要这么做，你需要先重置你在公式中使用的变量。如果你使用了诸如上文提到的 `{buy-times-server}`，那么它们就可以被重置。
 
-你可以通过“自动重置”功能重置交易次数，可以在“[交易次数重置](../shops/product-config-buy-sell-times-reset.md)”章节中了解更多。
+你可以通过“自动重置”功能重置交易次数，可以在“[交易次数重置](../shops/product-config-buy-sell-times-reset.md)”章节了解更多，也可以使用 `/shop setbuytimes/setselltimes` 命令。

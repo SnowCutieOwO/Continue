@@ -8,7 +8,25 @@ UltimateShop 只是一个商店插件，对服务器并没有太多的影响。�
 
 ## MMOItems/MythicMobs 物品生成性能
 
-相较原版物品，这两个物品库生成物品的速度需要消耗更多服务器资源。
+相较原版物品，这两个物品库生成物品的速度需要消耗更多服务器资源。如果物品没有动态属性或等级要求，可以试着[将其保存](../features/saved-item-itemmanager.md)。
+
+::: info
+
+建议如下：
+
+你需要改动的所有内容都在 `config.yml` 文件中。
+
+:::
+
+## 禁用出售魔箱功能
+
+如果你用不到出售魔箱功能且需要提升服务器性能，推荐禁用它。
+
+``` YAML
+sell:
+  sell-chest:
+    enabled: false 
+```
 
 ## 设置中的 `placeholder.click.enabled` 选项
 
@@ -71,4 +89,15 @@ give-item:
   give-method: BUKKIT
   # 仅支持 SMART 物品给予方法。
   check-full: false
+```
+
+## 使用 Bukkit 出售物品匹配方法
+
+这可以节省性能开销，但缺点是出售的物品必须与商店的完全相同，包括铁砧修复惩罚、携带的附魔等。（带有耐久度与可附魔的物品不能出售都源于此）
+
+``` YAML
+sell:
+  # 可填入的值：Bukkit 或 ItemFormat。
+  # 对于每个物品，你可以向它们的 match-item 部分添加自定义出售匹配方法，更多信息请浏览维基。
+  sell-method: Bukkit
 ```

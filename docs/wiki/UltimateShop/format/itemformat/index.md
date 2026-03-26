@@ -4,6 +4,12 @@
 Mojang 非常喜欢修改物品（物品类型）、附魔、药水以及其他内容的 ID（及命名空间）。例如，他们在 1.21 将“横扫之刃（sweeping）”附魔改为了“sweeping_edge”。所以，在更新服务器版本之前，你需要仔细检查新版本是否对物品进行了什么修改，否则这会导致你的配置文件无法正常读取。
 :::
 
+::: info
+
+手持物品输入命令 `/shop generateitemformat` 可将其自动解析为插件适用的物品格式。执行命令后，`plugins/UltimateShop` 文件夹（或 `plugins/<所用插件名称>`）中会出现 `generated-item-format.yml` 文件。
+
+:::
+
 ## 对接物品
 
 ### 对接插件
@@ -76,6 +82,9 @@ max-amount: 15
 
 通过 Paper 的 DataComponent API 而非 Spigot 的 ItemMeta API，达到轻松修改物品的目的。除此之外，所有 1.21.5+ 的物品属性都只会在 `component` 设置部分中生效，如 **weapon**。更多信息[见此](component-format.md)。
 
+你可以在 `config.yml` 里找到 `debuild-item-method` 选项。你可以将其设置为 **LEGACY** 或 **COMPONENT**。后者仅支持 1.21.6+ 的服务器，且设置后我们会自动将物品解析为 `component` 选项。
+
+自插件的 4.2.1 版本起，该功能只有 1.21.6+ 的服务器才可使用。
 
 ``` YAML
 component:
@@ -551,7 +560,7 @@ use-cooldown:
   cooldown-seconds: 1.5
 ```
 
-## 可装备 <font color="red">- 仅付费</font>
+## 可装备（1.21.2+）<font color="red">- 仅付费</font>
 
 ``` YAML
 equippable:

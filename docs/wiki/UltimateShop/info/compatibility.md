@@ -53,6 +53,12 @@ items:
 
 ### <font color="green">直接</font>支持的保护插件列表
 
+::: info
+
+即使你的插件没有在列表中，只要插件能阻止玩家交互容器，那么 UltimateShop 就不会触发出售魔杖，实际情况取决于插件作者的代码。
+
+:::
+
 若玩家在这些区域内没有打开容器的权限，则 UltimateShop 会阻止玩家在这些区域中使用出售魔杖。
 
 * BentoBox
@@ -66,13 +72,20 @@ items:
 * Towny
 * WorldGuard
 
+### <font color="green">直接</font>支持的悬浮字插件列表
+
+支持调用悬浮字显示出售魔箱的相关信息。
+
+* CMI
+* DecentHolograms
+
 ## 间接支持
 
 间接支持指代通过灵活运用插件的特性来使其与本插件关联。
 
-* 保存物品：我们在命令章节介绍了 `/shop saveitem` 命令，之后通过物品格式中的 `material` 选项使用物品 ID 即可。
-* 购买操作：我们在商店章节介绍了 `buy-actions` 功能。在动作章节，我们也提及购买操作支持执行命令，所以只需在这里调用对应插件的给予命令即可。
-* 给予操作：我们在简化流程章节提及了这个内容，与**购买操作**相似。另外该章节也有相应示例给出。
+* 保存物品：我们在[命令与权限](commands-and-permissions.md)章节介绍了 `/shop saveitem` 命令，之后通过[物品格式](../format/itemformat/index.md)中的 `material` 选项使用物品 ID 即可。
+* 购买操作：我们在[商店](../shops/index.md)章节介绍了 `buy-actions` 功能。在[动作](../format/action-format.md)章节，我们也提及购买操作支持执行命令，所以只需在这里调用对应插件的给予命令即可。
+* 给予操作：我们在[单条目](../shops/products-config-single-thing/index.md)章节提及了这个内容，与**购买操作**相似。另外该章节也有相应示例给出。
 
 ### 示例：将不支持的物品库插件用作商品
 

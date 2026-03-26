@@ -14,6 +14,8 @@
 
 这个动作只会在玩家购买/出售指定次数的物品时触发。
 
+可选。未设置的情况下，每次操作都会触发。
+
 * `start-apply`：操作触发的起始次数。**可选。默认为 0。**
 * `end-apply`：操作触发的终止次数。**可选。默认为无限大。** 
 * `apply`：操作生效的对应次数。格式：`[1,2,3,4]`**可选。默认使用 `start-apply` 的值。**
@@ -28,7 +30,7 @@
 
 #### 一次全售/多次单售
 
-当多个物品被出售时，添加这个选项可以表示只触发首个物品的动作。在设计播放音效等行为时非常有用，如果不添加这个选项，则所有物品出售时都会播放一次音效。
+当多个/份物品被出售时，添加这个选项可以表示只触发首个物品的动作。在设计播放音效等行为时非常有用，如果不添加这个选项，则所有物品出售时都会播放一次音效。
 可选，若不设置，此每次都会执行。
 
 ``` YAML
@@ -71,11 +73,57 @@
         bedrock-only: true
 ``` 
 
+### 失败类型
+
+仅支持物品配置下的 `fail-actions`。
+
+支持失败原因：
+* ERROR
+* PERMISSION
+* PLAYER\_MAX
+* SERVER\_MAX
+* REQUIRE\_CONDITION\_NOT\_MEET
+* NOT\_ENOUGH
+* INVENTORY\_FULL
+
+``` YAML
+    fail-actions:
+      1:
+        fail-type: 'PLAYER_MAX'
+        type: message
+        message: 'Hello'
+```
 
 ## 支持变量
 
 * `{world}`
 * `{amount}`
+
+### Item-Level `buy-actions` and `sell-actions`
+
+当你在物品上使用 `buy-actions` 或 `sell-actions` 时，`{amount}` 表示由购买或出售流程决定的物品交易数量。
+
+即：
+
+* 如果 `display-item.calculate-amount` 为 `false`、`{amount}` 在物品动作中始终为 `1`。
+* 如果 `display-item.calculate-amount` 为 `true`, `{amount}` 则为 $交易份数 \times 展示的物品数量$。
+
+示例：
+
+* 展示物品数量：`1`
+* 玩家购买了 `5` 个
+* 则 `buy-actions` 下 `{amount} = 5`
+
+另一个示例：
+
+* 展示物品数量：`64`
+* 玩家购买了 `5` 个
+* 则 `buy-actions` 下 `{amount} = 320`
+
+### 单条目的 `give-actions` 与 `take-actions`
+
+在单条目中使用 `give-actions` 或 `take-actions` 时，`{amount}` 还可表示指定条目的实际数量。
+
 * `{player_x}`
 * `{player_y}`
 * `{player_z}`

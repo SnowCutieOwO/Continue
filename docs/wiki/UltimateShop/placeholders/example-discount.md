@@ -71,7 +71,7 @@ items:
 ```
 
 * `5` 为基础价格，在此之前添加 `{conditional_buy}` 和 `{conditional_sell}` 变量。
-* 若玩家达到了 `vip` 条件，则 `{condition_buy}` 会返回 `0.5`，即 $0.5 * 8 = 2.5$ 硬币！
+* 若玩家达到了 `vip` 条件，则 `{condition_buy}` 会返回 `0.5`，即 $0.5 * 4 = 2.5$ 硬币！
 
 ## 自动应用折扣
 

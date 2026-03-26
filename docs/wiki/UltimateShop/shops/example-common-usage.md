@@ -119,6 +119,11 @@ items:
       1:
         type: console_command
         command: "ws give %player_name% spawner chicken 1"
+      # 或
+      # 2:
+      #  multi-once: true
+      #  type: console_command
+      #  command: "ws give %player_name% spawner chicken {amount}"
 ```
 
 * 你可以先输入 `/shop generateitemformat` 生成**物品格式**，然后将其填入 `display-item` 选项。因此，如果你没有设置任何物品，插件还是可以通过 `display-item` 选项在商店中展示物品。

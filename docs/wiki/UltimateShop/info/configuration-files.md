@@ -4,7 +4,7 @@
 
 * `datas`：存储插件数据文件的地方。<font color="red">该文件只在不使用数据库时生成。请勿手动修改其中的任何内容。</font>
 * `items`：存储插件物品文件的地方。<font color="red">该文件只会在使用 /shop saveitem 命令保存物品后出现。请勿手动修改其中的任何内容。</font>
-* `languages`：存储语言文件的地方。你可以通过 `config.yml` 中的 `config-files.language` 项修改插件使用的语言。你也可以在插件文件夹中修改语言文件的显示内容。目前暂不支持基于玩家客户端语言自动修改显示语言。另外你也只能对所有玩家使用同一种语言。
+* `languages`：存储语言文件的地方。你可以通过 `config.yml` 中的 `config-files.language` 项修改插件使用的语言。你也可以在插件文件夹中修改语言文件的显示内容。有关基于玩家客户端选择自动修改显示语言，或者展示 BossBar、标题、ActionBar 或声音等内容的部分，请[见此](../features/advanced-language-managment.md)。
 * `menus`：用于存储菜单配置文件的地方。
 
 ::: info
@@ -35,6 +35,8 @@ debug: false
 
 config-files:
   language: en_US
+  # 仅付费版本。
+  per-player-language: true
   force-parse-mini-message: true
   # 仅付费版本。
   minecraft-locate-file:
@@ -86,23 +88,25 @@ menu:
   cooldown:
     click: -1
     reopen: -1
+  ignore-click-outside: false
   # 仅付费版本，启用后可自动更新界面标题中的动态值。
   title-update:
+    # 需要安装 PacketEvents 和 MythicChanger。
     enabled: false
+    # 菜单界面是否每秒刷新一次。
+    # 会刷新在菜单标题中的变量。
+    circle-update: false
+    # 界面标题是否在每次点击时刷新。
+    # 会刷新在菜单标题中的变量。
+    click-update: true
     resend-items-pack: false
-  ignore-click-outside: false
-  shop:
-    # 商店菜单是否每隔 1 秒自动刷新一次。
+  menu-update:
+    # 商店菜单是否每秒自动刷新一次。
     # 这可以刷新物品描述中的变量。
-    # 但在玩家数量多且开启商店界面数量较多时可能会导致卡顿。
-    update: false
-    # Whether shop menu will refresh every click in it.
-    # 这可以刷新物品描述中的变量。
-    # 但在玩家数量多且开启商店界面数量较多时可能会导致卡顿。
     click-update: false
   sell-all:
     size: 54
-    title: '&f全部出售 &7- 按 ESC 键确认!'
+    title: '{lang}'
     black-slots: []
     dynamic-title:
       enabled: false
@@ -120,24 +124,24 @@ menu:
     not-auto-close: true
     # 留空表示禁用此项.
     price-extra-line:
-      default: '&6购买: {buy-price} &6| 出售: {sell-price}'
-      only-buy: '&6购买: {buy-price}'
-      only-sell: '&6出售: {sell-price}'
+      default: '{lang}'
+      only-buy: '{lang}'
+      only-sell: '{lang}'
     buy-or-sell:
-      title: '选择数量: {item-name}'
+      title: '{lang}'
       buttons:
         amount:
-          name: '自定义'
-          tip: '点击输入自定义数量, 输入 \'all\' 表示全部出售!'
+          name: '{lang}'
+          tip: '{lang}'
     info:
-      title: '物品信息: {item-name} x{amount}'
+      title: '{lang}'
       buttons:
-        buy: '购买'
-        sell: '出售'
-        buy-more: '选择数量'
-        sell-all: '全部出售'
+        buy: '{lang}'
+        sell: '{lang}'
+        buy-more: '{lang}'
+        sell-all: '{lang}'
         # 若不需要可自行删除.
-        back: '&c返回'
+        back: '{lang}'
   buy-more-menu:
     not-open-when-invalid: true
     display-item-max-stack: true
@@ -222,34 +226,7 @@ display-item:
   auto-set-first-product: true
   # @+小写字符 表示条件描述，请勿将其移除
   # 不带有条件的描述会一直显示
-  add-lore:
-    - '@n '
-    - '@a&e买价: {buy-price}'
-    - '@b&e卖价: {sell-price}'
-    - '@c&#FF7777玩家购买余量: {buy-times-player}/{buy-limit-player}'
-    - '@d&#FF7777全服购买余量: {buy-times-server}/{buy-limit-server}'
-    - '@e&#FF7777玩家出售限量: {sell-times-player}/{sell-limit-player}'
-    - '@f&#FF7777全服出售限量: {sell-times-server}/{sell-limit-server}'
-    - '@g '
-    - '@g&#ff3300c不能再买更多了!'
-    - '@g&8补货时间: {buy-refresh-player}'
-    - '@i '
-    - '@i&#ff3300已售罄!'
-    - '@i&8补货时间: {buy-refresh-server}'
-    - '@h '
-    - '@h&#ff3300不能再卖更多了!'
-    - '@h&8补货时间: {sell-refresh-player}'
-    - '@j'
-    - '@j&#ff3300不能再向服务器出售了!'
-    - '@j&8补货时间: {sell-refresh-server}'
-    - '@n '
-    - '@a@u@y{buy-click}'
-    - '@b@v@y{sell-click}'
-    - '@k@q@y&#FFFACDShift + 鼠标右键选择数量！'
-    - '@m@y&#FFFACD键盘 Q 键选择全部！'
-    - '(@n)&c&l:( 不能这么做'
-    - '(@a)@u@p&c物品无法购买'
-    - '(@b)@v@p&c物品无法出售'
+  add-lore: '{lang}'
 
 placeholder:
   auto-settings:
@@ -273,63 +250,56 @@ placeholder:
       replace-value: '%formatter_number_format_{amount}%'
   # 仅付费版本
   compare:
-    up: '↑'
-    down: '↓'
-    same: '-'
-  # 仅付费版本
-  status:
-    # 若启用, 状态变量将只在商店界面中显示。
-    # 对全部出售及出售模组等. 因其只会出售一种物品而无效
-    # 且无法知晓实际价格的盈亏.
-    can-used-everywhere: false
-  math:
-    scale: 0
+    up: '{lang}'
+    down: '{lang}'
+    same: '{lang}'
   cron:
-    format: "yyyy-MM-dd HH:mm:ss"
+    format: "{lang}"
   data:
     # 如果服务器从不使用动态定价等类似功能, 则你可以将其设置为 false.
     # 可略微提升服务器性能.
     can-used-in-amount: true
   refresh:
-    format: "yyyy-MM-dd HH:mm:ss"
-    never: "永不"
+    format: "{lang}"
+    never: "{lang}"
   # 仅付费版
   next:
-    with-day-format: "{d}d {h}h {m}m {s}s"
-    without-day-format: "{h}h {m}m {s}s"
-    never: "等待下次刷新"
+    with-day-format: "{lang}"
+    without-day-format: "{lang}"
+    never: "{lang}"
   price:
-    split-symbol-any: ', '
-    split-symbol-all: ', '
-    replace-new-line-symbol: ', '
-    unknown: "未知"
-    unknown-price-type: "未知货币类型"
-    empty: "未设置价格!"
+    split-symbol-any: '{lang}'
+    split-symbol-all: '{lang}'
+    replace-new-line-symbol: '{lang}'
+    unknown: "{lang}"
+    unknown-price-type: "{lang}"
+    empty: "{lang}"
   click:
     # 若启用, {buy-click} 与 {sell-stick} 将会根据物品状态显示不同的内容.
     # 该功能可能会在规模较大或商店内容较多的服务器上导致卡顿.
     enabled: false
-    buy: '&#FFFACD左键点击购买!'
-    sell: '&#FFFACD右键点击出售!'
-    buy-with-no-sell: '&#FFFACD点击购买!'
-    sell-with-no-buy: '&#FFFACD点击出售!'
-    buy-max-limit-player: '&#ff3300你不能再买更多了!'
-    buy-max-limit-server: '&#ff3300已售罄!'
-    sell-max-limit-player: '&#ff3300不能再出售更多了!'
-    sell-max-limit-server: '&#ff3300该物品不可出手!'
-    buy-price-not-enough: '&#ff3300你没有足够的钱!'
-    sell-price-not-enough: '&#ff3300你没有足够的物品!'
-    error: '&#ff3300错误!'
-    buy-condition-not-meet: '&#ff3300未达到购买条件!'
-    sell-condition-not-meet: '&#ff3300未达到出售条件!'
+    buy: '{lang}'
+    sell: '{lang}'
+    buy-with-no-sell: '{lang}'
+    sell-with-no-buy: '{lang}'
+    buy-max-limit-player: '{lang}'
+    buy-max-limit-server: '{lang}'
+    sell-max-limit-player: '{lang}'
+    sell-max-limit-server: '{lang}'
+    buy-price-not-enough: '{lang}'
+    sell-price-not-enough: '{lang}'
+    error: '{lang}'
+    buy-condition-not-meet: '{lang}'
+    sell-condition-not-meet: '{lang}'
   # 仅付费版本。
   sell-stick:
-    infinite: "&c无限"
+    infinite: "{lang}"
 
 database:
   enabled: false
+  # 旧版选项，请勿启用。
+  auto-update-server-data: false
   jdbc-url: "jdbc:mysql://localhost:3306/ultimateshop?useSSL=false&autoReconnect=true"
-  jdbc-class: "com.mysql.cj.jdbc.Driver"
   properties:
     user: root
     password: 123456
@@ -354,7 +324,6 @@ conditions:
   buy-prices-key: 'buy-prices-conditions'
   sell-prices-key: 'sell-prices-conditions'
   display-item-key: 'display-item-conditions'
-
 
 time-offset:
   enabled: false
