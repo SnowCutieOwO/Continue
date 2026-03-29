@@ -78,6 +78,7 @@ items:
 
 * CMI
 * DecentHolograms
+* FancyHolograms
 
 ## 间接支持
 
@@ -148,16 +149,6 @@ items:
             command: 'eco give {player} {amount}'
         amount: 500
 ```
-
-## NeigeItems：物品名称翻译挂钩
-
-通过这个联动，原版物品的本地化名称可以在物品上显示，其语言依照 NeigeItems 中的设置而变化。
-
-在这里下载 NeigeItems：https://github.com/ankhorg/NeigeItems-Kotlin/releases
-
-你应该下载 NeigeItems-xxx.jar（而非 NeigeItems-api），正确文件大小应该大于 10MB。
-
-只需将其装入服务器便大功告成！插件现在会自动显示本地化名称。
 
 ## MythicChanger：额外物品格式选项
 

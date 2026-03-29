@@ -85,6 +85,7 @@
 * REQUIRE\_CONDITION\_NOT\_MEET
 * NOT\_ENOUGH
 * INVENTORY\_FULL
+* API\_CANCEL
 
 ``` YAML
     fail-actions:

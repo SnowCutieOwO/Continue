@@ -1678,7 +1678,7 @@ export default defineConfig({
                 { text: '🔍 自定义物品匹配方法', link: 'wiki/UltimateShop/features/custom-item-match-method' },
                 { text: '🔑 物品给予方法', link: 'wiki/UltimateShop/features/give-item-method' },
                 { text: '💳 日志记录 - 仅付费版', link: 'wiki/UltimateShop/features/log-transaction-premium' },
-                // { text: '🌈 动态标题 - 仅付费版', link: 'wiki/UltimateShop/features/dynamic-title-premium' }
+                { text: '🌈 收益限制', link: 'wiki/UltimateShop/features/earn-limit' }
               ]
             },
             {

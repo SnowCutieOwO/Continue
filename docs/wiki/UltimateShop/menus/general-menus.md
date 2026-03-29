@@ -16,7 +16,7 @@
 ## 配置
 
 * `title`：菜单界面的标题。对于商店菜单，可填入 `{shop-name}` 以显示其在配置中设置的商店名称。
-* `dynamic-title`：[见此](../features/dynamic-title-premium.md).
+* `dynamic-title`：[见此](../features/earn-limit.md).
 * `size`：菜单大小。仅支持填入如下数字：**9、18、27、36、45、54**。
 * `layout`：按钮排版，参数类型为列表。更多信息见下。
 

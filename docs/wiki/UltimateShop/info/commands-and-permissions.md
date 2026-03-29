@@ -6,7 +6,7 @@
 
 **答：** `/shop` 命令可直接打开名为 `main` 的菜单。这个功能被称作**自动开启**，你可以在 config.yml 的 `menu.auto-open.enabled` 选项中关闭。若你只需要某些玩家可以使用这个命令，你可以在菜单中设置 `conditions` 来限制满足条件的玩家打开它。更多信息详见菜单章节。
 
-### 打开每日示例菜单时为什么显示条件不足？
+### 打开每日商店示例配置时为什么显示条件不足？
 
 **答：** 菜单有预先设置的条件，你可以在 `menus/daily-shop-example.yml` 中找到。
 
@@ -160,3 +160,9 @@ global 参数表示为 `{buy-times-server}` 或 `{sell-times-server}` 变量设�
 更新指定玩家的商店界面的标题。只会更新标题，商店界面不受影响。
 
 需要权限 `ultimateshop.updateguititle`。
+
+## /shop editor
+
+打开游戏内编辑器。
+
+需要权限 `ultimateshop.editor`。

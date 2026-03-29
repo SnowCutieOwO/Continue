@@ -36,11 +36,11 @@
         click-type: LEFT
 ```
 
-#### 动作 <font color="red">- 仅付费版</font>
+### 动作 <font color="red">- 仅付费版</font>
 
 ::: info
 
-如果需要修改交易物条件未达到的消息提示，你需要在交易物配置中使用 `fail-actions` 选项。
+如果需要添加交易物条件未达到或者达到后执行的动作，你需要在交易物配置中使用 `fail-actions` 选项。
 
 :::
 
