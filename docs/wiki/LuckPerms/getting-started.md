@@ -169,7 +169,7 @@
 
 示例：
 
-![](_images/getting-started-11.png.png)
+![](_images/getting-started-11.png)
 
 你也可以输入命令 `/lp verbose on <测试玩家名称>` 直接在控制台或者聊天栏中查询，输入命令 `/lp verbose off` 可将其关闭。
 
