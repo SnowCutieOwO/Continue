@@ -62,7 +62,7 @@ items:
 :::
 
 - `display-item`：展示在商店菜单中的物品，可以与玩家实际获得的物品不同。虚拟物品必须设置 `display-item` 选项，否则它们就无法在商店菜单中显示。真实物品必须设置 `config.yml` 文件中 `display-item` 下的 `auto-set-first-product` 为 `true` 以允许你删除这个选项。启用后，若 `display-item` 未设置，那么出售的第一个真实物品将会被当做图标。该部分配置会使用到“[物品格式](../format/itemformat/index.md)”的配置。**可选（若不设置则使用首个物品）**
-    - `display-item.modify-lore`：是否尝试修改展示物品的描述，为其添加价格与出售限制等内容。你可以在 `config.yml` 文件或物品配置中的 `add-lore` 中设置，有关信息请参阅[展示物品描述追加](../menus/display-item-add-lore/index.md)部分。**可选（默认为 true）**。
+    - `display-item.modify-lore`：是否尝试修改展示物品的额外描述，为其添加价格与出售限制等内容。你可以在 `config.yml` 文件或物品配置中的 `add-lore` 中设置展示物品的额外描述，有关信息请参阅[展示物品描述追加](../menus/display-item-add-lore/index.md)部分。**可选（默认为 true）**。
 - `display-name`：设置物品在 `{product}` 与增量购买菜单中显示的名称。**可选。（若未设置，则以展示物品的名称作为商品的展示名称）**
 - `add-lore`：为该物品设置[额外描述](../menus/display-item-add-lore/index.md)，若不设置则使用配置文本中的默认值。**可选。**
 - `click-event`: 为这个商品单独设置点击事件，如果没有设置，则使用 `config.yml` 中的默认值。记得也要修改 `add-lore` 选项来添加符合此点击事件配置的额外物品描述。**可选。**

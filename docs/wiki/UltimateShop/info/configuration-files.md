@@ -4,11 +4,11 @@
 
 * `datas`：存储插件数据文件的地方。<font color="red">该文件只在不使用数据库时生成。请勿手动修改其中的任何内容。</font>
 * `items`：存储插件物品文件的地方。<font color="red">该文件只会在使用 /shop saveitem 命令保存物品后出现。请勿手动修改其中的任何内容。</font>
-* `languages`：存储语言文件的地方。你可以通过 `config.yml` 中的 `config-files.language` 项修改插件使用的语言。你也可以在插件文件夹中修改语言文件的显示内容。有关基于玩家客户端选择自动修改显示语言，或者展示 BossBar、标题、ActionBar 或声音等内容的部分，请[见此](../features/advanced-language-managment.md)。
+* `languages`：存储语言文件的地方。你可以通过 `config.yml` 中的 `config-files.language` 项修改插件使用的语言。你也可以在插件文件夹中修改语言文件的显示内容。有关基于玩家客户端选择自动修改显示语言，或者展示 BossBar、标题、ActionBar 或声音等内容的部分，请[见此](../features/advanced-language-management.md)。
 * `menus`：用于存储菜单配置文件的地方。
 
 ::: info
-许多用户似乎对一件事感到困惑：通过 `/shop` 命令打开的是菜单，而非商店。如果你想要设置商店菜单槽位的物品，你需要在配置文件中修改。
+许多用户似乎对一件事感到困惑：通过 `/shop` 命令打开的是菜单，而非商店。如果你想要设置商店菜单槽位的物品，你需要在菜单的配置文件找到并修改。
 :::
 
 * `shops`：存储菜单配置文件的位置。
