@@ -1046,6 +1046,7 @@ export default defineConfig({
             { text: '存储', link: 'wiki/LuckPerms/storage' },
             { text: '配置文件', link: 'wiki/LuckPerms/configuration' },
             { text: '常见问题', link: 'wiki/LuckPerms/faq' },
+            { text: 'Hytale', link: 'wiki/LuckPerms/hytale' },
             {
               text: '命令用法', link: 'wiki/LuckPerms/command-usage', collapsed: true, items: [
                 { text: '通用', link: 'wiki/LuckPerms/command-usage/general' },

@@ -142,7 +142,7 @@ buy-limits-conditions:
       permission: 'test.permission'
 ```
 
-- sell-limits: 与 buy-limits 设置相同，但是是为出售使用的。
+- `sell-limits`: 与 `buy-limits` 设置相同，但是是为出售使用的。
 
 ## 单条目选项
 
