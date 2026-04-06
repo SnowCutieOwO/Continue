@@ -1,0 +1,133 @@
+# BreweryX TBP Bridge 附属配置
+#
+# 图案符号释义：
+# - ? : 任意方块
+# - X : 有限任意（匹配除 material-alias 列表下任意方块）
+# - S : 可选的锚点标记
+
+distillery:
+  enabled: true
+  deny-message: "&c这个炼药台不属于任何酿酒器的多方块结构。"
+
+  # 酿酒厂结构可被用作代替材料的方块
+  material-alias:
+    D: DECORATED_POT
+    B: BAMBOO_FENCE
+
+  # 所有蒸馏室默认界面设置
+  # 任意 distillery.stills.<id>.gui 值均可覆盖
+  gui:
+    enabled: true
+    fuel-material: GLOWSTONE_DUST
+    fuel-per-distill: 1
+
+    # 每瓶处理时间
+    process-time-seconds: 20
+
+    # 处理完成后的间隔时间
+    run-interval-seconds: 2
+
+    show-process-step: true
+    process-step-text: "正在蒸馏..."
+    show-timer: true
+    show-fuel-cost: true
+
+    # 可选，指定配方 ID 或名称的燃料单独覆盖
+    # recipe-fuel-rules:
+    #   whiskey:
+    #     fuel-material: GLOWSTONE_DUST
+    #     fuel-per-bottle: 2
+    #   absinthe:
+    #     fuel-material: BLAZE_POWDER
+    #     fuel-per-bottle: 1
+
+  # 蒸馏室分层结构设置
+  stills:
+    small:
+      pattern-layers:
+        "1":
+          - "XXX"
+          - "XBB"
+          - "XXX"
+        "0":
+          - "XXX"
+          - "XDB"
+          - "XXX"
+        "-1":
+          - "XXX"
+          - "XDD"
+          - "XXX"
+
+      gui:
+        enabled: true
+        title: "&6小型酿酒器"
+        size: 27
+        brew-slots: [10, 11, 12]
+        fuel-slots: [7, 8]
+        process-slot: 26
+
+    large:
+      pattern-layers:
+        "1":
+          - "XBX"
+          - "XBB"
+          - "XXX"
+        "0":
+          - "XBX"
+          - "XDB"
+          - "XXX"
+        "-1":
+          - "XDX"
+          - "XDD"
+          - "XXX"
+
+      gui:
+        enabled: true
+        title: "&6Large Distillery"
+        size: 54
+        brew-slots: [19, 20, 21, 22, 23, 24, 25, 28, 29]
+        fuel-slots: [30, 31, 32]
+        process-slot: 49
+
+vat:
+  enabled: true
+
+  # 1 桶 = 3 瓶液体量
+  water-bucket-capacity: 3
+
+  # 投入有效原料 + 水 + 加热后开始制作的间隔
+  cook-start-delay-seconds: 5
+
+  # 缸开始制作时是否有外观变化
+  show-start-particles: true
+
+  # 大缸结构可被用作代替材料的方块
+  material-alias:
+    D: DECORATED_POT
+    C: CAULDRON
+    H: HOPPER
+    B: BAMBOO_FENCE
+
+  # 三格高大缸分层结构设置
+  pattern-layers:
+    "2":
+      - "XXX"
+      - "XBB"
+      - "XXX"
+    "1":
+      - "XXX"
+      - "XCB"
+      - "XXX"
+    "0":
+      - "XXX"
+      - "XCD"
+      - "XXX"
+
+naming:
+  enabled: true
+  max-length: 48
+  use-legacy-color-codes: true
+  success-message: "&a酒已重命名为 &f{name}&a."
+  cleared-message: "&a已去除自定义的酒名."
+  invalid-item-message: "&c请在手中拿着 BreweryX 的酒."
+  usage-message: "&e命令用法: /breweryx namebrew <名称|clear(清除名称)>"
