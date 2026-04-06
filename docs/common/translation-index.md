@@ -2,7 +2,7 @@
 
 在这里存储的插件译文与模组译文均会以表格列出，也有相关指路供你参考。
 
-![](https://img.shields.io/badge/%E7%8E%B0%E5%AD%98%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E6%95%B0-127-93fdf9) ![](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-128466-ebfd93)（最后更新：2025/5/31）
+![](https://img.shields.io/badge/%E7%8E%B0%E5%AD%98%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E6%95%B0-130-93fdf9) ![](https://img.shields.io/badge/%E9%85%8D%E7%BD%AE%E8%AF%91%E6%96%87%E6%80%BB%E5%AD%97%E6%95%B0-130099-ebfd93)（最后更新：2026/4/6）
 
 ## 常见问题
 
@@ -35,6 +35,7 @@
 |BlockLocker|是|是|仅语言文件|[PixelBBS](https://www.pixelbbs.cn/t-2576-1-1.html)|
 |BkTeleport|是|否|N/A|[SpigotMC](https://www.spigotmc.org/resources/bkteleport-essentialsx-add-on.82198/)|
 |BossLand|是|否|N/A|[SpigotMC](https://www.spigotmc.org/resources/68320)|
+|BreweryX TBP Bridge|是|否|仅配置文件|[Modrinth](https://modrinth.com/plugin/breweryxtbp-bridge)|
 |CaptainsEnchants|是|否|N/A|[SpigotMC](https://www.spigotmc.org/resources/74940)|
 |Cannons|否|是|仅语言文件|[Github](https://github.com/Intybyte/Cannons/blob/1.21/cannons-bukkit/src/main/resources/localization/localization_zhcn.yml)|
 |CataMines|否|否|未合并|[SpigotMC](https://www.spigotmc.org/resources/%E2%AD%90-catamines-%E2%AD%90-skymining-prison-mines.96457/)|
@@ -46,6 +47,7 @@
 |CratesPlus|否|是|仅语言文件|[Github（多语言仓库）](https://github.com/CratesPlus/Translations/blob/main/simplified-chinese.yml) [Github（代码仓库）](https://github.com/CratesPlus/CratesPlus)|
 |CreativeManager|否|是|仅语言文件|[Github](https://github.com/K0bus/CreativeManager/blob/master/src/main/resources/lang/zh_CN.yml)|
 |CustomCrafting|否|是|仅语言文件|[Github](https://github.com/WolfyScript/CustomCrafting/blob/master/src/main/resources/lang/zh_CN.json)|
+|CustomEnderChest-NextGen|否|是|仅语言文件|[Github](https://github.com/maiminhdung/CustomEnderChest-NextGen/edit/master/src/main/resources/lang/lang_zhcn.yml)|
 |DeathTotems (DeathWarden)|是|否|N/A|[SpigotMC](https://www.spigotmc.org/resources/deathwarden.73535/)|
 |DecentHolograms|是|否|N/A|[SpigotMC](https://www.spigotmc.org/resources/decentholograms-1-8-1-21-3-papi-support-no-dependencies.96927/)|
 |DeluxeTeleport|否|是|仅语言文件|[Github](https://github.com/MiniPixesoj/DeluxeTeleport/blob/main/src/main/resources/lang/zh-CN/messages.yml)|
@@ -64,6 +66,7 @@
 |FAuction|否|是|仅语言文件|[Github](https://github.com/Florianpal1/FAuction/blob/V1.5.X/src/main/resources/lang_zhcn.yml)|
 |FastClearLag|是|是|仅语言文件|[SpigotMC](https://www.spigotmc.org/resources/99757)|
 |FearFeeling|是|是|仅语言文件|[SpigotMC](https://www.spigotmc.org/resources/76594)|
+|FreeCarts|是|是|附带模型教程|[SpigotMC](https://www.spigotmc.org/resources/freecarts.129907/)|
 |GadgetsMenu|是|否|N/A|[SpigotMC](https://www.spigotmc.org/resources/gadgetsmenu-premium.62831/)|
 |GeekHolograms|否|否|仅帖子介绍|[SpigotMC](https://www.spigotmc.org/resources/geekhologram-%E2%80%94%E2%80%94-dynamic-multipage-holograms-that-players-can-create-1-9x-1-20x.112814/)|
 |GK Anticheat|是|否|N/A|[SpigotMC](https://www.spigotmc.org/resources/%DB%9Egk-%E2%80%A2-anticheat%DB%9E-protect-your-server-from-hackers-and-bots.75691/)|
@@ -90,6 +93,7 @@
 |LuckyBlock NTD|是|是|仅语言文件|[Github](https://danirod12.github.io/ntd-wiki/docs/luckyblock/languages/)|
 |LuckyWheel|否|是|仅语言文件|[Github](https://github.com/djessy5001/luckywheel/blob/main/src/main/resources/messages_zhcn.yml)|
 |MagnesifyDungeons|否|是|仅语言文件|[Github](https://github.com/hacimertgokhan/MagnesifyDungeons/blob/master/src/main/resources/locale/locale_zhcn.yml)|
+|Malt|否|是|仅语言文件|[Github](https://github.com/BreweryTeam/Malts/edit/master/src/main/resources/translations/zh_cn.yml)|
 |MapRights|否|是|仅语言文件|[Github](https://github.com/Oscar0159/MapRights/blob/main/src/main/resources/lang/zh_CN.yml)|
 |MineBank|否|是|仅语言文件|[Github](https://github.com/Guayand0/Minecraft-Plugin-MineBank/tree/main/Translations/ZHCN)|
 |MoneyHunter|是|否|N/A|[SpigotMC](https://www.spigotmc.org/resources/moneyhunters-under-rework-earn-money-for-simple-tasks.22450/)|
