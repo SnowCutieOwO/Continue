@@ -86,7 +86,7 @@ confirm-items:
 ```
 
 * `amount-items`：数量选择的物品配置。`add-amount` 可以替换为 `set-amount` 选项。
-* `display-item`：需为单字符。在 `layout` 中填入该字符来调整其在菜单中的显示位置。
+* `display-item`：需为单字符。在 `layout` 中使用该字符来调整其在菜单中的显示位置。
 * `confirm-items`：确认购买或出售的物品配置。
 * `confirm-items.??.click-action`：使得按钮只能完成指定操作，如购买或出售。
 

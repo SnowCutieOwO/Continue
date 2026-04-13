@@ -139,15 +139,21 @@ global 参数表示为 `{buy-times-server}` 或 `{sell-times-server}` 变量设�
 
 ## /shop search
 
-搜索附近包含手持物品的商店。
+获取手持物品对应的商品。
 
-需要权限 `ultimateshop.search permission`。
+需要权限 `ultimateshop.search`。
+
+## /shop sellhand
+
+出售手持物品。
+
+需要权限 `ultimateshop.sellahand`。
 
 ## /shop sellallhand
 
-出售手持的所有物品。
+出售手持的所有物品。例如你的第一个槽位有15个苹果，第二个槽位有16个苹果，无论手持的是第一个槽位，还是第二个槽位，使用该指令将会出售全部的苹果（31个苹果）。
 
-需要权限 `ultimateshop.sellallhand permission`。
+需要权限 `ultimateshop.sellallhand`。
 
 ## /shop updategui \[玩家名称\]
 
@@ -161,8 +167,14 @@ global 参数表示为 `{buy-times-server}` 或 `{sell-times-server}` 变量设�
 
 需要权限 `ultimateshop.updateguititle`。
 
-## /shop editor
+## /shop editor**<font color="Red">（仅付费版本）</font>**
 
 打开游戏内编辑器。
 
 需要权限 `ultimateshop.editor`。
+
+## /shop searchgui [搜索GUI菜单名称]**<font color="Red">（仅付费版本）</font>**
+
+打开指定的搜索 GUI，如果未指定，则打开 ID 为 `search` 的搜索菜单。
+
+需要权限 `ultimateshop.searchgui`。
