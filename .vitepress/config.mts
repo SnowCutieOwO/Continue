@@ -1630,6 +1630,8 @@ export default defineConfig({
               text: '🔌 菜单', collapsed: true, items: [
                 { text: '🔲 全局菜单', link: 'wiki/UltimateShop/menus/general-menus' },
                 { text: '🔽 增量购买菜单', link: 'wiki/UltimateShop/menus/buy-more-menus' },
+                { text: '🔍 搜索菜单 - 仅付费版', link: 'wiki/UltimateShop/menus/search-menus-premium' },
+                { text: '🛒 全部出售菜单', link: 'wiki/UltimateShop/menus/sell-all-menu' },
                 { text: '🔀 条件显示 - 仅付费版', link: 'wiki/UltimateShop/menus/conditional-display' },
                 { text: '🛏️ 基岩版菜单 - 仅付费版', link: 'wiki/UltimateShop/menus/bedrock-menus-premium' },
                 { text: '🥉 物品描述追加', link: 'wiki/UltimateShop/menus/display-item-add-lore/index' },
@@ -1641,6 +1643,7 @@ export default defineConfig({
                 { text: '🛒 物品', link: 'wiki/UltimateShop/shops/products' },
                 { text: '💰 物品配置：单条目', link: 'wiki/UltimateShop/shops/products-config-single-thing/index' },
                 { text: '♻️ 物品配置：交易次数重置', link: 'wiki/UltimateShop/shops/product-config-buy-sell-times-reset' },
+                { text: '🔗 共享商品数据 - 仅付费版', link: 'wiki/UltimateShop/shops/shared-product-data-premium' },
                 { text: '📚 普通示例', link: 'wiki/UltimateShop/shops/common-examples' },
                 { text: '⚡ 示例：普通用法', link: 'wiki/UltimateShop/shops/example-common-usage' },
                 { text: '🌱 示例：真实库存', link: 'wiki/UltimateShop/shops/example-stock-like-in-life' },

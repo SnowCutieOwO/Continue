@@ -8,6 +8,7 @@ items:
     price-mode: CLASSIC_ALL
     product-mode: CLASSIC_ALL
     sell-all: true
+    shared-use-times: daily_bundle
     products:
       1:
         material: STRING
@@ -78,6 +79,7 @@ items:
 ```
 
 - `bedrock`：[见此](../menus/bedrock-menus-premium.md)。
+- `shared-use-times`：[见此](../shops/shared-product-data-premium.md)。
 - `buy-more`：设置该商品是否可以打开增量购买菜单。**可选。（默认为 true）**
 - `buy-more-menu`：为商品设置单独的增量购买菜单。**可选。需要 2.2.10+。（若未设置，则使用 `config.yml` 中的默认值）**
 
