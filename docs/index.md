@@ -154,6 +154,10 @@ features:
 
 Netlify 网站构建状态：![](https://api.netlify.com/api/v1/badges/6e69d526-ea60-4ff8-9bfe-e0b9e4d028f0/deploy-status)
 
+如果你碰到了加载缓慢的问题，欢迎访问我们的其他加速路线：
+
+* [Cloudflare Pages](https://continue-project.pages.dev/)
+
 ### 维基数量与字数
 
 ![](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-25-93fdf9) ![](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-641581-84f5bb)
@@ -165,7 +169,11 @@ Netlify 网站构建状态：![](https://api.netlify.com/api/v1/badges/6e69d526-
 
 <table>
   <tbody>
-    <tr><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/SnowCutieOwO" title="SnowCutieOwO"><img src="https://avatars.githubusercontent.com/u/89032291?v=4" width="100px;" alt="SnowCutieOwO" style="border-radius: 9999px;" /></a></td><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/Yaosanqi137" title="Yaosanqi137"><img src="https://avatars.githubusercontent.com/u/99163721?v=4" width="100px;" alt="Yaosanqi137" style="border-radius: 9999px;" /></a></td><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/YuanYuanOwO" title="YuanYuanOwO"><img src="https://avatars.githubusercontent.com/u/81153017?v=4" width="100px;" alt="YuanYuanOwO" style="border-radius: 9999px;" /></a></td>
+    <tr>
+      <td><a href="https://github.com/SnowCutieOwO" title="SnowCutieOwO"><img src="https://avatars.githubusercontent.com/u/89032291?v=4" width="100px;" alt="SnowCutieOwO" style="border-radius: 9999px;" /></a></td>
+      <td><a href="https://github.com/Yaosanqi137" title="Yaosanqi137"><img src="https://avatars.githubusercontent.com/u/99163721?v=4" width="100px;" alt="Yaosanqi137" style="border-radius: 9999px;" /></a></td>
+      <td><a href="https://github.com/YuanYuanOwO" title="YuanYuanOwO"><img src="https://avatars.githubusercontent.com/u/81153017?v=4" width="100px;" alt="YuanYuanOwO" style="border-radius: 9999px;" /></a></td>
+      <td><a href="https://github.com/PQguanfang" title="PQguanfang"><img src="https://avatars.githubusercontent.com/u/35395058?v=4" width="100px;" alt="PQguanfang" style="border-radius: 9999px;" /></a></td>
     </tr>
 
   </tbody>

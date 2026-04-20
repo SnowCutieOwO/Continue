@@ -7,6 +7,7 @@
 地址列表：
 
 * [Netlify](https://continue-project.netlify.app/) [![Netlify 构建状态](https://api.netlify.com/api/v1/badges/6e69d526-ea60-4ff8-9bfe-e0b9e4d028f0/deploy-status)](https://app.netlify.com/projects/continue-project/deploys)
+* [Cloudflare Pages](https://continue-project.pages.dev/)
 * [~~Github Pages~~](https://snowcutieowo.github.io/)（已弃用）
 * [纪念版加速线路](https://doc.mcbbs.co/snowcutieowo)（由猫提供）
 
