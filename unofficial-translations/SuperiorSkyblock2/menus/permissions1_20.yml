@@ -1,7 +1,7 @@
 ######################################################
 ##                                                  ##
 ##                SuperiorSkyblock 2                ##
-##                  插件作者 Ome_R                   ##
+##                  插件作者 Ome_R                  ##
 ##                                                  ##
 ######################################################
 
@@ -574,19 +574,19 @@ permissions:
     display-menu: true
     permission-enabled:
       type: IRON_INGOT
-      name: '&6降职成员'
+      name: '&6降级成员'
       lore:
         - '&7允许降低岛屿上成员的职位.'
         - '&7当前 &a启用&7.'
     permission-disabled:
       type: IRON_INGOT
-      name: '&6降职成员'
+      name: '&6降级成员'
       lore:
         - '&7允许降低岛屿上成员的职位.'
         - '&7当前 &c禁用&7.'
     role-permission:
       type: IRON_INGOT
-      name: '&6降职成员'
+      name: '&6降级成员'
       lore:
         - '&7允许降低岛屿上成员的职位.'
         - '&7职位: &e{}&7.'
@@ -1697,19 +1697,19 @@ permissions:
     display-menu: true
     permission-enabled:
       type: DIAMOND
-      name: '&6成员升职'
+      name: '&6成员升级'
       lore:
         - '&7允许提升岛屿内成员的职位.'
         - '&7当前 &a启用&7.'
     permission-disabled:
       type: DIAMOND
-      name: '&6成员升职'
+      name: '&6成员升级'
       lore:
         - '&7允许提升岛屿内成员的职位.'
         - '&7当前 &c禁用&7.'
     role-permission:
       type: DIAMOND
-      name: '&6成员升职'
+      name: '&6成员升级'
       lore:
         - '&7允许提升岛屿内成员的职位.'
         - '&7职位: &e{}&7.'
