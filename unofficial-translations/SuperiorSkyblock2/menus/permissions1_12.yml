@@ -1,7 +1,7 @@
 ######################################################
 ##                                                  ##
 ##                SuperiorSkyblock 2                ##
-##                  插件作者 Ome_R                   ##
+##                  插件作者 Ome_R                  ##
 ##                                                  ##
 ######################################################
 
@@ -76,6 +76,39 @@ permissions:
         volume: 0.2
         pitch: 0.2
 
+  animal_breed:
+    display-menu: true
+    permission-enabled:
+      type: WHEAT
+      name: '&6动物繁殖'
+      lore:
+        - '&7能够让岛屿上的动物繁殖.'
+        - '&7当前 &a启用&7.'
+    permission-disabled:
+      name: '&6动物繁殖'
+      type: WHEAT
+      lore:
+        - '&7能够让岛屿上的动物繁殖.'
+        - '&7当前 &c禁用&7.'
+    role-permission:
+      name: '&6动物繁殖'
+      type: WHEAT
+      lore:
+        - '&7能够让岛屿上的动物繁殖.'
+        - '&7职位: &e{}&7.'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
   animal_damage:
     display-menu: true
     permission-enabled:
@@ -84,12 +117,16 @@ permissions:
       lore:
         - '&7允许攻击岛屿中的生物.'
         - '&7当前 &a启用&7.'
+      flags:
+        - HIDE_ATTRIBUTES
     permission-disabled:
       type: DIAMOND_SWORD
       name: '&6伤害动物'
       lore:
         - '&7允许攻击岛屿中的生物.'
         - '&7当前 &c禁用&7.'
+      flags:
+        - HIDE_ATTRIBUTES
     role-permission:
       type: DIAMOND_SWORD
       name: '&6伤害动物'
@@ -98,6 +135,8 @@ permissions:
         - '&7职位: &e{}&7.'
         - ''
         - '{0}'
+      flags:
+        - HIDE_ATTRIBUTES
     has-access:
       sound:
         type: ENTITY_EXPERIENCE_ORB_PICKUP
@@ -219,12 +258,16 @@ permissions:
       lore:
         - '&7允许破坏岛屿上的方块.'
         - '&7当前 &a启用&7.'
+      flags:
+        - HIDE_ATTRIBUTES
     permission-disabled:
       type: DIAMOND_PICKAXE
       name: '&6破坏'
       lore:
         - '&7允许破坏岛屿上的方块.'
         - '&7当前 &c禁用&7.'
+      flags:
+        - HIDE_ATTRIBUTES
     role-permission:
       type: DIAMOND_PICKAXE
       name: '&6破坏'
@@ -233,6 +276,8 @@ permissions:
         - '&7职位: &e{}&7.'
         - ''
         - '{0}'
+      flags:
+        - HIDE_ATTRIBUTES
     has-access:
       sound:
         type: ENTITY_EXPERIENCE_ORB_PICKUP
@@ -512,19 +557,19 @@ permissions:
     display-menu: true
     permission-enabled:
       type: IRON_INGOT
-      name: '&6降职成员'
+      name: '&6降级成员'
       lore:
         - '&7允许降低岛屿上成员的职位.'
         - '&7当前 &a启用&7.'
     permission-disabled:
       type: IRON_INGOT
-      name: '&6降职成员'
+      name: '&6降级成员'
       lore:
         - '&7允许降低岛屿上成员的职位.'
         - '&7当前 &c禁用&7.'
     role-permission:
       type: IRON_INGOT
-      name: '&6降职成员'
+      name: '&6降级成员'
       lore:
         - '&7允许降低岛屿上成员的职位.'
         - '&7职位: &e{}&7.'
@@ -676,6 +721,42 @@ permissions:
         volume: 0.2
         pitch: 0.2
 
+  dye_sheep:
+    display-menu: true
+    permission-enabled:
+      type: MONSTER_EGG
+      entity: SHEEP
+      name: '&6羊染色'
+      lore:
+        - '&7允许为岛屿内的羊染毛。'
+        - '&7当前 &a启用&7.'
+    permission-disabled:
+      type: MONSTER_EGG
+      entity: SHEEP
+      name: '&6羊染色'
+      lore:
+        - '&7允许为岛屿内的羊染毛。'
+        - '&7当前 &c禁用&7.'
+    role-permission:
+      type: MONSTER_EGG
+      entity: SHEEP
+      name: '&6羊染色'
+      lore:
+        - '&7允许为岛屿内的羊染毛。'
+        - '&7职位: &e{}&7.'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
   ender_pearl:
     display-menu: true
     permission-enabled:
@@ -695,6 +776,39 @@ permissions:
       name: '&6末影珍珠'
       lore:
         - '&7允许在岛屿内使用末影珍珠.'
+        - '&7职位: &e{}&7.'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  entity_ride:
+    display-menu: true
+    permission-enabled:
+      type: SADDLE
+      name: '&6实体骑乘'
+      lore:
+        - '&7允许骑乘岛屿内的实体.'
+        - '&7当前 &a启用&7.'
+    permission-disabled:
+      type: SADDLE
+      name: '&6实体骑乘'
+      lore:
+        - '&7允许骑乘岛屿内的实体.'
+        - '&7当前 &c禁用&7.'
+    role-permission:
+      type: SADDLE
+      name: '&6实体骑乘'
+      lore:
+        - '&7允许骑乘岛屿内的实体.'
         - '&7职位: &e{}&7.'
         - ''
         - '{0}'
@@ -1183,42 +1297,6 @@ permissions:
         volume: 0.2
         pitch: 0.2
 
-  monster_damage:
-    display-menu: true
-    permission-enabled:
-      type: SKULL_ITEM
-      data: 2
-      name: '&6攻击怪物'
-      lore:
-        - '&7允许攻击岛屿内的怪物.'
-        - '&7当前 &a启用&7.'
-    permission-disabled:
-      type: SKULL_ITEM
-      data: 2
-      name: '&6攻击怪物'
-      lore:
-        - '&7允许攻击岛屿内的怪物.'
-        - '&7当前 &c禁用&7.'
-    role-permission:
-      type: SKULL_ITEM
-      data: 2
-      name: '&6攻击怪物'
-      lore:
-        - '&7允许攻击岛屿内的怪物.'
-        - '&7职位: &e{}&7.'
-        - ''
-        - '{0}'
-    has-access:
-      sound:
-        type: ENTITY_EXPERIENCE_ORB_PICKUP
-        volume: 0.2
-        pitch: 0.2
-    no-access:
-      sound:
-        type: BLOCK_ANVIL_PLACE
-        volume: 0.2
-        pitch: 0.2
-
   minecart_damage:
     display-menu: true
     permission-enabled:
@@ -1304,6 +1382,75 @@ permissions:
       name: '&6矿车交互'
       lore:
         - '&7允许打开岛屿内的矿车.'
+        - '&7职位: &e{}&7.'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  minecart_place:
+    display-menu: true
+    permission-enabled:
+      type: MINECART
+      name: '&6矿车放置'
+      lore:
+        - '&7允许在岛屿内放置矿车.'
+        - '&7当前 &a启用&7.'
+    permission-disabled:
+      type: MINECART
+      name: '&6矿车放置'
+      lore:
+        - '&7允许在岛屿内放置矿车.'
+        - '&7当前 &c禁用&7.'
+    role-permission:
+      type: MINECART
+      name: '&6矿车放置'
+      lore:
+        - '&7允许在岛屿内放置矿车.'
+        - '&7职位: &e{}&7.'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  monster_damage:
+    display-menu: true
+    permission-enabled:
+      type: SKULL_ITEM
+      data: 2
+      name: '&6攻击怪物'
+      lore:
+        - '&7允许攻击岛屿内的怪物.'
+        - '&7当前 &a启用&7.'
+    permission-disabled:
+      type: SKULL_ITEM
+      data: 2
+      name: '&6攻击怪物'
+      lore:
+        - '&7允许攻击岛屿内的怪物.'
+        - '&7当前 &c禁用&7.'
+    role-permission:
+      type: SKULL_ITEM
+      data: 2
+      name: '&6攻击怪物'
+      lore:
+        - '&7允许攻击岛屿内的怪物.'
         - '&7职位: &e{}&7.'
         - ''
         - '{0}'
@@ -1526,19 +1673,19 @@ permissions:
     display-menu: true
     permission-enabled:
       type: DIAMOND
-      name: '&6成员升职'
+      name: '&6成员升级'
       lore:
         - '&7允许提升岛屿内成员的职位.'
         - '&7当前 &a启用&7.'
     permission-disabled:
       type: DIAMOND
-      name: '&6成员升职'
+      name: '&6成员升级'
       lore:
         - '&7允许提升岛屿内成员的职位.'
         - '&7当前 &c禁用&7.'
     role-permission:
       type: DIAMOND
-      name: '&6成员升职'
+      name: '&6成员升级'
       lore:
         - '&7允许提升岛屿内成员的职位.'
         - '&7职位: &e{}&7.'
@@ -1607,6 +1754,39 @@ permissions:
       name: '&6显示评分'
       lore:
         - '&7允许浏览岛屿的所有评分.'
+        - '&7职位: &e{}&7.'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  saddle_entity:
+    display-menu: true
+    permission-enabled:
+      type: SADDLE
+      name: '&6实体上鞍'
+      lore:
+        - '&7允许给岛屿内的实体装备鞍.'
+        - '&7当前 &a启用&7.'
+    permission-disabled:
+      type: SADDLE
+      name: '&6实体上鞍'
+      lore:
+        - '&7允许给岛屿内的实体装备鞍.'
+        - '&7当前 &c禁用&7.'
+    role-permission:
+      type: SADDLE
+      name: '&6实体上鞍'
+      lore:
+        - '&7允许给岛屿内的实体装备鞍.'
         - '&7职位: &e{}&7.'
         - ''
         - '{0}'
@@ -1800,12 +1980,16 @@ permissions:
       lore:
         - '&7允许为岛屿成员设置职位.'
         - '&7当前 &a启用&7.'
+      flags:
+        - HIDE_ATTRIBUTES
     permission-disabled:
       type: DIAMOND_CHESTPLATE
       name: '&6设置职位'
       lore:
         - '&7允许为岛屿成员设置职位.'
         - '&7当前 &c禁用&7.'
+      flags:
+        - HIDE_ATTRIBUTES
     role-permission:
       type: DIAMOND_CHESTPLATE
       name: '&6设置职位'
@@ -1814,6 +1998,8 @@ permissions:
         - '&7职位: &e{}&7.'
         - ''
         - '{0}'
+      flags:
+        - HIDE_ATTRIBUTES
     has-access:
       sound:
         type: ENTITY_EXPERIENCE_ORB_PICKUP
@@ -1891,39 +2077,6 @@ permissions:
         volume: 0.2
         pitch: 0.2
 
-  uncoop_member:
-    display-menu: true
-    permission-enabled:
-      type: GOLDEN_APPLE
-      name: '&6解除成员合作'
-      lore:
-        - '&7允许移除岛屿上处于合作关系的成员.'
-        - '&7当前 &a启用&7.'
-    permission-disabled:
-      type: GOLDEN_APPLE
-      name: '&6解除成员合作'
-      lore:
-        - '&7允许移除岛屿上处于合作关系的成员.'
-        - '&7当前 &c禁用&7.'
-    role-permission:
-      type: GOLDEN_APPLE
-      name: '&6解除成员合作'
-      lore:
-        - '&7允许移除岛屿上处于合作关系的成员.'
-        - '&7职位: &e{}&7.'
-        - ''
-        - '{0}'
-    has-access:
-      sound:
-        type: ENTITY_EXPERIENCE_ORB_PICKUP
-        volume: 0.2
-        pitch: 0.2
-    no-access:
-      sound:
-        type: BLOCK_ANVIL_PLACE
-        volume: 0.2
-        pitch: 0.2
-
   sign_interact:
     display-menu: true
     permission-enabled:
@@ -1976,6 +2129,72 @@ permissions:
       name: '&6破坏刷怪笼'
       lore:
         - '&7允许挖掘岛屿上的刷怪笼.'
+        - '&7职位: &e{}&7.'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  tamed_animal_damage:
+    display-menu: true
+    permission-enabled:
+      type: BONE
+      name: '&6伤害驯服动物'
+      lore:
+        - '&7允许攻击岛屿上的驯服动物.'
+        - '&7当前 &a启用&7.'
+    permission-disabled:
+      type: BONE
+      name: '&6伤害驯服动物'
+      lore:
+        - '&7允许攻击岛屿上的驯服动物.'
+        - '&7当前 &c禁用&7.'
+    role-permission:
+      type: BONE
+      name: '&6伤害驯服动物'
+      lore:
+        - '&7允许攻击岛屿上的驯服动物.'
+        - '&7职位: &e{}&7.'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  uncoop_member:
+    display-menu: true
+    permission-enabled:
+      type: GOLDEN_APPLE
+      name: '&6解除成员合作'
+      lore:
+        - '&7允许移除岛屿上处于合作关系的成员.'
+        - '&7当前 &a启用&7.'
+    permission-disabled:
+      type: GOLDEN_APPLE
+      name: '&6解除成员合作'
+      lore:
+        - '&7允许移除岛屿上处于合作关系的成员.'
+        - '&7当前 &c禁用&7.'
+    role-permission:
+      type: GOLDEN_APPLE
+      name: '&6解除成员合作'
+      lore:
+        - '&7允许移除岛屿上处于合作关系的成员.'
         - '&7职位: &e{}&7.'
         - ''
         - '{0}'
