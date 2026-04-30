@@ -10,37 +10,22 @@ previous-menu: true
 
 pattern:
   - '$ $ $ $ $ $ $ $ $'
-  - '% % @ % # % ^ % %'
-  - '% % % ! % + % % %'
-  - '% % * % ~ % & % %'
+  - '# # @ # % # ^ # #'
+  - '# # # ! # + # # #'
+  - '# # * # ~ # & # #'
   - '$ $ $ $ $ $ $ $ $'
 
 items:
   '$':
     type: STAINED_GLASS_PANE
     data: 9
-    name: '&f'
-    
-  '%':
-    type: STAINED_GLASS_PANE
-    data: 11
-    name: '&f'
-
-sounds:
-  '@':
-    type: ENTITY_EXPERIENCE_ORB_PICKUP
-    volume: 0.2
-    pitch: 0.2
+    name: '&f'    
 
 upgrades:
   hoppers-limit:
     item: '@'
     '1':
       has-next-level:
-        sound:
-          type: ENTITY_EXPERIENCE_ORB_PICKUP
-          volume: 0.2
-          pitch: 0.2
         type: HOPPER
         name: '&d&l漏斗增量 &a(可用)'
         lore:
@@ -54,11 +39,11 @@ upgrades:
           - '&d价格: &f$1,000,000'
           - '&7'
           - '&a鼠标左键点击购买升级.'
-      no-next-level:
         sound:
-          type: BLOCK_ANVIL_PLACE
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
           volume: 0.2
           pitch: 0.2
+      no-next-level:
         type: HOPPER
         name: '&d&l漏斗增量 &c(不可用)'
         lore:
@@ -72,12 +57,12 @@ upgrades:
           - '&d价格: &f$1,000,000'
           - '&7'
           - '&a鼠标左键点击购买升级.'
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
     '2':
       has-next-level:
-        sound:
-          type: ENTITY_EXPERIENCE_ORB_PICKUP
-          volume: 0.2
-          pitch: 0.2
         type: HOPPER
         name: '&d&l漏斗增量 &a(可用)'
         lore:
@@ -91,11 +76,11 @@ upgrades:
           - '&d价格: &f$3,000,000'
           - '&7'
           - '&a鼠标左键点击购买升级.'
-      no-next-level:
         sound:
-          type: BLOCK_ANVIL_PLACE
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
           volume: 0.2
           pitch: 0.2
+      no-next-level:
         type: HOPPER
         name: '&d&l漏斗增量 &c(不可用)'
         lore:
@@ -109,12 +94,12 @@ upgrades:
           - '&d价格: &f$3,000,000'
           - '&7'
           - '&a鼠标左键点击购买升级.'
-    '3':
-      has-next-level:
         sound:
-          type: ENTITY_EXPERIENCE_ORB_PICKUP
+          type: BLOCK_ANVIL_PLACE
           volume: 0.2
           pitch: 0.2
+    '3':
+      has-next-level:
         type: HOPPER
         name: '&d&l漏斗增量 &a(可用)'
         lore:
@@ -128,16 +113,16 @@ upgrades:
           - '&d价格: &f$9,000,000'
           - '&7'
           - '&a鼠标左键点击购买升级.'
-      no-next-level:
         sound:
-          type: BLOCK_ANVIL_PLACE
+          type: ENTITY_EXPERIENCE_ORB_PICKUP
           volume: 0.2
           pitch: 0.2
+      no-next-level:
         type: HOPPER
         name: '&d&l漏斗增量 &c(不可用)'
         lore:
           - '&7'
-          - '&d下一等级: &e2'
+          - '&d下一等级: &e4'
           - '&7'
           - '&7购买该升级将会提升'
           - '&7岛屿内可放置的漏斗数量.'
@@ -146,6 +131,10 @@ upgrades:
           - '&d价格: &f$9,000,000'
           - '&7'
           - '&a鼠标左键点击购买升级.'
+        sound:
+          type: BLOCK_ANVIL_PLACE
+          volume: 0.2
+          pitch: 0.2
     '4':
       has-next-level:
         sound:

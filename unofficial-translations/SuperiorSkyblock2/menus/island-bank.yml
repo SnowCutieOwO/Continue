@@ -71,6 +71,7 @@ items:
     name: '&6余额'
     lore:
       - '&7金库存款剩余 $%superior_island_bank_format%'
+      - '&7下次利息发放时间为 {7}'
   '=':
     type: EMERALD_BLOCK
     name: '&f '

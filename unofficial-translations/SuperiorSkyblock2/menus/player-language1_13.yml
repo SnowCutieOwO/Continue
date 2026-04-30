@@ -10,9 +10,8 @@ previous-menu: true
 
 pattern:
   - '@ @ @ @ @ @ @ @ @'
-  - '@ @ # @ % @ * @ @'
-  - '@ @ + @ ^ @ ~ @ @'
-  - '@ @ - @ = @ ! @ @'
+  - '@ # % * + ^ ~ 1 @'
+  - '@ @ - = ! 2 3 @ @'
   - '@ @ @ @ @ @ @ @ @'
 
 items:
@@ -44,6 +43,14 @@ items:
     name: '&e波兰语'
     lore:
       - '&7点击将语言切换为波兰语.'
+  '2':
+    language: 'pt-BR'
+    type: SKULL_ITEM
+    data: 3
+    skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWE0NjQ3NWQ1ZGNjODE1ZjZjNWYyODU5ZWRiYjEwNjExZjNlODYxYzBlYjE0ZjA4ODE2MWIzYzBjY2IyYjBkOSJ9fX0='
+    name: '&e巴西葡萄牙语'
+    lore:
+      - '&7点击将语言切换为巴西葡萄牙语.'
   '^':
     language: 'it-IT'
     type: PLAYER_HEAD
@@ -58,6 +65,14 @@ items:
     name: '&e简体中文'
     lore:
       - '&7点击将语言切换为简体中文.'
+  '1':
+    language: 'ru-RU'
+    type: SKULL_ITEM
+    data: 3
+    skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTZlYWZlZjk4MGQ2MTE3ZGFiZTg5ODJhYzRiNDUwOTg4N2UyYzQ2MjFmNmE4ZmU1YzliNzM1YTgzZDc3NWFkIn19fQ=='
+    name: '&e俄语'
+    lore:
+      - '&7点击将语言切换为俄语.'
   '-':
     language: 'fr-FR'
     type: PLAYER_HEAD
@@ -79,6 +94,14 @@ items:
     name: '&e德语'
     lore:
       - '&7点击将语言切换为德语.'
+  '3':
+    language: 'tr-TR'
+    type: SKULL_ITEM
+    data: 3
+    skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmJiZWFmNTJlMWM0YmZjZDhhMWY0YzY5MTMyMzRiODQwMjQxYWE0ODgyOWMxNWFiYzZmZjhmZGY5MmNkODllIn19fQ=='
+    name: '&e土耳其语'
+    lore:
+      - '&7土耳其语.'
 
 sounds:
   '#':

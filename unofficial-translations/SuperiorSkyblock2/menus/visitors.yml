@@ -29,6 +29,9 @@ items:
     name: '&e{0}'
     lore:
       - '&7岛屿拥有者: {1}'
+      - ''
+      - '&7左键点击驱逐玩家.'
+      - '&7右键点击邀请玩家.'
   '%':
     type: PAPER
     name: '{0}上一页'
@@ -52,6 +55,6 @@ items:
 
 sounds:
   '@':
-    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    type: ORB_PICKUP
     volume: 0.2
     pitch: 0.2

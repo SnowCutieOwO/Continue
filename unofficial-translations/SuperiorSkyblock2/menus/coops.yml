@@ -26,6 +26,8 @@ items:
     type: SKULL_ITEM
     data: 3
     name: '&e{0}'
+    lore:
+      - '&7点击解除与该玩家的合作.'
   '%':
     type: PAPER
     name: '{0}上一页'
