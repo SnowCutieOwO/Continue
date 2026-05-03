@@ -8,6 +8,5 @@ cwim-win.exe
 # working plugins' wikis should be ignored temproraily
 
 docs/wiki/Dynmap
-docs/wiki/TownyAdvanced
 
 # 应该没有人会抽象到把 gitignore 文件当笔记用吧...

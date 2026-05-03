@@ -108,6 +108,10 @@ features:
     title: Terra
     details: 强大的地形生成引擎
     link: wiki/Terra
+  - icon: 
+    title: <span class="iconify" data-icon="material-symbols:in-home-mode-outline"></span>
+    details: TownyAdvanced
+    link: wiki/TownyAdvanced
   - icon: <span class="iconify" data-icon="material-symbols:shop-outline-sharp"></span>
     title: UltimateShop
     details: 强大的自定义商店插件
@@ -137,7 +141,7 @@ features:
 
 ## 贡献
 
-本维基历时一年，经历大大小小达到迭代更新，但只由我一人完成，因此难免存在错漏之处。欢迎所有用户为维基添砖加瓦！
+本维基历时一年，经历大大小小的迭代更新，但只由我一人完成，因此难免存在错漏之处。欢迎所有用户为维基添砖加瓦！
 
 同时，也欢迎访问我们的 [Github 仓库页面](https://github.com/SnowCutieOwO/Continue)，为我们点亮免费的 Star！
 
@@ -160,8 +164,8 @@ Netlify 网站构建状态：![](https://api.netlify.com/api/v1/badges/6e69d526-
 
 ### 维基数量与字数
 
-![](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-25-93fdf9) ![](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-641581-84f5bb)
-（最后更新：2025/12/2）
+![](https://img.shields.io/badge/%E5%B7%B2%E5%AE%8C%E6%88%90%E7%BB%B4%E5%9F%BA%E6%95%B0-26-93fdf9) ![](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA%E6%80%BB%E5%AD%97%E6%95%B0-721926-84f5bb)
+（最后更新：2026/5/3）
 
 * 统计字数脚本来源于 [cwim](https://github.com/spencerwooo/cwim)。
 

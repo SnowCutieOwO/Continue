@@ -289,6 +289,7 @@ export default defineConfig({
           { text: 'spark', link: 'wiki/spark/index' },
           { text: 'SuperiorSkyblock2', link: 'wiki/SuperiorSkyblock2/index' },
           { text: 'Terra', link: 'wiki/Terra/index' },
+          { text: 'TownyAdvanced', link: 'wiki/TownyAdvanced/index' },
           { text: 'UltimateShop', link: 'wiki/UltimateShop/index' },
           { text: 'WorldEdit', link: 'wiki/WorldEdit/index' },
           { text: 'WorldGuard', link: 'wiki/WorldGuard/index' },
@@ -1586,6 +1587,74 @@ export default defineConfig({
                     { text: '云注册命令', link: 'wiki/Terra/terra-api/api-concepts/registering-commands-with-cloud' },
                   ]
                 }
+              ]
+            }
+          ]
+        }
+      ],
+      'wiki/TownyAdvanced/': [
+        { text: '返回首页', link: 'index' },
+        { text: '前言', link: 'wiki/TownyAdvanced/index' },
+        {
+          text: 'TownyAdvanced 中文维基', items: [
+            {
+              text: 'Towny Advanced', collapsed: true, items: [
+                { text: '首页', link: 'wiki/TownyAdvanced/towny-advanced/home' },
+                { text: '常见问题', link: 'wiki/TownyAdvanced/towny-advanced/faq' },
+                { text: '运作方式', link: 'wiki/TownyAdvanced/towny-advanced/how-towny-works' },
+                { text: 'Towny API', link: 'wiki/TownyAdvanced/towny-advanced/townyapi' },
+                { text: 'Discord', link: 'https://discord.gg/gnpVs5m' }
+              ]
+            },
+            {
+              text: '设置教程', collapsed: true, items: [
+                { text: '安装', link: 'wiki/TownyAdvanced/setup/installation' },
+                { text: '更新 Towny', link: 'wiki/TownyAdvanced/setup/updating-towny' }
+              ]
+            },
+            {
+              text: '支持', collapsed: true, items: [
+                { text: '问题排查', link: 'wiki/TownyAdvanced/support/troubleshooting' },
+                {
+                  text: 'Github 工单', link: 'https://github.com/TownyAdvanced/Towny/issues?q=sort%3Aupdated-desc+is%3Aissue+is%3Aopen', collapsed: true, items: [
+                    { text: '报告漏洞', link: 'https://github.com/TownyAdvanced/Towny/issues/new?assignees=&labels=&template=bug_report.md&title=' },
+                    { text: '新功能建议', link: 'https://github.com/TownyAdvanced/Towny/issues/new?assignees=&labels=&template=feature_request.md&title=Suggestion%3A+' },
+                    { text: '其他问题', link: 'https://github.com/TownyAdvanced/Towny/discussions/new?category=Q-A' }
+                  ]
+                },
+                {
+                  text: '支持 LlmDl', link: 'https://github.com/sponsors/LlmDl', collapsed: true, items: [
+                    { text: '捐赠者插件', link: 'https://github.com/LlmDl/SponsorPlugins/blob/main/README.md' }
+                  ]
+                }
+              ]
+            },
+            {
+              text: '更新日志', collapsed: true, items: [
+                { text: 'Towny 更新日志', link: 'https://github.com/TownyAdvanced/Towny/blob/master/Towny/src/main/resources/ChangeLog.txt' },
+                { text: 'TownyChat 更新日志', link: 'https://github.com/TownyAdvanced/TownyChat/blob/master/resources/changelog.txt' }
+              ]
+            },
+            {
+              text: '参考', link: 'wiki/TownyAdvanced/reference/index', collapsed: true, items: [
+                { text: '命令', link: 'wiki/TownyAdvanced/reference/commands' },
+                { text: '权限节点', link: 'wiki/TownyAdvanced/reference/permission-nodes' },
+                { text: '（PlaceholderAPI）变量', link: 'wiki/TownyAdvanced/reference/placeholders-papi' },
+                {
+                  text: '配置文件', link: 'wiki/TownyAdvanced/reference/configs/index', collapsed: true, items: [
+                    { text: 'Config.yml', link: 'wiki/TownyAdvanced/reference/configs/config-yml' },
+                    { text: 'Database.yml', link: 'wiki/TownyAdvanced/reference/configs/database-yml' },
+                    { text: 'Townyperms.yml', link: 'wiki/TownyAdvanced/reference/configs/townyperms-yml' },
+                    { text: 'ChatConfig.yml', link: 'wiki/TownyAdvanced/reference/configs/chatconfig-yml' },
+                    { text: 'Channels.yml', link: 'wiki/TownyAdvanced/reference/configs/channels-yml' }
+                  ]
+                }
+              ]
+            },
+            {
+              text: '杂项', collapsed: true, items: [
+                { text: '使用了 Towny API 的插件', link: 'wiki/TownyAdvanced/misc/plugins-using-towny-api' },
+                { text: 'Siege War 维基', link: 'https://github.com/TownyAdvanced/SiegeWar/wiki' }
               ]
             }
           ]
