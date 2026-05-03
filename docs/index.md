@@ -108,9 +108,9 @@ features:
     title: Terra
     details: 强大的地形生成引擎
     link: wiki/Terra
-  - icon: 
-    title: <span class="iconify" data-icon="material-symbols:in-home-mode-outline"></span>
-    details: TownyAdvanced
+  - icon: <span class="iconify" data-icon="material-symbols:in-home-mode-outline"></span>
+    title: TownyAdvanced
+    details: 功能丰富的城镇及国家插件
     link: wiki/TownyAdvanced
   - icon: <span class="iconify" data-icon="material-symbols:shop-outline-sharp"></span>
     title: UltimateShop
