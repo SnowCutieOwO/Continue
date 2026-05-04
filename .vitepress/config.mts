@@ -351,7 +351,7 @@ export default defineConfig({
       'guide/': [
         { text: '返回首页', link: '/index' },
         {
-          text: '🌟 开服杂谈', collapsed: false, items: [
+          text: '🌟 开服杂谈', link: 'guide/self-help/index', collapsed: false, items: [
             {
               text: '不求人篇', collapsed: true, items: [
                 {
@@ -360,8 +360,8 @@ export default defineConfig({
                     { text: '手机制作手机端', link: 'guide/self-help/fcl-setup/fcl-mobile-setup' },
                   ]
                 },
-                { text: '利用 Maven/Gradle 构建插件', link: 'guide/build-jars-with-gradle-or-maven' },
-                { text: '利用 Recaf 内核汉化', link: 'guide/localize-jars-with-recaf' },
+                { text: '利用 Maven/Gradle 构建插件', link: 'guide/self-help/build-jars-with-gradle-or-maven' },
+                { text: '利用 Recaf 内核汉化', link: 'guide/self-help/localize-jars-with-recaf' },
                 { text: '插件安全性鉴别（即将推出）' },
                 { text: 'JEnv 多版本管理（即将推出）' },
                 { text: 'Node.js 多版本管理安装', link: 'guide/self-help/fnm-installtion' },
