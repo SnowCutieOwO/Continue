@@ -21,7 +21,7 @@
 
 Jitpack.io 在网站上托管了大量的 github 项目，Towny 也入驻 jitpack.io 并建立了自己的[仓库](https://jitpack.io/#TownyAdvanced/Towny)。Jitpack 美中不足的是更新略慢，如果上方标牌显示为绿色，那么你可以把如下内容加入 pom.xml 使用这个来源：
 
-::: detail Jitpack 导入配置
+::: detailsJitpack 导入配置
 
 ``` XML
   <repositories>
@@ -96,7 +96,7 @@ dependencies {
 
 Github 包只会随 Towny 正式版本的发布而更新，例如：0.97.0.0，0.97.1.0，0.97.2.0，而且没有前瞻版本更新。如果你不介意被 Github 的奇葩验证拷打，也没有需求使用最新的构建，那么你可以试试看这个选择。
 
-::: detail Github 包介绍
+::: detailsGithub 包介绍
 
 [设置 Github 令牌](https://help.github.com/en/articles/configuring-apache-maven-for-use-with-github-package-registry#authenticating-to-github-package-registry)之后，开发者可以通过如下步骤使用发行包。
 
@@ -337,13 +337,13 @@ public class CustomCommand implements CommandExecutor {
 TownyCommandAddonAPI.addSubCommand(CommandType.TOWN, "mycommand", new CustomCommand());
 ```
 
-::: detail 可用的命令类型
+::: details可用的命令类型
 RESIDENT, RESIDENT_SET, RESIDENT_TOGGLE, NATION, NATION_LIST_BY, NATION_SET, NATION_TOGGLE, TOWN, TOWN_BUY, TOWNY_LIST_BY, TOWN_SET, TOWN_TOGGLE, PLOT, PLOT_SET, PLOT_TOGGLE, TOWNY, TOWNYADMIN, TOWNYADMIN_RELOAD, TOWNYADMIN_SET, TOWNYADMIN_TOGGLE, TOWNYADMIN_TOWN, TOWNYADMIN_NATION, TOWNYWORLD, TOWNYWORLD_SET, TOWNYWORLD_TOGGLE
 :::
 
 通过在命令类中实现 TabCompleter，还可以为命令添加你自己的 tab 补全。也可以通过 AddonCommand#setTabCompletion 方法进行，但它只适用于参数不变的情况。
  
-::: detail setTabCompletion 示例
+::: detailssetTabCompletion 示例
 
 ``` Java
 AddonCommand myCommand = new AddonCommand(CommandType.TOWN, "mycommand", new CustomCommand());
