@@ -23,8 +23,21 @@ DecentHolograms 是一个面向管理员用户开放的插件，它将管理插�
 
 该教程提供了编辑悬浮字的一些基本规则，包括创建和修改它们。若要参照完整的命令列表，请参考下文的章节。
 
-* [格式与颜色](formats-colors/index.md)
-* [命令](commands.md)
+<Links
+  :grid="2"
+  :items="[
+    {
+      icon: { icon: 'material-symbols:save-outline-rounded' },
+      name: '格式与颜色',
+      link: 'formats-colors/index'
+    },
+    {
+      icon: { icon: 'material-symbols:keyboard-command-key' },
+      name: '命令',
+      link: 'commands'
+    }
+  ]"
+/>
 
 ### 创建悬浮字示例
 

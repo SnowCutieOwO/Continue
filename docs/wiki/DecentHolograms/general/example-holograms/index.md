@@ -12,8 +12,33 @@
 
 ## 页面
 
-* [示例 - 演示](example-demo.md)
-* [示例 - 实体](example-entity.md)
-* [示例 - 带偏置的配方](example-recipe-with-offsets.md)
-* [示例 - 树](example-tree.md)
-* [示例 - 动作](example-actions.md)
+<Links
+  :grid="2"
+  :items="[
+    {
+      name: '示例 - 演示',
+      desc: '包含多个示例功能的悬浮字配置',
+      link: 'example-demo'
+    },
+    {
+      name: '示例 - 实体',
+      desc: '包含实体的悬浮字配置',
+      link: 'example-entity'
+    },
+    {
+      name: '示例 - 带偏置的配方',
+      desc: '展示 Minecraft 合成配方的悬浮字',
+      link: 'example-recipe-with-offsets'
+    },
+    {
+      name: '示例 - 树',
+      desc: '拼成一棵树的悬浮字配置',
+      link: 'example-tree'
+    },
+    {
+      name: '示例 - 动作',
+      desc: '包含点击触发动作的悬浮字文件',
+      link: 'example-actions'
+    }
+  ]"
+/>
