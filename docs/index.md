@@ -185,4 +185,4 @@ Netlify 网站构建状态：![](https://api.netlify.com/api/v1/badges/6e69d526-
 
 ### Star 历史
 
-[![满天星辰，有你更美](https://api.star-history.com/svg?repos=SnowCutieOwO/Continue&type=date&legend=top-left)](https://www.star-history.com/#SnowCutieOwO/Continue&type=date&legend=top-left)
+[![漫天星辰，有你更美](https://api.star-history.com/svg?repos=SnowCutieOwO/Continue&type=date&legend=top-left)](https://www.star-history.com/#SnowCutieOwO/Continue&type=date&legend=top-left)
