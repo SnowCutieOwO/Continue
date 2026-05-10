@@ -9,6 +9,9 @@ import NotFound from './error.vue'
 
 import '@bprogress/core/css'
 
+import { Footer } from '@theojs/lumen'
+import { Footer_Data } from './footer.mts'
+
 const { Layout } = DefaultTheme
 
 const router = useRouter()
@@ -34,6 +37,9 @@ router.onAfterRouteChange = () => {
     </template>
     <template #not-found>
       <NotFound />
+    </template>
+    <template #layout-bottom>  
+      <Footer :Footer_Data="Footer_Data" />  
     </template>
   </Layout>
 </template>
