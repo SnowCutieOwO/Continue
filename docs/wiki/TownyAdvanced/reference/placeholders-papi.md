@@ -6,7 +6,7 @@
 
 > 你可以在 Towny 的 config.yml `papi_chat_formatting` 部分自定义变量的返回值。（比如，去掉方括号，或者改变颜色）
 
-::: details按时间顺序排列
+::: details 按时间顺序排列
 
 ## v0.95.0.0 引入
 
@@ -209,7 +209,7 @@
 
 :::
 
-::: details按类型排列
+::: details 按类型排列
 
 ## 城镇与国家前缀/标签相关
 
