@@ -260,8 +260,8 @@ export default defineConfig({
       { text: '🔙 返回首页', link: '/' },
       {
         text: '🔖 友链页面', items: [
-          { text: 'CSKB - 日冕知识库', link: 'wiki/other-sites/cskb' },
-          { text: 'HiMCBBS', link: 'wiki/other-sites/himcbbs' }
+          { text: 'CSKB - 日冕知识库', link: 'other-sites/cskb' },
+          { text: 'HiMCBBS', link: 'other-sites/himcbbs' }
         ]
       },
       {
