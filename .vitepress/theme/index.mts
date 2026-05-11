@@ -9,7 +9,10 @@ import '../theme/theme.css'
 import '../theme/scrollBar.css'
 import '@theojs/lumen/pic'
 import Layout from './Layout.vue'
+// 26.05.10 新增：LinkCards 链接卡片拓展
 import { BoxCube, Card, Links, Pill } from '@theojs/lumen'
+// 26.05.11 新增：LiteTree 渲染组件
+import { LiteTree } from '@lite-tree/vue'
 
 export default {
   extends: DefaultTheme,
@@ -26,6 +29,12 @@ export default {
     app.component('Links', Links) 
     app.component('Card', Card) 
     app.component('BoxCube', BoxCube) 
+    /*
+      @lite-tree/vue 树结构拓展组件
+      具体用法详见：
+      https://zhangfisher.github.io/lite-tree/examples.html
+    */
+    app.component('LiteTree', LiteTree)
   },
   Layout
 } satisfies Theme

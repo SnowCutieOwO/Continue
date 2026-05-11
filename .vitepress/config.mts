@@ -163,6 +163,7 @@ export default defineConfig({
     template: {
       compilerOptions: {
         isCustomElement: (tag) => customElements.includes(tag),
+        whitespace: 'preserve'
       },
     },
   },
