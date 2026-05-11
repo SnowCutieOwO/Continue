@@ -29,12 +29,12 @@
 
 文件夹结构应当如下所示：
 
-``` txt title="Terra/packs/custom-pack"
-Terra/
-├── packs/
-┆   ├── default.zip
-    └── custom-pack/ <- 你新建的文件夹
-```
+<LiteTree>
+- Terra/        // Terra/packs/custom-pack
+    - packs/
+        default.zip
+        custom-pack // <- 你新建的文件夹
+</LiteTree>
 
 ### 3. 复制待修改的包内容
 
@@ -56,47 +56,44 @@ Terra/
 
 <badge type="info" text="正确" />
 
-``` txt title="Terra/packs/custom-pack/pack.yml"
-Terra/
-├── packs/
-┆   ├── default.zip
-    └── custom-pack/
-        ├── pack.yml
-        ┆
-```
+<LiteTree>
+- Terra/         // Terra/packs/custom-pack/pack.yml
+    - packs/
+        default.zip
+        - custom-pack/
+            pack.yml
+</LiteTree>
 
 <badge type="warning" text="错误" />
 
-``` txt title="Terra/packs/custom-pack/文件夹/pack.yml"
-Terra/
-├── packs/
-┆   ├── default.zip
-    └── custom-pack/
-        └── 文件夹/
-            ├── pack.yml
-            ┆
-```
+<LiteTree>
+- Terra/           // Terra/packs/custom-pack/文件夹/pack.yml
+    - packs/
+        default.zip
+        - custom-pack/
+            - 文件夹/
+                pack.yml
+</LiteTree>
+
+<badge type="warning" text="错误" />
+
+<LiteTree>
+- Terra/           // Terra/packs/custom-pack/original-pack.zip
+    - packs/
+        default.zip
+        - custom-pack/
+            original-pack.zip
+</LiteTree>
 
 
 <badge type="warning" text="错误" />
 
-``` txt title="Terra/packs/custom-pack/original-pack.zip"
-Terra/
-├── packs/
-┆   ├── default.zip
-    └── custom-pack/
-        └── original-pack.zip
-```
-
-<badge type="warning" text="错误" />
-
-``` txt title="Terra/packs/pack.yml"
-Terra/
-├── packs/
-┆   ├── default.zip
-    ├── pack.yml
-    ┆
-```
+<LiteTree>
+- Terra/           // Terra/packs/pack.yml
+    - packs/
+        default.zip
+        pack.yml
+</LiteTree>
 
 ::: warning
 

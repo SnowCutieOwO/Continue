@@ -18,11 +18,11 @@
 
 载入单张图片。如果你在载入超大图片时遇到问题，请使用 [STITCHED_MAP](#stitched_bitmap) 类型。
 
-<badge type="info" text="columns" /> [整数](intenger.md)
+<badge type="info" text="columns" /> [整数](intenger.md)<br>
 
 <badge type="info" text="path-format" /> [字符串](string.md) - 从包目录开始，指向图片的相对路径。（Windows 用户请用斜杠 `/` 代替反斜杠 `\`）
 
-<badge type="info" text="rows" /> [整数](intenger.md)
+<badge type="info" text="rows" /> [整数](intenger.md)<br>
 
 <badge type="tip" text="zero-indexed" /> [布尔值](boolean.md)
 
@@ -32,7 +32,7 @@
 
 将 `Image` 图片分成小块载入，并在生成过程中逐渐“缝合”的另类载入方法。如果图片过大而无法通过前一种方式载入内存（Java 的 `BufferedImage` 类实现方法的短板），那么就可以使用这类载入方法。
 
-<badge type="info" text="columns" /> [整数](intenger.md) - 缝合的图片列数。
+<badge type="info" text="columns" /> [整数](intenger.md) - 缝合的图片列数。<br>
 
 <badge type="info" text="path" /> [字符串](string.md) - 从包目录开始，指向图片的相对路径。（Windows 用户请用斜杠 `/` 代替反斜杠 `\`）
 
@@ -40,16 +40,16 @@
 
 假设有一个结构如下的包目录，我们需要通过这个方法将其缝合为一整张图片：
 
-``` txt
-my-config-pack/
-├── pack.yml
-├── images
-┆   └── stitched-image/
-        ├ my-image-0-0.png
-        ├ my-image-0-1.png
-        ├ my-image-1-0.png
-        └ my-image-1-1.png
-```
+<LiteTree>
+- my-config-pack/
+    pack.yml
+    - images
+        - stitched-images/
+            my-image-0-0.png
+            my-image-0-1.png
+            my-image-1-0.png
+            my-image-1-1.png
+</LiteTree>
 
 那么缝合图片的 `path-format` 即为：
 
@@ -57,7 +57,7 @@ my-config-pack/
 path-format: images/stitched-image/my-image-{row}-{column}.png
 ```
 
-<badge type="info" text="rows" /> [整数](intenger.md) - 缝合的图片行数。
+<badge type="info" text="rows" /> [整数](intenger.md) - 缝合的图片行数。<br>
 
 <badge type="tip" text="zero-indexed" /> [布尔值](boolean.md)
 
