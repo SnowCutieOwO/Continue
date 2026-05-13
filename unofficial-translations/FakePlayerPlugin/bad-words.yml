@@ -1,0 +1,145 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  FakePlayerPlugin  ·  bad-words.yml
+#  违规词屏蔽配置文件
+#
+#  在这里添加的词汇会合并进：
+#    · 启用远程屏蔽词汇库后的词汇列表
+#    · config.yml 中的行内屏蔽词列表
+#
+#  这个配置可以分服务器配置不同的违规词，且支持正则表达式。
+#  默认的远程违禁词链接为：
+#    https://www.cs.cmu.edu/~biglou/resources/bad-words.txt
+#
+#  匹配规则：
+#    · 忽略大小写，部分包含匹配   （即“词汇”作为违规词也会阻止“一个词汇”之类的词语）
+#    · 形状类似的字符             （如用“5”或“$”代替“s”，或者在词汇间插入下划线都不能绕过检测）
+#    · 自动检测模式附加：          正则表达式匹配重复/分隔
+#    · 可选自定义正则：            只需在 patterns: 列表中自行添加即可
+#
+#  输入命令 /fpp reload 即可无需重启服务器应用改动。
+# ─────────────────────────────────────────────────────────────────────────────
+
+words:
+  - ahole
+  - anus
+  - ash0le
+  - ash0les
+  - asholes
+  - ass
+  - ass monkey
+  - assface
+  - assh0le
+  - assh0lez
+  - asshole
+  - assholes
+  - assholz
+  - asswipe
+  - azzhole
+  - bastard
+  - bastards
+  - bastardz
+  - basterds
+  - basterdz
+  - biatch
+  - bitch
+  - bitches
+  - blowjob
+  - boffing
+  - butthole
+  - buttwipe
+  - c0ck
+  - c0cks
+  - c0k
+  - carpet muncher
+  - cawk
+  - cawks
+  - clit
+  - cnts
+  - cntz
+  - cock
+  - cockhead
+  - cock-head
+  - cocksucker
+  - crap
+  - cum
+  - cunt
+  - cunts
+  - cuntz
+  - dick
+  - dildo
+  - dildos
+  - dyke
+  - enema
+  - fag
+  - faggot
+  - fags
+  - fart
+  - fuck
+  - fucker
+  - fucking
+  - fucks
+  - fuk
+  - gay
+  - gayboy
+  - gaygirl
+  - gays
+  - god-damned
+  - hell
+  - hoar
+  - whore
+  - jackoff
+  - jerk-off
+  - jizz
+  - knob
+  - knobs
+  - kunt
+  - lesbian
+  - masochist
+  - masturbate
+  - masterbate
+  - motherfucker
+  - mofo
+  - nazi
+  - nigga
+  - nigger
+  - orgasm
+  - penis
+  - pussy
+  - queer
+  - rectum
+  - retard
+  - sadist
+  - scank
+  - schlong
+  - screwing
+  - semen
+  - sex
+  - sexy
+  - shit
+  - shitter
+  - slut
+  - sluts
+  - slutty
+  - son-of-a-bitch
+  - tit
+  - tits
+  - boobs
+  - testicle
+  - turd
+  - vagina
+  - vulva
+  - wank
+  - xxx
+  - porn
+  - piss
+  - poop
+
+# 可以在这里添加更详细的正则表达式。示例如下：
+# patterns:
+#   - "(?:word1|word2)[_-]?bot"
+#   - "w+[a-z0-9_]*o+[a-z0-9_]*r+[a-z0-9_]*d+"
+patterns:
+  - "(?:f[\\W_]*u[\\W_]*c[\\W_]*k+)"
+  - "(?:s[\\W_]*h[\\W_]*i[\\W_]*t+)"
+  - "(?:b[\\W_]*i[\\W_]*t[\\W_]*c[\\W_]*h+)"
+  - "(?:a[\\W_]*s[\\W_]*s+)"

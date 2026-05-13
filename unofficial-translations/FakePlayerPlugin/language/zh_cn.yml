@@ -1,0 +1,715 @@
+﻿# ─────────────────────────────────────────────────────────────────────────────
+#  ꜰᴀᴋᴇ ᴘʟᴀʏᴇʀ ᴘʟᴜɢɪɴ  ·  language/en.yml
+#  可按需编辑，输入命令 /fpp reload 即可无需重启服务器应用更改。
+#
+#  颜色格式：MiniMessage 标签
+#    颜色名字 ：<red>, <gray>, <white>, <dark_gray>, <yellow> …
+#    十六进制 ：<#0079FF>text</#0079FF>
+#    文字样式 ：<bold>, <italic>, <underlined>, <strikethrough>
+#    清除格式 ：<reset>
+#  变量：{placeholder} — 可用变量见介绍内容
+#
+#  ⚠  标记“内部”的字段由排版引擎使用。
+#     可以修改使用的颜色及文本，但关键词应当保持不变。
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── 插件前缀 — 对所有 [FPP] 消息生效 ──────────────────────────
+#  可按需修改颜色/文本内容，但请保持简洁。
+prefix: "<dark_gray>[<#0079FF>ꜰᴘᴘ</#0079FF><dark_gray>]<reset> "
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  1 · 内部排版  —  请勿删除或重命名键
+#  可以修改使用的颜色及文本，但关键词及结构应当保持不变。
+# ═════════════════════════════════════════════════════════════════════════════
+
+# 用于页首与页尾的水平分割线
+divider: "<dark_gray><st>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</st>"
+
+# 帮助菜单（需要包含 {cmd}、{args}、{desc} 变量）
+help-header: "<dark_gray><st>━━━━━━━━━</st> <#0079FF><bold>ꜰᴀᴋᴇ ᴘʟᴀʏᴇʀ ᴘʟᴜɢɪɴ</#0079FF> <dark_gray><st>━━━━━━━━━</st>"
+help-entry:  "  <#0079FF>/{cmd}</#0079FF><gray> {args} <dark_gray>— <white>{desc}"
+help-footer: "<dark_gray><st>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</st>"
+
+# 插件信息界面（/fpp bare）— 页首内容
+info-screen-header: "  <#0079FF><bold>ꜰᴀᴋᴇ ᴘʟᴀʏᴇʀ ᴘʟᴜɢɪɴ</#0079FF> <dark_gray>· <gray>ꜰᴘᴘ"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  2 · 一般错误提示
+# ═════════════════════════════════════════════════════════════════════════════
+
+# {0} — 根命令行（如“fpp”）
+no-permission:  "{prefix}<red>你没有权限这么做。"
+unknown-command: "{prefix}<red>未知子命令。<gray>输入命令 <#0079FF>/{0} ʜᴇʟᴘ</#0079FF><gray> 获取详细帮助。"
+player-only:    "{prefix}<red>只有玩家才可运行此命令。"
+invalid-number: "{prefix}<red>数字无效。请输入正整数。"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  3 · 生成
+# ═════════════════════════════════════════════════════════════════════════════
+
+# ── 生成结果 ──────────────────────────────────────────────────────────────
+# {count} — 生成的假人数量  |  {total} — 全局启用数量  |  {name} — 假人名称
+# {max}   — 全局上限          |  {limit} — 个人上限
+spawn-success:            "{prefix}<gray> 已<white>召唤<#0079FF>{count}</#0079FF> <gray>个。<dark_gray>（<gray> 已激活 <#0079FF>{total}</#0079FF> <gray>个<dark_gray>）"
+spawn-max-reached:        "{prefix}<red>你已到达召唤数量上限 <dark_gray>（<#0079FF>{max}</#0079FF> <gray>ʙᴏᴛꜱ<dark_gray>）<red>。请先删掉一些假人。"
+spawn-user-limit-reached: "{prefix}<red>你已到达个人召唤数量上限 <dark_gray>（<#0079FF>{limit}</#0079FF> <gray>ʙᴏᴛ<dark_gray>）<red>）"
+spawn-invalid:            "{prefix}<red>无效用法。<gray>命令格式为 <#0079FF>/fpp spawn [afk] [数量] [--name <名称>] [--random-name] [--notp]</#0079FF><gray>。"
+spawn-invalid-name:       "{prefix}<red>ɪ无效假人名称。<gray>名称请保持在 <white>1–16 <gray>个字符以内 <dark_gray>（<white>英文字母<gray>、<white>数字<gray>、<white>下划线<dark_gray>）<gray>。"
+spawn-badword-rejected:   "{prefix}<red>假人名称“<white>{name}<red>”无效<dark_gray>（<gray>包含非法字符或：<white>{badword}<dark_gray>）<red>。"
+spawn-badword-auto-prefixed: "{prefix}<yellow>⚠ 假人名称<gray>“<red>{original}<gray>”包含违规词 — 已重命名为“<#0079FF>{name}</#0079FF><gray>”。"
+badword-filter-empty-warning: "{prefix}<yellow>⚠ <gray>检测到屏蔽词过滤已经<white>启用<gray>，但<red>没有配置来源<gray>。<dark_gray>启用 <white>badword-filter.use-global-list <dark_gray>设置或在 <white>badword-filter.words <dark_gray>/ <white>bad-words.yml<dark_gray>中添加违规词，然后输入命令 <white>/fpp reload<dark_gray> 重载。"
+spawn-name-taken:         "{prefix}<red>已经存在名为 <white>{name} <red> 的假人。"
+spawn-name-taken-player:  "{prefix}<red>已经有名为 <white>{name} <red>的玩家在线。"
+spawn-name-taken-nick:    "{prefix}<red>存在同名的真实玩家 <white>{name}<red>。<gray>请重新选择一个假人名称。"
+spawn-relog-not-found:    "{prefix}<red>保存的列表中没有名为 <white>{name}<red> 的假人。"
+spawn-relog-world-missing: "{prefix}<red>无法重新记录 <white>{name}<red> — 先前所在世界 <white>{world}<red> 尚未载入。"
+spawn-no-names-left:      "{prefix}<red>名称列表中的所有名称都被占用。<gray>请减少活跃假人数量或添加新名称。"
+
+# ── 控制台/位置错误 ──────────────────────────────────────────────────
+# {world} — 不存在的世界名称
+spawn-console-no-world:   "{prefix}<red>没有载入的世界 — 无法设置出生位置。"
+spawn-world-not-found:    "{prefix}<red>世界“<white>{world}<red>”不存在或未载入。"
+spawn-invalid-coords:     "{prefix}<red>无效坐标。<gray>正确格式：<white>x,y,z <gray><dark_gray>（如 <white>100,64,200<gray>）"
+
+player-not-found:   "{prefix}<red>玩家 <white>{player} <red>不在线。"
+
+# ── 召唤冷却 ─────────────────────────────────────────────────────────────
+# {seconds} — 剩余时间
+spawn-cooldown: "{prefix}<red>请等 <white>{seconds}秒<red> 后再生成假人。"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  4 · 删除
+# ═════════════════════════════════════════════════════════════════════════════
+
+# {name}  — 假人名称  |  {count} — 删除数量
+delete-success:        "{prefix}<gray>假人 <#0079FF>{name}</#0079FF> <white>已退出<gray>。"
+delete-all:            "{prefix}<#0079FF>{count}</#0079FF> <gray>个假人 <white>已退出<gray>。"
+delete-none:           "{prefix}<red>目前没有假人在线。"
+# 在假人持续存储仍在进行时试图执行批量取消生成命令时显示
+delete-restore-in-progress: "{prefix}<red>假人仍在保存中 — 请稍等一会再试。"
+delete-not-found:      "{prefix}<red>没有找到名为 <white>{name}<red> 的活跃假人。"
+# {count} — 随机清理的假人数量
+delete-random-success: "{prefix}<#0079FF>{count}</#0079FF> <gray>个随机假人 <white>已退出<gray>。"
+# {count} — 按顺序清除的假人数量（存在时间从早到晚）
+delete-num-success:    "{prefix}<#0079FF>{count}</#0079FF> <gray>ꜰ个随机假人 <white>已退出<gray>。"
+despawn-num-usage:     "{prefix}<red>命令用法：<white>/fpp despawn --num <数量></white>。"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  5 · 列表
+# ═════════════════════════════════════════════════════════════════════════════
+
+list-none: "  <gray>当前尚无激活假人。"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  6 · 假人公告
+# ═════════════════════════════════════════════════════════════════════════════
+
+# {name} — 假人的显示名称。提示默认为黄色，可通过自行添加标签覆盖之。例如，<red>{name}</red>
+bot-join:  "<yellow>{name} 加入了游戏</yellow>"
+bot-leave: "<yellow>{name} 离开了游戏</yellow>"
+
+# {old} — 旧假人名称 · {new} — 新假人名称
+bot-rename: "{prefix}<#0079FF>{old}</#0079FF> <gray>已被重命名为 <#0079FF>{new}</#0079FF><gray>。"
+rename-invalid-name: "{prefix}<red>无效假人名称。<gray>请将名称长度保持在 <white>1–16 <gray>字之内 <dark_gray>（<white>英文字母<gray>、<white>数字<gray>、<white>下划线<dark_gray>）<gray>。"
+rename-same-name: "{prefix}<yellow>⚠ <gray>新名称与原名称相同。"
+rename-name-taken: "{prefix}<red>已经存在激活的同名假人 <white>{name}<red>。"
+rename-name-taken-player: "{prefix}<red>已经存在同名真实玩家 <white>{name}<red>。"
+rename-badword-rejected: "{prefix}<red>假人不能重命名为“<white>{name}<red>”<dark_gray>（<gray>包含违禁词：<white>{badword}<dark_gray>）<red>。"
+rename-badword-auto-renamed: "{prefix}<yellow>⚠ <gray>假人名称“<red>{original}<gray>”包含违禁词 — 已将其自动重命名为“<#0079FF>{name}</#0079FF><gray>”。"
+rename-starting: "{prefix}<gray>正在将假人 <#0079FF>{old}</#0079FF> <gray>的名称改为 <#0079FF>{new}</#0079FF><gray>…"
+rename-failed-no-location: "{prefix}<red>✘ <gray>无法重新生成 <#0079FF>{name}</#0079FF><gray> — 该假人无已知位置。"
+rename-failed-spawn: "{prefix}<red>✘ <gray>重新生成迦尔纳 <#0079FF>{name}</#0079FF><gray>失败：<white>{reason}</white>。"
+rename-timeout: "{prefix}<yellow>⚠ <gray>等待假人 <#0079FF>{name}</#0079FF><gray> 生成超时。假人已在线，但可能缺少数据。"
+rename-success: "{prefix}<green>✔ <#0079FF>{new}</#0079FF> <gray>已在线 <dark_gray>（<red>{old}</red><gray> 重命名完毕 — 背包、经验值、聊天栏及 LuckPerms 权限组数据已还原。"
+bot-not-found: "{prefix}<red>没有名为 <white>{name}<red> 的假人正在活跃。"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  7 · 假聊天
+# ═════════════════════════════════════════════════════════════════════════════
+
+# ── 全局管理 ──────────────────────────────────────────────────────────────
+chat-enabled:    "{prefix}<#0079FF>假聊天</#0079FF> <gray>已 <white>启用<gray>。"
+chat-disabled:   "{prefix}<#0079FF>假聊天</#0079FF> <gray>已 <white>禁用<gray>。"
+chat-status-on:  "{prefix}<#0079FF>假聊天</#0079FF> <gray>已经处于 <white>启用状态<gray>。"
+chat-status-off: "{prefix}<#0079FF>假聊天</#0079FF> <gray>已经处于 <white>禁用状态<gray>。"
+chat-invalid:    "{prefix}<red>命令用法<gray>：<#0079FF>/fpp chat <on|off|status></#0079FF> <dark_gray>|</dark_gray> <#0079FF>/fpp chat <假人名称> [on|off|say <消息内容>|tier <等级>]</#0079FF><gray>。"
+
+# ── 假人单独管理 ─────────────────────────────────────────────────────
+# {name}    — 假人的显示名称
+# {message} — 强制发送的消息
+# {tier}    — 可用等级名称   |  {tiers} — 有效等级列表
+# {seconds} — 禁言时长       |  {enabled} — 启用状态  |  {multiplier} — 等级倍率
+chat-bot-not-found:    "{prefix}<red>没有名为 <white>{name}<red> 的假人正在活跃。"
+chat-bot-status-on:    "{prefix}<#0079FF>{name}</#0079FF> <gray>的聊天功能已 <white>启用<gray>。"
+chat-bot-status-off:   "{prefix}<#0079FF>{name}</#0079FF> <gray>的聊天功能已 <white>禁用<gray>。"
+chat-bot-enabled:      "{prefix}<#0079FF>{name}</#0079FF> <gray>现在会 <white>参与聊天<gray>。"
+chat-bot-disabled:     "{prefix}<#0079FF>{name}</#0079FF> <gray>已进入 <white>禁言状态<gray>。"
+chat-bot-said:         "{prefix}<#0079FF>{name}</#0079FF> <gray>说：<white>{message}"
+chat-bot-info:         "{prefix}<#0079FF>{name}</#0079FF> <dark_gray>│ <gray>启用：<white>{enabled} <dark_gray>│ <gray>等级：<white>{tier} <dark_gray>│ <gray>倍率：<white>{multiplier}×"
+chat-bot-muted:        "{prefix}<#0079FF>{name}</#0079FF> <gray>已被 <white>永久禁言<gray>。"
+chat-bot-muted-timed:  "{prefix}<#0079FF>{name}</#0079FF> <gray>已被禁言 <white>{seconds}秒<gray>。"
+chat-mute-usage:       "{prefix}<red>命令用法<gray>：<#0079FF>/fpp chat <假人名称> mute [禁言秒数]</#0079FF><gray>。"
+chat-bot-tier-set:     "{prefix}<#0079FF>{name}</#0079FF><gray>的活动等级已设置为 <white>{tier}<gray>。"
+chat-bot-tier-reset:   "{prefix}<#0079FF>{name}</#0079FF><gray>的活动等级已重设为 <white>随机<gray>。"
+chat-bot-tier-invalid: "{prefix}<red>无效等级“<white>{tier}<red>”。<gray>可用等级：<white>{tiers}<gray>。"
+chat-say-usage:        "{prefix}<red>命令用法<gray>：<#0079FF>/fpp chat <假人名称> say <聊天消息></#0079FF><gray>。"
+chat-tier-usage:       "{prefix}<red>命令用法<gray>：<#0079FF>/fpp chat <假人名称> tier <quiet|passive|normal|active|chatty|reset></#0079FF><gray>。"
+
+# ── 批量假人聊天  （/fpp chat all …） ───────────────────────────────────────────
+# {count}    — 控制假人的数量  |  {enabled}/{disabled} — 启用状态计数
+# {tier}     — 等级名称        |  {message} — 发送的消息文本
+chat-all-usage:        "{prefix}<red>命令用法<gray>：<#0079FF>/fpp chat all <on|off|status|say <聊天消息>|tier <等级>></#0079FF><gray>。"
+chat-all-say-usage:    "{prefix}<red>命令用法<gray>：<#0079FF>/fpp chat all say <聊天消息></#0079FF><gray>。"
+chat-all-enabled:      "{prefix}<gray>所有<white>{count}<gray> 假人现在都可以 <white>参与聊天<gray>。"
+chat-all-disabled:     "{prefix}<gray>所有<white>{count}<gray> 假人已全部进入 <white>禁言状态<gray>。"
+chat-all-status:       "{prefix}<gray>启用聊天：<white>{enabled}<gray> | 是否禁言：<white>{disabled}<gray>。"
+chat-all-said:         "{prefix}<gray>已通过 <white>{count}<gray> 个假人发送了聊天消息: <white>{message}"
+chat-all-tier-set:     "{prefix}<gray>所有假人的等级都设置为了 <white>{tier}<gray>。"
+chat-all-tier-reset:   "{prefix}<gray>所有假人的活跃等级都重设为了 <white>随机<gray>。"
+personality-reset-random: "{prefix}<gray><#0079FF>{bot}</#0079FF><gray> 的等级已重设为了随机的 <white>{name}</white><gray>。"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  8 · 信息 / 数据库
+# ═════════════════════════════════════════════════════════════════════════════
+
+# {name} — 查询的假人或条目名称
+info-no-records:     "{prefix}<red>没有找到有关 <white>{name}<red> 的记录。"
+info-db-unavailable: "{prefix}<red>数据库目前不可用。请检查配置及服务器后台日志。"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  9 · 传送
+# ═════════════════════════════════════════════════════════════════════════════
+
+# {name} — 假人名称
+tph-success:      "{prefix}<gray>已将假人 <#0079FF>{name}</#0079FF> <gray>传送到你的位置。"
+tph-no-bots:      "{prefix}<red>你没有召唤过假人。"
+tph-specify-name: "{prefix}<red>你召唤了多个假人。<gray>请指定名称。"
+tph-not-found:    "{prefix}<red>没有名为 <white>{name}<red> 的假人。"
+tph-not-yours:    "{prefix}<red>你没有名为 <white>{name}<red> 的假人。"
+tph-failed:       "{prefix}<red>无法传送至假人 <white>{name}<red>。"
+tph-all-result:   "{prefix}<gray>已将 <#0079FF>{count}</#0079FF> <gray>个假人传送至你的位置。<dark_gray>（<gray>失败个数：<white>{failed}</white><dark_gray>）"
+tp-specify-name:  "{prefix}<red>你召唤了多个假人。<gray>请指定名称。"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  10 · 经验命令
+# ═════════════════════════════════════════════════════════════════════════════
+
+# {name} — 假人名称  |  {xp} — 收集经验数量  |  {seconds} — 冷却时间
+xp-not-found:       "{prefix}<red>没有名为 <white>{name}<red> 的假人。"
+xp-success:         "{prefix}<#66CC66>✓</#66CC66> <gray>已从假人 <#0079FF>{name}</#0079FF> 处收集了 <#0079FF>{xp}</#0079FF> <gray>点经验值<gray>。<dark_gray>它们在接下来的 {seconds}秒 内无法再次拾取经验值。"
+xp-no-xp:           "{prefix}<gray><#0079FF>{name}</#0079FF> <gray>没有可收获的经验值。"
+xp-usage:           "{prefix}<red>命令用法<gray>：<#0079FF>/fpp xp <假人名称></#0079FF><gray>。"
+xp-cooldown-active: "{prefix}<red><white>{name}<red> 下次收取经验还需等待 <white>{seconds}<red>秒。"
+xp-disabled:        "{prefix}<red>经验值相关功能已在配置中禁用。"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  11 · 等级  （LuckPerms 权限组分配）
+# ═════════════════════════════════════════════════════════════════════════════
+
+# {bot}   — 假人显示名称  |  {group} — LuckPerms 权限组  |  {count} — 被分配的假人数量
+rank-no-luckperms:    "{prefix}<red>LuckPerms 未安装或未启用。"
+rank-usage:           "{prefix}<red>命令用法<gray>：<#0079FF>/fpp rank <假人名称> <权限组名称|clear></#0079FF><gray> <dark_gray>|</dark_gray> <#0079FF>/fpp rank random <权限组名称> [num]</#0079FF><gray> <dark_gray>|</dark_gray> <#0079FF>/fpp rank list</#0079FF><gray>。"
+rank-bot-not-found:   "{prefix}<red>没有名为 <white>{name}<red> 的假人正在活跃。"
+rank-group-not-found: "{prefix}<red>没有名为 <white>{group}<red> 的 LuckPerms 权限组。"
+
+skin-usage:           "{prefix}<red>命令用法<gray>：<#0079FF>/fpp skin <假人名称> <玩家名称|链接|reset></#0079FF><gray>。"
+skin-bot-not-found:   "{prefix}<red>没有名为 <white>{name}<red> 的假人正在活跃。"
+skin-invalid-url:     "{prefix}<red>无效的皮肤链接<red>。<gray>请使用 <white>http（s）</white> 开头 <gray>或 <white>数据：图片</white> 格式的链接。"
+skin-applying:        "{prefix}<gray>正在给假人 <#0079FF>{name}</#0079FF><gray> 应用自定义皮肤…"
+skin-applied:         "{prefix}<green>✔ <gray>成功给假人 <#0079FF>{name}</#0079FF><gray> 更新了自定义皮肤。"
+skin-failed:          "{prefix}<red>✘ <gray>无法为假人 <#0079FF>{name}</#0079FF><gray> 更新自定义皮肤。"
+skin-reset:           "{prefix}<green>✔ <gray>已将假人 <#0079FF>{name}</#0079FF><gray> 的皮肤重设为默认。"
+skin-applying-player: "{prefix}<gray>正在解析玩家 <white>{player}</white> 的皮肤并将其应用至 <#0079FF>{name}</#0079FF><gray>…"
+skin-player-not-found: "{prefix}<red>无法解析玩家 <white>{player}</white><red> 的皮肤。"
+skin-no-nametag:      "{prefix}<red>无法修改命名牌假人的皮肤。"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  12 · 警告  （跨服公告）
+# ═════════════════════════════════════════════════════════════════════════════
+
+# {message} — 警告内容
+alert-received: "{prefix}<red><bold>警告<reset> <dark_gray>» <white>{message}"
+alert-sent:     "{prefix}<#66CC66>✓</#66CC66> <gray>已将警告发送至 <#0079FF>全服</#0079FF><gray>。"
+alert-usage:    "{prefix}<red>命令用法<gray>：<#0079FF>/fpp alert <聊天消息></#0079FF><gray>。"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  13 · 同步  （配置同步）
+# ═════════════════════════════════════════════════════════════════════════════
+
+# {file}  — 配置文件名称  |  {count} — 改动的文件数量
+sync-not-available:     "{prefix}<red>配置文件同步尚不可用 <dark_gray>（仅联网可用<dark_gray>）<red>。"
+sync-usage:             "{prefix}<red>命令用法<gray>：<#0079FF>/fpp sync <push|pull|check|status> [file]</#0079FF><gray>。"
+sync-push-success:      "{prefix}<#66CC66>✓</#66CC66> <gray>已将文件 <#0079FF>{file}</#0079FF> <gray>推送至数据库。"
+sync-push-failed:       "{prefix}<red>无法将文件 <white>{file}<red> 推送至数据库。"
+sync-push-all-success:  "{prefix}<#66CC66>✓</#66CC66> <gray>已将 <#0079FF>所有配置文件</#0079FF> <gray>推送至数据库。"
+sync-pull-success:      "{prefix}<#66CC66>✓</#66CC66> <gray>已从数据库拉取 <#0079FF>{file}</#0079FF> <gray>个文件。"
+sync-pull-failed:       "{prefix}<red>无法从数据库拉取文件 <white>{file}<red>。"
+sync-pull-all-success:  "{prefix}<#66CC66>✓</#66CC66> <gray>已从数据库拉取<#0079FF>所有配置文件</#0079FF> <gray>。"
+sync-pull-no-updates:   "{prefix}<gray>所有配置文件已是最新。"
+sync-pull-reload-hint:  "{prefix}<gray>输入命令 <#0079FF>/fpp reload</#0079FF> <gray>应用改动。"
+sync-check-has-changes: "{prefix}<yellow>⚠<reset> <#0079FF>{file}</#0079FF> <gray>有本地改动 <dark_gray>（与数据库文件不同<dark_gray>）。"
+sync-check-no-changes:  "{prefix}<#66CC66>✓</#66CC66> <#0079FF>{file}</#0079FF> <gray>与数据库最新文件相同。"
+sync-check-all-clean:   "{prefix}<#66CC66>✓</#66CC66> <gray>所有配置文件已与数据库同步。"
+sync-check-summary:     "{prefix}<gray>同步情况：<#0079FF>{count}</#0079FF> <gray>个文件包含本地改动。"
+sync-status-no-network: "{prefix}<red>同步功能已禁用 <dark_gray>（未处于联网模式<dark_gray>）<red>。"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  14 · 切换  （会话轮换）
+# ═════════════════════════════════════════════════════════════════════════════
+
+# {sessions}    — 活跃会话计时器         |  {offline}  — 等待重新加入的假人名称
+# {name}        — 假人名称               |  {count}    — 假人数量
+# {next}        — 下次切换的时间         |  {min}      — 最小在线数量
+# {personality} — 假人性格               |  {swaps}    — 切换周期数
+# {time}        — 此次会话剩余时间
+swap-enabled:          "{prefix}<#0079FF>会话轮换</#0079FF> <gray>已 <white>启用<gray>。"
+swap-disabled:         "{prefix}<#0079FF>会话轮换</#0079FF> <gray>已 <white>禁用<gray>。"
+swap-status-on:        "{prefix}<#0079FF>会话轮换</#0079FF> <gray>已 <white>启用 <dark_gray>│ <gray>会话：<#0079FF>{sessions}</#0079FF> <dark_gray>│ <gray>离线：<#0079FF>{offline}</#0079FF> <dark_gray>│ <gray>下次：<#0079FF>{next}</#0079FF> <dark_gray>│ <gray>最小：<#0079FF>{min}</#0079FF>"
+swap-status-off:       "{prefix}<#0079FF>会话轮换</#0079FF> <gray>已 <white>禁用<gray>。"
+swap-invalid:          "{prefix}<red>命令用法<gray>：<#0079FF>/fpp swap</#0079FF> <dark_gray>[<gray>切换<dark_gray>]</dark_gray> <dark_gray>│</dark_gray> <#0079FF>/fpp swap <on|off|status|now <假人名称>|list|info <假人名称>></#0079FF><gray>。"
+swap-now-usage:        "{prefix}<red>命令用法<gray>：<#0079FF>/fpp swap now <假人名称></#0079FF><gray>。"
+swap-not-available:    "{prefix}<red>切换系统不可用。"
+swap-now-success:      "{prefix}<#66CC66>✓</#66CC66> <#0079FF>{name}</#0079FF> <gray>现已离开<gray>。"
+swap-now-failed:       "{prefix}<red>无法切换 <white>{name}<red>。"
+swap-list-empty:       "{prefix}<gray>目前没有假人参与会话轮换。"
+swap-list-header:      "{prefix}<gray>参与轮换的假人数量<gray>: <#0079FF>{count}</#0079FF>"
+
+swap-list-entry:       "  <dark_gray>• <#0079FF>{name}</#0079FF> <dark_gray>│ <gray>{personality} <dark_gray>│ <gray>循环：<white>{swaps} <dark_gray>│ <gray>离开：<white>{time}"
+swap-info-usage:       "{prefix}<red>命令用法<gray>：<#0079FF>/fpp swap info <假人名称></#0079FF><gray>。"
+swap-info-not-found:   "{prefix}<red>没有名为 <white>{name}<red> 的假人正在活跃。"
+swap-info:             "{prefix}<#0079FF>{name}</#0079FF> <dark_gray>│ <gray>性格：<white>{personality} <dark_gray>│ <gray>循环：<white>{swaps} <dark_gray>│ <gray>离开时间：<white>{time} <dark_gray>│ <gray>夏县等待：<white>{offline}"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  15 · 高峰期  （按时间变换假人池）
+# ═════════════════════════════════════════════════════════════════════════════
+
+# {window}       — 窗口期时间显示（如 18:00–22:00）
+# {fraction}     — 当前目标分离百分比 （如 75%）
+# {target}       — 目标在线假人数
+# {online}       — 目前在线挂机假人数
+# {swapping}     — 通过 BotSwapAI 会话轮换功能暂时下线的假人数量
+# {sleeping}     — 在高峰期假人池中待机的假人数量
+# {total}        — 假人池大小 （在线假人 + 待机假人 + 轮换假人）
+# {time}         — 下次窗口期的时间显示 （如 1h 20m）
+# {next_fraction}— 下次窗口期分离百分比 （e.g. 5%）
+# {count}        — 待机假人数量  |  {name} — 假人名称
+# {timezone}     — 配置的时区字符串
+peaks-enabled:       "{prefix}<#0079FF>高峰期</#0079FF> 功能已 <gray>启用<gray>。"
+peaks-disabled:      "{prefix}<#0079FF>高峰期</#0079FF> 功能已 <gray>禁用 — 所有待机假人已激活<gray>。"
+peaks-status-on:     "{prefix}<#0079FF>高峰期</#0079FF> <dark_gray>│ <gray>窗口期：<white>{window} <dark_gray>│ <gray>分离：<#0079FF>{fraction}</#0079FF> <dark_gray>│ <gray>目标：<#0079FF>{target}</#0079FF> <dark_gray>│ <gray>在线：<#0079FF>{online}</#0079FF> <dark_gray>│ <gray>轮换：<#0079FF>{swapping}</#0079FF> <dark_gray>│ <gray>待机：<#0079FF>{sleeping}</#0079FF> <dark_gray>│ <gray>总数：<#0079FF>{total}</#0079FF> <dark_gray>│ <gray>时区：<white>{timezone}"
+peaks-status-off:    "{prefix}<#0079FF>高峰期</#0079FF> <gray>功能已 <white>禁用<gray>。"
+peaks-next-window:   "{prefix}<gray>下次窗口期为 <#0079FF>{time}</#0079FF>。<dark_gray><#0079FF>{next_fraction}</#0079FF> <gray>的假人将会陆续上线<gray>。"
+peaks-no-windows:    "{prefix}<gray>无窗口期配置 — 请编辑 config.yml 中的 <white>peak-hours.schedule<gray> 选项。"
+peaks-requires-swap: "{prefix}<red>高峰期需要启用 <white>swap.enabled<red> 设置。请先输入命令 <white>/fpp swap on<red> 开启这个功能。"
+peaks-invalid:       "{prefix}<red>命令用法<gray>：<#0079FF>/fpp peaks <on|off|status|next|force|list|wake|sleep></#0079FF><gray>。"
+peaks-force-check:   "{prefix}<gray>已触发高峰期强制检查。"
+peaks-list-header:   "{prefix}<gray>待机假人<dark_gray>（<#0079FF>{count}</#0079FF>）<gray>："
+peaks-list-entry:    "  <dark_gray>┃ <white>{name} <dark_gray>@ <gray>{world} <dark_gray>[<gray>{x}<dark_gray>, <gray>{y}<dark_gray>, <gray>{z}<dark_gray>]"
+peaks-list-empty:    "{prefix}<gray>目前无待机假人。"
+peaks-wake-success:  "{prefix}<gray>已唤醒 <white>{name}<gray>。"
+peaks-wake-all:      "{prefix}<gray>已唤醒 <#0079FF>{count}</#0079FF> 个假人。"
+peaks-sleep-success: "{prefix}<gray>已将 <white>{name}<gray> 切换待机状态。"
+peaks-sleep-failed:  "{prefix}<red>“<white>{name}<red>”不存在或不符合条件。"
+peaks-transition:    "{prefix}<#0079FF>高峰窗口期</#0079FF><gray>：<white>{window} <dark_gray>（{fraction} <gray>个假人在线<dark_gray>）<gray>。"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  15.5 · 移动命令  （假人向玩家寻路）
+# ═════════════════════════════════════════════════════════════════════════════
+
+# {name}   — 假人显示名称
+# {player} — 目标玩家名称
+# {count}  — 路径点数量 / 索引数量
+# {num}    — 单点路径点索引
+# {x},{y},{z},{world} — 路径点坐标
+move-usage:               "{prefix}<red>命令用法<gray>：<#0079FF>/fpp move <假人名称|all> <玩家名称></#0079FF> <gray>或 <#0079FF>/fpp move <假人名称|all> --coords <x> <y> <z></#0079FF> <gray>或 <#0079FF>/fpp move <假人名称|all> --wp <路径> [--random]</#0079FF> <gray>ᴏʀ <#0079FF>/fpp move <假人名称|all> --roam [x,y,z] [半径]</#0079FF> <gray>或 <#0079FF>--stop</#0079FF><gray>。"
+move-coords-usage:        "{prefix}<red>命令用法<gray>：<#0079FF>/fpp move <假人名称|all> --coords <x> <y> <z></#0079FF><gray>。"
+move-invalid-coords:      "{prefix}<red>坐标无效。请使用数字或相对坐标 <white>~</white> 偏移量<red>。"
+move-navigating-coords:   "{prefix}<gray>正在将 <#0079FF>{name}</#0079FF> <gray>移动到 <white>{x}, {y}, {z}</white><gray>。"
+move-all-navigating-coords: "{prefix}<gray>正在将 <white>{count}</white> <gray>个假人移动到 <white>{x}, {y}, {z}</white><gray>。<dark_gray>（跳过 {skipped} 个）"
+move-bot-not-found:       "{prefix}<red>没有名为 <white>{name}<red> 的假人正在活跃。"
+move-bot-not-online:      "{prefix}<red>假人 <white>{name}<red> 不在线或没有实体。"
+move-navigating:          "{prefix}<gray>正在将 <#0079FF>{name}</#0079FF> <gray>移动到 <white>{player}<gray> 附近。"
+move-different-world:     "{prefix}<red><#0079FF>{name}</#0079FF> <red>与 <white>{player}<red> 不在同一世界。"
+# patrol / waypoint messages
+move-setpos-added:        "{prefix}<gray>已保存 <#0079FF>{name}</#0079FF> 的路径点 <white>#{count}</white> <gray>。"
+move-setpos-player-only:  "{prefix}<red>--setpos 参数需要玩家的位置坐标。"
+move-clearpos:            "{prefix}<gray>已清除了 <#0079FF>{name}</#0079FF><gray> 的坐标。"
+move-clearpos-empty:      "{prefix}<red><#0079FF>{name}</#0079FF> <red>没有设置路径点。"
+move-patrol-started:      "{prefix}<gray><#0079FF>{name}</#0079FF> <gray>正在 <white>{count}</white> <gray>个路径点间巡逻。"
+move-no-waypoints:        "{prefix}<red><#0079FF>{name}</#0079FF><red>没有设置路径点。输入命令 <white>/fpp move {name} --setpos</white> 添加新路径点。"
+move-listpos-header:      "{prefix}<gray><#0079FF>{name}</#0079FF> 的路径点 <gray>（<white>{count}</white>）<gray>："
+move-listpos-entry:       "  <dark_gray>#{num} <white>{x}, {y}, {z} <gray>（{world}）"
+move-listpos-empty:       "{prefix}<red><#0079FF>{name}</#0079FF> <red>没有设置路径点。"
+move-wp-usage:            "{prefix}<red>命令用法<gray>：<#0079FF>/fpp move <假人名称> --wp <路线></#0079FF><gray>。"
+move-wp-not-found:        "{prefix}<red>没有名为 <white>{name}<red> 的路线。输入命令 <white>/fpp wp list</white> 浏览所有路线。"
+move-wp-different-world:  "{prefix}<red><#0079FF>{name}</#0079FF><red> 与路径点 <white>{waypoint}<red> 不在同一个世界。"
+move-wp-started:          "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 正在沿着 <#0079FF>{waypoint}</#0079FF><gray> （<white>{count}</white> 个路径点）<gray>移动。"
+move-wp-started-random:   "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 正在沿着 <#0079FF>{waypoint}</#0079FF><gray>（<white>{count}</white> 个路径点）<white>随机</white><gray>移动。"
+move-stopped:             "{prefix}<gray>停止了 <#0079FF>{name}</#0079FF><gray> 的寻路。"
+move-all-stopped:         "{prefix}<gray>停止了 <white>{count}</white> <gray>个假人的寻路<gray>。"
+move-all-wp-started:      "{prefix}<gray><white>{count}</white> <gray>个假人正在沿着 <#0079FF>{waypoint}</#0079FF><gray> 移动。<dark_gray>（跳过 {skipped} 个）"
+move-all-wp-started-random: "{prefix}<gray><white>{count}</white> <gray>个假人正在沿着 <#0079FF>{waypoint}</#0079FF><gray> <white>随机</white> 移动<gray>。<dark_gray>（跳过 {skipped} 个）"
+move-all-navigating:      "{prefix}<gray><white>{count}</white> <gray>个假人正在向玩家 <white>{player}<gray>移动。<dark_gray>（跳过 {skipped} 个）"
+move-not-navigating:      "{prefix}<red><#0079FF>{name}</#0079FF> <red>目前未处于寻路状态。"
+move-roam-started:        "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 正在 <white>{x}, {y}, {z}</white> <gray> 附近移动（半径为 <white>{radius}</white>）<gray>。"
+move-all-roam-started:    "{prefix}<gray><white>{count}</white> <gray>个假人正在移动（半径为 <white>{radius}</white>）<gray>。<dark_gray>（跳过 {skipped} 个）"
+move-roam-invalid-coords: "{prefix}<red>坐标无效。正确格式为 <white>x,y,z</white> <red>（如 <white>100,64,-200</white>）<red>。"
+move-roam-invalid-radius: "{prefix}<red>半径必须为介于 <white>3</white> <red>至 <white>500</white><red> 之间的数字。"
+move-roam-usage:          "{prefix}<red>命令用法<gray>：<#0079FF>/fpp move <假人名称> --roam [x,y,z] [radius]</#0079FF><gray>。"
+move-coords-invalid:      "{prefix}<red>坐标无效。请输入数字或相对坐标 <white>~<red>。"
+move-coords-navigating:   "{prefix}<gray><#0079FF>{name}</#0079FF> <gray>正在前往 <white>{x}, {y}, {z}<gray>。"
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  15.5b · 跟随命令  （持续跟随）
+# ═════════════════════════════════════════════════════════════════════════════
+follow-usage:              "{prefix}<red>命令用法<gray>：<#0079FF>/fpp follow <假人名称|all> <玩家名称></#0079FF> <gray>ᴏʀ <#0079FF>/fpp follow <假人名称|all> --stop</#0079FF><gray>。"
+follow-bot-not-found:      "{prefix}<red>没有名为 <white>{name}<red> 的假人正在活跃。"
+follow-bot-not-online:     "{prefix}<red>假人 <white>{name}<red> 不在线或无实体。"
+follow-started:            "{prefix}<gray><#0079FF>{name}</#0079FF> <gray>正在跟随 <white>{player}<gray>。"
+follow-stopped:            "{prefix}<gray>假人 <#0079FF>{name}</#0079FF><gray> 已停止跟随。"
+follow-not-following:      "{prefix}<red><#0079FF>{name}</#0079FF> <red>没有跟随任何目标。"
+follow-different-world:    "{prefix}<red><#0079FF>{name}</#0079FF> <red>与 <white>{player}<red>不在同一世界。"
+follow-all-stopped:        "{prefix}<gray>已停止了 <white>{count}</white> <gray>个假人的跟随任务<gray>。"
+follow-all-started:        "{prefix}<gray><white>{count}</white> <gray>个假人正在跟随 <white>{player}<gray>. <dark_gray>（跳过 {skipped} 个）"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  15.6 · 背包命令  （浏览/编辑假人背包）
+# ═════════════════════════════════════════════════════════════════════════════
+
+# {name} — 假人显示名称
+inv-usage:       "{prefix}<red>命令用法<gray>：<#0079FF>/fpp inventory <假人名称></#0079FF><gray>。"
+inv-not-found:   "{prefix}<red>没有名为 <white>{name}<red> 的假人正在活跃。"
+inv-bodyless:    "{prefix}<red><#0079FF>{name}</#0079FF> <red>没有实体 <dark_gray>（灵魂状态假人）<red>。"
+inv-player-only: "{prefix}<red>只有玩家可以打开背包。"
+inv-busy:        "{prefix}<red>{name} <dark_gray>正在被其他玩家打开。"
+inv-viewer-busy: "{prefix}<red>你已经打开了一个假人背包，请先关闭它。"
+inv-opened:      "{prefix}<gray>正在浏览 <#0079FF>{name}</#0079FF><gray> 的背包。"
+settings-bot-not-found: "{prefix}<red>没有名为 <white>{name}<red> 的假人正在活跃。"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  15.7 · 执行命令  （以假人身份执行命令）
+# ═════════════════════════════════════════════════════════════════════════════
+
+# {name} — 假人显示名称  |  {cmd} — 命令内容 （不需要以斜杠开头）
+cmd-usage:        "{prefix}<red>命令用法<gray>：<#0079FF>/fpp cmd <假人名称> <命令内容...></#0079FF><gray>  ᴏʀ  <#0079FF>/fpp cmd <假人名称> --add <命令内容...></#0079FF><gray>。"
+cmd-not-found:    "{prefix}<red>没有名为 <white>{name}<red> 的假人正在活跃。"
+cmd-bot-offline:  "{prefix}<red><#0079FF>{name}</#0079FF><red> 没有实体。"
+cmd-executed:     "{prefix}<gray>已以 <#0079FF>{name}</#0079FF> 的身份执行了命令 <#0079FF>{cmd}</#0079FF><gray>。"
+cmd-failed:       "{prefix}<red><white>{name}<red> 执行命令 <white>{cmd}<red> 失败。"
+# --add / --clear / --show feedback
+cmd-add-usage:    "{prefix}<red>命令用法<gray>：<#0079FF>/fpp cmd <假人名称> --add <命令内容...></#0079FF><gray>。"
+cmd-add-set:      "{prefix}<gray>已设置 <#0079FF>{name}</#0079FF><gray>右键点击命令：<white>{cmd}<gray>。"
+cmd-add-updated:  "{prefix}<gray>已更新 <#0079FF>{name}</#0079FF><gray>右键点击命令：<red>{old}</red> <dark_gray>→ <white>{cmd}<gray>。"
+cmd-add-cleared:  "{prefix}<gray>已清除 <#0079FF>{name}</#0079FF><gray> 的右键点击命令。"
+cmd-add-none:     "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 没有设置任何右键点击命令。"
+cmd-add-show:     "{prefix}<gray><#0079FF>{name}</#0079FF><gray>设置的右键点击命令：<white>{cmd}<gray>。"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  15 · 挖掘命令
+# ═════════════════════════════════════════════════════════════════════════════
+
+# /fpp mine <假人名称> [once|stop|--pos1|--pos2|--start]  |  /fpp mine stop
+mine-usage:       "{prefix}<red>命令用法<gray>：<#0079FF>/fpp mine <假人名称> [once|stop|--pos1|--pos2|--start]</#0079FF><gray> | <#0079FF>/fpp mine stop</#0079FF><gray>。"
+mine-not-found:   "{prefix}<red>假人 <#0079FF>{name}</#0079FF><red> 不存在。"
+mine-bot-offline: "{prefix}<red><#0079FF>{name}</#0079FF><red> 没有实体。"
+mine-walking:     "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 正在走向挖矿位置..."
+mine-started:     "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 已经开始挖矿。"
+mine-started-once: "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 挖掘了一个方块..."
+mine-stopped:     "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 已经停止挖矿。"
+mine-stopped-all: "{prefix}<gray>已经停止所有假人的挖矿动作。"
+mine-look-at-block:    "{prefix}<red>设置位置前请先看向方块。"
+mine-coords-invalid:   "{prefix}<red>坐标无效。请输入数字或 <white>~<red> 开头的相对坐标。"
+mine-pos1-set:    "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 的位置 1 已设置在 <white>{x}</white><dark_gray>,</dark_gray><white>{y}</white><dark_gray>,</dark_gray><white>{z}</white><gray>。"
+mine-pos2-set:    "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 的位置 2 已设置在 <white>{x}</white><dark_gray>,</dark_gray><white>{y}</white><dark_gray>,</dark_gray><white>{z}</white><gray>。"
+mine-area-missing-selection: "{prefix}<red>请在开始之前通过参数 <white>--pos1</white><red> 和 <white>--pos2</white><red> 为 <#0079FF>{name}</#0079FF><red> 设置位置。"
+mine-area-world-mismatch: "{prefix}<red>两个位置必须处于同一世界。"
+mine-area-bot-world: "{prefix}<red><#0079FF>{name}</#0079FF><red> 不在世界 <white>{world}</white><red> 中。请先将假人移动到对应世界。"
+mine-area-started: "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 已开始清理区域 <dark_gray>（<white>{count}</white> 格方块<dark_gray>）<gray>。"
+mine-area-finished: "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 已完成区域清理 <dark_gray>（<white>挖掘了 {count}</white> 格方块<dark_gray>）<gray>。"
+mine-area-stopped: "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 的区域挖掘已停止。"
+mine-storage-unavailable: "{prefix}<red><#0079FF>{name}</#0079FF><red> 无法继续挖掘 - 未设置库存或库存已满。"
+freeze-usage:         "{prefix}<red>命令用法<gray>：<#0079FF>/fpp freeze <假人名称|all> [on|off]</#0079FF><gray>。"
+freeze-not-found:     "{prefix}<red>没有名为 <white>{name}<red> 的假人正在活跃。"
+freeze-frozen:        "{prefix}<gray><#0079FF>{name}</#0079FF> <gray>现在已进入 <white>冻结</white><gray> 状态。"
+freeze-unfrozen:      "{prefix}<gray><#0079FF>{name}</#0079FF> <gray>现在已退出 <white>冻结</white><gray> 状态。"
+freeze-all-frozen:    "{prefix}<gray><white>{count}</white> <gray>个假人已进入 <white>冻结</white><gray> 状态。"
+freeze-all-unfrozen:  "{prefix}<gray><white>{count}</white> <gray>个假人已退出 <white>冻结</white><gray> 状态。"
+
+# ───────────────────────────────────────────────────────────────────────────────
+#  15.6 · 搜寻命令
+# ───────────────────────────────────────────────────────────────────────────────
+find-usage:           "{prefix}<red>命令用法<gray>：<#0079FF>/fpp find <假人名称> <方块> [--radius <半径>] [--count <数量>] [--prefer-visible]</#0079FF><gray> | <#0079FF>/fpp find <假人名称> --stop</#0079FF><gray>。"
+find-not-found:       "{prefix}<red>假人 <#0079FF>{name}</#0079FF><red> 不存在。"
+find-bot-offline:     "{prefix}<red><#0079FF>{name}</#0079FF><red> 没有实体。"
+find-invalid-block:   "{prefix}<red><white>{block}</white><red> 不是有效方块类型。"
+find-invalid-radius:  "{prefix}<red><white>{value}</white><red> 不是有效半径。"
+find-invalid-count:   "{prefix}<red><white>{value}</white><red> 不是有效数量。"
+find-started:         "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 正在 <white>{radius}</white> 范围内搜寻 <white>{block}</white><gray> 方块 <dark_gray>（目标数量 <white>{count}</white><dark_gray>）<gray>。"
+find-stopped:         "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 已停止搜寻。"
+find-stopped-all:     "{prefix}<gray>已停止所有假人的搜寻任务。"
+find-finished:        "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 已完成 - 挖掘了 <white>{count}</white><gray>个 <white>{block}</white><gray>。"
+find-none-found:      "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 范围内没有发现 <white>{block}</white><gray> 方块。"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  15.5 · 存储命令
+# ═════════════════════════════════════════════════════════════════════════════
+
+storage-usage:         "{prefix}<red>命令用法<gray>：<#0079FF>/fpp storage <假人名称> [name|--list|--remove <名称>|--clear]</#0079FF><gray>。请看向需要设置为存储仓库的容器方块。"
+storage-bot-not-found: "{prefix}<red>假人 <#0079FF>{name}</#0079FF><red> 不存在。"
+storage-look-at-container: "{prefix}<red>请先看向容器方块。"
+storage-invalid-block: "{prefix}<red><white>{block}</white><red> 不是有效的容器。"
+storage-set:           "{prefix}<gray>ꜱ已将容器 <white>{storage}</white><gray> 设置为 <#0079FF>{name}</#0079FF><gray> 的 <white>{block}</white><gray> 方块仓库，位置为 <white>{x}</white><dark_gray>,</dark_gray><white>{y}</white><dark_gray>,</dark_gray><white>{z}</white><gray>。"
+storage-list-header:   "{prefix}<#0079FF>{name}</#0079FF><gray> 设置了 <white>{count}</white><gray>个仓库<dark_gray>："
+storage-list-entry:    "  <dark_gray>{index}<gray>. <white>{storage}<gray> <dark_gray>→ <gray><white>{world}</white> <dark_gray>[<white>{x}</white><dark_gray>,<white>{y}</white><dark_gray>,<white>{z}</white><dark_gray>]"
+storage-list-empty:    "{prefix}<gray>假人 <#0079FF>{name}</#0079FF><gray> 没有设置仓库。请看向容器输入命令 <white>/fpp storage {name}<gray> 设置仓库。"
+storage-removed:       "{prefix}<gray>仓库 <white>{storage}</white><gray> 已与 <#0079FF>{name}</#0079FF><gray> 解绑。"
+storage-not-found:     "{prefix}<red>没有找到 <#0079FF>{name}</#0079FF> 的仓库 <white>{storage}</white><red>。"
+storage-cleared:       "{prefix}<gray>清空了 <#0079FF>{name}</#0079FF>绑定的 <white>{count}</white><gray> 个仓库。"
+storage-remove-usage:  "{prefix}<red>命令用法<gray>：<#0079FF>/fpp storage {name} --remove <storage_name></#0079FF><gray>。"
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  16b · 放置命令
+# ═════════════════════════════════════════════════════════════════════════════
+
+place-usage:                 "{prefix}<red>命令用法<gray>：<#0079FF>/fpp place <假人名称> [once|stop]</#0079FF><gray>  |  <#0079FF>/fpp place stop</#0079FF><gray>。"
+place-not-found:             "{prefix}<red>假人 <#0079FF>{name}</#0079FF><red> 不存在。"
+place-bot-offline:           "{prefix}<red><#0079FF>{name}</#0079FF><red> 没有实体。"
+place-walking:               "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 正在前往放置位置..."
+place-started:               "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 已开始持续放置。"
+place-started-once:          "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 放置了单个方块..."
+place-stopped:               "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 已停止放置。"
+place-stopped-all:           "{prefix}<gray>已停止所有假人的放置任务。"
+place-pos1-set:              "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 的位置 1 已设置在 <white>{x}</white><dark_gray>,</dark_gray><white>{y}</white><dark_gray>,</dark_gray><white>{z}</white><gray>。"
+place-pos2-set:              "{prefix}<gray>#0079FF>{name}</#0079FF><gray> 的位置 2 已设置在 <white>{x}</white><dark_gray>,</dark_gray><white>{y}</white><dark_gray>,</dark_gray><white>{z}</white><gray>。"
+# {name} — 假人名称  |  {count} — 完整区域内总方块数量
+place-selection-ready:       "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 的选区已创建：区域内共有<white>{count}</white> 个方块。输入 <white>start</white><gray> 即可开始。"
+place-cleared:               "{prefix}<gray><#0079FF>{name}</#0079FF> 已完成选区与方块指定<gray>。"
+place-block-usage:           "{prefix}<red>命令用法<gray>：<#0079FF>/fpp place <假人名称> --block STONE</#0079FF><gray> ᴏʀ <#0079FF>STONE50%,DIRT50%</#0079FF><gray>。"
+place-block-invalid:         "{prefix}<red>无效方块指定<gray>：<white>{spec}</white><gray>。请输入有效的材料名称，如 <#0079FF>STONE50%,DIRT50%</#0079FF><gray>。"
+place-block-set:             "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 的方块指定已设置为 <white>{spec}</white><gray>。"
+place-area-missing-selection: "{prefix}<red>请在开始前为 <#0079FF>{name}</#0079FF> 通过 <white>--pos1</white><red> 与 <white>--pos2</white><red> 参数设置区域。"
+place-area-already-filled:   "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 的区域选择已完成。"
+place-no-blocks:             "{prefix}<red>没有在 <#0079FF>{name}</#0079FF><red> 的背包或绑定仓库中找到可放置的目标方块。请输入参数 <white>--block</white><red> 指定材料。"
+place-area-started:          "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 已开始填充区域 <dark_gray>（共放置 <white>{count}</white> 个方块<dark_gray>）<gray>。"
+place-area-finished:         "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 已完成区域填充 <dark_gray>（共放置 <white>{count}</white> 个方块<dark_gray>）<gray>。"
+place-area-stopped:          "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 已停止填充区域。"
+place-out-of-materials:      "{prefix}<red><#0079FF>{name}</#0079FF><red> 材料不足，已进入待机模式。"
+place-missing-header:        "{prefix}<red><#0079FF>{name}</#0079FF><red> 没有足够的材料填满 <white>{count}</white><red> 个方块。缺少方块<gray>："
+place-missing-entry:         "  <dark_gray>→ <white>{material}<dark_gray>：<red>{amount}</red><dark_gray> ᴍᴏʀᴇ ɴᴇᴇᴅᴇᴅ"
+# {name} — 假人名称  |  {x1},{y1},{z1} — 位置 1 坐标  |  {x2},{y2},{z2} — 位置 2 坐标  |  {count} — 区域方块数量
+place-status-no-selection:   "{prefix}<#0079FF>{name}</#0079FF><gray> 尚未选择区域。请使用 <white>--pos1</white><gray> 与 <white>--pos2</white><gray> 参数设置区域。"
+place-status-selection:      "{prefix}<#0079FF>{name}</#0079FF><gray> 的选择区域：<white>{x1},{y1},{z1}</white> <dark_gray>→</dark_gray> <white>{x2},{y2},{z2}</white> <dark_gray>（<white>{count}</white> 个方块<dark_gray>）<gray>。"
+place-status-spec:           "{prefix}<#0079FF>{name}</#0079FF><gray> 方块指定：<white>{spec}</white><gray>。"
+place-status-spec-auto:      "{prefix}<#0079FF>{name}</#0079FF><gray> 方块指定：<dark_gray>自动 <gray>（从背包 <dark_gray>/</dark_gray> 仓库<gray>自动获取）。"
+# {name} — 假人名称  |  {placed} — 目前放置的方块数量  |  {total} — 原定放置的方块数量
+place-status-active:         "{prefix}<#0079FF>{name}</#0079FF><gray> 正在填充 <dark_gray>— 已放置 <white>{placed}</white><dark_gray>/<white>{total}</white> <gray>个方块<gray>。"
+place-status-no-job:         "{prefix}<#0079FF>{name}</#0079FF><gray> 目前没有执行填充任务。"
+# {name} — 假人名称  |  {placed} — 累积放置的方块数量
+place-progress:              "{prefix}<#0079FF>{name}</#0079FF><gray> 目前已经放置了 <white>{placed}</white><gray> 个方块..."
+# Recheck phase messages
+place-recheck-filling:       "{prefix}<yellow><#0079FF>{name}</#0079FF><yellow> — 错过了部分位置，正在重新执行任务..."
+place-recheck-clean:         "{prefix}<green><#0079FF>{name}</#0079FF><green> — 建筑验证完毕，正在清理脚手架..."
+# {name} — 假人名称  |  {count} — 清理的脚手架数量
+place-scaffold-cleaned:      "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 清理了 <white>{count}</white><gray> 个脚手架。"
+
+# WorldEdit integration
+worldedit-not-available:  "{prefix}<red>这个服务器上没有安装 WorldEdit。"
+worldedit-no-selection:   "{prefix}<red>你没有有效的 WorldEdit 选取。请先使用小木斧创建选区 <gray> （<white>//wand</white><gray> 可绑定选择工具）<gray>。"
+mine-wesel-applied:       "{prefix}<gray>WorldEdit 选区已设置为 <#0079FF>{name}</#0079FF><gray> 的挖掘区域。"
+place-wesel-applied:      "{prefix}<gray>WorldEdit 选区已设置为 <#0079FF>{name}</#0079FF><gray> 的放置区域。"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  16 · 使用命令
+# ═════════════════════════════════════════════════════════════════════════════
+
+# /fpp use <假人名称> [once|stop]  |  /fpp use stop
+use-usage:        "{prefix}<red>命令用法<gray>：<#0079FF>/fpp use <假人名称> [once|stop]</#0079FF><gray> | <#0079FF>/fpp use stop</#0079FF><gray>。"
+use-not-found:    "{prefix}<red>假人 <#0079FF>{name}</#0079FF><red> 不存在。"
+use-bot-offline:  "{prefix}<red><#0079FF>{name}</#0079FF><red> 没有实体。"
+use-walking:      "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 正在前往位置..."
+use-started:      "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 开始持续右键点击任务。"
+use-started-once: "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 执行单次右键点击..."
+use-stopped:      "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 已停止右键点击任务。"
+use-stopped-all:  "{prefix}<gray>已停止所有假人的右键点击任务。"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  17.5 · 路径点命令  （/fpp waypoint 及其别称 /fpp wp）
+# ═════════════════════════════════════════════════════════════════════════════
+
+# {name}  — 路径名称
+# {index} — 单点索引 / 添加后总数
+# {count} — 路线内点位数 / 路径数量
+# {num}   — 列表中单点条目数量
+# {x},{y},{z},{world} — 坐标位置
+wp-usage:              "{prefix}<red>命令用法<gray>：<#0079FF>/fpp wp add <路径名称></#0079FF> <gray>| <#0079FF>remove <路径名称> <索引></#0079FF> <gray>| <#0079FF>delete <路径名称></#0079FF> <gray>| <#0079FF>clear <路径名称></#0079FF> <gray>| <#0079FF>list [路径名称]</#0079FF><gray>。"
+wp-create-usage:       "{prefix}<red>命令用法<gray>：<#0079FF>/fpp wp create <路径名称></#0079FF><gray>。"
+wp-add-usage:          "{prefix}<red>命令用法<gray>：<#0079FF>/fpp wp add <路径名称></#0079FF><gray>。"
+wp-remove-usage:       "{prefix}<red>命令用法<gray>：<#0079FF>/fpp wp remove <路径名称> <索引></#0079FF><gray>。"
+wp-delete-usage:       "{prefix}<red>命令用法<gray>：<#0079FF>/fpp wp delete <路径名称></#0079FF><gray>。"
+wp-clear-usage:        "{prefix}<red>命令用法<gray>：<#0079FF>/fpp wp clear <路径名称></#0079FF><gray>。"
+wp-invalid-name:       "{prefix}<red>路径名称 <white>{name}<red> 无效。只能包含英文字母、数字、下划线、横杠。"
+wp-not-found:          "{prefix}<red>没有名为 <white>{name}<red> 的路径点。"
+wp-invalid-index:      "{prefix}<red><white>{input}<red> 索引无效。请输入从 1 开始的数字。"
+wp-index-out-of-range: "{prefix}<red>索引 <white>{index}<red> 超出了 <#0079FF>{name}</#0079FF> 的范围<dark_gray>（<white>{count}</white>个位置<dark_gray>）<red>。"
+wp-pos-added:          "{prefix}<gray>位置 <white>#{index}</white> <gray>已添加至路径 <#0079FF>{name}</#0079FF><gray>：<dark_gray>{x}, {y}, {z}<gray>。"
+# /fpp wp add 新建一条路径时发送的消息（无需预先输入 /wp create 命令）
+wp-route-auto-created: "{prefix}<gray>ʀᴏᴜᴛᴇ <#0079FF>{name}</#0079FF><gray> 不存在 — 已为你自动创建。 <dark_gray>（提示：下次请先输入 <white>/fpp wp create {name}</white> 命令<dark_gray>）"
+wp-pos-removed:        "{prefix}<gray>位置 <white>#{index}</white> <gray>已从路径 <#0079FF>{name}</#0079FF><gray> 中移除。"
+wp-deleted:            "{prefix}<gray>路径 <#0079FF>{name}</#0079FF><gray> 已删除。"
+wp-cleared:            "{prefix}<gray>已清空了路径 <#0079FF>{name}</#0079FF><gray> 所有的位置。"
+wp-list-empty:         "{prefix}<red>尚未设置路径。请输入命令 <white>/fpp wp add <路径名称></white> 新进一个。"
+wp-created:            "{prefix}<gray>路径 <#0079FF>{name}</#0079FF><gray> 已创建。请输入命令 <white>/fpp wp add {name}</white> 添加路径点。"
+wp-already-exists:     "{prefix}<red>已经存在名为 <white>{name}<red> 的路径了。"
+wp-list-header:        "{prefix}<gray>路径 <dark_gray>（<white>{count}</white>）<gray>："
+wp-list-entry:         "  <dark_gray>#{num} <#0079FF>{name}</#0079FF> <dark_gray>（<white>{count}</white> <gray>ᴘᴏꜱ<dark_gray>）"
+wp-route-header:       "{prefix}<gray>路径 <#0079FF>{name}</#0079FF> <gray>（<white>{count}</white> ᴘᴏꜱɪᴛɪᴏɴ（ꜱ））<gray>："
+wp-route-entry:        "  <dark_gray>#{num} <white>{x}, {y}, {z} <gray>（{world}）"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  17 · 更新检查
+# ═════════════════════════════════════════════════════════════════════════════
+
+# {current} — 服务器安装的版本  |  {latest} — 最新可用版本
+update-available:  "<dark_gray><st>━━━━━━━━━</st> <bold><#0079FF>更新可用</#0079FF></bold> <dark_gray><st>━━━━━━━━━</st>\n  <gray>已安装版本 <dark_gray>：<white>v{current}\n  <gray>最新版本    <dark_gray>：<#0079FF>v{latest}</#0079FF>\n  <gray>下载链接  <dark_gray>：<click:open_url:'https://modrinth.com/plugin/fake-player-plugin-（fpp）'><#0079FF><underlined>Modrinth</underlined></#0079FF></click><gray>, <click:open_url:'https://www.spigotmc.org/resources/fake-player-plugin-fpp.133572/'><#0079FF><underlined>SpigotMC</underlined></#0079FF></click><gray>, <click:open_url:'https://hangar.papermc.io/Pepe-tf/FakePlayerPlugin'><#0079FF><underlined>PaperMC</underlined></#0079FF></click><gray>, <click:open_url:'https://builtbybit.com/resources/fake-player-plugin.98704/'><#0079FF><underlined>BuiltByBit</underlined></#0079FF></click>\n<dark_gray><st>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</st>"
+update-beta:       "<dark_gray><st>━━━━━━━━━</st> <bold><#FF9500>Beta 版本</#FF9500></bold> <dark_gray><st>━━━━━━━━━</st>\n  <gray>当前运行   <dark_gray>：<#FF9500>v{current}</#FF9500> <dark_gray>（<#FF9500>最新 Beta</#FF9500><dark_gray>）\n  <gray>稳定    <dark_gray>：<#0079FF>v{latest}</#0079FF>\n  <gray>下载链接  <dark_gray>: <click:open_url:'https://modrinth.com/plugin/fake-player-plugin-（fpp）'><#0079FF><underlined>Modrinth</underlined></#0079FF></click><gray>, <click:open_url:'https://www.spigotmc.org/resources/fake-player-plugin-fpp.133572/'><#0079FF><underlined>SpigotMC</underlined></#0079FF></click><gray>, <click:open_url:'https://hangar.papermc.io/Pepe-tf/FakePlayerPlugin'><#0079FF><underlined>PaperMC</underlined></#0079FF></click><gray>, <click:open_url:'https://builtbybit.com/resources/fake-player-plugin.98704/'><#0079FF><underlined>BuiltByBit</underlined></#0079FF></click>\n<dark_gray><st>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</st>"
+update-up-to-date: "{prefix}<#66CC66>插件已是最新版本</#66CC66> <dark_gray>（<#0079FF>v{current}</#0079FF><dark_gray>）"
+update-failed:     "{prefix}<gray>检查更新失败。"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  17 · VERSION COMPATIBILITY WARNING
+# ═════════════════════════════════════════════════════════════════════════════
+
+# {version} — detected Minecraft version string （e.g. "1.22.0"）
+# Shown to any sender who tries a /fpp sub-command on an unsupported MC version.
+version-unsupported: "{prefix}<red>FakePlayerPlugin is <bold>ɴᴏᴛ ꜱᴜᴘᴘᴏʀᴛᴇᴅ</bold> on <white>MC {version}<red>. All commands are disabled. <click:open_url:'https://discord.gg/RfjEJDG2TM'><#0079FF><underlined>Discord</underlined></#0079FF></click>"
+# Shown to ops / admins on join while the server runs an unsupported version.
+version-unsupported-admin: "<dark_gray><st>━━━━━━━━━</st> <bold><red>⚠ ᴜɴꜱᴜᴘᴘᴏʀᴛᴇᴅ ᴠᴇʀꜱɪᴏɴ ⚠</red></bold> <dark_gray><st>━━━━━━━━━</st>\n  <red>FakePlayerPlugin is <bold>ɴᴏᴛ ꜱᴜᴘᴘᴏʀᴛᴇᴅ</bold> on <white>MC {version}<red>. （Supported: up to <white>MC 1.21.11<red>, and <white>26.1.x<red>）\n  <gray>All /fpp commands have been disabled until an update is released.\n  <gray>If you think this is a bug, contact us: <click:open_url:'https://discord.gg/RfjEJDG2TM'><#0079FF><underlined>Discord</underlined></#0079FF></click><gray>.\n<dark_gray><st>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</st>"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  18 · AI 对话
+# ═════════════════════════════════════════════════════════════════════════════
+
+# 当玩家尝试与假人聊天，但 AI 对话功能未开启或未配置 AI 提供方时显示
+ai-not-configured: "{prefix}<red>尚未配置假人对话。<gray>请在 <white>secrets.yml<gray> 中配置 AI 密钥。"
+
+# 当假人正在思考回复时显示的消息（可选 - 目前尚未使用）
+ai-generating: "{prefix}<gray>假人 <#0079FF>{bot}</#0079FF><gray> 正在思考回复..."
+
+# 当 AI 生成内容失败时返回的消息
+ai-error: "{prefix}<red>生成回复失败。<gray>检查控制台获悉详情。"
+
+# ─── AI 性格 ───────────────────────────────────────────────────────────
+# 可用变量：{count}, {name}, {bot}
+personality-list-header:    "{prefix}<gold>AI 性格<gray>（共载入 {count} 个）"
+personality-list-empty:     "{prefix}<red>没有找到可用的 AI 性格。<gray>请向 <white>plugins/FakePlayerPlugin/personalities/<gray>文件夹中添加 <white>.txt<gray> 的提示词文件。"
+personality-reloaded:       "{prefix}<green>从本地重新读取了 <yellow>{count}<green> 个性格预设。"
+personality-set:            "{prefix}<green>已将 <yellow>{bot}</yellow> <green>的性格设置为了 <gold>{name}</gold><green>。"
+personality-reset:          "{prefix}<green>已将 <yellow>{bot}</yellow> <green>的性格重设为了默认。"
+personality-show-named:     "{prefix}<yellow>{bot}</yellow> <gray>的性格：<gold>{name}</gold>"
+personality-show-default:   "{prefix}<yellow>{bot}</yellow> <gray>正在使用 <white>默认<gray> 性格。"
+personality-not-found:      "{prefix}<red>性格<gold>“{name}”<red>未找到。<gray>请使用命令 <white>/fpp personality list<gray> 查询完整性格列表。"
+personality-set-usage:      "{prefix}<red>ᴜꜱᴀɢᴇ: <white>/fpp personality <假人名称> set <性格名称>"
+
+
+# ── 延迟 ─────────────────────────────────────────────────────────────────────
+ping-usage:                 "{prefix}<red>ᴜꜱᴀɢᴇ: <white>/fpp ping [<假人名称>|--count <数量>] [--ping <ms>|--random|--reset]"
+ping-show-spoofed:          "{prefix}<yellow>{name}</yellow> <gray>的延迟已设置为 <white>{ping}ms<gray>。"
+ping-show-default:          "{prefix}<yellow>{name}</yellow> <gray>的延迟当前显示为 <white>{ping}ms<gray> <dark_gray>（ᴅᴇꜰᴀᴜʟᴛ）"
+ping-set:                   "{prefix}<green>已将 <yellow>{name}<green> 的延迟设置为 <white>{ping}ms<green>。"
+ping-set-multiple:          "{prefix}<green>已将 <yellow>{count}<green> 个假人的延迟设置为 <white>{ping}ms<green>。"
+ping-reset:                 "{prefix}<green>已重设 <yellow>{name}</yellow><green> 的延迟。"
+ping-reset-multiple:        "{prefix}<green>已重设 <yellow>{count}</yellow><green> 个假人的延迟。"
+ping-random-multiple:       "{prefix}<green>已为 <yellow>{count}</yellow><green> 个假人分配了随机延迟。"
+ping-bot-not-found:         "{prefix}<red>假人 <yellow>“{name}”<red> 不存在。"
+ping-no-bots:               "{prefix}<red>目前没有活跃假人。"
+ping-conflict-options:      "{prefix}<red>无法使用互相冲突的延迟选项。"
+ping-duplicate-option:      "{prefix}<red>重复选项：<white>{option}"
+ping-missing-value:         "{prefix}<red>选项 <white>{option} <red>缺少对应值"
+ping-out-of-range:          "{prefix}<red>延迟值必须处于 <white>0<red> 至 <white>9999<red> 之间。"
+ping-invalid-number:        "{prefix}<red>无效数字：<white>{value}"
+ping-count-invalid:         "{prefix}<red>--count 值必须至少为 1。"
+ping-target-count-conflict: "{prefix}<red>无法同时指定 --count 参数与假人名称。"
+ping-unknown-option:        "{prefix}<red>未知选项：<white>{option}"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  22 · 攻击命令  （/fpp attack）
+# ═════════════════════════════════════════════════════════════════════════════
+
+# {name} — 假人显示名称
+attack-usage:        "{prefix}<red>命令用法<gray>：<#0079FF>/fpp attack <假人名称|all> [--once|--stop|--mob]</#0079FF><gray> | <#0079FF>/fpp attack --stop</#0079FF><gray>。"
+attack-not-found:    "{prefix}<red>假人 <#0079FF>{name}</#0079FF><red> 不存在。"
+attack-bot-offline:  "{prefix}<red><#0079FF>{name}</#0079FF><red> 没有实体。"
+attack-walking:      "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 正在走向攻击位置..."
+attack-started:      "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 已经开始持续攻击。"
+attack-started-once: "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 正在执行单次攻击..."
+attack-stopped:      "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 已经停止攻击动作。"
+attack-stopped-all:  "{prefix}<gray>已停止所有假人的攻击动作。"
+attack-no-bots:      "{prefix}<red>没有激活的假人。"
+attack-mob-started:  "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 已进入狩猎模式 <dark_gray>（<gray>范围<dark_gray>：<#0079FF>{range}</#0079FF><dark_gray>，<gray>优先级<dark_gray>: <#0079FF>{priority}</#0079FF><dark_gray>）。"
+attack-mob-type:     "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 的攻击目标类型锁定为 <#0079FF>{type}</#0079FF><gray>。"
+attack-mob-no-target: "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 正在搜寻附近目标..."
+attack-mob-invalid-type: "{prefix}<red>未知实体类型<dark_gray>:<#0079FF>{type}</#0079FF><dark_gray>。"
+attack-mob-invalid-range: "{prefix}<red>范围必须介于 <#0079FF>1</#0079FF> 与 <#0079FF>64</#0079FF><red> 之间。"
+attack-hunt-started:  "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 已进入狩猎模式 <dark_gray>（<gray>范围<dark_gray>: <#0079FF>{range}</#0079FF><dark_gray>, <gray>优先级<dark_gray>: <#0079FF>{priority}</#0079FF><dark_gray>）。"
+attack-hunt-started-all: "{prefix}<gray><#0079FF>{count}</#0079FF><gray> 个假人已进入狩猎模式。"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  23 · 睡眠命令 （/fpp sleep）
+# ═════════════════════════════════════════════════════════════════════════════
+
+# {name}   — 假人的显示名称
+# {x y z}  — 原本坐标
+# {radius} — 单位为格的床搜索半径
+# {count}  — 配置/停止的假人数量
+
+sleep-usage:           "{prefix}<red>命令用法<gray>：<#0079FF>/fpp sleep <假人名称|all> <x y z> <半径></#0079FF><gray> | <#0079FF>/fpp sleep <假人名称|all> --stop</#0079FF><gray>。"
+sleep-not-found:       "{prefix}<red>假人 <#0079FF>{name}</#0079FF><red> 不存在。"
+sleep-bot-offline:     "{prefix}<red><#0079FF>{name}</#0079FF><red> 没有活跃的对应玩家。"
+sleep-invalid-args:    "{prefix}<red>参数无效。<gray>正确格式<dark_gray>：<#0079FF><x> <y> <z> <半径></#0079FF><gray>。"
+sleep-configured:      "{prefix}<gray>为假人 <#0079FF>{name}</#0079FF><gray> 设置了在 <white>{x} {y} {z}<gray> 附近的 <#0079FF>{radius}</#0079FF><gray> 格范围内休息的指令。"
+sleep-all-configured:  "{prefix}<gray>为 <#0079FF>{count}</#0079FF><gray> 个假人设置了在 <#0079FF>{radius}</#0079FF><gray> 格范围内休息的指令 <dark_gray>（<gray>跳过数量<dark_gray>：<white>{skipped}<dark_gray>）<gray>。"
+sleep-stopped:         "{prefix}<gray>假人 <#0079FF>{name}</#0079FF> 已被禁止睡眠<gray>。"
+sleep-all-stopped:     "{prefix}<gray>已禁止了 <#0079FF>{count}</#0079FF><gray> 个假人的睡眠。"
+sleep-no-bed:          "{prefix}<gray>没有在 <#0079FF>{name}</#0079FF><gray> 附近的 <#0079FF>{radius}</#0079FF><gray> 格范围内找到可用的床。"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  24 · 停止命令  （/fpp stop）
+# ═════════════════════════════════════════════════════════════════════════════
+
+# {name}  — 假人的显示名称
+# {count} — 停止的假人数量
+# {tasks} — 逗号分隔显示被停止的任务名称
+stop-usage:       "{prefix}<red>命令用法<gray>：<#0079FF>/fpp stop [<假人名称>|all]</#0079FF><gray>。"
+stop-not-found:   "{prefix}<red>假人 <#0079FF>{name}</#0079FF><red> 不存在。"
+stop-done:        "{prefix}<gray>停止了假人 <#0079FF>{name}</#0079FF> 的共 <#0079FF>{tasks}</#0079FF><gray> 个任务<gray>。"
+stop-nothing:     "{prefix}<gray><#0079FF>{name}</#0079FF><gray> 没有正在进行的任务。"
+stop-all-done:    "{prefix}<gray>停止了 <#0079FF>{count}</#0079FF><gray> 个假人的任务。"
+stop-all-nothing: "{prefix}<gray>没有正在进行的任务。"
