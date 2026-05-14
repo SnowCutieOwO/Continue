@@ -204,6 +204,16 @@ export default defineConfig({
             name: 'hanchen',
             username: '1hanchen1',
             mapByEmailAliases: ['1364281481@qq.com']
+          },
+          {
+            name: 'PQguanfang',
+            username: 'PQguanfang',
+            mapByEmailAliases: ['pqguanfang@foxmail.com']
+          },
+          {
+            name: 'Ziphyrien',
+            username: '海屿有燕',
+            mapByEmailAliases: ['111620796+Ziphyrien@users.noreply.github.com']
           }
         ],
       }) as any,
