@@ -8,13 +8,11 @@ PlaceholderAPI 是不计其数社区变量拓展的家园。为了帮助你找�
     {
       name: 'Minecraft',
       desc: '适用于 Minecraft 的 PlacholderAPI 变量拓展列表。',
-      linkText: '点击浏览',
       link: 'minecraft'
     },
     {
       name: 'Hytale',
       desc: '适用于 Hytale 的 PlacholderAPI 变量拓展列表。',
-      linkText: '点击浏览',
       link: 'hytale'
     }
   ]"

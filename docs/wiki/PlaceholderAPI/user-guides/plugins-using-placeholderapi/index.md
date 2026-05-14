@@ -9,13 +9,11 @@ Plugins Using PlaceholderAPI¶
     {
       name: 'Minecraft',
       desc: '在 Minecraft 中用到了 PlacholderAPI 的插件列表。',
-      linkText: '点击浏览',
       link: 'minecraft'
     },
     {
       name: 'Hytale',
       desc: '在 Hytale 中用到了 PlacholderAPI 的插件列表。',
-      linkText: '点击浏览',
       link: 'hytale'
     }
   ]"

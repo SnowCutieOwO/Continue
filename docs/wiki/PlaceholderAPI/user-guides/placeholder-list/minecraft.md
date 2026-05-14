@@ -1406,7 +1406,7 @@
 ::: tip 内置于插件
 :::
 
-[变量描述](https://wiki.ajg0702.us/ajleaderboards/setup/placeholders)（[译文](../../ajLeaderboards/setup/placeholders.md)）
+[变量描述](https://wiki.ajg0702.us/ajleaderboards/setup/placeholders)（[译文](../../../ajLeaderboards/setup/placeholders.md)）
 
 ``` txt
 %ajlb_position_<排行榜名称>_<类型>%
@@ -3282,7 +3282,7 @@
 
 你可以在 [LuckPerms 的维基](https://luckperms.net/wiki/Placeholders)中找到完整的变量列表。
 
-本维基的译文请[点此浏览](../../LuckPerms/project-info/placeholders.md)。
+本维基的译文请[点此浏览](../../../LuckPerms/project-info/placeholders.md)。
 
 ### LWC
 
@@ -5385,7 +5385,7 @@ OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOxxxxxxxx
 %spark_tickduration_1m%
 ```
 
-详细介绍请见本维基的[另一个页面](../../spark/spark-misc/placeholders.md)
+详细介绍请见本维基的[另一个页面](../../../spark/spark-misc/placeholders.md)
 
 ### [SQLPerms](https://www.spigotmc.org/resources/1462/)
 

@@ -27,6 +27,7 @@
     {
       name: '使用本插件的插件',
       desc: '社区维护的所有变量拓展及其变量列表。',
+      linkText: '点击浏览',
       link: 'plugins-using-placeholderapi'
     }
   ]"

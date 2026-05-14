@@ -2,7 +2,7 @@
 
 * 下载并安装 PlaceholderAPI。
 
-* 通过 `/papi ecloud download` 命令下载 Formatter 变量拓展。[点此](../../PlaceholderAPI/user-guides/placeholder-list.md#formatter)了解详情。
+* 通过 `/papi ecloud download` 命令下载 Formatter 变量拓展。[点此](../../PlaceholderAPI/user-guides/placeholder-list/minecraft.md#formatter)了解详情。
 * 编辑物品价格选项，将其改为如下内容：
     `%formatter_number_format_{amount}%`
 

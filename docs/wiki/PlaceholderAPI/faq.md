@@ -24,7 +24,7 @@
     你可能在不支持解析变量的插件中使用了变量。在这种情况下，你应当先使用 parse 命令检查变量是否能返回正常值。  
     如果插件仍然显示的是未解析变量，则它很可能不支持 PlaceholderAPI。
 
-    你可以在[这里](user-guides/plugins-using-placeholderapi.md)找到支持 PlaceholderAPI 的所有插件。  
+    你可以在[这里](user-guides/plugins-using-placeholderapi/index.md)找到支持 PlaceholderAPI 的所有插件。  
     只需确保“支持解析变量”一栏打钩即可。
 
 * ### 变量有无拼写错误
