@@ -17,7 +17,7 @@
     
     一些变量拓展不会集成在插件中，甚至不会依赖插件。这表示它们是单独的 .jar 文件，你必须下载它们。  
     这些变量可以在 PlaceholderAPI 的 eCloud 上找到，并可通过命令 [`/papi ecloud download <变量拓展>`](user-guides/commands.md#papi-ecloud-download) 下载。  
-    一个变量拓展是否在 eCloud 上可以在[变量列表](user-guides/placeholder-list.md)中浏览确认。
+    一个变量拓展是否在 eCloud 上可以在[变量列表](user-guides/placeholder-list/index.md)中浏览确认。
 
 * ### 插件是否支持 PlaceholderAPI
 
@@ -32,7 +32,7 @@
     请再三检查你的变量有无拼写错误。你可以使用 `/papi ecloud placeholders <变量拓展>`（将 `<变量拓展>` 替换为对应变量拓展的名称）来获取变量拓展注册的所有变量。  
     需要注意的是这只对 eCloud 上单独的变量拓展有效，那些插件内置的变量拓展不可以使用这个命令检查。
 
-    另外，eCloud 上显示的变量列表可能过时了。推荐你检查[变量列表](user-guides/placeholder-list.md)或浏览相关文档与维基来获悉详情。
+    另外，eCloud 上显示的变量列表可能过时了。推荐你检查[变量列表](user-guides/placeholder-list/index.md)或浏览相关文档与维基来获悉详情。
 
 * ### 插件是否已启用
 

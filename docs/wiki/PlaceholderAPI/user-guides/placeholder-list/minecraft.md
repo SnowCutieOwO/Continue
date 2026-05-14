@@ -1,15 +1,15 @@
 # 变量列表
 
-此为可用变量的列表。
+这里是适用于 Minecraft 的 PlaceholderAPI 变量拓展及变量列表。Minecraft 版本的变量列表请[点此前往](hytale.md)。
 
-拓展下方的提示框会包含下载的命令。  
-如果带有`内置`字样，则你无需手动下载变量拓展。  
+拓展下方的提示框会包含下载的命令。\
+如果带有`内置`字样，则你无需手动下载变量拓展。\
 如果带有链接，则你需要自行从链接处下载变量拓展并将其放入插件的 `expansions` 文件夹。
 
 ::: tip
 变量列表未经过任何改动，且不保证其准确性和/或时效性。
 
-本页只会在请求时更新。我们建议通过[提交推送请求](https://github.com/PlaceholderAPI/PlaceholderAPI/pulls)对本列表进行更新。
+本页只会在请求时更新。我们建议通过[提交推送请求](https://github.com/PlaceholderAPI/PlaceholderAPI/pulls)对本列表进行更新。\
 [本维基的自述页面](https://github.com/PlaceholderAPI/PlaceholderAPI/blob/wiki/README.md)解释了贡献相关的细节。
 :::
 
@@ -17,7 +17,7 @@
 
 ## 独立拓展
 
-在这里列出的拓展无需安装其他插件或外部库，除非其额外声明。  
+在这里列出的拓展无需安装其他插件或外部库，除非其额外声明。\
 这里的大部分变量都由本插件团队维护，可视作*官方*变量。
 
 ### Advancements
@@ -266,6 +266,26 @@
 %cooldownbar_percentage_{变量}_c:<冷却时间>%
 %cooldownbar_percentage_{变量}_d:<小数位数>%
 %cooldownbar_percentage_{essentials_kit_time_until_available_tools}_c:120_d:0%
+```
+
+### Distance
+
+::: tip papi ecloud download Distance
+:::
+
+这个变量提供了计算两点之间距离的功能。
+
+支持变量嵌套，但嵌套的变量应该用花括号 `{}` 代替百分号 `%`。
+
+更多信息可在其 [Github 仓库](https://github.com/Clexus/DistanceExpansion)上找到。
+
+`[]` 表示可选参数。
+
+``` txt
+%distance_x1,y1,z1[,x2,y2,z2][,小数位数]%
+%distance_player1[,player2][,小数位数]%
+%distance_player[,x,y,z][,小数位数]%
+%distance_UUID1[,UUID2][,小数位数]%
 ```
 
 ### Enchantment
@@ -779,6 +799,17 @@
 %rng_<最小值>,<最大值>%
 ```
 
+### Reparser
+
+::: tip papi ecloud download reparser
+:::
+
+将提供的内容解析两次。
+
+``` txt
+%reparser_<内容>%
+```
+
 ### ScoreboardObjectives
 
 ::: tip papi ecloud download ScoreboardObjectives
@@ -1029,6 +1060,17 @@
 ```
 
 示例：`%unicode_1000` 会解析为 `က`
+
+### UnixTime
+
+::: tip https://api.extendedclip.com/expansions/unixtime/
+:::
+
+``` txt
+%unixtime_[UNIX 时间格式]_[日期时间格式]%
+```
+
+例如：`%unixtime_1750277249389_dd.MM.yyyy-HH:mm:ss%` 会解析为 `18.06.2025 20:07:29`
 
 ### World
 
@@ -1633,11 +1675,23 @@
 ::: tip 内置于插件
 :::
 
+可以在 [SpigotMC 资源文档](https://www.spigotmc.org/resources/beautyquests.39255/field?field=documentation)上找到完整的变量列表。
+
 ``` txt
+%beautyquests_total_amount%
+%beautyquests_player_inprogress_amount%
 %beautyquests_player_inprogress_amount%
 %beautyquests_player_finished_amount%
+%beautyquests_player_finished_amount%
 %beautyquests_total_amount%
+%beautyquests_player_finished_total_amount%
 %beautyquests_advancement_ID%
+%beautyquests_started_ordered%
+%beautyquests_started_ordered_X%
+%beautyquests_advancement_X%
+%beautyquests_advancement_X_raw%
+%beautyquests_player_quest_finished_X%
+%beautyquests_started_id_list%
 ```
 
 ### [Bedwars1058](https://www.spigotmc.org/resources/50942/)
@@ -1902,15 +1956,33 @@
 %clans_colored_clan_tag%
 ```
 
-### [ClansFree](https://www.spigotmc.org/resources/78415/)
+### [Clans](https://www.spigotmc.org/resources/87515/)
 
 ::: tip 内置于插件
 :::
 
 ``` txt
-%clans_name%
-%clans_raidshield%
-%clans_rank%
+%clans_land_status% - 返回当前区域的关系状态
+%clans_land_chunk_map_line#% - 返回变量格式的占领区域地图数据，# 可替换为 1-5 范围内的数字，表示展示不同大小的样式。
+%clans_clan_name% - 返回玩家所处宗派的名称
+%clans_clan_description% - 返回玩家所处宗派的描述
+%clans_clan_color% - 返回玩家所处宗派的颜色
+%clans_clan_pvp_mode% - 返回玩家所处宗派的 PVP 状态
+%clans_clan_balance% - 返回玩家所处宗派的余额
+%clans_clan_power% - 返回玩家所处宗派的战力
+%clans_clan_top_slot_#% - 返回指定排名的宗派名称，# 表示排名。
+%clans_clan_top_slot_#_power% - 按战力排序，返回指定排名的宗派名称，# 表示排名。
+%clans_clan_top_slot_#_color% - 按颜色排序，返回指定排名的宗派名称，# 表示排名。
+%clans_clan_war_active% - 返回玩家所处竞技场的状态。
+%clans_clan_war_score% - 返回玩家所处宗派在竞技场中的分数。
+%clans_clan_war_hours% - 返回玩家所处宗派在竞技场中的战斗时间。
+%clans_clan_war_minutes% - 返回玩家所处宗派在竞技场中的战斗时间。
+%clans_clan_war_seconds% - 返回玩家所处宗派在竞技场中的战斗时间。
+%clans_clan_members_online% - 返回玩家所处宗派的在线玩家数量。
+%clans_member_rank% - 返回玩家所处宗派的当前等级名称。
+%clans_member_rank_short% - 返回玩家所处宗派的当前等级符号。
+%clans_member_bio% - 返回玩家宗派的自述。
+%clans_raidshield_status% - 返回玩家所处宗派的劫掠保护状态。
 ```
 
 ### [Clans-API Spigot/Clan 聊天标签](https://www.spigotmc.org/resources/31547/)
@@ -1921,33 +1993,6 @@
 ``` txt
 %clantagprovider_clantag_custom_design%
 %clantagprovider_clantag%
-```
-
-### [ClansPro](https://www.spigotmc.org/resources/87515/)
-
-::: tip 内置于插件
-:::
-
-``` txt
-%clanspro_clan_name%
-%clanspro_clan_description%
-%clanspro_clan_color%
-%clanspro_clan_pvp_mode%
-%clanspro_clan_balance%
-%clanspro_clan_power%
-%clanspro_clan_top_slot_位置%
-%clanspro_clan_top_slot_位置_power%
-%clanspro_clan_top_slot_位置_color%
-%clanspro_clan_war_active%
-%clanspro_clan_war_score%
-%clanspro_clan_war_hours%
-%clanspro_clan_war_minutes%
-%clanspro_clan_war_seconds%
-%clanspro_clan_members_online%
-%clanspro_member_rank%
-%clanspro_member_rank_short%
-%clanspro_member_bio%
-%clanspro_raidshield_status%
 ```
 
 ### [ClanSystem](https://www.spigotmc.org/resources/34696/)
@@ -2523,41 +2568,6 @@
 
 :::
 
-### [FunnyGuilds](https://github.com/FunnyGuilds/FunnyGuilds)
-
-::: tip 内置于插件
-:::
-
-``` txt
-%funnyguilds_guilds%
-%funnyguilds_users%
-%funnyguilds_deaths%
-%funnyguilds_kdr%
-%funnyguilds_kills%
-%funnyguilds_points-format%
-%funnyguilds_points%
-%funnyguilds_position%
-%funnyguilds_g-allies%
-%funnyguilds_g-deaths%
-%funnyguilds_g-deputies%
-%funnyguilds_g-deputy%
-%funnyguilds_g-kdr%
-%funnyguilds_g-kills%
-%funnyguilds_g-lives%
-%funnyguilds_g-members-all%
-%funnyguilds_g-members-online%
-%funnyguilds_g-name%
-%funnyguilds_g-owner%
-%funnyguilds_g-points-format%
-%funnyguilds_g-points%
-%funnyguilds_g-position%
-%funnyguilds_g-region-size%
-%funnyguilds_g-tag%
-%funnyguilds_g-validity%
-%funnyguilds_gtop-x%
-%funnyguilds_ptop-x%
-```
-
 ### GAListener
 
 ::: tip 内置于插件
@@ -2773,7 +2783,7 @@
 ``` txt
 %honeypot_current_count_broken%
 %honeypot_breaks_before_action%
-%honeypot_current_count_broken_<player>%
+%honeypot_current_count_broken_<玩家名称>%
 ```
 
 ### [HPWizard](https://www.spigotmc.org/resources/26821/)
@@ -2810,6 +2820,19 @@
 :::
 
 你可以在 [HyacinthHello 的维基](https://github.com/livelaughlemon/hyacinthhello/wiki#placeholders)中找到完整的变量列表。
+
+### [ImageFrame](https://www.spigotmc.org/resources/106031/)
+
+::: tip 内置于插件
+:::
+
+``` txt
+%imageframe_imagemap_"<玩家名称>:<图片地图>"_playback_bar_<长度>_[字符]_[当前部分前缀]_[剩余部分前缀]%
+%imageframe_imagemap_"<玩家名称>:<图片地图>"_playback_current%
+%imageframe_imagemap_"<玩家名称>:<图片地图>"_playback_total%
+%imageframe_imagemap_"<玩家名称>:<图片地图>"_playback_pause%
+%imageframe_player_preference_<偏好>%
+```
 
 ### [InteractionVisualizer](https://www.spigotmc.org/resources/77050/)
 
@@ -2967,7 +2990,7 @@
 ::: tip 内置于插件
 :::
 
-你可以在 [KingdomsX 的维基](https://github.com/CryptoMorin/KingdomsX/wiki/Placeholders)中找到完整的变量列表。
+你可以在 [KingdomsX 的维基](https://wiki.incredibleplugins.com/Lands/configuration/placeholderapi-placeholders)中找到完整的变量列表。
 
 ### [KP-PVP](https://www.spigotmc.org/resources/50969/)
 
@@ -4097,9 +4120,13 @@
 
 ``` txt
 %PTM_playtime%
+%PTM_afk_playtime%
 %PTM_playtime_#%
+%PTM_afk_playtime_#%
 %PTM_playtime_<玩家名称>%
+%PTM_afk_playtime_<玩家名称>%
 %PTM_playtime_#_<玩家名称>%
+%PTM_afk_playtime_#_<玩家名称>%
 %PTM_lastseen_<玩家名称>%
 %PTM_lastseen_elapsed_<玩家名称>%
 %PTM_lastseen_elapsed_#_<玩家名称>%
@@ -5844,8 +5871,8 @@ OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOxxxxxxxx
 %tokenenchant_<附魔名称>_version%
 %tokenenchant_<附魔名称>_fullrefund%
 %tokenenchant_<附魔名称>_fullrefund_long% : 已弃用. (若要规整格式, 请使用 NumberFormat 变量 %nf_%.) 
-%tokenenchnat_<附魔名称>_refund_Y%
-%tokenenchnat_<附魔名称>_refund_Y_long% : 已弃用. (若要规整格式, 请使用 NumberFormat 变量 %nf_%.) 
+%tokenenchant_<附魔名称>_refund_Y%
+%tokenenchant_<附魔名称>_refund_Y_long% : 已弃用. (若要规整格式, 请使用 NumberFormat 变量 %nf_%.) 
 %tokenenchant_<附魔名称>_alias%
 %tokenenchant_tokenmultiplier%
 %tokenenchant_<附魔名称>_occurrencemultiplier%
@@ -5999,6 +6026,27 @@ OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOxxxxxxxx
 %2fa_time_since_enabled%
 %2fa_key%
 %2fa_is_required%
+```
+
+### [UJobs](https://modrinth.com/plugin/ujobs)
+
+::: info 内置于插件
+:::
+
+变量的详细解释及示例可以在 [Modrinth](https://modrinth.com/plugin/ujobs) 上浏览。
+
+```
+ujobs_job_name_<职业名称>                      
+ujobs_job_displayname_<职业名称>
+ujobs_job_legacydisplayname_<职业名称>
+
+ujobs_player_level_<职业名称>
+ujobs_player_exp_<职业名称>
+ujobs_player_position_<职业名称>
+ujobs_player_totalmoney_<职业名称>
+
+ujobs_leaderboard_name_<职业名称>_<排名>
+ujobs_leaderboard_level_<职业名称>_<排名>
 ```
 
 ### [USkyBlock](https://www.spigotmc.org/resources/2280/)

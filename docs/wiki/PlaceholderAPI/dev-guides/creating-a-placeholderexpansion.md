@@ -1,5 +1,14 @@
 # 创建变量拓展
 
+::: warning 重要
+
+本页讲述的变量拓展编写步骤同时适用于 Spigot/Paper 系服务端及 Hytale 服务端！
+
+示例代码默认兼容上述平台，除非额外标出。\
+请留意 :material-plus-circle: 标志的代码块，可能会包含你需要的额外信息！
+
+:::
+
 本页将会讲述如何创建自己的 [`PlaceholderExpansion`](https://github.com/PlaceholderAPI/PlaceholderAPI/blob/master/src/main/java/me/clip/placeholderapi/expansion/PlaceholderExpansion.java)，用于自己的插件（推荐）或[上传至 eCloud](ecloud.md)。
 
 值得注意的是 PlaceholderAPI 依赖于其安装的拓展。PlaceholderAPI 仅进行核心的解析与替换工作，而拓展可以让其他插件在其消息内使用任何安装的变量。  
@@ -71,6 +80,17 @@ public class SomeExpansion extends PlaceholderExpansion {
         // * `params` - 非空的字符串，代表第一个 `%`（若为括号变量则为 `{`）与 `_`  之间的内容。
     }
 }
+
+    @Override
+    public String onPlaceholderRequest(PlayerRef player, @NotNull String params) {
+        // **注意：**只适用于 Hytale 平台的 PlaceholderAPI！
+        // 由 PlaceholderAPI 通过 onPlaceholderRequest(PlayerRef, String) 调用，借此解析变量。
+        // 返回 null 时，插件会将其视作无效变量，不对其作出改动。
+        // **参数：**
+        // * `player` - PlayerRef 实例，用作判断变量的玩家身份
+        // * `params` - 非空字符串，填入变量第一个下划线“_”之后，最后一个百分号“%”之前的内容（若是花括号“{}”变量，则为右半花括号“}”）
+        // 例如，要检测 %custom_placeholder_test% 变量，那么应该在这里填入 `placeholder_test`。
+    }
 ```
 
 ::: info
@@ -94,12 +114,20 @@ public class SomeExpansion extends PlaceholderExpansion {
 
 :::
 
-::: details 完整示例
-请浏览 [PlaceholderExpansion 基本结构](#placeholderexpansion-基本结构)部分来了解示例中的所有普通方法。
-``` Java [SomeExpansion.java]
-package at.helpch.placeholderapi.example.expansion;
+:::: details 完整示例
 
-import at.helpch.placeholderapi.example.SomePlugin;
+::: info
+
+* 请浏览 [PlaceholderExpansion 基本结构](#placeholderexpansion-基本结构)部分来了解示例中的所有普通方法。
+* 如下示例只适用于 Spigot 及 Paper 分支的服务端。
+  对于 Hytale 服务端，你需要将 `me.clip` 替换为 `at.helpch`，将 `OfflinePlayer` 替换为 `PlayerRef`（包括导入部分）
+
+:::
+
+``` Java title="SomeExpansion.java"
+package com.example.plugin.expansion;
+
+import com.example.plugin.SomePlugin;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.OfflinePlayer;
 import org.jetbrains.annotations.NotNull;
@@ -149,19 +177,21 @@ public class SomeExpansion extends PlaceholderExpansion {
     }
 }
 ```
-:::
+::::
 
 #### 注册你的变量拓展
 
 因为变量拓展是内部的，因此 PlaceholderAPI 不会自动载入它，我们需要手动完成这一步。  
-这可以通过创建一个变量拓展的新示例并调用其 `register()` 方法完成。
+这可以通过创建一个变量拓展的新示例并调用其 `register()` 方法完成：
 
-这里是一个简明示例：
+:::: tabs
 
-``` Java [SomePlugin.java]
-package at.helpch.placeholderapi.example;
+::: tab Spigot、Paper 等
 
-import at.helpch.placeholderapi.example.expansion.SomeExpansion;
+``` Java title="SomePlugin.java"
+package com.example.plugin;
+
+import com.example.plugin.expansion.SomeExpansion;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -176,6 +206,39 @@ public class SomePlugin extends JavaPlugin {
     }
 }
 ```
+:::
+
+::: tab Hytale
+
+``` Java title="SomePlugin.java"
+package com.example.plugin;
+
+import com.example.plugin.expansion.SomeExpansion;
+import com.hypixel.hytale.server.core.plugin.JavaPlugin;
+import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
+import com.hypixel.hytale.common.plugin.PluginIdentifier;
+import com.hypixel.hytale.server.core.HytaleServer;
+
+
+public class SomePlugin extends JavaPlugin {
+
+    public SomePlugin(JavaPluginInit init) {
+        super(init)
+    }
+
+    @Override
+    protected void start() {
+        if (HytaleServer.get().getPluginManager().getPlugin(PluginIdentifier.fromString("HelpChat:PlaceholderAPI")) != null) {
+            new SomeExpansion(this).register();
+        }
+    }
+}
+```
+
+:::
+
+::::
+
 ### 创建外部变量拓展
 
 外部变量拓展是位于 PlaceholderAPI 的 `expansions` 文件夹下的独立 Jar 文件，包含了 [`PlaceholderExpansion`](https://github.com/PlaceholderAPI/PlaceholderAPI/blob/master/src/main/java/me/clip/placeholderapi/expansion/PlaceholderExpansion.java) 的拓展类。  
@@ -189,12 +252,20 @@ public class SomePlugin extends JavaPlugin {
 外部变量拓展的好处包括可以通过 PlaceholderAPI 重载它，也可以将其上传至 eCloud，以通过[命令 `/papi ecloud download`](../user-guides/commands.md#papi-ecloud-download) 下载。  
 缺点就是为了检查对应插件是否存在，步骤会更加麻烦一些。
 
-::: details 完整实例（无依赖）
+:::: details 完整实例（无依赖）
+
+::: info
+
+* 请浏览 [PlaceholderExpansion 基本结构](#placeholderexpansion-基本结构)部分来了解示例中的所有普通方法。
+* 如下示例只适用于 Spigot 及 Paper 分支的服务端。
+  对于 Hytale 服务端，你需要将 `me.clip` 替换为 `at.helpch`，将 `OfflinePlayer` 替换为 `PlayerRef`（包括导入部分）
+
+:::
 
 请浏览 [PlaceholderExpansion 基本结构](#placeholderexpansion-基本结构)部分来了解示例中的所有普通方法。
 
-``` Java [SomeExpansion.java]
-package at.helpch.placeholderapi.example.expansion;
+``` Java title="SomeExpansion.java"
+package com.example.expansion;
 
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.OfflinePlayer;
@@ -235,16 +306,24 @@ public class SomeExpansion extends PlaceholderExpansion {
 }
 ```
 
-:::
+::::
 
-::: details 完整示例（有依赖）
+:::: details 完整示例（有依赖）
+
+::: info
+
+* 请浏览 [PlaceholderExpansion 基本结构](#placeholderexpansion-基本结构)部分来了解示例中的所有普通方法。
+* 如下示例只适用于 Spigot 及 Paper 分支的服务端。
+  对于 Hytale 服务端，你需要将 `me.clip` 替换为 `at.helpch`，将 `OfflinePlayer` 替换为 `PlayerRef`（包括导入部分）
+
+:::
 
 请浏览 [PlaceholderExpansion 基本结构](#placeholderexpansion-基本结构)部分来了解示例中的所有普通方法。
 
-``` Java [SomeExpansion.java]
-package at.helpch.placeholderapi.example.expansion;
+``` Java title="SomeExpansion.java"
+package com.example.expansion;
 
-import at.helpch.placeholderapi.example.SomePlugin;
+import com.example.plugin.SomePlugin;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
@@ -279,7 +358,9 @@ public class SomeExpansion extends PlaceholderExpansion {
     }
 
     @Override
-    public boolean canRegister() { // 这会实现两个目的：
+    public boolean canRegister() { 
+        // **注意**：这只在 Spigot/Paper 服务端上有效。尚未发现 Hytale 服务端的等价写法。
+        // 这会实现两个目的：
         // 1. 它将 `plugin` 的实例通过 Bukkit 的 PluginManager 设置为 `SomePlugin`，返回了一个能分配到 `SomePlugin` 的 JavaPlugin 实例。
         // 2. 它会检查返回的实例是否非空。如果是，则会使得 `canRegister()` 返回 false，使得 PlaceholderAPI 不注册我们的变量拓展。
         return (plugin = (SomePlugin) Bukkit.getPluginManager().getPlugin(getRequiredPlugin())) != null;
@@ -299,13 +380,14 @@ public class SomeExpansion extends PlaceholderExpansion {
     }
 }
 ```
-:::
+::::
 
 ### 创建相对变量拓展
 
 ::: info 
 
-相对变量总是以 `rel_` 开头以便于区分，这意味着如果你制作了一个名为 `friend_is_friend` 的相对变量，则其完整用法为 `%rel_friend_is_friend%`。
+* 相对变量总是以 `rel_` 开头以便于区分，这意味着如果你制作了一个名为 `friend_is_friend` 的相对变量，则其完整用法为 `%rel_friend_is_friend%`。
+* 对于 Hytale，请将 `Player` 替换为 `PlayerRef`，并将导入代码替换为 `at.helpch` 或者其他适用于 Hytale 的写法。
 
 :::
 
@@ -314,14 +396,18 @@ public class SomeExpansion extends PlaceholderExpansion {
 若要创建一个相对变量，你需要先继承一个 [`Relational`](https://github.com/PlaceholderAPI/PlaceholderAPI/blob/master/src/main/java/me/clip/placeholderapi/expansion/Relational.java) 实例至你的变量拓展。你还需要拓展 [`PlaceholderExpansion`](https://github.com/PlaceholderAPI/PlaceholderAPI/blob/master/src/main/java/me/clip/placeholderapi/expansion/PlaceholderExpansion.java) 类。  
 继承这个实例会添加一个 `onPlaceholderRequest(Player, Player, String)`，前两个参数为第一及第二个玩家，而第三个参数则是第二个 `_` 之后与最后 `%` 之前的内容（或者若变量为括号变量，则为 `}`）。
 
-::: details 完整示例
+:::: details 完整示例
+
+::: info
 
 请浏览 [PlaceholderExpansion 基本结构](#placeholderexpansion-基本结构)部分来了解示例中的所有普通方法。
+
+:::
 
 这是一个使用相对变量的完整示例。  
 为了简明，我们在这里使用了内部变量拓展的安装方法并假设 `SomePlugin` 提供了一个 `areFriends(Player, Player)`，能基于玩家是否为好友返回 true 或 false 的方法。
 
-``` Java [SomeExpansions.java]
+``` Java title="SomeExpansions.java"
 package at.helpch.placeholderapi.example.expansion;
 
 import at.helpch.placeholderapi.example.SomePlugin;
@@ -384,4 +470,4 @@ public class SomeExpansion extends PlaceholderExpansion implements Relational {
 
 别忘了[注册你的变量](#注册你的变量拓展)。
 
-:::
+::::

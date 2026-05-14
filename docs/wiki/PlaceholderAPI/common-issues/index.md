@@ -4,7 +4,13 @@
 
 如果你还有更多问题，欢迎进入 [Discord 频道](https://discord.gg/helpchat)询问。
 
-## `java.lang.NoClassDefFoundError: com/google/gson/Gson¶`
+## eCloud 下载失败/连接被阻止
+
+如果你的托管商或网络阻止了拓展云（eCloud）的出站流量，PlaceholderAPI 就无法通过游戏内命令下载变量拓展。
+
+详见：[eCloud 连接被阻止](ecloud-connection-blocked.md)
+
+## `java.lang.NoClassDefFoundError: com/google/gson/Gson`
 
 ``` log
 org.bukkit.plugin.InvalidPluginException: java.lang.NoClassDefFoundError: com/google/gson/Gson

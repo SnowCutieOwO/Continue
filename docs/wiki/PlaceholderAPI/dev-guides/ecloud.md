@@ -4,7 +4,7 @@
 
 PlaceholderAPI 使用了一个拓展云（存储了各种各样的拓展），来下载包含变量的 .jar 文件。
 
-拓展云可以从 https://api.extendedclip.com/home 访问。
+拓展云可以从 https://ecloud.placeholderapi.com 访问。
 
 ## 运作方式
 
@@ -26,7 +26,7 @@ PlaceholderAPI 只能下载 eCloud 上经过验证的变量拓展。任何未验
 
 1. 确保你按照“[创建变量拓展](creating-a-placeholderexpansion.md#创建变量拓展)”章节所述的，制作了一个单独的 jar 文件。
 2. 在网站上注册或登录账号。
-3. 点击 `变量拓展（Expansions）`，再点击 [`上传（Upload New）`](https://api.extendedclip.com/manage/add/)。
+3. 点击 `变量拓展（Expansions）`，再点击 [`上传（Upload New）`](https://ecloud.placeholderapi.com/expansions/new/)。
 4. 填入必要信息。`原链接（Source URL）` 和 `依赖链接（Dependency URL）`是可选的，你可以使用它们添加源代码链接及依赖插件的链接。
 5. 点击 `选择文件（Choose an file...）` 按钮并选择你的 .jar 拓展文件。
 
@@ -54,7 +54,7 @@ PlaceholderAPI 只能下载 eCloud 上经过验证的变量拓展。任何未验
 在你更新前，请先阅读如下内容：  
 更新变量会使得其自动变为未经验证，需要网站管理员再次验证。这是为了防止病毒上传或扩散。
 
-若要更新你的变量拓展，你首先需要进入[你的变量拓展列表](https://api.extendedclip.com/manage/)。  
+若要更新你的变量拓展，你首先需要进入[你的变量拓展列表](https://ecloud.placeholderapi.com/expansions/manage/)。  
 在那里点击 `变量拓展（Expansions）` 并点选 `你的变量拓展（Your Expansions）`。  
 在此之后，按如下步骤进行：
 

@@ -1,6 +1,8 @@
-# 使用 PlacholderAPI 的插件
+# Minecraft
 
 这里是所有支持 PlaceholderAPI 的插件列表。这些插件提供了自己的变量，或是能够解析其他插件的变量。
+
+如果这里没有你的插件，你可以浏览[维基的自述文件](https://github.com/PlaceholderAPI/PlaceholderAPI/blob/wiki/README.md)，通过拉取请求让维基收录。
 
 ## 插件列表
 
@@ -8,55 +10,55 @@
 
 ### A
 
-* [AAC - AdvancedAntiCheat](https://www.spigotmc.org/resources/6442/)
+* AAC - AdvancedAntiCheat
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#aac)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#aac)
 
 * [AbstractMenus](https://www.spigotmc.org/resources/75107/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#abstractmenus)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#abstractmenus)
 
 * [AcidIsland](https://www.spigotmc.org/resources/581/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#acidisland)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#acidisland)
 
 * [Advanced Abilities](https://www.spigotmc.org/resources/21983/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#advanced-abilities)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#advanced-abilities)
 
 * [Advanced Achievements](https://www.spigotmc.org/resources/83466/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#advanced-achievements)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#advanced-achievements)
 
 * [AdvancedAFK](https://www.spigotmc.org/resources/60761/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#advancedafk)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#advancedafk)
 
 * [AdvancedCustomMenu+](https://www.spigotmc.org/resources/47945/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#advancedcustommenu)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#advancedcustommenu)
 
 * [AdvancedLottery](https://www.spigotmc.org/resources/43668/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#advancedlottery)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#advancedlottery)
 
 * [AdvancedModReq](https://www.spigotmc.org/resources/40528/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#advancedmodreq)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#advancedmodreq)
 
 * [AdvancedServerList](https://modrinth.com/plugin/advancedserverlist)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#advancedserverlist)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#advancedserverlist)
 
 * [Advance Tab](https://www.spigotmc.org/resources/21958/)
 
@@ -66,17 +68,17 @@
 * [ajParkour](https://www.spigotmc.org/resources/60909/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#ajparkour)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#ajparkour)
 
 * [AlonsoLevels](https://www.spigotmc.org/resources/83380/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#alonsolevels)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#alonsolevels)
 
 * [AngelChest](https://www.spigotmc.org/resources/60383/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#angelchest)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#angelchest)
 
 * [AnimatedBoard](https://www.spigotmc.org/resources/13632/)
 
@@ -90,7 +92,7 @@
 * [Animated Menu](https://www.spigotmc.org/resources/4690/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#animated-menu)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#animated-menu)
 
 * [AnimatedSpecialBar](https://www.spigotmc.org/resources/24654/)
 
@@ -105,22 +107,22 @@
 * [AParkour](https://www.spigotmc.org/resources/30923/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#aparkour)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#aparkour)
 
 * [ASkyBlock](https://www.spigotmc.org/resources/1220/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#askyblock)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#askyblock)
 
 * [AsyncKeepAlive](https://www.spigotmc.org/resources/64676/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#asynckeepalive)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#asynckeepalive)
 
 * [Ath](https://www.spigotmc.org/resources/87124/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#ath)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#ath)
 
 * [AutoCommandsPlus](https://www.spigotmc.org/resources/11083/)
 
@@ -130,19 +132,19 @@
 * [AutoRank](https://www.spigotmc.org/resources/3239/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#autorank)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#autorank)
 
 * [AutoSell](https://www.spigotmc.org/resources/2157/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#autosell)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#autosell)
 
 ### B
 
 * [BankSystem](https://www.spigotmc.org/resources/61580/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#banksystem)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#banksystem)
 
 * [BannerBoard](https://www.spigotmc.org/resources/20435/)
 
@@ -152,37 +154,37 @@
 * [BasicQuests](https://www.spigotmc.org/resources/87972/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#basicquests)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#basicquests)
 
 * [BattleLevels](https://www.spigotmc.org/resources/2218/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#battlelevels)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#battlelevels)
 
 * [BeautyQuests](https://www.spigotmc.org/resources/39255/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#beautyquests)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#beautyquests)
 
 * [BedWars1058](https://www.spigotmc.org/resources/50942/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#bedwars1058)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#bedwars1058)
 
 * [BentoBox](https://github.com/BentoBoxWorld/BentoBox)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#bentobox)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#bentobox)
 
 * [BetonQuest](https://www.spigotmc.org/resources/2117/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#betonquest)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#betonquest)
 
 * [BetterTeams](https://www.spigotmc.org/resources/17129/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#betterteams)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#betterteams)
 
 * [Big Doors Opener](https://www.spigotmc.org/resources/80805/)
 
@@ -192,12 +194,12 @@
 * [BlockParty](https://www.spigotmc.org/resources/7264/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#blockparty)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#blockparty)
 
 * [BlockQuests](https://www.spigotmc.org/resources/32729/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#blockquest)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#blockquest)
 
 * [BookStats](https://www.spigotmc.org/resources/4313/)
 
@@ -217,7 +219,7 @@
 * [Boxing](https://www.spigotmc.org/resources/83879/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#boxing)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#boxing)
 
 * [Broadcaster Plugin](https://dev.bukkit.org/projects/broadcaster-plugin)
 
@@ -227,19 +229,19 @@
 * [BuildBattlePro](https://www.spigotmc.org/resources/49587/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#buildbattlepro)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#buildbattlepro)
 
 * [BungeePerms](https://www.spigotmc.org/resources/25/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#bungeeperms)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#bungeeperms)
 
 ### C
 
 * [CarlTheCreeper](https://www.spigotmc.org/resources/18008/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#carlthecreeper)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#carlthecreeper)
 
 * [Characters Premium](https://www.spigotmc.org/resources/45142/)
   - [x] 支持变量解析。
@@ -253,12 +255,12 @@
 * [ChatColor+](https://www.spigotmc.org/resources/1546/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#chatcolor)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#chatcolor)
 
 * [ChatColor+ Premium](https://www.spigotmc.org/resources/54093/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#chatcolor-premium)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#chatcolor-premium)
 
 * [ChatControl Pro](https://www.spigotmc.org/resources/10258/)
 
@@ -278,12 +280,12 @@
 * [ChatReaction](https://www.spigotmc.org/resources/3748/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#chatreaction)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#chatreaction)
 
 * [CheckNameHistory](https://www.spigotmc.org/resources/3768/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#checknamehistory)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#checknamehistory)
 
 * [ChestCommands](https://dev.bukkit.org/projects/chest-commands)
 
@@ -298,27 +300,22 @@
 * [ClaimChunk](https://www.spigotmc.org/resources/44458/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#claimchunk)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#claimchunk)
 
 * [面向 Spigot 的 Clans-API/聊天公会标签](https://www.spigotmc.org/resources/31547/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#clans-api-for-spigotclan-tag-in-chat)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#clans-api-for-spigotclan-tag-in-chat)
 
 * [Clans](https://www.spigotmc.org/resources/34696/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#clans)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#clans)
 
-* [ClansFree](https://www.spigotmc.org/resources/78415/)
-
-  - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#clansfree)
-
-* [ClansPro](https://www.spigotmc.org/resources/87515/)
+* [ClansPro](https://www.spigotmc.org/resources/87515/)（[预览版](https://www.spigotmc.org/resources/78415/)）
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#clanspro)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#clans-1)
 
 * [ClicksPerSecond](https://www.spigotmc.org/resources/57214/)
 
@@ -333,7 +330,7 @@
 * [CombatLogX](https://www.spigotmc.org/resources/31689/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#combatlogx)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#combatlogx)
 
 * [CommandConditions](https://www.spigotmc.org/resources/41736/)
 
@@ -343,22 +340,22 @@
 * [Compassance](https://www.spigotmc.org/resources/18327/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#compassance)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#compassance)
 
 * [Country on Join](https://www.spigotmc.org/resources/34275/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#country-on-join)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#country-on-join)
 
 * [CraftConomy](https://www.spigotmc.org/resources/2395/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#craftconomy)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#craftconomy)
 
 * [CraftingStore.net](https://www.spigotmc.org/resources/31331/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#craftingstorenet)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#craftingstorenet)
 
 * [CTSNC](https://www.spigotmc.org/resources/10714/)
 
@@ -368,7 +365,7 @@
 * [CursedVIP](https://www.spigotmc.org/resources/67068/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#cursedvip)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#cursedvip)
 
 * [CustomCommands](https://www.spigotmc.org/resources/14363/)
 
@@ -393,7 +390,7 @@
 * [Custom Items](https://www.spigotmc.org/resources/63848/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#custom-items)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#custom-items)
 
 * [CustomSigns](https://www.spigotmc.org/resources/63569/)
 
@@ -405,7 +402,7 @@
 * [Daily Rewards](https://www.spigotmc.org/resources/16708)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#daily-rewards)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#daily-rewards)
 
 * [DeathMsgEdit](https://www.spigotmc.org/resources/116017/)
 
@@ -420,17 +417,17 @@
 * [DeliveryMan](https://www.spigotmc.org/resources/14131/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#deliveryman)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#deliveryman)
 
 * [DeluxeChat](https://www.spigotmc.org/resources/1277/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#deluxechat)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#deluxechat)
 
 * [DeluxeCombat](https://www.spigotmc.org/resources/63970/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#deluxecombat)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#deluxecombat)
 
 * [DeluxeCommands](https://www.spigotmc.org/resources/8033/)
 
@@ -440,54 +437,54 @@
 * [DeluxeMenus](https://www.spigotmc.org/resources/11734/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#deluxemenus)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#deluxemenus)
 
 * [DeluxeTags](https://www.spigotmc.org/resources/4390/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#deluxetags)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#deluxetags)
 
 * [Depinezen](https://github.com/DenizenScript/Depenizen-For-Bukkit/blob/master/README.md)（对于 [Denizen](https://www.spigotmc.org/resources/21039/)）
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#denizen)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#denizen)
 
 * [DiscordSRV](https://www.spigotmc.org/resources/18494/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#discordsrv)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#discordsrv)
 
 * [Disease](https://www.spigotmc.org/resources/3911/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#disease)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#disease)
 
 * [Donations Holograms](https://www.spigotmc.org/resources/1956/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#donations-holograms)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#donations-holograms)
 
 * [DragonSlayer](https://www.spigotmc.org/resources/36250/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#dragonslayer)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#dragonslayer)
 
 * [DungeonsXL](https://www.spigotmc.org/resources/9488/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#dungeonsxl)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#dungeonsxl)
 
 ### E
 
 * [Economy Bank](https://www.spigotmc.org/resources/7674/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#economy-bank)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#economy-bank)
 
 * [Enjin & DonationCraft 2.x](https://dev.bukkit.org/projects/emp)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#enjin-donationcraft-2x)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#enjin-donationcraft-2x)
 
 * [Enhanced BalTop](https://www.spigotmc.org/resources/20168/)
 
@@ -496,12 +493,12 @@
 * [EntityClearer](https://www.spigotmc.org/resources/90802/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#entityclearer)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#entityclearer)
 
 * [Envoys](https://www.spigotmc.org/resources/20357/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#envoys)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#envoys)
 
 * [EpicCraftingsPlus](https://www.spigotmc.org/resources/39967/)
 
@@ -511,12 +508,12 @@
 * [EpicFriends](https://www.spigotmc.org/resources/11294/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#epicfriends)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#epicfriends)
 
 * [EpicLevels](https://songoda.com/marketplace/product/44)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#epiclevels)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#epiclevels)
 
 * [Ersatz](https://www.spigotmc.org/resources/49433/)
 
@@ -526,22 +523,22 @@
 * [essCore](https://www.spigotmc.org/resources/37766/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#esscore)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#esscore)
 
 * [Essentials](https://ci.ender.zone/job/EssentialsX/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#essentials)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#essentials)
 
 * [EventCore](https://www.spigotmc.org/resources/113142/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#eventcore)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#eventcore)
 
 * [EZBlocks](https://www.spigotmc.org/resources/1499/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#ezblocks)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#ezblocks)
 
 * [EzChat](https://www.spigotmc.org/resources/75048/)
 
@@ -551,12 +548,12 @@
 * [EZPrestige](https://www.spigotmc.org/resources/1794/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#ezprestige)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#ezprestige)
 
 * [EZRanksPro](https://www.spigotmc.org/resources/10731/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#ezrankspro)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#ezrankspro)
 
 ### F
 
@@ -568,17 +565,12 @@
 * [Factions MCore](https://www.spigotmc.org/resources/1900/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#factions-mcore)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#factions-mcore)
 
 * [FactionsUUID](https://www.spigotmc.org/resources/1035/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#factionsuuid)
-
-* [FunnyGuilds](https://github.com/FunnyGuilds/FunnyGuilds)
-
-  - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#funnyguilds)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#factionsuuid)
 
 * [FriendReferral](https://www.spigotmc.org/resources/21626/)
 
@@ -590,32 +582,32 @@
 * [GangsPlus](https://www.spigotmc.org/resources/2604/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#gangsplus)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#gangsplus)
 
 * [GemsEconomy](https://www.spigotmc.org/resources/19655/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#gemseconomy)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#gemseconomy)
 
 * [GriefDefender](https://www.spigotmc.org/resources/68900/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#griefdefender)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#griefdefender)
 
 * [GriefPrevention](https://www.spigotmc.org/resources/1884/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#griefprevention)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#griefprevention)
 
 * [GrimAC](https://modrinth.com/plugin/grimac/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。 [链接](placeholder-list.md#grimac)
+  - [x] 自行提供变量。 [链接](../placeholder-list/minecraft.md#grimac)
 
 * [Guilds](https://www.spigotmc.org/resources/48920/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#guilds)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#guilds)
 
 * [GUIPlus](https://www.spigotmc.org/resources/38664/)
   - [x] 支持变量解析。
@@ -631,54 +623,54 @@
 * [Head Database](https://www.spigotmc.org/resources/14280/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#head-database)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#head-database)
 
 * [Heroes](https://www.spigotmc.org/resources/305/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#heroes)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#heroes)
 
 * [HoloBlock](https://www.spigotmc.org/resources/43192/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#holoblock)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#holoblock)
 
 * [HoloMobHealth](https://www.spigotmc.org/resources/75975/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#holomobhealth)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#holomobhealth)
 
 * [Honeypot](https://www.spigotmc.org/resources/96665)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#honeypot)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#honeypot)
 
 * [HPWizard](https://www.spigotmc.org/resources/26821/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#hpwizard)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#hpwizard)
 
 * [Hugs](https://www.spigotmc.org/resources/hugs.39722/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#hugs)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#hugs)
 
 ### I
 
 * [InteractionVisualizer](https://www.spigotmc.org/resources/77050/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#interactionvisualizer)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#interactionvisualizer)
 
 * [InteractiveChat](https://www.spigotmc.org/resources/75870/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#interactivechat)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#interactivechat)
 
 * [IslandRate](https://www.spigotmc.org/resources/53519/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#islandrate)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#islandrate)
 
 * [ItemJoin](https://www.spigotmc.org/resources/12661/)
 
@@ -694,7 +686,7 @@
 * [Jobs Reborn](https://www.spigotmc.org/resources/4216/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#jobs-reborn)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#jobs-reborn)
 
 * [JSONChat](https://www.spigotmc.org/resources/17744/)
 
@@ -706,39 +698,39 @@
 * [Karma](https://www.spigotmc.org/resources/71156/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#karma)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#karma)
 
 * [KillStats](http://dev.bukkit.org/bukkit-plugins/killstats-v1-0/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#killstats)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#killstats)
 
 * [KitPvP](https://www.spigotmc.org/resources/27107/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#kitpvp)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#kitpvp)
 
 * [KP-PVP](https://www.spigotmc.org/resources/50969/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#kp-pvp)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#kp-pvp)
 
 ### L
 
 * [Lands](https://www.spigotmc.org/resources/53313/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#lands)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#lands)
 
 * [LastLoginAPI](https://www.spigotmc.org/resources/66348/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#lastloginapi)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#lastloginapi)
 
 * [LeaderHeads](https://www.spigotmc.org/resources/2079/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#leaderheads)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#leaderheads)
 
 * [Leak Parkour](https://www.spigotmc.org/resources/12852/)
 
@@ -748,69 +740,69 @@
 * [LegendQuest](https://www.spigotmc.org/resources/2120/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#legendquest)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#legendquest)
 
 * [LemonMobCoins](https://www.spigotmc.org/resources/59402/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#lemonmobcoins)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#lemonmobcoins)
 
 * [LevelledMobs](https://www.spigotmc.org/resources/levelledmobs-for-1-14-x-1-17-x.74304/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#levelledmobs)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#levelledmobs)
 
 * [LotterySix](https://www.spigotmc.org/resources/107573/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#lotterysix)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#lotterysix)
 
 * [LuckPerms](https://www.spigotmc.org/resources/28140/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#luckperms)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#luckperms)
 
 * [LWC (Modern LWC)](https://www.spigotmc.org/resources/2162/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#lwc)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#lwc)
 
 ### M
 
 * [Marcely's Bedwars](https://www.spigotmc.org/resources/13622/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#marcelys-bedwars)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#marcelys-bedwars)
 
 * [Marriage](https://www.spigotmc.org/resources/81807/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#marriage)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#marriage)
 
 * [Marriage (reloaded)](https://www.spigotmc.org/resources/18998/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#marriage-reloaded)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#marriage-reloaded)
 
 * [MarriageMaster](http://dev.bukkit.org/bukkit-plugins/marriage-master/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#marriagemaster)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#marriagemaster)
 
 * [MCInfected](https://www.spigotmc.org/resources/2133/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#mcinfected)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#mcinfected)
 
 * [McJobs](https://dev.bukkit.org/projects/mcjobs/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#mcjobs)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#mcjobs)
 
 * [McMMO](https://www.spigotmc.org/resources/2445/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#mcmmo)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#mcmmo)
 
 * [Menu](https://www.spigotmc.org/resources/50658/)
 
@@ -820,17 +812,17 @@
 * [MineChess](https://www.spigotmc.org/resources/74178/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#minechess)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#minechess)
 
 * [Minecord](https://www.spigotmc.org/resources/44055/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#minecord)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#minecord)
 
 * [MineCrates](https://www.spigotmc.org/resources/4685/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#minecrates)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#minecrates)
 
 * [MinetopiaSDB](https://www.spigotmc.org/resources/28830/)
 
@@ -845,7 +837,7 @@
 * [MobHunting](https://www.spigotmc.org/resources/3582/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#mobhunting)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#mobhunting)
 
 * [MultiChat](https://www.spigotmc.org/resources/26204/)
 
@@ -860,7 +852,7 @@
 * [Multiverse-Core](https://www.spigotmc.org/resources/390/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#multiverse-core)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#multiverse-core)
 
 * [MurderMystery 2](https://www.spigotmc.org/resources/36894/)
 
@@ -870,61 +862,61 @@
 * [MyCommand](http://dev.bukkit.org/bukkit-plugins/mycommand/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#mycommand)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#mycommand)
 
 * [MyPet](https://www.spigotmc.org/resources/12725/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#mypet)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#mypet)
 
 * [MyPrefixSystem](https://www.spigotmc.org/resources/46244/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#myprefixsystem)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#myprefixsystem)
 
 ### N
 
 * [NameColor](https://modrinth.com/plugin/namecolor)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#namecolor)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#namecolor)
 
 * [Nameless Plugin](https://www.spigotmc.org/resources/59032/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#nameless-plugin)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#nameless-plugin)
 
 * [NameMC-API-ServersMC](https://www.spigotmc.org/resources/88871/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#namemc-api-serversmc)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#namemc-api-serversmc)
 
 * [Nicknamer](https://www.spigotmc.org/resources/5341/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#nicknamer)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#nicknamer)
 
 * [NickReloaded](https://www.spigotmc.org/resources/46335/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#nickreloaded)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#nickreloaded)
 
 * [Nicky](https://www.spigotmc.org/resources/590/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#nicky)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#nicky)
 
 ### O
 
 * [OneBlock](https://www.spigotmc.org/resources/83215/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#oneblock)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#oneblock)
 
 * [OnePlayerSleep](https://www.spigotmc.org/resources/76534/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#oneplayersleep)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#oneplayersleep)
 
 * [OneTimeUse](https://www.spigotmc.org/resources/13907/)
 
@@ -934,59 +926,59 @@
 * [OnTime](http://dev.bukkit.org/bukkit-plugins/ontime/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#ontime)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#ontime)
 
 * [OpEconomy](https://www.spigotmc.org/resources/95674)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#opeconomy)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#opeconomy)
 
 * [OreAnnouncer](https://www.spigotmc.org/resources/33464/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#oreannouncer)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#oreannouncer)
 
 * [OreMarket](https://www.spigotmc.org/resources/91015/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#oremarket)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#oremarket)
 
 * [Outpost](https://www.spigotmc.org/resources/38657/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#outpost)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#outpost)
 
 ### P
 
 * [P-LifeSteal](https://www.spigotmc.org/resources/101967/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#p-lifesteal)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#p-lifesteal)
 
 * [Paintball Battle](https://www.spigotmc.org/resources/76676/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#paintball-battle)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#paintball-battle)
 
 * [Parkour](https://www.spigotmc.org/resources/23685/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#parkour)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#parkour)
 
 * [ParkPlusMC](https://polymart.org/resource/parkplusmc.2317)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#parkplusmc)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#parkplusmc)
 
 * [Parties](https://www.spigotmc.org/resources/3709/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#parties)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#parties)
 
 * [Party and Friends](https://www.spigotmc.org/resources/11633/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#party-and-friends)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#party-and-friends)
 
 * [PingTest](https://www.spigotmc.org/resources/69580/)
 
@@ -996,12 +988,12 @@
 * [PixelVip](https://www.spigotmc.org/resources/30438/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#pixelvip)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#pixelvip)
 
 * [Plan](https://www.spigotmc.org/resources/32536/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#plan)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#plan)
 
 * [PlayerBalancerAddon](https://www.spigotmc.org/resources/51220/)
 
@@ -1011,43 +1003,43 @@
 * [PlayerStats](https://www.spigotmc.org/resources/102347/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#playerstats)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#playerstats)
 
 * [PlayTime](https://www.spigotmc.org/resources/26016/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#playtime)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#playtime)
 
 
 * [PlayTimeManager](https://modrinth.com/plugin/playtimemanager)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#playtimemanager)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#playtimemanager)
 
 * [PlaytimeRewards](https://www.spigotmc.org/resources/100231/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#playtimerewards)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#playtimerewards)
 
 * [PlayerPoints](http://dev.bukkit.org/bukkit-plugins/playerpoints/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#playerpoints)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#playerpoints)
 
 * [PlotSquared](https://www.spigotmc.org/resources/1177/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#plotsquared)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#plotsquared)
 
 * [PocketHorses](https://www.spigotmc.org/resources/111158/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#pockethorses)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#pockethorses)
 
 * [PointsAPI](https://www.spigotmc.org/resources/13957/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#pointsapi)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#pointsapi)
 
 * [Potatoes](https://www.spigotmc.org/resources/12353/)
 
@@ -1057,47 +1049,47 @@
 * [PowerBoard](https://www.spigotmc.org/resources/73854)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#powerboard)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#powerboard)
 
 * [PowerRanks](https://www.spigotmc.org/resources/64696/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#powerranks)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#powerranks)
 
 * [PrefiX](https://www.spigotmc.org/resources/70359/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#prefix)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#prefix)
 
 * [PremiumReports](https://www.spigotmc.org/resources/111482/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#premiumreports)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#premiumreports)
 
 * [PremiumVanish](https://www.spigotmc.org/resources/14404/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#premiumvanish)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#premiumvanish)
 
 * [Prison](https://www.spigotmc.org/resources/1223/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#prison)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#prison)
 
 * [PrisonMines](https://www.spigotmc.org/resources/4046/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#prisonmines)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#prisonmines)
 
 * [PrisonRanksX](https://www.spigotmc.org/resources/55899/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#prisonranksx)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#prisonranksx)
 
 * [ProCosmetics](https://www.spigotmc.org/resources/49106/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#procosmetics)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#procosmetics)
 
 * [ProdigyGadget](https://www.spigotmc.org/resources/1335/)
 
@@ -1107,17 +1099,17 @@
 * [ProfessionalBans](https://www.spigotmc.org/resources/63657/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#professionalbans)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#professionalbans)
 
 * [ProQuest](https://www.spigotmc.org/resources/18249/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#proquest)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#proquest)
 
 * [ProtectionStones](https://www.spigotmc.org/resources/61797/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#protectionstones)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#protectionstones)
 
 * [PurpleIRC](https://www.spigotmc.org/resources/2836/)
 
@@ -1127,22 +1119,22 @@
 * [PvPLevels](https://www.spigotmc.org/resources/20807/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#pvplevels)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#pvplevels)
 
 * [PvPManager](https://www.spigotmc.org/resources/845/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#pvpmanager)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#pvpmanager)
 
 * [PvP Stats](http://dev.bukkit.org/bukkit-plugins/pvp-stats/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#pvp-stats)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#pvp-stats)
 
 * [PvPStats Plugin](https://www.spigotmc.org/resources/69984/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#pvpstats-plugin)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#pvpstats-plugin)
 
 * [PyrCore](https://www.spigotmc.org/resources/24180/)
 
@@ -1154,17 +1146,17 @@
 * [QualityArmory](https://www.spigotmc.org/resources/6107/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#qualityarmory)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#qualityarmory)
 
 * [Quests](https://www.spigotmc.org/resources/3711/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#quests)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#quests)
 
 * [QuestCreator](https://www.spigotmc.org/resources/38734/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#questcreator)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#questcreator)
 
 * [QuickBoard](https://www.spigotmc.org/resources/15057/)
 
@@ -1174,19 +1166,19 @@
 * [QuickSell](https://www.spigotmc.org/resources/6107/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#quicksell)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#quicksell)
 
 ### R
 
 * [RabbitsVSPenguins](https://www.spigotmc.org/resources/65277/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#rabbitsvspenguins)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#rabbitsvspenguins)
 
 * [RageMode](https://www.spigotmc.org/resources/69169/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#ragemode)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#ragemode)
 
 * [RankedHelp](https://www.spigotmc.org/resources/61919/)
 
@@ -1201,7 +1193,7 @@
 * [Rankup](https://www.spigotmc.org/resources/17933/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#rankup)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#rankup)
 
 * [RawMSG](https://www.spigotmc.org/resources/35864/)
 
@@ -1211,12 +1203,12 @@
 * [RealisticWorldGenerator](https://www.spigotmc.org/resources/15905/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#realisticworldgenerator)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#realisticworldgenerator)
 
 * [RedProtect](http://spigotmc.org/resources/15841/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#redprotect)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#redprotect)
 
 * [ReporterGUI](https://www.spigotmc.org/resources/8596/)
 
@@ -1226,7 +1218,7 @@
 * [RestrictedDimensions](http://spigotmc.org/resources/80574/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#restricteddimensions)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#restricteddimensions)
 
 * [RocketJoin](https://www.spigotmc.org/resources/82520/)
 
@@ -1235,22 +1227,22 @@
 * [RocketPlaceholders](https://www.spigotmc.org/resources/82678/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#rocketplaceholders)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#rocketplaceholders)
 
 * [RogueParkour](https://www.spigotmc.org/resources/26563/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#rogueparkour)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#rogueparkour)
 
 * [RoyalCommands](https://www.spigotmc.org/resources/4113/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#royalcommands)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#royalcommands)
 
 * [ReferralSystem](https://www.spigotmc.org/resources/29709/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#referralsystem)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#referralsystem)
 
 * [Residence](https://www.spigotmc.org/resources/11480/)
 
@@ -1260,12 +1252,12 @@
 * [RPGInventory](https://www.spigotmc.org/resources/12498/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#rpginventory)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#rpginventory)
 
 * [RTP](https://www.spigotmc.org/resources/94812/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#rtp)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#rtp)
 
 ### S
 
@@ -1287,12 +1279,12 @@
 [Seasons](https://www.spigotmc.org/resources/39298/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#seasons)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#seasons)
 
 * [SellAll](https://www.spigotmc.org/resources/1221/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#sellall)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#sellall)
 
 * [Server List/Staff List](https://www.spigotmc.org/resources/15119/)
 
@@ -1307,7 +1299,7 @@
 * [SignLink](https://www.spigotmc.org/resources/39593/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#signlink)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#signlink)
 
 * [SimpleBoard](https://www.spigotmc.org/resources/39597/)
 
@@ -1317,47 +1309,47 @@
 * [SimpleClans](https://www.spigotmc.org/resources/5269/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#simpleclans)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#simpleclans)
 
 * [SimpleCoins](https://dev.bukkit.org/projects/simplecoins)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#simplecoins)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#simplecoins)
 
 * [SimpleCoinsAPI](https://www.spigotmc.org/resources/1432/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#simplecoinsapi)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#simplecoinsapi)
 
 * [SimpleKillTracker](https://www.spigotmc.org/resources/17651/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#simplekilltracker)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#simplekilltracker)
 
 * [SimplePrefix](http://dev.bukkit.org/bukkit-plugins/simple-prefix/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#simpleprefix)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#simpleprefix)
 
 * [Simple Suffix](http://dev.bukkit.org/bukkit-plugins/simple-suffix/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#simple-suffix)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#simple-suffix)
 
 * [SkillAPI](https://www.spigotmc.org/resources/4824/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#skillapi)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#skillapi)
 
 * [SkinsRestorer](https://www.spigotmc.org/resources/2124/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#skinsrestorer)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#skinsrestorer)
 
 * [Skript](https://github.com/bensku/Skript)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#skript)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#skript)
 
 * [SkyWars](https://www.spigotmc.org/resources/6525/)
 
@@ -1366,12 +1358,12 @@
 * [SkyWarsReloaded](https://www.spigotmc.org/resources/3796/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#skywarsreloaded)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#skywarsreloaded)
 
 * [Spark](https://github.com/lucko/spark)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#spark)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#spark)
 
 * [SpigotBoard](https://www.spigotmc.org/resources/47497/)
 
@@ -1391,12 +1383,12 @@
 * [SQLPerms](https://www.spigotmc.org/resources/1462/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#sqlperms)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#sqlperms)
 
 * [SQLTokens](https://www.spigotmc.org/resources/3482/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#sqltokens)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#sqltokens)
 
 * [sTablist](https://www.spigotmc.org/resources/12234/)
 
@@ -1406,47 +1398,47 @@
 * [Staff Facilities](https://www.spigotmc.org/resources/13097/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#staff-facilities)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#staff-facilities)
 
 * [Staff++](https://www.spigotmc.org/resources/staff.83562/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#staff)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#staff)
 
 * [Statz](https://www.spigotmc.org/resources/25969/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#statz)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#statz)
 
 * [Streaming Drops](https://www.spigotmc.org/resources/76996/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#streaming-drops)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#streaming-drops)
 
 * [StrikePractice 2](https://www.spigotmc.org/resources/46906/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#strikepractice-2)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#strikepractice-2)
 
 * [stTitles](https://www.spigotmc.org/resources/8310/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#sttitles)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#sttitles)
 
 * [SubServers](https://github.com/ME1312/SubServers-2)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#subservers)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#subservers)
 
 * [SuperbVote](https://www.spigotmc.org/resources/11626/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#superbvote)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#superbvote)
 
 * [SuperCredits](https://www.spigotmc.org/resources/31074/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#supercredits)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#supercredits)
 
 * [SuperScratch](https://www.spigotmc.org/resources/12250/)
 
@@ -1456,7 +1448,7 @@
 * [SuperVanish](https://www.spigotmc.org/resources/1331/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#supervanish)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#supervanish)
 
 ### T
 
@@ -1468,72 +1460,72 @@
 * [The Time](https://www.spigotmc.org/resources/25146/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#the-time)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#the-time)
 
 * [ThemePark](https://www.spigotmc.org/resources/48648/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#themepark)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#themepark)
 
 * [Thirst](https://www.spigotmc.org/resources/3316/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#thirst)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#thirst)
 
 * [TicketGUI](https://www.spigotmc.org/resources/68968/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#ticketgui)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#ticketgui)
 
 * [Timed Rewards](https://www.spigotmc.org/resources/34008/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#timed-rewards)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#timed-rewards)
 
 * [TimeManager](https://www.spigotmc.org/resources/44344/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#timemanager)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#timemanager)
 
 * [Time Tokens](https://www.spigotmc.org/resources/75441/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#time-tokens)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#time-tokens)
 
 * [TNTRun_Reloaded](https://www.spigotmc.org/resources/53359/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#tntrun_reloaded)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#tntrun_reloaded)
 
 * [TokenEnchant](https://www.spigotmc.org/resources/2287/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#tokenenchant)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#tokenenchant)
 
 * [TokenManager](https://www.spigotmc.org/resources/8610/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#tokenmanager)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#tokenmanager)
 
 * [Tokens](https://www.spigotmc.org/resources/71941/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#tokens)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#tokens)
 
 * [TokensPlus](https://www.spigotmc.org/resources/90507/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#tokensplus)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#tokensplus)
 
 * [Towny](https://github.com/TownyAdvanced/Towny)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#towny)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#towny)
 
 * [TownyChat](https://github.com/TownyAdvanced/TownyChat)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#townychat)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#townychat)
 
 * [TpLogin](https://www.spigotmc.org/resources/21692/)
 
@@ -1543,27 +1535,27 @@
 * [TransmuteIt](https://www.spigotmc.org/resources/76287/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#transmuteit)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#transmuteit)
 
 * [Treasures](https://www.spigotmc.org/resources/14178/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#treasures)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#treasures)
 
 * [Trey's Double Jump](https://www.spigotmc.org/resources/19630/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#treys-double-jump)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#treys-double-jump)
 
 * [TrickOrTreat](https://www.spigotmc.org/resources/61370/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#trickortreat)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#trickortreat)
 
 * [Two Factor Authentication](https://www.spigotmc.org/resources/85594/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#two-factor-authentication)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#two-factor-authentication)
 
 ### U
 
@@ -1585,17 +1577,17 @@
 * [UltimateChat](https://www.spigotmc.org/resources/23767/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#ultimatechat)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#ultimatechat)
 
 * [UltimateClaims](https://songoda.com/marketplace/product/65)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#ultimateclaims)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#ultimateclaims)
 
 * [UltimateServerManager](https://www.spigotmc.org/resources/112006/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#ultimateservermanager)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#ultimateservermanager)
 
 * [UltimateSigns](https://www.spigotmc.org/resources/72462/)
 
@@ -1605,7 +1597,7 @@
 * [UltimateVotes](https://www.spigotmc.org/resources/516/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#ultimatevotes)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#ultimatevotes)
 
 * [UltraChatFormat](https://www.spigotmc.org/resources/57929/)
 
@@ -1625,27 +1617,27 @@
 * [Ultra Economy](https://www.spigotmc.org/resources/83374/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#ultra-economy)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#ultra-economy)
 
 * [Ultra Motd](https://www.spigotmc.org/resources/100883/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#ultra-motd)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#ultra-motd)
 
 * [Ultra Permissions](https://www.spigotmc.org/resources/42678/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#ultra-permissions)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#ultra-permissions)
 
 * [Ultra Punishments](https://www.spigotmc.org/resources/63511/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#ultra-punishments)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#ultra-punishments)
 
 * [Ultra Regions](https://www.spigotmc.org/resources/58317/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#ultra-regions)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#ultra-regions)
 
 * [Ultra Scoreboards](https://www.spigotmc.org/resources/93726/)
 
@@ -1660,12 +1652,12 @@
 * [USkyBlock](https://www.spigotmc.org/resources/2280/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#uskyblock)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#uskyblock)
 
 * [UnityGen](https://www.spigotmc.org/resources/26218/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#unitygen)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#unitygen)
 
 ### V
 
@@ -1677,7 +1669,7 @@
 * [Vault](http://dev.bukkit.org/bukkit-plugins/vault/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#vault)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#vault)
 
 * [VentureChat](https://www.spigotmc.org/resources/771/)
 
@@ -1687,34 +1679,34 @@
 * [VenturahCalendar](https://www.spigotmc.org/resources/94096/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#venturacalendar)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#venturacalendar)
 
 * [ViaVersion](https://www.spigotmc.org/resources/19254/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#viaversion)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#viaversion)
 
 * [VoteParty](https://www.spigotmc.org/resources/987/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#voteparty)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#voteparty)
 
 * [VoteRoulette](http://dev.bukkit.org/bukkit-plugins/voteroulette/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#voteroulette)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#voteroulette)
 
 * [VotingPlugin](https://www.spigotmc.org/resources/15358/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#votingplugin)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#votingplugin)
 
 ### W
 
 * [WickedSkyWars](https://www.spigotmc.org/resources/556/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#wickedskywars)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#wickedskywars)
 
 * [WonderHUD](https://www.spigotmc.org/resources/12220/)
 
@@ -1724,7 +1716,7 @@
 * [WorldGuard](https://dev.bukkit.org/bukkit-plugins/worldguard/)
 
   - [ ] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#worldguard)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#worldguard)
 
 * [WorldJoin](https://www.spigotmc.org/resources/63892/)
 
@@ -1736,7 +1728,7 @@
 * [XLTournaments](https://www.spigotmc.org/resources/70630/)
 
   - [x] 支持变量解析。
-  - [x] 自行提供变量。[链接](placeholder-list.md#xltournaments)
+  - [x] 自行提供变量。[链接](../placeholder-list/minecraft.md#xltournaments)
 
 ### Y
 

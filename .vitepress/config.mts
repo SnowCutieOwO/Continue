@@ -1243,8 +1243,14 @@ export default defineConfig({
               text: '用户教程', collapsed: true, link: 'wiki/PlaceholderAPI/user-guides', items: [
                 { text: '命令', link: 'wiki/PlaceholderAPI/user-guides/commands' },
                 { text: '使用变量', link: 'wiki/PlaceholderAPI/user-guides/using-placeholders' },
-                { text: '变量列表', link: 'wiki/PlaceholderAPI/user-guides/placeholder-list' },
-                { text: '使用 PlaceholderAPI 的插件', link: 'wiki/PlaceholderAPI/user-guides/plugins-using-placeholderapi' }
+                { text: '变量列表', link: 'wiki/PlaceholderAPI/user-guides/placeholder-list/index', collapsed: true, items: [
+                  { text: 'Minecraft', link: 'wiki/PlaceholderAPI/user-guides/placeholder-list/minecraft' },
+                  { text: 'Hytale', link: 'wiki/PlaceholderAPI/user-guides/placeholder-list/hytale' },
+                ] },
+                { text: '使用 PlaceholderAPI 的插件', link: 'wiki/PlaceholderAPI/user-guides/plugins-using-placeholderapi/index', collapsed: true, items: [
+                  { text: 'Minecraft', link: 'wiki/PlaceholderAPI/user-guides/plugins-using-placeholderapi/minecraft' },
+                  { text: 'Hytale', link: 'wiki/PlaceholderAPI/user-guides/plugins-using-placeholderapi/hytale' },
+                ] }
               ]
             },
             {
@@ -1254,7 +1260,9 @@ export default defineConfig({
                 { text: 'eCloud', link: 'wiki/PlaceholderAPI/dev-guides/ecloud' }
               ]
             },
-            { text: '常见问题', link: 'wiki/PlaceholderAPI/common-issues' },
+            { text: '常见问题', link: 'wiki/PlaceholderAPI/common-issues/index', collapsed: true, items: [
+              { text: 'eCloud 连接被阻止', link: 'wiki/PlaceholderAPI/common-issues/ecloud-connection-blocked' }
+            ] },
             { text: '常被问到的问题', link: 'wiki/PlaceholderAPI/faq' },
           ]
         },

@@ -13,7 +13,7 @@
 最重要的一点就是，了解你所使用的插件是否支持插入 PlaceholderAPI 的变量。  
 诸如 EssentialsXChat 的聊天插件一般不支持本插件，除非其他插件将这些替换后的变量“注入”最终显示的聊天消息。
 
-检查某个插件是否支持本插件的最快方法，就是浏览[支持 PlaceholderAPI 的插件](../user-guides/plugins-using-placeholderapi.md)章节。  
+检查某个插件是否支持本插件的最快方法，就是浏览[支持 PlaceholderAPI 的插件](../user-guides/plugins-using-placeholderapi/index.md)章节。  
 如果插件出现在列表中，且 `支持变量` 处打钩，则表示它支持本插件。
 
 如果插件没有在列表中，你可以浏览插件的介绍页，或其他来源的信息如维基，来确认此插件是否支持 PlaceholderAPI。
@@ -35,7 +35,7 @@ PlaceholderAPI 会自行校验下载环境并阻止服务器下载可疑的变�
 变量拓展及其变量的提供方式可以为插件（如果有）自带，或 eCloud 上独立的 .jar 文件。  
 变量拓展类型不同，你的安装方法也会有所差别。
 
-若要检查变量拓展是独立文件还是内置于插件中，你可以浏览[变量列表](../user-guides/placeholder-list.md)章节进行查询。  
+若要检查变量拓展是独立文件还是内置于插件中，你可以浏览[变量列表](../user-guides/placeholder-list/index.md)章节进行查询。  
 如果它出现在列表上，你可以浏览下方的提示框来知晓其是否独立：
 
 * `papi ecloud download <变量拓展>`：此拓展存储在 eCloud 上，需要使用 [`/papi ecloud download` 命令](../user-guides/commands.md#papi-ecloud-download) 下载。
