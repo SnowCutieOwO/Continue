@@ -180,6 +180,36 @@ conditions:
       value: 5
 ```
 
+## 菜单
+
+玩家是否打开了指定的菜单。
+
+```yaml
+  conditions:
+    1:
+      type: menu
+      menu: 'example-shop-menu'
+```
+
+## 菜单类型
+
+玩家是否打开了指定类型的菜单。
+
+支持如下种类：
+
+* `COMMON`（一般菜单）
+* `SHOP`（商店菜单）
+* `MORE`（增量购买菜单）
+* `SEARCH`（搜索界面）
+* `FAVOURITE`（收藏界面）
+
+``` YAML
+  conditions:
+    1:
+      type: menu_type
+      menu-type: 'favourite'
+```
+
 ## 任选 <font color="red">- 仅付费版</font>
 
 ``` YAML

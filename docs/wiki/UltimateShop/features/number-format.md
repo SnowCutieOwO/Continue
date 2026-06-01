@@ -1,5 +1,23 @@
 # 🔢 数字格式
 
+## 内置格式
+
+你可以使用插件内置的数字格式，并在插件的 `config.yml` 中进行设置。
+
+``` YAML
+number-display:
+  format:
+    enabled: true
+    decimal: "#,##0.00##########"
+    integer: "#,##0"
+  strip-trailing-zeros:
+    enabled: true
+```
+
+## 使用其他 PAPI 变量拓展
+
+* 首先，将 `number-format.format.enabled` 设置为 `false`。
+
 * 下载并安装 PlaceholderAPI。
 
 * 通过 `/papi ecloud download` 命令下载 Formatter 变量拓展。[点此](../../PlaceholderAPI/user-guides/placeholder-list/minecraft.md#formatter)了解详情。

@@ -23,6 +23,7 @@ log-transaction:
 * `{buy-or-sell}`
 * `{price}`
 * `{time}` - 显示日志记录时间
+* `{multiplier}` - [出售倍率](../shops/sell-multiplier-premium.md)的返回值。
 
 ## 示例图片
 

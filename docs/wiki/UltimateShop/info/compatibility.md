@@ -19,6 +19,8 @@
 * Nexo
 * CraftEngine
 
+你现在可以将 ItemBridge 用作自定义物品提供器，它支持更多物品库插件，[点此](../format/itembridge.md)了解更多。
+
 ### <font color="green">直接支持的</font>自定义经济插件系列
 
 * Vault（及依赖其的所有经济插件）

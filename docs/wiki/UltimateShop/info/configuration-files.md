@@ -46,6 +46,14 @@ config-files:
     generate-new-one: false
     file: 'zh_cn.json'
 
+# 支持填入：COMPONENT 或 LEGACY
+# COMPONENT 模式仅支持 1.21.6+ Paper 服务端及本插件的付费版。
+debuild-item-method: 'LEGACY'
+
+# 默认情况下，我们会强制显示失败消息，方便玩家知道他们是否成功点击了物品按钮。
+# 若设置为 false，我们就不会强制显示失败消息，除此之外你还可以使用商店配置中的 hide-message 选项隐藏失败提示。
+force-display-fail-message: false
+
 cache:
   # 如果遇到多服同步问题，请尝试增加这个设置的值。
   load-delay: 7
@@ -64,6 +72,7 @@ sell:
       # 格式: 商店 ID;;物品 ID
       - 'hideshop;;A'
     hide-message: true
+  # 仅付费版本。
   sell-stick:
     # 此处最小值为 5, 小于 5 的值会被插件无视并重置为 5.
     # 单位为刻。
@@ -73,6 +82,46 @@ sell:
     # 可填入的值: LEFT, RIGHT and LEFT;;RIGHT
     # 请勿修改, 否则后果自负。
     click-type: RIGHT
+  # 仅付费版本。
+  sell-chest:
+    enabled: true
+    debug: false
+    period-ticks: 600
+    batch-count: 5
+    send-sell-message: true
+    price-empty: '{lang}'
+    hologram:
+      enabled: true
+      # 支持填入：DecentHolograms, CMI, FancyHolograms
+      plugin: 'DecentHolograms'
+  max-amount: -1
+  # 仅付费版本。
+  shulker-box-sell: true
+  # Premium version only
+  multiplier:
+    enabled: false
+    display-original-price: true
+    # 支持填入：MAX, STACK
+    # MAX 模式：默认使用最大值作为结果
+    # STACK 模式：在玩家满足条件的情况下进行堆叠与倍增
+    mode: STACK
+    value:
+      default: 1
+      rich: 0.9
+      vip: 1.1
+    value-conditions:
+      # 收税
+      rich:
+        1:
+          type: placeholder
+          placeholder: '%vault_eco_balance%'
+          rule: '>='
+          value: 50000
+      # VIP 奖励
+      vip:
+        1:
+          type: permission
+          permission: 'group.vip'
   max-amount: 128
 
 give-item:
@@ -83,6 +132,8 @@ give-item:
   check-full: true
 
 menu:
+  prompt:
+    cancel-keyword: '{lang}'
   # 如果运行规模较大的服务器时，使用此项可避免玩家频繁点击或重复开启本插件的商店导致的卡顿。
   # 单位为刻。
   cooldown:
@@ -91,7 +142,7 @@ menu:
   ignore-click-outside: false
   # 仅付费版本，启用后可自动更新界面标题中的动态值。
   title-update:
-    # 需要安装 PacketEvents 和 MythicChanger。
+    # 需要安装 PacketEvents。
     enabled: false
     # 菜单界面是否每秒刷新一次。
     # 会刷新在菜单标题中的变量。
@@ -103,18 +154,24 @@ menu:
   menu-update:
     # 商店菜单是否每秒自动刷新一次。
     # 这可以刷新物品描述中的变量。
+    # 可能会在大量玩家打开商店菜单时导致服务器卡顿。
+    circle-update: false
+    # 商店菜单是否每次点击时自动刷新一次。
+    # 这可以刷新物品描述中的变量。
+    # 可能会在大量玩家打开商店菜单时导致服务器卡顿。
     click-update: false
   sell-all:
     size: 54
     title: '{lang}'
     black-slots: []
-    dynamic-title:
-      enabled: false
-      titles:
-        - "§aUltimateShop §7| §f一键出售界面"
-        - "§bUltimateShop §7| §f一键出售界面"
-        - "§dUltimateShop §7| §f一键出售界面"
-      interval: 15
+  search-gui:
+    menu:
+      - 'search'
+    prompt:
+      clear-keyword: '{lang}'
+  favourite-gui:
+    menu:
+      - 'favourite'
   # 仅付费版本
   bedrock:
     enabled: true
@@ -165,6 +222,7 @@ menu:
     buy-or-sell: 'LEFT'
     # 若需禁用 select-amount 功能，请将其设置为 NEVER.
     select-amount: 'SHIFT_RIGHT;;SWAP_OFFHAND'
+    add-favourite: 'SWAP_OFFHAND'
     sell-all: 'DROP'
     # buy-one-stack: 'SWAP_OFFHAND'
   # 商店菜单的自定义点击操作。
@@ -186,6 +244,23 @@ menu:
         shop: '{shop}'
         item: '{item}'
         amount: 64
+    add-favourite:
+      display-name: '{lang:add-favourite-action}'
+      1:
+        type: conditional
+        conditions:
+          1:
+            type: not
+            conditions:
+              1:
+                type: menu_type
+                menu-type: 'favourite'
+        actions:
+          1:
+            type: add_favourite
+            menu: favourite
+            shop: '{shop}'
+            item: '{item}'
 
 secret-shop-items:
   require-display-in-menu: true
@@ -208,6 +283,15 @@ use-times:
 math:
   enabled: true
   scale: 2
+  static-scale: false
+
+number-display:
+  format:
+    enabled: true
+    decimal: "#,##0.00##########"
+    integer: "#,##0"
+  strip-trailing-zeros:
+    enabled: true
 
 # 仅付费版本。
 log-transaction:
@@ -274,6 +358,7 @@ placeholder:
     unknown: "{lang}"
     unknown-price-type: "{lang}"
     empty: "{lang}"
+    filter-for-one-line: ''
   click:
     # 若启用, {buy-click} 与 {sell-stick} 将会根据物品状态显示不同的内容.
     # 该功能可能会在规模较大或商店内容较多的服务器上导致卡顿.
@@ -335,4 +420,7 @@ auto-save:
   enabled: true
   hide-message: false
   period-tick: 6000
+
+bypass-plugin-check:
+  - 'PluginNameHere'
 ```

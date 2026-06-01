@@ -482,3 +482,97 @@
       1:
         type: update_title
 ```
+
+## 收藏 <font color="red">- 仅付费版</font>
+
+将物品添加至收藏列表。
+
+``` YAML
+    actions:
+      1:
+        type: add_favourite
+        menu: favourite # 存放收藏商品的菜单。
+        shop: '{shop}'
+        item: '{item}'
+```
+
+## 取消收藏 <font color="red">- 仅付费版</font>
+
+将物品从收藏列表中移出。
+
+``` YAML
+   actions:
+      1:
+        type: remove_favourite
+        menu: favourite # 存放收藏商品的菜单。
+        shop: '{shop}'
+        item: '{item}'
+```
+
+## 切换收藏 <font color="red">- 仅付费版</font>
+
+切换物品的收藏状态，如果已经存在，则将其移出收藏列表，反之将其加入。
+
+``` YAML
+   actions:
+      1:
+        type: toggle_favourite
+        menu: favourite # 存放收藏商品的菜单。
+        shop: '{shop}'
+        item: '{item}'
+```
+
+## 输入捕获 <font color="red">- 仅付费版</font>
+
+要求玩家在聊天栏中输入内容，并用于之后的动作。
+
+```yml
+    actions:
+      1:
+        type: prompt
+        description: '&e输入内容'
+        reopen-on-submit: true
+        reopen-on-cancel: true
+        actions:
+          1:
+            type: message
+            message: '&a已保存内容：&f{arg}'
+        cancel-actions:
+          1:
+            type: message
+            message: '&c你取消了输入'
+```
+
+### `{arg}`
+
+原本的输入内容。
+
+若玩家输入的是：
+
+``` txt
+diamond sword 64
+```
+
+那么，变量会返回：
+
+``` txt
+{arg} -> diamond sword 64
+```
+
+### `{arg_1}`、`{arg_2}`、`{arg_3}` ...
+
+将输入内容按空格进行分割。
+
+若玩家输入的是：
+
+```
+diamond sword 64
+```
+
+那么，变量会返回：
+
+```
+{arg_1} -> diamond
+{arg_2} -> sword
+{arg_3} -> 64
+```

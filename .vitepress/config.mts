@@ -134,6 +134,10 @@ export default defineConfig({
       ``
     ]
   ],
+  srcExclude: [
+    '**/wiki/Dynmap/**',
+    '**/wiki/FakePlayerPlugin/**'
+  ],
   markdown: {
     container: {
       tipLabel: '提示',
@@ -1708,6 +1712,7 @@ export default defineConfig({
                     { text: '物品组件格式', link: 'wiki/UltimateShop/format/itemformat/component-format' }
                   ]
                 },
+                { text: '🌉 ItemBridge', link: 'wiki/UltimateShop/format/itembridge' },
                 { text: '💹 经济格式™', link: 'wiki/UltimateShop/format/economyformat' },
                 { text: '🖼️ 展示物品格式', link: 'wiki/UltimateShop/format/display-item-format' },
                 { text: '🎬 动作格式', link: 'wiki/UltimateShop/format/action-format' },
@@ -1720,6 +1725,7 @@ export default defineConfig({
                 { text: '🔲 全局菜单', link: 'wiki/UltimateShop/menus/general-menus' },
                 { text: '🔽 增量购买菜单', link: 'wiki/UltimateShop/menus/buy-more-menus' },
                 { text: '🔍 搜索菜单 - 仅付费版', link: 'wiki/UltimateShop/menus/search-menus-premium' },
+                { text: '❤️ 收藏夹 - 仅付费版', link: 'wiki/UltimateShop/menus/favourite-menu-premium' },
                 { text: '🛒 全部出售菜单', link: 'wiki/UltimateShop/menus/sell-all-menu' },
                 { text: '🔀 条件显示 - 仅付费版', link: 'wiki/UltimateShop/menus/conditional-display' },
                 { text: '🛏️ 基岩版菜单 - 仅付费版', link: 'wiki/UltimateShop/menus/bedrock-menus-premium' },
@@ -1733,6 +1739,7 @@ export default defineConfig({
                 { text: '💰 物品配置：单条目', link: 'wiki/UltimateShop/shops/products-config-single-thing/index' },
                 { text: '♻️ 物品配置：交易次数重置', link: 'wiki/UltimateShop/shops/product-config-buy-sell-times-reset' },
                 { text: '🔗 共享商品数据 - 仅付费版', link: 'wiki/UltimateShop/shops/shared-product-data-premium' },
+                { text: '💰 出售倍率 - 仅付费版', link: 'wiki/UltimateShop/shops/sell-multiplier-premium' },
                 { text: '📚 普通示例', link: 'wiki/UltimateShop/shops/common-examples' },
                 { text: '⚡ 示例：普通用法', link: 'wiki/UltimateShop/shops/example-common-usage' },
                 { text: '🌱 示例：真实库存', link: 'wiki/UltimateShop/shops/example-stock-like-in-life' },
@@ -1745,6 +1752,7 @@ export default defineConfig({
                 { text: '🔧 内置变量', link: 'wiki/UltimateShop/placeholders/built-in-placeholder' },
                 { text: '🎲 随机变量 - 仅付费版', link: 'wiki/UltimateShop/placeholders/random-placeholder-premium' },
                 { text: '⛓️ 条件变量 - 仅付费版', link: 'wiki/UltimateShop/placeholders/conditional-placeholder-premium' },
+                { text: '🗯️ 自定义变量 - 仅付费版', link: 'wiki/UltimateShop/placeholders/custom-placeholder-premium' },
                 { text: '🔖 示例：折扣', link: 'wiki/UltimateShop/placeholders/example-discount' },
               ]
             },

@@ -123,7 +123,7 @@ global 参数表示为 `{buy-times-server}` 或 `{sell-times-server}` 变量设�
 
 重置随机变量的值。
 
-如果需要刷新分玩家的随机变量，请在命令中填入玩家的名称，否则插件会报错。
+如果需要刷新分玩家的随机变量，请在命令中填入玩家的名称，对于不依赖玩家改变的变量，则请勿填入，否则插件会报错。
 
 需要权限 `ultimateshop.resetrandomplaceholder`。
 
@@ -155,6 +155,13 @@ global 参数表示为 `{buy-times-server}` 或 `{sell-times-server}` 变量设�
 
 需要权限 `ultimateshop.sellallhand`。
 
+::: info
+
+sellhand = 只出售手持的所有物品。\
+sellallhand = 以手上物品为基准，出售物品栏中与手持相同的所有物品。
+
+:::
+
 ## /shop updategui \[玩家名称\]
 
 更新指定玩家的商店界面。只会更新按钮，标题不受影响。
@@ -173,8 +180,12 @@ global 参数表示为 `{buy-times-server}` 或 `{sell-times-server}` 变量设�
 
 需要权限 `ultimateshop.editor`。
 
-## /shop searchgui [搜索GUI菜单名称]**<font color="Red">（仅付费版本）</font>**
+## /shop searchgui \[搜索GUI菜单名称\]**<font color="Red">（仅付费版本）</font>**
 
 打开指定的搜索 GUI，如果未指定，则打开 ID 为 `search` 的搜索菜单。
 
 需要权限 `ultimateshop.searchgui`。
+
+## 自定义变量命令 **<font color="Red">（仅付费版本）</font>**
+
+对于自定义变量的完整命令列表，请[见此](../placeholders/custom-placeholder-premium.md)。

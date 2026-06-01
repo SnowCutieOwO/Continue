@@ -93,7 +93,7 @@ items:
 ```
 
 - `sell-all`：决定商品是否可以使用一键出售模式。**可选，默认为 true。（3.9.0 新增）**
-
+- `shared-use-times`：详见[这个章节](shared-product-data-premium.md)。
 - `hide-message`: 是否隐藏交易后插件显示的消息。**可选，默认为 false。（4.2.11 新增）**
 
 ::: warning
@@ -125,7 +125,7 @@ items:
 
 - `buy-actions`：购买商品后执行的一系列动作。使用“[动作格式](../format/action-format.md)”。**可选。**
 - `sell-actions`：出售商品后执行的一系列动作。使用“[动作格式](../format/action-format.md)”。**可选。**
-- `fail-actions`：交易操作失败后执行的一系列动作。使用“[动作格式](../format/action-format.md)”。**可选。在上述示例中我们将它放在了 `general-configs` 部分下，设置了交易失败播放音效。**
+- `fail-actions`：交易操作失败后执行的一系列动作。使用“[动作格式](../format/action-format.md)”。**可选。**
 - `buy-conditions`：玩家购买该商品所需达到的条件。使用“[条件格式](../format/condition-format.md)”。**可选。**
 - `sell-conditions`：玩家出售该商品所需达到的条件。使用“[条件格式](../format/condition-format.md)”。**可选。**
 - `buy-limits`：设置购买或出售的最大次数；**可选。若未设置，商品购买次数不作限制。**

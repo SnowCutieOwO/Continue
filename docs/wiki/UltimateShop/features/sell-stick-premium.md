@@ -33,7 +33,7 @@ conditions: []
 
 * `display-item`：出售魔杖的显示物品。可以在此使用[物品格式](../format/itemformat/index.md)。
 * `usage-times`：魔杖的最大使用次数。若该值小于零或不存在则为无限耐久。
-* `multiplier`：出售魔杖的倍率。仅支持经济类型翻倍。
+* `multiplier`：出售魔杖的倍率。
 * `actions`：使用魔杖后触发的动作。可以在此使用[动作格式](../format/action-format.md)
 * `conditions`：玩家使用该出售魔杖所需达到的条件。可以在此使用[条件格式](../format/condition-format.md)。
 
