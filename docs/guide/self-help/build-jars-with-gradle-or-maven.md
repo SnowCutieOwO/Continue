@@ -104,3 +104,21 @@ Maven：<https://maven.apache.org/download.cgi?.>
 不过幸好我们有一个相对完善的解决方法——[dev-sidecar](https://github.com/docmirror/dev-sidecar)。
 
 默认开启代理服务和系统代理，成功连接后就可以提升下载速度。
+
+如果还是没能构建成功，请接着往下看。
+
+### 04. 修改 `build.gradle`/`build.gradle.kts`，将下载文件改为本地引用。
+
+打开对应文件，找到这一部分，作出如下修改：
+
+``` groovy title="build.gradle.kts"
+dependencies {
+    ...
+    compileOnly("com.xxx:文件名称:版本") // [!code --]
+    compileOnly(files("libs/xxx.jar")) // [!code ++]
+    ...
+}
+```
+
+关于需要放入的文件名称和对应版本，你既可以通过报错中的链接直接访问下载，也可以通过搜索 maven 仓库（[jitpack.io](http://jitpack.io/) 或 [mvnrepository](https://mvnrepository.com/)）获取。\
+关于 `files()` 中的内容，示例为插件源代码目录的 `libs` 文件夹下，你可以按你自己的需要将其改为别的路径。需要注意的是，这里的参数根目录默认为源代码所在的文件夹。
