@@ -139,7 +139,7 @@ rules:
 %economylimit_rule_daily_limit%
 ```
 
-返回玩家当前限制规则的货币获取上限。、
+返回玩家当前限制规则的货币获取上限。\
 如果在该规则内玩家没有上限，则返回语言配置文件中 `status.unlimited` 的对应内容。
 
 ### 剩余获取量
