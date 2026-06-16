@@ -100,6 +100,7 @@ A:
 * `@y` - 玩家**不是**基岩版用户。需要使用“[基岩版菜单](../bedrock-menus-premium.md)”功能。
 * `@u` - 这个按钮可以购买物品。
 * `@v` - 这个按钮可以出售物品。
+* `@w` - 存在于增量购买菜单以及设置了 `click-type` 选项的按钮中。
 * `@z[vip]` - 仅在[倍率](../../shops/sell-multiplier-premium.md) id 为 `vip` 时显示。
 
 * `(@z\[vip])` - 仅在[倍率](../../shops/sell-multiplier-premium.md) id 不为 `vip` 时显示。

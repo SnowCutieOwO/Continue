@@ -73,6 +73,7 @@ items:
 * Residence
 * Towny
 * WorldGuard
+* SuperiorSkyblock2
 
 ### <font color="green">直接</font>支持的悬浮字插件列表
 
