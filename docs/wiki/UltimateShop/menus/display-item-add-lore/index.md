@@ -37,7 +37,7 @@
     - '@a@u@y{buy-click}'
     - '@b@v@y{sell-click}'
     - '@k@q@y&#FFFACDShift+鼠标左键 选择数量!'
-    - '@m@v@y&#FFFACD键盘 Q 键 选择全部!'
+    - '@m@v@y&#FFFACD键盘 Q 键 全部出售!'
     - '(@n)&c&l:( 不能这么做'
     - '(@a)@u@p&c物品无法购买'
     - '(@b)@v@p&c物品无法出售'

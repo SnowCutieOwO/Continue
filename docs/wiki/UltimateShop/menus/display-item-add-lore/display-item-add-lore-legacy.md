@@ -29,7 +29,7 @@ add-lore:
     - '@a{buy-click}'
     - '@b{sell-click}'
     - '@k&#FFFACDShift+鼠标左键 选择数量!'
-    - '@m&#FFFACD键盘 Q 键 选择全部!'
+    - '@m&#FFFACD键盘 Q 键 全部出售!'
 ```
 
 ## 单物品设置
