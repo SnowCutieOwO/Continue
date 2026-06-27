@@ -136,7 +136,6 @@ export default defineConfig({
   ],
   srcExclude: [
     '**/wiki/Dynmap/**',
-    '**/wiki/FakePlayerPlugin/**'
   ],
   markdown: {
     container: {
