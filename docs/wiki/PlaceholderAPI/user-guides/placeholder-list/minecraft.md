@@ -1077,7 +1077,7 @@
 ::: tip papi ecloud download world
 :::
 
-对于 `totalbalance` 变量，你必须安装一个经济插件（如 ExxentialsX）才可使其正常显示。
+对于 `totalbalance` 变量，你必须安装一个经济插件（如 EssentialsX）才可使其正常显示。
 
 ``` txt
 %world_biome%
