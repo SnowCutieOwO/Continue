@@ -63,6 +63,16 @@ export const Footer_Data: FooterData = {
           name: 'HiMCBBS',
           link: 'https://www.himcbbs.com/',
           rel: 'noopener noreferrer'
+        },
+        {
+          name: 'MCNAV',
+          link: 'https://mcnav.cn/',
+          rel: 'noopener noreferrer'
+        },
+        {
+          name: 'PuddingKC\'s Blog',
+          link: 'https://www.puddingkc.com/',
+          rel: 'noopener noreferrer'
         }
       ]
     },

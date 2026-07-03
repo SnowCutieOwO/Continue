@@ -275,7 +275,9 @@ export default defineConfig({
       {
         text: '🔖 友链页面', items: [
           { text: 'CSKB - 日冕知识库', link: 'other-sites/cskb' },
-          { text: 'HiMCBBS', link: 'other-sites/himcbbs' }
+          { text: 'HiMCBBS', link: 'other-sites/himcbbs' },
+          { text: 'MCNAV', link: 'other-sites/mcnav' },
+          { text: 'PuddingKC\'s Blog', link: 'other-sites/puddingkc-s-blog' }
         ]
       },
       {
