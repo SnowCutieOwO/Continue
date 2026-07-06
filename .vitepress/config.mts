@@ -387,6 +387,7 @@ export default defineConfig({
               text: '自求福篇', collapsed: true, items: [
                 { text: '开始之前：你要开什么？', link: 'guide/logical-questions/before-start-what-server-you-want' },
                 { text: '开始之前：插件怎么选？', link: 'guide/logical-questions/choose-plugins-wisely' },
+                { text: '开始之前：该找什么人？', link: 'guide/logical-questions/who-do-you-want' },
               ]
             },
             {

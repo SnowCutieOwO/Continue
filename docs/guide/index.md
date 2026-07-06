@@ -11,9 +11,12 @@
   - [如何用 Gradle/Maven 构建插件](self-help/build-jars-with-gradle-or-maven.md)
   - [如何用 Recaf 反编译字节码汉化插件/模组](self-help/localize-jars-with-recaf.md)
   - 如何简单鉴别服务器的插件是否安全？（即将推出）
+  - 如何利用 JEnv 实现 Java 多版本管理？（即将推出）
 * 自求福篇
   - [开服之前：你究竟要开什么样的服？](logical-questions/before-start-what-server-you-want.md)
   - [开服之前：如何选择好插件？](logical-questions/choose-plugins-wisely.md)
+  - [开服之前：你想要给/和谁做服？](logical-questions/who-do-you-want.md)
+  - 开服之前：服务器架构设计应该怎样？（即将推出）
 * 进阶学篇
   - [如何使用 WorldEdit/FastAsyncWorldEdit 制作简易的封闭式副本地形？](advanced/how-to-make-easy-landscape-using-we.md)
   - TrMenu 菜单实战
