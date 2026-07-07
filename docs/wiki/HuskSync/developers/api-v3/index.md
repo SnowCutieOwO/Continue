@@ -45,7 +45,7 @@ HuskSync API 仅对下列平台开放使用：
 
 ### 1.1 通过 Maven 安装
 
-#### Maven 安装详情
+::: detail Maven 安装详情
 
 将仓库按如下格式添加至你的 `pom.xml`。你也可以在末尾指定 `/snapshots` 来获取最新版的开发构建（但不推荐）
 ``` XML
@@ -57,11 +57,22 @@ HuskSync API 仅对下列平台开放使用：
 </repositories>
 ```
 
-将依赖按下列各式导入 `pom.xml`。请将 `VERSION` 替换为 HuskSync 的最新版本（去掉左侧的“v”）：![](https://img.shields.io/github/v/tag/WiIIiam278/HuskSync?color=%23ffffff&label=%20&style=flat-square)
+将依赖按下列格式导入 `pom.xml`。请将 `HUSKSYNC_VERSION` 替换为 HuskSync 的最新版本（去掉左侧的“v”）：![](https://img.shields.io/github/v/tag/WiIIiam278/HuskSync?color=%23ffffff&label=%20&style=flat-square)，将 `MINECRAFT_VERSION` 替换为你需要指向的版本（如 `1.21.10`）。正确的目标版本示例为 `3.7+1.21.10`。如果你使用的是 `common` 平台，请将 `+` 去掉。
+
+``` XML
+<dependency>
+    <groupId>net.william278.husksync</groupId>
+    <artifactId>husksync-PLATFORM</artifactId>
+    <version>HUSKSYNC_VERSION+MINECRAFT_VERSION</version>
+    <scope>provided</scope>
+</dependency>
+```
+
+:::
 
 ### 1.2 通过 Gradle 安装
 
-#### Gradle 安装详情
+::: detail Gradle 安装详情
 
 将以依赖按如下格式导入你的 `build.gradle`。你也可以通过指定 `/snapshots` 来使用最新的开发构建版仓库（但不推荐）
 
@@ -73,13 +84,15 @@ allprojects {
 }
 ```
 
-按如下格式导入依赖。将 `VERSION` 替换为 HuskSync 的最新版本号（去掉左侧的“v”）：![](https://img.shields.io/github/v/tag/WiIIiam278/HuskSync?color=%23ffffff&label=%20&style=flat-square)
+按如下格式导入依赖。将 `VERSION` 替换为 HuskSync 的最新版本号（去掉左侧的“v”）：![](https://img.shields.io/github/v/tag/WiIIiam278/HuskSync?color=%23ffffff&label=%20&style=flat-square)将 `MINECRAFT_VERSION` 替换为你需要指向的版本（如 `1.21.10`）。正确的目标版本示例为 `3.7+1.21.10`。如果你使用的是 `common` 平台，请将 `+` 去掉。
 
 ``` Kotlin
 dependencies {
-    compileOnly 'net.william278.husksync:husksync-PLATFORM:VERSION'
+    compileOnly 'net.william278.husksync:husksync-PLATFORM:HUSKSYNC_VERSION+MINECRAFT_VERSION'
 }
 ```
+
+:::
 
 ### 2. 将 HuskSync 导入为依赖
 

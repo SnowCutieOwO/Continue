@@ -3,10 +3,10 @@
 
 ## 配置结构
 
-* 📁 `plugins/HuskSync/`
+📁 `plugins/HuskSync/`
   * 📄 `config.yml`: 插件的总配置文件
   * 📄 `server.yml`: 服务器 ID 配置文件
-  * 📄 `messages-xx-xx.yml`: 插件本地化语言文件，格式为 MineDown（见“[语言贡献]”章节）
+  * 📄 `messages-xx-xx.yml`: 插件本地化语言文件，格式为 MiniMessage（见“[语言贡献](locales.md)”章节）
 
 ## 示例文件
 
