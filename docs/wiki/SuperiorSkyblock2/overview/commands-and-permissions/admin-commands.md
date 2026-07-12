@@ -22,7 +22,7 @@
   `目标玩家`：被添加的玩家名称。  
 * 权限：`superior.admin.add`
 
-## /island admin addblocklimite \<玩家名称/岛屿名称/*\> \<材料名\> \<限制数\>
+## /island admin addblocklimit \<玩家名称/岛屿名称/*\> \<材料名\> \<限制数\>
 
 对岛屿指定物品的数量限制进行调整。
 
@@ -63,34 +63,22 @@
 修改岛屿的作物生长速率。
 
 * 参数：    
-  `玩家名称`：岛屿拥有者的玩家名称。  
-  `岛屿名称`：待修改的岛屿名称。  
-  `*`：表示对服务器上所有岛屿生效。    
+  `玩家名称`：岛屿拥有者的玩家名称。\
+  `岛屿名称`：待修改的岛屿名称。\
+  `*`：表示对服务器上所有岛屿生效。\  
   `倍率`：添加的倍率。
 * 权限：`superior.admin.addcropgrowth`
 
 ## /island admin adddisbands \<玩家名称\> \<数量\>
 
-对玩家添加更多解散。
+对玩家添加更多解散次数。
 
 * 别称：
   `/island admin givedisbands \<玩家名称\> \<数量\>`
 * 参数：    
-  `玩家名称`：添加解散的玩家名称。  
+  `玩家名称`：添加解散次数的玩家名称。\
   `数量`：添加解散的次数。
 * 权限：`superior.admin.givedisbands`
-
-## /island admin addentitylimit \<玩家名称/岛屿名称/*\> \<实体名称\> \<限制数量\>
-
-对岛屿添加实体限制。
-
-* 参数：    
-  `玩家名称`：岛屿拥有者的玩家名称。  
-  `岛屿名称`：待修改的岛屿名称。  
-  `*`：表示对服务器上所有岛屿生效。    
-  `实体名称`：进行限制的实体名称。  
-  `限制数量`：限制实体的数量。
-* 权限：`superior.admin.addentitylimit`
 
 ## /island admin addeffect \<玩家名称/岛屿名称/*\> \<效果\> \<等级\>
 
@@ -104,6 +92,18 @@
   `等级`：添加的效果等级。
 
 * 权限：`superior.admin.addeffect`
+
+## /island admin addentitylimit \<玩家名称/岛屿名称/*\> \<实体名称\> \<限制数量\>
+
+对岛屿添加实体限制。
+
+* 参数：    
+  `玩家名称`：岛屿拥有者的玩家名称。  
+  `岛屿名称`：待修改的岛屿名称。  
+  `*`：表示对服务器上所有岛屿生效。    
+  `实体名称`：进行限制的实体名称。  
+  `限制数量`：限制实体的数量。
+* 权限：`superior.admin.addentitylimit`
 
 ## /island admin addgenerator \<玩家名称/岛屿名称/*\> \<材料\> \<值\> [世界名称]
 
@@ -229,7 +229,7 @@
     * 你可以在这里使用 `{player-name}` 内建变量，它会自动替换为玩家名称。  
 * 权限：`superior.admin.cmdall`
 
-## /is admin count \<玩家名称/岛屿名称\> [材料名称]
+## /island admin count \<玩家名称/岛屿名称\> [材料名称]
 
 检查岛屿的方块统计数量。
 
@@ -238,6 +238,27 @@
   `岛屿名称`：待修改的岛屿名称。  
   `材料名称`：指定待检查的方块名称。  
 * 权限：`superior.admin.count`
+
+## /island admin data \<get/set/remove\> \<player/island\> \<玩家名称/岛屿名称\> [路径] [值]
+
+管理玩家或岛屿的持久化数据。
+
+* 参数：
+  `get/set/remove`：进行获取，设置或清除持久化数据操作。\
+  `player/island`：对玩家或岛屿进行操作。\
+  `玩家名称`：被操作的玩家名称。\
+  `岛屿名称`：被操作的岛屿名称。\
+  `路径`：数据的路径。对于 `get` 及 `remove` 为可选参数，对 `set` 为必选参数。
+  `value`：要设置的值。对 `set` 为必选参数。
+* 权限：`superior.admin.data`
+
+## /island admin debug [过滤]
+
+打开调试模式。
+
+* 参数：
+  `过滤`：使得调试日志只输出指定类型的内容。
+* 权限：`superior.admin.data`
 
 ## /island admin delwarp \<玩家名称/岛屿名称\> \<地标名称\>
 
@@ -449,6 +470,26 @@
   `*`：表示移除所有岛屿的评价。
 * 权限：`superior.admin.removeratings`
 
+## /island admin resetpermissions \<玩家名称/岛屿名称/*\>
+
+重置岛屿上的所有权限设置。
+
+* 参数：  
+  `玩家名称`：待重置权限的玩家名称。  
+  `岛屿名称`：待重置权限的岛屿名称。  
+  `*`：表示重置所有岛屿的权限设置。
+* 权限：`superior.admin.resetpermissions`
+
+## /island admin resetsettings \<玩家名称/岛屿名称/*\>
+
+重置岛屿上的所有设置。
+
+* 参数：  
+  `玩家名称`：待重置设置的玩家名称。  
+  `岛屿名称`：待重置设置的岛屿名称。  
+  `*`：表示重置所有岛屿的设置。
+* 权限：`superior.admin.resetsettings`
+
 ## /island admin resetworld \<玩家名称/岛屿名称/*\> \<世界名称\>
 
 重置指定岛屿的世界。
@@ -622,6 +663,15 @@
   `世界名称`：应用修改的世界名称。  
 * 权限：`superior.admin.setgenerator`
 
+## /island admin setislandpreview \<结构名称\>
+
+设置岛屿结构的预览起始位置。
+
+* 别称：`/island admin setschematicpreview <结构名称>`
+* 参数：
+  `结构名称`：设置预览位置的岛屿结构名称。
+* 权限：`superior.admin.setislandpreview`
+
 ## /island admin setleader \<原拥有者\> \<新拥有者\>
 
 转让岛屿。
@@ -778,6 +828,26 @@
   `玩家名称`：待传送的玩家名称。  
 * 权限：`superior.admin.spawn`
 
+## /island admin syncbonus \<玩家名称/岛屿名称/*\> \<worth/level\>
+
+将指定世界与岛屿奖励进行同步。
+
+* 参数：
+  `玩家名称`：岛屿拥有者的玩家名称。\
+  `岛屿名称`：待同步奖励的岛屿名称。\
+  `*`：同步所有岛屿的奖励。\
+  `worth`：同步岛屿的奖励价值。\
+  `level`：同步岛屿的奖励等级。\
+* 权限：`superior.admin.syncbonus`
+
+## /island admin spy
+
+切换聊天窃听模式。
+
+窃听模式下可同时查看其他岛屿的聊天。
+
+* 权限：`superior.admin.spy`
+
 ## /island admin syncupgrades \<玩家名称/岛屿名称/*\>
 
 同步岛屿的翻倍卡与限制，以及升级内容。
@@ -790,14 +860,6 @@
   `*`：表示对所有岛屿生效。  
 
 * 权限：`superior.admin.syncupgrades`
-
-## /island admin spy
-
-切换聊天窃听模式。
-
-窃听模式下可同时查看其他岛屿的聊天。
-
-* 权限：`superior.admin.spy`
 
 ## /island admin stats
 

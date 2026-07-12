@@ -45,6 +45,14 @@
   `日志`：是否打开岛屿交易记录界面。
 * 权限：`superior.island.bank`
 
+## /island bans
+
+打开封禁玩家菜单。
+
+* 别称：
+  `/island banlist`
+* 权限：`superior.island.bans`
+
 ## /island biome
 
 修改岛屿的生物群系。
@@ -198,6 +206,12 @@
 离开你的岛屿。
 
 * 权限：`superior.island.panel`
+
+## /island members
+
+打开岛屿成员菜单。
+
+* 权限：`superior.island.members`
 
 ## /island mission complete <任务名称>
 

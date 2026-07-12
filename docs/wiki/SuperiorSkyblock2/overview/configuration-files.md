@@ -39,10 +39,27 @@
 
 * `config.yml`  
   配置文件包含许多不同的选项，可以自行开关。若你需要禁用某个功能，这就是你最该来的地方。插件的大部分内容可以通过该文件自行配置。
+* `entity-categories.yml`
+  实体分类文件包含不同类别的实体，允许你通过岛屿权限与标记控制不同类别的实体交互行为，每个分类都有一个实体列表，且可以对如下行为进行设置：
+  * `SPAWN` - 通过刷怪蛋生成实体的权限。
+  * `DAMAGE` - 攻击实体的权限。
+  * `INTERACT` - 与实体交互的权限。
+  * `SPAWNER_SPAWN` - 通过刷怪笼生成实体的岛屿标志。
+  * `NATURAL_SPAWN` - 自然生成实体的岛屿标志。
+
+  ``` YAML
+  VILLAGERS:
+    entities:
+      - VILLAGER
+    actions:
+      INTERACT: VILLAGER_TRADING
+  ```
+  你可以自行创建类别，数量不限，若使用了插件不存在的权限或标志名称，则插件会将其注册为新权限/标志。`ANIMAL`、`MONSTER`、`TAMEABLE` 以及 `VEHICLE` 为自带分组——默认没有实体，而是根据所处 Minecraft 版本自动分配。
 * `heads.yml`  
-  头颅文件包含了一系列生物使用的自定义皮肤，可通过命令 `/is values` 或在其他菜单内浏览。皮肤以 base64 格式存储，可以通过某些在线服务（如 https://minecraft-heads.com/ ）获取。
+  头颅文件包含了一系列生物使用的自定义皮肤，可通过命令 `/is values` 或在其他菜单内浏览。皮肤以 base64 格式存储，可以通过某些在线服务（如 <https://minecraft-heads.com/>）获取。
 * `interactables.yml`  
   可交互文件包含了玩家可交互的一系列方块。玩家如果缺少岛屿的 `INTERACT` 权限，就不能与这些方块交互。这允许服主能够配置自定义方块的限制。  
-  没有在列表中的方块在交互时不会经过检查，使得访客可以与之交互。假如 `CHEST` 没有在该文件中，则所有玩家都有权限与岛屿上的箱子交互。
+  没有在列表中的方块在交互时不会经过检查，使得访客可以与之交互。假如 `CHEST` 没有在该文件中，则所有玩家都有权限与岛屿上的箱子交互。\
+  文件的旧格式——简单的 `interactables` 方块列表——仍可使用：插件会根据方块类型自动转化，为其分配权限（箱子改为 `CHEST_ACCESS`，容器类改为 `USE`，告示牌改为 `SIGN_INTERACT`，刷怪笼改为 `SPAWNER_BREAK`，耕地及农作物改为 `FARM_TRAMPING`，海龟蛋改为 `TURTLE_EGG_TRAMPING`，讲台改为 `PICKUP_LECTERN_BOOK`，其他均改为 `INTERACT`）。
 * `safe_blocks.yml`  
   安全方块文件包含了玩家可安全站在其上的一系列方块。若玩家传送的地点被判断为“不安全”，则插件会试图阻止玩家的传送请求，以防止玩家传送后受到伤害。

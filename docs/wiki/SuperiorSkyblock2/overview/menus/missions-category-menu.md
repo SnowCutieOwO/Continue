@@ -1,6 +1,6 @@
-# 银行日志菜单
+# 任务分类菜单
 
-在这里你可以找到自定义银行日志的教程。
+在这里你可以找到自定义任务分类界面的教程。
 
 ## 全局设置
 
@@ -18,23 +18,28 @@
 
 ## 分页式菜单设置
 
-银行日志菜单是分页菜单，它会显示一列可用的物品——在这里就是银行交易日志。它的数量可能会大于菜单实际拥有的格子数量，这种情况下菜单就需要分成多页。
+任务分类菜单是分页菜单，它会显示一列可用的物品——在这里就是成员列表。它的数量可能会大于菜单实际拥有的格子数量，这种情况下菜单就需要分成多页。
 
 这些类型的菜单有四个额外选项：
-* `slots` - 代表着银行交易日志的按钮。
+* `slots` - 代表着任务的按钮。
 * `previous-page` - 代表着翻回上一页的按钮。
 * `current-page` - 代表着当前页的按钮。
 * `next-page` - 代表着翻到下一页的按钮。
 
-## 日志相关设置
-
-银行日志有两个可配置的额外设置。首先是 `time-sort`，代表着点击后会将日志按时间排序的按钮。与之相似的则是 `money-sort`，代表着点击后会将日志按交易数额排序的按钮。只需将代表它们的字符填入排版设置中即可将这些按钮置入菜单。
-
 ::: info
 
-如果你不需要这些按钮，只需将它们的设置从配置中删去即可。
+任务本身的图标不在菜单中配置——每个任务各自的图标都在它们的配置 `icons` 部分。
 
 :::
+
+## 任务分类相关设置
+
+任务分类菜单有如下需要配置的设置：
+
+|字段|类型|描述|
+|---|---|---|
+| `sort-by-completion` | 布尔值 | 所有任务是否按完成状态排序：未完成 -> 可完成 -> 已完成。 |
+| `remove-completed` | 布尔值 | 是否在菜单中隐藏已完成的任务。 |
 
 ## 物品设置
 
@@ -44,22 +49,31 @@
 
 分页菜单（`slots`、`previous-page` 等）支持嵌入内建变量！
 
-* `slots` - 
-  * `{0}` - 交易 ID
-  * `{1}` - 参与交易的玩家名称
-  * `{2}` - 交易类型（取款/存款）
-  * `{3}` - 交易完成的时间
-  * `{4}` - 交易数额
-  * `{5}` - 按逗号分隔格式显示的交易数额
-  * `{6}` - 按缩写格式显示的交易数额，`K` 表示千，`M` 表示百万，`B` 表示十亿，`T` 表示万亿，`Q` 表示千万亿。
 * `previous-page`、`next-page` - 
   * `{0}` - 若存在下一页则显示为绿色（`&a`），反之则为红色（`&c`）
 * `current-page` -
   * `{0}` - 当前页码
 
+## 物品设置
+
+这就是你配置物品的地方。你可以在[这里](index.md#编辑菜单内的物品)找到如何正确配置物品的教程。
+
 ## 声音设置
 
 在这部分配置中你可以自定义玩家点击物品时发出的音效。你可以在[这里](index.md#物品音效)找到正确配置音效的教程。
+
+The mission buttons (slots char) support four special sound sections instead of a regular sound, depending on the status of the mission for the player:
+Field Name
+Description
+
+任务按钮（`slots` 符号）相较一般的声音有更多设置，取决于玩家当前的任务状态：
+
+|字段|描述|
+|---|---|
+| `locked` | 当玩家未解锁该任务时播放。 |
+| `completed` | 当玩家已完成该任务时播放。 |
+| `not-completed` | 当玩家未完成该任务且尚不能提交时播放。 |
+| `can-complete` | 当玩家未完成任务但可以提交时播放。 |
 
 ## 命令设置
 
@@ -71,63 +85,51 @@
 
 ## 菜单示例
 
-这是银行日志菜单的示例配置，涵盖了本章节教程提及的大部分技术及功能。
+这是任务菜单的示例配置，涵盖了本章节教程提及的大部分技术及功能。
 
 ``` YAML
-title: '&l交易日志 &r{0}'
+title: '&l{0} 任务'
 previous-menu: true
 
 pattern:
-  - '@ @ @ @ @ @ @ @ @'
-  - '@ @ @ @ @ @ @ @ @'
-  - '@ @ @ @ @ @ @ @ @'
-  - '@ @ @ @ @ @ @ @ @'
-  - '$ $ $ ! $ - $ $ $'
-  - '# # % # * # ^ # #'
+  - '# # # # # # # # #'
+  - '# # @ @ @ @ @ # #'
+  - '# # # # # # # # #'
 
 slots: '@'
-previous-page: '%'
+previous-page: '*'
 current-page: '*'
-next-page: '^'
+next-page: '*'
 
-time-sort: '!'
-money-sort: '-'
+# 任务是否按其完成状态排序？
+# 未完成 -> 可完成 -> 已完成
+sort-by-completion: false
+
+# 已完成的任务是否在菜单中隐藏？
+remove-completed: false
 
 items:
-  '@':
-    type: PAPER
-    name: '&e交易记录 #{0}'
-    lore:
-      - '&7玩家名称: {1}'
-      - '&7交易状态: {2}'
-      - '&7交易时间: {3}'
-      - '&7交易金额: ${4}'
-      - '&7 '
-      - '&7&o(( &f&o右键点击 &7&o浏览与此玩家相关的交易. ))'
-  '%':
-    type: PAPER
-    name: '{0}上一页'
-  '*':
-    type: SUNFLOWER
-    name: '&a当前页'
-    lore:
-      - '&7第 {0} 页'
-  '^':
-    type: PAPER
-    name: '{0}下一页'
-  '$':
-    type: BLACK_STAINED_GLASS_PANE
+  '#':
+    type: STAINED_GLASS_PANE
+    data: 15
     name: '&f'
-  '!':
-    type: CLOCK
-    name: '&6按时间排序'
-  '-':
-    type: EMERALD
-    name: '&6按交易额排序'
 
 sounds:
   '@':
-    type: BLOCK_CHEST_OPEN
-    volume: 0.8
-    pitch: 1
+    locked:
+      type: ANVIL_LAND
+      volume: 0.2
+      pitch: 0.2
+    completed:
+      type: ANVIL_LAND
+      volume: 0.2
+      pitch: 0.2
+    not-completed:
+      type: ANVIL_LAND
+      volume: 0.2
+      pitch: 0.2
+    can-complete:
+      type: ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
 ```

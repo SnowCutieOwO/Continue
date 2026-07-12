@@ -47,6 +47,10 @@
 
 在这部分配置中你可以自定义玩家点击物品时发出的音效。你可以在[这里](index.md#物品音效)找到正确配置音效的教程。
 
+## 命令设置
+
+在这部分配置中你可以自定义玩家点击物品时执行的命令。你可以在[这里](index.md#命令部分)找到正确执行命令的教程。
+
 ## 权限设置
 
 在这部分配置中你可以自定义玩家点击物品所需要的权限。你可以在[这里](index.md#权限部分)找到正确配置权限条件的教程。
@@ -56,10 +60,194 @@
 这是生物群系菜单的示例配置，涵盖了本章节教程提及的大部分技术及功能。
 
 ``` YAML
-# 原文尚无内容显示...
+title: '&l选择群系'
+previous-menu: true
+
+pattern:
+  - '$ $ $ $ $ $ $ $ $'
+  - '# ! # % # & # ~ #'
+  - '# # @ # ^ # * # #'
+  - '$ $ $ $ $ $ $ $ $'
+
+# 是否将当前选择的群系设置为附魔状态?
+current-biome-glow: false
+
+items:
+  '$':
+    type: BLACK_STAINED_GLASS_PANE
+    name: '&f'
+  '!':
+    biome: PLAINS
+    required-permission: ''
+    access:
+      type: PLAYER_HEAD
+      skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzk1ZDM3OTkzZTU5NDA4MjY3ODQ3MmJmOWQ4NjgyMzQxM2MyNTBkNDMzMmEyYzdkOGM1MmRlNDk3NmIzNjIifX19'
+      name: '&e平原群系 &a(可选择)'
+      lore:
+        - '&7将岛屿的群系切换为平原.'
+    no-access:
+      type: PLAYER_HEAD
+      skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzk1ZDM3OTkzZTU5NDA4MjY3ODQ3MmJmOWQ4NjgyMzQxM2MyNTBkNDMzMmEyYzdkOGM1MmRlNDk3NmIzNjIifX19'
+      name: '&e平原群系 &c(未解锁)'
+      lore:
+        - '&7将岛屿的群系切换为平原.'
+  '@':
+    biome: JUNGLE
+    required-permission: ''
+    access:
+      type: PLAYER_HEAD
+      skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0='
+      name: '&e丛林群系 &a(可选择)'
+      lore:
+        - '&7将岛屿的群系切换为丛林.'
+    no-access:
+      type: PLAYER_HEAD
+      skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0='
+      name: '&e丛林群系 &c(未解锁)'
+      lore:
+        - '&7将岛屿的群系切换为丛林.'
+  '%':
+    biome: TAIGA
+    required-permission: ''
+    access:
+      type: PLAYER_HEAD
+      skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDNjNTJlYWU3NDdjYWQ1YjRmZDE5YjFhMjNiMzlhMzM2YjYyZWQ0MjI3OTdhNjIyZDA0NWY0M2U1ZDM4In19fQ=='
+      name: '&e针叶林群系 &a(可选择)'
+      lore:
+        - '&7将岛屿的群系切换为针叶林.'
+    no-access:
+      type: PLAYER_HEAD
+      skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDNjNTJlYWU3NDdjYWQ1YjRmZDE5YjFhMjNiMzlhMzM2YjYyZWQ0MjI3OTdhNjIyZDA0NWY0M2U1ZDM4In19fQ=='
+      name: '&e针叶林群系 &c(未解锁)'
+      lore:
+        - '&7将岛屿的群系切换为针叶林.'
+  '^':
+    biome: DESERT
+    required-permission: ''
+    access:
+      type: PLAYER_HEAD
+      skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTMxOTkzZTRjZmRhMTUzZWFmN2RjMTM4ZDUyYmJhNWMyODNkMDE2MzI2MDIyNjIxNjE3NzZmMGY0Yjg2YSJ9fX0='
+      name: '&e沙漠群系 &a(可选择)'
+      lore:
+        - '&7将岛屿的群系切换为沙漠.'
+        - '&c警告，请先清理岛屿内的冰与雪！'
+    no-access:
+      type: PLAYER_HEAD
+      skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTMxOTkzZTRjZmRhMTUzZWFmN2RjMTM4ZDUyYmJhNWMyODNkMDE2MzI2MDIyNjIxNjE3NzZmMGY0Yjg2YSJ9fX0='
+      name: '&e沙漠群系 &c(未解锁)'
+      lore:
+        - '&7将岛屿的群系切换为沙漠.'
+        - '&c警告，请先清理岛屿内的冰与雪！'
+  '&':
+    biome: NETHER
+    required-permission: ''
+    access:
+      type: PLAYER_HEAD
+      skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTU2Y2E1YzY3OTMzNmRkNGYzMjYyZjRmYmMyM2MxYTJlZTBkODJhN2ZkODFlNmU2MjMzN2U1ZmQ1YzcifX19'
+      name: '&e下界群系 &a(可选择)'
+      lore:
+        - '&7将岛屿的群系切换为下界.'
+        - '&c警告，请先清理岛屿内的水、冰与雪！'
+    no-access:
+      type: PLAYER_HEAD
+      skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTU2Y2E1YzY3OTMzNmRkNGYzMjYyZjRmYmMyM2MxYTJlZTBkODJhN2ZkODFlNmU2MjMzN2U1ZmQ1YzcifX19'
+      name: '&e下界群系 &c(未解锁)'
+      lore:
+        - '&7将岛屿的群系切换为下界.'
+        - '&c警告，请先清理岛屿内的水、冰与雪！'
+  '*':
+    biome: SWAMP
+    required-permission: ''
+    access:
+      type: PLAYER_HEAD
+      skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzdlOGNiNTdmZTc5MGU5NjVlM2NmYTZjNGZiYzE2ZTMyMjYyMTBkNjVmNTYxNGU4ODUzZmE5ZmI4NDA3NDQ0MSJ9fX0='
+      name: '&e沼泽群系 &a(可选择)'
+      lore:
+        - '&7将岛屿的群系切换为沼泽.'
+    no-access:
+      type: PLAYER_HEAD
+      skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzdlOGNiNTdmZTc5MGU5NjVlM2NmYTZjNGZiYzE2ZTMyMjYyMTBkNjVmNTYxNGU4ODUzZmE5ZmI4NDA3NDQ0MSJ9fX0='
+      name: '&e沼泽群系 &c(未解锁)'
+      lore:
+        - '&7将岛屿的群系切换为沼泽.'
+  '~':
+    biome: WOODED_HILLS
+    required-permission: ''
+    access:
+      type: PLAYER_HEAD
+      skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODJkNWZlZmUyMGRhZjMxYzIzOGVlMjI3ZGQxNDE4MjdhZGE1ZWY4NDgyZDhkMzU3YmJlNWE3Y2Y0MGFmODUifX19'
+      name: '&e恶地群系 &a(可选择)'
+      lore:
+        - '&7将岛屿的群系切换为恶地.'
+    no-access:
+      type: PLAYER_HEAD
+      skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODJkNWZlZmUyMGRhZjMxYzIzOGVlMjI3ZGQxNDE4MjdhZGE1ZWY4NDgyZDhkMzU3YmJlNWE3Y2Y0MGFmODUifX19'
+      name: '&e恶地群系 &c(未解锁)'
+      lore:
+        - '&7将岛屿的群系切换为恶地.'
+
+sounds:
+  '!':
+    access:
+      type: ENTITY_ENDERMAN_TELEPORT
+      volume: 0.8
+      pitch: 0.2
+    no-access:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2
+  '@':
+    access:
+      type: ENTITY_ENDERMAN_TELEPORT
+      volume: 0.8
+      pitch: 0.2
+    no-access:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2
+  '%':
+    access:
+      type: ENTITY_ENDERMAN_TELEPORT
+      volume: 0.8
+      pitch: 0.2
+    no-access:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2
+  '^':
+    access:
+      type: ENTITY_ENDERMAN_TELEPORT
+      volume: 0.8
+      pitch: 0.2
+    no-access:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2
+  '&':
+    access:
+      type: ENTITY_ENDERMAN_TELEPORT
+      volume: 0.8
+      pitch: 0.2
+    no-access:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2
+  '*':
+    access:
+      type: ENTITY_ENDERMAN_TELEPORT
+      volume: 0.8
+      pitch: 0.2
+    no-access:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2
+  '~':
+    access:
+      type: ENTITY_ENDERMAN_TELEPORT
+      volume: 0.8
+      pitch: 0.2
+    no-access:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2
 ```
-
-<!-- 未完成：
-
-     原因：缺少原文的代码片段。
- -->

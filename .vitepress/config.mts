@@ -1393,7 +1393,7 @@ export default defineConfig({
             {
               text: '概览', link: 'wiki/SuperiorSkyblock2/overview', collapsed: false, items: [
                 {
-                  text: '命令与权限', collapsed: true, items: [
+                  text: '命令与权限', link: 'wiki/SuperiorSkyblock2/overview/commands-and-permissions', collapsed: true, items: [
                     { text: '玩家命令', link: 'wiki/SuperiorSkyblock2/overview/commands-and-permissions/player-commands' },
                     { text: '管理员命令', link: 'wiki/SuperiorSkyblock2/overview/commands-and-permissions/admin-commands' },
                     { text: '权限', link: 'wiki/SuperiorSkyblock2/overview/commands-and-permissions/permissions' }
@@ -1419,8 +1419,43 @@ export default defineConfig({
                 },
                 {
                   text: '菜单', link: 'wiki/SuperiorSkyblock2/overview/menus', collapsed: true, items: [
-                    { text: '银行日志菜单', link: 'wiki/SuperiorSkyblock2/overview/menus/bank-logs-menu' },
-                    { text: '群系菜单', link: 'wiki/SuperiorSkyblock2/overview/menus/biomes-menu' }
+                    { text: '银行日志界面', link: 'wiki/SuperiorSkyblock2/overview/menus/bank-logs-menu' },
+                    { text: '封禁列表界面', link: 'wiki/SuperiorSkyblock2/overview/menus/banned-players-menu' },
+                    { text: '群系界面', link: 'wiki/SuperiorSkyblock2/overview/menus/biomes-menu' },
+                    { text: '边界颜色界面', link: 'wiki/SuperiorSkyblock2/overview/menus/border-color-menu' },
+                    { text: '确认封禁界面', link: 'wiki/SuperiorSkyblock2/overview/menus/confirm-ban-menu' },
+                    { text: '确认解散界面', link: 'wiki/SuperiorSkyblock2/overview/menus/confirm-disband-menu' },
+                    { text: '确认踢出界面', link: 'wiki/SuperiorSkyblock2/overview/menus/confirm-kick-menu' },
+                    { text: '确认离开界面', link: 'wiki/SuperiorSkyblock2/overview/menus/confirm-leave-menu' },
+                    { text: '确认转让界面', link: 'wiki/SuperiorSkyblock2/overview/menus/confirm-transfer-menu' },
+                    { text: '控制面板界面', link: 'wiki/SuperiorSkyblock2/overview/menus/control-panel-menu' },
+                    { text: '合作玩家界面', link: 'wiki/SuperiorSkyblock2/overview/menus/coops-menu' },
+                    { text: '方块计数界面', link: 'wiki/SuperiorSkyblock2/overview/menus/counts-menu' },
+                    { text: '全局地标界面', link: 'wiki/SuperiorSkyblock2/overview/menus/global-warps-menu' },
+                    { text: '岛屿银行界面', link: 'wiki/SuperiorSkyblock2/overview/menus/island-bank-menu' },
+                    { text: '岛屿仓库界面', link: 'wiki/SuperiorSkyblock2/overview/menus/island-chest-menu' },
+                    { text: '岛屿创建界面', link: 'wiki/SuperiorSkyblock2/overview/menus/island-creation-menu' },
+                    { text: '岛屿评分界面', link: 'wiki/SuperiorSkyblock2/overview/menus/island-rate-menu' },
+                    { text: '评分列表界面', link: 'wiki/SuperiorSkyblock2/overview/menus/island-ratings-menu' },
+                    { text: '成员管理界面', link: 'wiki/SuperiorSkyblock2/overview/menus/member-manage-menu' },
+                    { text: '成员职位界面', link: 'wiki/SuperiorSkyblock2/overview/menus/member-role-menu' },
+                    { text: '成员列表界面', link: 'wiki/SuperiorSkyblock2/overview/menus/members-menu' },
+                    { text: '任务列表界面', link: 'wiki/SuperiorSkyblock2/overview/menus/missions-menu' },
+                    { text: '任务分类界面', link: 'wiki/SuperiorSkyblock2/overview/menus/missions-category-menu' },
+                    { text: '权限管理界面', link: 'wiki/SuperiorSkyblock2/overview/menus/permissions-menu' },
+                    { text: '语言选择界面', link: 'wiki/SuperiorSkyblock2/overview/menus/player-language-menu' },
+                    { text: '设置管理界面', link: 'wiki/SuperiorSkyblock2/overview/menus/settings-menu' },
+                    { text: '岛屿排行榜界面', link: 'wiki/SuperiorSkyblock2/overview/menus/top-islands-menu' },
+                    { text: '独特访客界面', link: 'wiki/SuperiorSkyblock2/overview/menus/unique-visitors-menu' },
+                    { text: '岛屿升级界面', link: 'wiki/SuperiorSkyblock2/overview/menus/upgrades-menu' },
+                    { text: '岛屿价值界面', link: 'wiki/SuperiorSkyblock2/overview/menus/values-menu' },
+                    { text: '岛屿访客界面', link: 'wiki/SuperiorSkyblock2/overview/menus/visitors-menu' },
+                    { text: '地标分类界面', link: 'wiki/SuperiorSkyblock2/overview/menus/warp-categories-menu' },
+                    { text: '地标分类图标编辑界面', link: 'wiki/SuperiorSkyblock2/overview/menus/warp-category-icon-edit-menu' },
+                    { text: '地标分类管理界面', link: 'wiki/SuperiorSkyblock2/overview/menus/warp-category-manage-menu' },
+                    { text: '地标图标编辑界面', link: 'wiki/SuperiorSkyblock2/overview/menus/warp-icon-edit-menu' },
+                    { text: '地标管理界面', link: 'wiki/SuperiorSkyblock2/overview/menus/warp-manage-menu' },
+                    { text: '地标界面', link: 'wiki/SuperiorSkyblock2/overview/menus/warps-menu' },
                   ]
                 },
                 {
@@ -1447,15 +1482,16 @@ export default defineConfig({
                 },
                 {
                   text: '附属', link: 'wiki/SuperiorSkyblock2/overview/addons', collapsed: true, items: [
+                    { text: 'SSBSlimeWorlds', link: 'wiki/SuperiorSkyblock2/overview/addons/ssbslimeworlds' },
                     { text: 'SSBOneBlock', link: 'wiki/SuperiorSkyblock2/overview/addons/ssboneblock' },
                     { text: 'SSBProxyBridge', link: 'wiki/SuperiorSkyblock2/overview/addons/ssbproxybridge' },
                   ]
                 },
-                { text: '插件源码', link: 'https://github.com/BG-Software-LLC/SuperiorSkyblock2' },
-                { text: '漏洞跟踪', link: 'https://github.com/BG-Software-LLC/SuperiorSkyblock2/issues' },
-                { text: '插件下载', link: 'https://bg-software.com/superiorSkyblock/' },
               ]
-            }
+            },
+            { text: '插件源码', link: 'https://github.com/BG-Software-LLC/SuperiorSkyblock2' },
+            { text: '漏洞跟踪', link: 'https://github.com/BG-Software-LLC/SuperiorSkyblock2/issues' },
+            { text: '插件下载', link: 'https://bg-software.com/superiorSkyblock/' },
           ]
         }
       ],
