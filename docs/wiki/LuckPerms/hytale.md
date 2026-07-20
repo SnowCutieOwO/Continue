@@ -2,9 +2,9 @@
 
 这是**面向 [Hytale](https://hytale.com/) 的 LuckPerms**，目前它还处于 **beta** 版本，可以从我们的[下载页面](https://luckperms.net/download)获取。与你熟悉的 LuckPerms 一样，承载着来自 Minecraft 的爱意，编织出兼容 Hytale 的代码！🎉
 
-面相 Hytale 的 LuckPerms 同样基于插件/模组的代码。我们相信将 Hytale 支持的 LuckPerms 建立在 Minecraft 已有的雄厚核心库基础上可以使得它有同样稳定且高效地管理权限，甚至可能比那些小型开发者“定制”的插件有更优秀的表现。🥳
+面向 Hytale 的 LuckPerms 同样基于插件/模组的代码。我们相信将 Hytale 支持的 LuckPerms 建立在 Minecraft 已有的雄厚核心库基础上可以使得它有同样稳定且高效地管理权限，甚至可能比那些小型开发者“定制”的插件有更优秀的表现。🥳
 
-在维基或项目的记录的内容有部分仍旧只适用于 Minecraft。不过，好在 Hytale 的权限系统与现代绝大部分服务器采用的 Bukkit 底层逻辑类似，在 Hytale 中使用本插件的体验会几乎与 Minecraft 相同。太棒了！
+在维基或项目的记录的内容有部分仍旧只适用于 Minecraft。不过，好在 Hytale 的权限系统与现代绝大部分服务器采用的 Bukkit 底层逻辑类似，在 Hytale 中使用本插件的方式及感觉与 Minecraft 几乎相同。太棒了！
 
 祝你在你的 Hytale 服务器上使用 LuckPerms 顺利！
 
@@ -23,10 +23,10 @@
 
 最简单的答案就是，浏览这些章节：
 
-* [安装步骤](install-on-a-single-server.md)可以指导你安装 LuckPerms，而
-* [快速开始](getting-started.md)则可以教你快速上手！
+* “[安装步骤](install-on-a-single-server.md)”章节可以指导你安装 LuckPerms，而
+* “[快速开始](getting-started.md)”章节则可以教你快速上手！
 
-之后，如果你对权限插件毫无概念还想了解更多，我们建议你从目录最顶上开始阅读！[命令用法](command-usage/index.md)章节有完整的命令列表，供你参考使用。
+之后，如果你对权限插件毫无概念或想了解更多，我们建议你从目录最顶上开始阅读！[命令用法](command-usage/index.md)章节有完整的命令列表，供你参考使用。
 
 ### 原本的 OP 功能失效！
 
@@ -56,7 +56,7 @@ LuckPerms 致力于通过 `CommandSender#hasPermission` 和 `PermissionsModule#h
 
 ### 聊天格式
 
-在早期的 beta 版本中，LuckPerms 有一个内置的聊天格式模块。不过随着现在模组/插件的生态已经开始发展，这个功能已经被去除，且有更好的选择供你使用。我们推荐你使用如下的这些聊天格式插件。
+在早期的 beta 版本中，LuckPerms 有一个内置的聊天格式模块。不过随着现在模组/插件的生态发展，这个功能已经被去除，这里有更好的替代品供你选择。推荐你使用这些聊天格式模组。
 
 #### mini-chat-formatter
 
@@ -124,8 +124,6 @@ https://github.com/LuckPerms/api-cookbook-hytale
 
 #### 2）从 JavaPlugin.start() 之后获取 API 实例
 
-2) Obtain the API instance from JavaPlugin.start() or later
-
 LuckPerms 会在“开始”阶段执行它的最终初始化内容，而这些内容通常在“设置”阶段尚未准备完毕。
 
 ``` Java
@@ -144,11 +142,7 @@ LuckPerms 会在“开始”阶段执行它的最终初始化内容，而这些�
 
 #### 3）PlayerAdapter 与 ContectManager 需要 `PlayerRef`
 
-3) PlayerAdapter and ContextManager expect PlayerRef
-
 LuckPerms API 中的方法需要“玩家”对象，以 `PlayerRef` 类型传递，**而非** `player`。
-
-Methods in the LuckPerms API that expect a "player" object need to be passed a PlayerRef, not a Player.
 
 例如：
 
