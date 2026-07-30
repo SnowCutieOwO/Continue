@@ -1,0 +1,60 @@
+# 权限列表
+
+基于 SuperPerms 的访问控制，支持 PermissionEx、BukkitPermissions、bPermissions 以及经典的 Permissions 插件。插件有如下权限节点：
+
+- `dynmap.render` - 允许使用 `/dynmap render` 命令。
+- `dynmap.show.self` - 允许（对自己）使用 `/dynmap show` 命令。
+- `dynmap.show.others` - 允许使用 `/dynmap show` 命令。
+- `dynmap.hide.self` - 允许（对自己）使用 `/dynmap hide` 命令。
+- `dynmap.hide.others` - 允许使用 `/dynmap hide` 命令。
+- `dynmap.fullrender` - 允许使用 `/dynmap fullrender` 或 `/dynmap fullrender` 命令。
+- `dynmap.radiusrender` - 允许使用 `/dynmap radiusrender` 命令。
+- `dynmap.updaterender` - 允许使用 `/dynmap updaterender` 命令。
+- `dynmap.cancelrender` - 允许使用 `/dynmap cancelrender` 命令。
+- `dynmap.pause` - 允许使用 `/dynmap pause` 命令。
+- `dynmap.reload` - 允许使用 `/dynmap reload` 命令。
+- `dynmap.stats` - 允许使用 `/dynmap stats`、`/dynmap stats` 或 `/dynmap triggerstats` 命令。
+- `dynmap.resetstats` - 允许使用 `/dynmap resetstats` 或 `/dynmap resetstats` 命令。
+- `dynmap.sendtoweb` - 允许使用 `/dynmap sendtoweb` 命令。
+- `dynmap.purgequeue` - 允许使用 `/dynmap purgequeue` 命令。
+- `dynmap.ids-for-ip` - 允许使用 `/dynmap ids-for-ip` 命令。
+- `dynmap.ips-for-id` - 允许使用 `/dynmap ips-for-id` 命令。
+- `dynmap.add-id-for-ip` - 允许使用 `/dynmap add-id-for-ip` 命令。
+- `dynmap.del-id-for-ip` - 允许使用 `/dynmap del-id-for-ip` 命令。
+- `dynmap.marker.add` - 允许使用 `/dmarker add` 命令。
+- `dynmap.marker.movehere` - 允许使用 `/dmarker movehere` 命令。
+- `dynmap.marker.update` - 允许使用 `/dmarker update` 命令。
+- `dynmap.marker.delete` - 允许使用 `/dmarker delete` 命令。
+- `dynmap.marker.list` - 允许使用 `/dmarker list` 命令。
+- `dynmap.marker.icons` - 允许使用 `/dmarker icons` 命令。
+- `dynmap.marker.addset` - 允许使用 `/dmarker addset` 命令。
+- `dynmap.marker.updateset` - 允许使用 `/dmarker updateset` 命令。
+- `dynmap.marker.deleteset` - 允许使用 `/dmarker deleteset` 命令。
+- `dynmap.marker.listsets` - 允许使用 `/dmarker listsets` 命令。
+- `dynmap.marker.addicon` - 允许使用 `/dmarker addicon` 命令。
+- `dynmap.marker.updateicon` - 允许使用 `/dmarker updateicon` 命令。
+- `dynmap.marker.deleteicon` - 允许使用 `/dmarker deleteicon` 命令。
+- `dynmap.marker.addarea` - 允许使用 `/dmarker addarea` 命令。
+- `dynmap.marker.updatearea` - 允许使用 `/dmarker updatearea` 命令。
+- `dynmap.marker.deletearea` - 允许使用 `/dmarker deletearea` 命令。
+- `dynmap.marker.listareas` - 允许使用 `/dmarker listareas` 命令。
+- `dynmap.marker.addline` - 允许使用 `/dmarker addline` 命令。
+- `dynmap.marker.updateline` - 允许使用 `/dmarker updateline` 命令。
+- `dynmap.marker.deleteline` - 允许使用 `/dmarker deleteline` 命令。
+- `dynmap.marker.listlines` - 允许使用 `/dmarker listlines` 命令。
+- `dynmap.marker.sign` - 允许使用 `creation of markers using signs` 命令。
+- `dynmap.dmap.worldlist` - 允许使用 `/dmap worldlist` 命令。
+- `dynmap.dmap.worldset` - 允许使用 `/dmap worldset` 命令。
+- `dynmap.dmap.worldreset` - 允许使用 `/dmap worldreset` 命令。
+- `dynmap.dmap.mapdelete` - 允许使用 `/dmap mapdelete` 命令。
+- `dynmap.dmap.mapset` - 允许使用 `/dmap mapset` 命令。
+- `dynmap.dmap.mapadd` - 允许使用 `/dmap mapadd` 命令。
+- `dynmap.dmap.perspectivelist` - 允许使用 `/dmap perspectivelist` 命令。
+- `dynmap.dmap.shaderlist` - 允许使用 `/dmap shaderlist` 命令。
+- `dynmap.dmap.lightinglist` - 允许使用 `/dmap lightinglist` 命令。
+- `dynmap.webregister` - 允许使用 `/dynmap webregister` 命令。
+- `dynmap.webregister.other` - 允许使用 `/dynmap webregister player-id` 命令。
+- `dynmap.webchat` - 允许在网页聊天界面中发送消息（需启用 `login` 或 `id-by-ip` 设置）。
+- `dynmap.playermarkers.showall` - 允许玩家在 `protected-player-info` 设置开启的情况下浏览所有玩家的位置。
+- `dynmap.world.<世界名称>` - 允许玩家无视世界保护查看世界地图。
+- `dynmap.map.<世界名称>.<地图名称>` - 允许玩家无视世界保护查看指定世界的指定地图。
