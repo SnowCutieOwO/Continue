@@ -6,6 +6,7 @@ import '@red-asuka/vitepress-plugin-tabs/dist/style.css'
 import { NolebaseGitChangelogPlugin } from '@nolebase/vitepress-plugin-git-changelog/client'
 import '@nolebase/vitepress-plugin-git-changelog/client/style.css'
 import '../theme/theme.css'
+// 25.12.03 新增：滚动条优化（AI）
 import '../theme/scrollBar.css'
 import '@theojs/lumen/pic'
 import Layout from './Layout.vue'
@@ -13,6 +14,8 @@ import Layout from './Layout.vue'
 import { BoxCube, Card, Links, Pill } from '@theojs/lumen'
 // 26.05.11 新增：LiteTree 渲染组件
 import { LiteTree } from '@lite-tree/vue'
+// 26.07.21 新增：selColor 颜色选择组件（AI）
+import selColor from './selColor.vue'
 
 export default {
   extends: DefaultTheme,
@@ -35,6 +38,7 @@ export default {
       https://zhangfisher.github.io/lite-tree/examples.html
     */
     app.component('LiteTree', LiteTree)
+    app.component('selColor', selColor)
   },
   Layout
 } satisfies Theme

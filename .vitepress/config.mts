@@ -134,9 +134,7 @@ export default defineConfig({
       ``
     ]
   ],
-  srcExclude: [
-    '**/wiki/Dynmap/**',
-  ],
+  srcExclude: [],
   markdown: {
     container: {
       tipLabel: '提示',
@@ -290,6 +288,7 @@ export default defineConfig({
           { text: 'CommandTimer', link: 'wiki/CommandTimer/index' },
           { text: 'CoreProtect', link: 'wiki/CoreProtect/index' },
           { text: 'DecentHolograms', link: 'wiki/DecentHolograms/index' },
+          { text: 'Dynmap', link: 'wiki/Dynmap/index' },
           { text: 'ExcellentCrates', link: 'wiki/ExcellentCrates/index' },
           { text: 'ExcellentEnchants', link: 'wiki/ExcellentEnchants/index' },
           { text: 'FallbackServer', link: 'wiki/FallbackServer/index' },
@@ -707,6 +706,138 @@ export default defineConfig({
             { text: 'Discord', link: 'https://discord.decentsoftware.eu/' },
           ]
         },
+      ],
+      'wiki/Dynmap/': [
+        { text: '返回首页', link: 'index' },
+        { text: '前言', link: 'wiki/ExcellentCrates/index' },
+        {
+          text: 'Dynmap 中文维基', collapsed: false, items: [
+            { text: '首页', link: 'wiki/Dynmap/home' },
+            { text: '特色', link: 'wiki/Dynmap/features' },
+            { text: '附属', link: 'wiki/Dynmap/addons' },
+            { text: '资源', link: 'wiki/Dynmap/resources' },
+            { text: '鸣谢', link: 'wiki/Dynmap/credits' },
+            { text: '常见问题', link: 'wiki/Dynmap/faq' },
+            {
+              text: '安装', collapsed: true, items: [
+                {
+                  text: '基础插件设置', link: 'wiki/Dynmap/setup/base-plugin-settings', collapsed: true, items: [
+                    { text: '安装', link: 'wiki/Dynmap/setup/base-plugin-settings/installation' },
+                    { text: 'cofiguration.txt', link: 'wiki/Dynmap/setup/base-plugin-settings/configuration-txt' },
+                    { text: '权限', link: 'wiki/Dynmap/setup/base-plugin-settings/permissions' },
+                    { text: '命令', link: 'wiki/Dynmap/setup/base-plugin-settings/commands' },
+                  ]
+                },
+                {
+                  text: '网页部署', collapsed: true, items: [
+                    { text: '外置网页基础', link: 'wiki/Dynmap/setup/web-setup/external-webserver-basics' },
+                    { text: 'MySQL/SQLite 外置网页部署', link: 'wiki/Dynmap/setup/web-setup/external-webserver-with-mysql-sqlite' },
+                    { text: '网页界面登录支持与权限', link: 'wiki/Dynmap/setup/web-setup/web-ui-login-support-and-permissions' },
+                    { text: '网页界面参数', link: 'wiki/Dynmap/setup/web-setup/web-ui-parameters' }
+                  ]
+                },
+                {
+                  text: '存储部署', link: 'wiki/Dynmap/setup/storage-setup/', collapsed: true, items: [
+                    { text: '文件系统存储', link: 'wiki/Dynmap/setup/storage-setup/file-system-storage' },
+                    { text: 'MySQL/MariaDB 存储', link: 'wiki/Dynmap/setup/storage-setup/mysql-mariadb-storage' },
+                    { text: 'PostgreSQL 存储', link: 'wiki/Dynmap/setup/storage-setup/postgresql-storage' },
+                    { text: 'AWS S3 存储', link: 'wiki/Dynmap/setup/storage-setup/aws-s3-storage' }
+                  ]
+                },
+                { text: '高清地图配置', link: 'wiki/Dynmap/setup/hd-map-configuration' },
+                { text: '世界与模板设置', link: 'wiki/Dynmap/setup/world-and-template-settings' },
+                {
+                  text: '指导', link: 'wiki/Dynmap/setup/guides', collapsed: true, items: [
+                    { text: '增加 Dynmap 上显示区域的面积', link: 'wiki/Dynmap/setup/guides/boosting-areas-on-dynmap' },
+                    { text: '示例配置与网站', link: 'wiki/Dynmap/setup/guides/example-configurations-and-demo-website' },
+                    { text: 'EarthMC 地图', link: 'wiki/Dynmap/setup/guides/earthmc-maps' },
+                    { text: '使用 /dmap', link: 'wiki/Dynmap/setup/guides/using-dmap' },
+                    { text: '使用标记点', link: 'wiki/Dynmap/setup/guides/using-markers' },
+                    { text: 'Oracle 云实例部署 Dynmap', link: 'wiki/Dynmap/setup/guides/dynmap-on-oracle-cloud-instance' },
+                    { text: 'Dynmap 与 Cloudflare 反代', link: 'wiki/Dynmap/setup/guides/dynmap-and-cloudflare-reverse-proxy' },
+                    { text: '通过翼龙面板使用 Dynmap', link: 'wiki/Dynmap/setup/guides/use-dynmap-via-pterodactyl' }
+                  ]
+                }
+              ]
+            },
+            {
+              text: '进阶配置', collapsed: true, items: [
+                {
+                  text: '进阶地图配置', collapsed: true, items: [
+                    { text: '预设角度列表', link: 'wiki/Dynmap/advanced-configuration/advanced-map-configuration/full-list-of-prededfined-configuration' },
+                    { text: '定义自定义光照', link: 'wiki/Dynmap/advanced-configuration/advanced-map-configuration/defining-custom-lightings' },
+                    { text: '定义自定义角度', link: 'wiki/Dynmap/advanced-configuration/advanced-map-configuration/defining-custom-perspectives' },
+                    { text: '定义自定义着色器', link: 'wiki/Dynmap/advanced-configuration/advanced-map-configuration/defining-custom-shaers' },
+                    { text: '颜色结构', link: 'wiki/Dynmap/advanced-configuration/advanced-map-configuration/color-shemes' },
+                    { text: '区块颜色状态表', link: 'wiki/Dynmap/advanced-configuration/advanced-map-configuration/chunk-status' }
+                  ]
+                },
+                { text: '组件配置', link: 'wiki/Dynmap/advanced-configuration/component-configuration' },
+                { text: '将世界数据导出为 Wavefront OBJ 格式', link: 'wiki/Dynmap/advanced-configuration/exporting-world-data-in-wavefront-obj-format' },
+                {
+                  text: '外置服务器进阶', collapsed: true, items: [
+                    {
+                      text: '托管提供商上运行外置服务器', collapsed: true, items: [
+                        { text: 'Xenon 托管服务', link: 'wiki/Dynmap/advanced-configuration/external-webserver-on-hosting-providers/xenon-hosting-service' }
+                      ]
+                    },
+                    {
+                      text: 'Linux 外置服务器', collapsed: true, items: [
+                        { text: 'Arch Linux 上的 Apache httpd', link: 'wiki/Dynmap/advanced-configuration/external-webserver-advanced/external-webserver-on-linux/apache-httpd-on-arch-linux' },
+                        { text: 'Debian 上的 Apache2', link: 'wiki/Dynmap/advanced-configuration/external-webserver-advanced/external-webserver-on-linux/apache2-on-debian' },
+                        { text: 'Arch Linux 上的 Lighttpd', link: 'wiki/Dynmap/advanced-configuration/external-webserver-advanced/external-webserver-on-linux/lighttpd-on-arch-linux' },
+                        { text: 'DietPi 上的 Lighttpd 与 SQLite', link: 'wiki/Dynmap/advanced-configuration/external-webserver-advanced/external-webserver-on-linux/lighttpd-and-sqlite-on-dietpi' },
+                        { text: 'Nginx', link: 'wiki/Dynmap/advanced-configuration/external-webserver-advanced/external-webserver-on-linux/nginx' },
+                        { text: 'CentOS 6.x 上的 Nginx', link: 'wiki/Dynmap/advanced-configuration/external-webserver-advanced/external-webserver-on-linux/nginx-on-centos-6-x' },
+                      ]
+                    },
+                    {
+                      text: 'Windows 外置服务器', collapsed: true, items: [
+                        { text: 'IIS', link: 'wiki/Dynmap/advanced-configuration/external-webserver-on-windows/iis' },
+                        { text: '高级 IIS', link: 'wiki/Dynmap/advanced-configuration/external-webserver-on-windows/iis-advanced' },
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              text: '模组支持', collapsed: true, items: [
+                { text: '非 Bukkit 系服务器支持', link: 'wiki/Dynmap/mod-support/support-for-minecraft-servers-other-than-craftbukkit' },
+                { text: 'Forge 模组支持', link: 'wiki/Dynmap/mod-support/support-for-minecraftforge-based-mods' },
+                { text: 'Tekkit 支持', link: 'wiki/Dynmap/mod-support/support-for-tekkit' },
+                { text: '自定义方块定义', link: 'wiki/Dynmap/mod-support/custom-block-definitions' },
+                { text: '模型定义文件', link: 'wiki/Dynmap/mod-support/model-definition-files' },
+                { text: '纹理定义文件', link: 'wiki/Dynmap/mod-support/texture-definition-files' },
+                { text: '通过自定义方块渲染器定义方块', link: 'wiki/Dynmap/mod-support/defining-a-block-using-a-custom-block-renderer' },
+                { text: '通过体积模型定义方块', link: 'wiki/Dynmap/mod-support/defining-a-block-using-a-volumetric-model' },
+                { text: '定义长方体方块', link: 'wiki/Dynmap/mod-support/defining-a-cuboid-block' },
+                { text: '定义简单方块', link: 'wiki/Dynmap/mod-support/defining-a-simple-block' },
+                { text: '定义长方体模型', link: 'wiki/Dynmap/mod-support/defining-cuboid-models' },
+                { text: '定义体积模型', link: 'wiki/Dynmap/mod-support/defining-volumetric-models' },
+                { text: '特殊纹理文件类型', link: 'wiki/Dynmap/mod-support/special-texture-file-types' },
+                { text: '使用自定义方块渲染器', link: 'wiki/Dynmap/mod-support/using-custom-block-renderers' },
+                { text: '不兼容模组', link: 'wiki/Dynmap/mod-support/incompatible-mods' },
+              ]
+            },
+            {
+              text: '开发者相关', collapsed: true, items: [
+                { text: '如何编译 Dynmap', link: 'wiki/Dynmap/developers/how-to-compile-dynmap' },
+                {
+                  text: '类', collapsed: true, items: [
+                    { text: 'BoxRenderer', link: 'wiki/Dynmap/developers/classes/boxrenderer-class' },
+                    { text: 'FenceWallBlockRenderer', link: 'wiki/Dynmap/developers/classes/fencewallblockrenderer-class' },
+                    { text: 'PaneRenderer', link: 'wiki/Dynmap/developers/classes/panerederer-class' },
+                    { text: 'SkullRenderer', link: 'wiki/Dynmap/developers/classes/skullrenderer-class' },
+                    { text: 'RedstoneWireRenderer', link: 'wiki/Dynmap/developers/classes/redstonewireernderer-class' },
+                    { text: 'StairBlockRenderer', link: 'wiki/Dynmap/developers/classes/stairblockrenderer-class' },
+                  ]
+                },
+                { text: 'Dynmap API', link: 'wiki/Dynmap/developers/dynmap-api' }
+              ]
+            }
+          ]
+        }
       ],
       'wiki/ExcellentCrates/': [
         { text: '返回首页', link: 'index' },
@@ -1259,14 +1390,18 @@ export default defineConfig({
               text: '用户教程', collapsed: true, link: 'wiki/PlaceholderAPI/user-guides', items: [
                 { text: '命令', link: 'wiki/PlaceholderAPI/user-guides/commands' },
                 { text: '使用变量', link: 'wiki/PlaceholderAPI/user-guides/using-placeholders' },
-                { text: '变量列表', link: 'wiki/PlaceholderAPI/user-guides/placeholder-list/index', collapsed: true, items: [
-                  { text: 'Minecraft', link: 'wiki/PlaceholderAPI/user-guides/placeholder-list/minecraft' },
-                  { text: 'Hytale', link: 'wiki/PlaceholderAPI/user-guides/placeholder-list/hytale' },
-                ] },
-                { text: '使用 PlaceholderAPI 的插件', link: 'wiki/PlaceholderAPI/user-guides/plugins-using-placeholderapi/index', collapsed: true, items: [
-                  { text: 'Minecraft', link: 'wiki/PlaceholderAPI/user-guides/plugins-using-placeholderapi/minecraft' },
-                  { text: 'Hytale', link: 'wiki/PlaceholderAPI/user-guides/plugins-using-placeholderapi/hytale' },
-                ] }
+                {
+                  text: '变量列表', link: 'wiki/PlaceholderAPI/user-guides/placeholder-list/index', collapsed: true, items: [
+                    { text: 'Minecraft', link: 'wiki/PlaceholderAPI/user-guides/placeholder-list/minecraft' },
+                    { text: 'Hytale', link: 'wiki/PlaceholderAPI/user-guides/placeholder-list/hytale' },
+                  ]
+                },
+                {
+                  text: '使用 PlaceholderAPI 的插件', link: 'wiki/PlaceholderAPI/user-guides/plugins-using-placeholderapi/index', collapsed: true, items: [
+                    { text: 'Minecraft', link: 'wiki/PlaceholderAPI/user-guides/plugins-using-placeholderapi/minecraft' },
+                    { text: 'Hytale', link: 'wiki/PlaceholderAPI/user-guides/plugins-using-placeholderapi/hytale' },
+                  ]
+                }
               ]
             },
             {
@@ -1276,9 +1411,11 @@ export default defineConfig({
                 { text: 'eCloud', link: 'wiki/PlaceholderAPI/dev-guides/ecloud' }
               ]
             },
-            { text: '常见问题', link: 'wiki/PlaceholderAPI/common-issues/index', collapsed: true, items: [
-              { text: 'eCloud 连接被阻止', link: 'wiki/PlaceholderAPI/common-issues/ecloud-connection-blocked' }
-            ] },
+            {
+              text: '常见问题', link: 'wiki/PlaceholderAPI/common-issues/index', collapsed: true, items: [
+                { text: 'eCloud 连接被阻止', link: 'wiki/PlaceholderAPI/common-issues/ecloud-connection-blocked' }
+              ]
+            },
             { text: '常被问到的问题', link: 'wiki/PlaceholderAPI/faq' },
           ]
         },
