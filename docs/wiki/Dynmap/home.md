@@ -45,4 +45,4 @@ Dynmap 项目被分为多个部分，用于支持不同的服务器核心，使�
 * [dynmap-api](https://github.com/webbukkit/dynmap-api) - Dynmap 面向 Bukkit 的 API 库 - 它定义了 org.dynmap.DynmapAPI 实例，包含面向 Bukkit 的调用。与 DynmapCoreAPI 搭配（由 DynmapAPI 继承），将插件“dynmap”实例捕获并转化为 org.dynmap.DynmapAPI，并与公开接口交互。
 * [dynmap](https://github.com/webbukkit/dynmap) - 这个部件才是实际构建面向 Bukkit 的 Dynmap，并只包含无法跨平台使用的代码。
 
-[如何编译 Dynmap？](developers.how-to-compile-dynmap.md)
+[如何编译 Dynmap？](developers/how-to-compile-dynmap.md)

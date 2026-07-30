@@ -4,9 +4,9 @@
 
 * 你安装了 `apache-httpd`。
 * 你的 www 根目录为：`/srv/http`。
-* 可通过 <http://localhost:8123> 打开 Dynmap 地图。
+* 可通过 `http://localhost:8123` 打开 Dynmap 地图。
 
-本示例会教你如何将 Dynmap 地图放入 Apache 网页服务器，并通过链接 <http://mywebserver/dynmap/> 访问。
+本示例会教你如何将 Dynmap 地图放入 Apache 网页服务器，并通过链接 `http://mywebserver/dynmap/` 访问。
 
 * 开始之前，先创建 `/srv/http/dynmap/` 目录。
 * 复制 zip 压缩包内网页文件夹的内容到 `/srv/http/dynmap/`。
@@ -46,4 +46,4 @@
 Restart apache/httpd (`sudo /etc/rc.d/httpd restart`)
 ```
 
-现在就应该能在 <http://mywebserver/dynmap/> 上正常打开浏览在线玩家了，记得让它们保持最新。
+现在就应该能在 `http://mywebserver/dynmap/` 上正常打开浏览在线玩家了，记得让它们保持最新。

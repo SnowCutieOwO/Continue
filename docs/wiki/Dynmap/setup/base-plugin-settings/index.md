@@ -1,8 +1,8 @@
 # 基础插件设置
 
-## 本页内容已经过时，请查阅 Configuration.txt 与[安装教程](setup.base-plugin-settings.installation.md)
+## 本页内容已经过时，请查阅 Configuration.txt 与[安装教程](installation.md)
 
-如下为 *configuration.txt* 文件中的顶级设置。这些设置涵盖了插件大部分，以及部分独立组件，世界或地图。对于组件设置，请见“[组件配置](advanced-configuration.component-configuration.md)”
+如下为 *configuration.txt* 文件中的顶级设置。这些设置涵盖了插件大部分，以及部分独立组件，世界或地图。对于组件设置，请见“[组件配置](../../advanced-configuration/component-configuration.md)”
 
 核心设置包含如下内容：
 

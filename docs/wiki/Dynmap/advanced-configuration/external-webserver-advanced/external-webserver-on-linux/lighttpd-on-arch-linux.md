@@ -4,14 +4,14 @@
 
 * 你安装了 `lightppd`。
 * 你的 `www` 根目录为 `/srv/http/`。
-* 可通过 <http://localhost:8123/> 打开 Dynmap 地图
+* 可通过 `http://localhost:8123/` 打开 Dynmap 地图
 
 之后：
 
 * 开始之前，新建 `/srv/http/dynmap/` 文件夹。
 * 复制 zip 内的 `web` 文件夹到 `/srv/http/dynmap`。
 
-本章节将会展示如何将 Dynmap 放入 lighttpd 网页服务器运行，并通过 <http://mywebserver/dynmap/> 访问。
+本章节将会展示如何将 Dynmap 放入 lighttpd 网页服务器运行，并通过 `http://mywebserver/dynmap/` 访问。
 
 在 `/etc/lighttpd/lighttpd.conf/` 按如下格式启用对应模块：
 
@@ -43,4 +43,4 @@ $HTTP["url"] =~ "^/standalone/" {
 
 重启 lighttpd（`sudo /etc/rc.d/lighttpd restart`）
 
-现在 <http://mywebserver/dynmap/> 网页地图应该就能正常显示在线玩家了，请记得保持更新。
+现在 `http://mywebserver/dynmap/` 网页地图应该就能正常显示在线玩家了，请记得保持更新。

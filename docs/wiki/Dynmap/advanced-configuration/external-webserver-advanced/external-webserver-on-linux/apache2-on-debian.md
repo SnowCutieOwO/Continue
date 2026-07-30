@@ -4,9 +4,9 @@
 
 * 你安装了 `apache2`。
 * 你的 www 根目录为：`/var/www/html/`。
-* 可通过 <http://localhost:8123> 或 <http://本地网络ip:8123> 打开 Dynmap 地图。
+* 可通过 `http://localhost:8123` 或 `http://本地网络ip:8123` 打开 Dynmap 地图。
 
-本示例会教你如何将 Dynmap 地图放入 Apache 网页服务器，并通过链接 <http://mywebserverdomain.ext/> 或 <https://mywebserverdomain.ext> 访问。
+本示例会教你如何将 Dynmap 地图放入 Apache 网页服务器，并通过链接 `http://mywebserverdomain.ext/` 或 `https://mywebserverdomain.ext` 访问。
 
 * 开始之前，前往 `/srv/http/dynmap/`。
 * 复制 zip 内的 `web` 文件夹到 `/srv/http/dynmap`。
@@ -36,4 +36,4 @@ ProxyPassReverse / "http://localhost:8123/"
 
 重启 apache2（命令为 `sudo systemctl restart apache2`）
 
-现在你就可以通过 <http://domainname.com/> 或 <https://domainname.com> 访问网页地图了。
+现在你就可以通过 `http://domainname.com/` 或 `https://domainname.com` 访问网页地图了。
