@@ -3,7 +3,6 @@ import footnote from 'markdown-it-footnote'
 import taskLists from 'markdown-it-task-checkbox'
 import tabsPlugin from '@red-asuka/vitepress-plugin-tabs'
 import mathjax3 from 'markdown-it-mathjax3'
-import { generateBreadcrumbsData } from '@nolebase/vitepress-plugin-breadcrumbs/vitepress'
 import { GitChangelog, GitChangelogMarkdownSection } from '@nolebase/vitepress-plugin-git-changelog/vite'
 import markdownItVideo from "@vrcd-community/markdown-it-video";
 import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons';
@@ -168,9 +167,6 @@ export default defineConfig({
       },
     },
   },
-  transformPageData(pageData, ctx) {
-    generateBreadcrumbsData(pageData, ctx)
-  },
   vite: {
     optimizeDeps: {
       exclude: [
@@ -326,6 +322,7 @@ export default defineConfig({
             { text: 'CommandTimer', link: 'wiki/CommandTimer/index' },
             { text: 'CoreProtect', link: 'wiki/CoreProtect/index' },
             { text: 'DecentHolograms', link: 'DecentHolograms/index' },
+            { text: 'Dynmap', link: 'wiki/Dynmap/index' },
             { text: 'ExcellentCrates', link: 'wiki/ExcellentCrates/index' },
             { text: 'ExcellentEnchants', link: 'wiki/ExcellentEnchants/index' },
             { text: 'FallbackServer', link: 'wiki/FallbackServer/index' },

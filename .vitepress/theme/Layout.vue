@@ -1,8 +1,9 @@
 <!-- .vitepress/theme/Layout.vue -->
 
 <script setup lang="ts">
+// 26.07.31 新增：轻量化面包屑
+import Breadcrumb from "./breadcrumb.vue"
 import { BProgress } from '@bprogress/core'
-import { NolebaseBreadcrumbs } from '@nolebase/vitepress-plugin-breadcrumbs/client'
 import { useRouter } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import NotFound from './error.vue'
@@ -33,7 +34,7 @@ router.onAfterRouteChange = () => {
 <template>
   <Layout>
     <template #doc-before>
-      <NolebaseBreadcrumbs />
+      <Breadcrumb />
     </template>
     <template #not-found>
       <NotFound />
