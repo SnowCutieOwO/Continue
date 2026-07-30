@@ -7,7 +7,6 @@
 </template>
 
 <script setup lang="ts">
-import pangu from 'pangu'
 import { useData } from 'vitepress'
 import { ref, watchEffect } from 'vue'
 
@@ -26,7 +25,7 @@ watchEffect(() => {
   // 如果是首页，则一并去除当前目录名
 
   items.value = shownSegs.map((item, index) => ({
-    name: pangu.spacingText(item.replaceAll('-', ' ')),
+    name: item.replaceAll('-', ' '),
     first: !index,
   }))
 })

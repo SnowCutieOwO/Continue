@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      pangu:
-        specifier: ^9.0.0
-        version: 9.0.0
     devDependencies:
       '@bprogress/core':
         specifier: ^1.3.4
@@ -1729,11 +1725,6 @@ packages:
 
   package-manager-detector@1.5.0:
     resolution: {integrity: sha512-uBj69dVlYe/+wxj8JOpr97XfsxH/eumMt6HqjNTmJDf/6NO9s+0uxeOneIz3AsPt2m6y9PqzDzd3ATcU17MNfw==}
-
-  pangu@9.0.0:
-    resolution: {integrity: sha512-VEkgcpBLXV6anBj/ZOgDhdWtmmewNd5OpJHC9L3Aa6WoLondpPF3uYlpZKBJt9qxv0pj23TB4knaQe+ntTZEYg==}
-    engines: {node: '>=20.0.0'}
-    hasBin: true
 
   parse-ms@4.0.0:
     resolution: {integrity: sha512-TXfryirbmq34y8QBwgqCVLi+8oA3oWx2eAnSn62ITyEhEYaWRlVZ2DvMM9eZbMs/RfxPu/PK/aBLyGj4IrqMHw==}
@@ -3865,8 +3856,6 @@ snapshots:
       regex-recursion: 6.0.2
 
   package-manager-detector@1.5.0: {}
-
-  pangu@9.0.0: {}
 
   parse-ms@4.0.0: {}
 
