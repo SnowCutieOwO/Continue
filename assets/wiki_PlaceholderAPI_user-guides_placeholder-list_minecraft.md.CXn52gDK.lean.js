@@ -1,0 +1,46 @@
+import{_ as h,C as p,c as u,o as g,aa as t,j as s,G as e,a,t as o,w as l}from"./chunks/framework.Cn7WEiMX.js";const m="/assets/inventory-slots.BrdBKtBn.png",C=JSON.parse('{"title":"变量列表","description":"","frontmatter":{},"headers":[],"relativePath":"wiki/PlaceholderAPI/user-guides/placeholder-list/minecraft.md","filePath":"wiki/PlaceholderAPI/user-guides/placeholder-list/minecraft.md"}'),b={name:"wiki/PlaceholderAPI/user-guides/placeholder-list/minecraft.md"};function k(i,n,v,y,f,w){const r=p("tab"),c=p("tabs"),d=p("NolebaseGitContributors"),_=p("NolebaseGitChangelog");return g(),u("div",null,[n[5]||(n[5]=t("",138)),s("p",null,[s("code",null,o(i.u),1),n[0]||(n[0]=a(" 会被替换为下划线符号“_”，",-1)),s("code",null,o(i.prc),1),n[1]||(n[1]=a(" 会被替换为百分符号“%”。",-1))]),n[6]||(n[6]=t("",1054)),e(c,null,{default:l(()=>[e(r,{name:"Multiverse-Core v5"},{default:l(()=>[...n[2]||(n[2]=[s("div",{class:"tip custom-block"},[s("p",{class:"custom-block-title"},"内置于插件")],-1),a(),s("div",{class:"warning custom-block"},[s("p",{class:"custom-block-title"},"这些变量只适用于 Multiverse-Core v5！")],-1),a(),s("p",null,[a("所有变量都可以在末尾加入一个 "),s("code",null,"_<世界名称>"),a("，"),s("code",null,"<世界名称>"),a(" 可替换为由 Multiverse-Core 载入的世界名称。")],-1),a(),s("p",null,[a("示例："),s("code",null,"%multiverse-core_alias_myworld%")],-1),a(),s("div",{class:"language-txt vp-adaptive-theme"},[s("button",{title:"Copy Code",class:"copy"}),s("span",{class:"lang"},"txt"),s("pre",{class:"shiki shiki-themes github-light github-dark vp-code",tabindex:"0"},[s("code",null,[s("span",{class:"line"},[s("span",null,"%multiverse-core_alias%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse-core_animalspawn%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse-core_autoheal%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse-core_blacklist%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse-core_currency%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse-core_difficulty%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse-core_entryfee%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse-core_environment%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse-core_flight%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse-core_gamemode%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse-core_generator%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse-core_hunger%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse-core_monstersspawn%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse-core_name%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse-core_playerlimit%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse-core_price%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse-core_pvp%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse-core_seed%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse-core_time%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse-core_type%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse-core_weather%")])])])],-1)])]),_:1}),n[4]||(n[4]=a()),e(r,{name:"Multiverse-Core v4"},{default:l(()=>[...n[3]||(n[3]=[s("div",{class:"tip custom-block"},[s("p",{class:"custom-block-title"},"papi ecloud download multiverse")],-1),a(),s("div",{class:"language-txt vp-adaptive-theme"},[s("button",{title:"Copy Code",class:"copy"}),s("span",{class:"lang"},"txt"),s("pre",{class:"shiki shiki-themes github-light github-dark vp-code",tabindex:"0"},[s("code",null,[s("span",{class:"line"},[s("span",null,"%multiverse_world_alias%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_all_property_names%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_generator%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_name%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_name_colored%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_permissible_name%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_time%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_animals_spawn_enabled%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_monsters_spawn_enabled%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_access_permission%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_adjust_spawn_enabled%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_allow_flight_enabled%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_auto_heal_enabled%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_auto_load_enabled%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_bed_respawn_enabled%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_color%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_currency%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_difficulty%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_environment%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_gamemode%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_hunger_enabled%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_player_limit%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_price%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_seed%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_style%")]),a(`
+`),s("span",{class:"line"},[s("span",null,"%multiverse_world_type%")])])])],-1)])]),_:1})]),_:1}),n[7]||(n[7]=t("",756)),e(d),e(_),n[8]||(n[8]=t("",3))])}const P=h(b,[["render",k]]);export{C as __pageData,P as default};
