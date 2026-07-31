@@ -16,6 +16,8 @@ import { BoxCube, Card, Links, Pill } from '@theojs/lumen'
 import { LiteTree } from '@lite-tree/vue'
 // 26.07.21 新增：selColor 颜色选择组件（AI）
 import selColor from './selColor.vue'
+// 26.07.31 新增：pageHeader 页首副标题组件（AI）
+import PageHeader from './pageHeader.vue'
 
 export default {
   extends: DefaultTheme,
@@ -39,6 +41,7 @@ export default {
     */
     app.component('LiteTree', LiteTree)
     app.component('selColor', selColor)
+    app.component('PageHeader', PageHeader)
   },
   Layout
 } satisfies Theme
