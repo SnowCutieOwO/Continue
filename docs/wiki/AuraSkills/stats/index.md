@@ -1,6 +1,4 @@
-# 属性
-
-属性与 stats.yml 文件的介绍及教程
+<PageHeader title="属性" subtitle="属性与 stats.yml 文件的介绍及教程">
 
 **属性（Stats）** 是称作**特征（Traits）** 的增益值。玩家的属性等级与其描述可在 `/stats` 或主技能菜单中的属性按钮（默认为玩家头颅）浏览。
 

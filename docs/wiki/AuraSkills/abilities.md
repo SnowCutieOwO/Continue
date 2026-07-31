@@ -1,6 +1,4 @@
-# 能力
-
-能力与 abilities.yml 文件的相关教程
+<PageHeader title="能力" subtitle="能力与 `abilities.yml` 文件的相关教程" />
 
 > 请勿将其与[魔法能力](mana-abilities.md)混淆。
 

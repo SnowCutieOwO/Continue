@@ -1,6 +1,4 @@
-# 战利品
-
-战利品表相关教程
+<PageHeader title="战利品" subtitle="战利品表相关教程" />
 
 ## 概览
 

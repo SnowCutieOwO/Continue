@@ -1,6 +1,4 @@
-# 服务器需求
-
-安装 AuraSkills 的服务器需求
+<PageHeader title="服务器需求" subtitle="安装 AuraSkills 的服务器需求" />
 
 `2.2.x` 的 AuraSkills 需要如下环境才可正常运行：
 

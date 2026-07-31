@@ -1,6 +1,4 @@
-# 变量
-
-PlaceholderAPI 变量列表
+<PageHeader title="变量" subtitle="PlaceholderAPI 变量列表" />
 
 AuraSkills 提供了开箱即用的 PlaceholderAPI，无需下载变量拓展。因插件 2.0 版本后的改名，现存以 `%aureliumskills_%` 开头的变量仍然会与 `%auraskills_` 一并生效。但是，你应当将变量逐渐更换为 `%auraskills_`，旧版变量有可能在未来随时移除。
 

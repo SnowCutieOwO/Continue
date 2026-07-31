@@ -1,6 +1,4 @@
-# API
-
-AuraSkills API 教程
+<PageHeader title="API" subtitle="AuraSkills API 教程" />
 
 AuraSkills API 允许开发者与插件交互，与现有插件联动或注册新的内容（自定义技能、属性或能力）
 

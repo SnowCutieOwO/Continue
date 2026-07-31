@@ -1,6 +1,4 @@
-# 经验限制
-
-配置经验限制的教程
+<PageHeader title="经验限制" subtitle="配置经验限制的教程" />
 
 升级技能所需的经验值可以在 `xp_requirements.yml` 中配置。
 

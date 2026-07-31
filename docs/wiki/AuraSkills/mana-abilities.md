@@ -1,6 +1,4 @@
-# 魔法能力
-
-魔法能力与 mana_abilities.yml 文件的教程。
+<PageHeader title="魔法能力" subtitle="魔法能力与 mana_abilities.yml 文件的教程。" />
 
 > 请勿将其与被动[能力](abilities.md)混淆。
 

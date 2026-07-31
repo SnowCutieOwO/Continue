@@ -1,6 +1,4 @@
-# 主配置文件
-
-配置文件 `config.yml` 相关
+<PageHeader title="主配置文件" subtitle="配置文件 `config.yml` 相关" />
 
 `config.yml` 是位于 `plugins/AuraSkills` 文件夹下的主插件配置。它用于调整存储/数据库、外部插件对接、语言设置、ActionBar、BossBar、世界/区域、修饰符、条件等全局或杂项内容的设置。
 

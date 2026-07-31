@@ -1,6 +1,4 @@
-# 迁移
-
-如何从 AureliumSkills Beta 1.3.0 迁移至 AuraSkills 2.0
+<PageHeader title="迁移" subtitle="如何从 AureliumSkills Beta 1.3.0 迁移至 AuraSkills 2.0" />
 
 2.0 更新之后，插件从 AureliumSkills 更名为 AuraSkills。这表示插件配置文件夹从 `/AureliumSkills` 变为了 `/AuraSkills`。
 

@@ -1,6 +1,4 @@
-# AuraSkills
-
-欢迎来到 AuraSkills 维基！
+<PageHeader title="AuraSkills" subtitle="欢迎来到 AuraSkills 维基！" />
 
 **AuraSkills**（前 **AureliumSkills**）是一个添加了[技能](skills/index.md)、[属性](stats/index.md)、[能力](abilities.md)及其他 RPG 相关特色的 Minecraft 插件。本插件基于 Spigot 和 Paper 开发，可以在[官方插件介绍页](https://aurelium.dev/auraskills/download)、[SpigotMC](https://www.spigotmc.org/resources/81069/)、[Hangar](https://hangar.papermc.io/Archy/AuraSkills) 和 [Modrinth](https://modrinth.com/plugin/auraskills) 上下载。插件可高度自定义，适用于从小型生存到大型 MMORPG 服务器的诸多服务器。
 

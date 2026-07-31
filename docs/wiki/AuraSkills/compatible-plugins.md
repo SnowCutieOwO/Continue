@@ -1,6 +1,4 @@
-# 兼容插件
-
-能与 AuraSkills 联动的插件
+<PageHeader title="兼容插件" subtitle="能与 AuraSkills 联动的插件" />
 
 ## 介绍
 

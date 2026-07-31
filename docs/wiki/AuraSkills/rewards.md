@@ -1,6 +1,4 @@
-# 奖励
-
-自定义奖励的教程
+<PageHeader title="奖励" subtitle="自定义奖励的教程" />
 
 ## 介绍
 
