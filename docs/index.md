@@ -12,6 +12,9 @@ hero:
     - theme: brand
       text: QQ 群
       link: '/common/group'
+    - theme: brand
+      text: 维基目录
+      link: '/common/contents'
     - theme: alt
       text: 开服杂谈
       link: '/guide/index'
@@ -21,123 +24,15 @@ hero:
     - theme: alt
       text: 友链页面
       link: '/other-sites/'
-
-
-features:
-  - icon: <span class="iconify" data-icon="ic:outline-leaderboard"></span>
-    title: ajLeaderboards
-    details: 一款高性能的排行榜插件
-    link: wiki/ajLeaderboards
-  - icon: <span class="iconify" data-icon="material-symbols:swords-outline"></span>
-    title: AuraSkills
-    details: MCMMO 最好的同类替代品
-    link: wiki/AuraSkills
-  - icon: <span class="iconify" data-icon="material-symbols:book-ribbon-outline-sharp"></span>
-    title: Codex
-    details: 免费的怪物与地形收集图鉴插件
-    link: wiki/Codex
-  - icon: <span class="iconify" data-icon="material-symbols:more-time"></span>
-    title: CommandTimer
-    details: 免费开源的定时命令插件
-    link: wiki/CommandTimer
-  - icon: <span class="iconify" data-icon="carbon:cube"></span>
-    title: CoreProtect
-    details: 经典的玩家行为记录与查询插件
-    link: wiki/CoreProtect
-  - icon: <span class="iconify" data-icon="material-symbols:align-end"></span>
-    title: DecentHolograms
-    details: 高性能的悬浮字插件
-    link: wiki/DecentHolograms
-  - icon: <span class="iconify" data-icon="ic:baseline-api"></span>
-    title: ExcellentCrates
-    details: 一款简单的抽奖箱插件
-    link: wiki/ExcellentCrates
-  - icon: <span class="iconify" data-icon="material-symbols:book-2-outline"></span>
-    title: ExcellentEnchants
-    details: 一款简单的更多附魔插件
-    link: wiki/ExcellentEnchants
-  - icon: <span class="iconify" data-icon="material-symbols:cloud-sync"></span>
-    title: FallbackServer
-    details: 在服务器关闭时将玩家送回大厅
-    link: wiki/FallbackServer
-  - icon: <span class="iconify" data-icon="material-symbols:box-edit-outline-sharp"></span>
-    title: FastAsyncWorldEdit
-    details: 异步版 WorldEdit
-    link: wiki/FastAsyncWorldEdit
-  - icon: <span class="iconify" data-icon="ic:baseline-add-home"></span>
-    title: HuskHomes
-    details: 高性能的传送系统插件
-    link: wiki/HuskHomes
-  - icon: <span class="iconify" data-icon="ic:outline-sync-alt"></span>
-    title: HuskSync
-    details: 高性能的玩家数据同步插件
-    link: wiki/HuskSync
-  - icon: <span class="iconify" data-icon="ic:baseline-how-to-reg"></span>
-    title: LibreLogin
-    details: 支持正盗版共存的登录插件
-    link: wiki/LibreLogin
-  - icon: <span class="iconify" data-icon="mdi:clover"></span>
-    title: LuckPerms
-    details: 经典的权限组管理插件
-    link: wiki/LuckPerms
-  - icon: <span class="iconify" data-icon="carbon:cube"></span>
-    title: Oraxen
-    details: 模拟模组效果的自定义物品与方块插件
-    link: wiki/Oraxen
-  - icon: <span class="iconify" data-icon="mdi:file-percent-outline"></span>
-    title: PlaceholderAPI
-    details: 老牌的变量插件
-    link: wiki/PlaceholderAPI
-  - icon: <span class="iconify" data-icon="tdesign:money"></span>
-    title: PlayerPoints
-    details: 经典的点券插件
-    link: wiki/PlayerPoints
-  - icon: <span class="iconify" data-icon="icon-park-outline:exchange"></span>
-    title: Shopkeepers
-    details: 经典的自定义村民交易插件
-    link: wiki/Shopkeepers
-  - icon: <span class="iconify" data-icon="humbleicons:sparks"></span>
-    title: spark
-    details: 强大的综合性能分析插件
-    link: wiki/spark
-  - icon: <span class="iconify" data-icon="material-symbols:cloud-outline"></span>
-    title: SuperiorSkyblock2
-    details: 免费开源的空岛插件
-    link: wiki/SuperiorSkyblock2
-  - icon: <span class="iconify" data-icon="carbon:cube"></span>
-    title: Terra
-    details: 强大的地形生成引擎
-    link: wiki/Terra
-  - icon: <span class="iconify" data-icon="material-symbols:in-home-mode-outline"></span>
-    title: TownyAdvanced
-    details: 功能丰富的城镇及国家插件
-    link: wiki/TownyAdvanced
-  - icon: <span class="iconify" data-icon="material-symbols:shop-outline-sharp"></span>
-    title: UltimateShop
-    details: 强大的自定义商店插件
-    link: wiki/UltimateShop
-  - icon: <span class="iconify" data-icon="material-symbols:box-outline-sharp"></span>
-    title: WorldEdit
-    details: 老牌的世界编辑插件
-    link: 'wiki/WorldEdit'
-  - icon: <span class="iconify" data-icon="material-symbols:service-toolbox-outline-sharp"></span>
-    title: WorldGuard
-    details: 老牌的世界保护插件
-    link: 'wiki/WorldGuard'
-  - icon: <span class="iconify" data-icon="ic:outline-search"></span>
-    title: 更多内容...
-    details: 请在右上角菜单展开浏览
 ---
-
-- - -
 
 # 维基档案馆
 
 欢迎来到 Continue Project 的维基资源库！这里存放着 Continue Project 小组成员（目前只有我）的维基翻译。
 
-在此之前，本维基曾使用[自行魔改的 Docsify](https://www.github.com/SnowCutieOwO/Docsify-Template) 搭建，但后来也选用了 VitePress。
+在此之前，本维基曾使用[自行魔改的 Docsify](https://www.github.com/SnowCutieOwO/Docsify-Template) 搭建，但后来选用了 VitePress。
 
-你可以点击右上角的“维基列表”或上方的导航格子，快速查阅你需要的插件维基。
+你可以点击右上角的“维基列表”或上方的目录按钮，快速查阅你需要的插件维基。
 
 ## 贡献
 

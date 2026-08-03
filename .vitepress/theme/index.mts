@@ -28,7 +28,7 @@ export default {
     /* 
       @theojs/lumen 链接盒子拓展组件
       具体用法详见：
-      https://lumen.theojs.cn/guide/linkcard
+      https://lumen.theojs.net/guide/linkcard
     */
     app.component('Pill', Pill) 
     app.component('Links', Links) 
