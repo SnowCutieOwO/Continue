@@ -8,6 +8,8 @@ import '@nolebase/vitepress-plugin-git-changelog/client/style.css'
 import '../theme/theme.css'
 // 25.12.03 新增：滚动条优化（AI）
 import '../theme/scrollBar.css'
+// 26.08.10 新增：全局自定义样式
+import '../theme/custom.css'
 import '@theojs/lumen/pic'
 import Layout from './Layout.vue'
 // 26.05.10 新增：LinkCards 链接卡片拓展

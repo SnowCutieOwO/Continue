@@ -1,0 +1,11 @@
+/* 全局自定义样式 */
+
+div.VPNavBar.screen-open{
+    z-index: 999;
+}
+div#VPNavScreen{
+    z-index: 33;
+    height: 100dvh !important;
+    top: 0 !important;
+    padding-top: calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px)) !important;
+}
