@@ -54,8 +54,8 @@ LuckPerms 提供了一些可以用在其他插件中的变量。
 | `%luckperms_has_groups_on_track%`               | `<路线>`                    | 返回玩家所属任何权限组是否处于该路线中。 |
 | `%luckperms_highest_group_by_weight%`           |                              | 返回玩家权重最高的权限组，*不包含*间接继承自其他地方的权限组。 |
 | `%luckperms_lowest_group_by_weight%`            |                              | 返回玩家权重最低的权限组，*不包含*间接继承自其他地方的权限组。 |
-| `%luckperms_highest_inherited_group_by_weight%` |                              | 返回玩家权重最高的权限组，*包括*简介继承自其他地方的权限组。 |
-| `%luckperms_lowest_inherited_group_by_weight%`  |                              | 返回玩家权重最低的权限组，*包括*简介继承自其他地方的权限组。 |
+| `%luckperms_highest_inherited_group_by_weight%` |                              | 返回玩家权重最高的权限组，*包括*间接继承自其他地方的权限组。 |
+| `%luckperms_lowest_inherited_group_by_weight%`  |                              | 返回玩家权重最低的权限组，*包括*间接继承自其他地方的权限组。 |
 | `%luckperms_current_group_on_track%`            | `<路线>`                    | 若玩家处于给定路线中，返回当前权限组的名称。 |
 | `%luckperms_next_group_on_track%`               | `<路线>`                    | 若玩家处于给定路线中，返回下一权限组的名称。（玩家可以通过晋升命令进入的下一个组） |
 | `%luckperms_previous_group_on_track%`           | `<路线>`                    | 若玩家处于给定路线中，返回上一权限组的名称。（玩家可以通过降级命令返回的上一个组） |
