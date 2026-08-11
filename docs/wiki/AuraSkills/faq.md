@@ -1,4 +1,4 @@
-<PageHeaer title="常见问题" subtitle="常被问到的问题" />
+<PageHeader title="常见问题" subtitle="常被问到的问题" />
 
 ## 如何移除快捷栏上显示的生命值与魔力值显示？
 
