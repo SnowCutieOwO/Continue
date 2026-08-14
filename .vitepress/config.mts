@@ -1632,6 +1632,7 @@ export default defineConfig({
       'wiki/Terra/': [
         { text: '返回首页', link: 'index' },
         { text: '前言', link: 'wiki/Terra/index' },
+        { text: '介绍页', link: 'wiki/Terra/homepage' },
         {
           text: 'Terra 中文维基', items: [
             {
