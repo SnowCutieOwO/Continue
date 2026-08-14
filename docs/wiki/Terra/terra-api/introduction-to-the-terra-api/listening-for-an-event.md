@@ -1,4 +1,4 @@
-# 监听时间
+# 监听事件
 
 与 Terra API 交互的一大基础就是[事件](../../terra-api/api-concepts/events.md)监听。
 
@@ -12,7 +12,7 @@
 
 本示例中，我们会在事件触发后向控制台发送消息。
 
-## 监听时间
+## 监听事件
 
 为了监听事件，我们需要用到 [FunctionalEventHandler](https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/functional/FunctionalEventHandler.html) API。若要了解功能事件处理器的详细内容，请[点击这里](../../terra-api/api-concepts/events.md)。
 
@@ -111,7 +111,7 @@ platform.getEventManager()
 
 ## 总结
 
-现在，你的附属中有了一个包范围内的时间监听器，会在 [ConfigPackPreLoadEvent](https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/events/config/pack/ConfigPackPreLoadEvent.html) 初次载入时触发。下一章我们将会讲述如何注册对象！
+现在，你的附属中有了一个包范围内的事件监听器，会在 [ConfigPackPreLoadEvent](https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/events/config/pack/ConfigPackPreLoadEvent.html) 初次载入时触发。下一章我们将会讲述如何注册对象！
 
 本章节的示例拓展如下：
 
