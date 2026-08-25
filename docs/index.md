@@ -81,4 +81,10 @@ Netlify 网站构建状态：![](https://api.netlify.com/api/v1/badges/6e69d526-
 
 ### Star 历史
 
-[![漫天星辰，有你更美](https://api.star-history.com/svg?repos=SnowCutieOwO/Continue&type=date&legend=top-left)](https://www.star-history.com/#SnowCutieOwO/Continue&type=date&legend=top-left)
+<a href="https://www.star-history.com/?repos=continue%2Fcontinue%2CSnowCutieOwO%2FContinue&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=continue/continue%2CSnowCutieOwO/Continue&type=date&theme=dark&legend=top-left&sealed_token=AYzpJGYgnrSCtpmnF8RlPhrTGrYy0hiANIBOCZvtIHKP-w-PnX5TacHaqqQxbyuG2dO1ecFrtP_cGSYoHQ4NauezwfjU8m5Lh-s-g1S9slVumDsaRP9LGuFXd74LqJ2QCZH7FAXrDHTIejisCDk8hLaf7L6-up7ZF8fWBWxl0PUFRZSV36vpzoF4-2QQ" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=continue/continue%2CSnowCutieOwO/Continue&type=date&legend=top-left&sealed_token=AYzpJGYgnrSCtpmnF8RlPhrTGrYy0hiANIBOCZvtIHKP-w-PnX5TacHaqqQxbyuG2dO1ecFrtP_cGSYoHQ4NauezwfjU8m5Lh-s-g1S9slVumDsaRP9LGuFXd74LqJ2QCZH7FAXrDHTIejisCDk8hLaf7L6-up7ZF8fWBWxl0PUFRZSV36vpzoF4-2QQ" />
+   <img alt="漫天星辰，有你更美。" src="https://api.star-history.com/chart?repos=continue/continue%2CSnowCutieOwO/Continue&type=date&legend=top-left&sealed_token=AYzpJGYgnrSCtpmnF8RlPhrTGrYy0hiANIBOCZvtIHKP-w-PnX5TacHaqqQxbyuG2dO1ecFrtP_cGSYoHQ4NauezwfjU8m5Lh-s-g1S9slVumDsaRP9LGuFXd74LqJ2QCZH7FAXrDHTIejisCDk8hLaf7L6-up7ZF8fWBWxl0PUFRZSV36vpzoF4-2QQ" />
+ </picture>
+</a>
