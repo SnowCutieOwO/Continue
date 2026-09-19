@@ -24,6 +24,9 @@ hero:
     - theme: alt
       text: 友链页面
       link: '/other-sites/'
+    - theme: alt
+      text: 软件资源
+      link: '/software/'
 ---
 
 # 维基档案馆
