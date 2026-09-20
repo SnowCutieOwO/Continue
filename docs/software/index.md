@@ -56,7 +56,7 @@
       linkText: '立即查看'
     },
     {
-      icon: { svg: 'https://www.adobe.com/cc-shared/assets/img/product-icons/svg/dimension-64.svg' },
+      image: '_images/dimension-64.svg',
       name: 'Adobe Dimension',
       desc: '包含版本：CC 2018 - 2026',
       link: 'https://pan.quark.cn/s/2bcfad9a0a7b',
