@@ -49,10 +49,31 @@
       linkText: '立即查看'
     },
     {
+      icon: { icon: 'logos:adobe-dreamweaver' },
+      name: 'Adobe Dreamweaver',
+      desc: '包含版本：CC 2017 - 2021',
+      link: 'https://pan.quark.cn/s/ae8a87e928fc',
+      linkText: '立即查看'
+    },
+    {
+      icon: { svg: 'https://www.adobe.com/cc-shared/assets/img/product-icons/svg/dimension-64.svg' },
+      name: 'Adobe Dimension',
+      desc: '包含版本：CC 2018 - 2026',
+      link: 'https://pan.quark.cn/s/2bcfad9a0a7b',
+      linkText: '立即查看'
+    }, 
+    {
+      icon: { icon: 'logos:adobe-animate' },
+      name: 'Adobe Dreamweaver',
+      desc: '包含版本：CC 2017 - 2024',
+      link: 'https://pan.quark.cn/s/d7762fef71f5',
+      linkText: '立即查看'
+    },
+    {
       icon: { icon: 'thesvg:cinema-4d' },
       name: 'Maxon Cinema 4D',
       desc: '包含版本：r18 - r26',
-      link: 'https://pan.quark.cn/s/accd75c3c875',
+      link: 'https://pan.quark.cn/s/901a0cc545e4',
       linkText: '立即查看'
     },
   ]"
