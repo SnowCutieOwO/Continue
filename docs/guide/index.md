@@ -17,7 +17,7 @@
   - [开服之前：如何选择好插件？](logical-questions/choose-plugins-wisely.md)
   - [开服之前：你想要给/和谁做服？](logical-questions/who-do-you-want.md)
   - [开服之前：做好宣传](logical-questions/make-a-good-advertise.md)
-  - [间章其一：拒绝低端生电玩家](logical-questions/why-no-survival-surcuit.md)
+  - [开服之前：拒绝低端生电玩家](logical-questions/why-no-survival-circuit.md)
   - 开服之前：服务器架构设计应该怎样？（即将推出）
 * 进阶学篇
   - [如何使用 WorldEdit/FastAsyncWorldEdit 制作简易的封闭式副本地形？](advanced/how-to-make-easy-landscape-using-we.md)

@@ -384,6 +384,8 @@ export default defineConfig({
                 { text: '开始之前：你要开什么？', link: 'guide/logical-questions/before-start-what-server-you-want' },
                 { text: '开始之前：插件怎么选？', link: 'guide/logical-questions/choose-plugins-wisely' },
                 { text: '开始之前：该找什么人？', link: 'guide/logical-questions/who-do-you-want' },
+                { text: '开始之前：怎么做宣传？', link: 'guide/logical-quetsions/make-a-good-advertise' },
+                { text: '开始之前：拒绝低端生电玩家', link: 'guide/logical-questions/why-no-survival-circult' }
               ]
             },
             {
