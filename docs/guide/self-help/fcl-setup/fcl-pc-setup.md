@@ -112,6 +112,12 @@ key-store-password=******
 
 :::
 
+::: tip 卡在了下载 Gradle 的过程中吗？
+
+如果你按照本维基其他部分的教程先行配置并按照了 Gradle，你可以在设置中“Build, Execution, Deployment > Build Tools > Gradle” - “Gradle Projects” - “Gradle” - “Distribution” 部分从 “Wrapper” 改为 “Local installtion”。如果你在本地安装了多个版本的 Gradle，这里也可以自由选择。
+
+:::
+
 ## 6. 调试
 
 你可以通过各种方法将文件发送到手机上安装测试，也可通过 Android Studio 自带的模拟器安装软件并进行调试。
