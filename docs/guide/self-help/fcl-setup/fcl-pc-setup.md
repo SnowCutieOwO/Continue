@@ -65,10 +65,16 @@
 
 |显示内容|所在位置|初始值|
 |---|---|---|
-|手机端软件显示名称|`源码文件夹\FCL\src\main\res\values\strings.xml` -> `app_name`|`Fold Craft Launcher`|
 |包名|`源码文件夹\FCL\build.gradle.kts` -> `android.defaultConfig.applicationId`|`com.tungsten.fcl.server`|
 |软件版本|`源码文件夹\FCL\build.gradle.kts` -> `android.defaultConfig.versionCode`（版本数字）、`android.defaultConfig.versionName`（显示版本）|`1242`、`1.2.4.2`|
-|软件图标（含两种类型）|`源码文件夹\FCL\src\main\res\mipmap-<分辨率>\`（包括 `mdpi`、`hdpi`、`xhdpi`、`xxhdpi`、`xxxhdpi`） -> `ic_launcher_foreground.webp`（显示样式）、`ic_launcher_round.png`（圆角图标，通常无需修改）|N/A
+
+### 3.1. 部分可选修改的文件位置
+
+|显示内容|所在位置|初始值|
+|---|---|---|
+|手机端软件显示名称|`源码文件夹\FCL\src\main\res\values\strings.xml` -> `app_name`|`Fold Craft Launcher`|
+|初始虚拟控制器|`源码文件夹\FCL\src\main\assets\controllers`|`00000000.json`|
+|软件图标（含两种类型）|`源码文件夹\FCL\src\main\res\mipmap-<分辨率>\`（包括 `mdpi`、`hdpi`、`xhdpi`、`xxhdpi`、`xxxhdpi`） -> `ic_launcher_foreground.webp`（显示样式）、`ic_launcher_round.png`（圆角图标，通常无需修改）|N/A|
 |启动器背景|`源码文件夹\FCL\src\main\assets\app_config\settings_launcher_pictures` -> `lt.png`（亮色模式背景）、`dk.png`（暗色模式背景）|N/A|
 |启动器主界面下方小字|`源码文件夹\FCL\src\main\assets\app_config\general_setting.properties` -> `activity-main-title`|`Fold Craft Launcher`|
 |QQ 群/Discord|`源码文件夹\FCL\src\main\assets\app_config\general_setting.properties` -> `qq-group-key`、`discord-url`|*FCL 直装包交流群联系方式*|
