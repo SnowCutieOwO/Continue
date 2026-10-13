@@ -76,7 +76,11 @@
 
 ## 4. 编辑 `源码文件夹\local.properties`
 
-按如下示例增加三行新的配置：
+::: detail 旧版本构建提示
+
+如果你使用的是较新的版本，密钥的变量名称发生了一些改动。
+
+如下为旧版本的密钥配置格式，若你正在构建旧版本，则可能需要参考。
 
 ``` properties title="local.properties" {9-11}
 ## This file must *NOT* be checked into Version Control Systems,
@@ -90,6 +94,24 @@ sdk.dir=<Android SDK 路径，由编辑器自动生成>
 curse-api-key=******
 oauth-api-key=******
 key-store-password=******
+```
+
+:::
+
+按如下示例增加三行新的配置：
+
+``` properties title="local.properties" {9-11}
+## This file must *NOT* be checked into Version Control Systems,
+# as it contains information specific to your local configuration.
+#
+# Location of the SDK. This is only used by Gradle.
+# For customization when using a Version Control System, please read the
+# header note.
+#<日期，由编辑器自动生成>
+sdk.dir=<Android SDK 路径，由编辑器自动生成>
+curse.api.key=******
+oauth.api.key=******
+pwd=******
 ```
 
 这些密钥既可自行寻找，也可反编译官方 FCL 获取。本教程恕不提供。
