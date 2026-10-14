@@ -85,7 +85,7 @@ mysql> CREATE DATABASE <dynmap_database_name>;
 mysql> exit
 ```
 
-::: detail 示例
+::: details 示例
 
 ``` txt
 mysql -u root -p
@@ -113,7 +113,7 @@ mysql> FLUSH PRIVILEGES;
 mysql> exit
 ```
 
-::: detail MySQL 与游戏在同一个服务器时的示例
+::: details MySQL 与游戏在同一个服务器时的示例
 
 ``` txt
 mysql -u root -p
@@ -180,7 +180,7 @@ storage:
 
 将其改为：
 
-::: detail 启用 MySQL
+::: details 启用 MySQL
 
 ``` YAML
 storage:
@@ -204,7 +204,7 @@ storage:
 
 示例：
 
-::: detail MySQL 示例
+::: details MySQL 示例
 
 ``` YAML
 storage:

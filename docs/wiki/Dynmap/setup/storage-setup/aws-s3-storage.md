@@ -54,8 +54,6 @@
 
   * 若需要将多个服务器连接到同一个 S3 存储桶，**前缀（prefix）**设置可以用于读取存储桶指定路径下的文件：即相对于“存储桶网站端点（Bucket Website Endpoint）”（如，**prefix: test123/test** 会返回相对于 `http://dynmap.s3-website-us-east-1.amazonaws.com/test123/test/` 的路径）路径下的服务器地图。设置后，存储桶的**错误文档（Error Document）**设置也应根据前缀的变动相应改变路径（这样其中一个服务器的 **images/blank.png** 就可以被其他服务器引用）。
 
-7. That should be it - restart the server and see if it is able to access the bucket. The server will automatically publish the static web site files from Dynmap to the bucket, marker images, and start using the bucket for publishing files.
-
 7. 就是这样——重启服务器后看看 Dynmap 是否可以正常访问存储桶。服务器会向存储桶自动推送 Dynmap 的静态网页文件、地图图标，并通过存储桶发送文件。
 
 ![](_images/aws-s3-image6.png)
@@ -72,8 +70,6 @@
 好在，进入存储桶的数据不会收取费用（除上述 PUT 外的 API 调用）。
 
 ## 替代方案
-
-It is possible to configure dynmap to use most other S3-Compatible storage APIs. Some options are listed below.
 
 可以为 Dynmap 配置其他兼容 S3 存储 API 的服务器。部分选择如下：
 

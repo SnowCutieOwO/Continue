@@ -123,7 +123,7 @@ mysql> CREATE DATABASE <Dynmap 数据库名>;
 mysql> exit
 ```
 
-::: detail 示例
+::: details 示例
 
 ``` log
 mysql -u root -p
@@ -149,7 +149,7 @@ mysql> FLUSH PRIVILEGES;
 mysql> exit
 ```
 
-::: detail MySQL 与游戏共处一台设备的指令示例（点击展开）
+::: details MySQL 与游戏共处一台设备的指令示例（点击展开）
 
 ``` log
 mysql -u root -p
@@ -230,7 +230,7 @@ storage:
 
 将其改为
 
-::: detail MySQL 示例（点击展开）
+::: details MySQL 示例（点击展开）
 
 ``` YAML
 storage:
@@ -252,7 +252,7 @@ storage:
 
 :::
 
-::: detail SQlite 示例（点击展开）
+::: details SQlite 示例（点击展开）
 
 ``` YAML
 storage:
@@ -364,7 +364,7 @@ storage:
 
 **将其注释后**，你需要将其下部分原本的注释取消。就像这样。
 
-::: detail 前（点击展开）
+::: details 前（点击展开）
 
 ``` YAML
   #- class: org.dynmap.JsonFileClientUpdateComponent
@@ -394,7 +394,7 @@ storage:
 
 :::
 
-::: detail 后（点击展开）
+::: details 后（点击展开）
 
 ``` YAML
   - class: org.dynmap.JsonFileClientUpdateComponent
@@ -434,7 +434,7 @@ storage:
 
 为了让 Dynmap 独立网页服务器能够正常运行，我们还需要修改一些路径。这一步是据我所知目前人们碰到问题最多的。
 
-::: detail 前（点击展开）
+::: details 前（点击展开）
 
 ``` YAML
 url:
@@ -456,7 +456,7 @@ url:
 
 :::
 
-::: detail 后 [MySQL 示例]（点击展开）
+::: details 后 [MySQL 示例]（点击展开）
 
 ``` YAML
 url:
@@ -478,7 +478,7 @@ url:
 
 :::
 
-::: detail 后 [SQLite 示例] （点击展开）
+::: details 后 [SQLite 示例] （点击展开）
 
 ``` YAML
 url:
@@ -999,7 +999,7 @@ server {
 
 ## 常见问题
 
-::: detail 我如何操作 Linux？
+::: details 我如何操作 Linux？
 
 非常小心。
 
@@ -1009,7 +1009,7 @@ server {
 
 :::
 
-::: detail 我的网页不显示（NGINX）
+::: details 我的网页不显示（NGINX）
 
 确保你的网站端口已经被转发。
 
@@ -1025,7 +1025,7 @@ server {
 
 :::
 
-::: detail 网页地图上没有任何图片！
+::: details 网页地图上没有任何图片！
 
 因为我们新建了一个空白的数据库，需要等一段时间才能看到。
 
@@ -1033,13 +1033,13 @@ server {
 
 :::
 
-::: detail 为什么没有针对 Windows 或者 Apache 的教程？
+::: details 为什么没有针对 Windows 或者 Apache 的教程？
 
 因为现在的人们大多使用 Linux 与 NGINX，所以我不会涵盖这两个操作系统。不过如果呼声够高，我可能会考虑补充这两个操作平台。
 
 :::
 
-::: detail 我改变主意了，能换回 SQL 吗？
+::: details 我改变主意了，能换回 SQL 吗？
 
 当然可以，如果你根据之前的教程创建了备份配置文件 `configuration.txt.backup`，你随时都可以切换到原本的设置。
 
@@ -1047,7 +1047,7 @@ server {
 
 :::
 
-::: detail 为什么要用 MySQL/SQlite？
+::: details 为什么要用 MySQL/SQlite？
 
 那又为什么不呢？
 
@@ -1055,7 +1055,7 @@ Dynmap 使用 SQL 时才有更多的可能性。即便游戏服务器关闭，�
 
 :::
 
-::: detail 网页界面仍然显示玩家图标和/或聊天栏？
+::: details 网页界面仍然显示玩家图标和/或聊天栏？
 
 是的，玩家图标及聊天栏内容仍然会继续更新，但只在服务器运行时有效。
 

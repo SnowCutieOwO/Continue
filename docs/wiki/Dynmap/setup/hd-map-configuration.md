@@ -67,7 +67,7 @@ maps:
 
 * `default`：默认着色器，决定使用默认 Minecraft 纹理包时渲染的地图颜色
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.TexturePackHDShader
@@ -81,7 +81,7 @@ maps:
 
 * `defaultscheme`：使用“默认”颜色（在 `colorschemes/default.txt` 中）渲染地图
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.DefaultHDShader
@@ -95,7 +95,7 @@ maps:
 
 * `ovocean`：使用“ovocean”颜色（在 `colorschemes/ovocean.txt` 中）渲染地图
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.DefaultHDShader
@@ -107,7 +107,7 @@ maps:
 
 * `flames`：使用“flames”颜色（在 `colorschemes/flames.txt` 中）渲染地图
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.DefaultHDShader
@@ -121,7 +121,7 @@ maps:
 
 * `sk89q`：使用“sk89q”颜色（在 `colorschemes/sk89q.txt` 中）渲染地图
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.DefaultHDShader
@@ -133,7 +133,7 @@ maps:
 
 * `amidst`：[^1]
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.DefaultHDShader
@@ -148,7 +148,7 @@ maps:
 
 * `biome`：渲染地图使用的群系类型
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.DefaultHDShader
@@ -162,7 +162,7 @@ maps:
 
 * `temperature`：渲染地图使用的群系温度数据
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.DefaultHDShader
@@ -176,7 +176,7 @@ maps:
 
 * `rainfall`：渲染地图使用的群系降雨/湿度数据
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.DefaultHDShader
@@ -190,7 +190,7 @@ maps:
 
 * `no_transparency`：使用“default”颜色（在 `colorschemes/default.txt` 中）渲染地图，且跳过所有透明度处理步骤（水面、植被、树叶都会显示为不透明）
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.DefaultHDShader
@@ -203,7 +203,7 @@ maps:
 
 * `cave`：渲染“洞穴”景观——显示地下的实心方块与空气的边界，轮廓从绿色随深度变化为蓝色。
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.CaveHDShader
@@ -214,7 +214,7 @@ maps:
 
 * `lit-cave`：与洞穴着色器类似，但只渲染光照等级大于零的位置。
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.CaveHDShader
@@ -226,7 +226,7 @@ maps:
 
 * `cave-noplants`：与洞穴着色器类似，但跳过植物的渲染（疑似损坏）
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.CaveHDShader
@@ -260,7 +260,7 @@ maps:
 
 * `stdtexture`：使用标准的 Minecraft 纹理包（位于 `texturepack/standard`）渲染地图的颜色
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.TexturePackHDShader
@@ -274,7 +274,7 @@ maps:
 
 * `stdtexture-nobiome`：使用标准的 Minecraft 纹理包（位于 `texturepack/standard`）渲染地图的颜色，但禁用随群系变化的植被颜色
 
-::: detail 默认配置
+::: details 默认配置
 
 [^1]
 
@@ -284,7 +284,7 @@ maps:
 
 * `stdtexture-cave`：与上述洞穴模式类似，但强制 Dynmap 用 Minecraft 的默认纹理包渲染
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.TexturePackHDCaveShader
@@ -298,7 +298,7 @@ maps:
 
 * `stdtexture-underwater`：也许只渲染水下的东西（疑似损坏）
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.TexturePackHDUnderwaterShader
@@ -310,7 +310,7 @@ maps:
 
 * `stdtexture-underwater-keep-land`：见上。
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.TexturePackHDUnderwaterShader
@@ -323,7 +323,7 @@ maps:
 
 * `stdtexture-nobiome`：新建一个使用标准纹理但不渲染群系颜色的地图
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.TexturePackHDShader
@@ -336,7 +336,7 @@ maps:
 
 * `stdtexture-mcr-grid`：新建一个显示区块文件对应边界的地图
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.TexturePackHDShader
@@ -349,7 +349,7 @@ maps:
 
 * `topo`：新建一个基于高度的彩色地形图，以 128 格高度为准
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.TopoHDShader
@@ -374,7 +374,7 @@ maps:
 
 * `topo256`：新建一个基于高度的彩色地形图，以 256 格高度为准
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.TopoHDShader
@@ -399,7 +399,7 @@ maps:
 
 * `topo-noplants`：新建一个基于高度的彩色地形图，以 128 格高度为准，隐藏所有植被
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.TopoHDShader
@@ -445,7 +445,7 @@ maps:
 
 * `topo256-noplants`：新建一个基于高度的彩色地形图，以 256 格高度为准，隐藏所有植被
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.TopoHDShader
@@ -491,7 +491,7 @@ maps:
 
 * `TerraNetworkOrgTopo`：[^1]
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.TopoHDShader
@@ -517,7 +517,7 @@ maps:
 
 * `inhabited`：新建玩家活动热力图。颜色按活动程度由低到高从蓝变红。
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.InhabitedHDShader
@@ -536,7 +536,7 @@ maps:
 
 * `chunkversion`：调试用着色器。按颜色显示 MC 区块的生成时间。
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.ChunkVersionHDShader
@@ -549,7 +549,7 @@ maps:
 
 * `chunkstatus`：调试用着色器。按颜色显示 MC 区块的生成状态。
 
-::: detail 默认配置
+::: details 默认配置
 
 ``` YAML
 -   class: org.dynmap.hdmap.ChunkStatusHDShader

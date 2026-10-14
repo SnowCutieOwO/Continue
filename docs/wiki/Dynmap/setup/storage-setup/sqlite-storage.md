@@ -34,7 +34,7 @@ storage:
 
 将其改为：
 
-::: detail SQlite 示例
+::: details SQlite 示例
 
 ``` YAML
 storage:

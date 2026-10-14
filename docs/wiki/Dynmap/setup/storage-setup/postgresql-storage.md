@@ -45,7 +45,7 @@ postgres=# ALTER DATABASE <Dynmap 数据库> OWNER TO <Dynmap 用户>;
 ALTER DATABASE
 ```
 
-::: detail 示例
+::: details 示例
 
 ``` txt
 postgres=# CREATE USER dynamp WITH PASSWORD 'CHANGE_ME_QUICK';
@@ -114,7 +114,7 @@ storage:
 
 将其改为：
 
-::: detail 启用 PostgreSQL
+::: details 启用 PostgreSQL
 
 ``` YAML
 storage:
@@ -138,7 +138,7 @@ storage:
 
 示例：
 
-::: detail PostgreSQL 示例
+::: details PostgreSQL 示例
 
 ``` YAML
 storage:

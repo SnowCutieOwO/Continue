@@ -60,7 +60,7 @@ progressloginterval: 100
 
 答：禁用聊天一般是因为用了相同功能的其他插件，或单纯不需要这样的功能。你可以通过编辑 `configuration.txt`，将有关部分全部注释以禁用聊天功能。如下为示例，行号可能有所不同，因此我们只展示有关聊天的部分。
 
-::: detail 原配置（点击展开）
+::: details 原配置（点击展开）
 
 ``` txt:line-numbers=43
   - class: org.dynmap.InternalClientUpdateComponent
@@ -95,7 +95,7 @@ progressloginterval: 100
 
 :::
 
-::: detail 禁用后状态（点击展开）
+::: details 禁用后状态（点击展开）
 
 ``` txt:line-numbers=43
   - class: org.dynmap.InternalClientUpdateComponent
