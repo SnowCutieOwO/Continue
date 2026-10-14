@@ -73,3 +73,9 @@ FOR /f "tokens=*" %%z IN ('fnm env --use-on-cd') DO CALL %%z
 在项目的目录下，创建一个 `.node-version` 文件，并在其中填入使用的版本，即可在启动项目时让 fnm 自动使用对应的 Node 版本。
 
 :::
+
+## 后记
+
+如果某天你的 node 突然失效，请检查 fnm 的 `autorun.bat` 文件是否还存在于 `%USERPROFILE%` 目录下。
+
+目前已知 SoftCNKiller 和 360 急救箱都会将其当做可疑自动运行脚本删除，请务必注意这点。
