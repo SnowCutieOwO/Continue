@@ -45,7 +45,7 @@ HuskSync API 仅对下列平台开放使用：
 
 ### 1.1 通过 Maven 安装
 
-::: detail Maven 安装详情
+::: details Maven 安装详情
 
 将仓库按如下格式添加至你的 `pom.xml`。你也可以在末尾指定 `/snapshots` 来获取最新版的开发构建（但不推荐）
 ``` XML
@@ -72,7 +72,7 @@ HuskSync API 仅对下列平台开放使用：
 
 ### 1.2 通过 Gradle 安装
 
-::: detail Gradle 安装详情
+::: details Gradle 安装详情
 
 将以依赖按如下格式导入你的 `build.gradle`。你也可以通过指定 `/snapshots` 来使用最新的开发构建版仓库（但不推荐）
 
