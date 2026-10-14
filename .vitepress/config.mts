@@ -736,7 +736,7 @@ export default defineConfig({
                   ]
                 },
                 {
-                  text: '存储部署', link: 'wiki/Dynmap/setup/storage-setup/', collapsed: true, items: [
+                  text: '存储部署', link: 'wiki/Dynmap/setup/storage-setup', collapsed: true, items: [
                     { text: '文件系统存储', link: 'wiki/Dynmap/setup/storage-setup/file-system-storage' },
                     { text: 'MySQL/MariaDB 存储', link: 'wiki/Dynmap/setup/storage-setup/mysql-mariadb-storage' },
                     { text: 'PostgreSQL 存储', link: 'wiki/Dynmap/setup/storage-setup/postgresql-storage' },
