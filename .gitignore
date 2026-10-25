@@ -3,10 +3,16 @@ node_modules
 .vitepress/cache
 .vscode
 .vitepress/.temp
-cwim-win.exe
 
 # working plugins' wikis should be ignored temproraily
 
-docs/wiki/MMOInventory
+cwim-win.exe
+
+# 忽略计数程序
+
+docs/wiki/MMOItems
+docs/wiki/MMOCore
+docs/wiki/MMOProfiles
+docs/wiki/MythicLib
 
 # 应该没有人会抽象到把 gitignore 文件当笔记用吧...

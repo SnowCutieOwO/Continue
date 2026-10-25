@@ -83,27 +83,6 @@
       linkText: '立即查看'
     },
     {
-      icon: { icon: 'material-symbols:cloud-sync' },
-      name: 'FallbackServer',
-      desc: '在服务器关闭时将玩家送回大厅',
-      link: '../wiki/FallbackServer',
-      linkText: '立即查看'
-    },
-    {
-      icon: { icon: 'material-symbols:cloud-sync' },
-      name: 'FallbackServer',
-      desc: '在服务器关闭时将玩家送回大厅',
-      link: '../wiki/FallbackServer',
-      linkText: '立即查看'
-    },
-    {
-      icon: { icon: 'material-symbols:cloud-sync' },
-      name: 'FallbackServer',
-      desc: '在服务器关闭时将玩家送回大厅',
-      link: '../wiki/FallbackServer',
-      linkText: '立即查看'
-    },
-    {
       icon: { icon: 'ic:baseline-add-home' },
       name: 'HuskHomes',
       desc: '高性能的传送系统插件',
@@ -131,6 +110,13 @@
       link: '../wiki/LuckPerms',
       linkText: '立即查看'
     },
+    { 
+      icon: { icon: 'thesvg:traefik-mesh' },
+      name: 'MMOInventory',
+      desc: '简单而强大的自定义饰品界面插件',
+      link: '../wiki/MMOInventory',
+      linkText: '立即查看'
+    },   
     { 
       icon: { icon: 'carbon:cube' },
       name: 'Oraxen',

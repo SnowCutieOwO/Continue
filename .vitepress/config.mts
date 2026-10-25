@@ -293,6 +293,7 @@ export default defineConfig({
           { text: 'HuskSync', link: 'wiki/HuskSync/index' },
           { text: 'LibreLogin', link: 'wiki/LibreLogin/index' },
           { text: 'LuckPerms', link: 'wiki/LuckPerms/index' },
+          { text: 'MMOInventory', link: 'wiki/MMOInventory/index' },
           { text: 'Oraxen', link: 'wiki/Oraxen/index' },
           { text: 'PlaceholderAPI', link: 'wiki/PlaceholderAPI/index' },
           { text: 'PlayerPoints', link: 'wiki/PlayerPoints/index' },
@@ -331,6 +332,7 @@ export default defineConfig({
             { text: 'HuskSync', link: 'wiki/HuskSync/index' },
             { text: 'LibreLogin', link: 'wiki/LibreLogin/index' },
             { text: 'LuckPerms', link: 'wiki/LuckPerms/index' },
+            { text: 'MMOInventory', link: 'wiki/MMOInventory/index' },
             { text: 'Oraxen', link: 'wiki/Oraxen/index' },
             { text: 'PlaceholderAPI', link: 'wiki/PlaceholderAPI/index' },
             { text: 'PlayerPoints', link: 'wiki/PlayerPoints/index' },
@@ -1261,6 +1263,48 @@ export default defineConfig({
             },
           ]
         },
+      ],
+      'wiki/MMOInventory/': [
+        { text: '返回首页', link: 'index' },
+        { text: '前言', link: 'wiki/MMOInventory/index' },
+        {
+          text: 'MMOInventory 维基', items: [
+            { text: '🏠 首页', link: 'wiki/MMOInventory/general/home' },
+            { text: '🔌 安装教程', link: 'wiki/MMOInventory/general/installation-guide' },
+            { text: '🤔 常见问题', link: 'wiki/MMOInventory/general/faq' },
+          ]
+        },
+        {
+          text: '通用', items: [
+            { text: '💾 命令', link: 'wiki/MMOInventory/commands' },
+            { text: '🧑‍⚖️ 权限', link: 'wiki/MMOInventory/permissions' },
+            { text: '🏷️ 变量', link: 'wiki/MMOInventory/placeholders' },
+            { text: '🗒️ 默认配置', link: 'wiki/MMOInventory/default-configuration' }
+          ]
+        },
+        {
+          text: '特色', items: [
+            { text: '🎒 自定义界面', link: 'wiki/MMOInventory/features/custom-inventories' },
+            { text: '🎒 原版界面', link: 'wiki/MMOInventory/features/vanilla-inventories' },
+            { text: '🎨 界面贴图', link: 'wiki/MMOInventory/features/inventory-textures' },
+            { text: '🪽 鞘翅槽位', link: 'wiki/MMOInventory/features/elytra-slot' },
+          ]
+        },
+        {
+          text: '兼容', items: [
+            { text: '⚔️ MMOItems', link: 'wiki/MMOInventory/compatibility/mmoitems' },
+            { text: '💎 Oraxen', link: 'wiki/MMOInventory/compatibility/oraxen' },
+            { text: '🧙‍♂️ RPG 插件', link: 'wiki/MMOInventory/compatibility/rpg-plugins' },
+            { text: '🔌 其他插件', link: 'wiki/MMOInventory/compatibility/other-plugins' }
+          ]
+        },
+        {
+          text: 'API', items: [
+            { text: '📦 Maven', link: 'wiki/MMOInventory/api/maven' },
+            { text: '🔌 概述', link: 'wiki/MMOInventory/api/overview' },
+            { text: '📮 事件', link: 'wiki/MMOInventory/api/events' }
+          ]
+        }
       ],
       'wiki/Oraxen/': [
         { text: '返回首页', link: 'index' },
