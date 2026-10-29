@@ -20,6 +20,8 @@ import { LiteTree } from '@lite-tree/vue'
 import selColor from './selColor.vue'
 // 26.07.31 新增：pageHeader 页首副标题组件（AI）
 import PageHeader from './pageHeader.vue'
+// 26.10.29 新增：imageGridPlugin 图片并排插件（AI）
+import '../theme/image-grid-plugin.css'
 
 export default {
   extends: DefaultTheme,

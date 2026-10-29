@@ -1,6 +1,6 @@
 # 附魔列表
 
-下表中的每个附魔都包含一个属性，决定玩家是否可在生存模式下合法获取。属性可以在附魔配置文件中修改。
+下表中的每个附魔都包含一个属性，决定玩家是否可在生存模式下合法获取。
 
 * **最大等级**：附魔的最大等级。
 * **初级物品**：在生存模式下，可以通过附魔台获得该附魔的物品类型。
@@ -9,7 +9,7 @@
 
 ::: info
 
-大多数附魔的每级触发能力都可以配置。
+属性可以在 **/enchants/** 的附魔配置文件中修改。
 
 :::
 
@@ -19,6 +19,7 @@
 |---|---|---|---|---|---|---|
 |霜甲<br>（Cold Steel）|给予攻击者[挖掘疲劳](https://zh.minecraft.wiki/w/%E6%8C%96%E6%8E%98%E7%96%B2%E5%8A%B3)效果。||III|![](_images/iron_chestplate.png)|![](_images/elytra.png)|5|
 |暗御<br>（Darkness Cloak）|给予攻击者[黑暗](https://zh.minecraft.wiki/w/%E9%BB%91%E6%9A%97)效果。||III|![](_images/iron_chestplate.png)|![](_images/elytra.png)|10|
+|强龙之心<br>（Dragon Heart）|获得[生命提升](https://zh.minecraft.wiki/w/%E7%94%9F%E5%91%BD%E6%8F%90%E5%8D%87)效果。||
 |元素之御<br>（Elemental Protection）|降低药水与元素（着火、中毒、冻伤等）伤害。||IV|![](_images/iron_helmet.png)![](_images/iron_chestplate.png)![](_images/iron_leggings.png)![](_images/iron_boots.png)||10|
 |炽炎之盾<br>（Fire Shield）|点燃攻击者。||IV|![](_images/iron_chestplate.png)|![](_images/elytra.png)|2|
 |炽炎行者<br>（Flame Walker）|与原版的冰霜行者类似，行走在岩浆上可产生临时的岩浆块防止玩家坠入岩浆，同时免疫岩浆块的灼烧伤害。|[冰霜行者](https://zh.minecraft.wiki/w/%E5%86%B0%E9%9C%9C%E8%A1%8C%E8%80%85)|II|![](_images/iron_boots.png)||1|
@@ -26,11 +27,12 @@
 |霜寒之御<br>（Ice Shield）|[冻结](https://zh.minecraft.wiki/w/%E7%BB%86%E9%9B%AA#%E5%86%B0%E5%86%BB)并[降低敌人移速](https://zh.minecraft.wiki/w/%E7%BC%93%E6%85%A2)。||III|![](_images/iron_chestplate.png)|![](_images/elytra.png)|10|
 |灵跃<br>（Jumping）|获得[跳跃提升](https://zh.minecraft.wiki/w/%E8%B7%B3%E8%B7%83%E6%8F%90%E5%8D%87)效果。||II|![](_images/iron_boots.png)||2|
 |自爆<br>（Kamikadze）|死亡后产生爆炸。||III|![](_images/iron_chestplate.png)|![](_images/elytra.png)|5|
+|轻盈<br>（Lightweight）|允许踩踏海龟蛋、耕地与大型垂滴叶而不改变它们的状态。||I|![](_images/iron_boots.png)||10|
 |夜视<br>（Night Vision）|给予[夜视](https://zh.minecraft.wiki/w/%E5%A4%9C%E8%A7%86)效果。||I|![](_images/iron_helmet.png)||1|
 |粘弹<br>（Rebound）|落地时获得[粘液块](https://zh.minecraft.wiki/w/%E9%BB%8F%E6%B6%B2%E5%9D%97?variant=zh-cn)的效果。|[摔落缓冲](https://zh.minecraft.wiki/w/%E6%91%94%E8%90%BD%E7%BC%93%E5%86%B2)|I|![](_images/iron_boots.png)||2|
 |再生<br>（Regrowth）|无视饱食度与饱和度随时间缓慢恢复生命值。||IV|![](_images/iron_chestplate.png)|![](_images/elytra.png)|2|
 |饱食<br>（Saturation）|随时间缓慢恢复饱食度与饱和度。||II|![](_images/iron_helmet.png)||2|
-|疾步<br>（Sonic）|获得[迅捷](https://zh.minecraft.wiki/w/%E8%BF%85%E6%8D%B7)效果。||II|![](_images/iron_boots.png)||2|
+|疾步<br>（Speed）|获得[迅捷](https://zh.minecraft.wiki/w/%E8%BF%85%E6%8D%B7)效果。||II|![](_images/iron_boots.png)||2|
 |坚挺<br>（Stopping Force）|受伤时增加[击退](https://zh.minecraft.wiki/w/%E5%B1%9E%E6%80%A7/%E5%87%BB%E9%80%80)抗性。||III|![](_images/iron_leggings.png)||5|
 |水下呼吸<br>（Water Breathing）|获得[水下呼吸](https://zh.minecraft.wiki/w/%E6%B0%B4%E4%B8%8B%E5%91%BC%E5%90%B8%EF%BC%88%E7%8A%B6%E6%80%81%E6%95%88%E6%9E%9C%EF%BC%89)效果。||I|![](_images/iron_helmet.png)||1|
 
@@ -61,12 +63,12 @@
 |爆破发掘<br>（Blast Mining）|概率在挖掘时产生[爆炸](https://zh.minecraft.wiki/w/%E7%88%86%E7%82%B8)并破坏范围内所有方块。|穿隧、连锁挖掘|V|![](_images/iron_pickaxe.png)||2|
 |玻璃之触<br>（Glass Breaker）|立即破坏玻璃。||I|![](_images/iron_pickaxe.png)![](_images/iron_axe.png)![](_images/iron_shovel.png)|![](_images/iron_hoe.png)![](_images/shears.png)|10|
 |急迫<br>（Haste）|在挖掘时产生[急迫](https://zh.minecraft.wiki/w/%E6%80%A5%E8%BF%AB)效果。||III|![](_images/iron_pickaxe.png)![](_images/iron_axe.png)![](_images/iron_shovel.png)|![](_images/iron_hoe.png)![](_images/shears.png)|2|
-|幸运矿工<br>（Lucky Miner）|概率从挖掘的方块中获取更多[经验值](https://zh.minecraft.wiki/w/%E7%BB%8F%E9%AA%8C)。|镐||III|![](_images/iron_pickaxe.png)||5|
+|幸运矿工<br>（Lucky Miner）|概率从挖掘的方块中获取更多[经验值](https://zh.minecraft.wiki/w/%E7%BB%8F%E9%AA%8C)。||III|![](_images/iron_pickaxe.png)||5|
 |复种<br>（Replanter）|右键或破坏[作物](https://zh.minecraft.wiki/w/%E5%86%9C%E4%BD%9C%E7%89%A9)时自动补种。||I|![](_images/iron_hoe.png)||1|
 |搬箱<br>（Silk Chest）|破坏[箱子](https://zh.minecraft.wiki/w/%E7%AE%B1%E5%AD%90)后有几率使箱子保留内容物而不掉落。|![](_images/iron_axe.png)|![](_images/iron_pickaxe.png)![](_images/iron_shovel.png)![](_images/iron_hoe.png)|1|
-|封魔之触<br>（Divine Touch）|概率挖下[刷怪笼](https://zh.minecraft.wiki/w/%E5%88%B7%E6%80%AA%E7%AC%BC)。|熔炼|I|![](_images/iron_pickaxe.png)||1|
+|封魔之触<br>（Silk Spawner）|概率挖下[刷怪笼](https://zh.minecraft.wiki/w/%E5%88%B7%E6%80%AA%E7%AC%BC)。|熔炼|I|![](_images/iron_pickaxe.png)||1|
 |熔炼<br>（Smelter）|按[配方](https://zh.minecraft.wiki/w/%E7%83%A7%E7%82%BC?variant=zh-cn#%E9%85%8D%E6%96%B9)自动熔炼挖下的矿物。|[精准采集](https://zh.minecraft.wiki/w/%E7%B2%BE%E5%87%86%E9%87%87%E9%9B%86)、封魔之触|V|![](_images/iron_pickaxe.png)![](_images/iron_axe.png)![](_images/iron_shovel.png)|![](_images/iron_hoe.png)![](_images/shears.png)|5|
-|心灵遥感<br>（Telekinesis）|概率将掉落物直接送入背包。||I|![](_images/iron_pickaxe.png)![](_images/iron_axe.png)![](_images/iron_shovel.png)![](_images/iron_hoe.png)|![](_images/shears.png)|1|
+|隔空取物<br>（Telekinesis）|概率将掉落物直接送入背包。||I|![](_images/iron_pickaxe.png)![](_images/iron_axe.png)![](_images/iron_shovel.png)![](_images/iron_hoe.png)|![](_images/shears.png)|1|
 |连锁伐树<br>（Treefeller）|一次砍下整棵树。||I|![](_images/iron_axe.png)||2|
 |穿隧<br>（Tunnel）|概率范围挖掘。I 级为 1x2 范围，II 级为 2x2，III 级为 3x3。|连锁挖掘、爆破发掘|III|![](_images/iron_pickaxe.png)|![](_images/iron_axe.png)![](_images/iron_shovel.png)![](_images/iron_hoe.png)|1|
 |连锁挖掘<br>（Veinminer）|一次挖下所有相邻的矿物。|穿隧、爆破发掘|III|![](_images/iron_pickaxe.png)||1|
@@ -96,7 +98,7 @@
 |复击<br>（Double Strike）|概率造成双倍伤害。||II|![](_images/iron_sword.png)|![](_images/iron_axe.png)|1|
 |饥饿<br>（Exhaust）|命中时概率附加[饥饿](https://zh.minecraft.wiki/w/%E9%A5%A5%E9%A5%BF%EF%BC%88%E7%8A%B6%E6%80%81%E6%95%88%E6%9E%9C%EF%BC%89)效果。||IV|![](_images/iron_sword.png)|![](_images/iron_axe.png)|10|
 |霜寒之刃<br>（Ice Aspect）|命中时概率附加缓慢效果。||III|![](_images/iron_sword.png)|![](_images/iron_axe.png)|10|
-|淬火之戟<br>（Infernus）|概率投出附带火焰的三叉戟。||III|![](_images/trident.png)||10|
+|烈焰之戟<br>（Infernus）|概率投出附带火焰的三叉戟。||III|![](_images/trident.png)||10|
 |掠夺<br>（Nimble）|击杀敌怪的掉落物有几率直接进入背包。||I|![](_images/iron_sword.png)|![](_images/iron_axe.png)|2|
 |瘫痪<br>（Paralyze）|命中时有概率附加[挖掘疲劳](https://zh.minecraft.wiki/w/%E6%8C%96%E6%8E%98%E7%96%B2%E5%8A%B3)效果。||V|![](_images/iron_sword.png)|![](_images/iron_axe.png)|5|
 |怒气<br>（Rage）|命中时概率获得[力量](https://zh.minecraft.wiki/w/%E5%8A%9B%E9%87%8F%EF%BC%88%E7%8A%B6%E6%80%81%E6%95%88%E6%9E%9C%EF%BC%89)效果。||II|![](_images/iron_sword.png)|![](_images/iron_axe.png)|5|
@@ -117,10 +119,32 @@
 |---|---|---|---|
 |锈斑诅咒<br>（Curse of Breaking）|几率在使用工具时花费额外的耐久度。|[耐久](https://zh.minecraft.wiki/w/%E8%80%90%E4%B9%85)|III|![](_images/iron_pickaxe.png)![](_images/iron_axe.png)![](_images/iron_shovel.png)![](_images/iron_hoe.png)![](_images/iron_sword.png)![](_images/bow.png)![](_images/crossbow_standby.png)![](_images/shears.png)![](_images/iron_helmet.png)![](_images/iron_chestplate.png)![](_images/iron_leggings.png)![](_images/iron_boots.png)![](_images/elytra.png)![](_images/shield.png)![](_images/fishing_rod.png)![](_images/trident.png)![](_images/mace.png)||10|
 |脆弱诅咒<br>（Curse of Fragility）|物品不能在砂轮或铁砧中使用。||I|![](_images/iron_pickaxe.png)![](_images/iron_axe.png)![](_images/iron_shovel.png)![](_images/iron_hoe.png)![](_images/iron_sword.png)![](_images/bow.png)![](_images/crossbow_standby.png)![](_images/shears.png)![](_images/iron_helmet.png)![](_images/iron_chestplate.png)![](_images/iron_leggings.png)![](_images/iron_boots.png)![](_images/elytra.png)![](_images/shield.png)![](_images/fishing_rod.png)![](_images/trident.png)![](_images/mace.png)||10|
-|祛魔诅咒<br>（Curse of Mediocrity）|概率消除从玩家/实体身上掉落物品/方块的附魔。||III|![](_images/iron_sword.png)![](_images/iron_axe.png)![](_images/bow.png)![](_images/crossbow_standby.png)![](_images/trident.png)![](_images/mace.png)|![](_images/iron_pickaxe.png)![](_images/iron_shovel.png)![](_images/iron_hoe.png)![](_images/shears.png)|5|
+|祛魔诅咒<br>（Curse of Mediocrity）|概率祛除从玩家/实体身上掉落物品/方块的附魔。||III|![](_images/iron_sword.png)![](_images/iron_axe.png)![](_images/bow.png)![](_images/crossbow_standby.png)![](_images/trident.png)![](_images/mace.png)|![](_images/iron_pickaxe.png)![](_images/iron_shovel.png)![](_images/iron_hoe.png)![](_images/shears.png)|5|
 |厄运诅咒<br>（Curse of Misfortune）|概率导致实体不产生掉落物。|[时运](https://zh.minecraft.wiki/w/%E6%97%B6%E8%BF%90)、[抢夺](https://zh.minecraft.wiki/w/%E6%8A%A2%E5%A4%BA)|III|![](_images/iron_pickaxe.png)![](_images/iron_axe.png)![](_images/iron_shovel.png)![](_images/iron_hoe.png)![](_images/iron_sword.png)![](_images/bow.png)![](_images/crossbow_standby.png)![](_images/shears.png)![](_images/trident.png)![](_images/mace.png)||5|
-|传承<br>（Restore）|物品损坏时以失去所有附魔的代价阻止损坏并回复一定耐久度。||III|![](_images/iron_pickaxe.png)![](_images/iron_axe.png)![](_images/iron_shovel.png)![](_images/iron_hoe.png)![](_images/iron_sword.png)![](_images/bow.png)![](_images/crossbow_standby.png)![](_images/shears.png)![](_images/iron_helmet.png)![](_images/iron_chestplate.png)![](_images/iron_leggings.png)![](_images/iron_boots.png)![](_images/elytra.png)![](_images/shield.png)![](_images/fishing_rod.png)![](_images/trident.png)![](_images/mace.png)||2|
+|传承<br>（Restore）|耐久耗尽时保护物品不被损坏，只能触发一次。||III|![](_images/iron_pickaxe.png)![](_images/iron_axe.png)![](_images/iron_shovel.png)![](_images/iron_hoe.png)![](_images/iron_sword.png)![](_images/bow.png)![](_images/crossbow_standby.png)![](_images/shears.png)![](_images/iron_helmet.png)![](_images/iron_chestplate.png)![](_images/iron_leggings.png)![](_images/iron_boots.png)![](_images/elytra.png)![](_images/shield.png)![](_images/fishing_rod.png)![](_images/trident.png)![](_images/mace.png)||2|
 |归魂<br>（Soulbound）|阻止物品的死亡掉落。|[消失诅咒](https://zh.minecraft.wiki/w/%E6%B6%88%E5%A4%B1%E8%AF%85%E5%92%92)|I|![](_images/iron_pickaxe.png)![](_images/iron_axe.png)![](_images/iron_shovel.png)![](_images/iron_hoe.png)![](_images/iron_sword.png)![](_images/bow.png)![](_images/crossbow_standby.png)![](_images/shears.png)![](_images/iron_helmet.png)![](_images/iron_chestplate.png)![](_images/iron_leggings.png)![](_images/iron_boots.png)![](_images/elytra.png)![](_images/shield.png)![](_images/fishing_rod.png)![](_images/trident.png)![](_images/mace.png)||2|
+
+## 另见
+
+<Links
+  :grid="2"
+  :items="[
+    {
+      name: `关于`,
+      link: 'about'
+    },
+    {
+      name: `PlaceholderAPI`,
+      desc: 'ExcellentEnchants 的一大特色就是内置了对 PlacedholderAPI 的支持。无需安装其他变量拓展！',
+      link: ''
+    },
+    {
+      name: `文本提示框`,
+      desc: '携带 ExcellentEnchant 附魔的物品可以显示附魔效果描述，基于发包，纯客户端。',
+      link: 'placeholders/papi'
+    }
+  ]"
+/>
 
 [^1]: 箭类附魔，即效果只能作用在箭上的附魔。
 

@@ -12,3 +12,19 @@
 
 * `%excellentenchants_charges_remaining_[格子]_[附魔名称]%` - 物品剩余充能次数。`[格子]` 为[装备格子](https://jd.papermc.io/paper/1.21.5/org/bukkit/inventory/EquipmentSlot.html)。
 * `%excellentenchants_charges_maximum_[附魔名称]_[附魔等级]%` - 物品最大充能次数。`[等级]` 为附魔等级。
+
+## 另见
+
+<Links
+  :grid="2"
+  :items="[
+    {
+      name: `关于`,
+      link: '../about'
+    },
+    {
+      name: `内建变量`,
+      link: '../internal-placeholders'
+    }
+  ]"
+/>

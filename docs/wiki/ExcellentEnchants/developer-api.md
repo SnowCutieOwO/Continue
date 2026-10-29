@@ -19,7 +19,7 @@
 
 ## 获取数据
 
-### 通过命名空间键获取 ExcellentEnchants 附魔：
+### 通过命名空间键获取 ExcellentEnchants 附魔
 
 ``` Java
 // 总是使用 EnchantKeys 类获取带有效命名空间的键。
@@ -39,20 +39,20 @@ CustomEnchantment custom = EnchantRegistry.getByKey(key);
 Enchantment enchantment = custom.getBukkitEnchantment();
 ```
 
-### 通过 ID 获取 ExcellentEnchants 附魔：
+### 通过 ID 获取 ExcellentEnchants 附魔
 
 ``` Java
 CustomEnchantment custom = EnchantRegistry.getById(EnchantId.TUNNEL);
 Enchantment enchantment = custom.getBukkitEnchantment();
 ```
 
-### 检查 ExcellentEnchants 附魔是否存在：
+### 检查 ExcellentEnchants 附魔是否存在
 
 ``` Java
 boolean exists = EnchantRegistry.isRegistered(EnchantId.TUNNEL);
 ```
 
-### 获取所有 ExcellentEnchants 附魔：
+### 获取所有 ExcellentEnchants 附魔
 
 ``` Java
 Set<CustomEnchantment> customs = EnchantRegistry.getRegistered();

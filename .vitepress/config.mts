@@ -10,6 +10,7 @@ import CodeBlockPlugin from '../.vitepress/plugins/codeblock.mjs';
 import { figure } from '@mdit/plugin-figure';
 import { attrs } from "@mdit/plugin-attrs";
 import { MermaidMarkdown, MermaidPlugin } from 'vitepress-plugin-mermaid';
+import { imageGridPlugin } from './plugins/image-grid-plugin.mjs';
 
 const customElements = [
   'math',
@@ -156,6 +157,7 @@ export default defineConfig({
       md.use(figure);
       md.use(attrs);
       md.use(MermaidMarkdown);
+      md.use(imageGridPlugin);
     },
     math: true
   },
@@ -386,7 +388,7 @@ export default defineConfig({
                 { text: '开始之前：你要开什么？', link: 'guide/logical-questions/before-start-what-server-you-want' },
                 { text: '开始之前：插件怎么选？', link: 'guide/logical-questions/choose-plugins-wisely' },
                 { text: '开始之前：该找什么人？', link: 'guide/logical-questions/who-do-you-want' },
-                { text: '开始之前：怎么做宣传？', link: 'guide/logical-quetsions/make-a-good-advertise' },
+                { text: '开始之前：怎么做宣传？', link: 'guide/logical-questions/make-a-good-advertise' },
                 { text: '开始之前：拒绝低端生电玩家', link: 'guide/logical-questions/why-no-survival-circult' }
               ]
             },
@@ -894,30 +896,34 @@ export default defineConfig({
         { text: '前言', link: 'wiki/ExcellentEnchants/index' },
         {
           text: 'ExcellentEnchants 维基', items: [
-            { text: '从 v4 升级', link: 'wiki/ExcellentEnchants/upgrading-from-v4' },
-            { text: '欢迎', link: 'wiki/ExcellentEnchants/welcome' },
+            { text: '关于', link: 'wiki/ExcellentEnchants/about' },
+            { text: '初次使用', link: 'wiki/ExcellentEnchants/getting-started' },
             { text: '命令', link: 'wiki/ExcellentEnchants/commands' },
             { text: '权限', link: 'wiki/ExcellentEnchants/permissions' },
-            {
-              text: '集成', collapsed: true, items: [
-                { text: 'PlaceholderAPI 支持', link: 'wiki/ExcellentEnchants/intergrations/placeholderapi' }
-              ]
-            },
             { text: '常见插件问题', link: 'wiki/ExcellentEnchants/common-issues' },
             { text: '常见问题', link: 'wiki/ExcellentEnchants/common-questions' },
             {
+              text: '附魔', collapsed: true, items: [
+                { text: '附魔列表', link: 'wiki/ExcellentEnchants/enchantments/list' },
+                { text: '联动', link: 'wiki/ExcellentEnchants/enchantments/intergration' },
+                { text: '分布', link: 'wiki/ExcellentEnchants/enchantments/distribution' },
+                { text: '禁用附魔', link: 'wiki/ExcellentEnchants/enchantments/disabling' },
+                { text: '物品集', link: 'wiki/ExcellentEnchants/enchantments/item-sets' },
+                { text: '修饰符', link: 'wiki/ExcellentEnchants/enchantments/modifiers' },
+              ]
+            },
+            {
               text: '功能', collapsed: true, items: [
-                { text: '兼容性', link: 'wiki/ExcellentEnchants/features/compatibility' },
-                { text: '分布', link: 'wiki/ExcellentEnchants/features/distribution' },
-                { text: '附魔列表', link: 'wiki/ExcellentEnchants/features/enchantments' },
-                { text: '附魔描述', link: 'wiki/ExcellentEnchants/features/description' },
-                { text: '禁用附魔', link: 'wiki/ExcellentEnchants/features/disabling' },
-                { text: '物品集', link: 'wiki/ExcellentEnchants/features/item-sets' },
+                { text: '附魔描述', link: 'wiki/ExcellentEnchants/features/tooltips' },
                 { text: '充能', link: 'wiki/ExcellentEnchants/features/charges' },
               ]
             },
-            { text: '修饰符', link: 'wiki/ExcellentEnchants/modifiers' },
-            { text: '内部变量', link: 'wiki/ExcellentEnchants/placeholders' },
+            {
+              text: '变量', collapsed: true, items: [
+                { text: 'PlaceholderAPI', link: 'wiki/ExcellentEnchants/placeholders/papi' },
+                { text: '内部变量', link: 'wiki/ExcellentEnchants/placeholders/internal-placeholders' },
+              ]
+            },
             { text: '开发者 API', link: 'wiki/ExcellentEnchants/developer-api' }
           ]
         },

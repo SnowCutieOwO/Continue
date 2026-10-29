@@ -1,0 +1,23 @@
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* 让图片外层的 <p> 不参与布局，<img> 直接成为 flex 项目 */
+.image-grid > p {
+  display: contents;
+}
+
+.image-grid img {
+  width: calc(50% - 5px);
+  object-fit: cover;
+}
+
+/* *** 换行占位符 */
+.image-grid-break {
+  flex-basis: 100%;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}

@@ -5,9 +5,11 @@
 * `excellentenchants.*` - 允许使用插件所有功能。 
   * `excellentenchants.command.*` - 允许使用插件所有命令。
     * `excellentenchants.command.book` - 允许使用 **/eenchants book** 命令。
+    * `excellentenchants.command.randombook` - 允许使用 **/eenchants randombook** 命令。
     * `excellentenchants.command.enchant` - 允许使用 **/eenchants enchant** 命令。
     * `excellentenchants.command.disenchant` - 允许使用 **/eenchants disenchant** 命令。
-    * `excellentenchants.command.getfuel` - 允许使用 **/eenchants getfuel** 命令。
+    * `excellentenchants.command.givefuel` - 允许使用 **/eenchants getfuel** 命令。
     * `excellentenchants.command.list` - 允许使用 **/eenchants list** 命令。
     * `excellentenchants.command.list.others` - 允许对其他玩家使用 **/eenchants list** 命令。
     * `excellentenchants.command.reload` - 允许使用 **/eenchants reload** 命令。
+  * `excellentenchants.enchant.decapitator.bypass` - 拥有此权限的玩家，在被携带“斩首”附魔的物品击杀时不会掉落头颅。
