@@ -6,7 +6,7 @@
 
 ::: tip 用法
 
-将 `[附魔名称]` 替换为[附魔名称](../features/enchantments.md)（即附魔的配置文件名称）。
+将 `[附魔名称]` 替换为[附魔名称](../enchantments/list.md)（即附魔的配置文件名称）。
 
 :::
 

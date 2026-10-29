@@ -10,7 +10,7 @@
 
 **ExcellentEnchants** 在删除后**不会**对服务器造成**永久性**影响，就像插件从未被安装过——没有报错、漏洞或崩溃，也永远不会有。
 
-[**点此浏览所有附魔！**](enchantments/enchantment-list.md)
+[**点此浏览所有附魔！**](enchantments/list.md)
 
 </center>
 
