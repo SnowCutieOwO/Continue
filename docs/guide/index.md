@@ -10,6 +10,7 @@
   - [如何通过手机/电脑制作供移动平台玩家游玩的整合包？](self-help/fcl-setup/index.md)
   - [如何用 Gradle/Maven 构建插件](self-help/build-jars-with-gradle-or-maven.md)
   - [如何用 Recaf 反编译字节码汉化插件/模组](self-help/localize-jars-with-recaf.md)
+  - [如何利用 fnm 实现 Node.js 多版本管理？](self-help/fnm-installtion.md)
   - 如何简单鉴别服务器的插件是否安全？（即将推出）
   - 如何利用 JEnv 实现 Java 多版本管理？（即将推出）
 * 自求福篇

@@ -367,7 +367,7 @@ export default defineConfig({
       'guide/': [
         { text: '返回首页', link: '/index' },
         {
-          text: '🌟 开服杂谈', link: 'guide/self-help/index', collapsed: false, items: [
+          text: '🌟 开服杂谈', link: 'guide/index', collapsed: false, items: [
             {
               text: '不求人篇', collapsed: true, items: [
                 {
@@ -389,7 +389,7 @@ export default defineConfig({
                 { text: '开始之前：插件怎么选？', link: 'guide/logical-questions/choose-plugins-wisely' },
                 { text: '开始之前：该找什么人？', link: 'guide/logical-questions/who-do-you-want' },
                 { text: '开始之前：怎么做宣传？', link: 'guide/logical-questions/make-a-good-advertise' },
-                { text: '开始之前：拒绝低端生电玩家', link: 'guide/logical-questions/why-no-survival-circult' }
+                { text: '开始之前：拒绝低端生电玩家', link: 'guide/logical-questions/why-no-survival-circuit' }
               ]
             },
             {
